@@ -1,0 +1,133 @@
+---
+title: Changelog
+description: Track the latest updates, improvements, and bug fixes in BeeFood to stay informed about new features and changes.
+---
+
+## Stay Updated
+
+<Callout kind="info">
+BeeFood releases updates regularly to enhance performance, add features, and fix issues. Check this changelog for details on each version. Subscribe to our notifications at `https://dashboard.example.com/notifications` to get alerts on new releases.
+</Callout>
+
+## Recent Releases
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added real-time order tracking with live map integration
+- Introduced restaurant dashboard for partners with analytics
+- New webhook support for custom notifications
+
+## Improvements
+
+- Optimized API response times by `>30%`
+- Enhanced mobile app UI for better user experience
+
+## Bug Fixes
+
+- Fixed payment gateway timeout issues
+- Resolved duplicate order creation errors
+
+</Update>
+
+<Update label="2024-09-20" description="v1.1.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Multi-language support for `10+` languages
+- Advanced search with filters for dietary preferences
+
+## Bug Fixes
+
+- Corrected cart persistence across sessions
+- Fixed delivery address validation failures
+
+## Improvements
+
+- Better error handling in the checkout flow
+
+</Update>
+
+<Update label="2024-08-10" description="v1.0.0" tags={["feature", "breaking"]}>
+
+## Initial Release
+
+- Core ordering API endpoints
+- User authentication and profile management
+- Restaurant and delivery partner onboarding
+
+## Breaking Changes
+
+- Updated API version to `v1` - migrate from beta endpoints
+
+</Update>
+
+## Upgrade Process
+
+Follow these steps to upgrade your BeeFood integration to the latest version.
+
+<Steps>
+  <Step title="Check Compatibility" icon="check-circle">
+
+Review the [release notes](#recent-releases) for breaking changes.
+
+  </Step>
+  <Step title="Update SDK" icon="download">
+
+<CodeGroup tabs="npm,yarn">
+````bash
+npm install @beefood/sdk@latest
+````
+````bash
+yarn add @beefood/sdk@latest
+````
+</CodeGroup>
+
+  </Step>
+  <Step title="Test Endpoints" icon="zap">
+
+```bash
+curl -H "Authorization: Bearer YOUR_TOKEN" \
+  https://api.example.com/v1/orders
+```
+
+Verify responses match the updated schema.
+
+  </Step>
+  <Step title="Deploy" icon="rocket">
+
+Push changes and monitor for issues.
+
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+After upgrading, clear your cache and test in staging first.
+</Callout>
+
+## Quick Links
+
+<Columns cols={3}>
+  <Card title="Quickstart" icon="book-open" href="/quickstart">
+    Get started with BeeFood basics.
+  </Card>
+  <Card title="API Reference" icon="code" href="/authentication">
+    Authenticate and make your first API call.
+  </Card>
+  <Card title="Support" icon="help-circle" href="/help-center">
+    Need help? Contact our team.
+  </Card>
+</Columns>
+
+## Upcoming Features
+
+<Expandable title="Preview: What's Coming Next" default-open="false">
+
+- AI-powered menu recommendations
+- Subscription ordering for regulars
+- Expanded payment methods including crypto
+
+Stay tuned for beta access in Q1 2025.
+
+</Expandable>

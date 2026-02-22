@@ -1,0 +1,151 @@
+---
+title: Quickstart Guide
+description: Get up and running with BeeFood in minutes by setting up your account and creating your first documentation space. Follow these steps to start organizing your project docs.
+---
+
+## Prerequisites
+
+<Callout kind="info" title="Before You Begin">
+Ensure you have:
+- A modern web browser (Chrome, Firefox, or Safari)
+- An email address for account verification
+- Optional: Existing project files (Markdown, Git repo) for import
+</Callout>
+
+BeeFood makes it easy to organize your project documentation. In just a few minutes, you'll create an account, set up a documentation space, import files, and start editing.
+
+## Step-by-Step Setup
+
+Follow these steps to get started with BeeFood.
+
+<Steps>
+  <Step title="Create Your Account" icon="user-plus">
+
+  Visit `https://dashboard.example.com` and click **Sign Up**.
+
+  Fill in your details:
+
+  | Field       | Description                  |
+  |-------------|------------------------------|
+  | Email       | Your primary login email     |
+  | Password    | Strong password (`>12 chars`)|
+  | Team Name   | Your project or company name |
+
+  Verify your email to activate the account.
+
+  </Step>
+
+  <Step title="Create Your First Documentation Space" icon="folder-plus">
+
+  From the dashboard, select **New Space**.
+
+  Configure the basics:
+
+````jsx
+{
+  name: "My Project Docs",
+  description: "Central hub for all project documentation",
+  visibility: "private"  // or "public"
+}
+````
+
+  Click **Create** to generate your space.
+
+  </Step>
+
+  <Step title="Import Initial Project Files" icon="upload">
+
+  BeeFood supports multiple import methods. Choose one based on your setup.
+
+  <Tabs>
+    <Tab title="GitHub Repo" icon="github">
+
+    Connect your GitHub account and select a repo.
+
+````bash
+# Example repo structure
+docs/
+├── README.md
+├── api.md
+└── quickstart.md
+````
+
+    BeeFood auto-detects Markdown files and imports them as pages.
+
+    </Tab>
+
+    <Tab title="Local Files" icon="folder">
+
+    Drag and drop your files or use the upload button.
+
+    Supported formats: `.md`, `.mdx`, `.txt`.
+
+    <Callout kind="tip">
+    Organize files in folders for automatic page hierarchy.
+    </Callout>
+
+    </Tab>
+  </Tabs>
+
+  </Step>
+
+  <Step title="Navigate and Edit Basics" icon="edit-3">
+
+  Explore the interface:
+
+  <Columns cols={2}>
+    <Card title="Navigation" icon="menu">
+      Use the sidebar for pages, search, and settings.
+    </Card>
+
+    <Card title="Editing Tools" icon="type">
+      Real-time Markdown/MDX editor with live preview.
+    </Card>
+  </Columns>
+
+  Create your first page:
+
+````markdown
+# Welcome to My Docs
+
+This is your starting point.
+````
+
+  Save and publish to make it live.
+
+  </Step>
+</Steps>
+
+## Verify Your Setup
+
+Test by creating a sample page and sharing the public link. Your space is now ready for collaboration.
+
+<Callout kind="success">
+Congratulations! You've completed the quickstart. Your BeeFood space is live.
+</Callout>
+
+## Next Steps
+
+Explore more features to enhance your documentation.
+
+<Columns cols={3}>
+  <Card title="Authentication" icon="shield" href="/authentication">
+    Secure your space with API keys and teams.
+  </Card>
+
+  <Card title="Advanced Editing" icon="code" href="/guides">
+    Use components, diagrams, and custom themes.
+  </Card>
+
+  <Card title="Integrations" icon="plug" href="/configuration">
+    Connect GitHub, Slack, and webhooks.
+  </Card>
+</Columns>
+
+<Expandable title="Troubleshooting Common Issues" default-open="false">
+
+- **Import fails**: Check file sizes (`<10MB`) and formats.
+- **Editor lag**: Clear browser cache or use incognito mode.
+- **Permissions**: Ensure repo access for GitHub imports.
+
+</Expandable>
