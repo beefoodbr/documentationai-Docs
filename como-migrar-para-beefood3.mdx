@@ -1,8 +1,45 @@
 ---
 title: 'Já sou cliente BeeFood, como migrar?'
 ---
-Se você já é cliente BeeFood e usa BeeFood Windows ou BeeFood Web a migração é muito fácil.
+Se você já é cliente BeeFood a utilização do BeeFood3 vai ser preciso migrar alguns dados e outros será preciso refazer manualmente. Veja abaixo os detalhes de como funciona.
 
+# Dados que precisam ser migrados
 
+Algumas estruturas de dados mudaram e para facilitar a migração do novo sistema criamos uma tela que faz toda a migração dos dados.
 
-/
+Acesso o menu <a href="https://app.beefood.com.br/migrar-dados" target="_blank" rel="noopener noreferrer">Configuração -> Migrar Dados</a> e faça a migração dos Complementos e Obervações, Matéria-Prima e Conta Corrente dos clientes.
+
+<Image src="https://blob-cdn.documentation.ai/org-daf9910e-bdcf-4cb1-ab83-4cd8623e3f5e/doc-1c1fae12-7678-4e2e-90b6-bf66ffac55be/1771949296826-y81ivd78rr-pasted-image-1771949490945.png?q=85&fm=auto&auto=compress%2Cformat" width="1172" height="292" alt="" />
+
+# Complementos e Observações
+
+Os complementos e Observação agora são resumidos em um único novo chamado Complemento, que segue a mesma ideia dos antigos, são opções que podem ser usadas dentro de Grupo de Opções.
+
+## Matéria-prima
+
+As matéria-prima agora são chamadas de Insumos e só podem ser usadas dentro de Ficha de técnicas de produtos.
+
+Anteriormente a matéria-prima tinha um uso mais abrangente e poderia ser usado até dentro de grupo de opções. Agora é restrito apenas para ficha técnicas.
+
+## Conta Corrente do Cliente
+
+Agora a conta corrente do cliente é chamado de Fiado e representado por uma forma de pagamento na venda.
+
+Anteriormente a conta corrente do cliente funcionava apenas deixando sem pagamento. Agora é necessário realizar um pagamento com a novo tipo Fiado e depois gerenciar o saldo do cliente em uma nova tela de Gestão de Fiado.&#x20;
+
+# Dados que não podem ser migrados
+
+Alguns dados não podem ser migrados pro conta da grande mudança estrutural que foi feita nos dados.
+
+Anterioremnete era possível crair muitos niveis de complexidade no Estoque e na Ficha Técnica, o que tornava o controle e a gestão muito complexa.
+
+## Estoque
+
+Não é possível migrar o saldo de estoque para o BeeFood3, pois foi alterado a forma como se controla o estoque dos produtos e insumos. Sendo assim é necessário fazer uma adição manual do estoque atual para iniciar o uso no BeeFood3.
+
+## Ficha Técnica
+
+A estrutura de ficha técnica mudou completamente, anteriormente era possível criar vários niveis de ficha técnica, o que tornava a gestão de estoque complexa.
+
+Agora é possível apenas inserir insumos dentro de uma ficha técnica, simplificando o processo de gestão de insumos e controle de estoque negativo.
+
