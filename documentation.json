@@ -39,10 +39,10 @@
                 "pages": []
               },
               {
-                "group": "Cliente",
+                "group": "Fiado",
                 "pages": [
                   {
-                    "title": "Fiado",
+                    "title": "Migrar Dados",
                     "path": "fiado"
                   }
                 ]
