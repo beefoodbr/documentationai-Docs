@@ -63,5 +63,22 @@
       }
     ]
   },
-  "template": "classic"
+  "template": "classic",
+  "logo-dark": "https://blob-cdn.documentation.ai/org-daf9910e-bdcf-4cb1-ab83-4cd8623e3f5e/doc-1c1fae12-7678-4e2e-90b6-bf66ffac55be/1771948352599-ujl8trnyuu-b3.png?q=85&fm=auto&auto=compress%2Cformat",
+  "logo-light": "https://blob-cdn.documentation.ai/org-daf9910e-bdcf-4cb1-ab83-4cd8623e3f5e/doc-1c1fae12-7678-4e2e-90b6-bf66ffac55be/1771948352599-ujl8trnyuu-b3.png?q=85&fm=auto&auto=compress%2Cformat",
+  "favicon": "https://blob-cdn.documentation.ai/org-daf9910e-bdcf-4cb1-ab83-4cd8623e3f5e/doc-1c1fae12-7678-4e2e-90b6-bf66ffac55be/1771948352599-ujl8trnyuu-b3.png?q=85&fm=auto&auto=compress%2Cformat",
+  "navbar": {
+    "actions": {
+      "primary": {
+        "title": "Link 1",
+        "link": "https://teste.com.br"
+      },
+      "links": [
+        {
+          "title": "Link 2",
+          "link": "https://teste.com.br"
+        }
+      ]
+    }
+  }
 }
