@@ -13,9 +13,8 @@
     }
   },
   "navigation": {
-    "tabs": [
+    "products": [
       {
-        "tab": "Manual de Ajuda",
         "icon": "badge-help",
         "groups": [
           {
@@ -29,19 +28,25 @@
           },
           {
             "group": "Manual",
-            "pages": []
+            "pages": [
+              {
+                "title": "Fiado",
+                "path": "gestao-fiado"
+              }
+            ]
           }
-        ]
+        ],
+        "product": "BeeFood3"
       },
       {
-        "tab": "Suporte",
         "pages": [
           {
             "title": "Contato Suporte",
             "path": "contato-suporte",
             "icon": "badge-help"
           }
-        ]
+        ],
+        "product": "Suporte"
       }
     ]
   },
