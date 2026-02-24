@@ -37,16 +37,6 @@
           }
         ],
         "product": "BeeFood3"
-      },
-      {
-        "pages": [
-          {
-            "title": "Contato Suporte",
-            "path": "contato-suporte",
-            "icon": "badge-help"
-          }
-        ],
-        "product": "Suporte"
       }
     ]
   },
