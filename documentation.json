@@ -29,25 +29,7 @@
           },
           {
             "group": "Manual",
-            "pages": [
-              {
-                "group": "Estoque",
-                "pages": []
-              },
-              {
-                "group": "Presencial",
-                "pages": []
-              },
-              {
-                "group": "Fiado",
-                "pages": [
-                  {
-                    "title": "Migrar Dados",
-                    "path": "fiado"
-                  }
-                ]
-              }
-            ]
+            "pages": []
           }
         ]
       },
