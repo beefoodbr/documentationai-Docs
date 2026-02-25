@@ -18,8 +18,12 @@
         "icon": "badge-help",
         "groups": [
           {
-            "group": "Migração",
+            "group": "Início",
             "pages": [
+              {
+                "title": "Boas vindas",
+                "path": "boas-vindas"
+              },
               {
                 "title": "Como migrar para BeeFood3",
                 "path": "como-migrar-para-beefood3"
@@ -27,7 +31,11 @@
             ]
           },
           {
-            "group": "Manual",
+            "group": "Migração",
+            "pages": []
+          },
+          {
+            "group": "Gestão",
             "pages": [
               {
                 "title": "Estoque",
