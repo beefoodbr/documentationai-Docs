@@ -38,6 +38,23 @@
             "group": "Gestão",
             "pages": [
               {
+                "group": "Estoque",
+                "pages": [
+                  {
+                    "title": "Produtos e Complementos",
+                    "path": "ativar-estoque"
+                  },
+                  {
+                    "title": "Insumos",
+                    "path": "insumos"
+                  },
+                  {
+                    "title": "Bloquear estoque negativo",
+                    "path": "bloquear-estoque-negativo"
+                  }
+                ]
+              },
+              {
                 "title": "Estoque",
                 "path": "estoque"
               },
