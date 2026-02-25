@@ -28,11 +28,8 @@
                 "title": "Como migrar para BeeFood3",
                 "path": "como-migrar-para-beefood3"
               }
-            ]
-          },
-          {
-            "group": "Migração",
-            "pages": []
+            ],
+            "icon": "rocket-icon"
           },
           {
             "group": "Gestão",
@@ -52,15 +49,13 @@
                     "title": "Bloquear estoque negativo",
                     "path": "bloquear-estoque-negativo"
                   }
-                ]
-              },
-              {
-                "title": "Estoque",
-                "path": "estoque"
+                ],
+                "icon": "box"
               },
               {
                 "title": "Fiado",
-                "path": "gestao-fiado"
+                "path": "gestao-fiado",
+                "icon": "piggy-bank-icon"
               }
             ]
           }
