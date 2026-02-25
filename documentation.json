@@ -69,5 +69,6 @@
         }
       ]
     }
-  }
+  },
+  "initialRoute": "boas-vindas"
 }
