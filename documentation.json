@@ -71,15 +71,11 @@
                 ]
               },
               {
-                "group": "WhatsApp",
+                "group": "Mesas",
                 "pages": [
                   {
-                    "title": "Bot de WhatsApp",
-                    "path": "whatsapp"
-                  },
-                  {
-                    "title": "Boletim do WhatsApp",
-                    "path": "whatsapp-boletim"
+                    "title": "Pedido Mesas / Comandas",
+                    "path": "mesas"
                   }
                 ]
               },
@@ -98,6 +94,82 @@
                   {
                     "title": "Meu estoque",
                     "path": "meu-estoque"
+                  },
+                  {
+                    "title": "Estoque Simples - Produto e Complemento",
+                    "path": "estoque-produto-complemento"
+                  },
+                  {
+                    "title": "Estoque Simples - Insumo",
+                    "path": "estoque-insumo"
+                  },
+                  {
+                    "title": "Estoque - Gestão Avançada",
+                    "path": "estoque-gestao-avancada"
+                  }
+                ]
+              },
+              {
+                "group": "WhatsApp",
+                "pages": [
+                  {
+                    "title": "Bot de WhatsApp",
+                    "path": "whatsapp"
+                  },
+                  {
+                    "title": "Boletim do WhatsApp",
+                    "path": "whatsapp-boletim"
+                  }
+                ]
+              },
+              {
+                "group": "Parâmetros",
+                "pages": [
+                  {
+                    "title": "Código do Operador",
+                    "path": "parametros-codigo-operador"
+                  },
+                  {
+                    "title": "Senha Gerente",
+                    "path": "parametros-senha-gerente"
+                  }
+                ]
+              },
+              {
+                "group": "Impressão",
+                "pages": [
+                  {
+                    "title": "Cadastro de Impressoras e Configuração",
+                    "path": "impressao-cadastro-impressoras-configuracao"
+                  },
+                  {
+                    "title": "Configuração de Impressão",
+                    "path": "impressao-configuracao-de-impressao"
+                  },
+                  {
+                    "title": "Impressão da Cozinha Automática",
+                    "path": "impressao-cozinha-automatica"
+                  }
+                ]
+              },
+              {
+                "group": "Fiscal",
+                "pages": [
+                  {
+                    "title": "Configuração Fiscal (NF-e e NFC-e)",
+                    "path": "fiscal-configuracao"
+                  },
+                  {
+                    "title": "Edição de Impostos",
+                    "path": "edicao-fiscal"
+                  },
+                  {
+                    "title": "Emissão de NFC-e",
+                    "path": "nfce"
+                  },
+                  {
+                    "title": "Emissão de NF-e",
+                    "path": "nfe"
                   }
                 ]
               }
