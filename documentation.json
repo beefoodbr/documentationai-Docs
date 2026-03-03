@@ -32,30 +32,74 @@
             "icon": "rocket-icon"
           },
           {
-            "group": "Gestão",
+            "group": "Manual",
+            "icon": "clapperboard",
             "pages": [
+              {
+                "title": "Todos os vídeos",
+                "path": "videos"
+              },
+              {
+                "group": "Geral",
+                "pages": [
+                  {
+                    "title": "Como migrar os dados?",
+                    "path": "migrar-dados"
+                  }
+                ]
+              },
+              {
+                "group": "Cliente",
+                "pages": [
+                  {
+                    "title": "Gestão de fiado",
+                    "path": "fiado"
+                  }
+                ]
+              },
+              {
+                "group": "Delivery",
+                "pages": [
+                  {
+                    "title": "Pedidos delivery",
+                    "path": "delivery"
+                  },
+                  {
+                    "title": "Aceite automático de pedidos",
+                    "path": "aceite-automatico"
+                  }
+                ]
+              },
+              {
+                "group": "WhatsApp",
+                "pages": [
+                  {
+                    "title": "Bot de WhatsApp",
+                    "path": "whatsapp"
+                  },
+                  {
+                    "title": "Boletim do WhatsApp",
+                    "path": "whatsapp-boletim"
+                  }
+                ]
+              },
+              {
+                "group": "PDV",
+                "pages": [
+                  {
+                    "title": "Pedidos PDV",
+                    "path": "pdv"
+                  }
+                ]
+              },
               {
                 "group": "Estoque",
                 "pages": [
                   {
-                    "title": "Produtos e Complementos",
-                    "path": "ativar-estoque"
-                  },
-                  {
-                    "title": "Insumos",
-                    "path": "insumos"
-                  },
-                  {
-                    "title": "Bloquear estoque negativo",
-                    "path": "bloquear-estoque-negativo"
+                    "title": "Meu estoque",
+                    "path": "meu-estoque"
                   }
-                ],
-                "icon": "box"
-              },
-              {
-                "title": "Fiado",
-                "path": "gestao-fiado",
-                "icon": "piggy-bank-icon"
+                ]
               }
             ]
           }
