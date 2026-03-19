@@ -1070,13 +1070,7 @@ Os primeiros exemplos mais úteis para esse evento são:
 
 Se quiser começar com apenas uma para fins didáticos, a melhor escolha é `ecommerce.transaction_id`, porque ela representa diretamente o identificador da compra.
 
-<Image
-  src="https://blob-cdn.documentation.ai/org-daf9910e-bdcf-4cb1-ab83-4cd8623e3f5e/doc-1c1fae12-7678-4e2e-90b6-bf66ffac55be/1773961626754-7mlf03e583k-criacao-variavel-transaction-id.criacao-variavel-transaction-id"
-  width="1901"
-  height="951"
-  alt=""
-  caption="Configuração de uma Variável da Camada de Dados no Google Tag Manager, usando ecommerce.transaction_id para capturar o identificador único da compra enviada pelo Cardápio Digital."
-/>
+<Image src="https://blob-cdn.documentation.ai/org-daf9910e-bdcf-4cb1-ab83-4cd8623e3f5e/doc-1c1fae12-7678-4e2e-90b6-bf66ffac55be/1773961626754-7mlf03e583k-criacao-variavel-transaction-id.criacao-variavel-transaction-id" width="1901" height="951" alt="" caption="Configuração de uma Variável da Camada de Dados no Google Tag Manager, usando ecommerce.transaction_id para capturar o identificador único da compra enviada pelo Cardápio Digital." />
 
 #### Etapa 3 — Criar a tag de evento do GA4
 
@@ -1114,8 +1108,6 @@ Uma configuração inicial bastante útil pode incluir:
 
 Assim, quando o evento `purchase` ocorrer no Cardápio Digital, o GTM enviará essas informações para o GA4.
 
-
-
 <Image src="https://blob-cdn.documentation.ai/org-daf9910e-bdcf-4cb1-ab83-4cd8623e3f5e/doc-1c1fae12-7678-4e2e-90b6-bf66ffac55be/1773961910673-6p4g558ly94-criacao-tag.criacao-tag" width="1900" height="950" alt="" />
 
 #### Etapa 4 — Testar antes de publicar
@@ -1138,7 +1130,7 @@ No Google Tag Manager:
 
 Esse passo evita publicar configurações incompletas ou com parâmetros errados.
 
-<Image src="https://blob-cdn.documentation.ai/org-daf9910e-bdcf-4cb1-ab83-4cd8623e3f5e/doc-1c1fae12-7678-4e2e-90b6-bf66ffac55be/1773962295206-j5pjvpvzm4g-test-event-purchase.test-event-purchase" width="1899" height="949" alt="" caption="Modo Preview do Google Tag Manager exibindo o evento purchase no fluxo de depuração, com a tag GA4 - purchase disparada corretamente após a conclusão do pedido no Cardápio Digital." />
+<Image src="https://blob-cdn.documentation.ai/org-daf9910e-bdcf-4cb1-ab83-4cd8623e3f5e/doc-1c1fae12-7678-4e2e-90b6-bf66ffac55be/1773962295206-j5pjvpvzm4g-test-event-purchase.test-event-purchase" alt="" caption="Modo Preview do Google Tag Manager exibindo o evento purchase no fluxo de depuração, com a tag GA4 - purchase disparada corretamente após a conclusão do pedido no Cardápio Digital." style="width: 100%; height: 100%; border-radius: 12px;" />
 
 > **Importante:** mesmo com o evento disparando corretamente no modo Preview do Google Tag Manager, os dados podem levar de **24 a 48 horas** para aparecer de forma completa nos relatórios do Google Analytics 4. Para validação imediata, utilize o **Realtime** e, quando necessário, o **DebugView**.
 
