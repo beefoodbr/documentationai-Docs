@@ -172,6 +172,28 @@
                     "path": "nfe"
                   }
                 ]
+              },
+              {
+                "group": "Marketing Cardápío Digital",
+                "pages": [
+                  {
+                    "title": "Facebook Pixel",
+                    "path": "facebook-pixel"
+                  },
+                  {
+                    "group": "Google Tag Manager",
+                    "pages": [
+                      {
+                        "title": "Configurando Eventos",
+                        "path": "configurando-eventos"
+                      },
+                      {
+                        "title": "Criando Google Tag Manager",
+                        "path": "criando-google-tag-manager"
+                      }
+                    ]
+                  }
+                ]
               }
             ]
           }
