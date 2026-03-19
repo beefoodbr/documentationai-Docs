@@ -1,0 +1,1306 @@
+---
+title: Como rastrear eventos do Cardápio Digital com Google Tag Manager na BeeFood
+---
+Se você chegou até aqui, é porque já quer dar um passo além do básico: não apenas instalar o Google Tag Manager no seu Cardápio Digital, mas entender **o que a BeeFood envia**, **como isso funciona** e **o que você pode medir a partir disso**.
+
+Este artigo foi criado para explicar, de forma clara e profissional, todo o fluxo de eventos que o Cardápio Digital fornece para o **Google Tag Manager (GTM)**, permitindo que você configure tags, acionadores e integrações com ferramentas como **Google Analytics 4**.
+
+## Sumário
+
+- [Antes de começar](#antes-de-comecar)
+
+- [O objetivo deste artigo](#o-objetivo-deste-artigo)
+
+- [Visão geral do funcionamento](#visao-geral-do-funcionamento)
+
+- [O que o Cardápio Digital entrega para o GTM](#o-que-o-cardapio-digital-entrega-para-o-gtm)
+
+- [Fluxo completo da jornada do cliente](#fluxo-completo-da-jornada-do-cliente)
+
+  - [1. Entrada no Cardápio Digital](#1-entrada-no-cardapio-digital)
+
+  - [2. Navegação entre categorias e produtos](#2-navegacao-entre-categorias-e-produtos)
+
+  - [3. Interação com o carrinho](#3-interacao-com-o-carrinho)
+
+  - [4. Início do checkout](#4-inicio-do-checkout)
+
+  - [5. Tipo de pedido e entrega](#5-tipo-de-pedido-e-entrega)
+
+  - [6. Pagamento e cupom](#6-pagamento-e-cupom)
+
+  - [7. Conversão ou falha](#7-conversao-ou-falha)
+
+- [Tabela resumida dos eventos disponíveis](#tabela-resumida-dos-eventos-disponiveis)
+
+- [O que pode ser capturado junto com os eventos](#o-que-pode-ser-capturado-junto-com-os-eventos)
+
+- [Pontos que ainda podem ser complementados depois](#pontos-que-ainda-podem-ser-complementados-depois)
+
+- [Como usar isso no Google Tag Manager](#como-usar-isso-no-google-tag-manager)
+
+- [Exemplo prático de configuração no GTM](#exemplo-pratico-de-configuracao-no-gtm)
+
+- [Estrutura recomendada para começar](#estrutura-recomendada-para-comecar)
+
+- [Boas práticas](#boas-praticas)
+
+- [O que este artigo complementa em relação ao tutorial inicial](#o-que-este-artigo-complementa-em-relacao-ao-tutorial-inicial)
+
+- [Conclusão](#conclusao)
+
+- [Próximos passos recomendados](#proximos-passos-recomendados)
+
+- [Artigo relacionado](#artigo-relacionado)
+
+## Antes de começar
+
+Antes de seguir com esta etapa, é indispensável que o seu **Google Tag Manager já esteja criado e configurado no Cardápio Digital**.
+
+Se você ainda não fez essa configuração, acesse primeiro o tutorial oficial da BeeFood:
+
+<Card title="Como criar um Google Tag Manager e Google Analytics para seu Cardápio Digital" href="https://ajuda.beefood.com.br/baseconhecimento/como-criar-um-google-tag-manager-e-google-analytics-para-seu-cardapio-digital/" horizontal="false" target="_self">
+  Através do Google Tag Manager é possível adicionar scripts e aplicativos ao seu Cardápio Digital, além de integrar o Google Analytics para acompanhar melhor a jornada do cliente.
+</Card>
+
+Depois de concluir essa etapa, volte para este artigo para entender o fluxo de eventos e como utilizá-lo no seu GTM.
+
+> **Importante:** este artigo parte do princípio de que o seu GTM já está ativo no Cardápio Digital.
+
+---
+
+## O objetivo deste artigo
+
+Aqui você vai entender:
+
+- como o Cardápio Digital da BeeFood disponibiliza eventos para o Google Tag Manager;
+
+- em quais momentos esses eventos são disparados;
+
+- quais dados podem ser capturados em cada etapa da jornada do cliente;
+
+- como usar essas informações para criar tags, acompanhar conversões e estruturar relatórios melhores.
+
+Em outras palavras: este artigo mostra a **camada de rastreamento** que o Cardápio Digital já oferece, para que você saiba exatamente o que pode aproveitar no seu GTM.
+
+---
+
+## Visão geral do funcionamento
+
+De forma simples, o fluxo funciona assim:
+
+1. o Cardápio Digital carrega os dados do estabelecimento;
+
+2. se houver um **Google Tag Manager válido** cadastrado, o container é inicializado;
+
+3. conforme o cliente navega no cardápio, abre produtos, adiciona itens, escolhe entrega, aplica cupom e finaliza o pedido, o sistema envia eventos para o `dataLayer`;
+
+4. o Google Tag Manager lê esses eventos;
+
+5. suas tags configuradas no GTM podem então enviar esses dados para o Google Analytics 4 e outras ferramentas compatíveis.
+
+### Em termos técnicos
+
+O Cardápio Digital utiliza o `dataLayer` do Google Tag Manager para empurrar eventos estruturados de navegação e conversão. Esses eventos podem conter, conforme o caso:
+
+- nome do evento;
+
+- dados de ecommerce;
+
+- tipo de pedido;
+
+- forma de pagamento;
+
+- cupom aplicado;
+
+- identificador da transação;
+
+- dados complementares do usuário em eventos de conversão, quando disponíveis.
+
+Isso permite uma estrutura de rastreamento mais confiável, organizada e compatível com o fluxo moderno de ecommerce no GA4.
+
+---
+
+## O que o Cardápio Digital entrega para o GTM
+
+A BeeFood cobre o funil principal de navegação e compra do Cardápio Digital, desde a entrada no menu até a conclusão do pedido.
+
+Os eventos enviados permitem acompanhar:
+
+- visualização do cardápio;
+
+- seleção de unidade;
+
+- visualização de listas de produtos;
+
+- visualização de produto;
+
+- visualização e seleção de promoções;
+
+- adição e remoção de itens do carrinho;
+
+- abertura do carrinho;
+
+- início do checkout;
+
+- visualização das etapas do checkout;
+
+- seleção do tipo de pedido;
+
+- envio de informações de entrega;
+
+- seleção da forma de pagamento;
+
+- aplicação de cupom;
+
+- compra concluída;
+
+- falha no pagamento.
+
+---
+
+## Fluxo completo da jornada do cliente
+
+## 1. Entrada no Cardápio Digital
+
+Quando o cliente acessa o Cardápio Digital e o carregamento é concluído, a BeeFood pode enviar eventos relacionados ao início da navegação.
+
+### Eventos dessa etapa
+
+#### `menu_view`
+
+Indica que o cliente visualizou o cardápio.
+
+**Uso prático:**\
+Pode ser usado para medir acessos reais ao menu e criar públicos de visitantes.
+
+#### `restaurant_unit`
+
+Indica qual unidade ou restaurante foi selecionado no contexto daquele cardápio.
+
+**Uso prático:**\
+É útil para operações com mais de uma unidade ou para relatórios segmentados por loja.
+
+#### `menu_name`
+
+Indica qual **cardápio/experiência de menu** está sendo visualizado naquele momento no Cardápio Digital.
+
+**Uso prático:**\
+Ajuda a diferenciar experiências, menus ou contextos diferentes quando houver mais de uma estrutura de cardápio ativa.
+
+Abaixo, um exemplo simples de `menu_view`. Nesse caso, o evento mostra que o cardápio foi carregado e já informa a unidade e o nome do menu utilizado no contexto da navegação:
+
+```json
+{
+  "event": "menu_view",
+  "restaurant_unit": "BeeFood - Cardápio Digital",
+  "menu_name": "teste"
+}
+```
+
+> **Observação:** no fluxo atual, `restaurant_unit` pode aparecer como evento complementar dessa entrada no cardápio, mas neste artigo ainda não há um JSON separado capturado para ele. Vale incluir depois, se você quiser documentar visualmente todos os eventos de forma individual.
+
+---
+
+## 2. Navegação entre categorias e produtos
+
+À medida que o cliente percorre o cardápio e interage com os setores e produtos, novos eventos são enviados.
+
+### Eventos dessa etapa
+
+#### `view_item_list`
+
+É disparado quando o cliente visualiza uma lista de produtos, como um setor ou categoria do cardápio.
+
+**Exemplos de uso:**
+
+- medir quais categorias recebem mais atenção;
+
+- identificar se os clientes chegam até categorias mais profundas;
+
+- montar públicos por interesse em certos grupos de produtos.
+
+Abaixo, um exemplo de como o evento `view_item_list` pode aparecer no `dataLayer`. Nesse caso, ele representa a visualização de uma categoria do cardápio e os itens exibidos dentro dela:
+
+```json
+{
+  "event": "view_item_list",
+  "restaurant_unit": "BeeFood - Cardápio Digital",
+  "menu_name": "teste",
+  "ecommerce": {
+    "item_list_id": "164001",
+    "item_list_name": "Combos (Burger + Porção + Bebida)",
+    "items": [
+      {
+        "item_id": "2024823",
+        "item_name": "Combo Chicken Deluxe",
+        "item_category": "Combos (Burger + Porção + Bebida)",
+        "price": 29,
+        "quantity": 1
+      },
+      {
+        "item_id": "2024832",
+        "item_name": "Combo Crispy Bbq",
+        "item_category": "Combos (Burger + Porção + Bebida)",
+        "price": 37,
+        "quantity": 1
+      },
+      {
+        "item_id": "2024811",
+        "item_name": "Combo One Burger",
+        "item_category": "Combos (Burger + Porção + Bebida)",
+        "price": 28,
+        "quantity": 1
+      }
+    ]
+  }
+}
+```
+
+#### `view_promotion`
+
+É disparado quando o cliente abre o modal ou área de promoções.
+
+**Exemplos de uso:**
+
+- medir interesse em campanhas promocionais;
+
+- acompanhar o alcance de ofertas dentro do próprio cardápio.
+
+No exemplo abaixo, o evento `view_promotion` mostra os produtos promocionais exibidos ao cliente no momento em que a área de promoções foi aberta:
+
+```json
+{
+  "event": "view_promotion",
+  "restaurant_unit": "BeeFood - Cardápio Digital",
+  "menu_name": "teste",
+  "ecommerce": {
+    "items": [
+      {
+        "item_id": "2024769",
+        "item_name": "Combo One Cheddar",
+        "item_category": "Geral",
+        "price": 20,
+        "quantity": 1
+      },
+      {
+        "item_id": "2024786",
+        "item_name": "Combo One Classic",
+        "item_category": "Geral",
+        "price": 21,
+        "quantity": 1
+      },
+      {
+        "item_id": "2024823",
+        "item_name": "Combo Chicken Deluxe",
+        "item_category": "Combos (Burger + Porção + Bebida)",
+        "price": 19,
+        "quantity": 1
+      }
+    ]
+  }
+}
+```
+
+#### `select_promotion`
+
+É disparado quando o cliente clica em um item que veio da lista de promoções.
+
+**Exemplos de uso:**
+
+- entender quais promoções geram mais interesse;
+
+- comparar visualização de promoção com clique real.
+
+Abaixo, um exemplo do evento `select_promotion`. Nesse caso, o cliente visualizou a promoção e clicou especificamente em um dos itens ofertados:
+
+```json
+{
+  "event": "select_promotion",
+  "restaurant_unit": "BeeFood - Cardápio Digital",
+  "menu_name": "teste",
+  "ecommerce": {
+    "items": [
+      {
+        "item_id": "2024769",
+        "item_name": "Combo One Cheddar",
+        "item_category": "Geral",
+        "price": 20,
+        "quantity": 1
+      }
+    ]
+  }
+}
+```
+
+#### `view_item`
+
+É disparado quando o cliente abre a visualização de um produto.
+
+**Exemplos de uso:**
+
+- medir quais produtos despertam mais interesse;
+
+- comparar produtos visualizados vs. adicionados ao carrinho.
+
+No exemplo abaixo, o evento `view_item` representa a abertura do produto para visualização detalhada. Aqui, o foco já não está mais na lista ou na promoção em si, mas no item individual que o cliente abriu:
+
+```json
+{
+  "event": "view_item",
+  "restaurant_unit": "BeeFood - Cardápio Digital",
+  "menu_name": "teste",
+  "ecommerce": {
+    "items": [
+      {
+        "item_id": "2024769",
+        "item_name": "Combo One Cheddar",
+        "item_category": "Geral",
+        "price": 20,
+        "quantity": 1
+      }
+    ]
+  }
+}
+```
+
+---
+
+## 3. Interação com o carrinho
+
+Quando o cliente começa a montar o pedido, entram os eventos ligados ao carrinho. Essa etapa já sinaliza uma intenção de compra mais concreta, porque o cliente deixa de apenas navegar e passa a montar um pedido.
+
+### Eventos dessa etapa
+
+#### `add_to_cart`
+
+É disparado quando um item é adicionado ao carrinho.
+
+**Normalmente pode incluir:**
+
+- produto;
+
+- valor;
+
+- quantidade;
+
+- dados de ecommerce.
+
+**Exemplos de uso:**
+
+- medir quais produtos geram mais intenção de compra;
+
+- comparar produtos visualizados com produtos adicionados;
+
+- avaliar se promoções, combos e destaques estão convertendo em ação.
+
+No exemplo abaixo, o evento `add_to_cart` mostra que um item foi incluído no carrinho, junto com os dados principais de ecommerce, como valor, moeda e item adicionado:
+
+```json
+{
+  "event": "add_to_cart",
+  "restaurant_unit": "BeeFood - Cardápio Digital",
+  "menu_name": "teste",
+  "ecommerce": {
+    "currency": "BRL",
+    "value": 20,
+    "items": [
+      {
+        "item_id": "2024769",
+        "item_name": "Combo One Cheddar",
+        "item_category": "Geral",
+        "price": 20,
+        "quantity": 1
+      }
+    ]
+  }
+}
+```
+
+#### `remove_from_cart`
+
+É disparado quando um item é removido do carrinho.
+
+**Exemplos de uso:**
+
+- identificar desistência de itens específicos;
+
+- entender quais produtos têm maior taxa de remoção;
+
+- comparar adição e remoção de itens ao longo da jornada.
+
+> **Aviso interno:** hoje este artigo ainda não possui um JSON real separado para `remove_from_cart`. Se vocês capturarem esse payload no Preview do GTM, vale incluir aqui depois para fechar visualmente a documentação.
+
+#### `view_cart`
+
+É disparado quando o cliente abre o carrinho.
+
+**Exemplos de uso:**
+
+- analisar intenção de compra;
+
+- ver abandono entre produto visualizado e carrinho aberto;
+
+- acompanhar taxa de progressão do menu para o carrinho.
+
+Abaixo, um exemplo de `view_cart`. Ele representa a abertura do carrinho com os itens atualmente presentes no pedido naquele momento:
+
+```json
+{
+  "event": "view_cart",
+  "restaurant_unit": "BeeFood - Cardápio Digital",
+  "menu_name": "teste",
+  "ecommerce": {
+    "currency": "BRL",
+    "value": 35,
+    "items": [
+      {
+        "item_id": "2024769",
+        "item_name": "Combo One Cheddar",
+        "item_category": "Geral",
+        "price": 20,
+        "quantity": 1
+      }
+    ]
+  }
+}
+```
+
+> **Aviso interno:** se este JSON ainda não tiver sido capturado de forma real no ambiente de Preview, vale substituir depois por um exemplo diretamente extraído do fluxo atual.
+
+---
+
+## 4. Início do checkout
+
+Quando o cliente deixa a etapa inicial do carrinho e segue no processo de pedido, a BeeFood envia eventos ligados ao checkout.
+
+Essa parte do funil é uma das mais importantes, porque mostra onde o cliente realmente começa o processo de conversão e em qual etapa ele continua ou abandona.
+
+### Eventos dessa etapa
+
+#### `begin_checkout`
+
+Marca o início do checkout.
+
+Esse é um dos eventos mais importantes do funil, porque separa quem apenas navegou de quem realmente começou o processo de compra.
+
+**Exemplos de uso:**
+
+- identificar quantos clientes saem do carrinho e entram de fato no checkout;
+
+- comparar carrinhos abertos com checkouts iniciados;
+
+- usar como base para públicos de remarketing e análise de abandono.
+
+Abaixo, o evento `begin_checkout` mostra o início do processo de checkout, incluindo os dados do carrinho e, quando disponíveis, os dados complementares do usuário:
+
+```json
+{
+  "event": "begin_checkout",
+  "restaurant_unit": "BeeFood - Cardápio Digital",
+  "menu_name": "teste",
+  "ecommerce": {
+    "currency": "BRL",
+    "value": 35,
+    "items": [
+      {
+        "item_id": "2024769",
+        "item_name": "Combo One Cheddar",
+        "item_category": "Geral",
+        "price": 20,
+        "quantity": 1
+      }
+    ]
+  },
+  "user_data": {
+    "first_name": "Roberto Barretos",
+    "email": "roberto.barretos26@gmail.com",
+    "address": {
+      "street": "Rua XXXXXXXX XX XXXXXXXX",
+      "city": "Guarujá",
+      "region": "SP",
+      "postal_code": "11472101",
+      "country": "BR"
+    }
+  }
+}
+```
+
+#### `checkout_step_view`
+
+Indica a visualização de uma etapa do checkout.
+
+As etapas podem representar, por exemplo:
+
+- carrinho;
+
+- endereço;
+
+- entrega;
+
+- pagamento;
+
+- confirmação.
+
+**Exemplos de uso:**
+
+- identificar em qual etapa os clientes mais abandonam;
+
+- construir um funil detalhado no GA4;
+
+- entender gargalos do checkout.
+
+No exemplo abaixo, o evento `checkout_step_view` mostra a etapa `shipping`, indicando que o cliente chegou ao momento de definir a logística do pedido:
+
+```json
+{
+  "event": "checkout_step_view",
+  "restaurant_unit": "BeeFood - Cardápio Digital",
+  "menu_name": "teste",
+  "ecommerce": {
+    "currency": "BRL",
+    "value": 35,
+    "items": [
+      {
+        "item_id": "2024769",
+        "item_name": "Combo One Cheddar",
+        "item_category": "Geral",
+        "price": 20,
+        "quantity": 1
+      }
+    ]
+  },
+  "user_data": {
+    "first_name": "Roberto Barretos",
+    "email": "roberto.barretos26@gmail.com",
+    "address": {
+      "street": "Av. Cruzeiro do Sul, Balneario Praia do Pernambuco 1334",
+      "city": "Guarujá",
+      "region": "SP",
+      "postal_code": "11444050",
+      "country": "BR"
+    }
+  },
+  "checkout_step": "shipping"
+}
+```
+
+---
+
+## 5. Tipo de pedido e entrega
+
+Quando o cliente escolhe entre entrega, retirada ou outro tipo de atendimento disponível, o sistema também pode enviar esse contexto ao GTM.
+
+Essa etapa é valiosa porque ajuda a entender não apenas se o cliente está avançando, mas também **como ele pretende receber o pedido**.
+
+### Eventos dessa etapa
+
+#### `order_type_selected`
+
+Indica qual tipo de pedido foi escolhido.
+
+**Exemplos:**
+
+- entrega;
+
+- retirada;
+
+- presencial, quando aplicável.
+
+**Exemplos de uso:**
+
+- entender a preferência logística do cliente;
+
+- comparar comportamento e conversão entre entrega e retirada;
+
+- avaliar o impacto do frete ou da disponibilidade na decisão final.
+
+No exemplo abaixo, o evento `order_type_selected` mostra a seleção do tipo de pedido como retirada (`pickup`):
+
+```json
+{
+  "event": "order_type_selected",
+  "restaurant_unit": "BeeFood - Cardápio Digital",
+  "menu_name": "teste",
+  "ecommerce": {
+    "currency": "BRL",
+    "value": 35,
+    "items": [
+      {
+        "item_id": "2024769",
+        "item_name": "Combo One Cheddar",
+        "item_category": "Geral",
+        "price": 20,
+        "quantity": 1
+      }
+    ]
+  },
+  "user_data": {
+    "first_name": "Roberto Barretos",
+    "email": "roberto.barretos26@gmail.com",
+    "address": {
+      "street": "Av. Cruzeiro do Sul, Balneario Praia do Pernambuco 1334",
+      "city": "Guarujá",
+      "region": "SP",
+      "postal_code": "11444050",
+      "country": "BR"
+    }
+  },
+  "checkout_step": "shipping",
+  "order_type": "pickup"
+}
+```
+
+#### `add_shipping_info`
+
+É disparado quando as informações de entrega ou retirada são confirmadas.
+
+Esse evento pode ser extremamente útil para entender:
+
+- quantos clientes chegam até a definição logística do pedido;
+
+- preferência entre entrega e retirada;
+
+- impacto de frete e endereço no avanço do checkout.
+
+Abaixo, um exemplo do evento `add_shipping_info`. Aqui, além do tipo do pedido, também aparece o `shipping_tier`, que ajuda a identificar o formato logístico adotado:
+
+```json
+{
+  "event": "add_shipping_info",
+  "restaurant_unit": "BeeFood - Cardápio Digital",
+  "menu_name": "teste",
+  "ecommerce": {
+    "currency": "BRL",
+    "value": 35,
+    "items": [
+      {
+        "item_id": "2024769",
+        "item_name": "Combo One Cheddar",
+        "item_category": "Geral",
+        "price": 20,
+        "quantity": 1
+      }
+    ]
+  },
+  "user_data": {
+    "first_name": "Roberto Barretos",
+    "email": "roberto.barretos26@gmail.com",
+    "address": {
+      "street": "Av. Cruzeiro do Sul, Balneario Praia do Pernambuco 1334",
+      "city": "Guarujá",
+      "region": "SP",
+      "postal_code": "11444050",
+      "country": "BR"
+    }
+  },
+  "checkout_step": "shipping",
+  "order_type": "pickup",
+  "shipping_tier": "pickup"
+}
+```
+
+---
+
+## 6. Pagamento e cupom
+
+Na etapa final do processo, o cliente informa a forma de pagamento e pode aplicar benefícios promocionais.
+
+Essa parte do fluxo ajuda a medir tanto a intenção de fechamento quanto o impacto de incentivos comerciais sobre a conversão.
+
+### Eventos dessa etapa
+
+#### `add_payment_info`
+
+É disparado quando a forma de pagamento é selecionada ou confirmada.
+
+**Pode representar formas como:**
+
+- dinheiro;
+
+- Pix;
+
+- cartão de crédito;
+
+- cartão de débito;
+
+- outras modalidades suportadas.
+
+**Exemplos de uso:**
+
+- descobrir o método de pagamento mais usado;
+
+- avaliar se uma forma de pagamento gera mais abandono;
+
+- segmentar campanhas futuras.
+
+No exemplo abaixo, o evento `add_payment_info` mostra uma seleção de pagamento por cartão de crédito, já no passo de pagamento do checkout:
+
+```json
+{
+  "event": "add_payment_info",
+  "restaurant_unit": "BeeFood - Cardápio Digital",
+  "menu_name": "teste",
+  "ecommerce": {
+    "currency": "BRL",
+    "value": 31.5,
+    "items": [
+      {
+        "item_id": "2024769",
+        "item_name": "Combo One Cheddar",
+        "item_category": "Geral",
+        "price": 20,
+        "quantity": 1
+      }
+    ]
+  },
+  "coupon": "DESCONTO10",
+  "discount_value": 10,
+  "order_type": "pickup",
+  "user_data": {
+    "first_name": "Roberto Barretos",
+    "email": "roberto.barretos26@gmail.com",
+    "address": {
+      "street": "Rua Luiz Góes, 123, Conceiçãozinha",
+      "city": "Guarujá",
+      "region": "SP",
+      "postal_code": "11472040",
+      "country": "BR"
+    }
+  },
+  "checkout_step": "payment",
+  "shipping_tier": "pickup",
+  "payment_type": "credit_card"
+}
+```
+
+#### `coupon_applied`
+
+É disparado quando um cupom é aplicado com sucesso.
+
+**Exemplos de uso:**
+
+- medir uso de campanhas promocionais;
+
+- comparar taxa de conversão com e sem cupom;
+
+- avaliar impacto de desconto na receita.
+
+Abaixo, um exemplo de `coupon_applied`, mostrando um cupom aplicado durante o processo de compra:
+
+```json
+{
+  "event": "coupon_applied",
+  "restaurant_unit": "BeeFood - Cardápio Digital",
+  "menu_name": "teste",
+  "ecommerce": {
+    "currency": "BRL",
+    "value": 35,
+    "items": [
+      {
+        "item_id": "2024769",
+        "item_name": "Combo One Cheddar",
+        "item_category": "Geral",
+        "price": 20,
+        "quantity": 1
+      }
+    ]
+  },
+  "coupon": "DESCONTO10",
+  "discount_value": 10,
+  "order_type": "delivery"
+}
+```
+
+---
+
+## 7. Conversão ou falha
+
+No fechamento do pedido, o Cardápio Digital informa ao GTM se a compra foi concluída com sucesso ou se houve falha.
+
+Essa é a etapa mais sensível do funil, porque separa intenção de resultado real.
+
+### Eventos dessa etapa
+
+#### `purchase`
+
+É o evento de compra concluída.
+
+Este é o principal evento de conversão do funil.
+
+Ele pode incluir informações como:
+
+- identificador da transação;
+
+- valor da compra;
+
+- itens do pedido;
+
+- frete;
+
+- desconto;
+
+- cupom aplicado.
+
+**Uso prático:**\
+É o evento ideal para configurar conversões no Google Analytics 4 e acompanhar vendas reais.
+
+Abaixo, um exemplo corrigido de `purchase`, representando uma compra concluída com sucesso:
+
+```json
+{
+  "event": "purchase",
+  "restaurant_unit": "BeeFood - Cardápio Digital",
+  "menu_name": "teste",
+  "ecommerce": {
+    "transaction_id": "47997916",
+    "currency": "BRL",
+    "value": 31.5,
+    "items": [
+      {
+        "item_id": "2024769",
+        "item_name": "Combo One Cheddar",
+        "item_category": "Geral",
+        "price": 20,
+        "quantity": 1
+      }
+    ],
+    "coupon": "DESCONTO10"
+  },
+  "coupon": "DESCONTO10",
+  "discount_value": 10,
+  "order_type": "pickup",
+  "user_data": {
+    "first_name": "Roberto Barretos",
+    "email": "roberto.barretos26@gmail.com",
+    "address": {
+      "street": "Rua Luiz Góes, 123, Conceiçãozinha",
+      "city": "Guarujá",
+      "region": "SP",
+      "postal_code": "11472040",
+      "country": "BR"
+    }
+  },
+  "checkout_step": "confirmation",
+  "shipping_tier": "pickup",
+  "payment_type": "debit_card"
+}
+```
+
+> **Aviso importante:** no exemplo anterior que você tinha, o evento `purchase` estava com `failure_reason`. Isso não faz sentido para compra concluída. Esse campo deve ficar apenas no evento `payment_failed`.
+
+#### `payment_failed`
+
+É disparado quando ocorre falha no pagamento ou quando o pedido não é concluído com sucesso.
+
+**Uso prático:**
+
+- identificar problemas na etapa final;
+
+- monitorar falhas por meio de pagamento;
+
+- entender perdas de conversão.
+
+No exemplo abaixo, o evento `payment_failed` representa uma falha de autorização no pagamento por cartão:
+
+```json
+{
+  "event": "payment_failed",
+  "restaurant_unit": "BeeFood - Cardápio Digital",
+  "menu_name": "teste",
+  "ecommerce": {
+    "currency": "BRL",
+    "value": 31.5,
+    "items": [
+      {
+        "item_id": "2024769",
+        "item_name": "Combo One Cheddar",
+        "item_category": "Geral",
+        "price": 20,
+        "quantity": 1
+      }
+    ]
+  },
+  "coupon": "DESCONTO10",
+  "discount_value": 10,
+  "order_type": "pickup",
+  "user_data": {
+    "first_name": "Roberto Barretos",
+    "email": "roberto.barretos26@gmail.com",
+    "address": {
+      "street": "Rua Luiz Góes, 123, Conceiçãozinha",
+      "city": "Guarujá",
+      "region": "SP",
+      "postal_code": "11472040",
+      "country": "BR"
+    }
+  },
+  "checkout_step": "payment",
+  "shipping_tier": "pickup",
+  "payment_type": "unknown",
+  "failure_reason": "card_authorization_failed"
+}
+```
+
+---
+
+## Tabela resumida dos eventos disponíveis
+
+| Evento                | O que representa                            |
+| --------------------- | ------------------------------------------- |
+| `menu_view`           | Visualização do cardápio                    |
+| `restaurant_unit`     | Seleção da unidade                          |
+| `view_item_list`      | Visualização de lista/categoria de produtos |
+| `view_item`           | Visualização de produto                     |
+| `view_promotion`      | Visualização de promoções                   |
+| `select_promotion`    | Clique em item promocional                  |
+| `add_to_cart`         | Adição de item ao carrinho                  |
+| `remove_from_cart`    | Remoção de item do carrinho                 |
+| `view_cart`           | Abertura do carrinho                        |
+| `begin_checkout`      | Início do checkout                          |
+| `checkout_step_view`  | Visualização de etapa do checkout           |
+| `order_type_selected` | Seleção do tipo de pedido                   |
+| `add_shipping_info`   | Confirmação de entrega/retirada             |
+| `add_payment_info`    | Seleção da forma de pagamento               |
+| `coupon_applied`      | Aplicação de cupom                          |
+| `purchase`            | Compra concluída                            |
+| `payment_failed`      | Falha no pagamento ou finalização           |
+
+---
+
+## O que pode ser capturado junto com os eventos
+
+Dependendo da etapa, os eventos podem carregar informações complementares, como:
+
+- itens do pedido;
+
+- valor total;
+
+- quantidade;
+
+- categoria do produto;
+
+- tipo de pedido;
+
+- forma de pagamento;
+
+- cupom;
+
+- frete;
+
+- identificador da transação.
+
+Em eventos de conversão, quando os dados estiverem disponíveis, o fluxo também pode enviar dados complementares do usuário para uso compatível com medições avançadas.
+
+---
+
+## Pontos que ainda podem ser complementados depois
+
+Para fechar a documentação com cobertura visual completa de todos os eventos da tabela, estes pontos ainda podem receber exemplos reais do Preview do GTM quando vocês quiserem enriquecer o artigo:
+
+- `restaurant_unit`
+
+- `remove_from_cart`
+
+E, caso prefiram trabalhar apenas com payloads capturados diretamente do ambiente, também vale revisar depois estes exemplos hoje documentados como payloads representativos ou já simplificados para leitura:
+
+- `menu_view`
+
+- `view_cart`
+
+---
+
+## Como usar isso no Google Tag Manager
+
+Depois que você entende os eventos disponíveis, o próximo passo é criar tags e acionadores dentro do GTM para aproveitar essas informações.
+
+Uma estrutura recomendada é:
+
+### 1. Criar um acionador por evento relevante
+
+Exemplo:
+
+- acionador para `begin_checkout`;
+
+- acionador para `add_payment_info`;
+
+- acionador para `purchase`.
+
+### 2. Criar variáveis da camada de dados quando necessário
+
+Exemplo:
+
+- valor da compra;
+
+- `transaction_id`;
+
+- `payment_type`;
+
+- `order_type`;
+
+- `coupon`.
+
+### 3. Criar tags para envio ao GA4
+
+Exemplo:
+
+- tag de evento GA4 para `purchase`;
+
+- tag de evento GA4 para `add_to_cart`;
+
+- tag de evento GA4 para `begin_checkout`.
+
+---
+
+## Exemplo prático de configuração no GTM
+
+Depois de entender os eventos que o Cardápio Digital envia, o próximo passo é transformar isso em rastreamento utilizável dentro do Google Tag Manager. A forma mais prática de começar é usando o evento `purchase`, porque ele representa a conversão final do pedido.
+
+A lógica do processo dentro do GTM costuma seguir esta ordem:
+
+1. criar um **acionador** para escutar o evento;
+
+2. criar as **variáveis da camada de dados** para capturar os valores necessários;
+
+3. criar a **tag de evento do GA4** para enviar essas informações ao Google Analytics.
+
+### Exemplo: criar uma tag para compra concluída
+
+#### Etapa 1 — Criar o acionador do evento `purchase`
+
+No Google Tag Manager:
+
+1. acesse o container desejado;
+
+2. no menu lateral, clique em **Acionadores**;
+
+3. clique no botão **Novo**;
+
+4. clique em **Configuração do acionador**;
+
+5. escolha a opção **Evento Personalizado**;
+
+6. no campo **Nome do evento**, informe `purchase`;
+
+7. mantenha o acionamento para esse evento;
+
+8. salve.
+
+Esse acionador será responsável por escutar o momento em que o Cardápio Digital enviar o evento `purchase` ao `dataLayer`.
+
+<Image src="https://blob-cdn.documentation.ai/org-daf9910e-bdcf-4cb1-ab83-4cd8623e3f5e/doc-1c1fae12-7678-4e2e-90b6-bf66ffac55be/1773961327960-ck7xlxv9o7f-criacao-acionador-purchase.criacao-acionador-purchase?q=85&fm=auto&auto=compress%2Cformat" width="1900" height="952" alt="" caption="Configuração de um acionador do tipo Evento Personalizado no Google Tag Manager, com o nome do evento purchase, responsável por escutar o momento em que a compra é concluída no Cardápio Digital." />
+
+#### Etapa 2 — Criar as variáveis da camada de dados
+
+Com o acionador pronto, o passo seguinte é capturar os dados que vierem dentro do evento. Para isso, você deve criar variáveis da camada de dados.
+
+No Google Tag Manager:
+
+1. no menu lateral, clique em **Variáveis**;
+
+2. na seção de variáveis definidas pelo usuário, clique em **Nova**;
+
+3. clique em **Configuração da variável**;
+
+4. escolha **Variável da Camada de Dados**;
+
+5. no campo **Nome da variável da camada de dados**, informe o valor desejado.
+
+Os primeiros exemplos mais úteis para esse evento são:
+
+- `ecommerce.transaction_id`
+
+- `ecommerce.value`
+
+- `ecommerce.currency`
+
+- `ecommerce.coupon`
+
+Se quiser começar com apenas uma para fins didáticos, a melhor escolha é `ecommerce.transaction_id`, porque ela representa diretamente o identificador da compra.
+
+<Image src="https://blob-cdn.documentation.ai/org-daf9910e-bdcf-4cb1-ab83-4cd8623e3f5e/doc-1c1fae12-7678-4e2e-90b6-bf66ffac55be/1773961626754-7mlf03e583k-criacao-variavel-transaction-id.criacao-variavel-transaction-id?q=85&fm=auto&auto=compress%2Cformat" width="1901" height="951" alt="" caption="Configuração de uma Variável da Camada de Dados no Google Tag Manager, usando ecommerce.transaction_id para capturar o identificador único da compra enviada pelo Cardápio Digital." />
+
+#### Etapa 3 — Criar a tag de evento do GA4
+
+Depois de preparar o acionador e as variáveis, você pode criar a tag que enviará o evento ao Google Analytics 4.
+
+No Google Tag Manager:
+
+1. no menu lateral, clique em **Tags**;
+
+2. clique em **Nova**;
+
+3. clique em **Configuração da tag**;
+
+4. escolha **Google Analytics: evento do GA4**;
+
+5. selecione a sua tag de configuração do GA4;
+
+6. no campo **Nome do evento**, informe `purchase`;
+
+7. adicione os parâmetros que quiser enviar, utilizando as variáveis criadas anteriormente;
+
+8. associe ao acionador criado para `purchase`;
+
+9. salve.
+
+Uma configuração inicial bastante útil pode incluir:
+
+- `transaction_id`
+
+- `value`
+
+- `currency`
+
+- `coupon`
+
+Assim, quando o evento `purchase` ocorrer no Cardápio Digital, o GTM enviará essas informações para o GA4.
+
+
+
+<Image src="https://blob-cdn.documentation.ai/org-daf9910e-bdcf-4cb1-ab83-4cd8623e3f5e/doc-1c1fae12-7678-4e2e-90b6-bf66ffac55be/1773961910673-6p4g558ly94-criacao-tag.criacao-tag?q=85&fm=auto&auto=compress%2Cformat" width="1900" height="950" alt="" />
+
+#### Etapa 4 — Testar antes de publicar
+
+Antes de publicar qualquer alteração, o ideal é validar tudo no modo de pré-visualização.
+
+No Google Tag Manager:
+
+1. clique em **Visualizar**;
+
+2. abra o Cardápio Digital;
+
+3. simule uma jornada até a conclusão do pedido;
+
+4. confirme se o evento `purchase` aparece no fluxo;
+
+5. verifique se o acionador foi ativado;
+
+6. confirme se a tag do GA4 disparou corretamente.
+
+Esse passo evita publicar configurações incompletas ou com parâmetros errados.
+
+<Image src="https://blob-cdn.documentation.ai/org-daf9910e-bdcf-4cb1-ab83-4cd8623e3f5e/doc-1c1fae12-7678-4e2e-90b6-bf66ffac55be/1773962295206-j5pjvpvzm4g-test-event-purchase.test-event-purchase?q=85&fm=auto&auto=compress%2Cformat" width="1899" height="949" alt="" caption="Modo Preview do Google Tag Manager exibindo o evento purchase no fluxo de depuração, com a tag GA4 - purchase disparada corretamente após a conclusão do pedido no Cardápio Digital." />
+
+> **Importante:** mesmo com o evento disparando corretamente no modo Preview do Google Tag Manager, os dados podem levar de **24 a 48 horas** para aparecer de forma completa nos relatórios do Google Analytics 4. Para validação imediata, utilize o **Realtime** e, quando necessário, o **DebugView**.
+
+---
+
+## Estrutura recomendada para começar
+
+Se você quer uma configuração enxuta e eficiente, comece por estes eventos:
+
+### Essenciais para o funil
+
+- `view_item`
+
+- `add_to_cart`
+
+- `view_cart`
+
+- `begin_checkout`
+
+- `add_payment_info`
+
+- `purchase`
+
+### Complementares para análise mais rica
+
+- `view_item_list`
+
+- `view_promotion`
+
+- `select_promotion`
+
+- `order_type_selected`
+
+- `add_shipping_info`
+
+- `coupon_applied`
+
+- `payment_failed`
+
+Assim, você constrói primeiro o núcleo da conversão e depois aprofunda sua leitura do comportamento do cliente.
+
+---
+
+## Boas práticas
+
+- publique o container do GTM sempre que concluir alterações;
+
+- use o modo **Preview** antes de publicar;
+
+- valide se os eventos realmente aparecem no `dataLayer`;
+
+- nomeie suas tags e acionadores com clareza;
+
+- evite criar estruturas desnecessariamente complexas logo no início;
+
+- comece pelo funil principal e evolua com base em dados reais.
+
+---
+
+## O que este artigo complementa em relação ao tutorial inicial
+
+O tutorial inicial da BeeFood mostra como:
+
+- criar a conta no Google Tag Manager;
+
+- criar o Google Analytics;
+
+- conectar ambos;
+
+- cadastrar o GTM no Cardápio Digital.
+
+Este artigo entra em outra camada: ele explica **o que o Cardápio Digital já entrega para o seu GTM** e **como você pode transformar isso em rastreamento real de jornada e conversão**.
+
+Em resumo:
+
+- o artigo anterior ensina a **instalar**;
+
+- este artigo ensina a **usar de forma estratégica**.
+
+---
+
+## Conclusão
+
+O Cardápio Digital da BeeFood já fornece uma base sólida para rastreamento no Google Tag Manager, cobrindo as principais etapas da jornada do cliente, desde a entrada no menu até a compra concluída.
+
+Isso permite que você:
+
+- acompanhe o comportamento do cliente com mais precisão;
+
+- entenda onde há avanço ou abandono no funil;
+
+- configure conversões de forma mais profissional;
+
+- tome decisões com base em dados reais.
+
+Se o seu GTM já está configurado, este é o momento de transformar simples acessos em inteligência de negócio.
+
+---
+
+## Próximos passos recomendados
+
+1. confirme que o GTM já está configurado no Cardápio Digital;
+
+2. ative o modo Preview do Google Tag Manager;
+
+3. navegue no cardápio como um cliente real;
+
+4. observe quais eventos aparecem;
+
+5. crie suas primeiras tags usando os eventos principais do funil;
+
+6. publique e acompanhe os resultados no Google Analytics 4.
+
+---
+
+## Artigo relacionado
+
+Se você ainda não configurou o Google Tag Manager e o Google Analytics no seu Cardápio Digital, comece por este conteúdo da BeeFood:
+
+<Card title="Como criar um Google Tag Manager e Google Analytics para seu Cardápio Digital" href="https://ajuda.beefood.com.br/baseconhecimento/como-criar-um-google-tag-manager-e-google-analytics-para-seu-cardapio-digital/" horizontal="false" target="_self">
+  Tutorial oficial da BeeFood para criação do GTM, integração com Google Analytics e configuração inicial no Cardápio Digital.
+</Card>
+
