@@ -1040,7 +1040,7 @@ No Google Tag Manager:
 
 Esse acionador será responsável por escutar o momento em que o Cardápio Digital enviar o evento `purchase` ao `dataLayer`.
 
-<Image src="https://blob-cdn.documentation.ai/org-daf9910e-bdcf-4cb1-ab83-4cd8623e3f5e/doc-1c1fae12-7678-4e2e-90b6-bf66ffac55be/1773961327960-ck7xlxv9o7f-criacao-acionador-purchase.criacao-acionador-purchase" width="1900" height="952" alt="" caption="Configuração de um acionador do tipo Evento Personalizado no Google Tag Manager, com o nome do evento purchase, responsável por escutar o momento em que a compra é concluída no Cardápio Digital." />
+<Image src="https://versao.beefood-r2.work/imagens-manual/create-trigger.png" width="1900" height="952" alt="" caption="Configuração de um acionador do tipo Evento Personalizado no Google Tag Manager, com o nome do evento purchase, responsável por escutar o momento em que a compra é concluída no Cardápio Digital." />
 
 #### Etapa 2 — Criar as variáveis da camada de dados
 
@@ -1070,7 +1070,7 @@ Os primeiros exemplos mais úteis para esse evento são:
 
 Se quiser começar com apenas uma para fins didáticos, a melhor escolha é `ecommerce.transaction_id`, porque ela representa diretamente o identificador da compra.
 
-<Image src="https://beetech-imagens.s3.sa-east-1.amazonaws.com/Screenshot_2026-03-19_at_20.06.14.png" width="1901" height="951" alt="" caption="Configuração de uma Variável da Camada de Dados no Google Tag Manager, usando ecommerce.transaction_id para capturar o identificador único da compra enviada pelo Cardápio Digital." />
+<Image src="https://versao.beefood-r2.work/imagens-manual/create-variable.png" width="1901" height="951" alt="" caption="Configuração de uma Variável da Camada de Dados no Google Tag Manager, usando ecommerce.transaction_id para capturar o identificador único da compra enviada pelo Cardápio Digital." />
 
 #### Etapa 3 — Criar a tag de evento do GA4
 
@@ -1108,7 +1108,7 @@ Uma configuração inicial bastante útil pode incluir:
 
 Assim, quando o evento `purchase` ocorrer no Cardápio Digital, o GTM enviará essas informações para o GA4.
 
-<Image src="https://blob-cdn.documentation.ai/org-daf9910e-bdcf-4cb1-ab83-4cd8623e3f5e/doc-1c1fae12-7678-4e2e-90b6-bf66ffac55be/1773961910673-6p4g558ly94-criacao-tag.criacao-tag" width="1900" height="950" alt="" />
+<Image src="https://versao.beefood-r2.work/imagens-manual/create-event.png" width="1900" height="950" alt="" caption="Configuração de uma tag de evento do GA4 no Google Tag Manager, com o evento `purchase`, parâmetros como `transaction_id`, `value`, `currency` e `coupon`, e acionamento vinculado ao trigger `CE - purchase`." />
 
 #### Etapa 4 — Testar antes de publicar
 
@@ -1130,9 +1130,233 @@ No Google Tag Manager:
 
 Esse passo evita publicar configurações incompletas ou com parâmetros errados.
 
-<Image src="https://blob-cdn.documentation.ai/org-daf9910e-bdcf-4cb1-ab83-4cd8623e3f5e/doc-1c1fae12-7678-4e2e-90b6-bf66ffac55be/1773962295206-j5pjvpvzm4g-test-event-purchase.test-event-purchase" alt="" caption="Modo Preview do Google Tag Manager exibindo o evento purchase no fluxo de depuração, com a tag GA4 - purchase disparada corretamente após a conclusão do pedido no Cardápio Digital." style="width: 100%; height: 100%; border-radius: 12px;" />
+<Image src="https://versao.beefood-r2.work/imagens-manual/test-event-purchase.png" width="1899" height="949" alt="" caption="Modo Preview do Google Tag Manager exibindo o evento purchase no fluxo de depuração, com a tag GA4 - purchase disparada corretamente após a conclusão do pedido no Cardápio Digital." style="width: 100%; height: 100%; border-radius: 12px;" />
 
 > **Importante:** mesmo com o evento disparando corretamente no modo Preview do Google Tag Manager, os dados podem levar de **24 a 48 horas** para aparecer de forma completa nos relatórios do Google Analytics 4. Para validação imediata, utilize o **Realtime** e, quando necessário, o **DebugView**.
+
+---
+
+## Configuração recomendada das variáveis no GTM
+
+Depois de entender o exemplo com `purchase`, o ideal é já deixar no Google Tag Manager uma base pronta de variáveis da camada de dados para os principais eventos do Cardápio Digital.
+
+Essas variáveis facilitam a criação de tags futuras e evitam retrabalho conforme o rastreamento evolui.
+
+### Variáveis recomendadas
+
+Crie, sempre que fizer sentido para sua operação, variáveis como:
+
+- `ecommerce.transaction_id`
+
+- `ecommerce.value`
+
+- `ecommerce.currency`
+
+- `ecommerce.coupon`
+
+- `ecommerce.items`
+
+- `checkout_step`
+
+- `order_type`
+
+- `payment_type`
+
+- `shipping_tier`
+
+- `restaurant_unit`
+
+No Google Tag Manager:
+
+1. acesse **Variáveis**;
+
+2. clique em **Nova**;
+
+3. escolha **Variável da Camada de Dados**;
+
+4. informe o nome exato da variável desejada;
+
+5. salve;
+
+6. repita o processo para as demais.
+
+Essa estrutura deixa o container mais organizado e agiliza a configuração dos eventos principais do funil.
+
+<Image src="https://versao.beefood-r2.work/imagens-manual/variable-list.avif" width="1886" height="950" alt="" caption="Exemplo de organização das Variáveis da Camada de Dados no Google Tag Manager, com a listagem das principais variáveis do Cardápio Digital já configuradas, como `ecommerce.transaction_id`, `ecommerce.value`, `ecommerce.currency`, `ecommerce.items`, `checkout_step`, `order_type`, `payment_type`, `restaurant_unit` e `shipping_tier`.`" />
+
+---
+
+## Configuração recomendada dos acionadores no GTM
+
+Depois de criar as variáveis da camada de dados, o próximo passo é preparar os **acionadores** que escutarão cada evento enviado pelo Cardápio Digital.
+
+No Google Tag Manager, os acionadores são responsáveis por identificar o momento exato em que um evento acontece no `dataLayer`, permitindo que a tag correspondente do GA4 seja disparada corretamente.
+
+### Acionadores recomendados
+
+Crie, sempre que fizer sentido para sua operação, acionadores do tipo **Evento Personalizado** para eventos como:
+
+- `menu_view`
+
+- `view_item_list`
+
+- `view_promotion`
+
+- `select_promotion`
+
+- `view_item`
+
+- `add_to_cart`
+
+- `remove_from_cart`
+
+- `view_cart`
+
+- `begin_checkout`
+
+- `checkout_step_view`
+
+- `order_type_selected`
+
+- `add_shipping_info`
+
+- `add_payment_info`
+
+- `coupon_applied`
+
+- `purchase`
+
+- `payment_failed`
+
+No Google Tag Manager:
+
+1. acesse **Acionadores**;
+
+2. clique em **Novo**;
+
+3. escolha **Evento Personalizado**;
+
+4. no campo **Nome do evento**, informe exatamente o nome enviado pelo Cardápio Digital;
+
+5. salve;
+
+6. repita o processo para os demais eventos que quiser acompanhar.
+
+Essa estrutura deixa o container organizado e facilita a associação de cada evento com sua respectiva tag do GA4.
+
+<Image src="https://versao.beefood-r2.work/imagens-manual/trigger-list.avif" width="1887" height="949" alt="" caption="Exemplo de organização dos acionadores no Google Tag Manager, com os principais Eventos Personalizados do Cardápio Digital já configurados, como `menu_view`, `view_item`, `add_to_cart`, `begin_checkout`, `add_shipping_info`, `add_payment_info`, `purchase` e `payment_failed`.`" />
+
+## Configuração recomendada dos eventos no GTM
+
+Depois de preparar as variáveis, o próximo passo é configurar os principais eventos do Cardápio Digital dentro do Google Tag Manager.
+
+A recomendação é começar pelo núcleo do funil e, depois, expandir para os eventos complementares.
+
+### Eventos essenciais
+
+Os eventos mais importantes para começar são:
+
+- `view_item`
+
+- `add_to_cart`
+
+- `view_cart`
+
+- `begin_checkout`
+
+- `add_payment_info`
+
+- `purchase`
+
+### Eventos complementares
+
+Depois disso, você pode evoluir a configuração com eventos como:
+
+- `view_item_list`
+
+- `view_promotion`
+
+- `select_promotion`
+
+- `checkout_step_view`
+
+- `order_type_selected`
+
+- `add_shipping_info`
+
+- `coupon_applied`
+
+- `payment_failed`
+
+No Google Tag Manager, a lógica será sempre a mesma:
+
+1. criar o acionador do evento;
+
+2. associar as variáveis necessárias;
+
+3. criar a tag correspondente do GA4;
+
+4. validar no modo Preview.
+
+<Image src="https://versao.beefood-r2.work/imagens-manual/event-list.avif" width="1886" height="951" alt="" caption="Exemplo de organização das tags no Google Tag Manager, com as principais tags de evento do GA4 já configuradas para o Cardápio Digital, cada uma vinculada ao seu respectivo acionador, como `GA4 - add_to_cart`, `GA4 - begin_checkout`, `GA4 - purchase`, `GA4 - payment_failed` e demais eventos do funil.`" />
+
+---
+
+## Publicando a versão no Google Tag Manager
+
+Depois de validar os eventos no modo Preview, o próximo passo é publicar a versão do container.
+
+No Google Tag Manager:
+
+1. clique em **Enviar** no canto superior direito;
+
+2. revise as alterações feitas;
+
+3. defina, se quiser, um nome e uma descrição para a versão;
+
+4. clique em **Publicar**.
+
+Esse passo é indispensável para que as alterações passem a valer no ambiente real.
+
+<Image src="https://versao.beefood-r2.work/imagens-manual/publish-version.avif" width="1901" height="950" alt="" caption="Tela de publicação da versão no Google Tag Manager, onde é possível nomear a versão, descrever as alterações realizadas e publicar o container no ambiente Live para que as configurações entrem em produção." />
+
+---
+
+## Como verificar os dados no Google Analytics 4
+
+Depois de configurar e publicar os eventos no Google Tag Manager, o próximo passo é acompanhar como eles aparecem no Google Analytics 4.
+
+### Validação imediata
+
+Logo após os testes, você pode validar os dados em:
+
+- **Tempo real**
+
+- **DebugView**
+
+Essas áreas ajudam a confirmar se os eventos estão chegando corretamente.
+
+### Relatórios consolidados
+
+Para análise mais completa, o ideal é aguardar o processamento dos dados no Google Analytics 4.
+
+> **Importante:** os relatórios podem levar de **24 a 48 horas** para refletir os dados de forma mais completa.
+
+Depois desse período, você pode acompanhar os eventos em relatórios e explorações dentro do GA4 para entender melhor:
+
+- visualização de produtos;
+
+- adições ao carrinho;
+
+- início do checkout;
+
+- compras concluídas;
+
+- falhas no processo de pagamento.
+
+Se sua propriedade já tiver recebido dados, vale mostrar ao leitor um exemplo visual real do relatório.
+
+<Image src="https://versao.beefood-r2.work/imagens-manual/report-resume.avif" width="1901" height="888" alt="" caption="Exemplo de visualização no Google Analytics 4 após a publicação das configurações, mostrando o Resumo dos relatórios com métricas como usuários ativos, tempo médio de engajamento, contagem de eventos e desempenho das principais páginas e telas do Cardápio Digital." />
 
 ---
 
