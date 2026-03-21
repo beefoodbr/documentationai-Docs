@@ -184,12 +184,12 @@
                     "group": "Google Tag Manager",
                     "pages": [
                       {
-                        "title": "Configurando Eventos",
-                        "path": "configurando-eventos"
-                      },
-                      {
                         "title": "Criando Google Tag Manager",
                         "path": "criando-google-tag-manager"
+                      },
+                      {
+                        "title": "Configurando Eventos",
+                        "path": "configurando-eventos"
                       }
                     ]
                   }
