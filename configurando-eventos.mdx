@@ -569,6 +569,26 @@ Assim, você constrói primeiro o núcleo da conversão e depois aprofunda sua l
 
 Depois de entender como configurar o rastreamento no Google Tag Manager, vale aprofundar o que cada evento representa dentro da jornada do cliente no Cardápio Digital.
 
+| Evento                | O que representa                            |
+| --------------------- | ------------------------------------------- |
+| `menu_view`           | Visualização do cardápio                    |
+| `restaurant_unit`     | Seleção da unidade                          |
+| `view_item_list`      | Visualização de lista/categoria de produtos |
+| `view_item`           | Visualização de produto                     |
+| `view_promotion`      | Visualização de promoções                   |
+| `select_promotion`    | Clique em item promocional                  |
+| `add_to_cart`         | Adição de item ao carrinho                  |
+| `remove_from_cart`    | Remoção de item do carrinho                 |
+| `view_cart`           | Abertura do carrinho                        |
+| `begin_checkout`      | Início do checkout                          |
+| `checkout_step_view`  | Visualização de etapa do checkout           |
+| `order_type_selected` | Seleção do tipo de pedido                   |
+| `add_shipping_info`   | Confirmação de entrega/retirada             |
+| `add_payment_info`    | Seleção da forma de pagamento               |
+| `coupon_applied`      | Aplicação de cupom                          |
+| `purchase`            | Compra concluída                            |
+| `payment_failed`      | Falha no pagamento ou finalização           |
+
 Abaixo está o fluxo completo dos eventos disponíveis, organizado por etapa da navegação e da compra.
 
 <ExpandableGroup>
@@ -1404,30 +1424,6 @@ Abaixo está o fluxo completo dos eventos disponíveis, organizado por etapa da 
 
 ---
 
-## Tabela resumida dos eventos disponíveis
-
-| Evento                | O que representa                            |
-| --------------------- | ------------------------------------------- |
-| `menu_view`           | Visualização do cardápio                    |
-| `restaurant_unit`     | Seleção da unidade                          |
-| `view_item_list`      | Visualização de lista/categoria de produtos |
-| `view_item`           | Visualização de produto                     |
-| `view_promotion`      | Visualização de promoções                   |
-| `select_promotion`    | Clique em item promocional                  |
-| `add_to_cart`         | Adição de item ao carrinho                  |
-| `remove_from_cart`    | Remoção de item do carrinho                 |
-| `view_cart`           | Abertura do carrinho                        |
-| `begin_checkout`      | Início do checkout                          |
-| `checkout_step_view`  | Visualização de etapa do checkout           |
-| `order_type_selected` | Seleção do tipo de pedido                   |
-| `add_shipping_info`   | Confirmação de entrega/retirada             |
-| `add_payment_info`    | Seleção da forma de pagamento               |
-| `coupon_applied`      | Aplicação de cupom                          |
-| `purchase`            | Compra concluída                            |
-| `payment_failed`      | Falha no pagamento ou finalização           |
-
----
-
 ## O que pode ser capturado junto com os eventos
 
 Dependendo da etapa, os eventos podem carregar informações complementares, como:
@@ -1469,26 +1465,6 @@ E, caso prefiram trabalhar apenas com payloads capturados diretamente do ambient
 - `view_cart`
 
 ---
-
-## O que este artigo complementa em relação ao tutorial inicial
-
-O tutorial inicial da BeeFood mostra como:
-
-- criar a conta no Google Tag Manager;
-
-- criar o Google Analytics;
-
-- conectar ambos;
-
-- cadastrar o GTM no Cardápio Digital.
-
-Este artigo entra em outra camada: ele explica **o que o Cardápio Digital já entrega para o seu GTM** e **como você pode transformar isso em rastreamento real de jornada e conversão**.
-
-Em resumo:
-
-- o artigo anterior ensina a **instalar**;
-
-- este artigo ensina a **usar de forma estratégica**.
 
 ---
 
