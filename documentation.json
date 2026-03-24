@@ -218,15 +218,9 @@
   "navbar": {
     "actions": {
       "primary": {
-        "title": "Link 1",
-        "link": "https://teste.com.br"
-      },
-      "links": [
-        {
-          "title": "Link 2",
-          "link": "https://teste.com.br"
-        }
-      ]
+        "title": "Acessar BeeFood",
+        "link": "https://beefood.app"
+      }
     }
   },
   "initialRoute": "boas-vindas"
