@@ -4,6 +4,137 @@ title: >-
   Digital
 description: >-
   Configure Google Tag Manager e Google Analytics 4 para acompanhar acessos e
-  eventos do seu Cardápio Digital BeeFood3.
+  métricas do seu Cardápio Digital, passo a passo.
 ---
+Olá,
 
+Através do Google Tag Manager é possível adicionar scripts e aplicativos de terceiros no seu cardápio digital.
+
+Nesse tópico de ajuda iremos mostrar como criar uma Google Tag e depois incluir o Google Analytics em seu Cardápio Digital. Com o Google Analytics em seu cardápio digital é possível acompanhar em tempo real os usuários ativos e também todo histórico e métricas de usuários e recorrência.
+
+<Callout kind="alert" collapsed="false">
+  Não é recomendado utilizar o Google Tag Manager para incluir Pixel do Meta Facebook.
+</Callout>
+
+## Criando Google Tag Manager
+
+Acesse [https://tagmanager.google.com/](https://tagmanager.google.com/)
+E clique sobre Criar conta para iniciar sua conta no Google Tag Manager
+
+<Image src="https://versao.beefood-r2.work/imagens-manual/gtm/gtm1/gtm1.png" width="1900" height="842" alt="" />
+
+Agora preencha as informações necessárias Nome da Conta, País e depois na Configuração do contêiner adicionar no nome do contêiner o link do seu cardápio digital, depois selecione Web e Criar para continuar
+
+<Image src="https://versao.beefood-r2.work/imagens-manual/gtm/gtm1/gtm2.png" width="1900" height="842" alt="" />
+
+Agora aceite os termos de serviço do Google Tag e depois clique em Sim
+
+<Image src="https://versao.beefood-r2.work/imagens-manual/gtm/gtm1/gtm3.png" width="1900" height="842" alt="" />
+
+Pronto, seu espaço de trabalho no Google Tag Manager foi criado. Agora veja o código da sua conta no formato GTM-XXXXXXX e adicione nas configurações do seu cardápio digital no menu Cardápio Digital -> Aba Marketing -> Google Tag Manager.
+
+<Image src="https://versao.beefood-r2.work/imagens-manual/gtm/gtm1/gtm4-1024x462.png" width="1024" height="462" alt="" />
+
+Agora siga os próximos passos para continuar a configuração.
+
+## Criando Google Analytics
+
+Acesse [https://analytics.google.com](https://analytics.google.com)
+Para iniciar uma nova conta clique sobre Começar a usar e siga os próximos passos
+
+<Image src="https://versao.beefood-r2.work/imagens-manual/gtm/gtm1/gtm6-1024x356.png" width="1024" height="356" alt="" />
+
+Agora preencha os dados Nome da conta, sugerimos Cardápio Digital BeeFood para fácil reconhecimento futuro do objetivo dessa nova conta
+
+<Image src="https://versao.beefood-r2.work/imagens-manual/gtm/gtm1/gtm7-1024x379.png" width="1024" height="379" alt="" />
+
+Em seguida desça a página até o final e clique sobre Próxima para continuar
+
+<Image src="https://versao.beefood-r2.work/imagens-manual/gtm/gtm1/gtm7-2.png" width="1900" height="842" alt="" />
+
+Etapa 2 Criação de propriedade, agora preencha o Nome da propriedade (sugerimos Cardápio Digital BeeFood para fácil reconhecimento futuro), Fuso horário, moeda e clique em Próximo
+
+<Image src="https://versao.beefood-r2.work/imagens-manual/gtm/gtm1/gtm8-1024x625.png" width="1024" height="625" alt="" />
+
+Etapa 3 Detalhes comerciais, agora preencha Categoria do Setor (sugerimos Comidas e Bebidas) e Tamanho da empresa com dados da sua empresa, em seguida clique em Próximo
+
+<Image src="https://versao.beefood-r2.work/imagens-manual/gtm/gtm1/gtm9-1024x638.png" width="1024" height="638" alt="" />
+
+Etapa 4 Objetivos de negócios, agora selecione o objetivo Tráfego e clique em Criar
+
+<Image src="https://versao.beefood-r2.work/imagens-manual/gtm/gtm1/gtm10-1024x712.png" width="1024" height="712" alt="" />
+
+Agora aceite os Termos de Serviço do Google Analytics e Aceito para continuar
+
+<Image src="https://versao.beefood-r2.work/imagens-manual/gtm/gtm1/gtm11.png" width="1900" height="842" alt="" />
+
+Agora configurando Fluxo de dados adicionar em Url do site o link do seu cardápio digital e em Nome do fluxo sugerimos Cardápio Digital, em seguida clique em Criar e continuar
+
+<Image src="https://versao.beefood-r2.work/imagens-manual/gtm/gtm1/gtm12.png" width="1900" height="842" alt="" />
+
+Por fim é exibido os dados do seu Google Analytics que foi criado. Deixe essa tela aberta, pois iremos precisar do ID DA MÉTRICA ou deixe salvo em algum local o ID DA MÉTRICA.
+
+<Image src="https://versao.beefood-r2.work/imagens-manual/gtm/gtm1/gtm13.png" width="1900" height="842" alt="" />
+
+## Adicionando o Google Analytics em seu Google Tag Manager
+
+Agora volte para seu Google Tag Manager que foi criado anteriormente em [https://tagmanager.google.com/](https://tagmanager.google.com/)
+e clique sobre Adicionar uma nova tag para iniciarmos o processo de vincular o Google Analytics ao Google Tag Manager
+
+<Image src="https://versao.beefood-r2.work/imagens-manual/gtm/gtm1/gtm14-1024x457.png" width="1024" height="457" alt="" />
+
+Agora clique sobre Configuração da Tag para continuar
+
+<Image src="https://versao.beefood-r2.work/imagens-manual/gtm/gtm1/gtm15-1024x613.png" width="1024" height="613" alt="" />
+
+Selecione Google Analytics para continuar
+
+<Image src="https://versao.beefood-r2.work/imagens-manual/gtm/gtm1/gtm16.png" width="1900" height="842" alt="" />
+
+Agora selecione Google Analytics: evento GA4
+
+<Image src="https://versao.beefood-r2.work/imagens-manual/gtm/gtm1/gtm17.png" width="1900" height="842" alt="" />
+
+Agora iremos precisar do ID DA MÉTRICA que foi criado no Google Analytics anteriormente, preencha o ID DA MÉTRICA com a informação
+
+<Image src="https://versao.beefood-r2.work/imagens-manual/gtm/gtm1/gtm18-1024x384.png" width="1024" height="384" alt="" />
+
+Agora clique sobre a opção de + em Nome do evento
+
+<Image src="https://versao.beefood-r2.work/imagens-manual/gtm/gtm1/gtm23-1024x676.png" width="1024" height="676" alt="" />
+
+Selecione a opção PAGE URL
+
+<Image src="https://versao.beefood-r2.work/imagens-manual/gtm/gtm1/gtm24-1024x284.png" width="1024" height="284" alt="" />
+
+Agora clique em Salvar no topo à direita
+
+<Image src="https://versao.beefood-r2.work/imagens-manual/gtm/gtm1/gtm25-1024x667.png" width="1024" height="667" alt="" />
+
+Agora é necessário adicionar um acionamento, clique sobre Acionamento
+
+<Image src="https://versao.beefood-r2.work/imagens-manual/gtm/gtm1/gtm20-1024x596.png" width="1024" height="596" alt="" />
+
+Selecione todas opções disponíveis e depois Adicionar
+
+<Image src="https://versao.beefood-r2.work/imagens-manual/gtm/gtm1/gtm21-1024x238.png" width="1024" height="238" alt="" />
+
+Agora para finalizar a configuração clique em Salvar
+
+<Image src="https://versao.beefood-r2.work/imagens-manual/gtm/gtm1/gtm22-1024x695.png" width="1024" height="695" alt="" />
+
+Para publicar a alteração e começar a funcionar é necessário ainda clicar em Enviar no canto superior direito.
+
+<Image src="https://versao.beefood-r2.work/imagens-manual/gtm/gtm1/gtm26-1024x463.png" width="1024" height="463" alt="" />
+
+para finalizar então clique sobre Publicar e agora seu Google Tag Manager será atualizado com o Google Analytics que criamos anteriormente.
+
+<Image src="https://versao.beefood-r2.work/imagens-manual/gtm/gtm1/gtm27-1024x594.png" width="1024" height="594" alt="" />
+
+## Visualizando Resultado
+
+Após o termino de toda configuração, agora é possível visualizar todo histórico de acesso seu Cardápio Digital. No exemplo abaixo podemos ver que o Google Analytics reconhece o usuário em tempo real acessando o cardápio digital.
+
+<Image src="https://versao.beefood-r2.work/imagens-manual/gtm/gtm1/gtm28-1024x552.png" width="1024" height="552" alt="" />
+
+Até mais!
