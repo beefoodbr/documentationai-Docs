@@ -196,6 +196,15 @@
                 ]
               }
             ]
+          },
+          {
+            "group": "Plano",
+            "pages": [
+              {
+                "title": "Tabela de adicionais",
+                "path": "tabela-de-adicionais"
+              }
+            ]
           }
         ],
         "product": "BeeFood3"
