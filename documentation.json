@@ -177,8 +177,13 @@
                 "group": "Marketing Cardápío Digital",
                 "pages": [
                   {
-                    "title": "Facebook Pixel",
-                    "path": "facebook-pixel"
+                    "group": "Facebook Pixel",
+                    "pages": [
+                      {
+                        "title": "API de Conversões",
+                        "path": "facebook-pixel-api-de-converses"
+                      }
+                    ]
                   },
                   {
                     "group": "Google Tag Manager",
