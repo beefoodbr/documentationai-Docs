@@ -40,6 +40,15 @@
                 "path": "videos"
               },
               {
+                "group": "Cardápio Digital",
+                "pages": [
+                  {
+                    "title": "Link Multilojas",
+                    "path": "link-multilojas"
+                  }
+                ]
+              },
+              {
                 "group": "Geral",
                 "pages": [
                   {
