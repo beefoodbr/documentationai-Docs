@@ -1,0 +1,128 @@
+---
+title: Impressão
+description: Configure impressoras no BeeFood3, consulte modelos homologados e acesse os guias de cadastro, preferências e impressão automática.
+---
+
+## Impressão
+
+Encontre aqui o que você precisa para configurar a impressão no BeeFood3, desde o cadastro da impressora até os ajustes de impressão e a automação da cozinha.
+
+<Columns cols={3}>
+  <Card
+    title="Cadastro de Impressoras e Configuração"
+    href="/impressao-cadastro-impressoras-configuracao"
+    icon="printer"
+    cta="Abrir guia"
+  >
+    Cadastre impressoras e ajuste o modelo, a página de código e a quantidade de colunas para cada equipamento.
+  </Card>
+
+  <Card
+    title="Configuração de Impressão"
+    href="/impressao-configuracao-de-impressao"
+    icon="settings"
+    cta="Ver configurações"
+  >
+    Ajuste as preferências de impressão do BeeFood3 para pedidos, comandas e outros documentos do dia a dia.
+  </Card>
+
+  <Card
+    title="Impressão da Cozinha Automática"
+    href="/impressao-cozinha-automatica"
+    icon="utensils"
+    cta="Configurar automação"
+  >
+    Configure a impressão automática na cozinha para agilizar a produção e reduzir etapas no caixa.
+  </Card>
+</Columns>
+
+## Impressoras homologadas
+
+O BeeFood3 é compatível com várias impressoras térmicas não fiscais testadas com o padrão ACBr. Use a tabela abaixo como ponto de partida para escolher o modelo ACBr e a página de código recomendada.
+
+| Marca | Modelo | Modelo ACBr | Página de código |
+| --- | --- | --- | --- |
+| Epson | TM-T88V | EscPosEpson | 860 |
+| Epson | TM-T20 | EscPosEpson | 860 |
+| Epson | TM-T20X | EscPosEpson | 860 |
+| Elgin | i7 | EscPosEpson | 860 |
+| Elgin | i9 | EscPosEpson | 860 |
+| Elgin | RM22 | EscPosEpson | 860 |
+| Sweda | SI-300S | EscPosEpson | 860 |
+| Control iD | Print iD | EscPosEpson | 860 |
+| Dimep | D-Print 250 | EscPosEpson | 860 |
+| Daruma | DRM-380 | EscPosEpson | 860 |
+| Daruma | DR-800 | EscDaruma | 850 |
+| Bematech | MP-2800 TH | EscPosEpson | 860 |
+| Bematech | MP-4200 TH | EscBematech | UTF8 |
+| Bematech | MP-5100 TH | EscBematech | 850 |
+| Bematech | MP-100S TH | EscBematech | 850 |
+| Bematech | PP-10 | EscPosEpson | 860 |
+| Tanca | TP-650 | EscPosEpson | 850 |
+| Tanca | TP-550 | EscPosEpson | 850 |
+| Tanca | TP-620+ | EscPosEpson | 850 |
+| Jetway | JP-800 | EscGPrinter | 860 |
+| Waytec | WP-100 | EscGPrinter | 850 |
+| Gertec | G250 | EscPosEpson | 850 |
+| TecToy | Q4 | EscPosEpson | 850 |
+
+### Impressora não está na lista?
+
+<Callout kind="info">
+
+Se a sua impressora não aparece na tabela, comece com estas combinações mais usadas:
+
+- **Bobina 80mm** — modelo `EscPosEpson`, página `860`, `48` colunas
+- **Bobina 58mm** — modelo `CustomPos`, página `860`, `32` colunas
+
+Depois, use a opção **Testar Modelo/Página** no cadastro de impressoras para encontrar a configuração que imprime corretamente no seu equipamento.
+
+</Callout>
+
+### Dica sobre acentuação
+
+<Callout kind="tip">
+
+Se os acentos saírem errados na impressão, teste a página de código nesta ordem:
+
+- `860`
+- `850`
+- `1252`
+- `UTF8`
+
+Na maioria dos casos, essa sequência ajuda a encontrar rapidamente a opção correta para o seu modelo.
+
+</Callout>
+
+## Manuais de configuração
+
+Abra o manual correspondente ao que você quer ajustar no sistema.
+
+<Columns cols={3}>
+  <Card
+    title="Como cadastrar impressoras"
+    href="/impressao-cadastro-impressoras-configuracao"
+    icon="printer"
+    cta="Ver manual"
+  >
+    Consulte o passo a passo para cadastrar a impressora e definir as opções básicas de funcionamento.
+  </Card>
+
+  <Card
+    title="Configuração de impressão"
+    href="/impressao-configuracao-de-impressao"
+    icon="settings"
+    cta="Abrir manual"
+  >
+    Veja onde ajustar preferências de impressão para o caixa, pedidos e outros documentos.
+  </Card>
+
+  <Card
+    title="Impressão automática da cozinha"
+    href="/impressao-cozinha-automatica"
+    icon="chef-hat"
+    cta="Acessar manual"
+  >
+    Entenda como ativar a impressão automática para enviar pedidos direto para a cozinha.
+  </Card>
+</Columns>

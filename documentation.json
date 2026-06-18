@@ -148,6 +148,10 @@
                 "group": "Impressão",
                 "pages": [
                   {
+                    "title": "Impressão",
+                    "path": "impressao"
+                  },
+                  {
                     "title": "Cadastro de Impressoras e Configuração",
                     "path": "impressao-cadastro-impressoras-configuracao"
                   },
