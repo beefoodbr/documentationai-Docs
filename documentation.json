@@ -177,6 +177,7 @@
               },
               {
                 "group": "Fiscal",
+                "path": "fiscal",
                 "pages": [
                   {
                     "title": "Configuração Fiscal (NF-e e NFC-e)",
@@ -193,6 +194,10 @@
                   {
                     "title": "Emissão de NF-e",
                     "path": "nfe"
+                  },
+                  {
+                    "title": "Reforma Tributária (IBS/CBS)",
+                    "path": "reforma-tributaria"
                   }
                 ]
               },

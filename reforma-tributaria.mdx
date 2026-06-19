@@ -1,0 +1,192 @@
+---
+title: Reforma Tributária (IBS/CBS)
+description: Aprenda a configurar os campos de IBS e CBS por produto na tela Edição Fiscal do BeeFood3, passo a passo.
+---
+
+<Callout kind="alert" collapsed="false">
+
+- A tela **Edição Fiscal** funciona **somente no computador (desktop)**.
+
+- Preencher os campos **grava no cadastro do produto**, mas **não emite nota** — é reversível.
+
+- O exemplo de como sai na nota na seção 4 é **ilustrativo e fictício**: nenhum XML é gerado nem nota emitida.
+
+</Callout>
+
+## O que é a Reforma Tributária (IBS/CBS)?
+
+A partir da **NT 2025.002 / LC 214/2025**, as notas passam a carregar dois novos tributos:
+
+- **IBS** — Imposto sobre Bens e Serviços, na parte **estadual** e na parte **municipal**.
+
+- **CBS** — Contribuição sobre Bens e Serviços, na parte **federal**.
+
+Em **2026**, na fase de transição, o sistema **apenas configura e exibe** esses campos por produto. O **cálculo dos valores** e a **montagem do XML** acontecem no servidor de emissão no momento em que a nota é emitida.
+
+| # | Campo na tela | Para que serve | Exemplo |
+| --- | --- | --- | --- |
+| 1 | CST IBS/CBS | Situação tributária do IBS/CBS (3 dígitos) | 000 – Tributação integral |
+| 2 | cClassTrib | Classificação tributária (6 dígitos) — as opções mudam conforme o CST | 000001 |
+| 3 | % Red. Alíquota | Percentual de redução da alíquota (quando houver) | 0 |
+| 4 | Alíq. IBS UF (%) | Alíquota do IBS estadual | 0,10 |
+| 5 | Alíq. IBS Mun. (%) | Alíquota do IBS municipal | 0 |
+| 6 | Alíq. CBS (%) | Alíquota da CBS (federal) | 0,90 |
+
+<Callout kind="info" collapsed="false">
+  Produtos com **CST IBS/CBS em branco não emitem** o grupo IBS/CBS na nota — o sistema ignora, para evitar tributar errado. Por isso, configure ao menos o **CST** dos produtos que vão para a nota.
+</Callout>
+
+## Onde ficam os campos: menu Edição Fiscal
+
+No menu lateral, acesse **Fiscal → Edição Fiscal**. Essa tela mostra todos os produtos em forma de planilha.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/reforma-tributaria-ibscbs/imagens-tratadas/01-edicao-fiscal-grade.png" width="1532" height="856" alt="Tela Edição Fiscal (planilha de produtos)" />
+
+*Tela **Edição Fiscal** (planilha de produtos)*
+
+### Exibindo as colunas de IBS/CBS (opcional)
+
+Se as colunas de IBS/CBS não estiverem visíveis, abra o **seletor de grupos de colunas** e ative o grupo **IBS/CBS (Reforma)**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/reforma-tributaria-ibscbs/imagens-tratadas/02-grupos-colunas-ibscbs.png" width="1532" height="856" alt="Ativando o grupo de colunas IBS/CBS (Reforma)" />
+
+*Ativando o grupo de colunas **IBS/CBS (Reforma)***
+
+Com o grupo ativo, as colunas **CST IBS/CBS, cClassTrib, % Red. Alíquota, Alíq. IBS UF (%), Alíq. IBS Mun. (%) e Alíq. CBS (%)** aparecem na planilha.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/reforma-tributaria-ibscbs/imagens-tratadas/03-colunas-ibscbs-grade.png" width="1532" height="856" alt="Colunas de IBS/CBS visíveis na planilha" />
+
+*Colunas de IBS/CBS visíveis na planilha*
+
+## Como editar os campos (passo a passo)
+
+<Steps>
+  <Step title="Passo 1 — Selecione o produto e abra o editor" title-type="p">
+    Use a busca para localizar o produto. No exemplo, o produto é **10 mini churros**. Depois:
+
+    - Marque a caixa de seleção do produto.
+    - Clique no botão **EDITAR IMPOSTOS** no canto inferior direito.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/reforma-tributaria-ibscbs/imagens-tratadas/04-produto-selecionado-editar-impostos.png" width="1532" height="856" alt="Produto selecionado e botão EDITAR IMPOSTOS" />
+
+    ***1** marcar produto · **2** botão **EDITAR IMPOSTOS***
+
+    <Callout kind="tip" collapsed="false">
+      Você pode marcar **vários produtos** e editar todos de uma vez, em edição em lote.
+    </Callout>
+  </Step>
+
+  <Step title="Passo 2 — Preencha os campos IBS/CBS" title-type="p">
+    Abre a janela **Editar Impostos em Lote**. Role até a seção **IBS/CBS (Reforma Tributária)** e **marque apenas os campos que deseja alterar**.
+
+    Ao abrir o **CST IBS/CBS**, o sistema lista o catálogo completo de CSTs. Escolha o adequado. No exemplo, foi usado **000 – Tributação integral**.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/reforma-tributaria-ibscbs/imagens-tratadas/07-cst-catalogo-carregado.png" width="1532" height="856" alt="Catálogo de CST IBS/CBS carregado" />
+
+    ***1** busca de CST · **2** opção **000 – Tributação integral***
+
+    Em seguida, preencha os demais campos.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/reforma-tributaria-ibscbs/imagens-tratadas/08-modal-preenchido.png" width="1532" height="856" alt="Campos IBS/CBS preenchidos no modal" />
+
+    ***1** CST IBS/CBS · **2** cClassTrib · **3** Alíq. IBS UF · **4** Alíq. CBS · **5** **PRÓXIMO***
+
+    | Seta | Campo | O que fazer | Exemplo |
+    |------|-------|-------------|---------|
+    | **1** | CST IBS/CBS | Selecione a situação tributária | 000 – Tributação integral |
+    | **2** | cClassTrib | Selecione a classificação. **As opções já vêm filtradas** pelo CST escolhido | 000001 |
+    | **3** | Alíq. IBS UF (%) | Informe a alíquota do IBS estadual (aceita vírgula) | 0,10 |
+    | **4** | Alíq. CBS (%) | Informe a alíquota da CBS | 0,90 |
+    | **5** | PRÓXIMO | Avança para a revisão | — |
+
+    <Callout kind="info" collapsed="false">
+      **Detalhe importante (seta 2):** o **cClassTrib depende do CST**. Para o CST `000`, por exemplo, aparecem apenas `000001`, `000002`, `000003` e `000004`. Sempre escolha o **CST primeiro**. Os campos **% Red. Alíquota** e **Alíq. IBS Mun. (%)** só precisam ser preenchidos quando se aplicam ao seu produto ou município.
+    </Callout>
+  </Step>
+
+  <Step title="Passo 3 — Revise as alterações" title-type="p">
+    A tela de **revisão** mostra exatamente o que será gravado e em quais produtos. Confira e clique em **CONFIRMAR (F2)**.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/reforma-tributaria-ibscbs/imagens-tratadas/09-revisar-alteracoes.png" width="1532" height="856" alt="Tela de revisão das alterações" />
+
+    ***1** alterações a aplicar · **2** **CONFIRMAR (F2)***
+
+    | Seta | Item | Descrição |
+    |------|------|-----------|
+    | **1** | Alterações a aplicar | Lista dos campos e valores que serão gravados |
+    | **2** | CONFIRMAR (F2) | Grava as alterações nos produtos selecionados |
+  </Step>
+
+  <Step title="Passo 4 — Concluído" title-type="p">
+    Ao final, o sistema confirma quantos produtos foram atualizados.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/reforma-tributaria-ibscbs/imagens-tratadas/10-concluido.png" width="1532" height="856" alt="Tela Concluído 1 produto atualizado" />
+
+    *Tela **Concluído! 1 produto atualizado***
+
+    Pronto: o produto já está configurado para a Reforma Tributária.
+  </Step>
+</Steps>
+
+## Como esses campos aparecem na nota (exemplo ilustrativo)
+
+<Callout kind="alert" collapsed="false">
+  **Exemplo fictício, apenas para entendimento.** Os valores abaixo são calculados **automaticamente pelo servidor de emissão** no momento de emitir a nota — você **não** digita esses valores. Aqui **não** emitimos nenhuma nota.
+</Callout>
+
+**Cenário fictício:** venda de **1 × 10 mini churros** por **R$ 10,00**, com a configuração feita acima: CST `000`, cClassTrib `000001`, IBS UF `0,10%`, IBS Mun `0%` e CBS `0,90%`.
+
+O sistema calcula sobre o valor do produto, com `vBC = R$ 10,00`.
+
+| Tributo | Alíquota | Cálculo | Valor |
+|---------|----------|---------|-------|
+| IBS UF (estadual) | 0,10% | 10,00 × 0,10% | R$ 0,01 |
+| IBS Municipal | 0,00% | 10,00 × 0,00% | R$ 0,00 |
+| **IBS total** | — | 0,01 + 0,00 | **R$ 0,01** |
+| CBS (federal) | 0,90% | 10,00 × 0,90% | **R$ 0,09** |
+
+O sistema também monta o grupo `IBSCBS` dentro do item da nota. Veja, de forma simplificada, como ficaria no XML em um trecho fictício e ilustrativo.
+
+```xml
+<!-- EXEMPLO FICTÍCIO — ilustra o grupo IBSCBS gerado a partir da configuração do produto -->
+<imposto>
+  <IBSCBS>
+    <CST>000</CST>
+    <cClassTrib>000001</cClassTrib>
+    <gIBSCBS>
+      <vBC>10.00</vBC>
+      <gIBSUF>
+        <pIBSUF>0.10</pIBSUF>
+        <vIBSUF>0.01</vIBSUF>
+      </gIBSUF>
+      <gIBSMun>
+        <pIBSMun>0.00</pIBSMun>
+        <vIBSMun>0.00</vIBSMun>
+      </gIBSMun>
+      <gCBS>
+        <pCBS>0.90</pCBS>
+        <vCBS>0.09</vCBS>
+      </gCBS>
+      <vIBS>0.01</vIBS>
+    </gIBSCBS>
+  </IBSCBS>
+</imposto>
+```
+
+Resumindo o caminho: **o que você configura no produto** na Edição Fiscal é o que **alimenta o grupo IBS/CBS da nota** quando ela for emitida.
+
+## Dúvidas rápidas
+
+<Callout kind="tip" collapsed="false">
+
+- **Preciso preencher os 6 campos?** Não. No mínimo, configure o **CST IBS/CBS**. Sem ele, o grupo não é emitido. Os demais dependem da sua regra fiscal.
+
+- **Posso configurar vários produtos de uma vez?** Sim. Marque vários na planilha e use **EDITAR IMPOSTOS**.
+
+- **Editar aqui emite nota?** Não. A tela apenas **grava o cadastro** do produto, e isso é reversível.
+
+- **O cClassTrib não mostra o código que eu quero.** Verifique o **CST**. O cClassTrib é filtrado por ele.
+
+- **As alíquotas aceitam vírgula?** Sim. Você pode informar com vírgula ou ponto.
+
+</Callout>
