@@ -98,6 +98,16 @@
                 ]
               },
               {
+                "group": "Caixa",
+                "path": "caixa",
+                "pages": [
+                  {
+                    "title": "Abrir Caixa",
+                    "path": "caixa-abrir"
+                  }
+                ]
+              },
+              {
                 "group": "Estoque",
                 "pages": [
                   {
