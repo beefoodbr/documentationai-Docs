@@ -1,9 +1,9 @@
 ---
-title: Ativação da integração Aiqfome V2
-description: >-
-  Guia para conectar a loja do Aiqfome ao sistema BeeFood — PDV, pedidos e
-  cardápio.
----
+
+title: Aiqfome V2 — Ativação da integração
+description: Conecte sua loja do Aiqfome ao BeeFood em três partes: obter o código da loja, cadastrar no BeeFood e autorizar com o ID Magalu.
+---------------------------------------------------------------------------------------------------------------------------------------------
+
 Guia para o restaurante conectar a loja do Aiqfome ao sistema BeeFood (PDV, pedidos e cardápio). O processo tem três partes: descobrir o código da loja no painel do Aiqfome, cadastrar a filial no BeeFood via **Aplicativos → Aiqfome V2** e autorizar o acesso com o login **ID Magalu**.
 
 <Callout kind="info" collapsed="false">
@@ -18,12 +18,12 @@ Guia para o restaurante conectar a loja do Aiqfome ao sistema BeeFood (PDV, pedi
 
 ## Antes de começar
 
-| Item                                                                         | Por quê                                                |
-| ---------------------------------------------------------------------------- | ------------------------------------------------------ |
-| Loja já cadastrada e ativa no **Aiqfome**                                    | A integração liga uma loja que já existe na plataforma |
-| Acesso ao painel **Geraldo** do Aiqfome (`geraldo-restaurantes.aiqfome.com`) | É lá que você encontra o código da loja                |
-| Filial já criada no **BeeFood**                                              | Cada filial do BeeFood conecta **uma** loja do Aiqfome |
-| Login **ID Magalu** da conta vinculada à loja                                | E-mail e senha usados no passo de autorização          |
+| Item                                                                                                                   | Por quê                                                |
+| ---------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
+| Loja já cadastrada e ativa no **Aiqfome**                                                                              | A integração liga uma loja que já existe na plataforma |
+| Acesso ao painel **Geraldo** do Aiqfome ([geraldo-restaurantes.aiqfome.com](https://geraldo-restaurantes.aiqfome.com)) | É lá que você encontra o código da loja                |
+| Cardápio já criada no **BeeFood**                                                                                      | Cada filial do BeeFood conecta **uma** loja do Aiqfome |
+| Login **ID Magalu** da conta vinculada à loja                                                                          | E-mail e senha usados no passo de autorização          |
 
 <Callout kind="alert" collapsed="false">
   Use sempre **Aiqfome V2** no BeeFood. A opção antiga **Aiqfome** (sem o "V2") é outra integração e **não** deve ser usada para este fluxo.
@@ -33,7 +33,7 @@ Guia para o restaurante conectar a loja do Aiqfome ao sistema BeeFood (PDV, pedi
 
 <Steps>
   <Step title="Abrir as configurações da loja" title-type="p">
-    No painel do Aiqfome, no menu lateral, clique no item com o **nome do seu restaurante** e abra **Configurações da loja**.
+    Acesse o painel Geraldo em [geraldo-restaurantes.aiqfome.com](https://geraldo-restaurantes.aiqfome.com). No menu lateral, clique no item com o **nome do seu restaurante** e abra **Configurações da loja**.
 
     <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/ativacao-aiqfome/imagens-tratadas/01-configuracoes-loja-aiqfome.png" width="190" height="764" alt="Configurações da loja no painel Aiqfome" />
   </Step>
@@ -78,17 +78,17 @@ Guia para o restaurante conectar a loja do Aiqfome ao sistema BeeFood (PDV, pedi
     <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/ativacao-aiqfome/imagens-tratadas/05-novo-cadastro.png" width="497" height="273" alt="Botão Novo Cadastro na aba Credenciais" />
   </Step>
 
-  <Step title="Preencher filial e Store ID" title-type="p">
+  <Step title="Preencher Cardápio e Store ID" title-type="p">
     Na janela **Novo Cadastro Aiqfome V2**, preencha os campos:
 
     | Campo                  | O que preencher                                        |
     | ---------------------- | ------------------------------------------------------ |
-    | **Filial**             | Selecione a unidade do BeeFood que receberá os pedidos |
+    | **Cardápio**           | Selecione a unidade do BeeFood que receberá os pedidos |
     | **Store ID (Aiqfome)** | Cole o número anotado anteriormente (ex.: `142114`)    |
 
     O status pode aparecer como **Inativo** — isso é normal **antes** de conectar. Ele é atualizado automaticamente após a autorização. Clique em **Salvar**.
 
-    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/ativacao-aiqfome/imagens-tratadas/06-salvar-cadastro.png" width="358" height="338" alt="Preencher filial, Store ID e Salvar" />
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/ativacao-aiqfome/imagens-tratadas/06-salvar-cadastro.png" width="358" height="338" alt="Preencher Cardápio, Store ID e Salvar" />
   </Step>
 
   <Step title="Conectar" title-type="p">
@@ -169,4 +169,16 @@ A conexão OAuth pode estar OK, mas o recebimento de pedidos também depende de 
 2. No card da loja, clique em **Desconectar**
 
 3. Os pedidos deixam de sincronizar até uma nova autorização (**Conectar**)
+
+## Precisa de ajuda?
+
+Entre em contato com o **suporte BeeFood** informando:
+
+- Nome da loja e **CNPJ**
+
+- **Cardápio** no BeeFood e **Store ID** usado
+
+- Print da mensagem de erro (se houver)
+
+- Horário em que tentou conectar
 
