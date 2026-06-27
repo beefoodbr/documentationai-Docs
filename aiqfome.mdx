@@ -1,0 +1,172 @@
+---
+title: Ativação da integração Aiqfome V2
+description: >-
+  Guia para conectar a loja do Aiqfome ao sistema BeeFood — PDV, pedidos e
+  cardápio.
+---
+Guia para o restaurante conectar a loja do Aiqfome ao sistema BeeFood (PDV, pedidos e cardápio). O processo tem três partes: descobrir o código da loja no painel do Aiqfome, cadastrar a filial no BeeFood via **Aplicativos → Aiqfome V2** e autorizar o acesso com o login **ID Magalu**.
+
+<Callout kind="info" collapsed="false">
+  **O que você ganha depois de ativar**
+
+  - Pedidos do Aiqfome chegando automaticamente no PDV BeeFood
+
+  - Aceitar e marcar pedidos como prontos a partir do sistema
+
+  - Sincronização de status entre Aiqfome e o restaurante
+</Callout>
+
+## Antes de começar
+
+| Item                                                                         | Por quê                                                |
+| ---------------------------------------------------------------------------- | ------------------------------------------------------ |
+| Loja já cadastrada e ativa no **Aiqfome**                                    | A integração liga uma loja que já existe na plataforma |
+| Acesso ao painel **Geraldo** do Aiqfome (`geraldo-restaurantes.aiqfome.com`) | É lá que você encontra o código da loja                |
+| Filial já criada no **BeeFood**                                              | Cada filial do BeeFood conecta **uma** loja do Aiqfome |
+| Login **ID Magalu** da conta vinculada à loja                                | E-mail e senha usados no passo de autorização          |
+
+<Callout kind="alert" collapsed="false">
+  Use sempre **Aiqfome V2** no BeeFood. A opção antiga **Aiqfome** (sem o "V2") é outra integração e **não** deve ser usada para este fluxo.
+</Callout>
+
+## Parte 1 — Obter o código da loja no Aiqfome
+
+<Steps>
+  <Step title="Abrir as configurações da loja" title-type="p">
+    No painel do Aiqfome, no menu lateral, clique no item com o **nome do seu restaurante** e abra **Configurações da loja**.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/ativacao-aiqfome/imagens-tratadas/01-configuracoes-loja-aiqfome.png" width="190" height="764" alt="Configurações da loja no painel Aiqfome" />
+  </Step>
+
+  <Step title="Anotar o Store ID (código da loja)" title-type="p">
+    Com a tela de configuração aberta, olhe a **barra de endereço** do navegador. O número no **final da URL**, após `/configuracao/`, é o **Store ID** da sua loja. No exemplo abaixo, o código é `142114`:
+
+    ```
+    geraldo-restaurantes.aiqfome.com/restaurante/configuracao/142114
+                                                          ^^^^^^
+                                                       Store ID
+    ```
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/ativacao-aiqfome/imagens-tratadas/02-codigo-loja-na-url.png" width="482" height="41" alt="Store ID no final da URL do Aiqfome" />
+
+    Guarde esse número — você vai informá-lo no BeeFood no passo seguinte.
+  </Step>
+</Steps>
+
+## Parte 2 — Cadastrar a integração no BeeFood
+
+<Steps>
+  <Step title="Ir até Aplicativos" title-type="p">
+    No BeeFood, no menu lateral, clique em **Aplicativos**.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/ativacao-aiqfome/imagens-tratadas/03-menu-aplicativos-beefood.png" width="158" height="393" alt="Menu Aplicativos no BeeFood" />
+  </Step>
+
+  <Step title="Selecionar Aiqfome V2" title-type="p">
+    Na área **Delivery**, localize o card **Aiqfome V2** e clique nele.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/ativacao-aiqfome/imagens-tratadas/04-selecionar-aiqfome-v2.png" width="760" height="305" alt="Selecionar Aiqfome V2 na área Delivery" />
+
+    <Callout kind="alert" collapsed="false">
+      Não confunda com o card **Aiqfome** (sem "V2") na mesma lista.
+    </Callout>
+  </Step>
+
+  <Step title="Novo cadastro" title-type="p">
+    Na aba **Credenciais**, clique em **+ Novo Cadastro**.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/ativacao-aiqfome/imagens-tratadas/05-novo-cadastro.png" width="497" height="273" alt="Botão Novo Cadastro na aba Credenciais" />
+  </Step>
+
+  <Step title="Preencher filial e Store ID" title-type="p">
+    Na janela **Novo Cadastro Aiqfome V2**, preencha os campos:
+
+    | Campo                  | O que preencher                                        |
+    | ---------------------- | ------------------------------------------------------ |
+    | **Filial**             | Selecione a unidade do BeeFood que receberá os pedidos |
+    | **Store ID (Aiqfome)** | Cole o número anotado anteriormente (ex.: `142114`)    |
+
+    O status pode aparecer como **Inativo** — isso é normal **antes** de conectar. Ele é atualizado automaticamente após a autorização. Clique em **Salvar**.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/ativacao-aiqfome/imagens-tratadas/06-salvar-cadastro.png" width="358" height="338" alt="Preencher filial, Store ID e Salvar" />
+  </Step>
+
+  <Step title="Conectar" title-type="p">
+    De volta à lista de credenciais, o cadastro aparece com o status **Não conectado**. Clique no botão vermelho **Conectar** da loja que você acabou de salvar. O BeeFood abrirá o fluxo de login do **ID Magalu**.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/ativacao-aiqfome/imagens-tratadas/07-botao-conectar.png" width="494" height="247" alt="Botão Conectar na loja cadastrada" />
+
+    <Callout kind="tip" collapsed="false">
+      Conclua os próximos passos em até **10 minutos**. Se demorar mais, a sessão expira e será preciso clicar em **Conectar** novamente.
+    </Callout>
+  </Step>
+</Steps>
+
+## Parte 3 — Autorizar com o ID Magalu
+
+<Steps>
+  <Step title="Informar o e-mail" title-type="p">
+    Na tela **ID Magalu**, digite o **e-mail da conta Magalu** vinculada à sua loja no Aiqfome e clique em **Continuar**. Use a conta do **proprietário ou gestor** da loja — não use e-mail pessoal sem vínculo com o restaurante.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/ativacao-aiqfome/imagens-tratadas/08-login-magalu-email.png" width="468" height="380" alt="Login ID Magalu — campo e-mail" />
+  </Step>
+
+  <Step title="Informar a senha" title-type="p">
+    Digite a **senha** da conta e clique em **Entrar**. Se não lembrar a senha, use **Esqueceu a senha?** na própria tela do Magalu.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/ativacao-aiqfome/imagens-tratadas/09-senha-magalu.png" width="476" height="508" alt="Login ID Magalu — campo senha" />
+  </Step>
+
+  <Step title="Escolher a conta do restaurante" title-type="p">
+    Se aparecer a tela **Escolha uma conta**, selecione o perfil **Pessoa jurídica** (nome do seu restaurante). Não escolha a conta **Pessoa física**, a menos que seja essa a conta oficial da loja no Aiqfome.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/ativacao-aiqfome/imagens-tratadas/10-selecionar-conta-pj.png" width="699" height="286" alt="Selecionar conta Pessoa Jurídica no Magalu" />
+
+    Em seguida, se o Magalu pedir, confirme as **permissões** do BeeFood clicando em **Autorizar** ou **Permitir**.
+  </Step>
+
+  <Step title="Confirmação" title-type="p">
+    Após a autorização, você volta ao BeeFood. Na aba **Credenciais** do **Aiqfome V2**, o status deve aparecer como **Conectado** (ícone verde).
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/ativacao-aiqfome/imagens-tratadas/11-confirmacao-conectado.png" width="495" height="250" alt="Integração ativa — status Conectado" />
+
+    A integração está funcionando quando o status mostra **Conectado** e novos pedidos do Aiqfome começam a aparecer no PDV. Se o status não atualizar sozinho, clique em **Atualizar status** no canto inferior da tela.
+  </Step>
+</Steps>
+
+## Como saber se está tudo certo
+
+| Sinal                                     | Significado                 |
+| ----------------------------------------- | --------------------------- |
+| **Conectado** no BeeFood                  | Autorização OAuth concluída |
+| Pedido de teste no Aiqfome aparece no PDV | Sincronização OK            |
+| Aceitar / pronto respondem no PDV         | Comunicação com Aiqfome OK  |
+
+## Problemas comuns
+
+### "OAuth state expired" / sessão expirada
+
+Você demorou mais de **10 minutos** entre clicar em **Conectar** e terminar o login no Magalu.
+
+<Callout kind="tip" collapsed="false">
+  Volte ao BeeFood, clique em **Conectar** de novo e conclua o fluxo sem pausas longas.
+</Callout>
+
+### Pedidos não chegam no PDV
+
+A conexão OAuth pode estar OK, mas o recebimento de pedidos também depende de webhooks e de a loja estar operando no Aiqfome. Verifique:
+
+- O **Store ID** está correto?
+
+- A loja está **aberta** no Aiqfome?
+
+- O teste foi feito **depois** de aparecer **Conectado**?
+
+## Desconectar a integração
+
+1. BeeFood → **Aplicativos** → **Aiqfome V2** → aba **Credenciais**
+
+2. No card da loja, clique em **Desconectar**
+
+3. Os pedidos deixam de sincronizar até uma nova autorização (**Conectar**)
+
