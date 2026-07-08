@@ -213,6 +213,15 @@
                         "path": "aiqfome"
                       }
                     ]
+                  },
+                  {
+                    "group": "Logística",
+                    "pages": [
+                      {
+                        "title": "Machine Global",
+                        "path": "machine-global"
+                      }
+                    ]
                   }
                 ]
               },
