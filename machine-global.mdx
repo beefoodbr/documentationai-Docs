@@ -12,13 +12,9 @@ description: >2-
 ## O que você ganha
 
 - **Despacho integrado:** cotação e abertura de corrida a partir do painel BeeFood.
-
 - **Atualizações em tempo real:** o status da Machine reflete automaticamente na tela de Delivery.
-
 - **Múltiplas origens:** iFood, cardápio digital, balcão e demais canais suportados pelo BeeFood.
-
 - **Agendamento:** defina o tempo de preparo em minutos e o BeeFood agenda a chamada do entregador, com sincronização automática habilitada.
-
 - **Agrupamento:** envie um ou mais pedidos na mesma solicitação; cada um é atualizado de forma isolada.
 
 <Callout kind="info" collapsed="false">
@@ -28,16 +24,14 @@ description: >2-
 ## Antes de começar
 
 1. **Conta BeeFood** ativa.
-
 2. **Empresa cadastrada na central Machine** pela operadora local.
-
 3. **Credenciais fornecidas pela central Machine** usadas no Passo 3.
 
 ## Parte 1 — Solicitar as credenciais à central
 
 <Steps>
   <Step title="Pedir os dados à Machine" title-type="p">
-    Entre em contato com a central e solicite: `api-key`, `client_id`, `client_secret`, `empresa_id`, `forma_pagamento`. Com essas informações em mãos, siga para a configuração no BeeFood.
+    Entre em contato com a central e solicite: `api-key`, `client_id`, `client_secret`, `forma_pagamento`. Com essas informações em mãos, siga para a configuração no BeeFood.
   </Step>
 </Steps>
 
@@ -61,12 +55,11 @@ description: >2-
 
     **Credenciais**
 
-    | Campo no BeeFood         | O que é na Machine                       |
-    | ------------------------ | ---------------------------------------- |
-    | **Api Key**              | Chave de API da central                  |
-    | **Client ID**            | Usuário (HTTP Basic)                     |
-    | **Client Secret**        | Senha (HTTP Basic)                       |
-    | **Empresa ID (Machine)** | ID da empresa/loja na plataforma Machine |
+    | Campo no BeeFood  | O que é na Machine      |
+    | ----------------- | ----------------------- |
+    | **Api Key**       | Chave de API da central |
+    | **Client ID**     | Usuário (HTTP Basic)    |
+    | **Client Secret** | Senha (HTTP Basic)      |
 
     **Opções de operação**
 
@@ -124,13 +117,9 @@ description: >2-
 ## Como funciona no dia a dia
 
 1. O pedido entra no BeeFood, seja pelo site, iFood, balcão ou outro canal.
-
 2. Você avança o pedido no fluxo normal da cozinha.
-
 3. Na hora certa, de forma manual ou automática, o BeeFood solicita a entrega à Machine.
-
 4. A central aloca um entregador.
-
 5. As mudanças de status voltam sozinhas para o BeeFood e atualizam o pedido, o WhatsApp e os marketplaces quando aplicável.
 
 ## Pedidos agrupados
