@@ -27,6 +27,10 @@
               {
                 "title": "Como migrar para BeeFood3",
                 "path": "como-migrar-para-beefood3"
+              },
+              {
+                "title": "Planos e Preços",
+                "path": "planos-e-precos"
               }
             ],
             "icon": "rocket-icon"
