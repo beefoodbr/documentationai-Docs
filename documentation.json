@@ -18,15 +18,6 @@
         "icon": "badge-help",
         "groups": [
           {
-            "group": "Plano",
-            "pages": [
-              {
-                "title": "Planos e Preços",
-                "path": "planos-e-precos"
-              }
-            ]
-          },
-          {
             "group": "Início",
             "pages": [
               {
@@ -36,6 +27,10 @@
               {
                 "title": "Como migrar para BeeFood3",
                 "path": "como-migrar-para-beefood3"
+              },
+              {
+                "title": "Planos e Preços",
+                "path": "planos-e-precos"
               }
             ],
             "icon": "rocket-icon"
@@ -229,6 +224,10 @@
                       {
                         "title": "Machine Global",
                         "path": "machine-global"
+                      },
+                      {
+                        "title": "99 Entrega",
+                        "path": "99-entrega"
                       }
                     ]
                   }
@@ -260,6 +259,15 @@
                     ]
                   }
                 ]
+              }
+            ]
+          },
+          {
+            "group": "Plano",
+            "pages": [
+              {
+                "title": "Tabela de adicionais",
+                "path": "tabela-de-adicionais"
               }
             ]
           }
