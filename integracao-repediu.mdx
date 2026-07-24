@@ -1,0 +1,176 @@
+---
+title: Integração Repediu
+description: >-
+  Sincronize vendas e rastreie o cardápio digital conectando o BeeFood ao
+  Repediu CRM com dois trackers independentes.
+---
+## Conecte o BeeFood ao Repediu com duas configurações independentes: uma para enviar vendas concluídas e outra para rastrear o cardápio digital. Você pode ativar só o Tracker de Vendas, só o Tracker de Cardápio Digital ou os dois para a mesma filial.
+
+<Callout kind="info" collapsed="false">
+  **O que você ganha**
+
+  - Vendas concluídas enviadas ao Repediu para acompanhamento e ações de relacionamento
+  - Navegação no cardápio digital e eventos de carrinho abandonado rastreados no Repediu
+  - Configuração flexível para ativar apenas Vendas, apenas Cardápio Digital ou ambos
+</Callout>
+
+## Antes de começar
+
+| Item                           | Por que é necessário                                                                                         |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| Conta BeeFood ativa            | A integração é configurada dentro do BeeFood, por filial com cardápio digital disponível                     |
+| Pelo menos um cardápio digital | O Tracker de Cardápio Digital depende de um cardápio publicado                                               |
+| Conta no Repediu               | Você precisa acessar os menus **Integrações** e **Web/App Analytics** no painel do Repediu                   |
+| Credenciais do Repediu         | O Tracker de Vendas usa **Client ID** e **Client Secret**. O Tracker de Cardápio Digital usa a **Write Key** |
+
+<Callout kind="tip" collapsed="false">
+  A configuração é feita por **filial**. Se você usa mais de um cardápio ou unidade, repita o processo na filial que deseja integrar.
+</Callout>
+
+## Parte 1 — Gerar as credenciais de vendas no Repediu
+
+O Tracker de Vendas envia os pedidos concluídos do BeeFood para o Repediu. Para ativar esse tracker, você precisa copiar o **Client ID** e o **Client Secret** no painel do Repediu.
+
+<Steps>
+  <Step title="Abra a integração BeeFood no Repediu" title-type="p">
+    Acesse o Repediu e entre em **Integrações**. Depois, abra **Fontes de dados**, localize o card **BeeFood** e clique em **Habilitado**.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-repediu/imagens-tratadas/01-repediu-integracoes-beefood.png" width="1532" height="856" alt="Tela do Repediu em Integrações com o card BeeFood e o botão Habilitado destacado" />
+
+    | Nº    | Campo      | O que fazer                                       |
+    | ----- | ---------- | ------------------------------------------------- |
+    | **1** | Habilitado | Clique para abrir os dados da integração BeeFood. |
+  </Step>
+
+  <Step title="Copie o Client ID e o Client Secret" title-type="p">
+    No painel lateral direito, copie as duas credenciais mostradas para o Tracker de Vendas. Você vai colar esses dados no BeeFood na Parte 3.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-repediu/imagens-tratadas/02-repediu-credenciais-vendas.png" width="1200" height="856" alt="Painel lateral do Repediu mostrando Código da empresa e Chave da empresa" />
+
+    | Nº    | Campo             | O que copiar                           |
+    | ----- | ----------------- | -------------------------------------- |
+    | **1** | Código da empresa | Use como **Client ID** no BeeFood.     |
+    | **2** | Chave da empresa  | Use como **Client Secret** no BeeFood. |
+  </Step>
+</Steps>
+
+<Callout kind="alert" collapsed="false">
+  O **Tracker de Vendas** só salva quando **Client ID** e **Client Secret** estão preenchidos juntos. Se você não quiser ativar esse tracker, deixe os dois campos em branco.
+</Callout>
+
+## Parte 2 — Gerar a Write Key no Repediu
+
+A Write Key ativa o Tracker de Cardápio Digital. É ela que permite ao Repediu receber eventos de navegação, visita e carrinho abandonado do seu cardápio.
+
+<Steps>
+  <Step title="Abra a configuração do BeeFood em Web/App Analytics" title-type="p">
+    No Repediu, acesse **Web/App Analytics** e depois **Configuração**. Localize o card **BeeFood** e clique em **Habilitar**.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-repediu/imagens-tratadas/03-repediu-analytics-cards.png" width="1532" height="856" alt="Tela Web App Analytics do Repediu com o card BeeFood e o botão Habilitar destacado" />
+
+    | Nº    | Campo     | O que fazer                                                  |
+    | ----- | --------- | ------------------------------------------------------------ |
+    | **1** | Habilitar | Clique para abrir a configuração de rastreamento do BeeFood. |
+  </Step>
+
+  <Step title="Gere a chave de rastreamento" title-type="p">
+    No painel de **Rastreamento de eventos**, clique em **Gerar chave**. O Repediu vai criar a credencial usada pelo Tracker de Cardápio Digital.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-repediu/imagens-tratadas/04-repediu-writekey-gerar.png" width="1200" height="856" alt="Painel do Repediu com o botão Gerar chave destacado" />
+
+    | Nº    | Campo       | O que fazer                    |
+    | ----- | ----------- | ------------------------------ |
+    | **1** | Gerar chave | Clique para criar a Write Key. |
+  </Step>
+
+  <Step title="Copie a Write Key gerada" title-type="p">
+    Depois da geração, copie a **Write Key**. Quando a chave estiver ativa, o status do rastreamento aparece como **Ativo**.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-repediu/imagens-tratadas/05-repediu-writekey-gerada.png" width="1200" height="856" alt="Painel do Repediu mostrando a Write Key gerada e o botão Copiar" />
+
+    | Nº    | Campo     | O que copiar                                     |
+    | ----- | --------- | ------------------------------------------------ |
+    | **1** | Write key | Use como **Chave do tracker** no BeeFood.        |
+    | **2** | Copiar    | Use para copiar a chave sem digitar manualmente. |
+  </Step>
+</Steps>
+
+<Callout kind="alert" collapsed="false">
+  Se você redefinir a **Write Key** no Repediu, a chave antiga deixa de funcionar imediatamente. Depois de gerar uma nova chave, cole a nova **Chave do tracker** no BeeFood e salve novamente.
+</Callout>
+
+## Parte 3 — Preencher e salvar as credenciais no BeeFood
+
+Agora que as credenciais já foram geradas no Repediu, falta vinculá-las à filial correta dentro do BeeFood.
+
+<Steps>
+  <Step title="Abra o aplicativo Repediu no BeeFood" title-type="p">
+    No BeeFood, clique em **Aplicativos** no menu lateral. Na seção **Marketing e CRM**, localize o card **Repediu**.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-repediu/imagens-tratadas/06-beefood-aplicativos-repediu.png" width="1532" height="856" alt="Tela do BeeFood com o menu Aplicativos e o card Repediu destacados" />
+
+    | Nº    | Campo       | O que fazer                               |
+    | ----- | ----------- | ----------------------------------------- |
+    | **1** | Aplicativos | Clique para abrir a lista de integrações. |
+    | **2** | Repediu     | Abra a configuração da integração.        |
+  </Step>
+
+  <Step title="Escolha a filial e abra a configuração" title-type="p">
+    Na janela **Repediu - Configuração de Credenciais**, confira o status da filial desejada e clique em **Configurar**.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-repediu/imagens-tratadas/07-beefood-repediu-modal-status.png" width="1200" height="856" alt="Janela do BeeFood com status da integração e botão Configurar" />
+
+    | Nº    | Campo      | O que observar                                            |
+    | ----- | ---------- | --------------------------------------------------------- |
+    | **1** | Status     | Mostra se os trackers da filial estão ativos ou inativos. |
+    | **2** | Configurar | Clique para abrir o formulário da filial selecionada.     |
+  </Step>
+
+  <Step title="Revise o formulário com os dois trackers" title-type="p">
+    O formulário reúne os campos do **Tracker de Vendas** e do **Tracker de Cardápio Digital** na mesma tela. Antes de preencher, confirme que você está configurando a filial correta.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-repediu/imagens-tratadas/08-beefood-form-configurar.png" width="1200" height="856" alt="Formulário de configuração do Repediu no BeeFood com os campos dos dois trackers" />
+  </Step>
+
+  <Step title="Cole as credenciais e salve" title-type="p">
+    Preencha os campos com os dados copiados do Repediu e clique em **SALVAR**. Se preferir, use a tecla <kbd>F2</kbd> para salvar ou <kbd>ESC</kbd> para fechar a janela.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-repediu/imagens-tratadas/09-beefood-form-preenchido.png" width="1200" height="856" alt="Formulário do BeeFood preenchido com Client ID, Client Secret, Write Key e botão Salvar" />
+
+    | Nº    | Campo            | O que colar                                      |
+    | ----- | ---------------- | ------------------------------------------------ |
+    | **1** | Client ID        | Cole o **Código da empresa** copiado na Parte 1. |
+    | **2** | Client Secret    | Cole a **Chave da empresa** copiada na Parte 1.  |
+    | **3** | Chave do tracker | Cole a **Write Key** copiada na Parte 2.         |
+    | **4** | SALVAR           | Clique para gravar a configuração da filial.     |
+  </Step>
+
+  <Step title="Confirme se os trackers ficaram ativos" title-type="p">
+    Depois de salvar, volte para a tela de status e confirme se a filial mostra **Tracker de Vendas ativo** e **Tracker de Cardápio Digital ativo**. Se o status não atualizar na hora, feche e abra a janela novamente.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-repediu/imagens-tratadas/10-beefood-repediu-ativo.png" width="1200" height="856" alt="Janela do BeeFood mostrando Tracker de Vendas ativo e Tracker de Cardápio Digital ativo" />
+
+    | Nº    | Campo                             | O que confirmar                                              |
+    | ----- | --------------------------------- | ------------------------------------------------------------ |
+    | **1** | Tracker de Vendas ativo           | Confirma que as vendas concluídas serão enviadas ao Repediu. |
+    | **2** | Tracker de Cardápio Digital ativo | Confirma que os eventos do cardápio estão sendo rastreados.  |
+  </Step>
+</Steps>
+
+## Como funciona no dia a dia
+
+Depois da configuração, o comportamento da integração passa a ser automático. O Repediu recebe dados diferentes conforme o tracker ativado em cada filial.
+
+1. O cliente navega no **cardápio digital** e o Repediu recebe os eventos pelo Tracker de Cardápio Digital.
+2. Quando um pedido é concluído no BeeFood, a venda é enviada ao Repediu pelo Tracker de Vendas.
+3. Com esses dados, o Repediu pode acompanhar comportamento, campanhas e recuperação de carrinho abandonado.
+
+## Problemas comuns
+
+| Problema                                    | O que verificar                                                                                                       |
+| ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| Não consigo salvar o Tracker de Vendas      | Preencha **Client ID** e **Client Secret** juntos, ou deixe os dois em branco.                                        |
+| O cardápio digital não está sendo rastreado | Confirme se a **Write Key** foi colada corretamente e se o status no Repediu está **Ativo**.                          |
+| A integração parou de enviar eventos        | Verifique se a **Write Key** foi redefinida no Repediu. Se foi, gere a nova chave, cole no BeeFood e salve outra vez. |
+| O status continua como inativo              | Clique em **SALVAR** ou use <kbd>F2</kbd> e depois reabra a janela para atualizar o status.                           |
+

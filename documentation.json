@@ -230,6 +230,15 @@
                         "path": "99-entrega"
                       }
                     ]
+                  },
+                  {
+                    "group": "CRM",
+                    "pages": [
+                      {
+                        "title": "Integração Repediu",
+                        "path": "integracao-repediu"
+                      }
+                    ]
                   }
                 ]
               },
