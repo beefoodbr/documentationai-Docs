@@ -1,0 +1,136 @@
+---
+title: FoodCRM
+description: >-
+  Sincronize vendas automaticamente do BeeFood com o FoodCRM usando a API Key ou
+  Token em cada cardápio digital.
+---
+
+## Conecte o BeeFood ao FoodCRM para enviar suas vendas automaticamente todas as madrugadas e manter sua base de clientes atualizada no CRM sem trabalho manual.
+
+<Callout kind="info" collapsed="false">
+
+**O que você ganha**
+
+- Envio automático diário das vendas para o FoodCRM
+- Base de clientes sempre atualizada para campanhas, fidelização e recorrência
+- Controle por cardápio digital para ativar ou pausar o envio quando quiser
+
+</Callout>
+
+## Antes de começar
+
+| Item | Por que é necessário |
+| --- | --- |
+| Conta BeeFood ativa | A integração é configurada no BeeFood e exige pelo menos um cardápio digital disponível |
+| Conta no FoodCRM | Você precisa acessar [app.foodcrm.com.br](https://app.foodcrm.com.br) e ter permissão no menu **Integrações** |
+| API Key / Token em mãos | A chave é gerada no próprio FoodCRM e será colada no BeeFood |
+
+<Callout kind="tip" collapsed="false">
+
+A configuração é feita por **cardápio digital**. Se você usa mais de um cardápio, repita o processo em cada um deles.
+
+</Callout>
+
+## Parte 1 — Gerar a API Key no FoodCRM
+
+A primeira etapa é copiar a chave que autoriza o envio das vendas do BeeFood para o FoodCRM.
+
+<Steps>
+  <Step title="Abra Integrações e acesse a documentação" title-type="p">
+    No menu lateral do FoodCRM, clique em **Integrações**. No topo da página, no bloco **Conheça a nossa API Aberta**, clique em **Acessar a documentação**.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-foodcrm/imagens-tratadas/01-foodcrm-integracoes.png" width="1532" height="856" alt="Tela do FoodCRM no menu Integrações com o bloco Conheça a nossa API Aberta e o botão Acessar a documentação destacados" />
+
+    | Nº | Campo | O que fazer |
+    | --- | --- | --- |
+    | **1** | Integrações | Abra a área de integrações no menu lateral do FoodCRM |
+    | **2** | Acessar a documentação | Clique para abrir o painel com os dados da API de integração |
+  </Step>
+
+  <Step title="Copie a API Key ou Token" title-type="p">
+    Um painel **API de integração** abre à direita. Copie a **API Key / Token** usando o botão **Copiar**. Essa é a chave que você vai colar no BeeFood.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-foodcrm/imagens-tratadas/02-foodcrm-api-token.png" width="1200" height="856" alt="Painel API de integração do FoodCRM mostrando o campo API Key ou Token e o botão Copiar" />
+
+    | Nº | Campo | O que copiar |
+    | --- | --- | --- |
+    | **1** | API Key / Token | Copie a chave completa, que começa com `fcrm_` |
+    | **2** | Copiar | Use este botão para copiar a chave sem risco de deixar caracteres de fora |
+
+    <Callout kind="alert" collapsed="false">
+
+    Se você clicar em **Gerar novo token**, a chave anterior deixa de funcionar e será preciso atualizar o BeeFood com a nova chave.
+
+    O **Código da loja** exibido acima da chave não é usado no BeeFood. Cadastre apenas a **API Key / Token**.
+
+    </Callout>
+  </Step>
+</Steps>
+
+## Parte 2 — Cadastrar a chave no BeeFood
+
+Agora que a chave foi copiada, cadastre a credencial no cardápio digital que vai enviar as vendas ao FoodCRM.
+
+<Steps>
+  <Step title="Abra Aplicativos e acesse o card FoodCRM" title-type="p">
+    No BeeFood, clique em **Aplicativos** no menu lateral. Depois, na seção **Marketing e CRM**, abra o card **FoodCRM**.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-foodcrm/imagens-tratadas/03-beefood-aplicativos-card.png" width="1532" height="856" alt="Tela do BeeFood em Aplicativos com a seção Marketing e CRM e o card FoodCRM destacados" />
+
+    | Nº | Campo | O que fazer |
+    | --- | --- | --- |
+    | **1** | Aplicativos | Abra a área de aplicativos do BeeFood |
+    | **2** | FoodCRM | Clique no card da integração para abrir as credenciais por cardápio |
+  </Step>
+
+  <Step title="Escolha o cardápio e clique em Adicionar" title-type="p">
+    A janela **FoodCRM - Credenciais por Cardápio** mostra os cardápios digitais disponíveis e o status de cada um. No cardápio que você quer integrar, clique em **+ Adicionar**. Se abrir a janela por engano, feche com <kbd>ESC</kbd>.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-foodcrm/imagens-tratadas/04-beefood-modal-cardapios.png" width="1200" height="856" alt="Janela do BeeFood com a lista de cardápios digitais e o botão Adicionar para configurar credenciais do FoodCRM" />
+
+    | Nº | Campo | O que fazer |
+    | --- | --- | --- |
+    | **1** | Status do cardápio | Verifique qual cardápio será configurado |
+    | **2** | + Adicionar | Clique para cadastrar a chave do FoodCRM no cardápio escolhido |
+  </Step>
+
+  <Step title="Cole a chave, mantenha Ativo ligado e salve" title-type="p">
+    No formulário, cole a chave copiada do FoodCRM no campo **API key**. Deixe o botão **Ativo** ligado e clique em **SALVAR** ou use <kbd>F2</kbd>.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-foodcrm/imagens-tratadas/05-beefood-modal-apikey.png" width="1200" height="856" alt="Formulário do BeeFood para cadastrar a API key do FoodCRM com o campo de chave, o botão Ativo e a ação Salvar" />
+
+    | Nº | Campo | O que fazer |
+    | --- | --- | --- |
+    | **1** | API key * | Cole a API Key / Token copiada no FoodCRM |
+    | **2** | Ativo | Mantenha ligado para permitir o envio automático das vendas |
+    | **3** | SALVAR | Salve a credencial clicando no botão ou usando <kbd>F2</kbd> |
+
+    O ícone de olho ao lado do campo permite mostrar ou ocultar a chave digitada.
+  </Step>
+
+  <Step title="Confirme que o cardápio ficou ativo" title-type="p">
+    Depois de salvar, o cardápio deve aparecer com o status **Ativo** e a chave mascarada. Quando precisar trocar a chave ou pausar o envio, use **Editar**.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-foodcrm/imagens-tratadas/06-beefood-ativo.png" width="1200" height="856" alt="Janela do BeeFood mostrando o cardápio com status Ativo e a chave do FoodCRM mascarada" />
+
+    | Nº | Campo | O que confirmar |
+    | --- | --- | --- |
+    | **1** | Ativo | Confirme que o status do cardápio foi ativado com sucesso |
+    | **2** | Editar | Use para trocar a chave cadastrada ou desligar o envio depois |
+  </Step>
+</Steps>
+
+## Como funciona no dia a dia
+
+1. Durante o dia, você usa o BeeFood normalmente e não precisa executar nenhuma ação manual para o FoodCRM.
+2. De madrugada, o BeeFood envia automaticamente as vendas do período para o FoodCRM.
+3. Como o envio é diário, as vendas do dia costumam aparecer no FoodCRM no dia seguinte.
+
+## Problemas comuns
+
+| Sintoma | O que verificar |
+| --- | --- |
+| Vendas não aparecem no FoodCRM | Confirme se o cardápio está com status **Ativo** e se a chave foi colada completa, começando com `fcrm_` |
+| Parou de enviar de repente | Verifique se alguém clicou em **Gerar novo token** no FoodCRM. Se isso aconteceu, copie a nova chave e atualize no BeeFood em **Editar** |
+| Tenho vários cardápios | Cada cardápio precisa da sua própria chave. Repita o cadastro em cada cardápio que usar o FoodCRM |
+| Quero pausar o envio | Abra **Editar** e desligue o botão **Ativo**. A chave continua salva para reativação depois |

@@ -237,6 +237,10 @@
                       {
                         "title": "Repediu",
                         "path": "integracao-repediu"
+                      },
+                      {
+                        "title": "FoodCRM",
+                        "path": "integracao-foodcrm"
                       }
                     ]
                   }
