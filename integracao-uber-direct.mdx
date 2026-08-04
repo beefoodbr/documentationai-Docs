@@ -218,14 +218,49 @@ Depois que a integração estiver ativa, o fluxo de despacho passa a acontecer d
     O pedido entra no BeeFood pelo site, iFood, balcão ou outro canal integrado. Sua equipe segue o fluxo normal da cozinha até o momento de envio.
   </Step>
 
-  <Step title="Solicitar o entregador pela tela de Delivery" title-type="p">
-    Quando o pedido estiver pronto para sair, o BeeFood envia a solicitação de entrega para a Uber Direct. Nesse momento, a Uber procura um entregador disponível para a corrida.
+  <Step title="Solicitar entregador pela tela de Delivery" title-type="p">
+    Quando o pedido estiver pronto para sair, abra a tela de **Delivery** no BeeFood. No pedido, clique em **Adicionar Entregador** e selecione **Uber Direct** entre as opções de entrega.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-uber-direct/imagens-tratadas/uber-direct-22.png" width="760" height="400" alt="Tela de Delivery — Adicionar Entregador e selecionar Uber Direct" />
+  </Step>
+
+  <Step title="Revisar a cotação e confirmar" title-type="p">
+    O BeeFood solicita uma cotação à Uber, que retorna **distância**, **tempo estimado** e **valor da entrega**. Revise as informações e clique em **Confirmar** para despachar o entregador.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-uber-direct/imagens-tratadas/uber-direct-23.png" width="760" height="400" alt="Cotação da Uber — distância, tempo e preço" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-uber-direct/imagens-tratadas/uber-direct-24.png" width="760" height="400" alt="Confirmar cotação para despachar entregador" />
   </Step>
 
   <Step title="Acompanhar o status automaticamente" title-type="p">
-    As mudanças de status retornam sozinhas para o BeeFood pelo webhook configurado antes. Assim, o pedido pode refletir atualizações de coleta, trajeto e entrega concluída.
+    Após a confirmação, o BeeFood cria a entrega na Uber e um entregador é alocado. As mudanças de status voltam sozinhas para o BeeFood pelo webhook configurado anteriormente — o pedido avança no kanban sem precisar atualizar manualmente. Mensagens de WhatsApp e status de marketplaces também são atualizados quando aplicável.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-uber-direct/imagens-tratadas/uber-direct-25.png" width="760" height="400" alt="Pedido vinculado à Uber Direct no BeeFood" />
+  </Step>
+
+  <Step title="Cancelar entrega se necessário" title-type="p">
+    Para cancelar, abra o pedido na tela de Delivery e use o campo **Entregador** para cancelar a entrega da Uber Direct. O BeeFood envia a solicitação de cancelamento à Uber.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-uber-direct/imagens-tratadas/uber-direct-26.png" width="760" height="400" alt="Cancelar entrega no campo Entregador" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-uber-direct/imagens-tratadas/uber-direct-27.png" width="760" height="400" alt="Entrega cancelada — pedido desvinculado da Uber Direct" />
+
+    <Callout kind="alert" collapsed="false">
+      O cancelamento só é possível enquanto a Uber ainda permite. Se a entrega já foi concluída, a Uber pode recusar o cancelamento e o BeeFood mantém o vínculo até que o cancelamento seja bem-sucedido.
+    </Callout>
   </Step>
 </Steps>
+
+## Status do pedido — o que você vê no BeeFood
+
+As atualizações de status chegam automaticamente via webhook. A tabela abaixo mostra como as situações da Uber aparecem no BeeFood:
+
+| Situação na Uber                  | Status no BeeFood |
+| --------------------------------- | ----------------- |
+| Entregador a caminho / em entrega | ENTREGA           |
+| Entrega concluída                 | ENTREGUE          |
+
+As atualizações chegam sozinhas via webhook — não é preciso atualizar manualmente.
 
 ## Dicas importantes
 
@@ -238,6 +273,7 @@ Depois que a integração estiver ativa, o fluxo de despacho passa a acontecer d
 - Se o login não funcionar, verifique se o e-mail ou telefone já não está em uso em outra conta Uber.
 - Cadastre o **endereço real** de onde o entregador busca o pedido. Um endereço errado atrapalha a entrega.
 - A **chave de autenticação do webhook** é obrigatória — sem ela, o BeeFood não consegue validar as notificações de status da Uber.
+- O **cancelamento** de entrega é feito pelo campo **Entregador** na tela de Delivery. A Uber pode recusar se a entrega já tiver sido concluída — nesse caso, o vínculo permanece até um cancelamento bem-sucedido.
 
 <Callout kind="tip" collapsed="false">
   Se quiser evitar retrabalho, termine toda a configuração no painel da Uber antes de abrir a tela de integração no BeeFood.
