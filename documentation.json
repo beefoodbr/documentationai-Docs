@@ -18,232 +18,232 @@
         "icon": "badge-help",
         "groups": [
           {
-            "group": "Início",
+            "group": "🏠 Início",
             "pages": [
               {
-                "title": "Boas vindas",
+                "title": "👋 Boas vindas",
                 "path": "boas-vindas"
               },
               {
-                "title": "Como migrar para BeeFood3",
+                "title": "🔄 Como migrar para BeeFood3",
                 "path": "como-migrar-para-beefood3"
               },
               {
-                "title": "Planos e Preços",
+                "title": "💰 Planos e Preços",
                 "path": "planos-e-precos"
               }
             ],
             "icon": "rocket-icon"
           },
           {
-            "group": "Manual",
+            "group": "🎬 Manual",
             "icon": "clapperboard",
             "pages": [
               {
-                "title": "Todos os vídeos",
+                "title": "🎥 Todos os vídeos",
                 "path": "videos"
               },
               {
-                "group": "Cardápio Digital",
+                "group": "📱 Cardápio Digital",
                 "pages": [
                   {
-                    "title": "Link Multilojas",
+                    "title": "🔗 Link Multilojas",
                     "path": "link-multilojas"
                   }
                 ]
               },
               {
-                "group": "Geral",
+                "group": "⚙️ Geral",
                 "pages": [
                   {
-                    "title": "Como migrar os dados?",
+                    "title": "📊 Como migrar os dados?",
                     "path": "migrar-dados"
                   }
                 ]
               },
               {
-                "group": "Cliente",
+                "group": "👥 Cliente",
                 "pages": [
                   {
-                    "title": "Gestão de fiado",
+                    "title": "🤝 Gestão de fiado",
                     "path": "fiado"
                   }
                 ]
               },
               {
-                "group": "Delivery",
+                "group": "🛵 Delivery",
                 "pages": [
                   {
-                    "title": "Pedidos delivery",
+                    "title": "📦 Pedidos delivery",
                     "path": "delivery"
                   },
                   {
-                    "title": "Aceite automático de pedidos",
+                    "title": "✅ Aceite automático de pedidos",
                     "path": "aceite-automatico"
                   }
                 ]
               },
               {
-                "group": "Mesas",
+                "group": "🍽️ Mesas",
                 "pages": [
                   {
-                    "title": "Pedido Mesas / Comandas",
+                    "title": "🪑 Pedido Mesas / Comandas",
                     "path": "mesas"
                   }
                 ]
               },
               {
-                "group": "PDV",
+                "group": "💳 PDV",
                 "pages": [
                   {
-                    "title": "Pedidos PDV",
+                    "title": "🛒 Pedidos PDV",
                     "path": "pdv"
                   }
                 ]
               },
               {
-                "group": "Caixa",
+                "group": "🧾 Caixa",
                 "path": "caixa",
                 "pages": [
                   {
-                    "title": "Abrir Caixa",
+                    "title": "🔓 Abrir Caixa",
                     "path": "caixa-abrir"
                   }
                 ]
               },
               {
-                "group": "Estoque",
+                "group": "📦 Estoque",
                 "pages": [
                   {
-                    "title": "Meu estoque",
+                    "title": "📋 Meu estoque",
                     "path": "meu-estoque"
                   },
                   {
-                    "title": "Estoque Simples - Produto e Complemento",
+                    "title": "🏷️ Estoque Simples - Produto e Complemento",
                     "path": "estoque-produto-complemento"
                   },
                   {
-                    "title": "Estoque Simples - Insumo",
+                    "title": "🧂 Estoque Simples - Insumo",
                     "path": "estoque-insumo"
                   },
                   {
-                    "title": "Estoque - Gestão Avançada",
+                    "title": "📈 Estoque - Gestão Avançada",
                     "path": "estoque-gestao-avancada"
                   }
                 ]
               },
               {
-                "group": "WhatsApp",
+                "group": "💬 WhatsApp",
                 "pages": [
                   {
-                    "title": "Bot de WhatsApp",
+                    "title": "🤖 Bot de WhatsApp",
                     "path": "whatsapp"
                   },
                   {
-                    "title": "Boletim do WhatsApp",
+                    "title": "📬 Boletim do WhatsApp",
                     "path": "whatsapp-boletim"
                   }
                 ]
               },
               {
-                "group": "Parâmetros",
+                "group": "🔧 Parâmetros",
                 "pages": [
                   {
-                    "title": "Código do Operador",
+                    "title": "🔢 Código do Operador",
                     "path": "parametros-codigo-operador"
                   },
                   {
-                    "title": "Senha Gerente",
+                    "title": "🔑 Senha Gerente",
                     "path": "parametros-senha-gerente"
                   }
                 ]
               },
               {
-                "group": "Impressão",
+                "group": "🖨️ Impressão",
                 "pages": [
                   {
-                    "title": "Impressão",
+                    "title": "🖨️ Impressão",
                     "path": "impressao"
                   },
                   {
-                    "title": "Cadastro de Impressoras e Configuração",
+                    "title": "🖥️ Cadastro de Impressoras e Configuração",
                     "path": "impressao-cadastro-impressoras-configuracao"
                   },
                   {
-                    "title": "Configuração de Impressão",
+                    "title": "⚙️ Configuração de Impressão",
                     "path": "impressao-configuracao-de-impressao"
                   },
                   {
-                    "title": "Impressão da Cozinha Automática",
+                    "title": "🍳 Impressão da Cozinha Automática",
                     "path": "impressao-cozinha-automatica"
                   }
                 ]
               },
               {
-                "group": "Fiscal",
+                "group": "📋 Fiscal",
                 "path": "fiscal",
                 "pages": [
                   {
-                    "title": "Configuração Fiscal (NF-e e NFC-e)",
+                    "title": "⚖️ Configuração Fiscal (NF-e e NFC-e)",
                     "path": "fiscal-configuracao"
                   },
                   {
-                    "title": "Edição de Impostos",
+                    "title": "📝 Edição de Impostos",
                     "path": "edicao-fiscal"
                   },
                   {
-                    "title": "Emissão de NFC-e",
+                    "title": "🧾 Emissão de NFC-e",
                     "path": "nfce"
                   },
                   {
-                    "title": "Emissão de NF-e",
+                    "title": "🧾 Emissão de NF-e",
                     "path": "nfe"
                   },
                   {
-                    "title": "Reforma Tributária (IBS/CBS)",
+                    "title": "📜 Reforma Tributária (IBS/CBS)",
                     "path": "reforma-tributaria"
                   }
                 ]
               },
               {
-                "group": "Integrações",
+                "group": "🔌 Integrações",
                 "path": "integracoes",
                 "pages": [
                   {
-                    "group": "Marketplace",
+                    "group": "🛒 Marketplace",
                     "pages": [
                       {
-                        "title": "Aiqfome",
+                        "title": "🍔 Aiqfome",
                         "path": "aiqfome"
                       }
                     ]
                   },
                   {
-                    "group": "Logística",
+                    "group": "🚚 Logística",
                     "pages": [
                       {
-                        "title": "Machine Global",
+                        "title": "🌐 Machine Global",
                         "path": "machine-global"
                       },
                       {
-                        "title": "99 Entrega",
+                        "title": "🛵 99 Entrega",
                         "path": "99-entrega"
                       },
                       {
-                        "title": "Uber Direct",
+                        "title": "🚗 Uber Direct",
                         "path": "integracao-uber-direct"
                       }
                     ]
                   },
                   {
-                    "group": "CRM",
+                    "group": "📞 CRM",
                     "pages": [
                       {
-                        "title": "Repediu",
+                        "title": "🔁 Repediu",
                         "path": "integracao-repediu"
                       },
                       {
-                        "title": "FoodCRM",
+                        "title": "📊 FoodCRM",
                         "path": "integracao-foodcrm"
                       }
                     ]
@@ -251,26 +251,26 @@
                 ]
               },
               {
-                "group": "Marketing Cardápío Digital",
+                "group": "📈 Marketing Cardápío Digital",
                 "pages": [
                   {
-                    "group": "Facebook Pixel",
+                    "group": "📘 Facebook Pixel",
                     "pages": [
                       {
-                        "title": "API de Conversões",
+                        "title": "📊 API de Conversões",
                         "path": "facebook-pixel-api-de-converses"
                       }
                     ]
                   },
                   {
-                    "group": "Google Tag Manager",
+                    "group": "🏷️ Google Tag Manager",
                     "pages": [
                       {
-                        "title": "Criando Google Tag Manager",
+                        "title": "🏷️ Criando Google Tag Manager",
                         "path": "criando-google-tag-manager"
                       },
                       {
-                        "title": "Configurando Eventos",
+                        "title": "🎯 Configurando Eventos",
                         "path": "configurando-eventos"
                       }
                     ]
