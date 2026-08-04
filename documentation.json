@@ -228,6 +228,10 @@
                       {
                         "title": "99 Entrega",
                         "path": "99-entrega"
+                      },
+                      {
+                        "title": "Uber Direct",
+                        "path": "integracao-uber-direct"
                       }
                     ]
                   },
@@ -272,15 +276,6 @@
                     ]
                   }
                 ]
-              }
-            ]
-          },
-          {
-            "group": "Plano",
-            "pages": [
-              {
-                "title": "Tabela de adicionais",
-                "path": "tabela-de-adicionais"
               }
             ]
           }
