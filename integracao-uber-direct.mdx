@@ -5,5 +5,214 @@ description: >-
   conta Uber Direct, cadastre cartão, configure webhook e conecte as
   credenciais.
 ---
+## O que é a Uber Direct
 
+Com a Uber Direct, seu restaurante pode cotar, despachar, acompanhar e cancelar entregas diretamente pelo BeeFood, usando a rede de entregadores da Uber. Depois da configuração inicial, você chama entregadores pela tela de Delivery e acompanha o andamento do pedido sem sair do sistema.
+
+## O que você ganha
+
+- **Cotação automática:** preço, distância e tempo estimado calculados ao selecionar Uber Direct.
+- **Acompanhamento em tempo real:** o status do pedido atualiza sozinho via webhook conforme o entregador progride.
+- **Cancelamento flexível:** cancele a entrega antes do entregador retirar o pedido no restaurante.
+- **Integração direta:** despacho a partir da tela de Delivery, com endereço e cliente já preenchidos.
+
+## Antes de começar
+
+1. **Conta BeeFood** ativa.
+2. **Acesso ao site da Uber Direct** em [https://direct.uber.com](https://direct.uber.com).
+3. **Cartão de crédito** para cadastro no painel da Uber Direct — o pagamento de cada entrega é cobrado diretamente pela Uber.
+
+## Parte 1 — Criar sua conta Uber Direct
+
+<Steps>
+  <Step title="Fazer login e criar conta" title-type="p">
+    - Acesse [https://direct.uber.com/accounts](https://direct.uber.com/accounts) e faça login com seu telefone ou e-mail.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-uber-direct/imagens-tratadas/uber-direct-01.png" width="760" height="400" alt="Uber Direct — tela de login" />
+
+    - Digite o código de verificação de 4 dígitos enviado para seu telefone.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-uber-direct/imagens-tratadas/uber-direct-02.png" width="760" height="400" alt="Uber Direct — código de verificação" />
+
+    - Defina e confirme sua senha de acesso.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-uber-direct/imagens-tratadas/uber-direct-03.png" width="760" height="400" alt="Uber Direct — definir senha" />
+  </Step>
+
+  <Step title="Cadastrar o restaurante" title-type="p">
+    - Preencha o nome do restaurante.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-uber-direct/imagens-tratadas/uber-direct-04.png" width="760" height="400" alt="Uber Direct — nome do restaurante" />
+
+    - Selecione o tipo de negócio.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-uber-direct/imagens-tratadas/uber-direct-05.png" width="760" height="400" alt="Uber Direct — tipo de negócio" />
+
+    - Informe o endereço do restaurante.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-uber-direct/imagens-tratadas/uber-direct-06.png" width="760" height="400" alt="Uber Direct — endereço do restaurante" />
+
+    - Preencha o CNPJ.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-uber-direct/imagens-tratadas/uber-direct-07.png" width="760" height="400" alt="Uber Direct — CNPJ" />
+
+    - Aceite os termos e condições e clique em **Enviar**.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-uber-direct/imagens-tratadas/uber-direct-08.png" width="760" height="400" alt="Uber Direct — aceitar termos e condições" />
+  </Step>
+</Steps>
+
+## Parte 2 — Cadastrar cartão no painel da Uber Direct
+
+<Steps>
+  <Step title="Acessar pagamento e cadastrar cartão" title-type="p">
+    - No painel da Uber Direct, acesse **Gerenciamento → Pagamento**.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-uber-direct/imagens-tratadas/uber-direct-09.png" width="760" height="400" alt="Uber Direct — Gerenciamento → Pagamento" />
+
+    - Clique em **Configurar** para adicionar um método de pagamento.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-uber-direct/imagens-tratadas/uber-direct-10.png" width="760" height="400" alt="Uber Direct — configurar pagamento" />
+
+    - Preencha os dados do cartão de crédito, incluindo número, validade, CVV e país, e clique em **Adicionar cartão**.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-uber-direct/imagens-tratadas/uber-direct-11.png" width="760" height="400" alt="Uber Direct — preencher dados do cartão" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-uber-direct/imagens-tratadas/uber-direct-12.png" width="760" height="400" alt="Uber Direct — cartão cadastrado" />
+
+    <Callout kind="info" collapsed="false">
+      O pagamento de cada entrega é cobrado diretamente pela Uber no cartão cadastrado. O BeeFood não intermedeia nem cobra taxa sobre o frete. Se o cartão expirar, novas entregas serão bloqueadas — atualize o cartão em **Gerenciamento → Pagamento** antes do próximo despacho.
+    </Callout>
+  </Step>
+</Steps>
+
+## Parte 3 — Configurar webhook e obter credenciais
+
+<Steps>
+  <Step title="Criar o webhook" title-type="p">
+    - No painel da Uber Direct, acesse o menu **Desenvolvedor**.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-uber-direct/imagens-tratadas/uber-direct-13.png" width="760" height="400" alt="Uber Direct — menu Desenvolvedor" />
+
+    - Na aba **Webhooks**, clique em **Criar webhook**.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-uber-direct/imagens-tratadas/uber-direct-14.png" width="760" height="400" alt="Uber Direct — aba Webhooks" />
+
+    - Preencha a URL do webhook com o endereço abaixo, selecione o evento `event.delivery_status` e clique em **Salvar**.
+
+    <Callout kind="info" collapsed="false">
+      **Webhook do BeeFood** — copie a URL abaixo e cole no campo de URL do webhook:
+
+      ```typescript
+      https://entregas.beefoodapi.be/api/uberDirect/webhook
+      ```
+    </Callout>
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-uber-direct/imagens-tratadas/uber-direct-15.png" width="760" height="400" alt="Uber Direct — configurar URL e evento do webhook" />
+  </Step>
+
+  <Step title="Copiar a chave de assinatura do webhook" title-type="p">
+    - Após salvar o webhook, clique no menu de três pontos ao lado dele e selecione **Editar**.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-uber-direct/imagens-tratadas/uber-direct-16.png" width="760" height="400" alt="Uber Direct — menu do webhook" />
+
+    - Copie a **Chave de assinatura** exibida na tela de edição.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-uber-direct/imagens-tratadas/uber-direct-17.png" width="760" height="400" alt="Uber Direct — copiar chave de assinatura" />
+  </Step>
+
+  <Step title="Copiar as chaves de API" title-type="p">
+    - No menu **Desenvolvedor**, acesse **Chaves de API**. Copie os 3 valores: **Customer ID**, **Client ID** e **Client Secret**.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-uber-direct/imagens-tratadas/uber-direct-18.png" width="760" height="400" alt="Uber Direct — chaves de API" />
+
+    <Callout kind="info" collapsed="false">
+      Guarde com cuidado os 4 valores: **Customer ID**, **Client ID**, **Client Secret** e **Chave de assinatura do webhook**. Você vai colá-los no BeeFood na próxima etapa.
+    </Callout>
+  </Step>
+</Steps>
+
+## Parte 4 — Configurar a integração no BeeFood
+
+<Steps>
+  <Step title="Abrir Aplicativos → Entregas → Uber Direct" title-type="p">
+    - No menu lateral do BeeFood, clique em **Aplicativos**.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-uber-direct/imagens-tratadas/uber-direct-19.png" width="1372" height="714" alt="Menu lateral — Aplicativos" style="width: 1372px; height: auto; cursor: pointer;" />
+
+    - Na seção **Entregas**, selecione **Uber Direct**.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-uber-direct/imagens-tratadas/uber-direct-20.png" width="760" height="400" alt="Aplicativos → Entregas → Uber Direct" />
+  </Step>
+
+  <Step title="Preencher credenciais e salvar" title-type="p">
+    - Preencha os 4 campos com as credenciais copiadas do painel da Uber Direct, deixe a integração ativa e clique em **Salvar**.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-uber-direct/imagens-tratadas/uber-direct-21.png" width="596" height="582" alt="Tela de credenciais Uber Direct no BeeFood" style="width: 596px; height: auto; cursor: pointer;" />
+
+    | Campo no BeeFood                   | O que é no painel da Uber Direct       |
+    | ---------------------------------- | -------------------------------------- |
+    | **ID do usuário**                  | Customer ID (Chaves de API)            |
+    | **ID de cliente do desenvolvedor** | Client ID (Chaves de API)              |
+    | **Client Secret**                  | Client Secret (Chaves de API)          |
+    | **Chave de autenticação**          | Webhook Signing Key (Webhook → Editar) |
+
+    <Callout kind="info" collapsed="false">
+      Com a integração ativa, o BeeFood passa a receber as atualizações de status da Uber via webhook. Se ocorrer erro ao salvar, confira os dados e tente novamente.
+    </Callout>
+  </Step>
+</Steps>
+
+## Parte 5 — Despachar e acompanhar
+
+<Steps>
+  <Step title="Despachar um pedido" title-type="p">
+    1. Abra a tela de **Delivery** e localize um pedido do tipo entrega (`DELIVERY`).
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-uber-direct/imagens-tratadas/uber-direct-22.png" width="760" height="400" alt="Buscar o pedido na lista" />
+
+    2. No pedido, clique em **Adicionar Entregador**.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-uber-direct/imagens-tratadas/uber-direct-23.png" width="911" height="760" alt="Adicionar entregador" style="width: 911px; height: auto; cursor: pointer;" />
+
+    3. Em **Entrega Terceirizada**, selecione **Uber Direct**. O sistema realiza automaticamente uma cotação com distância, tempo estimado e valor do frete.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-uber-direct/imagens-tratadas/uber-direct-24.png" width="1343" height="1123" alt="Selecionar Uber Direct" style="width: 1343px; height: auto; cursor: pointer;" />
+
+    4. Confira a cotação e clique em **Confirmar**. O pedido é enviado à Uber com endereço e cliente já preenchidos.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-uber-direct/imagens-tratadas/uber-direct-25.png" width="842" height="665" alt="Visualizar cotação" style="width: 842px; height: auto; cursor: pointer;" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-uber-direct/imagens-tratadas/uber-direct-26.png" width="1653" height="1381" alt="Pedido vinculado à Uber Direct" style="width: 1653px; height: auto; cursor: pointer;" />
+  </Step>
+
+  <Step title="Acompanhar e cancelar" title-type="p">
+    - Após o despacho, o pedido fica vinculado à Uber Direct. O status no BeeFood acompanha a operação via webhook.
+
+    | Situação na Uber Direct | O que você vê no BeeFood |
+    | ----------------------- | ------------------------ |
+    | Entregador a caminho    | Pedido em **Entrega**    |
+    | Entrega concluída       | Pedido **Entregue**      |
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-uber-direct/imagens-tratadas/uber-direct-27.png" width="760" height="400" alt="Cancelar entrega Uber Direct" />
+
+    <Callout kind="alert" collapsed="false">
+      O cancelamento só pode ser feito **antes** de o entregador retirar o pedido no restaurante. Use o ícone de lixeira no campo **Entregador** para cancelar.
+    </Callout>
+  </Step>
+</Steps>
+
+## Como funciona no dia a dia
+
+1. O pedido entra no BeeFood, seja pelo site, iFood, balcão ou outro canal.
+2. Você avança o pedido no fluxo normal da cozinha.
+3. Na hora da entrega, o BeeFood solicita a cotação à Uber Direct e cria a entrega.
+4. A Uber aloca um entregador.
+5. As mudanças de status voltam sozinhas para o BeeFood e atualizam o pedido, WhatsApp e marketplaces quando aplicável.
+
+## Precisa de ajuda?
+
+Entre em contato com o **suporte BeeFood** informando o nome da loja e o **CNPJ**, as credenciais utilizadas, o print do erro, se houver, e o horário da tentativa.
+
+---
 
