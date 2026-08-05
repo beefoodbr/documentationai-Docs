@@ -4,4 +4,195 @@ description: >-
   Despache entregas pelo BeeFood usando a rede de entregadores da 99: cotação
   automática, acompanhamento em tempo real e cancelamento antes da coleta.
 ---
+## O que é a 99 Entrega
+
+Com a 99 Entrega, seu restaurante pode cotar, despachar, acompanhar e cancelar entregas direto pelo BeeFood usando a rede de entregadores da 99. Depois da configuração inicial, você chama entregadores pela tela de Delivery e acompanha o andamento do pedido sem sair do sistema.
+
+## O que você ganha
+
+- **Cotação automática:** preço, distância e tempo estimado calculados ao selecionar 99 Entrega.
+- **Acompanhamento em tempo real:** o status do pedido atualiza sozinho via webhook conforme o entregador progride.
+- **Cancelamento flexível:** cancele a entrega antes do entregador retirar o pedido no restaurante.
+- **Integração direta:** despacho a partir da tela de Delivery, com endereço e cliente já preenchidos.
+
+## Antes de começar
+
+1. **Conta BeeFood** ativa.
+2. **Acesso ao painel da 99 Entrega** em [https://entrega.99app.com](https://entrega.99app.com).
+3. **Pagamento via boleto** aprovado pela 99 — o único método de pagamento aceito nesta integração.
+
+<Callout kind="info" collapsed="false">
+  A aprovação do boleto e do ambiente de produção é feita pela 99 e pode levar tempo. Para agilizar, entre em contato com o suporte BeeFood.
+</Callout>
+
+## Parte 1 — Solicitar pagamento por boleto
+
+<Steps>
+  <Step title="Configurar pagamento por boleto" title-type="p">
+    - Acesse [https://entrega.99app.com/v2/](https://entrega.99app.com/v2/) e navegue até **Configurações de pagamento**.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-99-entrega/imagens-tratadas/99-entrega-05.png" width="760" height="400" alt="99 Entrega — painel de configurações de pagamento" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-99-entrega/imagens-tratadas/99-entrega-06.png" width="760" height="400" alt="99 Entrega — selecionar boleto" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-99-entrega/imagens-tratadas/99-entrega-07.png" width="760" height="400" alt="99 Entrega — confirmar boleto" />
+
+    - Selecione **Boleto** como opção de pagamento e clique em **Confirmar**.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-99-entrega/imagens-tratadas/99-entrega-08.png" width="760" height="400" alt="99 Entrega — boleto em análise" />
+
+    - O status fica **em análise pela 99** — aguarde a aprovação antes de prosseguir.
+
+    <Callout kind="info" collapsed="false">
+      Para acelerar a aprovação, entre em contato com o suporte BeeFood.
+    </Callout>
+  </Step>
+</Steps>
+
+## Parte 2 — Solicitar ambiente de produção
+
+<Steps>
+  <Step title="Solicitar ambiente de produção" title-type="p">
+    - Após a aprovação do boleto, acesse **Modo de desenvolvedor** no painel da 99.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-99-entrega/imagens-tratadas/99-entrega-09.png" width="760" height="400" alt="99 Entrega — modo de desenvolvedor" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-99-entrega/imagens-tratadas/99-entrega-10.png" width="760" height="400" alt="99 Entrega — ambiente de produção" />
+
+    - Clique em **Ambiente de produção**.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-99-entrega/imagens-tratadas/99-entrega-11.png" width="760" height="400" alt="99 Entrega — solicitar ambiente de produção" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-99-entrega/imagens-tratadas/99-entrega-12.png" width="760" height="400" alt="99 Entrega — confirmar solicitação" />
+
+    - Role até o final da página e clique em **Enviar**. Confirme clicando em **Enviar** novamente.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-99-entrega/imagens-tratadas/99-entrega-13.png" width="760" height="400" alt="99 Entrega — solicitação em análise" />
+
+    - O status fica **em análise pela 99** — aguarde a aprovação antes de prosseguir.
+
+    <Callout kind="info" collapsed="false">
+      Para acelerar a aprovação, entre em contato com o suporte BeeFood.
+    </Callout>
+  </Step>
+</Steps>
+
+## Parte 3 — Configurar webhook e obter credenciais
+
+<Steps>
+  <Step title="Registrar webhook" title-type="p">
+    - No painel da 99, acesse **Modo de desenvolvedor**.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-99-entrega/imagens-tratadas/99-entrega-14.png" width="760" height="400" alt="99 Entrega — modo de desenvolvedor" />
+
+    - No campo **URL**, registre o webhook do BeeFood:
+
+    <Callout kind="info" collapsed="false">
+      **Webhook do BeeFood** — copie a URL abaixo e cole no campo de URL:
+
+      ```typescript
+      https://entregas.beetechapi.be/api/99Entrega/webhook
+      ```
+    </Callout>
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-99-entrega/imagens-tratadas/99-entrega-15.png" width="760" height="400" alt="99 Entrega — registrar webhook" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-99-entrega/imagens-tratadas/99-entrega-16.png" width="760" height="400" alt="99 Entrega — webhook cadastrado" />
+  </Step>
+
+  <Step title="Copiar as credenciais de API" title-type="p">
+    - Na mesma tela do **Modo de desenvolvedor**, copie os 3 valores exibidos:
+
+    | Credencial              | Descrição           |
+    | ----------------------- | ------------------- |
+    | **ID do cliente**       | Client ID           |
+    | **Segredo do cliente**  | Client Secret       |
+    | **Chave de assinatura** | Webhook Signing Key |
+
+    <Callout kind="info" collapsed="false">
+      Guarde com cuidado os 3 valores. Você vai colá-los no BeeFood na próxima etapa.
+    </Callout>
+  </Step>
+</Steps>
+
+## Parte 4 — Configurar a integração no BeeFood
+
+<Steps>
+  <Step title="Abrir Aplicativos → Entregas → 99 Entrega" title-type="p">
+    - No menu lateral do BeeFood, clique em **Aplicativos**.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-99-entrega/imagens-tratadas/99-entrega-17.png" width="1372" height="714" alt="Menu lateral — Aplicativos" />
+
+    - Na seção **Entregas**, selecione **99 Entrega**.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-99-entrega/imagens-tratadas/99-entrega-18.png" width="1372" height="714" alt="Aplicativos → Entregas → 99 Entrega" />
+  </Step>
+
+  <Step title="Preencher credenciais e salvar" title-type="p">
+    - Preencha os 3 campos com as credenciais copiadas do painel da 99, ative a integração e clique em **Salvar**.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-99-entrega/imagens-tratadas/99-entrega-19.png" width="760" height="400" alt="Tela de credenciais 99 Entrega no BeeFood" />
+
+    | Campo no BeeFood        | O que é no painel da 99 |
+    | ----------------------- | ----------------------- |
+    | **ID do cliente**       | Client ID               |
+    | **Segredo do cliente**  | Client Secret           |
+    | **Chave de assinatura** | Webhook Signing Key     |
+
+    <Callout kind="info" collapsed="false">
+      Com a integração ativa, o BeeFood passa a receber as atualizações de status da 99 via webhook. Se ocorrer erro ao salvar, confira os dados e tente novamente.
+    </Callout>
+  </Step>
+</Steps>
+
+## Parte 5 — Despachar e acompanhar
+
+<Steps>
+  <Step title="Despachar um pedido" title-type="p">
+    1. Abra a tela de **Delivery** e localize um pedido do tipo entrega (`DELIVERY`).
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-99-entrega/imagens-tratadas/99-entrega-20.png" width="760" height="400" alt="Buscar o pedido na lista" />
+
+    2. No pedido, clique em **Adicionar Entregador**.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-99-entrega/imagens-tratadas/99-entrega-21.png" width="760" height="400" alt="Adicionar entregador" />
+
+    3. Em **Entrega Terceirizada**, selecione **99 Entrega**. O sistema realiza automaticamente uma cotação com distância, tempo estimado e valor do frete.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-99-entrega/imagens-tratadas/99-entrega-22.png" width="760" height="400" alt="Selecionar 99 Entrega" />
+
+    4. Confira a cotação e clique em **Confirmar**. O pedido é enviado à 99 com endereço e cliente já preenchidos.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-99-entrega/imagens-tratadas/99-entrega-23.png" width="760" height="400" alt="Visualizar cotação" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-99-entrega/imagens-tratadas/99-entrega-24.png" width="1653" height="1381" alt="Pedido vinculado à 99 Entrega" />
+  </Step>
+
+  <Step title="Acompanhar e cancelar" title-type="p">
+    - Após o despacho, o pedido fica vinculado à 99 Entrega. O status no BeeFood acompanha a operação via webhook.
+
+    | Situação na 99       | O que você vê no BeeFood |
+    | -------------------- | ------------------------ |
+    | Entregador a caminho | Pedido em **Entrega**    |
+    | Entrega concluída    | Pedido **Entregue**      |
+
+    <Callout kind="alert" collapsed="false">
+      O cancelamento só pode ser feito **antes** de o entregador retirar o pedido no restaurante. Use o ícone de lixeira no campo **Entregador** para cancelar.
+    </Callout>
+  </Step>
+</Steps>
+
+## Como funciona no dia a dia
+
+1. O pedido entra no BeeFood, seja pelo site, iFood, balcão ou outro canal.
+2. Você avança o pedido no fluxo normal da cozinha.
+3. Na hora da entrega, o BeeFood solicita a cotação à 99 Entrega e cria a entrega.
+4. A 99 aloca um entregador.
+5. As mudanças de status voltam sozinhas para o BeeFood e atualizam o pedido, WhatsApp e marketplaces quando aplicável.
+
+## Precisa de ajuda?
+
+Entre em contato com o **suporte BeeFood** informando o nome da loja e o **CNPJ**, as credenciais utilizadas, o print do erro, se houver, e o horário da tentativa.
+
+---
 
