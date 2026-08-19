@@ -32,12 +32,10 @@
                 "title": "💰 Planos e Preços",
                 "path": "planos-e-precos"
               }
-            ],
-            "icon": "rocket-icon"
+            ]
           },
           {
             "group": "🎬 Manual",
-            "icon": "clapperboard",
             "pages": [
               {
                 "title": "🎥 Todos os vídeos",
