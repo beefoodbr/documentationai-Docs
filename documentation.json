@@ -46,6 +46,15 @@
                 "path": "videos"
               },
               {
+                "group": "📣 Food Marketing",
+                "pages": [
+                  {
+                    "title": "🎯 Segmentação de Clientes",
+                    "path": "segmentacao-clientes"
+                  }
+                ]
+              },
+              {
                 "group": "📱 Cardápio Digital",
                 "pages": [
                   {

@@ -1,0 +1,377 @@
+---
+title: Segmentação de Clientes
+description: >-
+  Crie públicos mais úteis para WhatsApp e SMS, combine filtros, teste o tamanho
+  da audiência e reutilize segmentações no dia a dia.
+---
+## Visão geral
+
+Monte segmentações de clientes para falar com públicos diferentes, testar o tamanho da audiência antes de salvar, aproveitar modelos prontos e copiar oito segmentações úteis para o marketing do restaurante no dia a dia.
+
+<Callout kind="info" collapsed="false">
+  As imagens têm setas com números como **1**, **2** e **3**. No texto, cada número indica exatamente o campo ou botão correspondente na tela.
+</Callout>
+
+## Por que segmentar
+
+Mandar a mesma mensagem para todo mundo faz parte da sua base ignorar, silenciar ou bloquear seu WhatsApp. Quem comprou uma vez, quem sempre volta, quem esqueceu cashback e quem só pede à noite não deveria receber a mesma conversa.
+
+A segmentação serve para dividir a base com sentido prático. Cada grupo pede uma abordagem diferente, e isso costuma melhorar a resposta das campanhas.
+
+## O conceito mais importante: é uma receita, não uma lista
+
+A segmentação não guarda nomes de clientes. O BeeFood guarda as **regras** que definem quem entra naquele público.
+
+Por isso, o público se atualiza sozinho cada vez que a segmentação é usada. Quem voltou a comprar pode sair de uma segmentação de sumidos; quem ficou mais tempo sem comprar pode entrar.
+
+A variação no número de clientes é esperada. Você monta a regra uma vez e pode usar essa mesma segmentação por meses.
+
+### A base elegível
+
+Antes de aplicar qualquer filtro escolhido por você, o BeeFood já limita o universo aos clientes que atendem às três condições abaixo ao mesmo tempo:
+
+1. Têm telefone válido, com pelo menos 10 dígitos
+2. Estão ativos
+3. Aceitam receber mensagens por WhatsApp
+
+<Callout kind="info" collapsed="false">
+  Quando a tela mostra algo como **6 de 15 clientes elegíveis**, esses 15 não são todos os clientes do restaurante. São apenas os clientes que podem receber a comunicação.
+</Callout>
+
+## A tela
+
+O caminho é **Food Marketing → Segmentação de Cliente**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/segmentacao-clientes/imagens-tratadas/01-lista.png" width="1532" height="856" alt="Tela de lista da segmentação de clientes no BeeFood" />
+
+| Nº | Item             | O que faz                                                                                                           |
+| -- | ---------------- | ------------------------------------------------------------------------------------------------------------------- |
+| 1  | Nova segmentação | Cria uma do zero                                                                                                    |
+| 2  | Modelos prontos  | Abre os templates prontos do BeeFood                                                                                |
+| 3  | Aviso da base    | Lembra das 3 condições da base elegível                                                                             |
+| 4  | Selo BeeFood     | Marca públicos fixos do sistema — não dá para editar nem excluir, só copiar                                         |
+| 5  | Ações da linha   | Editar, exportar para Excel, duplicar, excluir. Nos itens com selo, o lápis vira lupa, em modo somente visualização |
+
+## Criando a primeira segmentação
+
+O exemplo desta seção busca clientes que compraram só uma vez. Esse é um bom primeiro público porque a lógica é simples e o resultado costuma ser útil para campanhas de segunda compra.
+
+<Steps>
+  <Step title="Passo 1 — Escolher o filtro" title-type="h3">
+    Clique em **Nova segmentação** para abrir a tela de escolha do filtro. O BeeFood começa pela seleção do campo que vai virar a sua primeira regra.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/segmentacao-clientes/imagens-tratadas/03-seletor-campo.png" width="1532" height="856" alt="Seletor de campos de filtro da segmentação de clientes" />
+
+    | Nº | Item                         | O que fazer                                                                                             |
+    | -- | ---------------------------- | ------------------------------------------------------------------------------------------------------- |
+    | 1  | Contador                     | Mostra quantos filtros existem — hoje são 37                                                            |
+    | 2  | Buscar por nome ou categoria | Caminho mais rápido — digite `pedidos`, `cashback` ou `bairro`                                          |
+    | 3  | Categorias                   | Filtros agrupados em Cliente, Indicadores, RFV, Aniversário, Cashback, Cupom, Endereço, Vendas e Canais |
+    | 4  | Card do filtro               | Clique para escolher. Abaixo do nome aparece o tipo, como Número, Data, Opções ou Texto                 |
+
+    Para este exemplo, escolha **Total de pedidos**, na categoria **Indicadores**.
+  </Step>
+
+  <Step title="Passo 2 — Montar a regra" title-type="h3">
+    Depois de escolher o filtro, defina como ele será comparado e qual valor ele deve ter. Para encontrar quem comprou uma vez só, a regra fica com o valor `1`.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/segmentacao-clientes/imagens-tratadas/04-primeira-regra.png" width="1532" height="856" alt="Tela de criação da primeira regra de segmentação" />
+
+    | Nº | Campo                  | O que fazer                                                                                 |
+    | -- | ---------------------- | ------------------------------------------------------------------------------------------- |
+    | 1  | Nome da segmentação \* | Dê um nome que você vai entender daqui a 3 meses. Em branco, o sistema gera automaticamente |
+    | 2  | Ativa                  | Mantenha ligado. Segmentação desligada não aparece ao montar campanhas                      |
+    | 3  | O filtro               | O que você escolheu. Clique para trocar                                                     |
+    | 4  | O operador             | Como comparar: é igual a, é maior que, está entre e outros                                  |
+    | 5  | O valor                | Com o que comparar. Aqui: `1`                                                               |
+    | 6  | ADICIONAR REGRA        | Adiciona outra condição                                                                     |
+    | 7  | TESTAR PÚBLICO         | Mostra quantos clientes se encaixam, antes de salvar                                        |
+    | 8  | SALVAR (F2)            | Salva a segmentação                                                                         |
+
+    <Callout kind="alert" collapsed="false">
+      Campos em reais, como **Total gasto**, **Ticket médio** e **Saldo de cashback**, preenchem da direita para a esquerda, começando pelos centavos. Se você digitar `50`, o valor vira **R$ 0,50**. Para informar **R$ 50,00**, digite `5000` ou `50,00`. Sempre confira o valor final depois de preencher.
+    </Callout>
+  </Step>
+
+  <Step title="Passo 3 — Testar antes de salvar" title-type="h3">
+    Clique em **TESTAR PÚBLICO** antes de salvar. Esse teste mostra o tamanho real da audiência e evita criar uma segmentação ampla demais ou vazia.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/segmentacao-clientes/imagens-tratadas/05-resultado-teste.png" width="1532" height="856" alt="Resultado do teste de público da segmentação" />
+
+    | Nº | Item         | O que mostra                          |
+    | -- | ------------ | ------------------------------------- |
+    | 1  | Percentual   | Quanto da base elegível se encaixou   |
+    | 2  | Contagem     | Quantos clientes de quantos elegíveis |
+    | 3  | Ver clientes | Abre a lista de quem se encaixou      |
+
+    <Callout kind="info" collapsed="false">
+      Público com zero pessoas normalmente significa regra apertada demais ou valor em dinheiro digitado errado. Público igual à base inteira normalmente significa regra solta demais.
+    </Callout>
+  </Step>
+</Steps>
+
+## Combinando filtros: E ou OU
+
+Quando uma regra só não basta, adicione outra e escolha como o sistema deve combinar as condições. Esse ponto muda completamente o resultado da segmentação.
+
+### E — precisa satisfazer todas as condições
+
+Com **E**, o cliente precisa cumprir todas as regras ao mesmo tempo.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/segmentacao-clientes/imagens-tratadas/06-duas-regras-e.png" width="1532" height="856" alt="Duas regras combinadas com E na segmentação de clientes" />
+
+| Nº | Item              | Descrição                                             |
+| -- | ----------------- | ----------------------------------------------------- |
+| 1  | Primeira condição | Total de pedidos = 1                                  |
+| 2  | Seletor E / OU    | Com E selecionado, o cliente precisa satisfazer ambas |
+| 3  | Segunda condição  | Ticket médio menor que R$ 20,00                       |
+| 4  | Valor em reais    | Note o formato: `20,00`, não `20`                     |
+
+Esse exemplo encontra quem comprou só uma vez **e** gastou pouco. É um público bom para tentar uma segunda compra com uma oferta mais forte.
+
+### OU — basta satisfazer uma
+
+Com **OU**, o cliente entra se cumprir pelo menos uma das condições.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/segmentacao-clientes/imagens-tratadas/07-duas-regras-ou.png" width="1532" height="856" alt="Duas regras combinadas com OU na segmentação de clientes" />
+
+| Nº | Item             | Descrição                                                |
+| -- | ---------------- | -------------------------------------------------------- |
+| 1  | Filtro de opções | Alguns filtros deixam escolher vários valores de uma vez |
+| 2  | OU selecionado   | Uma das duas condições já basta                          |
+| 3  | Valor em reais   | Total gasto maior que R$ 300,00                          |
+
+Esse formato encontra os melhores clientes por dois caminhos: pela boa classificação ou pelo alto gasto total.
+
+<Callout kind="alert" collapsed="false">
+  O seletor **E / OU** vale para a lista inteira de condições. Ao trocar para **OU**, todas as regras passam a ser comparadas com OU. Não dá para montar, na mesma segmentação, algo como uma condição com E e outra separada com OU. Quando precisar dessa lógica, crie duas segmentações.
+</Callout>
+
+## Depois de salvar
+
+Clique no nome da segmentação na lista para abrir os detalhes. Essa visualização serve para revisar rapidamente as regras e conferir o tamanho atual do público.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/segmentacao-clientes/imagens-tratadas/08-detalhes.png" width="1532" height="856" alt="Painel de detalhes de uma segmentação salva" />
+
+| Nº | Item               | Descrição                                                                                                  |
+| -- | ------------------ | ---------------------------------------------------------------------------------------------------------- |
+| 1  | FILTROS ESCOLHIDOS | As regras escritas em português, para revisão rápida                                                       |
+| 2  | Tamanho            | Percentual e número de clientes, recalculados na hora                                                      |
+| 3  | Editar             | Volta para a tela de regras                                                                                |
+| 4  | Exportar Excel     | Baixa a lista com nome, telefone, e-mail, classificação, pedidos, ticket médio, total gasto e última venda |
+
+### Ver quem está no público
+
+Pelo botão **Ver clientes** no resultado do teste, você abre a lista de pessoas que entraram naquela segmentação.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/segmentacao-clientes/imagens-tratadas/09-clientes-do-publico.png" width="1532" height="856" alt="Lista de clientes pertencentes a um público segmentado" />
+
+| Nº | Item                    | Descrição                                                 |
+| -- | ----------------------- | --------------------------------------------------------- |
+| 1  | Total                   | Quantos clientes entraram                                 |
+| 2  | Busca                   | Encontre por nome, telefone ou e-mail dentro do público   |
+| 3  | Números de cada cliente | Pedidos, ticket médio, total gasto e data da última venda |
+
+<Callout kind="info" collapsed="false">
+  Os dados pessoais aparecem borrados nesta imagem do manual. Na sua tela, eles aparecem normalmente.
+</Callout>
+
+## Modelos prontos: comece sem montar nada
+
+Os modelos prontos aceleram o começo. Em vez de pensar nas regras do zero, você parte de uma lógica já montada e ajusta só o que precisar.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/segmentacao-clientes/imagens-tratadas/02-modelos-prontos.png" width="1532" height="856" alt="Tela de modelos prontos de segmentação de clientes" />
+
+| Nº | Item             | O que fazer                                                             |
+| -- | ---------------- | ----------------------------------------------------------------------- |
+| 1  | Categoria        | Reconquista, Fidelização, Margem, Promoção e Datas comemorativas        |
+| 2  | Pré-visualizar   | Mostra quantos clientes o modelo alcançaria, sem criar nada             |
+| 3  | Usar este modelo | Cria sua própria segmentação com as regras prontas. Totalmente editável |
+
+| Modelo                           | O que filtra                                                |
+| -------------------------------- | ----------------------------------------------------------- |
+| Clientes sumidos (reconquista)   | 2 ou mais pedidos e 30 dias ou mais sem comprar             |
+| Inativos há mais de 90 dias      | 90 dias ou mais sem comprar                                 |
+| Incentivar a 2ª compra           | exatamente 1 pedido e até 30 dias sem comprar               |
+| Clientes VIP (alto valor)        | frequência 4 ou 5 e valor monetário 4 ou 5                  |
+| Cashback parado (traga de volta) | possui qualquer saldo de cashback                           |
+| Hora de pedir de novo (cadência) | costuma pedir a cada 15 dias ou menos e já passaram 18 dias |
+| Tirar dos marketplaces           | comprou em marketplace e nunca no canal próprio             |
+| Sensíveis a desconto             | já usou cupom alguma vez                                    |
+| Aniversariantes da semana        | aniversário nos próximos 7 dias                             |
+
+### Públicos fixos com selo BeeFood
+
+Os públicos com selo BeeFood são do sistema. Você pode visualizar e copiar, mas não pode editar nem excluir.
+
+| Público                                     | O que filtra                                  |
+| ------------------------------------------- | --------------------------------------------- |
+| Clientes novos (1º pedido, 6 a 30 dias)     | primeira compra entre 6 e 30 dias atrás       |
+| Clientes sumidos (31 a 90 dias sem comprar) | 2 ou mais pedidos, parados entre 31 e 90 dias |
+| Cashback parado (R$ 3,00 ou mais)           | saldo igual ou maior que R$ 3,00              |
+| Aniversariantes do dia                      | aniversário é hoje                            |
+
+<Callout kind="info" collapsed="false">
+  As faixas foram montadas para não se sobrepor. Clientes novos vão até 30 dias, e clientes sumidos começam em 31 dias. Isso evita que a mesma pessoa entre em duas comunicações automáticas no mesmo dia.
+</Callout>
+
+## Oito segmentações para copiar
+
+Os números abaixo usam uma base de teste com 15 clientes elegíveis. Na sua empresa, os totais e percentuais serão diferentes, mas a lógica das regras continua a mesma.
+
+### 1. Compraram uma vez só
+
+Metade da base pode estar formada por pessoas que testaram o restaurante uma única vez e sumiram. Esse público é o mais direto para trabalhar segunda compra.
+
+| Filtro           | Operador  | Valor |
+| ---------------- | --------- | ----- |
+| Total de pedidos | é igual a | 1     |
+
+**Resultado do teste:** 8 clientes, ou 53,3%.
+
+**Ação indicada:** cupom de segunda compra com prazo curto, para criar hábito de retorno.
+
+### 2. Primeira compra pequena
+
+Dentro do grupo acima, algumas pessoas só compraram um item pequeno, como bebida ou sobremesa. Elas ainda não conheceram de verdade o seu cardápio principal.
+
+| Filtro            | Operador    | Valor | Conector |
+| ----------------- | ----------- | ----- | -------- |
+| Total de pedidos  | é igual a   | 1     | E        |
+| Ticket médio (R$) | é menor que | 20,00 |          |
+
+**Resultado do teste:** 4 clientes, ou 26,7%.
+
+**Ação indicada:** oferecer o prato assinatura da casa com uma condição especial.
+
+### 3. Clientes perdidos
+
+O RFV separa a base por recência, frequência e valor. Quem caiu em **Perdidos** já está no fim da fila de atenção e precisa da oferta mais forte.
+
+| Filtro                      | Operador | Valor      |
+| --------------------------- | -------- | ---------- |
+| Classificação RFV (público) | é um de  | ❌ Perdidos |
+
+**Resultado do teste:** 6 clientes, ou 40%.
+
+**Ação indicada:** a campanha mais agressiva do seu calendário.
+
+<Callout kind="info" collapsed="false">
+  O RFV tem 12 classificações, de **🏆 Campeões** até **❌ Perdidos**. Vale explorar também **🔥 Em Risco**, **❄️ Hibernando** e **🚨 Não Posso Perder**.
+</Callout>
+
+### 4. Cashback esquecido
+
+Cliente com saldo parado já tem um motivo concreto para voltar. Nesse caso, o lembrete parece mais um aviso útil do que propaganda.
+
+| Filtro                   | Operador | Valor |
+| ------------------------ | -------- | ----- |
+| Possui saldo de cashback | sim      |       |
+
+**Resultado do teste:** 6 clientes, ou 40%.
+
+**Ação indicada:** mensagem no formato “você tem R$ X esperando”.
+
+Se quiser evitar avisos por valores muito pequenos, troque a regra para **Saldo de cashback (R$)** **é maior que** `5,00`.
+
+### 5. Ticket médio acima de R$ 50
+
+Nem todo cliente precisa de desconto. Quem já gasta bem costuma responder melhor a prioridade, exclusividade e tratamento diferenciado.
+
+| Filtro            | Operador    | Valor |
+| ----------------- | ----------- | ----- |
+| Ticket médio (R$) | é maior que | 50,00 |
+
+**Resultado do teste:** 4 clientes, ou 26,7%.
+
+**Ação indicada:** prévia de lançamento, mimo eventual ou prioridade em datas disputadas.
+
+### 6. Nunca usaram cupom
+
+Alguns clientes compram normalmente sem depender de desconto. Dar promoção para esse grupo pode reduzir margem sem necessidade.
+
+| Filtro                    | Operador | Valor |
+| ------------------------- | -------- | ----- |
+| Já usou cupom de desconto | não      |       |
+
+**Resultado do teste:** 13 clientes, ou 86,7%.
+
+**Ação indicada:** usar ao contrário, excluindo esse grupo das promoções. Para encontrar quem é sensível a desconto, troque para **sim**.
+
+### 7. Só pedem à noite
+
+Se o almoço está fraco, vale encontrar quem já gosta do seu restaurante, mas ainda só conhece o período noturno.
+
+| Filtro                      | Operador        | Valor        | Conector |
+| --------------------------- | --------------- | ------------ | -------- |
+| Períodos do dia que comprou | é um de         | Noite        | E        |
+| Períodos do dia que comprou | não é nenhum de | Manhã, Tarde |          |
+
+**Resultado do teste:** 3 clientes, ou 20%.
+
+**Ação indicada:** apresentar o cardápio de almoço para quem já confia na marca.
+
+<Callout kind="info" collapsed="false">
+  O truque aqui é repetir o mesmo filtro duas vezes: uma incluindo e outra excluindo. Sem a segunda linha, também entrariam clientes que pedem em todos os horários.
+</Callout>
+
+### 8. Fiéis ou bons de conta
+
+Os melhores clientes nem sempre aparecem pelo mesmo critério. Alguns se destacam pela constância; outros, pelo valor total gasto.
+
+| Filtro                      | Operador    | Valor                 | Conector |
+| --------------------------- | ----------- | --------------------- | -------- |
+| Classificação RFV (público) | é um de     | 💎 Fiéis, 🏆 Campeões | OU       |
+| Total gasto (R$)            | é maior que | 300,00                |          |
+
+**Resultado do teste:** 3 clientes, ou 20%.
+
+**Ação indicada:** público para programa de fidelidade, degustação ou lançamento de prato novo.
+
+## Outros filtros que valem conhecer
+
+Depois que você dominar os básicos, alguns filtros ajudam a montar campanhas bem específicas sem complicar demais a regra.
+
+| Categoria   | Filtro                       | Bom para                                                   |
+| ----------- | ---------------------------- | ---------------------------------------------------------- |
+| Indicadores | Dias sem comprar             | Montar faixas de reativação, como 30, 60 e 90 dias         |
+| Indicadores | Tempo de cliente (dias)      | Falar com quem está com você desde o começo                |
+| Vendas      | Produtos comprados           | Avisar quem já pediu um prato quando ele volta ao cardápio |
+| Vendas      | Categoria favorita           | Separar amantes de pizza dos de hambúrguer                 |
+| Vendas      | Dias da semana que comprou   | Atrair clientes de sábado para dias mais fracos            |
+| Vendas      | Cadência média entre pedidos | Descobrir com que frequência cada pessoa costuma pedir     |
+| Canais      | Canais onde comprou          | Convidar para pedido direto quem só usa marketplace        |
+| Endereço    | Bairro / Distância (km)      | Fazer ações locais, panfletagem e promoções regionais      |
+| Aniversário | Dias até o aniversário       | Chegar antes da data, e não em cima da hora                |
+| Cliente     | Cardápio                     | Separar por loja quando você tem mais de uma unidade       |
+
+<Callout kind="info" collapsed="false">
+  Filtros de lista, como **Canais**, **Produtos** e **Bairro**, guardam tudo o que o cliente já fez ou teve ao longo do histórico. Quando você quiser dizer “somente este e nenhum outro”, use duas linhas, como no exemplo de quem só pede à noite.
+</Callout>
+
+## E depois? Onde o público é usado
+
+Uma segmentação ativa fica disponível para uso em:
+
+- **Campanhas de WhatsApp**
+- **Campanhas de SMS**
+- **Campanhas Inteligentes**
+- **Exportação para Excel**
+
+Nas campanhas, a segmentação entra como critério para escolher os destinatários. No Excel, ela vira uma lista exportável para análise e ações fora da plataforma.
+
+<Callout kind="info" collapsed="false">
+  Segmentação com **Ativa** desligado continua salva, mas não aparece na montagem de campanhas.
+</Callout>
+
+## Dicas finais
+
+<Callout kind="tip" collapsed="false">
+  - **Sempre teste antes de salvar.** Isso leva poucos segundos e evita montar campanha para ninguém.
+  - **Dê nomes que se explicam sozinhos.** `Sumidos 60 dias` funciona melhor do que `Segmentação 3`.
+  - **Comece por um modelo pronto.** Use, teste e só depois ajuste os números.
+  - **Público zerado não é erro do sistema.** Quase sempre é regra apertada demais ou valor em reais digitado errado.
+  - **Não tente ser preciso demais.** Boa segmentação separa conversas diferentes; não tenta achar o cliente perfeito.
+  - **Revise de tempos em tempos.** As regras continuam funcionando, mas o restaurante muda.
+</Callout>
+
