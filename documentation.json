@@ -118,6 +118,10 @@
                   {
                     "title": "🔍 2ª Conferência de Caixa",
                     "path": "caixa-conferencia-2"
+                  },
+                  {
+                    "title": "🛡️ Restrições de Caixa",
+                    "path": "caixa-restricoes"
                   }
                 ]
               },
