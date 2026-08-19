@@ -1,0 +1,140 @@
+---
+title: 2ª Conferência de Caixa
+description: >-
+  Faça a segunda conferência de um caixa fechado, recontando os valores e
+  resolvendo a quebra de caixa com segurança e rastreabilidade.
+---
+## Visão geral
+
+Realize a segunda conferência de um caixa já fechado para recontar os valores, comparar com a primeira conferência, registrar observações e confirmar o resultado final com rastreabilidade.
+
+<Callout kind="info" collapsed="false">
+  - Sessão iniciada no sistema em `beefood.app`
+  - Um caixa já fechado, com a primeira conferência realizada
+  - O caixa não pode ter a segunda conferência já concluída, sem cadeado na listagem
+  - Permissão de acesso para conferência — se os botões não aparecerem, é um problema de permissão
+  - Dinheiro e recibos em mãos para a recontagem
+</Callout>
+
+As imagens deste manual usam setas numeradas como **1**, **2** e **3**. No texto, cada número corresponde exatamente ao campo ou botão mostrado na tela.
+
+<Steps>
+  <Step title="Etapa 1 — Abrir a conferência do caixa fechado" title-type="p">
+    No menu lateral, clique em **Caixa** e localize o caixa fechado que deseja revisar.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/caixa-conferencia-2/imagens-tratadas/01-listagem-caixa-fechado.png" width="1532" height="856" alt="Listagem de caixas fechados com destaque para quebra de caixa e botão Ver Conferência" />
+
+    | Nº    | Item                | Descrição                                                     |
+    | ----- | ------------------- | ------------------------------------------------------------- |
+    | **1** | **Quebra de Caixa** | Diferença registrada no fechamento, por exemplo: **R$ 2.55**. |
+    | **2** | **Ver Conferência** | Botão verde que abre a conferência feita no fechamento.       |
+
+    Também é possível acessar via **Ver Caixa → VER CONFERÊNCIA** dentro do caixa.
+
+    A conferência abre em modo somente leitura. Você vê o que a primeira pessoa contou, sem poder alterar os valores.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/caixa-conferencia-2/imagens-tratadas/02-primeira-conferencia-leitura.png" width="1532" height="856" alt="Tela da primeira conferência em modo somente leitura com botão Adicionar 2ª Conferência" />
+
+    | Nº    | Item                         | Descrição                                                                                                               |
+    | ----- | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+    | **1** | **Adicionar 2ª Conferência** | Inicia a dupla checagem. Só aparece em caixa fechado que ainda não recebeu a segunda conferência.                       |
+    | **2** | **Campos travados**          | Valores da 1ª conferência aparecem em cinza, não podem ser editados, e o ícone de alerta marca a linha com divergência. |
+    | **3** | **Quebra de Caixa**          | Diferença da 1ª conferência, por exemplo: **R$ 2.55 Falta**.                                                            |
+  </Step>
+
+  <Step title="Etapa 2 — Iniciar a segunda conferência" title-type="p">
+    Clique em **Adicionar 2ª Conferência**. O título muda para **Conferência de Valores - 2ª Conferência** e uma nova coluna aparece.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/caixa-conferencia-2/imagens-tratadas/03-segunda-conferencia-em-branco.png" width="1532" height="856" alt="Tela da segunda conferência em branco com nova coluna para digitação" />
+
+    | Nº    | Item                           | Descrição                                                                                               |
+    | ----- | ------------------------------ | ------------------------------------------------------------------------------------------------------- |
+    | **1** | **2ª Conferência**             | Coluna onde você digita a sua contagem. Ela começa em branco de propósito.                              |
+    | **2** | **1ª Conferência**             | Mostra o que foi contado no fechamento, apenas para referência, por exemplo: **R$ 100.00** em dinheiro. |
+    | **3** | **Observações da Conferência** | Espaço para registrar o que você encontrou.                                                             |
+
+    Enquanto os campos estão vazios, o sistema mostra a quebra como se tudo estivesse faltando. Isso é normal — os números se ajustam conforme você digita.
+  </Step>
+
+  <Step title="Etapa 3 — Recontar e digitar os valores" title-type="p">
+    Reconte cada forma de pagamento e digite o resultado na coluna **2ª Conferência**. **Enter** pula para o próximo campo. Para dinheiro, use a calculadora. No exemplo, a recontagem encontrou os **R$ 2.55** que passaram despercebidos em moedas.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/caixa-conferencia-2/imagens-tratadas/04-calculadora-recontagem.png" width="614" height="437" alt="Calculadora da conferência somando valores recontados do dinheiro" />
+
+    | Nº    | Item                                  | O que fazer                                                                                                                    |
+    | ----- | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+    | **1** | **Digite um valor e pressione Enter** | Informe cada valor contado. Cada **Enter** adiciona o item à lista.                                                            |
+    | **2** | **Valores Adicionados**               | Mostra o que já foi inserido, por exemplo: **R$ 100.00** e **R$ 2.55** em moedas. A lixeira remove um item lançado por engano. |
+    | **3** | **Total**                             | Soma da recontagem, por exemplo: **R$ 102.55**.                                                                                |
+    | **4** | **Incluir Conferência**               | Leva o total para o campo da conferência.                                                                                      |
+  </Step>
+
+  <Step title="Etapa 4 — Comparar e ver a quebra resolvida" title-type="p">
+    Com todos os campos preenchidos, a tela mostra as duas contagens lado a lado.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/caixa-conferencia-2/imagens-tratadas/05-segunda-conferencia-conferida.png" width="1532" height="856" alt="Tela da segunda conferência preenchida com quebra resolvida e comparação com a primeira conferência" />
+
+    | Nº    | Item                | Descrição                                                                                    |
+    | ----- | ------------------- | -------------------------------------------------------------------------------------------- |
+    | **1** | **Valor recontado** | Aparece com check verde, indicando que sua contagem bate com o valor do sistema.             |
+    | **2** | **1ª Conferência**  | O que a primeira contagem registrou, preservado para comparação, por exemplo: **R$ 100.00**. |
+    | **3** | **Quebra de Caixa** | A quebra da sua conferência. Mostra **Correto** quando tudo bate.                            |
+    | **4** | **Quebra 1ª Conf.** | A quebra da primeira conferência permanece registrada, por exemplo: **R$ 2.55 Falta**.       |
+
+    Se a sua recontagem também não bater, a quebra permanece. Nesse caso, a diferença provavelmente é real e vale investigar os movimentos do caixa.
+  </Step>
+
+  <Step title="Etapa 5 — Registrar observação e confirmar" title-type="p">
+    Antes de confirmar, escreva o que encontrou e marque a declaração.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/caixa-conferencia-2/imagens-tratadas/06-observacoes-conferido.png" width="1532" height="856" alt="Tela para registrar observações da conferência e liberar o botão Conferir" />
+
+    | Nº    | Item                                           | O que fazer                                                                                                             |
+    | ----- | ---------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+    | **1** | **Observações da Conferência**                 | Registre o motivo da divergência ou a conclusão da recontagem. É opcional, mas explica a quebra para quem olhar depois. |
+    | **2** | **Conferência realizada e valores conferidos** | Marque para declarar que recontou. Sem marcar, o botão **Conferir** fica bloqueado.                                     |
+    | **3** | **Conferir**                                   | Fica verde e disponível assim que a declaração for marcada.                                                             |
+
+    Ao clicar em **Conferir**, o sistema pede confirmação final.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/caixa-conferencia-2/imagens-tratadas/07-confirmar-conferencia.png" width="614" height="437" alt="Janela de confirmação final da segunda conferência do caixa" />
+
+    | Nº    | Item         | Descrição                                                   |
+    | ----- | ------------ | ----------------------------------------------------------- |
+    | **1** | **Conferir** | Confirma a dupla checagem. Esta ação não pode ser desfeita. |
+  </Step>
+
+  <Step title="Etapa 6 — O que muda depois de conferir" title-type="p">
+    Na listagem, o caixa aparece com a conferência completa.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/caixa-conferencia-2/imagens-tratadas/08-listagem-conferido.png" width="1532" height="856" alt="Listagem de caixas mostrando cadeado, saldo final conferido e quebra zerada após a segunda conferência" />
+
+    | Nº    | Item                  | Descrição                                                              |
+    | ----- | --------------------- | ---------------------------------------------------------------------- |
+    | **1** | **Cadeado**           | Indica segunda conferência completa. Passe o mouse para ver a tooltip. |
+    | **2** | **Conf. Saldo Final** | Agora mostra o valor da recontagem, por exemplo: **R$ 1,911.98**.      |
+    | **3** | **Quebra de Caixa**   | Aparece zerada, com check verde.                                       |
+
+    Se abrir a conferência novamente, ela está preservada e travada.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/caixa-conferencia-2/imagens-tratadas/09-conferencia-travada.png" width="1532" height="856" alt="Tela de conferência travada após a conclusão da segunda conferência" />
+
+    | Nº    | Item                      | Descrição                                                                            |
+    | ----- | ------------------------- | ------------------------------------------------------------------------------------ |
+    | **1** | **Campos travados**       | Nenhum valor pode ser alterado.                                                      |
+    | **2** | **As duas contagens**     | 1ª e 2ª conferências permanecem lado a lado.                                         |
+    | **3** | **Conferir desabilitado** | O botão **Adicionar 2ª Conferência** também desaparece. Não há terceira conferência. |
+  </Step>
+</Steps>
+
+## Dicas rápidas
+
+<Callout kind="tip" collapsed="false">
+  - Quem confere não deve ser quem contou — o valor da dupla checagem vem de um segundo par de olhos
+  - Reconte de verdade, do zero — a coluna da 1ª conferência está lá para comparar depois, não para copiar antes
+  - Escreva a observação mesmo quando der correto — um "recontado, valores confirmados" resolve dúvidas futuras em segundos
+  - Confirme só no final — após **Conferir** não há edição nem nova conferência
+  - A quebra da 1ª conferência permanece registrada mesmo com a 2ª correta — o histórico não é apagado
+  - Não vê o botão de conferência? É permissão de acesso. Fale com o administrador do sistema
+</Callout>
+

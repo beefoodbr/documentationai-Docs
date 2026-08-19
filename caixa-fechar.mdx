@@ -1,0 +1,200 @@
+---
+'0': t
+'1': i
+'2': t
+'3': l
+'4': e
+'5': ':'
+'6': '&'
+'7': '#'
+'8': x
+'9': '2'
+'10': '0'
+'11': ;
+'12': ' '
+'13': d
+'14': e
+'15': s
+'16': c
+'17': r
+'18': i
+'19': p
+'20': t
+'21': i
+'22': o
+'23': 'n'
+'24': ':'
+'25': '&'
+'26': '#'
+'27': x
+'28': '2'
+'29': '0'
+'30': ;
+title: Fechar Caixa
+description: >-
+  Feche o caixa com segurança: resolva vendas pendentes, confira os valores de
+  cada forma de pagamento e registre a quebra de caixa do turno.
+---
+---------------
+
+## Visão geral
+
+Feche o caixa do turno, resolva vendas sem pagamento completo, confira os valores de cada forma de pagamento na 1ª conferência, entenda a quebra de caixa e confirme o fechamento com o saldo registrado na listagem.
+
+<Callout kind="info" collapsed="false">
+  Antes de começar, confirme estes pré-requisitos:
+
+  - Sessão iniciada no sistema em `beefood.app`
+  - Um caixa com status **Em aberto** na listagem
+  - Dinheiro da gaveta contado e recibos de pagamentos, como cartões, vales e PIX, em mãos
+</Callout>
+
+As imagens deste manual usam setas numeradas como **1**, **2** e **3**. No texto, cada número corresponde exatamente ao campo ou botão mostrado na tela.
+
+<Steps>
+  <Step title="Etapa 1 — Abrir a tela de fechamento" title-type="p">
+    Abra o menu **Caixa** e localize a linha com status **Em aberto**. Em seguida, clique em **Ver Caixa** para acessar os detalhes do caixa que será fechado.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/caixa-fechar/imagens-tratadas/01-listagem-caixa-aberto.png" width="1532" height="856" alt="Listagem de caixas com um caixa em aberto e o botão Ver Caixa destacado" />
+
+    | Nº    | Item          | Descrição                                                                                |
+    | ----- | ------------- | ---------------------------------------------------------------------------------------- |
+    | **1** | **Em aberto** | Confirma que este é o caixa atualmente aberto. Apenas caixas abertos podem ser fechados. |
+    | **2** | **Ver Caixa** | Lupa azul que abre os detalhes do caixa.                                                 |
+
+    Dentro do caixa, clique em **FECHAR CAIXA** no painel direito para iniciar o processo de fechamento.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/caixa-fechar/imagens-tratadas/02-ver-caixa-fechar.png" width="1532" height="856" alt="Tela de detalhes do caixa com o botão FECHAR CAIXA e o valor em caixa destacados" />
+
+    | Nº    | Item               | Descrição                                                                                                                                  |
+    | ----- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
+    | **1** | **FECHAR CAIXA**   | Inicia o fechamento. O botão pode mostrar **VALIDANDO...** por alguns segundos enquanto o sistema verifica as vendas do período.           |
+    | **2** | **VALOR EM CAIXA** | Valor que o sistema calculou para o caixa. No exemplo, **R$ 102.55**. Use esse valor como referência para comparar com o dinheiro contado. |
+
+    O caminho é sempre **Ver Caixa → FECHAR CAIXA**.
+  </Step>
+
+  <Step title="Etapa 2 — Resolver vendas sem pagamento total" title-type="p">
+    Se houver vendas com valor pago menor que o total, o sistema interrompe o fechamento e mostra a tela de vendas pendentes. Resolva essas pendências antes de seguir para a conferência sempre que possível.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/caixa-fechar/imagens-tratadas/03-vendas-pendentes.png" width="1532" height="856" alt="Tela de vendas pendentes exibida durante o fechamento do caixa" />
+
+    | Nº    | Item                              | O que fazer                                                   |
+    | ----- | --------------------------------- | ------------------------------------------------------------- |
+    | **1** | **Botão verde**                   | Abre o pagamento da venda sem sair do fluxo de fechamento.    |
+    | **2** | **Faltante**                      | Mostra quanto ainda falta pagar em cada venda.                |
+    | **3** | **FECHAR CAIXA MESMO ASSIM (F2)** | Prossegue com o fechamento deixando as pendências como estão. |
+
+    Para quitar uma venda, clique no botão verde da linha e escolha a forma de pagamento na janela **Conferir e Dividir**. O valor faltante já vem preenchido; confirme a operação para registrar o pagamento.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/caixa-fechar/imagens-tratadas/04-pagamento-venda.png" width="614" height="437" alt="Janela de pagamento da venda com a forma de pagamento selecionada" />
+
+    | Nº    | Item                      | Descrição                                                                     |
+    | ----- | ------------------------- | ----------------------------------------------------------------------------- |
+    | **1** | **Pagamentos realizados** | Mostra o pagamento registrado com a forma escolhida e a marcação de **Pago**. |
+    | **2** | **Pagamento completo**    | Confirma que a venda foi quitada por inteiro.                                 |
+
+    Depois de fechar a janela, a venda volta para a lista já resolvida. A linha muda para o estado pago e o valor faltante fica zerado.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/caixa-fechar/imagens-tratadas/05-venda-paga.png" width="1532" height="856" alt="Lista de vendas pendentes com uma venda já paga e marcada como resolvida" />
+
+    | Nº    | Item                          | Descrição                                                                              |
+    | ----- | ----------------------------- | -------------------------------------------------------------------------------------- |
+    | **1** | **Botão convertido em check** | Passa a servir para visualizar os pagamentos da venda, não para pagar novamente.       |
+    | **2** | **PAGA**                      | A linha fica verde, o **Faltante** vai para **R$ 0.00** e o status muda para **PAGA**. |
+
+    Se você optar por fechar com pendências, o sistema pede confirmação antes de continuar. Revise essa tela com atenção porque vendas em aberto dificultam a conciliação depois.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/caixa-fechar/imagens-tratadas/06-aviso-fechar-mesmo-assim.png" width="614" height="437" alt="Aviso de confirmação para fechar o caixa mesmo com vendas pendentes" />
+
+    | Nº    | Item                                          | Descrição                                                                                                                                        |
+    | ----- | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+    | **1** | **Aviso sobre confirmar pagamentos primeiro** | Explica por que vale conferir os pagamentos antes: vendas abertas ficam sem registro completo no caixa e podem gerar divergência na conferência. |
+    | **2** | **NÃO, REVISAR (ESC)**                        | Volta para a lista de vendas pendentes para você revisar e quitar as vendas.                                                                     |
+    | **3** | **FECHAR ASSIM MESMO (ENTER)**                | Prossegue para a conferência mantendo as pendências.                                                                                             |
+  </Step>
+
+  <Step title="Etapa 3 — Conferir os valores (1ª conferência)" title-type="p">
+    A tela **Conferência de Valores - 1ª Conferência** mostra cada forma de pagamento usada no caixa. Nela, **Entrada** é o valor calculado pelo sistema e **1ª Conferência** é o campo onde você informa o valor realmente contado.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/caixa-fechar/imagens-tratadas/07-conferencia-em-branco.png" width="1532" height="856" alt="Tela de primeira conferência com colunas de entrada e valor conferido" />
+
+    | Nº    | Item                         | Descrição                                                                                   |
+    | ----- | ---------------------------- | ------------------------------------------------------------------------------------------- |
+    | **1** | **Entrada**                  | Valor que o sistema totalizou para aquela forma de pagamento.                               |
+    | **2** | **1ª Conferência**           | Campo onde você digita o valor contado. Use vírgula para os centavos.                       |
+    | **3** | **Calculadora**              | Abre a calculadora para somar dinheiro, recibos ou comprovantes.                            |
+    | **4** | **Seta ao lado de Dinheiro** | Exibe o detalhamento do valor em dinheiro, como saldo de abertura, entrada manual e vendas. |
+
+    Use a calculadora para contar o dinheiro e preencher o valor com mais segurança. Cada valor digitado entra na soma ao pressionar **Enter**.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/caixa-fechar/imagens-tratadas/08-calculadora-dinheiro.png" width="614" height="437" alt="Calculadora da conferência de caixa com valores adicionados e total" />
+
+    | Nº    | Item                                  | O que fazer                                                                           |
+    | ----- | ------------------------------------- | ------------------------------------------------------------------------------------- |
+    | **1** | **Digite um valor e pressione Enter** | Informe uma cédula, moeda ou recibo por vez. Cada **Enter** adiciona o valor à lista. |
+    | **2** | **Valores Adicionados**               | Lista os valores já inseridos. Use a lixeira para remover um item lançado por engano. |
+    | **3** | **Total**                             | Mostra a soma de tudo o que foi digitado.                                             |
+    | **4** | **Incluir Conferência**               | Leva o total calculado para o campo da forma de pagamento.                            |
+
+    Para **Dinheiro**, o sistema compara o valor contado com o **Saldo**, que considera entradas menos saídas, e não apenas com a soma das vendas. Se houve sangria, esse valor já está deduzido no total esperado da gaveta.
+  </Step>
+
+  <Step title="Etapa 4 — Entender os totais e a quebra de caixa" title-type="p">
+    Depois de preencher os valores, confira a diferença de cada linha e o total da **Quebra de Caixa**. Essa leitura mostra exatamente onde o valor bateu e onde houve divergência.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/caixa-fechar/imagens-tratadas/09-conferencia-com-quebra.png" width="1532" height="856" alt="Tela de conferência preenchida com diferença por forma de pagamento e quebra de caixa total" />
+
+    | Nº    | Item                      | Descrição                                                                                                           |
+    | ----- | ------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+    | **1** | **Diferença**             | Mostra a diferença entre o valor contado e o valor do sistema. Quando confere, aparece **R$ 0.00** com check verde. |
+    | **2** | **Quebra de Caixa**       | Mostra a diferença total do caixa, identificando se é **Falta** ou **Sobra**.                                       |
+    | **3** | **Saldo Final Conferido** | Exibe o total que você conferiu ao lado do **Saldo Final** calculado pelo sistema.                                  |
+
+    **Falta** significa que você contou menos do que o sistema registrou. **Sobra** significa que você contou mais.
+  </Step>
+
+  <Step title="Etapa 5 — Salvar ou fechar o caixa" title-type="p">
+    No rodapé, você encontra duas opções. **Salvar Conferência** grava os valores digitados e mantém o caixa aberto, enquanto **Fechar Caixa** encerra o caixa de forma definitiva.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/caixa-fechar/imagens-tratadas/10-confirmar-fechamento.png" width="614" height="437" alt="Janela de confirmação para fechar o caixa" />
+
+    | Nº    | Item             | Descrição                                                       |
+    | ----- | ---------------- | --------------------------------------------------------------- |
+    | **1** | **Fechar caixa** | Confirma o fechamento do caixa e salva a conferência realizada. |
+
+    Depois da confirmação, o sistema oferece a impressão do resumo da conferência. Esse resumo reúne os valores conferidos, os valores registrados e a quebra apurada no fechamento.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/caixa-fechar/imagens-tratadas/11-imprimir-conferencia.png" width="614" height="437" alt="Janela oferecendo a impressão do resumo de conferência de caixa" />
+
+    | Nº    | Item              | Descrição                                                                                                  |
+    | ----- | ----------------- | ---------------------------------------------------------------------------------------------------------- |
+    | **1** | **Sim, imprimir** | Imprime o **Resumo Conferência de Caixa** com os valores conferidos, os confirmados e a quebra registrada. |
+    | **2** | **Não**           | Fecha sem imprimir. O resumo continua disponível depois dentro do caixa.                                   |
+  </Step>
+
+  <Step title="Etapa 6 — Confirmar o resultado na listagem" title-type="p">
+    Após concluir o fechamento, volte para a listagem de caixas para confirmar o resultado. O caixa passa a exibir as informações finais de fechamento e conferência.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/caixa-fechar/imagens-tratadas/12-listagem-fechado.png" width="1532" height="856" alt="Listagem de caixas mostrando um caixa fechado com data, saldo conferido e quebra de caixa" />
+
+    | Nº    | Item                     | Descrição                                       |
+    | ----- | ------------------------ | ----------------------------------------------- |
+    | **1** | **Data/Hora Fechamento** | Mostra quando o caixa foi fechado.              |
+    | **2** | **Conf. Saldo Final**    | Mostra o total que foi conferido no fechamento. |
+    | **3** | **Quebra de Caixa**      | Mostra a diferença registrada no fechamento.    |
+  </Step>
+</Steps>
+
+## Dicas rápidas
+
+<Callout kind="tip" collapsed="false">
+  - Conte o dinheiro antes de abrir a tela de fechamento.
+  - Use a calculadora em todas as linhas, não só no dinheiro.
+  - **Enter** pula para o próximo campo da conferência.
+  - Quite as vendas pendentes antes de fechar para evitar divergências depois.
+  - Fechou o caixa por engano? Use **Reabrir Caixa** se você tiver permissão.
+  - Não vê os botões de conferência ou reabertura? Isso depende da permissão do perfil de acesso.
+  - Encontrou discrepância? O caixa fechado permite uma segunda conferência feita por outra pessoa.
+</Callout>
+

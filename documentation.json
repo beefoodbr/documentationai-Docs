@@ -108,6 +108,14 @@
                   {
                     "title": "🔓 Abrir Caixa",
                     "path": "caixa-abrir"
+                  },
+                  {
+                    "title": "🔒 Fechar Caixa",
+                    "path": "caixa-fechar"
+                  },
+                  {
+                    "title": "🔍 2ª Conferência de Caixa",
+                    "path": "caixa-conferencia-2"
                   }
                 ]
               },
