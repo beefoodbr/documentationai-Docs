@@ -31,6 +31,10 @@
               {
                 "title": "💰 Planos e Preços",
                 "path": "planos-e-precos"
+              },
+              {
+                "title": "🆕 Novidades do sistema",
+                "path": "novidades-do-sistema"
               }
             ]
           },
