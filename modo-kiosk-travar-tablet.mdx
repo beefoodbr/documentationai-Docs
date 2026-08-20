@@ -5,4 +5,272 @@ description: >-
   pedidos sem conseguir sair do app, abrir outros aplicativos ou mexer nas
   configurações do aparelho.
 ---
+## Travar o tablet no cardápio
+
+Deixe o tablet preso no aplicativo do cardápio digital para que o cliente possa fazer pedidos sem sair do app, abrir outros aplicativos ou mexer nas configurações do aparelho.
+
+Todas as imagens deste manual são telas reais do aplicativo, e os **números em verde** nas imagens são os mesmos números citados no texto ao lado de cada uma.
+
+<Callout kind="info" collapsed="false">
+  Você vai precisar de:
+
+  - O tablet com o aplicativo **Cardápio Mesa/Comanda** já instalado e com o cardápio da loja carregado.
+  - A **senha de administrador**, que é a mesma senha usada para entrar no aplicativo. Guarde-a bem: é ela que abre a tela de Administração e, mais tarde, destrava o tablet.
+  - Cerca de 5 minutos com o tablet em mãos.
+</Callout>
+
+<Callout kind="alert" collapsed="false">
+  Os botões físicos de **volume** e de **ligar/desligar** continuam funcionando. O Android não permite bloqueá-los sem apagar completamente o tablet e configurá-lo como aparelho corporativo. Todos os outros caminhos de saída ficam bloqueados.
+</Callout>
+
+## Visão geral do processo
+
+Você faz este processo em duas etapas: primeiro configura as permissões no tablet e, depois disso, trava e destrava quando precisar.
+
+1. Abrir a tela de Administração.
+2. Conceder duas permissões do Android.
+3. Ativar a trava.
+4. Conferir se o tablet está realmente travado.
+
+Os passos 1 e 2 são feitos uma única vez em cada tablet. Depois disso, travar e destravar leva só alguns toques.
+
+## Parte 1 — Abrir a tela de Administração
+
+<Steps>
+  <Step title="Toque no logo do estabelecimento" title-type="p">
+    Toque no **logo do estabelecimento** (1), no canto superior esquerdo da barra do topo. Esse logo é a única porta de entrada da Administração — não existe menu para ela em nenhum outro lugar do cardápio.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-tablet-modo-kiosk/imagens-tratadas/03-home-logo.png" width="614" height="384" alt="Tela inicial do cardápio, com o logo no canto superior esquerdo" />
+  </Step>
+
+  <Step title="Digite a senha de Administração" title-type="p">
+    O aplicativo pede a senha.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-tablet-modo-kiosk/imagens-tratadas/04-senha-administracao.png" width="614" height="384" alt="Tela de Administração pedindo a senha de acesso" />
+
+    | Nº | Onde            | O que fazer                                                  |
+    | -- | --------------- | ------------------------------------------------------------ |
+    | 1  | Campo **Senha** | Digite a mesma senha que você usa para entrar no aplicativo. |
+    | 2  | **ACESSAR**     | Confirme.                                                    |
+  </Step>
+
+  <Step title="Identifique os botões usados na trava" title-type="p">
+    Logo depois do login, o aplicativo abre essa tela por conta própria. Se ela já estiver na sua frente, comece daqui.
+
+    Esta é a tela de Administração. Dos botões dela, dois interessam para a trava.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-tablet-modo-kiosk/imagens-tratadas/05-painel-administracao.png" width="614" height="384" alt="Tela de Administração com as opções Atualizar, Travar e Configurar trava avançada" />
+
+    | Nº | Botão                         | Quando usar                                                                   |
+    | -- | ----------------------------- | ----------------------------------------------------------------------------- |
+    | 1  | **TRAVAR**                    | No dia a dia, para travar o tablet.                                           |
+    | 2  | **CONFIGURAR TRAVA AVANÇADA** | Na primeira vez, para conceder as permissões com calma sem travar nada ainda. |
+
+    Na primeira configuração, toque em **CONFIGURAR TRAVA AVANÇADA** — a seta **2** da imagem acima.
+  </Step>
+</Steps>
+
+## Parte 2 — Conceder as duas permissões
+
+<Steps>
+  <Step title="Abra o assistente de permissões" title-type="p">
+    O aplicativo abre um assistente que reúne as duas permissões necessárias.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-tablet-modo-kiosk/imagens-tratadas/06-assistente-inicio.png" width="614" height="384" alt="Assistente de trava mostrando as duas permissões pendentes" />
+
+    | Nº | O que é                         | Por que olhar                                                                                |
+    | -- | ------------------------------- | -------------------------------------------------------------------------------------------- |
+    | 1  | Contador de permissões          | Começa em "0 de 2" e é o seu termômetro: quando chegar a "2 de 2", a trava pode ser ativada. |
+    | 2  | **CONCEDER** da Acessibilidade  | Primeira permissão — faça esta antes da outra.                                               |
+    | 3  | **CONCEDER** do Launcher padrão | Segunda permissão.                                                                           |
+    | 4  | Observação no rodapé            | É o limite dos botões de volume e ligar/desligar, repetido aqui na própria tela.             |
+
+    O texto amarelo dentro de cada quadro é a instrução do que fazer depois, já dentro das configurações do Android. Vamos conceder uma permissão por vez.
+  </Step>
+
+  <Step title="Conceda a permissão de Acessibilidade" title-type="p">
+    Toque em **CONCEDER** no quadro Acessibilidade — a seta **2** da imagem acima. O aplicativo mostra um aviso explicando para que serve essa permissão, o que ela faz e que nenhum dado pessoal é coletado.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-tablet-modo-kiosk/imagens-tratadas/07-aviso-acessibilidade.png" width="614" height="384" alt="Aviso explicando o uso do serviço de acessibilidade" />
+
+    | Nº | Botão                     | O que acontece                                                                     |
+    | -- | ------------------------- | ---------------------------------------------------------------------------------- |
+    | 1  | **CONCORDAR E CONTINUAR** | Leva você às configurações do Android. Nada é pedido ao Android antes desse toque. |
+    | 2  | **AGORA NÃO**             | Fecha só o aviso; o assistente continua aberto para você voltar depois.            |
+  </Step>
+
+  <Step title="Abra o serviço do aplicativo na Acessibilidade do Android" title-type="p">
+    Toque em **CONCORDAR E CONTINUAR**. O Android abre a tela de Acessibilidade — nela, toque em **Cardápio Mesa/Comanda — Modo Kiosk** (1), na seção "Apps baixados".
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-tablet-modo-kiosk/imagens-tratadas/08-android-acessibilidade.png" width="614" height="384" alt="Configurações de Acessibilidade do Android com o serviço do aplicativo na lista" />
+  </Step>
+
+  <Step title="Ative a chave do serviço" title-type="p">
+    Ative a chave **Usar Cardápio Mesa/Comanda — Modo Kiosk** (1). Ela começa desligada, em cinza.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-tablet-modo-kiosk/imagens-tratadas/09-android-servico-kiosk.png" width="614" height="384" alt="Tela do serviço Modo Kiosk com a chave desativada" />
+  </Step>
+
+  <Step title="Confirme a permissão no Android" title-type="p">
+    O Android pede uma confirmação. Toque em **Permitir** (1).
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-tablet-modo-kiosk/imagens-tratadas/10-android-confirmar-servico.png" width="614" height="384" alt="Confirmação do Android para permitir o serviço" />
+  </Step>
+
+  <Step title="Verifique se o serviço ficou ativo" title-type="p">
+    A chave (1) fica azul: o serviço está ativo.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-tablet-modo-kiosk/imagens-tratadas/11-android-servico-ativo.png" width="614" height="384" alt="Tela do serviço Modo Kiosk com a chave ativada" />
+  </Step>
+
+  <Step title="Volte ao assistente e confira o contador" title-type="p">
+    Volte ao aplicativo usando o botão **Voltar** do Android. Pode ser necessário tocar duas vezes. O assistente reconhece a permissão sozinho.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-tablet-modo-kiosk/imagens-tratadas/12-assistente-1de2.png" width="614" height="384" alt="Assistente mostrando a permissão de acessibilidade concedida" />
+
+    | Nº | O que conferir                                                  |
+    | -- | --------------------------------------------------------------- |
+    | 1  | O contador virou "1 de 2 permissões concedidas".                |
+    | 2  | O quadro da Acessibilidade ficou verde, com o selo "concedida". |
+    | 3  | Agora é a vez do **CONCEDER** do Launcher padrão.               |
+
+    Se o contador não mudou, toque no ícone de recarregar — o círculo com a seta, no canto superior direito do assistente.
+  </Step>
+</Steps>
+
+### Permissão 2 de 2 — Tela inicial padrão
+
+<Steps>
+  <Step title="Escolha o Cardápio Mesa/Comanda como tela inicial" title-type="p">
+    Toque em **CONCEDER** no quadro Launcher padrão — a seta **3** da imagem acima. O Android pergunta qual aplicativo deve ser a tela inicial do tablet: vem marcada a tela de início do próprio Android. Toque no seletor do **Cardápio Mesa/Comanda** (1).
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-tablet-modo-kiosk/imagens-tratadas/13-android-launcher.png" width="614" height="384" alt="Pergunta do Android sobre qual aplicativo usar como tela inicial" />
+  </Step>
+
+  <Step title="Defina o aplicativo como padrão" title-type="p">
+    O seletor passa para o cardápio.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-tablet-modo-kiosk/imagens-tratadas/14-android-launcher-selecionado.png" width="614" height="384" alt="Opção Cardápio Mesa/Comanda selecionada na lista" />
+
+    | Nº | O que fazer                                                       |
+    | -- | ----------------------------------------------------------------- |
+    | 1  | Confira que o seletor do **Cardápio Mesa/Comanda** ficou marcado. |
+    | 2  | Toque em **Definir como padrão**.                                 |
+
+    A partir daqui, apertar o botão Início do tablet passa a abrir o cardápio em vez da tela do Android.
+  </Step>
+</Steps>
+
+## Parte 3 — Ativar a trava
+
+<Steps>
+  <Step title="Abra a Administração e toque em Travar" title-type="p">
+    Abra a tela de Administração novamente e toque em **TRAVAR**. O assistente aparece pronto para ativar.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-tablet-modo-kiosk/imagens-tratadas/15-assistente-pronto.png" width="614" height="384" alt="Assistente com as duas permissões concedidas e o botão Ativar modo kiosk" />
+
+    | Nº | O que fazer                                                                                |
+    | -- | ------------------------------------------------------------------------------------------ |
+    | 1  | Confira que o contador está em "2 de 2 permissões concedidas", com os dois quadros verdes. |
+    | 2  | Toque em **ATIVAR MODO KIOSK**.                                                            |
+  </Step>
+
+  <Step title="Confirme a ativação" title-type="p">
+    O aplicativo confirma com a mensagem "Tablet bloqueado (Modo Kiosk)".
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-tablet-modo-kiosk/imagens-tratadas/16-kiosk-ativado.png" width="614" height="384" alt="Mensagem confirmando que o tablet está bloqueado" />
+
+    | Nº | O que é                                                                                                                                      |
+    | -- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+    | 1  | **OK** — fecha a confirmação do aplicativo.                                                                                                  |
+    | 2  | O aviso do próprio Android, "O app está fixado", que aparece atrás. Se ele trouxer um botão de confirmação (**Entendi**), toque nele também. |
+  </Step>
+
+  <Step title="Aguarde o aviso App fixado desaparecer" title-type="p">
+    Em seguida o Android mostra por um instante o aviso "App fixado" (1) na parte de baixo da tela. Ele desaparece sozinho, sem precisar de nenhum toque.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-tablet-modo-kiosk/imagens-tratadas/17-app-fixado.png" width="614" height="384" alt="Aviso do Android informando que o aplicativo está fixado" />
+  </Step>
+
+  <Step title="Tablet travado" title-type="p">
+    Pronto: o tablet está travado no cardápio.
+  </Step>
+</Steps>
+
+## Parte 4 — Conferir se está travado
+
+<Steps>
+  <Step title="Faça um teste rápido" title-type="p">
+    Faça este teste rápido antes de entregar o tablet ao salão. Aperte o botão **Início** e tente arrastar a barra de notificações para baixo. O tablet deve continuar no cardápio, igual a antes — é justamente por isso que a imagem abaixo não tem marcação nenhuma: a prova é a tela não ter mudado.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-tablet-modo-kiosk/imagens-tratadas/19-home-travada.png" width="614" height="384" alt="Cardápio continua na tela mesmo após apertar o botão Início" />
+
+    Se em algum momento outra tela aparecer, ela é fechada em menos de um segundo e o cardápio volta sozinho.
+  </Step>
+</Steps>
+
+## Parte 5 — Destravar o tablet
+
+<Steps>
+  <Step title="Toque em Destravar na tela de Administração" title-type="p">
+    Toque no logo no canto superior esquerdo, digite a senha e toque em **DESTRAVAR** (1). Enquanto o tablet está travado, esse é o único botão disponível no lugar de TRAVAR.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-tablet-modo-kiosk/imagens-tratadas/18-painel-destravar.png" width="614" height="384" alt="Tela de Administração com o botão Destravar" />
+  </Step>
+
+  <Step title="Confirme que o tablet voltou ao estado normal" title-type="p">
+    O tablet é liberado na hora e a tela de Administração volta ao estado de antes, com **TRAVAR** e **CONFIGURAR TRAVA AVANÇADA** prontos para travar de novo quando quiser — nada a apontar aqui, é a mesma tela da Parte 1.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-tablet-modo-kiosk/imagens-tratadas/20-destravado.png" width="614" height="384" alt="Tela de Administração de volta ao estado destravado" />
+
+    As permissões continuam concedidas, então nas próximas vezes basta tocar em **TRAVAR** e depois em **ATIVAR MODO KIOSK**.
+  </Step>
+</Steps>
+
+## Alternativa: trava básica sem permissões
+
+Se você tocar em **TRAVAR** sem ter concedido as duas permissões, o assistente oferece a trava básica, em laranja.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-tablet-modo-kiosk/imagens-tratadas/21-trava-basica.png" width="614" height="384" alt="Assistente oferecendo a opção de trava básica" />
+
+| Nº | O que é                                                                |
+| -- | ---------------------------------------------------------------------- |
+| 1  | O aviso do limite: funciona sem permissão nenhuma, mas é menos segura. |
+| 2  | **PULAR E USAR TRAVA BÁSICA AGORA** — ativa a trava básica na hora.    |
+
+<Callout kind="tip" collapsed="false">
+  A trava básica usa apenas o recurso de fixar aplicativo do próprio Android. Ela funciona sem nenhuma permissão, mas é menos segura: o cliente consegue sair segurando os botões **Voltar** e **Recentes** ao mesmo tempo. Use como solução temporária e configure a trava avançada quando puder.
+</Callout>
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+  <Expandable title="Preciso repetir tudo isso todos os dias?" default-open="false">
+    Não. As permissões são concedidas uma única vez por tablet. No dia a dia é só entrar na Administração e tocar em **TRAVAR**.
+  </Expandable>
+
+  <Expandable title="Se o tablet reiniciar ou ficar sem bateria, ele volta travado?" default-open="false">
+    Sim. A trava é restaurada automaticamente quando o tablet liga de novo.
+  </Expandable>
+
+  <Expandable title="Esqueci a senha da tela de Administração." default-open="false">
+    É a mesma senha do login do aplicativo. Se ela foi alterada no sistema, use a senha nova para entrar no aplicativo, e ela passa a valer também na tela de Administração.
+  </Expandable>
+
+  <Expandable title="O cliente conseguiu sair do aplicativo. O que aconteceu?" default-open="false">
+    Provavelmente o tablet está com a trava básica, e não com a avançada. Abra a tela de Administração, toque em **CONFIGURAR TRAVA AVANÇADA** e verifique se as duas permissões aparecem em verde. Se a permissão de acessibilidade foi desativada nas configurações do Android, conceda-a novamente.
+  </Expandable>
+
+  <Expandable title="Os botões de volume e de ligar/desligar continuam funcionando. Isso é normal?" default-open="false">
+    Sim. Essa é uma limitação do Android e está avisada na própria tela do assistente. Se o menu de desligar aparecer, ele é fechado automaticamente em seguida.
+  </Expandable>
+
+  <Expandable title="O tablet é Xiaomi, Motorola ou similar e a trava cai sozinha depois de um tempo." default-open="false">
+    Alguns fabricantes encerram aplicativos em segundo plano para economizar bateria. Nas configurações do Android, procure a economia ou otimização de bateria e marque o aplicativo Cardápio Mesa/Comanda como sem restrição.
+  </Expandable>
+
+  <Expandable title="Quero usar o tablet para outra coisa por alguns minutos." default-open="false">
+    Destrave pela tela de Administração, use o tablet e depois trave de novo. Não é preciso reconfigurar nada.
+  </Expandable>
+</ExpandableGroup>
 
