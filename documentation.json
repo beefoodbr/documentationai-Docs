@@ -54,6 +54,10 @@
                     "path": "segmentacao-clientes"
                   },
                   {
+                    "title": "🤖 Campanhas Inteligentes WhatsApp",
+                    "path": "campanhas-inteligentes-whatsapp"
+                  },
+                  {
                     "group": "📈 Marketing Cardápío Digital",
                     "pages": [
                       {
