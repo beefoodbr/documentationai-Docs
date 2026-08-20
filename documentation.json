@@ -52,6 +52,33 @@
                   {
                     "title": "🎯 Segmentação de Clientes",
                     "path": "segmentacao-clientes"
+                  },
+                  {
+                    "group": "📈 Marketing Cardápío Digital",
+                    "pages": [
+                      {
+                        "group": "📘 Facebook Pixel",
+                        "pages": [
+                          {
+                            "title": "📊 API de Conversões",
+                            "path": "facebook-pixel-api-de-converses"
+                          }
+                        ]
+                      },
+                      {
+                        "group": "🏷️ Google Tag Manager",
+                        "pages": [
+                          {
+                            "title": "🏷️ Criando Google Tag Manager",
+                            "path": "criando-google-tag-manager"
+                          },
+                          {
+                            "title": "🎯 Configurando Eventos",
+                            "path": "configurando-eventos"
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ]
               },
@@ -273,31 +300,18 @@
                     ]
                   }
                 ]
-              },
+              }
+            ]
+          },
+          {
+            "group": "📱 Aplicativos",
+            "pages": [
               {
-                "group": "📈 Marketing Cardápío Digital",
+                "group": "📲 Cardápio Digital Tablet",
                 "pages": [
                   {
-                    "group": "📘 Facebook Pixel",
-                    "pages": [
-                      {
-                        "title": "📊 API de Conversões",
-                        "path": "facebook-pixel-api-de-converses"
-                      }
-                    ]
-                  },
-                  {
-                    "group": "🏷️ Google Tag Manager",
-                    "pages": [
-                      {
-                        "title": "🏷️ Criando Google Tag Manager",
-                        "path": "criando-google-tag-manager"
-                      },
-                      {
-                        "title": "🎯 Configurando Eventos",
-                        "path": "configurando-eventos"
-                      }
-                    ]
+                    "title": "🔒 Modo Kiosk (Travar Tablet)",
+                    "path": "modo-kiosk-travar-tablet"
                   }
                 ]
               }
