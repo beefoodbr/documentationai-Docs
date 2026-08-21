@@ -1,0 +1,65 @@
+---
+title: Horário e Pausa
+description: >-
+  Controle quando a loja abre e fecha no cardápio digital — configure a grade
+  semanal de horários e saiba como pausar o atendimento fora do horário
+---
+## Controle quando a loja recebe pedidos e como pausar fora do horário
+
+No **Cardápio Digital**, você configura duas coisas diferentes: a **grade semanal** que define quando a loja abre e fecha normalmente, em **Horário de Atendimento**, e os **mecanismos de pausa** para fechar a loja fora dessa rotina quando acontece um imprevisto, em **Pausa Programada**. Os dois caminhos se complementam: um cuida da operação normal da semana, o outro cobre o que sai da rotina.
+
+## Os dois caminhos
+
+Use a página certa conforme o tipo de ajuste que você precisa fazer.
+
+| Página                                         | O que controla                           | Onde fica                                          |
+| ---------------------------------------------- | ---------------------------------------- | -------------------------------------------------- |
+| [Horário de Atendimento](/horario-atendimento) | A grade semanal de abertura e fechamento | Cardápio Digital → Horário Atendimento             |
+| [Pausa Programada](/pausa-programada)          | Fechar a loja fora da grade semanal      | Cardápio Digital → Pausa Programada e menu do topo |
+
+## Os três jeitos de fechar a loja
+
+<Callout kind="info" collapsed="false">
+  Pausas têm fim marcado e a loja reabre sozinha. O switch do canal não tem fim e fica desligado até alguém religar.
+</Callout>
+
+Cada mecanismo atende uma situação diferente. A diferença prática é saber se o fechamento é temporário, programado ou sem previsão de volta.
+
+| Mecanismo        | Quando usar                        | Duração                      | Canais afetados                | Reabertura |
+| ---------------- | ---------------------------------- | ---------------------------- | ------------------------------ | ---------- |
+| Pausa temporária | Cozinha atrasada, fila cheia       | 15, 30, 45 min ou "por hoje" | Os dois, delivery e presencial | Automática |
+| Pausa programada | Feriado, férias, manutenção        | Período com data e hora      | Escolhe o canal                | Automática |
+| Switch do canal  | Sem entregador, suspender um canal | Indefinida                   | Por canal                      | Manual     |
+
+## Configurar o horário e as pausas
+
+<Columns cols="2">
+  <Card title="📅 Horário de Atendimento" href="/horario-atendimento" icon="calendar" cta="Abrir manual" horizontal="false">
+    Defina que horas a loja abre e fecha, com grade semanal, dois turnos por dia e ajuste automático para quem fecha depois da meia-noite.
+  </Card>
+
+  <Card title="⏸️ Pausa Programada" href="/pausa-programada" icon="pause" cta="Abrir manual" horizontal="false">
+    Feche a loja fora do horário com pausa temporária, pausa programada, switches de canal e agendamento de pedidos.
+  </Card>
+</Columns>
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+  <Expandable title="Qual a diferença entre pausa e switch?" default-open="false">
+    Pausas têm fim marcado e a loja reabre sozinha. O switch do canal não tem fim e fica desligado até alguém religar. Para algo temporário, prefira a pausa.
+  </Expandable>
+
+  <Expandable title="Como fecho a loja todo domingo?" default-open="false">
+    Isso é grade, não pausa. Desligue o domingo no **Horário de Atendimento**. Pausa é para o que sai da rotina.
+  </Expandable>
+
+  <Expandable title="A pausa rápida afeta os dois canais?" default-open="false">
+    Sim. A pausa temporária do menu do topo fecha delivery e presencial de uma vez. Para pausar só um canal, use a **Pausa Programada**, que tem switch por canal.
+  </Expandable>
+
+  <Expandable title="Quanto tempo leva para a pausa fazer efeito?" default-open="false">
+    Até um minuto. O sistema faz polling de 60 segundos para atualizar o status no cardápio digital.
+  </Expandable>
+</ExpandableGroup>
+

@@ -1,0 +1,262 @@
+---
+title: Pausa Programada
+description: Feche a loja fora do horário de atendimento com pausa temporária, pausa programada com data e hora, switches de canal e agendamento de pedidos para continuar vendendo com a loja fechada
+---
+
+## Feche a loja fora do horário de atendimento
+
+Três mecanismos fecham a loja fora da grade semanal: **pausa temporária** para agir rápido no menu do topo, **pausa programada** para marcar início e fim com data e hora, e **switch do canal** para desligar por tempo indeterminado. A diferença prática é simples: as pausas têm hora para terminar e a loja reabre sozinha; o switch não tem fim e continua desligado até alguém religar. Antes de começar, confirme que o [Horário de Atendimento](/horario-atendimento) já está configurado, porque a pausa só devolve o controle para a grade semanal.
+
+## Os três mecanismos
+
+| Mecanismo | Quando usar | Duração | Canais | Reabertura |
+| --- | --- | --- | --- | --- |
+| Pausa temporária | Cozinha atrasada, fila cheia | 15, 30, 45 min ou "por hoje" | Os dois de uma vez | Automática |
+| Pausa programada | Feriado, férias, manutenção | Período com data e hora | Escolhe o canal | Automática |
+| Switch do canal | Sem entregador, suspender um canal | Indefinida | Por canal | Manual |
+
+<Callout kind="info">
+  A atualização leva até um minuto para chegar ao cliente. Não é instantâneo, e isso é normal.
+</Callout>
+
+## Pausa temporária: o caminho mais rápido
+
+Use a pausa temporária quando o problema é agora e você precisa parar de receber pedidos sem entrar na tela completa de configuração.
+
+<Steps>
+  <Step title="Clique no nome do cardápio no topo do painel para abrir o menu" icon="zap" title-type="p">
+
+    <Image
+      src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/loja-fechar-pausa/imagens-tratadas/01-header-popover.png"
+      width="800"
+      alt="Menu do cardápio no topo do painel com opções de pausa e switches de canal"
+    />
+
+    | Item | O que faz |
+    | --- | --- |
+    | Nome do cardápio | Abre o menu de qualquer tela do sistema. |
+    | Pausa Temporária | Mostra as pausas rápidas. |
+    | Status do canal | Mostra se a loja está aberta ou fechada agora. |
+    | Switches de canal | Controlam Entrega, Retirada e Consumo Local. |
+
+  </Step>
+  <Step title="Clique em Pausa Temporária e escolha a duração" icon="pause" title-type="p">
+
+    Cada opção já mostra até que hora a pausa vai.
+
+    <Image
+      src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/loja-fechar-pausa/imagens-tratadas/02-pausa-temporaria-menu.png"
+      width="800"
+      alt="Submenu de pausa temporária com opções de 15, 30 e 45 minutos e pausar por hoje"
+    />
+
+    | Item | O que faz |
+    | --- | --- |
+    | Pausas ativas | Mostra quantas pausas estão valendo agora. |
+    | Pausar por 15, 30 ou 45 minutos | Fecha a loja até o horário exibido na opção. |
+    | Pausar por hoje | Fecha até amanhã às 05:00. |
+
+  </Step>
+</Steps>
+
+<Callout kind="alert">
+  A pausa rápida fecha os dois canais, delivery e presencial, de uma vez. Para pausar só um canal, use a Pausa Programada, que tem switch por canal. Não precisa desfazer nada: no fim do tempo a loja reabre sozinha, respeitando a grade.
+</Callout>
+
+## Pausa programada: feriado e período marcado
+
+Use a pausa programada quando você já sabe quando a loja precisa parar e quando deve voltar.
+
+<Steps>
+  <Step title="Vá em Cardápio Digital → Pausa Programada para criar uma pausa com data e hora definidas" icon="calendar" title-type="p">
+
+    <Image
+      src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/loja-fechar-pausa/imagens-tratadas/03-pausa-aba.png"
+      width="800"
+      alt="Aba Pausa Programada com botão Adicionar e lista de pausas existentes"
+    />
+
+    | Item | O que faz |
+    | --- | --- |
+    | Adicionar Pausa Programada | Cria uma pausa nova. |
+    | Ativo | Liga e desliga a pausa. Pausas antigas ficam guardadas desligadas. |
+    | Período e Motivo | Mostram o que a pausa cobre e por quê. |
+
+  </Step>
+  <Step title="Clique em Adicionar Pausa Programada" icon="plus" title-type="p">
+
+    O modal abre com atalhos e campos manuais.
+
+    <Image
+      src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/loja-fechar-pausa/imagens-tratadas/04-pausa-modal.png"
+      width="800"
+      alt="Modal de criação de pausa programada com atalhos de duração, campos de data e switches de canal"
+    />
+
+    | Campo | O que fazer |
+    | --- | --- |
+    | 15, 30, 45 MINUTOS, 1 HORA, 2 HORAS | Atalhos que preenchem início e fim contando de agora. |
+    | HOJE e AMANHÃ | Preenchem o dia inteiro. |
+    | Início e Fim | Definem data e hora manualmente. É o caminho para feriado. |
+    | Delivery, Retirada e Presencial | Definem quais canais a pausa fecha. Dá para fechar só um. |
+    | Motivo | Texto livre que aparece na lista e ajuda a equipe depois. |
+
+  </Step>
+  <Step title="Escolha um atalho ou preencha as datas" icon="settings" title-type="p">
+
+    No exemplo, o preset de 30 MINUTOS preenche início e fim sozinho.
+
+    <Image
+      src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/loja-fechar-pausa/imagens-tratadas/05-pausa-preenchida.png"
+      width="800"
+      alt="Modal de pausa preenchido com o preset de 30 minutos e campos de início e fim automáticos"
+    />
+
+  </Step>
+  <Step title="Confira a duração, início e fim na tela de confirmação e confirme" icon="check-circle" title-type="p">
+
+    <Image
+      src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/loja-fechar-pausa/imagens-tratadas/06-pausa-confirmacao.png"
+      width="800"
+      alt="Tela de confirmação da pausa com duração, início e fim antes de confirmar"
+    />
+
+  </Step>
+  <Step title="Confirme que a pausa ficou ativa na lista" icon="check" title-type="p">
+
+    O status no topo muda para **Fora do horário de atendimento**. Esse é o sinal mais rápido de que a pausa funcionou.
+
+    <Image
+      src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/loja-fechar-pausa/imagens-tratadas/07-pausa-criada.png"
+      width="800"
+      alt="Pausa criada e ativa na lista com switch Ativo ligado e canais afetados"
+    />
+
+  </Step>
+</Steps>
+
+<Callout kind="info">
+  Para encerrar a pausa antes da hora, desligue o switch Ativo. A loja volta a seguir a grade normal na hora, com o atraso de até um minuto. A pausa fica na lista, desligada, e pode ser religada depois. Vale guardar pausas recorrentes: se você fecha todo ano no mesmo feriado, deixe a pausa desligada e ligue quando chegar a data, ajustando só as datas.
+</Callout>
+
+## Encerrar uma pausa antes da hora
+
+Se o problema resolveu antes, desligue o switch **Ativo** da pausa. A loja volta a seguir a grade normal na hora.
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/loja-fechar-pausa/imagens-tratadas/08-pausa-desativada.png"
+  width="800"
+  alt="Pausa desativada com o switch Ativo desligado na lista de pausas programadas"
+/>
+
+## Desligar um canal por tempo indeterminado
+
+Use o switch quando você não sabe quando o canal vai voltar. Nesse caso, não existe hora de reabertura automática.
+
+Vá em **Cardápio Digital → Configurações** e desça até o bloco do Delivery.
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/loja-fechar-pausa/imagens-tratadas/09-configuracoes-switches.png"
+  width="800"
+  alt="Configurações do cardápio digital com switches de Delivery Ativo e Entrega, Retirada e Consumo no Local"
+/>
+
+| Item | O que faz |
+| --- | --- |
+| Delivery Ativo | Liga e desliga todo o delivery. Desligado, o cardápio de entrega sai do ar. |
+| Entrega, Retirada e Consumo no Local | Controlam os tipos dentro do delivery. Dá para deixar só a retirada funcionando. |
+
+<Callout kind="alert">
+  Switch desligado não avisa ninguém. Não há alerta no painel lembrando que um canal está desligado, só o status no menu do topo. É a forma mais fácil de perder venda sem perceber. Para algo temporário, prefira a pausa, que reabre sozinha.
+</Callout>
+
+## Continuar vendendo com a loja fechada
+
+Fechar a loja não precisa significar perder o pedido. Em **Cardápio Digital → Agendamento**, três switches controlam o agendamento de pedidos.
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/loja-fechar-pausa/imagens-tratadas/10-agendamento.png"
+  width="800"
+  alt="Aba Agendamento com switches de agendamento, agendamento com cardápio fechado e só agendamento"
+/>
+
+| Switch | O que faz |
+| --- | --- |
+| Agendamento | Aceita agendamento no cardápio digital delivery. É a chave geral. |
+| Agendamento com o Cardápio Digital fechado | Aceita agendamento mesmo com o cardápio fechado fora do horário. É esse switch que permite ao cliente pedir de madrugada para o dia seguinte. Depende do primeiro estar ligado. |
+| Só aceita agendamento | Aceita apenas pedidos agendados e bloqueia pedidos imediatos. Útil para encomendas. |
+
+<Callout kind="info">
+  O agendamento vale só para o cardápio de Delivery, Entrega e Retirada. Não vale para o presencial. Ligando o segundo switch, o cliente vê que a loja está fechada, mas ainda consegue agendar.
+</Callout>
+
+## Avisar o cliente pelo WhatsApp
+
+Quem manda mensagem com a loja fechada pode receber uma resposta automática com o seu horário. O caminho é **WhatsApp → Respostas**, na linha **Mensagem de Loja Fechada**.
+
+Nessa mensagem existe a variável `MEU_HORARIO`, que o sistema troca pelo horário de funcionamento configurado na grade semanal. Você escreve a mensagem uma vez e o sistema mostra sempre o horário atualizado.
+
+Se a loja aceita agendamento com o cardápio fechado, acrescente essa informação na mesma mensagem para o cliente já saber que pode encomendar.
+
+## Resumo: o que usar em cada situação
+
+| Situação | O que fazer |
+| --- | --- |
+| Cozinha atolada, 20 minutos de atraso | Pausa temporária de 15 ou 30 min, no menu do topo |
+| Acabou o ingrediente principal hoje | Pausar por hoje |
+| Feriado na semana que vem | Pausa programada com data e hora |
+| Férias de duas semanas | Pausa programada com o período todo |
+| Sem entregador por tempo indefinido | Desligar o switch Entrega, mantendo a Retirada |
+| Reforma no salão, delivery normal | Pausa programada só no Presencial |
+| Quer receber pedido para amanhã mesmo fechado | Agendamento com o Cardápio Digital fechado |
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+  <Expandable title="Pausei e o cliente ainda consegue pedir" default-open="false">
+
+    Espere até um minuto e recarregue. Se continuar, confira se a pausa está com o switch **Ativo** ligado e se cobre o canal certo. Delivery e presencial são controlados separadamente na pausa programada.
+
+  </Expandable>
+  <Expandable title="A pausa terminou e a loja não abriu" default-open="false">
+
+    Verifique a [grade semanal](/horario-atendimento) e os switches de canal. A pausa só devolve o controle para a grade. Se a grade estiver fechada naquele horário, a loja continua fechada.
+
+  </Expandable>
+  <Expandable title="Qual a diferença entre Pausa Temporária no topo e Pausa Programada na aba?" default-open="false">
+
+    É a mesma coisa por dentro. A diferença está na tela e no nível de controle. O menu do topo é rápido e fecha os dois canais; a aba permite escolher data, hora, canais e motivo, além de guardar histórico.
+
+  </Expandable>
+  <Expandable title="Posso pausar só uma das minhas lojas?" default-open="false">
+
+    Sim. Quando existe mais de um cardápio, o modal da pausa mostra a opção **Aplicar para todos os cardápios**. Deixe desmarcada para pausar só a loja selecionada.
+
+  </Expandable>
+  <Expandable title="A pausa cancela pedidos que já entraram?" default-open="false">
+
+    Não. A pausa impede novos pedidos. Os pedidos que já estão na fila seguem normalmente.
+
+  </Expandable>
+  <Expandable title="Como faço para fechar todo domingo?" default-open="false">
+
+    Isso não é pausa, é grade. Ajuste o domingo no [Horário de Atendimento](/horario-atendimento). Pausa serve para o que sai da rotina.
+
+  </Expandable>
+  <Expandable title="Desliguei o Delivery Ativo e o presencial parou também" default-open="false">
+
+    Não deveria. Confira se não há uma pausa ativa cobrindo os dois canais ou se o QR Code Presencial também está desligado.
+
+  </Expandable>
+</ExpandableGroup>
+
+## Manuais relacionados
+
+<Columns cols={2}>
+  <Card title="Horário e Pausa" href="/horario-pausa" icon="clock" cta="Abrir manual">
+    Volte para a visão geral de horários, pausas e fechamento fora da rotina.
+  </Card>
+  <Card title="Horário de Atendimento" href="/horario-atendimento" icon="calendar" cta="Abrir manual">
+    Configure a grade semanal de abertura e fechamento da loja.
+  </Card>
+</Columns>

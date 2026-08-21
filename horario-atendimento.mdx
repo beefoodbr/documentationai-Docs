@@ -1,0 +1,218 @@
+---
+title: Horário de Atendimento
+description: >-
+  Configure os horários de delivery e presencial com presets, dois turnos por
+  dia e travessia de meia-noite automática — o cardápio digital só aceita
+  pedidos nos horários certos
+---
+## Configure quando sua loja abre e fecha no cardápio digital
+
+Defina que horas a sua loja abre e fecha no cardápio digital, com grade semanal, dois turnos no mesmo dia, tempo de entrega por dia e ajuste automático para quem fecha depois da meia-noite. O caminho fica em **Cardápio Digital → Horário Atendimento**.
+
+## Duas coisas para saber antes de começar
+
+Delivery e Presencial usam grades separadas. Configurar uma sub-aba não configura a outra, e esse é o erro mais comum nessa tela.
+
+| Sub-aba    | Vale para                         |
+| ---------- | --------------------------------- |
+| Delivery   | Entrega, Retirada e Consumo Local |
+| Presencial | QR Code das mesas e comandas      |
+
+<Callout kind="info" collapsed="false">
+  Não existe botão de salvar. A tela grava sozinha a cada alteração, em poucos instantes, e mostra o aviso **Salvo automaticamente**.
+</Callout>
+
+## Onde fica e como ver
+
+Abra **Cardápio Digital → Horário Atendimento** no menu lateral. Você pode visualizar a grade em dois formatos: Timeline, com a semana em blocos, ou Lista, com os horários em campos por dia.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/horario-atendimento/imagens-tratadas/01-timeline-antes.png" width="800" alt="Tela de Horário de Atendimento na visualização Timeline antes da configuração" />
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/horario-atendimento/imagens-tratadas/02-lista-antes.png" width="800" alt="Tela de Horário de Atendimento na visualização Lista antes da configuração" />
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/horario-atendimento/imagens-tratadas/03-presencial-antes.png" width="800" alt="Sub-aba Presencial da tela de Horário de Atendimento antes da configuração" />
+
+| Visualização | Como mostra                   |
+| ------------ | ----------------------------- |
+| Timeline     | A semana em blocos de horário |
+| Lista        | Os horários em campos por dia |
+
+## Começar do zero
+
+Se a grade já está bagunçada ou você quer remontar tudo do início, resetar os horários é o caminho mais rápido.
+
+<Steps>
+  <Step title="Resetar horários" icon="trash" title-type="p">
+    Clique no menu de três pontos da tela e escolha **Resetar horários**. Em seguida, confirme a ação. Quando o reset termina, todos os dias ficam fechados e a grade volta para um estado limpo.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/horario-atendimento/imagens-tratadas/04-menu-resetar.png" width="800" alt="Menu de três pontos da tela com a opção Resetar horários" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/horario-atendimento/imagens-tratadas/05-reset-confirmacao.png" width="800" alt="Janela de confirmação para resetar os horários de atendimento" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/horario-atendimento/imagens-tratadas/06-apos-reset.png" width="800" alt="Tela de Horário de Atendimento após resetar, com todos os dias fechados" />
+  </Step>
+</Steps>
+
+<Callout kind="alert" collapsed="false">
+  O reset apaga as duas grades, **Delivery** e **Presencial**, não só a que está aberta na tela.
+</Callout>
+
+## Montar a semana com o Assistente
+
+O Assistente aplica uma base rápida para a semana inteira. Use esse fluxo para criar a grade principal e depois faça só os ajustes finos.
+
+<Steps>
+  <Step title="Aviso do Assistente" icon="info" title-type="p">
+    Ao abrir o Assistente, confira o aviso de substituição. O Assistente reescreve os horários dos dias selecionados com base no modelo escolhido.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/horario-atendimento/imagens-tratadas/07-assistente-aviso.png" width="800" alt="Aviso do Assistente de Horário informando que os horários selecionados serão substituídos" />
+  </Step>
+
+  <Step title="Passo 1 — em quais dias você abre" icon="check-circle" title-type="p">
+    Marque os dias que devem receber a configuração. Se a sua rotina é parecida ao longo da semana, use os atalhos para ganhar tempo.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/horario-atendimento/imagens-tratadas/08-assistente-passo1.png" width="800" alt="Passo 1 do Assistente de Horário com seleção de dias da semana" />
+
+    | Atalho        | O que faz                     |
+    | ------------- | ----------------------------- |
+    | Todos         | Marca todos os dias da semana |
+    | Dias úteis    | Marca os dias úteis           |
+    | Fim de semana | Marca sábado e domingo        |
+  </Step>
+
+  <Step title="Passo 2 — como você opera" icon="settings" title-type="p">
+    Escolha o modelo que mais se aproxima da rotina da sua loja. Depois, ajuste os campos se precisar. Nessa etapa você também pode marcar **Tenho um segundo turno** e preencher **Tempo de entrega** e **Tempo de retirada**.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/horario-atendimento/imagens-tratadas/09-assistente-passo2.png" width="800" alt="Passo 2 do Assistente de Horário com modelos prontos e campos de configuração" />
+
+    | Modelo                           | Horário                   |
+    | -------------------------------- | ------------------------- |
+    | Restaurante (Almoço + Jantar)    | 11:00–15:00 e 18:00–23:00 |
+    | Lanchonete / Pizzaria (só noite) | 18:00–23:59               |
+    | Padaria / Café (manhã)           | 06:00–14:00               |
+    | Comercial                        | 09:00–18:00               |
+  </Step>
+
+  <Step title="Passo 3 — revisar antes de aplicar" icon="check" title-type="p">
+    Revise os dias escolhidos, os horários e os tempos configurados. Se estiver tudo certo, clique em **Aplicar**.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/horario-atendimento/imagens-tratadas/10-assistente-passo3.png" width="800" alt="Passo 3 do Assistente de Horário com resumo antes de aplicar" />
+  </Step>
+</Steps>
+
+## Conferir o resultado
+
+Depois de aplicar o Assistente, confira a grade nas duas visualizações. Esse passo ajuda a encontrar dias fora do padrão antes que o cliente veja o cardápio.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/horario-atendimento/imagens-tratadas/11-timeline-depois.png" width="800" alt="Visualização Timeline após configurar os horários de atendimento" />
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/horario-atendimento/imagens-tratadas/12-lista-dois-turnos.png" width="800" alt="Visualização Lista com dois turnos configurados no mesmo dia" />
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/horario-atendimento/imagens-tratadas/13-resumo-desempenho.png" width="800" alt="Resumo semanal dos horários de atendimento configurados" />
+
+Se a grade ficou como esperado, você já tem a base pronta. Agora ajuste apenas os dias que fogem do padrão.
+
+## Ajustar um dia na mão
+
+Clique em um bloco da Timeline para abrir o popover de edição. Nele você ajusta **Início**, **Fim**, **Entrega**, **Retirada**, aplica a alteração ou exclui o bloco.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/horario-atendimento/imagens-tratadas/14-popover-bloco.png" width="800" alt="Popover de edição de bloco de horário com campos de início, fim, entrega e retirada" />
+
+<Callout kind="info" collapsed="false">
+  Para criar um terceiro turno, use o botão de clonar. Não existe a opção de copiar a segunda-feira para a terça-feira. Se você quiser repetir uma configuração entre dias, use o Assistente.
+</Callout>
+
+## Fechar um dia
+
+Desligue o switch do dia quando a loja não abre naquele dia. O sistema marca o dia como **Fechado**, mas mantém os horários preenchidos para você poder reutilizá-los depois.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/horario-atendimento/imagens-tratadas/16-dia-fechado.png" width="800" alt="Dia marcado como fechado com o switch desligado na tela de horário de atendimento" />
+
+Se você ligar o switch novamente, os horários anteriores voltam a valer.
+
+## Quem fecha depois da meia-noite
+
+Se a sua operação atravessa a meia-noite, informe o horário normalmente. Ao configurar algo como `18:00` até `02:00`, o sistema divide o período em dois dias.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/horario-atendimento/imagens-tratadas/15-meia-noite-toast.png" width="800" alt="Aviso informando que um turno foi dividido automaticamente entre um dia e o seguinte" />
+
+O dia atual fica até `23:59`, e o dia seguinte recebe um novo turno começando em `00:00`.
+
+<Callout kind="alert" collapsed="false">
+  Se o domingo estava fechado, ele passa a ter um turno de madrugada. Confira o dia seguinte depois de configurar.
+</Callout>
+
+## O que o sistema recusa
+
+Algumas combinações não são salvas. Quando isso acontecer, confira os horários digitados no dia que você acabou de editar.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/horario-atendimento/imagens-tratadas/17-validacao-igual.png" width="800" alt="Mensagem de validação ao tentar salvar um horário inválido" />
+
+| Validação                                    | Quando ocorre        |
+| -------------------------------------------- | -------------------- |
+| Nenhum horário válido para salvar...         | Início igual ao fim  |
+| Horários não podem se sobrepor no mesmo dia. | Turnos que se cruzam |
+
+## Não esqueça a grade Presencial
+
+Depois de terminar a grade de Delivery, abra a sub-aba **Presencial** e repita a configuração. Essa grade é separada e controla o atendimento por QR Code das mesas e comandas.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/horario-atendimento/imagens-tratadas/18-presencial-fechado.png" width="800" alt="Sub-aba Presencial com todos os dias fechados" />
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/horario-atendimento/imagens-tratadas/19-presencial-passo2.png" width="800" alt="Assistente de Horário sendo usado na sub-aba Presencial" />
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/horario-atendimento/imagens-tratadas/20-presencial-configurado.png" width="800" alt="Sub-aba Presencial configurada com horários ativos" />
+
+<Callout kind="alert" collapsed="false">
+  Com a grade Presencial fechada, o QR Code das mesas não funciona, mesmo que o delivery esteja aberto.
+</Callout>
+
+## Resumo do caminho
+
+1. Acesse **Cardápio Digital → Horário Atendimento**.
+2. Escolha a sub-aba correta: **Delivery** ou **Presencial**.
+3. Abra o **Assistente** e selecione os dias.
+4. Escolha o modelo, ajuste horários e revise antes de aplicar.
+5. Ajuste na mão os dias que fogem do padrão.
+6. Feche os dias em que a loja não abre.
+7. Repita a configuração na outra sub-aba e confira o resumo final.
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+  <Expandable title="Mudei o horário e o cliente continua vendo o antigo" default-open="false">
+    Aguarde cerca de um minuto e teste de novo. Se o horário ainda não mudou, confira se você alterou a sub-aba correta, se não existe pausa ativa e se os switches do canal continuam habilitados.
+  </Expandable>
+
+  <Expandable title="Tenho duas lojas. O horário é o mesmo?" default-open="false">
+    Não. A grade de horário é configurada por cardápio. Se você tem duas lojas, configure os horários em cada uma delas.
+  </Expandable>
+
+  <Expandable title="Como abro só no almoço?" default-open="false">
+    Configure um único turno e deixe a opção de segundo turno desmarcada.
+  </Expandable>
+
+  <Expandable title="Como faço horário de feriado?" default-open="false">
+    Use a **Pausa Programada** para fechar em datas específicas sem desmontar a sua grade semanal.
+  </Expandable>
+
+  <Expandable title="Meu horário some quando eu digito" default-open="false">
+    O caso mais comum é início igual ao fim. Quando isso acontece, o sistema recusa o período como inválido.
+  </Expandable>
+
+  <Expandable title="Dá para ter horário diferente para Entrega e para Retirada?" default-open="false">
+    Não. Entrega e Retirada usam a mesma grade de horário. O que você consegue configurar separado é o tempo de entrega e o tempo de retirada.
+  </Expandable>
+
+  <Expandable title="O que é 'Fechado' com o horário ainda preenchido?" default-open="false">
+    Significa que o switch do dia está desligado. O sistema ignora os horários enquanto o dia estiver fechado, mas não apaga os campos.
+  </Expandable>
+</ExpandableGroup>
+
+## Manuais relacionados
+
+| Manual                                   | Quando usar                                                                                     |
+| ---------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| [🕐 Horário e Pausa](/horario-pausa)     | Visão geral de horário de atendimento e pausas                                                  |
+| [⏸️ Pausa Programada](/pausa-programada) | Quando você precisa pausar a loja temporariamente, programar um fechamento ou desligar um canal |
+| Cardápio — fundamentos                   | Quando você precisa organizar produtos, grupos e complementos do cardápio digital               |

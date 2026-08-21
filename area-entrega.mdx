@@ -1,0 +1,185 @@
+---
+title: "Área de Entrega"
+description: "Defina o endereço do restaurante no Google Maps e escolha o tipo de área de entrega — por mapa, por KM, por bairro/CEP ou CEP fixo"
+---
+
+## Marque o endereço da loja no mapa e escolha como o sistema calcula o frete
+
+A Área de Entrega é o ponto de partida para configurar as entregas no cardápio digital. Em **Cardápio Digital → Área de Entrega**, você marca no mapa o endereço da loja e escolhe se o frete será calculado por mapa, por KM, por bairro e CEP ou por CEP fixo.
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/endereco-restaurante/imagens-tratadas/01-area-entrega-resultado.png"
+  width="800"
+  height="450"
+  alt="Tela Área de Entrega com as seções Localização, Tipo de Entrega e Área de Entrega"
+  caption="Se a loja já tiver endereço e tipo definidos, a tela pode abrir direto nas etapas seguintes."
+/>
+
+## Duas coisas para saber antes de começar
+
+<Callout kind="info">
+
+O endereço é da loja, não do cliente. Aqui você marca onde a cozinha fica.
+
+</Callout>
+
+<Callout kind="info">
+
+Só um tipo de entrega fica ativo por vez, mas trocar o tipo **não** apaga as configurações dos outros.
+
+</Callout>
+
+## Confirmar a localização
+
+<Steps>
+  <Step title="Buscar o endereço da loja" icon="map" title-type="p">
+
+  Digite o endereço da loja na busca e escolha a sugestão correta do Google Maps. Depois, confira o ponto no mapa e arraste o marcador se precisar ajustar a posição exata da cozinha.
+
+  <Image
+    src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/endereco-restaurante/imagens-tratadas/02-step1-localizacao.png"
+    width="800"
+    height="450"
+    alt="Etapa de localização da loja com campo de busca, fuso horário e mapa"
+  />
+
+  <Image
+    src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/endereco-restaurante/imagens-tratadas/05-busca-sugestoes.png"
+    width="800"
+    height="450"
+    alt="Busca de endereço com sugestões do Google Maps e pin posicionado no mapa"
+  />
+
+  | Campo | O que preencher |
+  | --- | --- |
+  | Fuso Horário | Brasília UTC-3 |
+  | Buscar endereço | Rua + número + bairro + cidade |
+  | Mapa | Arraste o marcador para o ponto exato |
+
+  Quando o endereço estiver correto, avance para a confirmação. Se o mapa não encontrar de primeira, tente incluir também a cidade e o estado na busca.
+
+  </Step>
+
+  <Step title="Confirmar o número" icon="check-circle" title-type="p">
+
+  O sistema abre um modal para confirmar o endereço detectado. Revise os dados, preencha o número e, se quiser, adicione o complemento antes de continuar.
+
+  <Image
+    src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/endereco-restaurante/imagens-tratadas/04-modal-confirmar.png"
+    width="800"
+    height="450"
+    alt="Modal de confirmação de endereço com campos de número obrigatório e complemento opcional"
+  />
+
+  <Callout kind="alert">
+
+  O número é obrigatório. Sem ele, o botão para avançar não libera.
+
+  </Callout>
+
+  Depois de confirmar, a próxima etapa mostra os tipos de entrega disponíveis para esse cardápio.
+
+  </Step>
+</Steps>
+
+## Escolher o tipo de entrega
+
+Depois de salvar a localização, escolha qual regra o cardápio digital vai usar para calcular o frete. O card selecionado fica marcado para mostrar qual tipo está ativo no momento.
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/endereco-restaurante/imagens-tratadas/06-step2-depois-endereco.png"
+  width="800"
+  height="450"
+  alt="Tela com os quatro cards de tipo de entrega: por KM, por mapa, por bairro e CEP e CEP fixo"
+  caption="Cada card ativa uma forma diferente de cobrança de frete."
+/>
+
+| Tipo | Como funciona | Quando usar |
+| --- | --- | --- |
+| Por KM | Faixas de distância com base no Google Maps | Quando o frete depende da quilometragem |
+| Por Mapa | Círculos e polígonos desenhados no mapa | Quando você quer áreas com limites específicos |
+| Por Bairro e CEP | Lista de bairros, CEPs ou faixas de CEP | Quando você cobra por bairro ou região postal |
+| CEP Fixo | Um único CEP e um valor | Quando a cidade tem um CEP só |
+
+<Callout kind="info">
+
+Trocar o tipo não apaga as configurações dos outros. Você pode voltar e trocar a qualquer hora.
+
+</Callout>
+
+## O que o cliente vê
+
+O endereço da loja serve como origem para calcular distância, validar bairro e desenhar áreas no mapa. No pedido, o cliente informa o próprio endereço no cardápio digital, com CEP e número.
+
+<Callout kind="info">
+
+O endereço da loja não aparece como taxa. Serve de origem. A mudança leva 1 a 2 minutos para chegar ao cardápio.
+
+</Callout>
+
+## Configurar o tipo escolhido
+
+Agora que a localização já está salva e o tipo foi escolhido, siga para a configuração detalhada da regra que você vai usar.
+
+<Columns cols={3}>
+  <Card
+    title="📍 Por Mapa"
+    href="/area-entrega-mapa"
+    icon="map"
+    cta="Abrir manual"
+  >
+    Círculos e polígonos com zonas de não-entrega.
+  </Card>
+
+  <Card
+    title="📏 Por KM"
+    href="/area-entrega-km"
+    icon="bar-chart"
+    cta="Abrir manual"
+  >
+    Faixas de distância com Google Maps.
+  </Card>
+
+  <Card
+    title="🏘️ Por Bairro e CEP"
+    href="/area-entrega-bairro-cep"
+    icon="home"
+    cta="Abrir manual"
+  >
+    Bairros, CEPs, faixas de CEP e CEP Fixo.
+  </Card>
+</Columns>
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+  <Expandable title="Mudei o endereço e o frete continua igual">
+
+  O cardápio digital pode levar de 1 a 2 minutos para atualizar. Aguarde esse tempo e teste novamente no link do cardápio.
+
+  </Expandable>
+
+  <Expandable title="Posso ter KM e mapa ao mesmo tempo?">
+
+  Não. Só um tipo de entrega fica ativo por vez. As configurações dos outros tipos continuam salvas, mas o cardápio usa apenas o tipo selecionado.
+
+  </Expandable>
+
+  <Expandable title="O fuso horário muda o frete?">
+
+  Não. O fuso horário serve para alinhar o relógio do sistema. Ele não altera taxa, distância nem regra de entrega.
+
+  </Expandable>
+
+  <Expandable title="Tenho duas lojas">
+
+  O endereço é configurado por cardápio. Se cada loja tiver um cardápio próprio, cada uma precisa ter a própria Área de Entrega configurada.
+
+  </Expandable>
+
+  <Expandable title="O mapa não acha minha rua">
+
+  Digite o endereço com cidade e estado junto. Isso costuma ajudar o Google Maps a localizar ruas menos conhecidas ou endereços em bairros novos.
+
+  </Expandable>
+</ExpandableGroup>

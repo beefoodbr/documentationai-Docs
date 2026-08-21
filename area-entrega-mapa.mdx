@@ -1,0 +1,237 @@
+---
+title: Por Mapa
+description: Desenhe círculos e polígonos no mapa para definir áreas de entrega com taxas, zonas de não-entrega e frete grátis por região
+---
+
+## Desenhe no mapa as regiões que você atende e cobre um frete diferente para cada uma
+
+Use o tipo **Raio/Área** para criar áreas de entrega por posição no mapa, com taxa, frete grátis e tempo próprios para cada região. Antes de começar, confirme que a configuração base da [Área de Entrega](/area-entrega) já está pronta e que o pin da loja está no lugar certo.
+
+## Quando usar o mapa
+
+Use **Raio/Área** quando o valor do frete depende de onde o cliente está no mapa, e não de uma lista de bairros ou CEPs. Esse formato funciona melhor quando você precisa desenhar a cobertura com mais precisão.
+
+- **Círculo em volta da loja** para atender por distância, como até 2 km ou até 5 km.
+- **Polígono recortando um bairro** para seguir ruas, avenidas ou limites reais da região.
+- **Área de não-entrega** para bloquear trechos específicos, como zona industrial, área de risco ou regiões que você não atende.
+
+## Escolher Raio/Área
+
+<Steps>
+  <Step title="Selecionar o tipo" icon="map" title-type="p">
+
+  Acesse **Cardápio Digital → Área de Entrega → Alterar** e escolha **Raio/Área**.
+
+  <Image
+    src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/area-entrega-mapa/imagens-tratadas/02-step2-tipos.png"
+    width="800"
+    alt="Tela de seleção do tipo de área de entrega com a opção Raio e Área destacada"
+  />
+
+  Depois da seleção, a configuração passa a usar o mapa para criar regiões de entrega e regiões de bloqueio.
+
+  </Step>
+</Steps>
+
+## Criar uma região: círculo ou polígono
+
+<Steps>
+  <Step title="Nova Região" icon="plus" title-type="p">
+
+  Clique em **+ Nova Região** para abrir a criação de uma nova área. Você pode escolher entre **Círculo** e **Polígono**.
+
+  <Image
+    src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/area-entrega-mapa/imagens-tratadas/03-nova-regiao-tipo.png"
+    width="800"
+    alt="Janela para criar nova região no mapa com as opções círculo e polígono"
+  />
+
+  Escolha a forma que melhor representa a região que você quer atender ou bloquear.
+
+  </Step>
+</Steps>
+
+| Item | O que fazer |
+|---|---|
+| Círculo | Clique, segure e arraste para definir uma área em volta da loja. |
+| Polígono | Clique ponto a ponto no mapa para recortar a região manualmente. |
+| Nome | Dê um nome fácil de identificar, como `Até 2 km` ou `Campolim`. |
+| Não entrega | Ative quando a região for apenas um bloqueio de entrega. |
+| Cor e Ativo | Escolha a cor da região e use **Ativo** para ligar ou desligar sem apagar. |
+| Taxa, frete grátis, tempo e entregador | Preencha os valores da região quando ela for uma área de entrega normal. |
+
+## O círculo e os valores de frete
+
+<Steps>
+  <Step title="Configurar o círculo" icon="settings" title-type="p">
+
+  Depois de escolher **Círculo**, ajuste o raio e preencha os campos da região.
+
+  <Image
+    src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/area-entrega-mapa/imagens-tratadas/04b-form-circulo-campos.png"
+    width="800"
+    alt="Formulário de configuração de região circular com campos de taxa, frete grátis e tempo adicional"
+  />
+
+  Um exemplo comum é criar uma região chamada `Até 2 km` com taxa própria para pedidos mais próximos da loja.
+
+  </Step>
+</Steps>
+
+| Campo | O que preencher |
+|---|---|
+| Círculo no mapa | Arraste a borda para aumentar ou diminuir o raio em quilômetros. |
+| Nome da região | Use um nome claro, como `Até 2 km`. |
+| Taxa entrega (R$) | Informe o valor do frete cobrado nessa região. |
+| Frete grátis (R$) | Defina o valor do pedido que zera o frete. `0` significa que a regra não será usada. |
+| Tempo adic. (min) | Some minutos extras ao prazo de entrega dessa região. |
+| Entregador (R$) | Informe o valor pago ao entregador. Esse campo aparece só em relatórios internos. |
+| Criar | Salva a região no mapa. |
+
+## Não entrega nessa região
+
+<Callout kind="alert">
+
+Ao ativar **Não entrega nessa região**, três mudanças acontecem ao mesmo tempo:
+
+- A cor da área vira preta, com código `#000000`.
+- A borda passa a aparecer tracejada.
+- Os campos de valor somem, porque a região vira um bloqueio.
+
+No cardápio, quem estiver dentro dessa área verá a mensagem **Endereço fora da área**, mesmo que outra região de entrega cubra o mesmo ponto. O bloqueio tem prioridade sobre a entrega.
+
+</Callout>
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/area-entrega-mapa/imagens-tratadas/04c-nao-entrega.png"
+  width="800"
+  alt="Região configurada como não entrega, com cor preta e borda tracejada no mapa"
+/>
+
+## O polígono
+
+<Steps>
+  <Step title="Desenhar polígono" icon="edit" title-type="p">
+
+  Escolha **Polígono** e clique no mapa ponto a ponto para desenhar o contorno da região.
+
+  <Image
+    src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/area-entrega-mapa/imagens-tratadas/04d-desenhando-poligono.png"
+    width="800"
+    alt="Desenho de uma região em polígono no mapa com controles de voltar avançar e resetar"
+  />
+
+  Use os botões **Voltar**, **Avançar** e **Resetar** para ajustar o desenho antes de salvar.
+
+  </Step>
+</Steps>
+
+<Callout kind="info">
+
+O polígono usa os mesmos campos de valor do círculo. Se você trocar para **Círculo**, o sistema volta para a outra forma sem perder o nome preenchido.
+
+</Callout>
+
+## As regiões no mapa
+
+Quando você termina a configuração, o mapa pode reunir várias áreas de entrega e de bloqueio ao mesmo tempo.
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/area-entrega-mapa/imagens-tratadas/01-step3-regioes.png"
+  width="800"
+  alt="Mapa com três regiões configuradas, incluindo círculo de entrega, polígono de entrega e área de não entrega"
+/>
+
+| Região | Forma | Taxa | Frete grátis | Tempo+ | Entregador |
+|---|---|---:|---:|---:|---:|
+| Até 2 km | Círculo | R$ 5,99 | R$ 40,00 | 5 min | R$ 3,00 |
+| Campolim | Polígono | R$ 7,90 | R$ 50,00 | 10 min | R$ 4,00 |
+| Zona industrial | Círculo não entrega | — | — | — | — |
+
+<Callout kind="info">
+
+Se duas áreas se sobrepõem, vale a que o sistema encontrar. Quando você precisar abrir um buraco dentro de uma área maior, crie uma região de **Não entrega**.
+
+</Callout>
+
+## Editar uma região pronta
+
+Abra o menu de três pontos da região e clique em **Editar** para alterar a configuração. Você pode mudar nome, taxa, forma, cor, status e outros campos sem precisar criar tudo de novo.
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/area-entrega-mapa/imagens-tratadas/05-editar-regiao.png"
+  width="800"
+  alt="Menu de edição de uma região já criada no mapa com a opção editar disponível"
+/>
+
+## O que o cliente vê no cardápio
+
+Dentro da área atendida, o cardápio mostra a taxa da região encontrada para o endereço informado.
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/area-entrega-mapa/imagens-tratadas/07-menu-dentro-area.png"
+  width="800"
+  alt="Cardápio digital mostrando endereço dentro da área e taxa de entrega calculada"
+/>
+
+Fora da área, o cliente não consegue usar entrega para aquele endereço.
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/area-entrega-mapa/imagens-tratadas/09-menu-fora-area.png"
+  width="800"
+  alt="Cardápio digital mostrando endereço fora da área de entrega com cálculo indisponível"
+/>
+
+<Callout kind="info">
+
+As alterações podem levar de 1 a 2 minutos para aparecer no cardápio. Quando o endereço fica fora da área, **Retirada** e **Consumo no local** continuam disponíveis.
+
+</Callout>
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+  <Expandable title="Desenhei e o cliente ainda vê o frete antigo">
+
+  Aguarde de 1 a 2 minutos. As mudanças na área de entrega por mapa não aparecem no cardápio imediatamente.
+
+  </Expandable>
+
+  <Expandable title="Posso ter várias áreas com valores diferentes?">
+
+  Sim. Cada região pode ter a própria taxa de entrega, regra de frete grátis, tempo adicional e valor de entregador.
+
+  </Expandable>
+
+  <Expandable title="O que é Não entrega nessa região?">
+
+  É uma área de bloqueio. Quem cair dentro dela verá **Endereço fora da área**, mesmo que outra região de entrega cubra o mesmo local.
+
+  </Expandable>
+
+  <Expandable title="Frete grátis 0 e frete grátis 40 são a mesma coisa?">
+
+  Não. `0` desliga a regra de frete grátis. `40` significa que pedidos a partir de R$ 40,00 terão frete zerado naquela região.
+
+  </Expandable>
+
+  <Expandable title="O pin da loja está no lugar errado">
+
+  Volte em **Localização → Alterar** e ajuste o endereço da loja antes de continuar. O mapa usa esse ponto como base da configuração.
+
+  </Expandable>
+
+  <Expandable title="Quero cobrar por quilômetro">
+
+  Troque o tipo de área para **Quilometragem KM**. Esse modo calcula o frete por faixas de distância, em vez de desenhar regiões no mapa.
+
+  </Expandable>
+</ExpandableGroup>
+
+## Manuais relacionados
+
+| Manual | Quando usar |
+|---|---|
+| [Área de Entrega](/area-entrega) | Voltar para a visão geral e os pré-requisitos da configuração. |
+| [Por KM](/area-entrega-km) | Usar faixas de quilometragem em vez de desenhar no mapa. |
+| [Por Bairro e CEP](/area-entrega-bairro-cep) | Cobrar por bairros, CEPs individuais ou faixas de CEP. |

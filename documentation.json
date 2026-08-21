@@ -90,6 +90,38 @@
                 "group": "📱 Cardápio Digital",
                 "pages": [
                   {
+                    "group": "🕐 Horário e Pausa",
+                    "path": "horario-pausa",
+                    "pages": [
+                      {
+                        "title": "📅 Horário de Atendimento",
+                        "path": "horario-atendimento"
+                      },
+                      {
+                        "title": "⏸️ Pausa Programada",
+                        "path": "pausa-programada"
+                      }
+                    ]
+                  },
+                  {
+                    "group": "📍 Área de Entrega",
+                    "path": "area-entrega",
+                    "pages": [
+                      {
+                        "title": "🗺️ Por Mapa",
+                        "path": "area-entrega-mapa"
+                      },
+                      {
+                        "title": "📏 Por KM",
+                        "path": "area-entrega-km"
+                      },
+                      {
+                        "title": "🏘️ Por Bairro e CEP",
+                        "path": "area-entrega-bairro-cep"
+                      }
+                    ]
+                  },
+                  {
                     "title": "🔗 Link Multilojas",
                     "path": "link-multilojas"
                   }
