@@ -1,0 +1,244 @@
+---
+title: Hambúrguer
+description: >-
+  Configure hambúrguer no BeeFood3 — grupo obrigatório para ponto da carne,
+  Brinde para retiradas e Normal para adicionais.
+---
+## Monte um hambúrguer completo no BeeFood3 com as três perguntas que a hamburgueria faz em toda venda: qual o ponto da carne, quer algum adicional e quer tirar alguma coisa. No caminho, você aprende a usar a formação Brinde, em que o cliente escolhe a opção mas ela não muda o preço. Antes de seguir, leia [Fundamentos](/cardapio-fundamentos).
+
+## O que este manual acrescenta
+
+O hambúrguer é o caso em que os três tipos de grupo aparecem juntos:
+
+| Pergunta ao cliente      | Grupo                | Formação de Preço | O que faz no preço         |
+| ------------------------ | -------------------- | ----------------- | -------------------------- |
+| Qual o ponto da carne?   | Ponto da carne       | Brinde            | nada, só informa a cozinha |
+| Quer algum adicional?    | Adicionais           | Normal            | soma cada item escolhido   |
+| Quer tirar alguma coisa? | Retirar ingredientes | Brinde            | nada                       |
+
+O cliente é obrigado a escolher o ponto da carne. É o checkbox **Obrigatório** do grupo em ação.
+
+<Steps>
+  <Step title="Cadastrar os complementos" icon="plus" title-type="p">
+    Todos os itens que o cliente escolhe são complementos: os pontos da carne, os adicionais e as retiradas. Cadastre tudo em **Cardápio → Complementos**.
+
+    A diferença entre eles está em duas coisas: ter preço e ter foto.
+
+    | Item           | Como cadastrar                                                                |
+    | -------------- | ----------------------------------------------------------------------------- |
+    | Ponto da carne | Sem preço, em R$ 0,00. A foto ajuda o cliente a entender a escolha.           |
+    | Adicional      | Com preço. É esse valor que entra na conta.                                   |
+    | Retirada       | Sem preço e sem foto. Não faz sentido usar imagem para itens como Sem cebola. |
+
+    <Callout kind="alert" collapsed="false">
+      Preço zero no complemento é o que garante preço zero na venda. Marcar o grupo como Brinde declara a intenção, mas o que o sistema soma é o valor da opção. Se o complemento tiver preço e o grupo for Brinde, o preço ainda aparece no total. Deixe em R$ 0,00 para evitar surpresa.
+    </Callout>
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-hamburguer/imagens-tratadas/01-complementos.png" width="800" alt="Complementos do hambúrguer cadastrados" />
+  </Step>
+
+  <Step title="O grupo do ponto da carne" icon="settings" title-type="p">
+    Crie o grupo em **Cardápio → Grupo de Opções → Novo Grupo**.
+
+    | Campo             | O que preencher                              |
+    | ----------------- | -------------------------------------------- |
+    | Obrigatório       | Marcado. O cliente precisa escolher o ponto. |
+    | Formação de Preço | Brinde. A escolha não altera o valor.        |
+    | Mínimo            | 1                                            |
+    | Máximo            | 1, para escolher exatamente um ponto.        |
+
+    Mínimo e Máximo iguais a 1 significam escolha uma e só uma.
+
+    <Callout kind="info" collapsed="false">
+      Com **Obrigatório** marcado, se você deixar o Mínimo em 0 o sistema corrige para 1 ao salvar. As opções desse grupo devem ficar com valor zero, em R$ 0,00 nas três linhas.
+    </Callout>
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-hamburguer/imagens-tratadas/02-grupo-ponto-detalhes.png" width="800" alt="Detalhes do grupo de ponto da carne" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-hamburguer/imagens-tratadas/03-grupo-ponto-opcoes.png" width="800" alt="Opções do grupo de ponto da carne com valor zero" />
+  </Step>
+
+  <Step title="O grupo dos adicionais" icon="plus" title-type="p">
+    Agora configure o grupo que soma valor no pedido.
+
+    | Campo             | O que preencher                                        |
+    | ----------------- | ------------------------------------------------------ |
+    | Formação de Preço | Normal, para somar o preço de cada adicional escolhido |
+    | Mínimo            | 0, porque adicional é opcional                         |
+    | Máximo            | 5, para permitir até cinco itens                       |
+
+    O checkbox **Obrigatório** fica desmarcado. Nesse grupo, as opções têm preço: Bacon R$ 3,00, Cebola caramelizada R$ 5,00, Cheddar R$ 2,00 e Ovo R$ 4,00.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-hamburguer/imagens-tratadas/04-grupo-adicionais-detalhes.png" width="800" alt="Detalhes do grupo de adicionais" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-hamburguer/imagens-tratadas/05-grupo-adicionais-opcoes.png" width="800" alt="Opções do grupo de adicionais com preços" />
+  </Step>
+
+  <Step title="O grupo de retirada" icon="minus" title-type="p">
+    Use Brinde outra vez, mas com mínimo zero.
+
+    | Campo             | O que preencher                                     |
+    | ----------------- | --------------------------------------------------- |
+    | Formação de Preço | Brinde, porque retirar ingrediente não muda o preço |
+    | Mínimo            | 0, porque o cliente pode não tirar nada             |
+    | Máximo            | 3                                                   |
+
+    <Callout kind="info" collapsed="false">
+      Não use o campo de observação no lugar desse grupo. Observação é texto livre, então cada atendente escreve de um jeito e a cozinha precisa ler. Como grupo, a retirada sai padronizada no pedido e você ainda consegue medir quantas vezes ela foi escolhida.
+    </Callout>
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-hamburguer/imagens-tratadas/06-grupo-retirar-detalhes.png" width="800" alt="Detalhes do grupo de retirada de ingredientes" />
+  </Step>
+
+  <Step title="Cadastrar o hambúrguer" icon="edit" title-type="p">
+    Em **Cardápio → Produtos**, crie o setor **Lanches** e depois o produto.
+
+    | Campo          | O que preencher                        |
+    | -------------- | -------------------------------------- |
+    | ADICIONAR FOTO | A foto aparece grande na tela de venda |
+    | Preço de Venda | R$ 28,00, que é o preço do lanche      |
+    | Descrição      | O que vai no hambúrguer                |
+
+    <Callout kind="info" collapsed="false">
+      Diferente da pizza, aqui o preço fica no produto. No hambúrguer, o valor base é o do lanche, e os grupos apenas acrescentam ou não valor por cima.
+    </Callout>
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-hamburguer/imagens-tratadas/07-produto-xburger.png" width="800" alt="Cadastro do produto X-Burger" />
+  </Step>
+
+  <Step title="Vincular os três grupos, na ordem certa" icon="link" title-type="p">
+    Na aba **Grupo de Opções** do produto, vincule os três grupos.
+
+    | Coluna | O que confere                                                           |
+    | ------ | ----------------------------------------------------------------------- |
+    | Tipo   | Brinde, Normal e Brinde. É o resumo do que você configurou.             |
+    | Ordem  | O número e as setas definem a ordem em que os grupos aparecem na venda. |
+
+    <Callout kind="alert" collapsed="false">
+      A ordem importa. Quando você vincula vários grupos de uma vez, eles entram em ordem alfabética, então Adicionais costuma aparecer primeiro. Use as setas para deixar na sequência em que o atendente pergunta: ponto da carne, adicionais e retirada. Uma mudança na seta já renumera tudo.
+    </Callout>
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-hamburguer/imagens-tratadas/08-produto-grupos.png" width="800" alt="Três grupos vinculados ao produto na ordem correta" />
+  </Step>
+
+  <Step title="Conferir no PDV" icon="check-circle" title-type="p">
+    Abra o **PDV** e clique no **X-Burger**.
+
+    ### O grupo obrigatório avisa
+
+    | Item             | O que confere                                |
+    | ---------------- | -------------------------------------------- |
+    | Selo Obrigatório | Aparece em vermelho ao lado do nome do grupo |
+    | Escolha 1        | Mostra a regra definida no mínimo e máximo   |
+    | Total            | R$ 28,00, só o preço do lanche               |
+
+    Se o operador tentar adicionar sem escolher o ponto da carne, aparece o aviso **Seleção obrigatória — Por favor, selecione as opções do grupo Ponto da carne**. O item não vai para o carrinho.
+
+    <Callout kind="info" collapsed="false">
+      O botão **Adicionar ao carrinho** não fica cinza. Ele continua clicável, e a validação acontece no clique.
+    </Callout>
+
+    ### O Brinde não muda o preço
+
+    | Item          | O que confere                                      |
+    | ------------- | -------------------------------------------------- |
+    | Ícone verde   | O obrigatório foi cumprido                         |
+    | Opção marcada | Ao ponto aparece selecionado, sem nenhum acréscimo |
+    | Total         | R$ 28,00                                           |
+
+    ### Os adicionais somam
+
+    | Item                 | O que confere                                                    |
+    | -------------------- | ---------------------------------------------------------------- |
+    | Contador 2/5         | Dois adicionais escolhidos de um total de cinco                  |
+    | Acréscimo nas opções | Cada item mostra o valor, como +R$ 3,00                          |
+    | Total                | R$ 33,00, que é R$ 28,00 + R$ 3,00 do Bacon + R$ 2,00 do Cheddar |
+
+    ### A retirada também não muda nada
+
+    | Item               | O que confere                         |
+    | ------------------ | ------------------------------------- |
+    | Sem cebola marcado | Continua sem acréscimo por ser Brinde |
+    | Total              | R$ 33,00                              |
+
+    ### No carrinho aparece tudo
+
+    | Item              | O que confere                                    |
+    | ----------------- | ------------------------------------------------ |
+    | Escolhas listadas | 1x Ao ponto, 1x Bacon, 1x Cheddar, 1x Sem cebola |
+    | Valor Final       | R$ 33,00                                         |
+
+    As opções de Brinde entram no pedido normalmente, então a cozinha recebe essas informações. O resumo é este: a informação chega à cozinha, o valor não chega à conta.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-hamburguer/imagens-tratadas/09-pdv-obrigatorio.png" width="800" alt="PDV com grupo obrigatório de ponto da carne" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-hamburguer/imagens-tratadas/14-pdv-obrigatorio-bloqueia.png" width="800" alt="Aviso de seleção obrigatória no PDV" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-hamburguer/imagens-tratadas/10-pdv-brinde-nao-soma.png" width="800" alt="PDV com opção de Brinde selecionada sem acréscimo" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-hamburguer/imagens-tratadas/11-pdv-adicionais.png" width="800" alt="PDV com adicionais somando ao total" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-hamburguer/imagens-tratadas/12-pdv-retirar.png" width="800" alt="PDV com retirada de ingrediente selecionada" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-hamburguer/imagens-tratadas/13-pdv-carrinho.png" width="800" alt="Carrinho do PDV com todas as escolhas listadas" />
+  </Step>
+</Steps>
+
+## Reaproveitar os grupos em outro lanche
+
+O X-Salada, feito com frango, não usa ponto da carne. Mesmo assim, ele pode usar os mesmos grupos de adicionais e de retirada. Em vez de cadastrar tudo de novo, vincule os grupos que já existem.
+
+| Grupo                | Como usar no X-Salada                 |
+| -------------------- | ------------------------------------- |
+| Adicionais           | Reaproveite o mesmo grupo do X-Burger |
+| Retirar ingredientes | Reaproveite o mesmo grupo do X-Burger |
+| Ponto da carne       | Não vincule, porque não se aplica     |
+
+<Callout kind="alert" collapsed="false">
+  Grupo compartilhado muda os dois produtos ao mesmo tempo. Se você reajustar o preço do bacon nesse grupo, a mudança vale para todos os lanches que usam esse mesmo cadastro. Quando um lanche precisa de uma lista própria de adicionais, use **Clonar** no menu do grupo e edite a cópia. O sistema mostra uma faixa amarela informando em quantos produtos a alteração vai refletir.
+</Callout>
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-hamburguer/imagens-tratadas/15-xsalada-grupos.png" width="800" alt="Grupos reaproveitados no X-Salada" />
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-hamburguer/imagens-tratadas/16-cardapio-final.png" width="800" alt="Os dois lanches no cardápio final" />
+
+## Resumo das contas
+
+| Situação                   | Conta               | Total    |
+| -------------------------- | ------------------- | -------- |
+| Só o lanche                | 28,00               | R$ 28,00 |
+| + Ao ponto (Brinde)        | 28,00 + 0           | R$ 28,00 |
+| + Bacon e Cheddar (Normal) | 28,00 + 3,00 + 2,00 | R$ 33,00 |
+| + Sem cebola (Brinde)      | 33,00 + 0           | R$ 33,00 |
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+  <Expandable title="Posso usar Brinde para um adicional que hoje é grátis mas pode virar pago?" default-open="false">
+    Pode. Vale a pena deixar esse adicional em um grupo separado. Quando você decidir cobrar, mude a formação do grupo para **Normal** e preencha os preços das opções, sem refazer o cadastro dos produtos.
+  </Expandable>
+
+  <Expandable title="Como faço combo com batata e refrigerante?" default-open="false">
+    Crie mais um grupo com formação **Normal**, mínimo 1 e máximo 1 para cada escolha, como um grupo para batata e outro para bebida. Se preferir, use um grupo só com máximo 2.
+
+    Se o combo tiver preço fechado, cadastre um produto chamado **X-Burger no combo** com o preço do combo e deixe as opções em Brinde.
+  </Expandable>
+
+  <Expandable title="Quero dobrar a carne. Como faço?" default-open="false">
+    Cadastre um adicional chamado **Carne extra** no grupo **Adicionais**, com o preço da carne. Se o cliente puder pedir duas carnes extras, ajuste o **Máximo** da opção para 2.
+
+    No PDV, isso mostra um contador de quantidade. Para aumentar a quantidade, clique na linha da opção novamente. O botão `+` aparece, mas fica travado.
+  </Expandable>
+
+  <Expandable title="O ponto da carne aparece na impressão da cozinha?" default-open="false">
+    Sim. As opções de Brinde entram no pedido normalmente, porque a função delas é informar a produção. O que não acontece é a soma desse item no valor final.
+  </Expandable>
+
+  <Expandable title="Marquei Brinde e o preço ainda apareceu na conta." default-open="false">
+    O complemento ou a linha da opção ainda tem preço cadastrado. Zere o valor dentro do grupo ou use **Editar em Lote** para corrigir.
+  </Expandable>
+
+  <Expandable title="Dá para deixar um grupo obrigatório só no delivery?" default-open="false">
+    O checkbox **Obrigatório** vale para os dois canais. O controle por canal fica nos switches **Delivery** e **Presencial**, que permitem esconder o grupo em um dos canais.
+  </Expandable>
+</ExpandableGroup>

@@ -1,0 +1,259 @@
+---
+title: Fundamentos
+description: >-
+  Monte um cardápio no BeeFood3 do zero — complementos, grupos de opções,
+  produtos, formações de preço e edição em lote.
+---
+## Manual base do cardápio
+
+Este é o manual base para configurar o cardápio no BeeFood3. Aqui você monta um cenário completo do zero: cadastra complementos, cria um grupo de opções, cadastra o produto, faz o vínculo entre eles, confere o resultado no PDV e aprende a reajustar preços em lote. Os manuais de pizza, hambúrguer, açaí e comida japonesa partem daqui e aplicam esses mesmos conceitos ao cenário de cada segmento.
+
+<Video uid="481-b8_y-qw" src="https://www.youtube.com/embed/481-b8_y-qw" render-type="iframe" width="560" height="315" controls="true" allow-full-screen="true" style="width: 560px; height: auto; cursor: pointer; margin: 0 auto;" />
+
+## As três peças do cardápio
+
+O cardápio do BeeFood3 se monta com três cadastros que se encaixam nesta ordem:
+
+| Peça                | O que é                                                                               | Exemplo                     |
+| ------------------- | ------------------------------------------------------------------------------------- | --------------------------- |
+| **Complemento**     | Um item que só existe dentro de um grupo de opções. Não é vendido sozinho.            | Bacon, Queijo Extra, Ovo    |
+| **Grupo de Opções** | A regra de escolha: quantas opções o cliente pode marcar e como o preço é adicionado. | Adicionais, 0 a 3 itens     |
+| **Produto**         | O que o cliente compra. Recebe um ou mais grupos vinculados.                          | Sanduíche Natural, R$ 15,00 |
+
+<Callout kind="info" collapsed="false">
+  O fluxo é sempre o mesmo: **Complemento** entra como opção no **Grupo de Opções**, o **Grupo** é vinculado ao **Produto** e então aparece na venda.
+</Callout>
+
+## Pré-requisitos
+
+- Sessão iniciada em `https://beefood.app`
+- Permissão de menu **Cardápio** no seu grupo de acesso
+- Para a Parte 8, permissão de **editar em lote**
+
+## Montar o cardápio passo a passo
+
+<Steps>
+  <Step title="Onde tudo acontece" icon="folder" title-type="p">
+    Abra **Cardápio** no menu lateral. A tela principal se organiza em três abas, e cada uma cuida de uma parte da montagem do cardápio.
+
+    | Aba                 | Para que serve                                                             |
+    | ------------------- | -------------------------------------------------------------------------- |
+    | **Produtos**        | O que o cliente compra. Aqui ficam preço, foto, setor e grupos vinculados. |
+    | **Grupo de Opções** | As regras de escolha e, dentro delas, as opções.                           |
+    | **Complementos**    | O catálogo de itens que só são vendidos dentro de um grupo.                |
+
+    <Callout kind="tip" collapsed="false">
+      Comece pelos complementos. Assim, quando você montar o grupo, os itens já estarão cadastrados e prontos para seleção.
+    </Callout>
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-fundamentos/imagens-tratadas/01-cardapio-produtos-vazio.png" width="800" alt="Tela do cardápio com aba Produtos vazia" />
+  </Step>
+
+  <Step title="Cadastrar os complementos" icon="plus" title-type="p">
+    Abra a aba **Complementos** e clique em **Novo Complemento (F1)**. Cadastre cada item que poderá ser usado como adicional, extra ou escolha dentro de um grupo.
+
+    | Campo                  | O que preencher                                                     |
+    | ---------------------- | ------------------------------------------------------------------- |
+    | **Nome**               | Campo obrigatório. Use o nome que identifica a opção, como `Bacon`. |
+    | **Preço de Venda**     | Valor cobrado pelo complemento. Use `R$ 0,00` se ele for grátis.    |
+    | **ADICIONAR FOTO**     | Opcional. A foto pode aparecer na venda e no cardápio digital.      |
+    | **SALVAR E SAIR (F2)** | Grava o complemento.                                                |
+
+    Repita esse processo para cada complemento. No exemplo deste manual, o grupo usa **Bacon**, **Queijo Extra** e **Ovo**.
+
+    <Callout kind="alert" collapsed="false">
+      Preencha o **Nome** antes de clicar em **ADICIONAR FOTO**. Em item novo, o sistema salva o cadastro antes de abrir o editor de imagem.
+    </Callout>
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-fundamentos/imagens-tratadas/02-aba-complementos.png" width="800" alt="Aba de complementos vazia" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-fundamentos/imagens-tratadas/03-modal-complemento.png" width="800" alt="Modal de cadastro de complemento" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-fundamentos/imagens-tratadas/04-foto-editor.png" width="800" alt="Editor de foto do complemento" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-fundamentos/imagens-tratadas/05-complementos-lista.png" width="800" alt="Lista com os três complementos cadastrados" />
+  </Step>
+
+  <Step title="Criar o grupo de opções" icon="settings" title-type="p">
+    Abra a aba **Grupo de Opções** e clique em **Novo Grupo (F1)**. Esse cadastro define a regra que o cliente verá ao escolher as opções.
+
+    | Campo                      | O que preencher                                              |
+    | -------------------------- | ------------------------------------------------------------ |
+    | **Nome do Grupo de Opção** | Nome que aparece para a escolha, como `Adicionais`.          |
+    | **Obrigatório**            | Marque se o cliente precisa escolher para concluir o pedido. |
+    | **Formação de Preço**      | Define como o valor das opções entra na conta.               |
+    | **Mínimo**                 | Quantidade mínima de opções que o cliente deve marcar.       |
+    | **Máximo**                 | Quantidade máxima de opções permitidas.                      |
+
+    Os switches **Ativo**, **Delivery** e **Presencial** já vêm ligados no cadastro do grupo.
+
+    <Callout kind="info" collapsed="false">
+      **Mínimo** e **Máximo** formam a regra de escolha. Com `0` e `3`, o cliente vê algo como `Escolha 0 a 3`. Com `1` e `1`, ele precisa escolher exatamente uma opção.
+    </Callout>
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-fundamentos/imagens-tratadas/06-aba-grupo-opcoes.png" width="800" alt="Aba de grupo de opções vazia" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-fundamentos/imagens-tratadas/07-grupo-detalhes.png" width="800" alt="Detalhes do grupo de opções preenchidos" />
+  </Step>
+
+  <Step title="Incluir as opções no grupo" icon="edit" title-type="p">
+    Ainda dentro do grupo, abra a sub-aba **Opções**. É nela que você traz os complementos cadastrados para dentro da regra de escolha.
+
+    | Botão                    | Para que serve                                                    |
+    | ------------------------ | ----------------------------------------------------------------- |
+    | **BUSCAR E CADASTRAR**   | Busca complementos e produtos já cadastrados e adiciona ao grupo. |
+    | **CADASTRAR NOVA OPÇÃO** | Cria uma opção do zero.                                           |
+    | **COPIAR DE OUTRO**      | Copia opções já montadas em outro grupo.                          |
+
+    Clique em **BUSCAR E CADASTRAR**, marque os complementos desejados e conclua em **Adicionar**. Depois confira se os itens entraram no grupo com nome e preço corretos.
+
+    <Callout kind="info" collapsed="false">
+      Se você precisar alterar o preço de uma opção específica, clique na linha da opção. O sistema expande o registro e libera campos como **Valor**, **V. Delivery**, **V. Presencial**, **Ativo**, **Mínimo** e **Máximo**.
+    </Callout>
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-fundamentos/imagens-tratadas/08-grupo-aba-opcoes-vazia.png" width="800" alt="Sub-aba Opções vazia dentro do grupo" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-fundamentos/imagens-tratadas/09-buscar-cadastrar.png" width="800" alt="Busca de complementos para adicionar ao grupo" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-fundamentos/imagens-tratadas/10-grupo-opcoes-lista.png" width="800" alt="Lista de opções incluídas no grupo" />
+  </Step>
+
+  <Step title="Cadastrar o produto" icon="package" title-type="p">
+    Volte para a aba **Produtos**. Antes de cadastrar o produto, crie o **Setor** se ele ainda não existir, como `Lanches`, `Bebidas` ou `Sobremesas`.
+
+    Depois clique em **Novo Produto (F1)** e preencha os dados principais.
+
+    | Campo                  | O que preencher                                       |
+    | ---------------------- | ----------------------------------------------------- |
+    | **Nome**               | Campo obrigatório. Exemplo: `Sanduíche Natural`.      |
+    | **Setor**              | Categoria onde o produto ficará no cardápio.          |
+    | **Preço de Venda**     | Valor base do produto, sem adicionais.                |
+    | **Descrição**          | Texto de apoio para identificar o produto.            |
+    | **ADICIONAR FOTO**     | Opcional. Usa o mesmo fluxo de imagem do complemento. |
+    | **SALVAR E SAIR (F2)** | Grava o produto.                                      |
+
+    <Callout kind="info" collapsed="false">
+      O **Preço de Venda** do produto é o preço base. O valor das opções vinculadas ao grupo é somado depois, na hora da venda.
+    </Callout>
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-fundamentos/imagens-tratadas/11-novo-setor.png" width="800" alt="Cadastro de novo setor" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-fundamentos/imagens-tratadas/12-modal-produto.png" width="800" alt="Modal de cadastro de produto preenchido" />
+  </Step>
+
+  <Step title="Vincular o grupo ao produto" icon="link" title-type="p">
+    Ainda no cadastro do produto, abra a aba **Grupo de Opções**. Clique em **BUSCAR GRUPO E VINCULAR**, marque o grupo desejado e conclua em **Vincular**. Depois salve o produto em **SALVAR E SAIR (F2)**.
+
+    | Item                   | O que conferir                         |
+    | ---------------------- | -------------------------------------- |
+    | **Qtd. Mín.**          | O mínimo definido no grupo.            |
+    | **Qtd. Máx.**          | O máximo definido no grupo.            |
+    | **Tipo**               | A formação de preço aplicada ao grupo. |
+    | **SALVAR E SAIR (F2)** | Grava o produto com o grupo vinculado. |
+
+    Quando o vínculo está feito, o produto passa a carregar o grupo na venda. No card do produto, o selo **COMBO** indica que existe grupo de opções vinculado.
+
+    <Callout kind="alert" collapsed="false">
+      O grupo é compartilhado. Se você vincular o mesmo grupo a vários produtos, qualquer alteração nele vale para todos. Quando um produto precisa de uma regra própria, clone o grupo e edite a cópia.
+    </Callout>
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-fundamentos/imagens-tratadas/13-produto-grupo-vazio.png" width="800" alt="Aba Grupo de Opções vazia no produto" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-fundamentos/imagens-tratadas/14-vincular-grupo.png" width="800" alt="Busca e vinculação de grupo ao produto" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-fundamentos/imagens-tratadas/15-produto-grupo-vinculado.png" width="800" alt="Grupo vinculado ao produto" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-fundamentos/imagens-tratadas/16-produtos-lista.png" width="800" alt="Produto na lista de produtos com selo COMBO" />
+  </Step>
+
+  <Step title="Conferir na venda no PDV" icon="check-circle" title-type="p">
+    Abra o PDV e clique no produto que você acabou de montar. Esse teste confirma se o cadastro chegou na venda do jeito esperado.
+
+    | O que conferir            | Resultado esperado                                                    |
+    | ------------------------- | --------------------------------------------------------------------- |
+    | **Nome do grupo**         | O grupo aparece com o nome cadastrado.                                |
+    | **Contador e regra**      | O PDV mostra a regra de escolha, como `Escolha 0 a 3`.                |
+    | **Opções**                | Cada opção aparece com nome, foto e acréscimo de preço quando houver. |
+    | **Adicionar ao carrinho** | O total é recalculado conforme as opções marcadas.                    |
+
+    No exemplo do manual, se o produto custa **R$ 15,00** e o cliente marca **Bacon** por **R$ 3,00** e **Queijo Extra** por **R$ 2,00**, o total esperado é **R$ 20,00**. Se o carrinho mostrar esse valor, a formação de preço **Normal** está funcionando como esperado.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-fundamentos/imagens-tratadas/17-pdv-modal-opcoes.png" width="800" alt="Modal de opções no PDV" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-fundamentos/imagens-tratadas/18-pdv-carrinho-total.png" width="800" alt="Carrinho do PDV com total calculado" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-fundamentos/imagens-tratadas/25-formacao-preco.png" width="800" alt="Campo de formação de preço no grupo" />
+  </Step>
+
+  <Step title="Filtrar, editar e reajustar preços em lote" icon="bar-chart" title-type="p">
+    Abra **Cardápio → Grupo de Opções → Opções**. Essa sub-aba reúne todas as opções do cardápio em uma única listagem e permite alterar várias de uma vez.
+
+    Antes de editar, use os filtros do ícone de funil nas colunas para reduzir a lista ao que realmente precisa mudar. Depois clique em **Editar em Lote**.
+
+    O processo tem três etapas:
+
+    | Etapa                       | O que fazer                                        |
+    | --------------------------- | -------------------------------------------------- |
+    | **1. Selecionar opções**    | Escolha quais opções entrarão na alteração.        |
+    | **2. Definir a mudança**    | Marque apenas os campos que devem ser alterados.   |
+    | **3. Conferir o resultado** | Revise o sucesso ou erro de cada linha processada. |
+
+    Na etapa de configuração, você pode alterar os seguintes campos:
+
+    | Campo              | Para que serve                          |
+    | ------------------ | --------------------------------------- |
+    | **Preço de Venda** | Ajusta o valor das opções.              |
+    | **Ativo**          | Liga ou desliga as opções selecionadas. |
+    | **Qtd Mínima**     | Padroniza a quantidade mínima.          |
+    | **Qtd Máxima**     | Padroniza a quantidade máxima.          |
+    | **Excluir Opções** | Remove as opções selecionadas.          |
+
+    Você também escolhe como o preço será alterado: **Novo Valor**, **Adicionar** ou **Subtrair**, em **Valor (R$)** ou **Porcentagem (%)**.
+
+    <Callout kind="tip" collapsed="false">
+      Filtre antes de editar em lote. Em cardápios grandes, trabalhar primeiro com filtros por **Descrição**, **Grupo**, **Tipo** ou **Status** reduz muito o risco de alterar opções erradas.
+    </Callout>
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-fundamentos/imagens-tratadas/19-subaba-opcoes.png" width="800" alt="Sub-aba Opções com listagem completa" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-fundamentos/imagens-tratadas/20-filtro-opcoes.png" width="800" alt="Filtros aplicados na lista de opções" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-fundamentos/imagens-tratadas/21-lote-selecao.png" width="800" alt="Seleção de opções para edição em lote" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-fundamentos/imagens-tratadas/22-lote-config.png" width="800" alt="Configuração da alteração em lote" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-fundamentos/imagens-tratadas/23-lote-concluido.png" width="800" alt="Resultado da edição em lote" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-fundamentos/imagens-tratadas/24-opcoes-atualizadas.png" width="800" alt="Opções com preços reajustados" />
+  </Step>
+</Steps>
+
+## As quatro formações de preço
+
+A **Formação de Preço** define como o BeeFood3 calcula o valor das opções escolhidas dentro de um grupo. Esse campo muda completamente o resultado na venda, então vale conferir com atenção antes de usar o grupo em produção.
+
+| Modo               | Como calcula                                                                    | Quando usar                                                                                                     |
+| ------------------ | ------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| **Normal**         | Soma o preço de cada opção escolhida.                                           | Adicionais, extras e coberturas. É o modo padrão.                                                               |
+| **Brinde**         | Todas as opções ficam sem preço.                                                | Escolhas que não mudam o valor, como ponto da carne, retirar ingrediente ou tipo de talher.                     |
+| **Valor da Maior** | Cobra apenas a opção mais cara selecionada.                                     | Porções e combos com alternativas de preços diferentes. Também é o caminho mais simples para pizza meio a meio. |
+| **Proporcional**   | Soma as opções e divide internamente o valor de forma igual no rateio da venda. | Pizza em que cada opção representa uma fração, como meia pizza, com o preço da fração cadastrado na opção.      |
+
+Um exemplo com duas opções de **R$ 40,00** e **R$ 45,00** deixa a diferença mais clara:
+
+| Modo               | Conta               | Total                                  |
+| ------------------ | ------------------- | -------------------------------------- |
+| **Normal**         | 40 + 45             | R$ 85,00                               |
+| **Brinde**         | —                   | R$ 0,00, além do preço base do produto |
+| **Valor da Maior** | maior entre 40 e 45 | R$ 45,00                               |
+| **Proporcional**   | 40 + 45             | R$ 85,00                               |
+
+<Callout kind="alert" collapsed="false">
+  **Proporcional** não faz média do preço cadastrado. Ele soma os valores como no modo **Normal**. A proporção acontece no rateio interno da venda. Para uma pizza meio a meio sair pela média, cadastre em cada opção o valor da **meia pizza**, não o valor da pizza inteira.
+</Callout>
+
+<Callout kind="info" collapsed="false">
+  No PDV, o modo **Valor da Maior** mostra um aviso ao operador informando que apenas a opção mais cara será cobrada. O modo **Proporcional** não mostra esse aviso.
+</Callout>
+
+O manual de pizza mostra **Valor da Maior** e **Proporcional** lado a lado, com dois produtos diferentes, e deixa visível na tela de venda quanto cada um cobra.

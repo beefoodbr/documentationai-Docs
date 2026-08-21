@@ -1,0 +1,241 @@
+---
+title: Açaí
+description: >-
+  Configure açaí no BeeFood3 — acompanhamentos inclusos com limite, extras
+  pagos, tamanhos como produtos e grupos compartilhados.
+---
+## Monte o açaí com inclusos e extras pagos
+
+Este manual mostra como configurar um açaí no BeeFood3 com a regra que quase toda açaiteria usa: alguns acompanhamentos entram no preço e os demais são pagos. Você também vai ver como trabalhar com tamanhos e como o mesmo grupo pode servir os três produtos ao mesmo tempo. Antes de montar este cardápio, leia [Fundamentos](/cardapio-fundamentos), que explica o fluxo básico de complemento, grupo, produto e vínculo.
+
+## O problema do açaí
+
+A lógica comercial costuma ser esta: escolha até 3 acompanhamentos inclusos; os extras custam à parte.
+
+O BeeFood3 não tem um campo de "3 primeiros grátis". O que o sistema tem é limite de quantidade por grupo. A forma de chegar no resultado certo é usar dois grupos.
+
+| Grupo                    | Formação | Limite | O que faz                            |
+| ------------------------ | -------- | ------ | ------------------------------------ |
+| Acompanhamentos inclusos | Brinde   | máx 3  | o cliente escolhe até 3 e nada soma  |
+| Acompanhamentos extras   | Normal   | máx 5  | cada item escolhido soma o seu preço |
+
+O limite de 3 no primeiro grupo é o que traduz o "até 3 inclusos". Quando o cliente marca o terceiro, o quarto trava. Se ele quiser mais, usa o grupo de extras, que cobra normalmente.
+
+<Callout kind="alert" collapsed="false">
+  Um grupo sozinho não resolve. Se você colocar tudo em um grupo Normal e deixar alguns itens com preço zero, o cliente pode marcar vários itens grátis além do limite que você queria. Se colocar tudo em Brinde, nada cobra nunca. É a dupla de grupos que entrega a regra correta.
+</Callout>
+
+<Steps>
+  <Step title="Cadastrar os complementos" icon="plus" title-type="p">
+    Tudo que vai em cima do açaí entra como complemento. A diferença entre incluso e pago está só no preço de cada item.
+
+    | Item                   | Como cadastrar                                                      |
+    | ---------------------- | ------------------------------------------------------------------- |
+    | Acompanhamento incluso | Sem preço, R$ 0,00. Vai para o grupo Brinde.                        |
+    | Extra pago             | Com preço. É esse valor que soma no total. Vai para o grupo Normal. |
+
+    <Callout kind="tip" collapsed="false">
+      A foto ajuda muito no açaí. Como existem muitos itens parecidos, a imagem facilita a escolha do cliente no cardápio digital.
+    </Callout>
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-acai/imagens-tratadas/01-complementos.png" width="800" alt="Complementos do açaí cadastrados" />
+  </Step>
+
+  <Step title="Criar o grupo dos inclusos" icon="settings" title-type="p">
+    Crie o grupo em Cardápio → Grupo de Opções → Novo Grupo.
+
+    | Campo             | O que preencher                                    |
+    | ----------------- | -------------------------------------------------- |
+    | Formação de Preço | Brinde                                             |
+    | Mínimo            | 0, porque o cliente pode não querer acompanhamento |
+    | Máximo            | 3, porque este número define quantos são inclusos  |
+
+    Cadastre as opções deste grupo com valor R$ 0,00. No exemplo deste manual, o grupo tem quatro opções: Granola, Banana, Leite em pó e Paçoca.
+
+    O ponto importante é este: o grupo pode ter quatro, dez ou vinte opções cadastradas, mas o limite continua sendo 3. O cliente escolhe três entre todas as opções disponíveis.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-acai/imagens-tratadas/02-grupo-inclusos-detalhes.png" width="800" alt="Detalhes do grupo de inclusos" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-acai/imagens-tratadas/03-grupo-inclusos-opcoes.png" width="800" alt="Opções do grupo de inclusos com valor zero" />
+  </Step>
+
+  <Step title="Criar o grupo dos extras" icon="settings" title-type="p">
+    Use um segundo grupo para os itens pagos.
+
+    | Campo             | O que preencher                           |
+    | ----------------- | ----------------------------------------- |
+    | Formação de Preço | Normal, porque soma o preço de cada extra |
+    | Mínimo            | 0, porque extra é opcional                |
+    | Máximo            | 5                                         |
+
+    Neste exemplo, as opções pagas ficam assim:
+
+    | Item             | Valor   |
+    | ---------------- | ------- |
+    | Morango          | R$ 3,00 |
+    | Creme de avelã   | R$ 6,00 |
+    | Leite condensado | R$ 2,00 |
+
+    Neste grupo, cada item marcado soma no total do pedido.
+
+    <Callout kind="info" collapsed="false">
+      Um item pode estar nos dois grupos, mas evite isso. O cliente veria o mesmo item duas vezes, uma como incluso e outra como pago.
+    </Callout>
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-acai/imagens-tratadas/04-grupo-extras-detalhes.png" width="800" alt="Detalhes do grupo de extras" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-acai/imagens-tratadas/05-grupo-extras-opcoes.png" width="800" alt="Opções do grupo de extras com preços" />
+  </Step>
+
+  <Step title="Criar a cobertura compartilhada pelos três tamanhos" icon="users" title-type="p">
+    A cobertura funciona como um terceiro grupo. Configure esse grupo com formação Normal e máximo 1.
+
+    | Item                         | O que observar                                                    |
+    | ---------------------------- | ----------------------------------------------------------------- |
+    | Aviso de grupo compartilhado | Alterações neste grupo refletem em todos os 3 produtos vinculados |
+    | Normal                       | A calda soma o seu preço                                          |
+
+    O máximo 1 faz o cliente escolher uma única calda. Se ele marcar chocolate, morango fica travado, e o contrário também acontece.
+
+    <Callout kind="info" collapsed="false">
+      Grupo compartilhado vale muito a pena em produtos por tamanho. Se a calda subir de R$ 2,00 para R$ 2,50, você altera uma vez e os três tamanhos acompanham a mudança.
+    </Callout>
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-acai/imagens-tratadas/06-grupo-cobertura-detalhes.png" width="800" alt="Detalhes do grupo de cobertura" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-acai/imagens-tratadas/14-grupo-produtos-3x.png" width="800" alt="Aba Produtos do grupo mostrando os três tamanhos vinculados" />
+  </Step>
+
+  <Step title="Criar um produto por tamanho" icon="package" title-type="p">
+    Em Cardápio → Produtos, crie o setor Açaí e depois cadastre um produto para cada tamanho.
+
+    | Campo          | O que preencher                            |
+    | -------------- | ------------------------------------------ |
+    | Nome           | Use o tamanho no nome, como Açaí 500 ml    |
+    | Preço de Venda | Use o preço daquele tamanho, como R$ 22,00 |
+
+    No exemplo deste manual, os produtos ficam assim:
+
+    | Produto     | Preço    |
+    | ----------- | -------- |
+    | Açaí 300 ml | R$ 18,00 |
+    | Açaí 500 ml | R$ 22,00 |
+    | Açaí 700 ml | R$ 26,00 |
+
+    Você pode usar a mesma foto nos três produtos.
+
+    <Callout kind="info" collapsed="false">
+      Não use um grupo de Tamanho no lugar de três produtos se a sua meta é deixar o cardápio claro. Nesse modelo, o produto ficaria com preço R$ 0,00 e o tamanho viraria uma opção paga. O cliente perde a referência de preço na lista e você perde o relatório de vendas por tamanho. Um produto por tamanho é mais simples e informa melhor.
+    </Callout>
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-acai/imagens-tratadas/07-produto-acai500.png" width="800" alt="Cadastro do produto Açaí 500 ml" />
+  </Step>
+
+  <Step title="Vincular os três grupos em cada tamanho" icon="link" title-type="p">
+    Na aba Grupo de Opções de cada produto, vincule os três grupos criados antes.
+
+    | Coluna                | O que confere                                            |
+    | --------------------- | -------------------------------------------------------- |
+    | Tipo                  | Brinde nos inclusos e Normal nos extras e na cobertura   |
+    | Qtd. Mín. e Qtd. Máx. | 0 e 3 nos inclusos, 0 e 5 nos extras, 0 e 1 na cobertura |
+
+    Repita esse vínculo nos três tamanhos. São os mesmos grupos em todos eles. Você está reaproveitando a configuração, não criando cópias.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-acai/imagens-tratadas/08-produto-grupos.png" width="800" alt="Três grupos vinculados ao produto de açaí" />
+  </Step>
+
+  <Step title="Conferir no PDV" icon="check-circle" title-type="p">
+    Abra o PDV e clique no produto Açaí 500 ml. O comportamento correto aparece em quatro partes.
+
+    ### Três inclusos
+
+    | Item                 | O que confere                 |
+    | -------------------- | ----------------------------- |
+    | Contador 3/3         | O limite foi atingido         |
+    | Quarta opção travada | Leite em pó fica desabilitado |
+    | Total                | R$ 22,00                      |
+
+    Quando o contador trava em 3/3 e o total continua em R$ 22,00, o sistema está fazendo exatamente o "até 3 inclusos".
+
+    ### Os extras somam
+
+    | Item               | O que confere                                    |
+    | ------------------ | ------------------------------------------------ |
+    | Contador 2/5       | Dois extras escolhidos de até cinco              |
+    | Acréscimo na opção | Cada item mostra o valor que soma, como +R$ 6,00 |
+    | Total              | R$ 31,00 = R$ 22,00 + R$ 6,00 + R$ 3,00          |
+
+    Neste cenário, o total sobe com Creme de avelã e Morango.
+
+    ### A cobertura fecha a conta
+
+    | Item     | O que confere                        |
+    | -------- | ------------------------------------ |
+    | Máximo 1 | Ao escolher uma calda, a outra trava |
+    | Total    | R$ 33,00 = R$ 31,00 + R$ 2,00        |
+
+    A cobertura funciona como o último valor somado na montagem.
+
+    ### No carrinho aparece tudo
+
+    | Item           | O que confere                                       |
+    | -------------- | --------------------------------------------------- |
+    | Itens listados | Aparecem os seis itens escolhidos, inclusos e pagos |
+    | Valor Final    | R$ 33,00                                            |
+
+    Tudo que o cliente escolhe segue no pedido para quem vai montar o açaí. O que muda no Brinde é só o valor, não o registro da escolha.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-acai/imagens-tratadas/09-pdv-inicial.png" width="800" alt="PDV com açaí aberto para montagem" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-acai/imagens-tratadas/10-pdv-inclusos-limite.png" width="800" alt="PDV com limite de inclusos atingido" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-acai/imagens-tratadas/11-pdv-extras.png" width="800" alt="PDV com extras somando ao total" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-acai/imagens-tratadas/12-pdv-cobertura.png" width="800" alt="PDV com cobertura somando ao total" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-acai/imagens-tratadas/13-pdv-carrinho.png" width="800" alt="Carrinho do PDV com todos os itens do açaí" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-acai/imagens-tratadas/15-cardapio-final.png" width="800" alt="Os três tamanhos de açaí no cardápio final" />
+  </Step>
+</Steps>
+
+## Resumo das contas
+
+| Situação                            | Conta               | Total    |
+| ----------------------------------- | ------------------- | -------- |
+| Açaí 500 ml                         | 22,00               | R$ 22,00 |
+| + Granola, Banana e Paçoca inclusos | 22,00 + 0           | R$ 22,00 |
+| + Creme de avelã e Morango extras   | 22,00 + 6,00 + 3,00 | R$ 31,00 |
+| + Calda de chocolate cobertura      | 31,00 + 2,00        | R$ 33,00 |
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+  <Expandable title="Como faço os 3 primeiros grátis e o quarto pago no mesmo grupo?" default-open="false">
+    Não dá para fazer isso em um grupo só. O sistema limita quantidade, não valor. O caminho certo é usar dois grupos: um Brinde com o limite dos inclusos e um Normal com os itens pagos.
+  </Expandable>
+
+  <Expandable title="Tenho 20 acompanhamentos. Fica ruim?" default-open="false">
+    A lista fica mais longa no PDV, mas funciona. Duas coisas ajudam bastante: usar nomes curtos e aproveitar o campo Filtrar Texto. Se muitos itens saem pouco, vale considerar tirar alguns do cardápio.
+  </Expandable>
+
+  <Expandable title="Preciso repetir os grupos em cada tamanho?" default-open="false">
+    Você precisa vincular os grupos em cada produto, mas os grupos são os mesmos. Não duplique.
+  </Expandable>
+
+  <Expandable title="Quero cobrar acompanhamento diferente por tamanho." default-open="false">
+    Nesse caso, os grupos não podem ser compartilhados. Clone o grupo e vincule a cópia só no tamanho que precisa de outro preço.
+  </Expandable>
+
+  <Expandable title="Como faço açaí no copo e na tigela com preços diferentes?" default-open="false">
+    Faça do mesmo jeito que os tamanhos: um produto para cada opção. Se a única diferença for a embalagem, também dá para usar um grupo Normal com máximo 1 e cobrar a embalagem como opção.
+  </Expandable>
+
+  <Expandable title="Vendo açaí por peso. Serve este manual?" default-open="false">
+    Serve parcialmente. A montagem dos acompanhamentos é a mesma, mas o preço por peso depende da balança, que é outro assunto.
+  </Expandable>
+
+  <Expandable title="O acompanhamento incluso aparece na etiqueta e na cozinha?" default-open="false">
+    Sim. Tudo que o cliente escolhe entra no pedido. O Brinde só não soma no valor final.
+  </Expandable>
+</ExpandableGroup>

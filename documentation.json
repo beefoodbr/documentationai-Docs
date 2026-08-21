@@ -96,6 +96,32 @@
                 ]
               },
               {
+                "group": "📋 Cardápio",
+                "path": "cardapio",
+                "pages": [
+                  {
+                    "title": "📖 Fundamentos",
+                    "path": "cardapio-fundamentos"
+                  },
+                  {
+                    "title": "🍕 Pizza",
+                    "path": "cardapio-pizza"
+                  },
+                  {
+                    "title": "🍔 Hambúrguer",
+                    "path": "cardapio-hamburguer"
+                  },
+                  {
+                    "title": "🍨 Açaí",
+                    "path": "cardapio-acai"
+                  },
+                  {
+                    "title": "🍣 Comida Japonesa",
+                    "path": "cardapio-comida-japonesa"
+                  }
+                ]
+              },
+              {
                 "group": "⚙️ Geral",
                 "pages": [
                   {

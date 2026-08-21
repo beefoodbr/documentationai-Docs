@@ -1,0 +1,222 @@
+---
+title: Comida Japonesa
+description: >-
+  Configure comida japonesa no BeeFood3 — combinado com contagem exata de peças,
+  preço fechado, blocos de montagem e extras.
+---
+## Monte combinado com contagem exata e temaki com adicionais
+
+Este manual configura dois produtos bem diferentes no BeeFood3: um combinado de preço fechado, em que o cliente escolhe as peças sem alterar o valor, e um temaki, que é um item simples com adicionais. O ponto novo aqui é a contagem exata: fazer o cliente montar exatamente 20 peças, nem mais, nem menos. Antes de seguir, leia [Fundamentos](/cardapio-fundamentos) para entender o fluxo base de complemento, grupo, produto e vínculo.
+
+## O desafio do combinado
+
+O combinado tem preço fechado e o cliente monta o conteúdo. São duas exigências ao mesmo tempo:
+
+| Exigência                                                | Como se resolve             |
+| -------------------------------------------------------- | --------------------------- |
+| As escolhas não podem alterar o preço                    | formação Brinde             |
+| O cliente precisa escolher exatamente a quantidade certa | Mínimo = Máximo no grupo    |
+| Ele pode querer duas porções do mesmo item               | Máximo da opção maior que 1 |
+
+Um ajuste simplifica tudo: em vez de fazer o cliente escolher 20 peças uma a uma, trate cada opção como um bloco de 5 peças. Assim, o cliente escolhe 4 opções e fecha as 20 peças em poucos cliques.
+
+<Callout kind="warning" collapsed="false">
+  Não faça o cliente clicar 20 vezes. Com mínimo e máximo em 20, o atendente precisaria de vinte cliques por combinado. Blocos de 5, de 4 ou de 10 resolvem a mesma lógica com muito menos operação no balcão.
+</Callout>
+
+<Steps>
+  <Step title="Cadastrar as peças e os extras" icon="plus" title-type="p">
+    Tudo aqui entra como complemento. O que muda de um item para outro é o preço.
+
+    | Item                                     | Como cadastrar                                              |
+    | ---------------------------------------- | ----------------------------------------------------------- |
+    | Extra, como shoyu, wasabi e cream cheese | Com preço — soma na conta                                   |
+    | Bloco de peças, como sashimi e hot roll  | Sem preço, R$ 0,00, porque o combinado já tem preço fechado |
+
+    <Callout kind="info" collapsed="false">
+      Coloque a quantidade no nome do item, por exemplo `Hot Roll (5 peças)`. O BeeFood3 não tem um campo específico para quantidade de peças nesse cadastro, então o nome é o que informa ao cliente, ao atendente e à cozinha.
+    </Callout>
+
+    A lista de complementos aparece em ordem alfabética, então peças e extras acabam misturados. Se o seu cardápio tem muitos itens, use um prefixo no nome para agrupar melhor.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-japonesa/imagens-tratadas/01-complementos.png" width="800" alt="Complementos de peças e extras cadastrados" />
+  </Step>
+
+  <Step title="Criar o grupo da montagem com contagem exata" icon="settings" title-type="p">
+    Esse é o ponto central do cadastro. Crie o grupo em Cardápio → Grupo de Opções → Novo Grupo.
+
+    | Campo             | O que preencher                                             |
+    | ----------------- | ----------------------------------------------------------- |
+    | Obrigatório       | Marcado, porque sem montar o pedido não fecha               |
+    | Formação de Preço | Brinde, porque as escolhas não alteram o preço do combinado |
+    | Mínimo            | 4                                                           |
+    | Máximo            | 4, igual ao mínimo                                          |
+
+    Mínimo igual a Máximo é a regra que cria a contagem exata. Com 4 e 4, o cliente precisa escolher quatro opções e não consegue escolher cinco. Como cada opção vale 5 peças, quatro blocos fecham as 20 peças do combinado.
+
+    Dê ao grupo um nome que ensine a regra, por exemplo `Escolha 4 opções de 5 peças`. Esse texto aparece na tela de venda e no cardápio digital, então já orienta o cliente no momento da escolha.
+
+    Para cada opção dentro do grupo, ajuste a repetição e o valor:
+
+    | Campo da opção  | O que preencher |
+    | --------------- | --------------- |
+    | Limite da opção | 0 - 4           |
+    | Valor           | R$ 0,00         |
+
+    O limite `0 - 4` permite repetir a mesma peça até quatro vezes. O padrão costuma vir como `0 - 1`, que obrigaria o cliente a escolher quatro peças diferentes. Abra cada linha da opção e ajuste individualmente `Máximo = 4` e `Valor = Zero`.
+
+    <Callout kind="info" collapsed="false">
+      Use no Máximo da opção o mesmo número do Máximo do grupo. Assim, o cliente pode montar o combinado inteiro com um único item, se quiser.
+    </Callout>
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-japonesa/imagens-tratadas/02-grupo-pecas-detalhes.png" width="800" alt="Detalhes do grupo de montagem com contagem exata" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-japonesa/imagens-tratadas/03-grupo-pecas-opcoes.png" width="800" alt="Opções do grupo de montagem" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-japonesa/imagens-tratadas/04-grupo-pecas-opcao-expandida.png" width="800" alt="Linha de opção expandida com ajuste de máximo e valor" />
+  </Step>
+
+  <Step title="Separar extras e adicionais" icon="folder" title-type="p">
+    O combinado usa um grupo de Extras com formação Normal e máximo 3. Nesse grupo, os itens somam ao valor final do pedido.
+
+    Esse mesmo grupo pode atender os dois produtos, combinado e temaki. Shoyu e wasabi fazem sentido para ambos, então não há motivo para duplicar esse cadastro.
+
+    O temaki usa um grupo próprio, também com formação Normal. Nesse grupo entram os adicionais do item, como cream cheese por R$ 4,00 e cebolinha por R$ 2,00.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-japonesa/imagens-tratadas/05-grupo-extras-detalhes.png" width="800" alt="Detalhes do grupo de extras" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-japonesa/imagens-tratadas/06-grupo-adicionais-temaki.png" width="800" alt="Grupo de adicionais do temaki" />
+  </Step>
+
+  <Step title="Cadastrar os produtos" icon="edit" title-type="p">
+    Em Cardápio → Produtos, crie o setor Comida Japonesa e depois os dois produtos.
+
+    Para o combinado, use este preenchimento:
+
+    | Campo          | O que preencher                                         |
+    | -------------- | ------------------------------------------------------- |
+    | Nome           | Combinado 20 peças                                      |
+    | Preço de Venda | R$ 89,00                                                |
+    | Descrição      | 20 peças montadas por você: escolha 4 opções de 5 peças |
+
+    <Callout kind="info" collapsed="false">
+      A descrição faz parte do cadastro. Em produto montável, ela evita a pergunta sobre quantas peças o cliente precisa escolher, tanto no balcão quanto no cardápio digital.
+    </Callout>
+
+    Ao vincular os grupos no combinado, configure assim:
+
+    | Grupo    | Tipo   | Qtd. Mín. | Qtd. Máx. |
+    | -------- | ------ | --------- | --------- |
+    | Montagem | Brinde | 4         | 4         |
+    | Extras   | Normal | 0         | 3         |
+
+    O Temaki Salmão, com preço de R$ 24,00, recebe o grupo Adicionais do temaki e o mesmo grupo Extras. Reaproveite shoyu e wasabi em vez de criar outro grupo igual.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-japonesa/imagens-tratadas/07-produto-combinado.png" width="800" alt="Cadastro do produto Combinado 20 peças" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-japonesa/imagens-tratadas/08-produto-grupos.png" width="800" alt="Grupos de montagem e extras vinculados ao combinado" />
+  </Step>
+
+  <Step title="Conferir no PDV" icon="check-circle" title-type="p">
+    Abra o PDV e clique no combinado para validar a regra antes de liberar o produto para venda. O primeiro ponto a conferir é se a montagem aparece como obrigatória e se o total inicial continua em R$ 89,00.
+
+    ### Quatro de quatro: contagem exata
+
+    | Item                       | O que confere                                  |
+    | -------------------------- | ---------------------------------------------- |
+    | Contador 4/4 e check verde | O grupo está completo                          |
+    | Hot Roll em 2              | São 10 peças do mesmo item                     |
+    | Sashimi em 0               | Com o grupo cheio, novos cliques são ignorados |
+    | Total                      | R$ 89,00                                       |
+
+    A conta fecha assim: 2 × Hot Roll + 1 × Uramaki + 1 × Niguiri = 4 blocos × 5 peças = 20 peças.
+
+    <Callout kind="info" collapsed="false">
+      Com o grupo cheio, o clique não faz nada e não aparece aviso. Isso vale tanto para uma peça nova quanto para repetir uma peça já escolhida. Se o cliente quiser trocar, diminua uma escolha no botão `−` e depois selecione a peça que entra.
+    </Callout>
+
+    <Callout kind="warning" collapsed="false">
+      O botão `+` do contador não funciona nesta versão. Ele aparece na tela, mas está travado. Para aumentar a quantidade de uma peça, clique na linha da própria opção. O botão `−` funciona normalmente.
+    </Callout>
+
+    ### Os extras somam
+
+    | Item             | O que confere                       |
+    | ---------------- | ----------------------------------- |
+    | Grupo Extras 1/3 | Grupo separado, com formação Normal |
+    | Extra marcado    | Acréscimo de R$ 2,00                |
+    | Total            | R$ 91,00 = R$ 89,00 + R$ 2,00       |
+
+    ### O carrinho mostra a montagem
+
+    | Item             | O que confere                                                                                   |
+    | ---------------- | ----------------------------------------------------------------------------------------------- |
+    | Montagem exibida | 2x Hot Roll (5 peças), 1x Uramaki Salmão (5 peças), 1x Niguiri Salmão (5 peças), 1x Shoyu extra |
+    | Valor Final      | R$ 91,00                                                                                        |
+
+    É isso que o sushiman lê. O `2x` deixa claro que são dez peças de hot roll, e não apenas uma seleção simples do item.
+
+    ### O temaki
+
+    | Item              | O que confere                             |
+    | ----------------- | ----------------------------------------- |
+    | Grupo Extras      | O mesmo grupo do combinado, reaproveitado |
+    | Adicional marcado | Cream cheese +R$ 4,00                     |
+    | Total             | R$ 28,00 = R$ 24,00 + R$ 4,00             |
+
+    O temaki segue a lógica oposta do combinado: é um produto simples, sem montagem, com adicionais que somam no total.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-japonesa/imagens-tratadas/09-pdv-combinado-inicial.png" width="800" alt="PDV com combinado aberto para montagem" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-japonesa/imagens-tratadas/10-pdv-contagem-exata.png" width="800" alt="PDV com contagem exata 4/4 no combinado" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-japonesa/imagens-tratadas/11-pdv-combinado-extras.png" width="800" alt="PDV com extras somando ao total do combinado" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-japonesa/imagens-tratadas/12-pdv-carrinho.png" width="800" alt="Carrinho do PDV com a montagem do combinado" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-japonesa/imagens-tratadas/13-pdv-temaki.png" width="800" alt="PDV com temaki e adicional de cream cheese" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-japonesa/imagens-tratadas/14-cardapio-final.png" width="800" alt="Combinado e temaki no cardápio final" />
+  </Step>
+</Steps>
+
+## Resumo das contas
+
+| Produto   | Situação                            | Total    |
+| --------- | ----------------------------------- | -------- |
+| Combinado | 4 blocos escolhidos, montagem       | R$ 89,00 |
+| Combinado | + Shoyu extra R$ 2,00, grupo Normal | R$ 91,00 |
+| Temaki    | sozinho                             | R$ 24,00 |
+| Temaki    | + Cream cheese R$ 4,00              | R$ 28,00 |
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+  <Expandable title="Quero um combinado de 30 peças também. Como faço?" default-open="false">
+    Crie outro produto, com o preço próprio dele, e um grupo de montagem separado. Se continuar usando blocos de 5 peças, configure mínimo e máximo em 6. O grupo de Extras pode ser o mesmo.
+  </Expandable>
+
+  <Expandable title="Posso deixar o cliente escolher peça por peça, sem blocos?" default-open="false">
+    Pode. Nesse caso, use mínimo e máximo em 20 e configure o máximo de cada opção em 20. Funciona, mas exige vinte cliques por combinado e costuma ficar pesado na operação.
+  </Expandable>
+
+  <Expandable title="Quero cobrar mais por algumas peças, como salmão em vez de kani." default-open="false">
+    Nesse cenário, o grupo da montagem não pode ficar como Brinde. Você tem duas saídas: usar dois grupos, um Brinde com as peças inclusas e outro Normal com as premium, ou usar um único grupo Normal em que as peças básicas ficam com R$ 0,00 e as premium recebem preço.
+  </Expandable>
+
+  <Expandable title="Como faço rodízio?" default-open="false">
+    Rodízio não é configurado por esse fluxo. O BeeFood3 tem uma tela própria de Rodízio no menu Cardápio.
+  </Expandable>
+
+  <Expandable title="O combinado pode ter peças fixas mais escolhas?" default-open="false">
+    Pode, e isso é comum. As peças fixas ficam apenas na descrição do produto, enquanto o grupo de montagem cobre só a parte que o cliente escolhe. Um exemplo é `Combinado 24 peças: 8 fixas + escolha 4 opções de 4 peças`.
+  </Expandable>
+
+  <Expandable title="A montagem aparece na impressão da cozinha?" default-open="false">
+    Sim. A impressão mostra as quantidades, como `2x Hot Roll`, que é exatamente o que a cozinha precisa ler para montar o prato corretamente.
+  </Expandable>
+
+  <Expandable title="Marquei tudo e o cliente pediu para trocar uma peça. Como faço?" default-open="false">
+    Clique no `−` da peça que sai e depois clique na linha da peça que entra. Com o grupo cheio em `4/4`, o clique direto na nova peça é ignorado.
+  </Expandable>
+</ExpandableGroup>

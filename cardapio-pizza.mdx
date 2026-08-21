@@ -1,0 +1,332 @@
+---
+title: Pizza
+description: >-
+  Configure pizza no BeeFood3 com Valor da Maior ou Proporcional — sabores, meio
+  a meio, bordas e preço base R$ 0,00.
+---
+## Configurar pizza no BeeFood3
+
+Este manual mostra como montar uma pizza no BeeFood3 nos dois modelos de preço que uma pizzaria pode usar: **Valor da Maior** e **Proporcional**. Você vê os dois lado a lado, confere quanto cada um cobra no PDV e escolhe o modelo que combina com a sua casa. Antes de começar, leia [Fundamentos](/cardapio-fundamentos), porque ele ensina o fluxo base de complemento, grupo, produto e vínculo que aqui aparece resumido.
+
+## Por que pizza dá mais trabalho
+
+Pizza no BeeFood3 não tem uma tela própria. A configuração sai da combinação de **grupos de opções**, e três pontos definem como a venda vai funcionar.
+
+| O que você quer                                  | Onde se define                   |
+| ------------------------------------------------ | -------------------------------- |
+| Quantas partes a pizza tem                       | **Mínimo** e **Máximo** do grupo |
+| Se o cliente pode pedir a pizza toda de um sabor | **Máximo da opção**              |
+| Quanto o cliente paga pelos sabores              | **Formação de Preço** do grupo   |
+
+## O que "Proporcional" faz e o que não faz
+
+A tela sugere **Proporcional** para pizzas, e muita gente entende que isso vai tirar a média dos sabores automaticamente. O BeeFood3 não faz essa média sozinho.
+
+Com o preço **inteiro** da pizza cadastrado em cada sabor, o teste no PDV fica assim:
+
+| Formação de Preço  | Cliente escolhe 2 sabores | Total cobrado                  |
+| ------------------ | ------------------------- | ------------------------------ |
+| **Valor da Maior** | Calabresa + Portuguesa    | **R$ 45,00** — só o mais caro  |
+| **Proporcional**   | Calabresa + Portuguesa    | **R$ 85,00** — a soma dos dois |
+
+<Callout kind="alert" collapsed="false">
+  Com o preço inteiro em cada sabor, **Proporcional cobra dobrado**. Ele soma como o modo Normal. A proporção acontece internamente, dividindo valor entre os sabores nos relatórios, e não como desconto para o cliente. Para o modelo funcionar como média, cadastre em cada sabor o **preço de meia pizza**.
+</Callout>
+
+## Os dois modelos
+
+|                              | **Modelo A — Valor da Maior** | **Modelo B — Proporcional**              |
+| ---------------------------- | ----------------------------- | ---------------------------------------- |
+| Preço em cada sabor          | **inteiro** (R$ 40,00)        | **metade** (R$ 20,00)                    |
+| Mínimo / Máximo do grupo     | 1 e 2                         | 2 e 2                                    |
+| Máximo de cada opção         | 1                             | 2                                        |
+| Pizza de um sabor            | escolhe 1 sabor               | escolhe o mesmo sabor duas vezes         |
+| Meio a meio de R$ 40 e R$ 45 | **R$ 45,00** (o mais caro)    | **R$ 42,50** (a média)                   |
+| Como o cliente entende       | paga pelo sabor mais caro     | paga a média dos dois                    |
+| Trabalho no cadastro         | menor                         | maior, com preço da metade em cada sabor |
+
+<Callout kind="tip" collapsed="false">
+  Se você está começando, use **Valor da Maior**. É o modelo mais comum nas pizzarias brasileiras, o cliente entende rápido e o PDV avisa o operador sobre a regra automaticamente.
+</Callout>
+
+<Steps>
+  <Step title="Cadastrar os sabores como complementos" icon="plus" title-type="p">
+    Cada sabor entra como **complemento**, com foto e preço. Vá em **Cardápio → Complementos** e cadastre um por um.
+
+    Use como exemplo estes valores do manual:
+
+    | Sabor          | Preço cadastrado |
+    | -------------- | ---------------- |
+    | Calabresa      | R$ 40,00         |
+    | Marguerita     | R$ 42,00         |
+    | Portuguesa     | R$ 45,00         |
+    | Quatro Queijos | R$ 48,00         |
+
+    O preço do sabor aqui é o **preço inteiro da pizza** daquele sabor. Esse valor é o que o modelo **Valor da Maior** usa direto.
+
+    <Callout kind="info" collapsed="false">
+      Sabor é complemento, e não produto, porque não é vendido sozinho. **Bordas** também são complementos, mas ficam em um grupo separado.
+    </Callout>
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-pizza/imagens-tratadas/01-complementos-sabores.png" width="800" alt="Complementos de sabores de pizza cadastrados" />
+  </Step>
+
+  <Step title="Modelo A: Valor da Maior" icon="settings" title-type="p">
+    Crie um grupo em **Cardápio → Grupo de Opções → Novo Grupo**. Esse grupo será o grupo de sabores do modelo mais comum de pizzaria.
+
+    Configure os campos assim:
+
+    | Campo             | Como preencher     |
+    | ----------------- | ------------------ |
+    | Formação de Preço | **Valor da Maior** |
+    | Mínimo            | **1**              |
+    | Máximo            | **2**              |
+
+    Na aba **Opções**, inclua os quatro sabores com **BUSCAR E CADASTRAR**. Eles entram com o preço inteiro que você já cadastrou no complemento.
+
+    Confira estes pontos:
+
+    | Item            | Valor esperado                          |
+    | --------------- | --------------------------------------- |
+    | Valor da opção  | R$ 40,00, R$ 42,00, R$ 45,00 e R$ 48,00 |
+    | Limite da opção | **0 - 1**                               |
+
+    O limite **0 - 1** significa que cada sabor pode ser escolhido uma vez. Isso permite meio a meio, mas impede repetir o mesmo sabor dentro desse modelo.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-pizza/imagens-tratadas/02-grupo-maior-detalhes.png" width="800" alt="Detalhes do grupo de sabores no modelo Valor da Maior" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-pizza/imagens-tratadas/03-grupo-maior-opcoes.png" width="800" alt="Opções do grupo de sabores no modelo Valor da Maior" />
+  </Step>
+
+  <Step title="Modelo B: Proporcional" icon="settings" title-type="p">
+    Crie outro grupo de sabores. Aqui cada opção representa **meia pizza**, não a pizza inteira.
+
+    Configure os campos assim:
+
+    | Campo             | Como preencher   |
+    | ----------------- | ---------------- |
+    | Formação de Preço | **Proporcional** |
+    | Mínimo            | **2**            |
+    | Máximo            | **2**            |
+
+    O mínimo **2** é o que faz esse modelo funcionar. A pizza sempre é montada com duas metades, mesmo quando as duas metades são do mesmo sabor.
+
+    Na aba **Opções**, ajuste os sabores com o **valor da metade**:
+
+    | Sabor          | Preço inteiro | Preço no grupo Proporcional |
+    | -------------- | ------------- | --------------------------- |
+    | Calabresa      | R$ 40,00      | **R$ 20,00**                |
+    | Marguerita     | R$ 42,00      | **R$ 21,00**                |
+    | Portuguesa     | R$ 45,00      | **R$ 22,50**                |
+    | Quatro Queijos | R$ 48,00      | **R$ 24,00**                |
+
+    Depois ajuste cada opção individualmente clicando na linha do sabor:
+
+    | Campo da opção  | Como preencher          |
+    | --------------- | ----------------------- |
+    | Máximo          | **2**                   |
+    | Valor           | metade do preço inteiro |
+    | Limite da opção | **0 - 2**               |
+
+    Esse ajuste libera repetir o mesmo sabor duas vezes. É assim que o cliente pede uma pizza inteira de um sabor nesse modelo.
+
+    <Callout kind="info" collapsed="false">
+      A conta da metade é simples: divida o preço da pizza inteira por 2. Preço ímpar como **R$ 45,00** vira **R$ 22,50**.
+    </Callout>
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-pizza/imagens-tratadas/04-grupo-prop-detalhes.png" width="800" alt="Detalhes do grupo de sabores no modelo Proporcional" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-pizza/imagens-tratadas/05-grupo-prop-opcoes.png" width="800" alt="Opções do grupo de sabores no modelo Proporcional" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-pizza/imagens-tratadas/06-grupo-prop-opcao-expandida.png" width="800" alt="Linha de opção expandida com ajuste de preço e máximo" />
+  </Step>
+
+  <Step title="A borda" icon="plus" title-type="p">
+    Cadastre a borda em um **grupo separado**. As duas pizzas podem usar esse mesmo grupo.
+
+    Configure o grupo assim:
+
+    | Campo             | Como preencher |
+    | ----------------- | -------------- |
+    | Formação de Preço | **Normal**     |
+    | Mínimo            | **0**          |
+    | Máximo            | **1**          |
+
+    Exemplo de opções:
+
+    | Borda    | Valor   |
+    | -------- | ------- |
+    | Catupiry | R$ 8,00 |
+    | Cheddar  | R$ 6,00 |
+
+    O limite da opção fica em **0 - 1**, porque o cliente escolhe uma borda por pizza.
+
+    <Callout kind="alert" collapsed="false">
+      Se esse grupo estiver vinculado a mais de um produto, qualquer alteração nele reflete em todos os produtos vinculados.
+    </Callout>
+
+    <Callout kind="tip" collapsed="false">
+      Se a borda for grátis, use a formação **Brinde** em vez de deixar o valor zerado.
+    </Callout>
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-pizza/imagens-tratadas/07-grupo-borda.png" width="800" alt="Grupo de bordas cadastrado separadamente" />
+  </Step>
+
+  <Step title="Cadastrar a pizza" icon="edit" title-type="p">
+    Vá em **Cardápio → Produtos**, crie o setor **Pizzas** e depois cadastre o produto.
+
+    Preencha os pontos principais assim:
+
+    | Campo          | Como preencher |
+    | -------------- | -------------- |
+    | Setor          | **Pizzas**     |
+    | Preço de Venda | **R$ 0,00**    |
+
+    Esse é o ponto mais importante do cadastro. O produto da pizza precisa ficar com preço base zerado.
+
+    <Callout kind="danger" collapsed="false">
+      O preço da pizza precisa ser **R$ 0,00** porque o valor vem dos sabores. Se você colocar **R$ 40,00** no produto e **R$ 40,00** no sabor, o sistema soma os dois e o cliente paga **R$ 80,00**.
+    </Callout>
+
+    Na listagem, produto com preço zero aparece com um traço, `-`, no lugar do valor. Isso é esperado.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-pizza/imagens-tratadas/08-produto-preco-zero.png" width="800" alt="Cadastro da pizza com preço base R$ 0,00" />
+  </Step>
+
+  <Step title="Vincular os grupos" icon="link" title-type="p">
+    Na aba **Grupo de Opções** do produto, vincule **um grupo de sabores** e o grupo de **Borda**.
+
+    Confira estes campos antes de liberar a venda:
+
+    | O que revisar                     | Como deve ficar                                                     |
+    | --------------------------------- | ------------------------------------------------------------------- |
+    | Tipo do grupo de sabores          | **Proporcional** ou **Valor da Maior**, conforme o modelo escolhido |
+    | Tipo do grupo de borda            | **Normal**                                                          |
+    | Qtd. Mín. e Qtd. Máx. dos sabores | **2 e 2** no modelo Proporcional, ou conforme o grupo criado        |
+    | Qtd. Mín. e Qtd. Máx. da borda    | **0 e 1**                                                           |
+
+    Vincule **só um** grupo de sabores por produto. Se você vincular os dois, o cliente terá de escolher sabores duas vezes, com duas regras de preço diferentes.
+
+    <Callout kind="info" collapsed="false">
+      Use as setas de ordenação para deixar os **sabores antes da borda**. Essa ordem fica mais natural na venda.
+    </Callout>
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-pizza/imagens-tratadas/09-produto-grupos.png" width="800" alt="Grupos de sabores e borda vinculados ao produto pizza" />
+  </Step>
+
+  <Step title="Conferir no PDV" icon="check-circle" title-type="p">
+    Teste a pizza no PDV antes de publicar o cardápio. O cadastro só está pronto quando o total aparece certo na venda.
+
+    **Modelo A — 1 sabor**
+
+    | Item              | Resultado esperado        |
+    | ----------------- | ------------------------- |
+    | Regra de escolha  | escolher de 1 a 2 sabores |
+    | Sabor selecionado | Calabresa                 |
+    | Total             | **R$ 40,00**              |
+
+    **Modelo A — meio a meio**
+
+    | Item       | Resultado esperado                            |
+    | ---------- | --------------------------------------------- |
+    | Aviso azul | informa que será cobrada só a opção mais cara |
+    | Sabores    | Calabresa + Portuguesa                        |
+    | Total      | **R$ 45,00**                                  |
+
+    **Modelo B — pizza inteira de 1 sabor**
+
+    | Item             | Resultado esperado                 |
+    | ---------------- | ---------------------------------- |
+    | Regra de escolha | escolher 2 metades                 |
+    | Ação             | clicar no mesmo sabor duas vezes   |
+    | Total            | **R$ 40,00** = R$ 20,00 + R$ 20,00 |
+
+    **Modelo B — meio a meio**
+
+    | Item    | Resultado esperado                 |
+    | ------- | ---------------------------------- |
+    | Sabores | Calabresa + Portuguesa             |
+    | Total   | **R$ 42,50** = R$ 20,00 + R$ 22,50 |
+
+    **Borda somando**
+
+    | Item    | Resultado esperado                |
+    | ------- | --------------------------------- |
+    | Sabores | Calabresa + Portuguesa            |
+    | Borda   | Catupiry                          |
+    | Total   | **R$ 50,50** = R$ 42,50 + R$ 8,00 |
+
+    <Callout kind="alert" collapsed="false">
+      O botão `+` do contador não funciona nesta versão, mesmo aparecendo na tela. Para aumentar a quantidade no modelo Proporcional, clique na **linha do sabor**. O botão `−` funciona normalmente.
+    </Callout>
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-pizza/imagens-tratadas/10-pdv-maior-1sabor.png" width="800" alt="PDV com pizza de um sabor no modelo Valor da Maior" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-pizza/imagens-tratadas/11-pdv-maior-2sabores.png" width="800" alt="PDV com pizza meio a meio no modelo Valor da Maior" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-pizza/imagens-tratadas/12-pdv-prop-inteira.png" width="800" alt="PDV com pizza inteira de um sabor no modelo Proporcional" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-pizza/imagens-tratadas/13-pdv-prop-meio.png" width="800" alt="PDV com pizza meio a meio no modelo Proporcional" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-pizza/imagens-tratadas/14-pdv-prop-borda.png" width="800" alt="PDV com borda somando ao total da pizza" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-pizza/imagens-tratadas/15-cardapio-final.png" width="800" alt="As duas pizzas no cardápio final" />
+  </Step>
+</Steps>
+
+## Resumo das contas
+
+Use esta tabela para conferir rapidamente se o cadastro está cobrando certo no PDV.
+
+| Modelo                 | Situação                                   | Conta                           | Total        |
+| ---------------------- | ------------------------------------------ | ------------------------------- | ------------ |
+| **A — Valor da Maior** | 1 sabor, Calabresa                         | R$ 40,00                        | **R$ 40,00** |
+| **A — Valor da Maior** | Calabresa + Portuguesa                     | maior entre R$ 40,00 e R$ 45,00 | **R$ 45,00** |
+| **B — Proporcional**   | Calabresa nas duas metades                 | R$ 20,00 + R$ 20,00             | **R$ 40,00** |
+| **B — Proporcional**   | Calabresa + Portuguesa                     | R$ 20,00 + R$ 22,50             | **R$ 42,50** |
+| **B — Proporcional**   | Meio a meio + borda Catupiry               | R$ 42,50 + R$ 8,00              | **R$ 50,50** |
+| **Erro comum**         | Proporcional com preço inteiro nos sabores | R$ 40,00 + R$ 45,00             | **R$ 85,00** |
+
+## Qual modelo escolher
+
+**Use Valor da Maior se:**
+
+- você quer um cadastro mais simples, com o preço inteiro em cada sabor;
+- sua pizzaria cobra o sabor mais caro no meio a meio, que é o modelo mais comum no Brasil;
+- você quer que o operador veja a regra explicada na tela.
+
+**Use Proporcional se:**
+
+- sua casa cobra a média dos sabores automaticamente;
+- você aceita cadastrar o preço da metade em cada sabor;
+- você quer que cada metade contabilize o mesmo valor nos relatórios por produto.
+
+Nos dois casos, pizzas com **3 ou mais sabores** funcionam. Aumente o **Máximo** do grupo. No modelo Proporcional, o valor de cada opção passa a ser a fração correspondente, como um terço ou um quarto do preço da pizza.
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+  <Expandable title="Posso ter tamanhos diferentes, como média, grande e família?" default-open="false">
+    Sim. Cadastre **um produto por tamanho**, cada um com seu grupo de sabores e com os preços daquele tamanho. Não tente resolver isso com um grupo de tamanho junto do grupo de sabores.
+  </Expandable>
+
+  <Expandable title="Como faço pizza de três sabores?" default-open="false">
+    No **Modelo A**, aumente o **Máximo** do grupo para **3**. No **Modelo B**, use **Mínimo = 3**, **Máximo = 3**, **Máximo da opção = 3** e cadastre cada sabor com **um terço** do preço da pizza. Quando a divisão não fecha exata, como `R$ 133,00 ÷ 3`, o total pode variar **1 centavo**.
+  </Expandable>
+
+  <Expandable title="Onde coloco o refrigerante do combo?" default-open="false">
+    Coloque em **outro grupo**, com formação de preço **Normal**.
+  </Expandable>
+
+  <Expandable title="Cadastrei tudo e a pizza aparece sem preço no cardápio." default-open="false">
+    Isso é esperado. O produto tem preço base **R$ 0,00** e o valor final vem dos sabores escolhidos.
+  </Expandable>
+
+  <Expandable title="Mudei o preço do complemento e o sabor continua com o preço antigo." default-open="false">
+    O preço da opção fica gravado no grupo quando você inclui o sabor. Depois disso, ele passa a funcionar separado do complemento. Altere pela linha da opção ou por **Editar em Lote**.
+  </Expandable>
+
+  <Expandable title="Preciso dos dois produtos deste manual?" default-open="false">
+    Não. Os dois produtos servem só para comparar os modelos. Escolha um, apague o outro e deixe o nome final como **Pizza Média**, ou o nome do tamanho que você usa.
+  </Expandable>
+</ExpandableGroup>
