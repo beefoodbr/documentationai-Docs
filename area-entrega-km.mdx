@@ -1,16 +1,16 @@
 ---
 title: Por KM
-description: Cobre o frete por faixa de distância entre a loja e o cliente — crie faixas de KM no Google Maps com taxa, frete grátis e tempo adicional para cada quilometragem
+description: >-
+  Cobre o frete por faixa de distância entre a loja e o cliente — crie faixas de
+  KM no Google Maps com taxa, frete grátis e tempo adicional para cada
+  quilometragem
 ---
-
 ## Cobre o frete pela distância entre a loja e o cliente
 
 Com **Quilometragem KM**, você cria faixas de distância — até 3 km um valor, até 6 km outro, até 10 km outro. O Google Maps calcula o caminho; você só define as faixas. Antes de começar, confirme que a configuração base da [Área de Entrega](/area-entrega) já está pronta e que o pin da loja está no lugar certo.
 
-<Callout kind="info">
-
-A distância sempre começa no endereço marcado da loja. Se o pin estiver errado, o cálculo da entrega também fica errado.
-
+<Callout kind="info" collapsed="false">
+  A distância sempre começa no endereço marcado da loja. Se o pin estiver errado, o cálculo da entrega também fica errado.
 </Callout>
 
 ## Quando usar KM
@@ -29,21 +29,15 @@ Se você prefere desenhar a cobertura no mapa, use [Por Mapa](/area-entrega-mapa
 
 <Steps>
   <Step title="Selecionar o tipo de entrega" icon="map" title-type="p">
+    Acesse **Cardápio Digital → Área de Entrega**, clique em **Alterar** no cartão **Tipo de Entrega**, marque **Quilometragem KM** no passo 2 e avance.
 
-  Acesse **Cardápio Digital → Área de Entrega**, clique em **Alterar** no cartão **Tipo de Entrega**, marque **Quilometragem KM** no passo 2 e avance.
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/area-entrega-km/imagens-tratadas/01-step2-km.png" width="800" alt="Tela de seleção do tipo de área de entrega com a opção Quilometragem KM destacada" />
 
-  <Image
-    src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/area-entrega-km/imagens-tratadas/01-step2-km.png"
-    width="800"
-    alt="Tela de seleção do tipo de área de entrega com a opção Quilometragem KM destacada"
-  />
-
-  | Item | O que fazer |
-  |---|---|
-  | **Endereço da loja** | É a origem do cálculo da distância. |
-  | **Quilometragem KM** | É o card com o visto verde. |
-  | **Avançar** | Abre a lista de faixas. |
-
+    | Item                 | O que fazer                         |
+    | -------------------- | ----------------------------------- |
+    | **Endereço da loja** | É a origem do cálculo da distância. |
+    | **Quilometragem KM** | É o card com o visto verde.         |
+    | **Avançar**          | Abre a lista de faixas.             |
   </Step>
 </Steps>
 
@@ -51,99 +45,91 @@ Se você prefere desenhar a cobertura no mapa, use [Por Mapa](/area-entrega-mapa
 
 <Steps>
   <Step title="Abrir o cadastro da faixa" icon="plus" title-type="p">
+    Clique em **+ Adicionar**. O modal **Adicionar Taxa de Entrega por KM** abre vazio.
 
-  Clique em **+ Adicionar**. O modal **Adicionar Taxa de Entrega por KM** abre vazio.
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/area-entrega-km/imagens-tratadas/03-modal-km-vazio.png" width="800" alt="Modal de criação de faixa de KM vazio com campos para preenchimento" />
 
-  <Image
-    src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/area-entrega-km/imagens-tratadas/03-modal-km-vazio.png"
-    width="800"
-    alt="Modal de criação de faixa de KM vazio com campos para preenchimento"
-  />
-
-  | Campo | O que preencher |
-  |---|---|
-  | **Até Quilometragem (KM)** | O teto desta faixa. Exemplo: 3. |
-  | **Ativo** | Ligado, a faixa vale. Desligado, ela sai do cálculo sem ser apagada. |
-  | **Valor frete** | O valor que o cliente paga nesta faixa. |
-  | **Valor pago ao Entregador** | Só aparece no relatório **Resumo Taxa Entrega**. O cliente não vê. |
-  | **Frete grátis acima de** | Pedido a partir deste valor zera o frete. Deixe 0 se não usar. |
-  | **Tempo Entrega Adicional** | Minutos a mais no prazo desta faixa. |
-  | **SALVAR (F2)** | Grava a faixa. |
-
+    | Campo                        | O que preencher                                                      |
+    | ---------------------------- | -------------------------------------------------------------------- |
+    | **Até Quilometragem (KM)**   | O teto desta faixa. Exemplo: 3.                                      |
+    | **Ativo**                    | Ligado, a faixa vale. Desligado, ela sai do cálculo sem ser apagada. |
+    | **Valor frete**              | O valor que o cliente paga nesta faixa.                              |
+    | **Valor pago ao Entregador** | Só aparece no relatório **Resumo Taxa Entrega**. O cliente não vê.   |
+    | **Frete grátis acima de**    | Pedido a partir deste valor zera o frete. Deixe 0 se não usar.       |
+    | **Tempo Entrega Adicional**  | Minutos a mais no prazo desta faixa.                                 |
+    | **SALVAR (F2)**              | Grava a faixa.                                                       |
   </Step>
 
   <Step title="Preencher a primeira faixa" icon="settings" title-type="p">
+    Cadastre a primeira faixa com os valores do seu frete. No exemplo, a loja usa **até 3 km**, **R$ 5,99** de frete, **R$ 3,00** para o entregador, frete grátis acima de **R$ 40,00** e **5 min** de tempo adicional.
 
-  Cadastre a primeira faixa com os valores do seu frete. No exemplo, a loja usa **até 3 km**, **R$ 5,99** de frete, **R$ 3,00** para o entregador, frete grátis acima de **R$ 40,00** e **5 min** de tempo adicional.
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/area-entrega-km/imagens-tratadas/04-modal-km-preenchido.png" width="800" alt="Modal de faixa de KM preenchido com exemplo de 3 km, R$ 5,99 e frete grátis acima de R$ 40,00" />
 
-  <Image
-    src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/area-entrega-km/imagens-tratadas/04-modal-km-preenchido.png"
-    width="800"
-    alt="Modal de faixa de KM preenchido com exemplo de 3 km, R$ 5,99 e frete grátis acima de R$ 40,00"
-  />
-
-  Repita o mesmo processo para as faixas de **6 km** e **10 km**. Depois de salvar, a lista do passo 3 mostra todas juntas.
-
+    Repita o mesmo processo para as faixas de **6 km** e **10 km**. Depois de salvar, a lista do passo 3 mostra todas juntas.
   </Step>
 </Steps>
 
-<Callout kind="info">
-
-A distância do cliente cai na menor faixa que ainda atende o endereço. Quem está a 2 km paga a faixa de 3 km, quem está a 5 km paga a faixa de 6 km e quem está a 11 km fica fora da área.
-
+<Callout kind="info" collapsed="false">
+  A distância do cliente cai na menor faixa que ainda atende o endereço. Quem está a 2 km paga a faixa de 3 km, quem está a 5 km paga a faixa de 6 km e quem está a 11 km fica fora da área.
 </Callout>
 
 ## A lista de faixas
 
 Cada linha da lista representa um teto de distância, com frete, frete grátis, tempo extra e valor do entregador.
 
-<Image
-  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/area-entrega-km/imagens-tratadas/05-lista-km-pronta.png"
-  width="800"
-  alt="Lista de faixas de KM criadas com três faixas configuradas"
-/>
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/area-entrega-km/imagens-tratadas/05-lista-km-pronta.png" width="800" alt="Lista de faixas de KM criadas com três faixas configuradas" />
 
-| Item | Para que serve |
-|---|---|
-| **Localização e Tipo** | São os cartões do assistente. **Alterar** no tipo volta aos quatro cards. |
-| **+ Adicionar** | Cria uma nova faixa. |
-| **As faixas** | Cada linha mostra teto em km, frete, frete grátis, tempo e entregador. |
-| **Lápis, switch e lixeira** | Editar, desligar sem apagar ou excluir. |
+| Item                        | Para que serve                                                            |
+| --------------------------- | ------------------------------------------------------------------------- |
+| **Localização e Tipo**      | São os cartões do assistente. **Alterar** no tipo volta aos quatro cards. |
+| **+ Adicionar**             | Cria uma nova faixa.                                                      |
+| **As faixas**               | Cada linha mostra teto em km, frete, frete grátis, tempo e entregador.    |
+| **Lápis, switch e lixeira** | Editar, desligar sem apagar ou excluir.                                   |
 
-<Callout kind="info">
-
-**Frete grátis 0** na faixa de 10 km quer dizer que essa faixa não zera o frete em nenhum valor de pedido. O cliente sempre paga os **R$ 14,99**.
-
+<Callout kind="info" collapsed="false">
+  **Frete grátis 0** na faixa de 10 km quer dizer que essa faixa não zera o frete em nenhum valor de pedido. O cliente sempre paga os **R$ 14,99**.
 </Callout>
 
 ## O que o cliente vê no cardápio
 
-No cardápio, o cliente informa o próprio endereço. As alterações podem levar de 1 a 2 minutos para aparecer. No teste com **R. Arthur Gomes, 13 — Centro, 18035-490**, a cerca de 1 km da loja, o endereço cai na faixa de 3 km.
+No cardápio, o cliente informa o próprio endereço. As alterações podem levar de 1 a 2 minutos para aparecer. No teste com **CEP 18035-490**, **número 13**, **R. Arthur Gomes**, **Centro**, a cerca de 1 km da loja, o endereço cai na faixa de 3 km.
 
-<Image
-  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/area-entrega-km/imagens-tratadas/06-menu-km-perto.png"
-  width="800"
-  alt="Cardápio digital mostrando endereço dentro da área de entrega KM com taxa calculada"
-/>
+Na sacola, em **Receber no seu endereço**, o cliente toca em _Clique aqui e informe o endereço_ (ou em **Trocar**). Abre a busca:
 
-| Item | O que o cliente vê |
-|---|---|
-| **Receber no seu endereço** | O endereço confirmado e o link **Trocar**. |
-| **Taxa de entrega** | O valor da faixa que coube à distância. No exemplo, **R$ 5,99**. |
-| **Tempo de espera** | O prazo da loja mais os minutos adicionais da faixa. |
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/area-entrega-km/imagens-tratadas/06-menu-km-busca.png" width="800" alt="Cardápio — busca do CEP pelo cliente" caption="O cliente digita o CEP e toca em BUSCAR CEP." />
+
+| Nº | Item             | O que o cliente faz                     |
+| -- | ---------------- | --------------------------------------- |
+| 1  | **Campo do CEP** | Digita o CEP. No teste, **18035-490**.  |
+| 2  | **BUSCAR CEP**   | Confere se a loja entrega nessa região. |
+
+O sistema devolve a rua. O cliente confere, preenche o **número** e toca em **CONFIRMAR**:
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/area-entrega-km/imagens-tratadas/07-menu-km-form.png" width="800" alt="Cardápio — endereço encontrado com campo de número" caption="O cliente confere a rua e preenche o número." />
+
+| Nº | Item                    | O que aparece                                     |
+| -- | ----------------------- | ------------------------------------------------- |
+| 1  | **Rua**                 | _Rua Doutor Arthur Gomes_ — veio da busca do CEP. |
+| 2  | **Nº**                  | O cliente digita **13**.                          |
+| 3  | **Bairro** e **cidade** | _Centro_, _Sorocaba_.                             |
+| 4  | **CONFIRMAR**           | Grava o endereço na sacola.                       |
+
+A sacola mostra o endereço escolhido e a taxa da faixa (aqui, a de 3 km):
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/area-entrega-km/imagens-tratadas/08-menu-km-perto.png" width="800" alt="Cardápio digital mostrando endereço dentro da área de entrega KM com taxa calculada" />
+
+| Item                        | O que o cliente vê                                               |
+| --------------------------- | ---------------------------------------------------------------- |
+| **Receber no seu endereço** | O endereço confirmado e o link **Trocar**.                       |
+| **Taxa de entrega**         | O valor da faixa que coube à distância. No exemplo, **R$ 5,99**. |
+| **Tempo de espera**         | O prazo da loja mais os minutos adicionais da faixa.             |
 
 Um endereço além da maior faixa não fecha a taxa. Enquanto o sistema confirma que o endereço está fora da área, a linha fica em **Calculando…** e o pedido de entrega não segue. **Retirada** e **Consumo no local** continuam disponíveis.
 
-<Image
-  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/area-entrega-km/imagens-tratadas/07-menu-km-fora.png"
-  width="800"
-  alt="Cardápio digital mostrando endereço fora da área de entrega KM com cálculo indisponível"
-/>
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/area-entrega-km/imagens-tratadas/07-menu-km-fora.png" width="800" alt="Cardápio digital mostrando endereço fora da área de entrega KM com cálculo indisponível" />
 
-<Callout kind="info">
-
-As alterações podem levar de 1 a 2 minutos para aparecer no cardápio. Quando o endereço fica fora da área, **Retirada** e **Consumo no local** continuam disponíveis.
-
+<Callout kind="info" collapsed="false">
+  As alterações podem levar de 1 a 2 minutos para aparecer no cardápio. Quando o endereço fica fora da área, **Retirada** e **Consumo no local** continuam disponíveis.
 </Callout>
 
 ## Resumo do caminho
@@ -159,52 +145,38 @@ As alterações podem levar de 1 a 2 minutos para aparecer no cardápio. Quando 
 
 <ExpandableGroup>
   <Expandable title="Mudei a faixa e o cardápio ainda mostra o valor antigo" default-open="false">
-
-  O tipo ativo precisa ser **Quilometragem KM** no passo 2, e o cardápio leva de 1 a 2 minutos para atualizar. Depois disso, use **Trocar** no endereço do cardápio e confirme de novo.
-
+    O tipo ativo precisa ser **Quilometragem KM** no passo 2, e o cardápio leva de 1 a 2 minutos para atualizar. Depois disso, use **Trocar** no endereço do cardápio e confirme de novo.
   </Expandable>
 
   <Expandable title="E se o cliente estiver exatamente em 3 km?" default-open="false">
-
-  Ele cai na faixa **até 3 km**. A próxima faixa, de 6 km, só vale depois desse teto.
-
+    Ele cai na faixa **até 3 km**. A próxima faixa, de 6 km, só vale depois desse teto.
   </Expandable>
 
   <Expandable title="Preciso cadastrar as faixas em ordem?" default-open="false">
-
-  Não. O sistema usa o teto da faixa, não a ordem da lista. Mesmo assim, cadastrar 3, 6 e 10 deixa a tela mais fácil de ler.
-
+    Não. O sistema usa o teto da faixa, não a ordem da lista. Mesmo assim, cadastrar 3, 6 e 10 deixa a tela mais fácil de ler.
   </Expandable>
 
   <Expandable title="O valor do entregador aparece para o cliente?" default-open="false">
-
-  Não. Esse valor aparece só no relatório **Resumo Taxa Entrega**.
-
+    Não. Esse valor aparece só no relatório **Resumo Taxa Entrega**.
   </Expandable>
 
   <Expandable title="Quero um desenho no mapa, não KM" default-open="false">
-
-  Troque o tipo para **Raio/Área**. As faixas de KM ficam salvas.
-
+    Troque o tipo para **Raio/Área**. As faixas de KM ficam salvas.
   </Expandable>
 </ExpandableGroup>
 
 ## Manuais relacionados
 
-<Columns cols={3}>
-  <Card title="📍 Área de Entrega" href="/area-entrega" icon="map" cta="Abrir manual">
-
-  Volte para a visão geral e confira os pré-requisitos da configuração.
-
+<Columns cols="3">
+  <Card title="📍 Área de Entrega" href="/area-entrega" icon="map" cta="Abrir manual" horizontal="false">
+    Volte para a visão geral e confira os pré-requisitos da configuração.
   </Card>
-  <Card title="🗺️ Por Mapa" href="/area-entrega-mapa" icon="map" cta="Abrir manual">
 
-  Desenhe círculos e polígonos no mapa em vez de usar faixas de distância.
-
+  <Card title="🗺️ Por Mapa" href="/area-entrega-mapa" icon="map" cta="Abrir manual" horizontal="false">
+    Desenhe círculos e polígonos no mapa em vez de usar faixas de distância.
   </Card>
-  <Card title="🏘️ Por Bairro e CEP" href="/area-entrega-bairro-cep" icon="home" cta="Abrir manual">
 
-  Configure bairros, CEPs, faixas de CEP e CEP Fixo em uma lista de grupos.
-
+  <Card title="🏘️ Por Bairro e CEP" href="/area-entrega-bairro-cep" icon="home" cta="Abrir manual" horizontal="false">
+    Configure bairros, CEPs, faixas de CEP e CEP Fixo em uma lista de grupos.
   </Card>
 </Columns>

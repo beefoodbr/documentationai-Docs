@@ -1,280 +1,390 @@
 ---
 title: Por Bairro e CEP
-description: Configure o frete por bairro, CEP individual, faixa de CEP ou CEP fixo — crie grupos de atendimento com taxa, frete grátis e tempo adicional para cada região
+description: Configure o frete por nome de bairro, CEP isolado, faixa de CEP ou CEP fixo para cidades pequenas — crie grupos de atendimento com taxa, frete grátis e tempo adicional para cada região
 ---
 
 ## Cobre o frete pelo bairro ou pelo CEP do cliente
 
-Com **Bairro e CEP**, você cria grupos de bairros ou códigos postais com um valor de entrega para cada região: **Centro — R$ 6,50**, um conjunto de bairros vizinhos no mesmo preço, um CEP isolado ou uma faixa de CEP. O cardápio compara o bairro ou o CEP digitado pelo cliente com os grupos ativos e aplica a taxa correspondente. Antes de começar, confirme que a configuração base da [Área de Entrega](/area-entrega) já está pronta e que o pin da loja está no lugar certo.
+Este manual ensina a cobrar o frete **pelo bairro (ou pelo CEP) do cliente**: um grupo **Centro — R$ 6,50**, outro com vários bairros no mesmo valor, ou uma faixa de CEP.
+
+<Callout kind="info" collapsed="false">
+
+A loja precisa ter endereço marcado. Se ainda não marcou, veja o manual **Configurar endereço do restaurante**.
+
+As imagens têm **setas numeradas** (1, 2, 3…). Cada número indica o campo ou botão correspondente na tela.
+
+</Callout>
 
 ## Quando usar Bairro e CEP
 
-Use **Bairro e CEP** quando a regra for uma lista de nomes ou CEPs, não distância nem desenho no mapa.
+Use **Bairro e CEP** quando a regra for uma **lista de nomes**, não distância nem desenho:
 
-- **Centro — R$ 6,50**
-- **Vários bairros vizinhos no mesmo valor**
-- **Um CEP isolado**
-- **Uma faixa de CEP**, como `18035-000` a `18039-999`
+- Centro — R$ 6,50;
+- um conjunto de bairros vizinhos no mesmo valor;
+- um CEP isolado, ou uma faixa (`18035-000` a `18039-999`).
 
-Quem não estiver em nenhum grupo vê **Endereço fora da área de atendimento**.
+O cardápio compara o **bairro** (ou o **CEP**) que o cliente digitou com os grupos ativos. Quem não estiver em nenhum grupo vê *Endereço fora da área de atendimento*.
 
-Se você prefere cobrar pela distância, use [Por KM](/area-entrega-km). Se prefere desenhar a área no mapa, use [Por Mapa](/area-entrega-mapa).
+O mesmo passo 3 também cadastra **CEP** e **Faixa CEP**. Este manual mostra o caminho do **bairro**, que é o mais usado. Os outros dois tipos moram no mesmo modal, nos rádios do meio.
+
+Se você quer cobrar por distância, use [Por KM](/area-entrega-km). Se quer desenhar a região no mapa, use [Por Mapa](/area-entrega-mapa).
 
 ## Escolher Bairro e CEP
 
 <Steps>
-  <Step title="Selecionar o tipo" icon="map" title-type="p">
+  <Step title="Selecionar Bairro e CEP" icon="map" title-type="p">
 
-  Acesse **Cardápio Digital → Área de Entrega** e clique em **Alterar** no cartão **Tipo de Entrega**. No passo 2, marque **Bairro e CEP** e avance.
+  Em **Cardápio Digital → Área de Entrega**, clique em **Alterar** no cartão **Tipo de Entrega**. No passo 2, marque **Bairro e CEP** e avance.
 
   <Image
     src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/area-entrega-bairro/imagens-tratadas/01-step2-bairro.png"
     width="800"
-    alt="Tela de seleção do tipo de área de entrega com a opção Bairro e CEP destacada"
+    alt="Passo 2 com o tipo Bairro e CEP marcado na área de entrega"
   />
 
-  | Item | O que fazer |
-  |---|---|
-  | Endereço da loja | Confira. O bairro da loja não entra na lista sozinho — você cadastra os bairros que atende. |
-  | Bairro e CEP | É o card com o visto verde e o texto Configurar por bairros e CEPs. |
-  | Avançar | Abre a lista de grupos. |
+  | Nº | Item | O que fazer |
+  |----|------|-------------|
+  | 1 | **Endereço da loja** | Confira. O bairro da loja não entra na lista sozinho — você cadastra os bairros que atende. |
+  | 2 | **Bairro e CEP** | O card com o visto verde. Texto: *"Configurar por bairros e CEPs"*. |
+  | 3 | **Avançar** | Abre a lista de grupos. |
+
+  O texto de ajuda diz: *"Selecione bairros específicos e configure valores de entrega para cada um."*
 
   </Step>
 </Steps>
 
 ## A lista de grupos
 
-Cada linha da lista é um grupo: um valor de frete e um ou mais bairros, CEPs ou faixas dentro dele.
+Cada linha é um **grupo**: um valor de frete e um ou mais bairros (ou CEPs) dentro.
 
 <Image
   src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/area-entrega-bairro/imagens-tratadas/05-lista-bairro-pronta.png"
   width="800"
-  alt="Lista de grupos de bairro e CEP criados na tabela"
+  alt="Lista de grupos de bairro e CEP com busca, ações e valores de frete"
  />
 
-| Item | Para que serve |
-|---|---|
-| Localização e Tipo | São os cartões do assistente. |
-| + Adicionar | Cria um novo grupo. |
-| Buscar bairro, CEP ou cidade | Filtra a lista quando já existem muitos grupos. |
-| A linha do grupo | Mostra tipo, quantidade de itens, frete, frete grátis, tempo extra e valor do entregador. |
-| Seta, lápis, switch e lixeira | Abrem os itens, editam, desligam ou excluem o grupo. |
+| Nº | Item | Para que serve |
+|----|------|----------------|
+| 1 | **Localização** e **Tipo** | Os cartões do assistente. |
+| 2 | **+ Adicionar** | Novo grupo. |
+| 3 | **Buscar bairro, CEP ou cidade** | Filtra a lista. Útil quando já existem muitos grupos. |
+| 4 | **A linha do grupo** | Tipo (Bairro / # CEP / Faixa), quantidade de itens, frete, frete grátis, tempo extra, valor do entregador. |
+| 5 | **Seta, lápis, switch e lixeira** | Abrir os itens, editar, desligar ou excluir o grupo. |
+
+O exemplo didático é um grupo **Bairro** com **Centro** (Sorocaba), frete **R$ 6,50**, frete grátis a partir de **R$ 45,00**, **+8 min** e entregador **R$ 3,50**.
 
 ## Criar um grupo de bairro
 
 <Steps>
-  <Step title="Abrir o modal de grupo" icon="plus" title-type="p">
+  <Step title="Abrir e preencher o modal" icon="plus" title-type="p">
 
-  Clique em **+ Adicionar**. O modal **Nova Área de Atendimento** abre com os campos do grupo.
+  Clique em **+ Adicionar**. Abre o modal **Nova Área de Atendimento**:
 
   <Image
     src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/area-entrega-bairro/imagens-tratadas/03-modal-bairro.png"
     width="800"
-    alt="Modal de criação de grupo de bairro vazio com campos para preenchimento"
+    alt="Modal Nova Área de Atendimento vazio para criar um grupo por bairro"
   />
 
-  | Campo | O que preencher |
-  |---|---|
-  | Valor do frete | O que o cliente paga neste grupo. |
-  | Frete grátis acima de | Pedido a partir deste valor zera o frete. Deixe 0 se não usar. |
-  | Valor pago ao Entregador | Só aparece no relatório Resumo Taxa Entrega. |
-  | Tempo entrega adicional | Minutos a mais no prazo. |
-  | Ativo | Ligado, o grupo vale. |
-  | Tipo Área de Atendimento | Escolha Bairro, CEP ou Faixa CEP. O restante do modal muda com o rádio. |
-  | Nome do bairro e Cidade | Digite o bairro e confira a cidade, que já vem da loja. |
-  | Botão + | Inclui o bairro na tabela. Sem isso, SALVAR grava um grupo vazio. |
-  | SALVAR (F2) | Grava o grupo. |
+  | Nº | Campo | O que fazer |
+  |----|-------|-------------|
+  | 1 | **Valor do frete** | O que o cliente paga neste grupo. |
+  | 2 | **Frete grátis acima de**, **Valor pago ao entregador**, **Tempo entrega** | Opcionais — iguais aos do KM. **0** no frete grátis = não usa a regra. |
+  | 3 | **Ativo** | Ligado, o grupo vale. |
+  | 4 | **Tipo Área de Atendimento** | **Bairro**, **CEP** ou **Faixa CEP**. O resto do modal muda com o rádio. |
+  | 5 | **Nome do bairro** e **Cidade** | Digite o bairro e confira a cidade (já vem a da loja). |
+  | 6 | **Botão +** | Inclui o bairro na tabela. Sem isso, **SALVAR** grava um grupo vazio. |
+  | 7 | **SALVAR (F2)** | Grava o grupo. |
 
-  <Callout kind="alert">
+  <Callout kind="alert" collapsed="false">
 
-  O nome do bairro precisa ser o mesmo que o cliente vai ter no endereço — o do correio, não um apelido. `Centro` e `Centro Histórico` são coisas diferentes para o sistema. Digite o bairro, clique no **+** para a linha entrar na tabela e só depois use **SALVAR (F2)**. Sem o **+**, o grupo grava vazio.
+  O nome do bairro precisa ser o mesmo que o cliente vai ter no endereço — o do correio, não um apelido. "Centro" e "Centro Histórico" são coisas diferentes para o sistema.
+
+  Digite o bairro, clique no **+** (a linha entra na tabela) e depois em **SALVAR (F2)**. Sem o **+**, o grupo grava vazio.
 
   </Callout>
 
-  </Step>
-
-  <Step title="Preencher o grupo do exemplo" icon="settings" title-type="p">
-
-  Preencha o grupo com os dados do exemplo: **Centro** em **Sorocaba**, frete **R$ 6,50**, frete grátis acima de **R$ 45,00**, **+8 min** e valor do entregador **R$ 3,50**.
-
-  Se vários bairros tiverem o mesmo frete, adicione todos no mesmo grupo clicando em **+** de novo. Se o frete mudar, crie outro grupo.
+  Dá para colocar **vários bairros no mesmo grupo** (mesmo frete) clicando **+** de novo. Para um frete diferente, crie outro grupo.
 
   <Image
     src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/area-entrega-bairro/imagens-tratadas/04-modal-bairro-preenchido.png"
     width="800"
-    alt="Modal de grupo de bairro preenchido com exemplo Centro e R$ 6,50"
+    alt="Modal preenchido com o bairro Centro, frete de 6 reais e 50 centavos e demais campos do grupo"
   />
+
+  No exemplo, o grupo pronto fica assim.
 
   </Step>
 </Steps>
 
-## CEP e Faixa de CEP no mesmo modal
+## CEP e faixa de CEP no mesmo modal
 
-O mesmo modal usado para bairro também cadastra **CEP** e **Faixa CEP**. Basta trocar o tipo na opção **Tipo Área de Atendimento**.
+Os outros dois rádios do modal:
 
 | Tipo | O que pedir | Serve para |
-|---|---|---|
-| CEP | Um CEP de 8 dígitos | Um prédio, um condomínio ou uma rua com CEP próprio |
-| Faixa CEP | CEP início e CEP fim | Um pedaço da cidade sem listar bairro por bairro |
+|------|-------------|------------|
+| **CEP** | Um CEP de 8 dígitos | Um prédio, um condomínio ou uma rua com CEP próprio |
+| **Faixa CEP** | CEP início e CEP fim | Um pedaço da cidade sem listar bairro por bairro |
 
-<Callout kind="alert">
+O valor do frete é o mesmo campo do topo. Não misture bairro e CEP no mesmo grupo — o tipo trava depois que o primeiro item entra.
 
-Não misture bairro e CEP no mesmo grupo. O tipo trava depois que o primeiro item entra, então crie grupos separados para cada regra.
+<Callout kind="alert" collapsed="false">
+
+Não misture bairro e CEP no mesmo grupo. O tipo trava depois que o primeiro item entra.
 
 </Callout>
 
 ## CEP Único (CEP Fixo)
 
-Use **CEP Único** só quando a cidade ou o distrito realmente compartilha um único CEP. Se a cidade usa CEP por rua, por bairro ou por região, continue em **Bairro e CEP** ou use [Por KM](/area-entrega-km).
+Este manual também ensina o tipo **CEP Único**: a cidade tem **um CEP só**, e todo mundo que pede nesse CEP paga o mesmo frete.
 
-O sistema compara o CEP digitado pelo cliente com o **CEP Fixo** cadastrado. Se for igual, cobra o valor registrado. Se for diferente, o endereço fica fora da área. Neste tipo não existem campos de frete grátis, tempo adicional ou valor do entregador.
+### Quando usar CEP Único
 
-<Callout kind="info">
+Use **só** quando a cidade (ou o distrito) realmente compartilha um CEP. Cidade grande, com CEP por rua, **não** é este caminho — use **Bairro e CEP** ou **KM**.
 
-Não é frete único para qualquer CEP. É este CEP, este valor. O CEP do cliente precisa ser igual ao CEP Fixo cadastrado.
+O sistema compara o CEP do cliente com o CEP Fixo. Se for **igual**, cobra o valor cadastrado. Se for **diferente**, o endereço fica fora da área.
+
+Não é "frete único para qualquer CEP". É "este CEP, este valor".
+
+Neste tipo **não existem** frete grátis, tempo adicional nem valor do entregador — só os dois campos do passo 3.
+
+<Callout kind="info" collapsed="false">
+
+Não é "frete único para qualquer CEP". É "este CEP, este valor".
 
 </Callout>
+
+## Escolher CEP Único
 
 <Steps>
   <Step title="Selecionar CEP Único" icon="map" title-type="p">
 
-  No passo 2 da área de entrega, marque **CEP Único** e avance.
+  Em **Cardápio Digital → Área de Entrega**, clique em **Alterar** no cartão **Tipo de Entrega**. No passo 2, marque **CEP Único** e avance.
 
   <Image
     src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/area-entrega-cep-fixo/imagens-tratadas/01-step2-cep.png"
     width="800"
-    alt="Tela de seleção do tipo de área de entrega com a opção CEP Único destacada"
+    alt="Passo 2 com o tipo CEP Único marcado na área de entrega"
   />
 
-  </Step>
+  | Nº | Item | O que fazer |
+  |----|------|-------------|
+  | 1 | **Endereço da loja** | Confira. O CEP da loja e o CEP Fixo **não precisam** ser iguais. |
+  | 2 | **CEP Único** | O card com o visto verde. Texto: *"Cidade com apenas um CEP"*. |
+  | 3 | **Avançar** | Abre os dois campos do passo 3. |
 
-  <Step title="Preencher CEP e frete" icon="edit" title-type="p">
-
-  Preencha os dois campos do formulário e grave a configuração.
-
-  <Image
-    src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/area-entrega-cep-fixo/imagens-tratadas/02-form-cep.png"
-    width="800"
-    alt="Formulário de CEP fixo vazio com os campos CEP e valor do frete"
-  />
-
-  <Image
-    src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/area-entrega-cep-fixo/imagens-tratadas/03-form-cep-preenchido.png"
-    width="800"
-    alt="Formulário de CEP fixo preenchido com exemplo CEP 18035-490 e frete R$ 7,00"
-  />
-
-  | Campo | O que preencher |
-  |---|---|
-  | CEP Fixo | Os 8 dígitos, com máscara `00000-000`. Exemplo: `18035-490`. |
-  | CEP Fixo Valor Frete | O valor único. Exemplo: **R$ 7,00**. |
-  | Salvar (F2) | Grava. Sem salvar, o cardápio continua com o valor antigo. |
-
-  <Callout kind="alert">
-
-  Diferente do horário de atendimento, esta tela não grava sozinha. Sem o **Salvar (F2)**, a mudança não vale.
-
-  </Callout>
+  O texto de ajuda diz: *"Para cidades pequenas que possuem apenas um CEP para toda a região."*
 
   </Step>
 </Steps>
 
-## O que o cliente vê no cardápio
+## Os dois campos
 
-O cliente informa o próprio endereço no cardápio. As alterações podem levar de 1 a 2 minutos para aparecer.
-
-Para **Bairro e CEP**, teste com **R. Arthur Gomes, 13 — Centro, 18035-490**. Como o bairro **Centro** está no grupo, a taxa aparece.
+O passo 3 não tem lista. São **dois campos** e o botão **Salvar (F2)**.
 
 <Image
-  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/area-entrega-bairro/imagens-tratadas/06-menu-bairro-perto.png"
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/area-entrega-cep-fixo/imagens-tratadas/02-form-cep.png"
   width="800"
-  alt="Cardápio digital mostrando endereço dentro da área de entrega por bairro com taxa calculada"
+  alt="Formulário de CEP Único com os campos CEP Fixo e CEP Fixo Valor Frete"
  />
 
-| Item | O que o cliente vê |
-|---|---|
-| Receber no seu endereço | O endereço confirmado. |
-| Taxa de entrega | O valor do grupo — no exemplo, **R$ 6,50**. |
+| Nº | Campo | O que fazer |
+|----|------|-------------|
+| 1 | **Localização** e **Tipo** | Os cartões do assistente. **Alterar** no tipo volta aos quatro cards. |
+| 2 | **CEP Fixo** | Os 8 dígitos, com máscara `00000-000`. |
+| 3 | **CEP Fixo Valor Frete** | O valor único. No exemplo, **R$ 7,00**. |
+| 4 | **Salvar (F2)** | Grava. Sem salvar, o cardápio continua com o valor antigo. |
 
-Um bairro que não está em nenhum grupo não aparece na busca do cardápio. Retirada e consumo no local continuam disponíveis.
+Diferente do horário de atendimento, **esta tela não grava sozinha**. Sem o Salvar, a mudança não vale.
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/area-entrega-cep-fixo/imagens-tratadas/03-form-cep-preenchido.png"
+  width="800"
+  alt="Formulário de CEP Único preenchido com o CEP 18035-490 e frete de 7 reais"
+ />
+
+| Nº | Campo | Valor do exemplo |
+|----|-------|------------------|
+| 1 | **CEP Fixo** | 18035-490 |
+| 2 | **CEP Fixo Valor Frete** | R$ 7,00 |
+| 3 | **Salvar (F2)** | Confirma. |
+
+<Callout kind="alert" collapsed="false">
+
+Diferente do horário de atendimento, **esta tela não grava sozinha**. Sem o **Salvar**, a mudança não vale.
+
+</Callout>
+
+No exemplo, o CEP de teste do cliente (**18035-490**, o da R. Arthur Gomes, 13) e o frete **R$ 7,00**. A loja fica em outro CEP (**18040-370**); quem pedir no CEP da loja **não** vê este frete — só quem digitar **18035-490**.
+
+## O que o cliente vê no cardápio
+
+O cliente informa o **próprio** endereço. A mudança leva **1 a 2 minutos**.
+
+### Bairro e CEP — endereço dentro da área
+
+O cliente informa o **próprio** endereço. A mudança leva **1 a 2 minutos**. Neste tipo, a busca do cardápio é pelo **bairro**, não pelo CEP. O teste deste bloco é o bairro **Centro** e, depois, a rua **Arthur Gomes, 13**.
+
+Na sacola, em **Receber no seu endereço**, o cliente toca em *Clique aqui e informe o endereço* (ou em **Trocar** → **Novo endereço**). No campo *Digite seu Bairro*, ele digita o nome:
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/area-entrega-bairro/imagens-tratadas/06-menu-bairro-busca.png"
+  width="800"
+  alt="Cardápio — busca do bairro Centro pelo cliente"
+  caption="O cliente digita o nome do bairro no cardápio."
+ />
+
+| Nº | Item | O que o cliente faz |
+|----|------|---------------------|
+| 1 | **Digite seu Bairro** | Digita o nome. No teste, **Centro**. |
+| 2 | **Sugestão** | A linha *Centro — Bairro*. Só entram na lista os bairros que você cadastrou. |
+
+Ao escolher a sugestão, o cardápio abre o **NOVO ENDEREÇO** com o bairro e a cidade preenchidos. O cliente completa a rua e o número:
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/area-entrega-bairro/imagens-tratadas/07-menu-bairro-form.png"
+  width="800"
+  alt="Cardápio — formulário de endereço depois da busca do bairro"
+  caption="O bairro e a cidade vêm preenchidos da busca."
+ />
+
+| Nº | Item | O que aparece |
+|----|------|---------------|
+| 1 | **Endereço** | *Rua Doutor Arthur Gomes*. |
+| 2 | **Número** e **CEP** | **13** e **18035-490**. |
+| 3 | **Bairro** | *Centro* — veio da busca. |
+| 4 | **Salvar endereço** | Grava na sacola. |
+
+A sacola mostra o endereço escolhido e a taxa do grupo:
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/area-entrega-bairro/imagens-tratadas/08-menu-bairro-perto.png"
+  width="800"
+  alt="Cardápio mostrando bairro cadastrado com taxa de entrega aplicada"
+ />
+
+| Nº | Item | O que o cliente vê |
+|----|------|--------------------|
+| 1 | **Receber no seu endereço** | O endereço confirmado. |
+| 2 | **Taxa de entrega** | O valor do grupo — no exemplo, **R$ 6,50** para o Centro. |
+
+### Bairro e CEP — endereço fora da área
+
+Um bairro que **não está em nenhum grupo** nem aparece na busca do cardápio. No teste, **Bela Vista** (São Paulo) devolve *Nenhum resultado encontrado* — só o **Centro** cadastrado fica na lista. Retirada e consumo no local continuam disponíveis.
 
 <Image
   src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/area-entrega-bairro/imagens-tratadas/07-menu-bairro-fora.png"
   width="800"
-  alt="Cardápio digital mostrando endereço fora da área de entrega por bairro"
+  alt="Cardápio mostrando bairro fora da lista com nenhum resultado encontrado"
  />
 
-Para **CEP Único**, se o CEP for igual ao cadastrado, a taxa aparece. No exemplo, o valor é **R$ 7,00**. Se o cliente informar qualquer outro CEP, a taxa não fecha.
+### CEP Único — endereço dentro da área
+
+Se o CEP for o mesmo do cadastro, a taxa aparece. O teste deste bloco é **R. Arthur Gomes, 13 — Centro, 18035-490**:
 
 <Image
   src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/area-entrega-cep-fixo/imagens-tratadas/05-menu-cep-perto.png"
   width="800"
-  alt="Cardápio digital mostrando endereço com CEP igual ao fixo e taxa de R$ 7,00"
+  alt="Cardápio mostrando CEP igual ao fixo com taxa de entrega de 7 reais"
  />
+
+| Nº | Item | O que o cliente vê |
+|----|------|--------------------|
+| 1 | **Receber no seu endereço** | O endereço confirmado. |
+| 2 | **Taxa de entrega** | O valor fixo — no exemplo, **R$ 7,00**. |
+
+### CEP Único — endereço fora da área
+
+Qualquer **outro CEP** (no exemplo, Avenida Paulista, 01310-100) não fecha a taxa. A linha fica em *Calculando…* e o pedido de entrega não segue. Retirada e consumo no local continuam disponíveis.
 
 <Image
   src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/area-entrega-cep-fixo/imagens-tratadas/06-menu-cep-fora.png"
   width="800"
-  alt="Cardápio digital mostrando endereço com CEP diferente do fixo e cálculo indisponível"
+  alt="Cardápio mostrando CEP diferente do fixo com taxa de entrega calculando"
  />
 
-<Callout kind="info">
+| Nº | Item | O que significa |
+|----|------|-----------------|
+| 1 | **Taxa de entrega — Calculando…** | O CEP do cliente não é o CEP Fixo (18035-490). |
+| 2 | **Retirar** e **Consumir no local** | Continuam disponíveis. |
 
-As alterações podem levar de 1 a 2 minutos para aparecer no cardápio. Quando o endereço fica fora da área, **Retirada** e **Consumo no local** continuam disponíveis.
+<Callout kind="info" collapsed="false">
+
+A mudança leva **1 a 2 minutos** para aparecer no cardápio.
 
 </Callout>
 
 ## Resumo do caminho
 
-1. Acesse **Cardápio Digital → Área de Entrega**.
-2. Confira o endereço da loja.
-3. Em **Tipo de Entrega**, escolha **Bairro e CEP** e avance.
-4. Clique em **+ Adicionar** e defina o valor do frete.
-5. Escolha **Bairro**, **CEP** ou **Faixa CEP**, adicione o item na tabela com o botão **+** e salve.
-6. Aguarde 1 a 2 minutos e teste no cardápio com um endereço dentro e outro fora da regra.
+### Bairro e CEP
 
-## Perguntas frequentes
+1. Cardápio Digital → Área de Entrega
+2. Confira o endereço da loja (manual do endereço)
+3. Tipo de Entrega → Bairro e CEP → Avançar
+4. + Adicionar → valor do frete → tipo Bairro
+5. Digite o bairro e a cidade → + → SALVAR (F2)
+6. Espere 1 a 2 minutos e teste no cardápio com um bairro da lista e um de fora
+
+### CEP Único
+
+1. Cardápio Digital → Área de Entrega
+2. Confira o endereço da loja (manual do endereço)
+3. Tipo de Entrega → CEP Único → Avançar
+4. CEP Fixo + Valor Frete → Salvar (F2)
+5. Espere 1 a 2 minutos e teste no cardápio com o CEP cadastrado e com outro
+
+## Perguntas frequentes (Bairro e CEP)
 
 <ExpandableGroup>
-  <Expandable title="Cadastrei o bairro e o cliente ainda fica de fora" default-open="false">
+  <Expandable title="Cadastrei o bairro e o cliente ainda fica de fora." default-open="false">
 
-  Faça três checagens: o tipo ativo é **Bairro e CEP**? O nome está igual ao do correio? Já passaram 1 a 2 minutos e o cliente usou **Trocar** no endereço?
+  Três checagens: o **tipo ativo** é Bairro e CEP? o nome está **igual** ao do correio? já passaram 1 a 2 minutos e o cliente **Trocou** o endereço?
 
   </Expandable>
 
   <Expandable title="Posso ter o mesmo bairro em dois grupos?" default-open="false">
 
-  Evite. Se isso acontecer, o sistema usa um dos valores e a taxa fica imprevisível. Um bairro, um grupo.
+  Evite. Se acontecer, o sistema usa um dos valores e a taxa fica imprevisível. Um bairro, um grupo.
 
   </Expandable>
 
-  <Expandable title="Misturo bairro e CEP no mesmo grupo?" default-open="false">
+  <Expandable title="A lista já veio com vários grupos." default-open="false">
 
-  Não. O tipo trava depois que o primeiro item entra. Crie grupos separados.
+  São cadastros antigos. Use a busca, desligue o switch dos que não valem ou exclua. O grupo novo não apaga os outros.
 
   </Expandable>
 
-  <Expandable title="Minha cidade tem vários CEPs. CEP Único serve?" default-open="false">
+  <Expandable title="Quero cobrar por distância, não por nome." default-open="false">
 
-  Não. Use **Bairro e CEP** para criar um grupo por CEP ou por faixa, ou use **Quilometragem KM**.
+  Troque o tipo para **Quilometragem KM**. Os grupos de bairro ficam salvos.
+
+  </Expandable>
+</ExpandableGroup>
+
+## Perguntas frequentes (CEP Único)
+
+<ExpandableGroup>
+  <Expandable title="Salvei e o cardápio ainda mostra outro valor." default-open="false">
+
+  Confira se o tipo ativo é **CEP Único** (não Bairro e CEP). Espere 1 a 2 minutos e peça para **Trocar** o endereço.
+
+  </Expandable>
+
+  <Expandable title="Minha cidade tem vários CEPs." default-open="false">
+
+  Este tipo não serve. Use **Bairro e CEP** (um grupo por CEP ou por faixa) ou **KM**.
 
   </Expandable>
 
   <Expandable title="O CEP da loja e o CEP Fixo precisam ser iguais?" default-open="false">
 
-  Não é obrigatório. Só quem digitar o CEP cadastrado vê o frete.
+  Não é obrigatório. Só quem digitar *o CEP cadastrado* vê o frete. Se a cidade inteira compartilha um CEP, na prática ele coincide com o da loja. No exemplo do manual, o CEP Fixo é o do endereço de teste do cliente (**18035-490**), não o da loja (**18040-370**).
 
   </Expandable>
 
-  <Expandable title="Tem frete grátis ou tempo extra no CEP Único?" default-open="false">
+  <Expandable title="Tem frete grátis ou tempo extra neste tipo?" default-open="false">
 
-  Não. Esse tipo só usa CEP e valor. Para regras extras, use KM, mapa ou bairro.
-
-  </Expandable>
-
-  <Expandable title="Quero cobrar por distância, não por nome" default-open="false">
-
-  Troque o tipo para **Quilometragem KM**. Os grupos de bairro ficam salvos.
+  Não. Só CEP e valor. Para regras extras, use KM, mapa ou bairro.
 
   </Expandable>
 </ExpandableGroup>
@@ -282,34 +392,21 @@ As alterações podem levar de 1 a 2 minutos para aparecer no cardápio. Quando 
 ## Manuais relacionados
 
 <Columns cols={3}>
-  <Card
-    title="Área de Entrega"
-    href="/area-entrega"
-    icon="map"
-    cta="Abrir manual"
-  >
+  <Card title="Área de Entrega" href="/area-entrega" icon="map" cta="Abrir manual" horizontal="false">
 
-  Volte para a visão geral e confira os pré-requisitos da configuração.
+  O pré-requisito da configuração e a visão geral dos tipos de entrega.
 
   </Card>
-  <Card
-    title="Por Mapa"
-    href="/area-entrega-mapa"
-    icon="map"
-    cta="Abrir manual"
-  >
 
-  Desenhe círculos e polígonos no mapa para definir as regiões atendidas.
+  <Card title="Por Mapa" href="/area-entrega-mapa" icon="map" cta="Abrir manual" horizontal="false">
+
+  Desenhe a área de atendimento no mapa em vez de montar uma lista de bairros ou CEPs.
 
   </Card>
-  <Card
-    title="Por KM"
-    href="/area-entrega-km"
-    icon="bar-chart"
-    cta="Abrir manual"
-  >
 
-  Crie faixas de distância com valores diferentes de frete.
+  <Card title="Por KM" href="/area-entrega-km" icon="bar-chart" cta="Abrir manual" horizontal="false">
+
+  Configure faixas de distância quando o frete depende da quilometragem.
 
   </Card>
 </Columns>
