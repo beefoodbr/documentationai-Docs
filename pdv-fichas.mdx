@@ -1,0 +1,164 @@
+---
+title: Fichas de Consumo no PDV
+description: Entenda como configurar fichas de consumo (tickets de produção) e escolher entre impressão individual ou em lista
+---
+
+<Callout kind="info" collapsed="false">
+
+As imagens deste manual contêm setas numeradas que indicam onde clicar ou o que conferir em cada passo.
+
+</Callout>
+
+## O que são Fichas de Consumo
+
+A ficha de consumo é o ticket de produção — o papel que sai para a cozinha ou o balcão saber o que preparar. Ela **não é cupom fiscal** e **não é o cupom do cliente**. É o ticket de passagem: o que foi pedido, para quem, em qual mesa ou comanda.
+
+A ficha dispara automaticamente ao receber a venda no PDV, no botão **Receber (F3)**, antes do cupom do cliente. Sem o servidor BeeImpressão, o BeeFood abre o preview do navegador — é a mesma ficha, só muda a porta de saída. O aviso *Impressão via navegador — Servidor offline* confirma esse caminho.
+
+<Callout kind="alert">
+
+A ficha de consumo é diferente do cupom do cliente. O cupom é controlado por outro interruptor, **Imprimir Venda Sempre**, e tem layout diferente. Para testar só as fichas, deixe o cupom desligado.
+
+</Callout>
+
+## Os Três Interruptores
+
+Os interruptores ficam em **Configuração → Parâmetros**, no card **PDV**, bloco **Impressão de Fichas**. A tela grava sozinha — não existe botão salvar.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/pdv-fichas/imagens-tratadas/01-bloco-fichas-off.png" width="600" alt="Bloco de Impressão de Fichas desligado" />
+
+| Interruptor | O que faz |
+| --- | --- |
+| **Impressão de Ficha** | O interruptor mestre. Se ligar e nenhum modo estiver ativo, o sistema força Individual automaticamente. |
+| **Impressão Individual** | Uma ficha **por item** (um preview para cada produto). |
+| **Impressão em Lista** | **Uma** ficha com todos os itens do pedido. |
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/pdv-fichas/imagens-tratadas/02-fichas-individual.png" width="600" alt="Interruptores de fichas no modo Individual" />
+
+| Nº | Item | O que fazer |
+| --- | --- | --- |
+| 1 | **Impressão de Ficha** | O mestre precisa estar **ligado**. |
+| 2 | **Impressão Individual** | Uma ficha por produto. |
+| 3 | **Impressão em Lista** | Desligado neste exemplo. |
+
+<Callout kind="info">
+
+Individual e Lista são mutuamente exclusivos. Não dá para desligar os dois ao mesmo tempo: a tela ignora o clique. Se você ligar um, o outro desliga sozinho.
+
+</Callout>
+
+## Individual x Lista
+
+Os dois modos imprimem a ficha no momento do recebimento da venda. A diferença está em quantos papéis saem e em como os itens aparecem.
+
+| Critério | Individual | Lista |
+| --- | --- | --- |
+| Quantos papéis | Um por item | Um para o pedido inteiro |
+| Título extra | — | **ITENS:** no topo |
+| Quando usar | Cozinha por prato, cada item numa comanda | Balcão que junta o pedido numa via só |
+
+## Prova Real Passo a Passo
+
+<Steps>
+  <Step icon="settings" title-type="p" title="Configure os interruptores">
+
+  Ligue **Impressão de Ficha** e mantenha **Impressão Individual** ativo. Deixe **Imprimir Venda Sempre** desligado para não misturar o cupom do cliente com as fichas.
+
+  </Step>
+
+  <Step icon="plus" title-type="p" title="Faça uma venda com dois itens">
+
+  No PDV, lance dois produtos — por exemplo, Coxinha e Refrigerante Lata — e toque em **Receber (F3)**.
+
+  <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/pdv-fichas/imagens-tratadas/03-pdv-dois-itens.png" width="600" alt="PDV com dois itens: Coxinha e Refrigerante" />
+
+  | Nº | Item | O que conferir |
+  | --- | --- | --- |
+  | 1 | Coxinha e Refrigerante | Dois itens = duas fichas no modo Individual. |
+  | 2 | **Receber (F3)** | Dispara as fichas e depois o pagamento. |
+
+  </Step>
+
+  <Step icon="receipt" title-type="p" title="Confira a ficha da Coxinha">
+
+  O sistema abre o primeiro preview — a ficha da Coxinha.
+
+  <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/pdv-fichas/imagens-tratadas/06-preview-ficha-coxinha.png" width="600" alt="Preview da ficha individual da Coxinha" />
+
+  | Nº | Item | O que conferir |
+  | --- | --- | --- |
+  | 1 | **FICHA DE CONSUMO** | O título do ticket de produção. |
+  | 2 | **Venda Nº** | O número da venda. |
+  | 3 | **1x Coxinha** | Só este item aparece nesta ficha. |
+
+  </Step>
+
+  <Step icon="receipt" title-type="p" title="Confira a ficha do Refrigerante">
+
+  Cancele o primeiro preview com <kbd>Esc</kbd> e o segundo aparece — a ficha do Refrigerante.
+
+  <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/pdv-fichas/imagens-tratadas/07-preview-ficha-refri.png" width="600" alt="Preview da ficha individual do Refrigerante" />
+
+  | Nº | Item | O que conferir |
+  | --- | --- | --- |
+  | 1 | **1x Refrigerante Lata** | A segunda ficha, o outro item. |
+
+  </Step>
+
+  <Step icon="list" title-type="p" title="Agora teste o modo Lista">
+
+  Desligue Individual e ligue **Impressão em Lista**. Faça outra venda com dois produtos. Sai **uma** ficha só:
+
+  <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/pdv-fichas/imagens-tratadas/08-preview-ficha-lista.png" width="600" alt="Preview da ficha em lista com todos os itens" />
+
+  | Nº | Item | O que conferir |
+  | --- | --- | --- |
+  | 1 | **ITENS:** | O título que só existe no modo Lista. |
+  | 2 | **1x Coxinha** e **1x Refrigerante Lata** | Os dois no mesmo papel. |
+
+  </Step>
+</Steps>
+
+## Perguntas Frequentes
+
+<ExpandableGroup>
+  <Expandable title="A ficha de consumo é o mesmo que cupom fiscal?" default-open="false">
+
+  Não. A ficha é o ticket de produção para a cozinha ou o balcão. O cupom do cliente é controlado por outro interruptor, **Imprimir Venda Sempre**, e tem layout diferente.
+
+  </Expandable>
+
+  <Expandable title="Posso usar Individual e Lista ao mesmo tempo?" default-open="false">
+
+  Não. Individual e Lista são mutuamente exclusivos. A tela mantém só um ativo. Se você ligar um, o outro desliga sozinho.
+
+  </Expandable>
+
+  <Expandable title="A ficha sai automaticamente ou preciso mandar imprimir?" default-open="false">
+
+  A ficha dispara sozinha ao receber a venda, no botão **Receber (F3)**. Não é preciso clicar em nada além de finalizar a venda.
+
+  </Expandable>
+
+  <Expandable title="A ficha saiu sem mesa. Está certo?" default-open="false">
+
+  Sim. Mesa e comanda só entram na ficha se o pedido tiver. No PDV balcão, sem mesa vinculada, esses campos ficam em branco.
+
+  </Expandable>
+</ExpandableGroup>
+
+## Manuais Relacionados
+
+<Columns cols={2}>
+  <Card title="Número e Cupom no PDV" href="/pdv-numero-cupom" icon="receipt" cta="Abrir manual">
+
+  Configure o número do pedido e a impressão automática do cupom do cliente.
+
+  </Card>
+
+  <Card title="Balança no PDV" href="/pdv-balanca" icon="scale" cta="Abrir manual">
+
+  Integre a leitura de código de barras EAN-13 de balanças no PDV.
+
+  </Card>
+</Columns>

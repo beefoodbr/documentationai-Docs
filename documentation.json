@@ -288,6 +288,14 @@
                   {
                     "title": "⚖️ Balança no PDV",
                     "path": "pdv-balanca"
+                  },
+                  {
+                    "title": "📋 Fichas de Consumo no PDV",
+                    "path": "pdv-fichas"
+                  },
+                  {
+                    "title": "🧾 Número e Cupom no PDV",
+                    "path": "pdv-numero-cupom"
                   }
                 ]
               },
