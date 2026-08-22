@@ -1,0 +1,288 @@
+---
+title: TEF Stone (AutoTEF)
+description: Receba pagamentos com cartão no BeeFood Windows e autoatendimento usando a TEF Stone, com instalação do Slim e cadastro no sistema.
+---
+
+## Receba cartão no BeeFood com a TEF Stone
+
+A TEF Stone, também chamada de **AutoTEF**, permite receber pagamentos com cartão no **BeeFood Windows** e no **Autoatendimento** direto pela Stone. Para funcionar, você precisa instalar o **Slim** no Windows, deixar esse serviço sempre em execução e depois cadastrar a TEF no BeeFood em **Configuração → TEF**.
+
+<Callout kind="info" collapsed="false">
+
+O cadastro da TEF **não** fica no card **Aplicativos → AutoTEF Stone**. Esse card serve para contratação. O cadastro operacional fica em **Configuração → TEF → Novo TEF Stone (F1)**.
+
+</Callout>
+
+### Dispositivos suportados
+
+Use a TEF Stone com os seguintes pinpads homologados:
+
+- Ingenico LANE 3000
+- Ingenico LANE 3600
+- Gertec PPC930
+- Verifone P200
+- Ingenico IPP320
+- PAX Q25
+
+### Antes de começar
+
+Você precisa ter estes itens em mãos antes da instalação:
+
+- **ASP.NET Core Runtime .NET 6** instalado no Windows
+- **AutoTEF Slim v1.8 – SDK V4.3 CrossPlataform – PROD** baixado
+- Código do terminal da Stone, também chamado de **StoneCode**
+- Porta do pinpad no Windows, por exemplo `COM6`
+
+<Callout kind="tip" collapsed="false">
+
+Instale e execute o Slim na pasta `C:\autotef`. Esse é o caminho esperado para esta configuração.
+
+</Callout>
+
+## Instale o Slim Stone no Windows
+
+O Slim da Stone precisa ficar sempre em execução no computador Windows que vai operar a TEF.
+
+<Steps>
+<Step title="Instale o ASP.NET Core Runtime .NET 6" icon="download" title-type="p">
+
+Baixe e instale o **ASP.NET Core Runtime .NET 6** no Windows.
+
+Quando a instalação terminar, o sistema já estará pronto para executar os arquivos do Slim.
+
+</Step>
+
+<Step title="Baixe o AutoTEF Slim" icon="download" title-type="p">
+
+Baixe o pacote **AutoTEF Slim v1.8 – SDK V4.3 CrossPlataform – PROD**.
+
+Guarde o arquivo ZIP em uma pasta fácil de localizar, porque você vai extrair esse conteúdo no próximo passo.
+
+</Step>
+
+<Step title="Extraia os arquivos em C:\\autotef" icon="folder" title-type="p">
+
+Crie a pasta `C:\autotef` e extraia o conteúdo do ZIP dentro dela.
+
+No fim desse passo, os arquivos do AutoTEF devem estar diretamente dentro de `C:\autotef`.
+
+</Step>
+
+<Step title="Execute o AutoTEF.Setup.dll como Administrador" icon="settings" title-type="p">
+
+Na primeira instalação, execute o arquivo **AutoTEF.Setup.dll** como **Administrador**.
+
+Esse passo prepara o ambiente para o serviço do Slim funcionar corretamente.
+
+</Step>
+
+<Step title="Inicie o AutoTEF.Service.exe como Administrador" icon="play-circle" title-type="p">
+
+Execute o arquivo **AutoTEF.Service.exe** como **Administrador** para iniciar o Slim.
+
+Se tudo estiver certo, o Slim abrirá e ficará em execução no Windows.
+
+</Step>
+</Steps>
+
+<Callout kind="info" collapsed="false">
+
+Não é necessário configurar nada a mais no pinpad além do que a Stone já homologou.
+
+</Callout>
+
+## Configure a inicialização automática do Slim
+
+Depois da instalação, faça o Windows abrir o Slim sozinho sempre que o computador iniciar.
+
+<Steps>
+<Step title="Crie um atalho do AutoTEF.Service.exe" icon="plus" title-type="p">
+
+Clique com o botão direito em **AutoTEF.Service.exe** e escolha **Enviar para → Área de trabalho (criar atalho)**.
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/tef-stone/imagens-tratadas/01-atalho-autotef.png"
+  width="800"
+  height="450"
+  alt="Criação de atalho do AutoTEF Service no Windows"
+  caption="Atalho do Slim"
+/>
+
+Ao terminar, você verá um atalho do Slim na área de trabalho.
+
+</Step>
+
+<Step title="Abra a pasta Inicializar do Windows" icon="terminal" title-type="p">
+
+Pressione <kbd>Windows</kbd> + <kbd>R</kbd>, digite `shell:startup` e clique em **OK**.
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/tef-stone/imagens-tratadas/02-shell-startup.png"
+  width="800"
+  height="450"
+  alt="Comando shell startup sendo executado no Windows"
+  caption="shell:startup"
+/>
+
+Esse comando abre a pasta **Inicializar**, usada para iniciar programas automaticamente com o Windows.
+
+</Step>
+
+<Step title="Copie o atalho criado" icon="edit" title-type="p">
+
+Volte para a área de trabalho e copie o atalho do **AutoTEF.Service.exe**.
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/tef-stone/imagens-tratadas/03-copiar-atalho.png"
+  width="800"
+  height="450"
+  alt="Atalho do AutoTEF sendo copiado na área de trabalho"
+  caption="Copiar atalho"
+/>
+
+Você pode usar o botão direito do mouse e escolher **Copiar**.
+
+</Step>
+
+<Step title="Cole o atalho em Inicializar" icon="check-circle" title-type="p">
+
+Cole o atalho dentro da pasta **Inicializar**.
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/tef-stone/imagens-tratadas/04-colar-inicializar.png"
+  width="800"
+  height="450"
+  alt="Atalho do AutoTEF colado na pasta Inicializar do Windows"
+  caption="Colar em Inicializar"
+/>
+
+Reinicie o computador para testar. Se a configuração estiver correta, o Slim abrirá sozinho após o login no Windows.
+
+</Step>
+</Steps>
+
+## Cadastre a TEF Stone no BeeFood
+
+Agora que o Slim está instalado e configurado para iniciar sozinho, faça o cadastro da TEF no BeeFood.
+
+<Steps>
+<Step title="Abra Configuração → TEF" icon="settings" title-type="p">
+
+No BeeFood web, acesse **Configuração → TEF**.
+
+Em seguida, clique em **Novo TEF Stone (F1)**.
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/tef-stone/imagens-tratadas/06-beefood-lista-tef.png"
+  width="800"
+  height="450"
+  alt="Tela de configuração de TEF no BeeFood com o botão Novo TEF Stone"
+  caption="Novo TEF Stone (F1)"
+/>
+
+Se o botão estiver disponível, você já pode preencher o cadastro.
+
+</Step>
+
+<Step title="Preencha os campos do cadastro" icon="edit" title-type="p">
+
+No modal **Novo TEF Stone**, informe os dados da sua operação.
+
+| Campo | O que informar |
+|---|---|
+| **Título** | Nome fácil de identificar, por exemplo: `TEF Stone - Caixa 1` |
+| **Código Terminal** | **StoneCode** ou código do terminal informado pela Stone |
+| **Porta PinPad** | Porta do pinpad no Windows, por exemplo `COM6` |
+| **Vias** | Via consumidor, via estabelecimento ou via reduzida |
+| **SALVAR (F2)** | Grava o cadastro |
+
+Revise os dados antes de salvar, principalmente o **Código Terminal** e a **Porta PinPad**.
+
+</Step>
+
+<Step title="Salve e confirme o cadastro" icon="check-circle" title-type="p">
+
+Clique em **SALVAR (F2)** para concluir.
+
+Depois de salvar, o **Token Config. Windows** aparece na lista da TEF cadastrada. Esse token continua sendo usado no Windows.
+
+</Step>
+</Steps>
+
+<Callout kind="alert" collapsed="false">
+
+Se o botão **Novo TEF Stone** estiver apagado, o limite contratado está zerado. Faça a contratação em **Aplicativos → AutoTEF Stone** e depois volte para **Configuração → TEF**.
+
+</Callout>
+
+## Erro A001
+
+O erro **A001** indica, na prática, que o seu **StoneCode** está vinculado ao produto errado na Stone.
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/tef-stone/imagens-tratadas/05-erro-a001.png"
+  width="800"
+  height="450"
+  alt="Mensagem de erro A001 exibida pelo Slim da Stone"
+  caption="Erro A001"
+/>
+
+Se o Slim mostrar a mensagem `A001 – Check if the environments are correct for the used stone code. IF the problem persists, contact us. StatusCode: 400`, o StoneCode provavelmente está cadastrado no produto **TEF**, mas o BeeFood usa **AutoTEF / MicroPOS**.
+
+<Callout kind="info" collapsed="false">
+
+Peça à Stone a alteração do produto do seu StoneCode de **TEF** para **AutoTEF / MicroPOS**.
+
+- **Telefone:** 0800-326-0506
+- **Telefone:** 3004-9680
+- **WhatsApp:** (11) 3004-9680
+- **Chat:** aplicativo ou site da Stone
+
+Não adianta reinstalar o Slim enquanto a Stone não fizer essa alteração.
+
+</Callout>
+
+## Problemas comuns
+
+| Problema | O que verificar |
+|---|---|
+| **Slim não abre** | Executou como Administrador, instalou o .NET 6 e extraiu na pasta `C:\autotef` |
+| **Slim some depois de reiniciar** | O atalho foi colocado na pasta aberta por `shell:startup` |
+| **Botão Novo TEF Stone apagado** | Limite Stone em `0/0`; falta contratação |
+| **Erro A001** | Solicite à Stone a mudança de produto para **AutoTEF / MicroPOS** |
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+<Expandable title="Onde fica o cadastro da TEF Stone no BeeFood?" default-open="false">
+
+O cadastro fica em **Configuração → TEF → Novo TEF Stone (F1)**.
+
+O card **Aplicativos → AutoTEF Stone** serve para contratação, não para cadastrar a TEF no caixa.
+
+</Expandable>
+
+<Expandable title="Preciso configurar algo no pinpad além da instalação?" default-open="false">
+
+Não. Use o pinpad já homologado pela Stone e siga a instalação do Slim no Windows.
+
+</Expandable>
+
+<Expandable title="O que aparece no sistema depois de salvar a TEF?" default-open="false">
+
+Depois de salvar, o **Token Config. Windows** aparece na lista da TEF cadastrada.
+
+</Expandable>
+
+<Expandable title="Posso resolver o erro A001 reinstalando o Slim?" default-open="false">
+
+Não. Quando o problema é o vínculo do StoneCode com o produto errado, a correção depende da Stone.
+
+Peça a alteração de **TEF** para **AutoTEF / MicroPOS** e teste novamente depois da mudança.
+
+</Expandable>
+</ExpandableGroup>
+
+## Precisa de ajuda?
+
+Se a instalação estiver correta e a TEF ainda não funcionar, fale com o suporte BeeFood informando o nome da loja, o caixa afetado, a porta do pinpad no Windows e, se houver, o print da mensagem apresentada pelo Slim.

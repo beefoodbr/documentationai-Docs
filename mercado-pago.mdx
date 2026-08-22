@@ -1,0 +1,174 @@
+---
+title: Mercado Pago
+description: Configure o Mercado Pago para aceitar cartão de crédito online no seu cardápio digital BeeFood, com credenciais de produção e ativação do pagamento
+---
+
+## Ative o cartão de crédito online no cardápio digital BeeFood conectando as credenciais de produção do Mercado Pago: Public Key e Access Token.
+
+<Callout kind="alert" collapsed="false">
+Não teste pedidos com o seu próprio cartão de crédito. Esse tipo de teste pode causar banimento permanente da conta do Mercado Pago. Para validar o fluxo, use o cartão de outra pessoa ou faça uma venda real de baixo valor e estorne depois.
+</Callout>
+
+<Callout kind="info" collapsed="false">
+Você vai configurar em duas partes: primeiro no portal do Mercado Pago, para criar o aplicativo e copiar as chaves; depois no BeeFood, para colar as credenciais, habilitar o cartão de crédito e salvar.
+</Callout>
+
+## Configure o Mercado Pago no portal e no BeeFood
+
+<Steps>
+<Step title="Abrir o portal de desenvolvedores e criar o aplicativo" icon="1" title-type="p">
+
+Acesse o portal de desenvolvedores do Mercado Pago e clique no botão `+` para cadastrar uma aplicação.
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/mercado-pago/imagens-tratadas/01-mp-criar-aplicativo.png"
+  width="800"
+  height="450"
+  alt="Tela do portal de desenvolvedores do Mercado Pago com a opção para criar um aplicativo"
+  caption="Criar aplicativo no MP"
+/>
+
+</Step>
+<Step title="Preencher os dados do aplicativo" icon="2" title-type="p">
+
+Preencha os dados solicitados do aplicativo. Em **Tipo de solução**, selecione **Pagamentos online** e depois clique em **CRIAR APLICATIVO**.
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/mercado-pago/imagens-tratadas/02-mp-preencher-app.png"
+  width="800"
+  height="450"
+  alt="Formulário de criação do aplicativo Mercado Pago com o tipo de solução definido como pagamentos online"
+  caption="Preencher aplicativo"
+/>
+
+</Step>
+<Step title="Ativar as credenciais" icon="3" title-type="p">
+
+Clique no botão laranja **Ativar credenciais** para liberar o uso da aplicação.
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/mercado-pago/imagens-tratadas/03-mp-ativar-credenciais.png"
+  width="800"
+  height="450"
+  alt="Tela do aplicativo no Mercado Pago com o botão Ativar credenciais destacado"
+  caption="Ativar credenciais"
+/>
+
+</Step>
+<Step title="Selecionar indústria e informar o site" icon="4" title-type="p">
+
+Em **Indústria**, escolha **Bar e restaurantes**. Em **Site**, cole o link do seu cardápio digital BeeFood e clique em **Enviar formulário**.
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/mercado-pago/imagens-tratadas/04-mp-formulario-industria.png"
+  width="800"
+  height="450"
+  alt="Formulário do Mercado Pago com os campos de indústria e site preenchidos"
+  caption="Indústria e site"
+/>
+
+</Step>
+<Step title="Abrir as credenciais de produção" icon="5" title-type="p">
+
+Clique em **Credenciais de produção**. Não use credenciais de teste nessa configuração.
+
+<Callout kind="info" collapsed="false">
+Use sempre as credenciais de PRODUÇÃO. Credenciais de teste não processam pagamentos reais.
+</Callout>
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/mercado-pago/imagens-tratadas/05-mp-credenciais-producao.png"
+  width="800"
+  height="450"
+  alt="Tela do Mercado Pago com a opção Credenciais de produção visível"
+  caption="Credenciais de produção"
+/>
+
+</Step>
+<Step title="Copiar Public Key e Access Token" icon="6" title-type="p">
+
+Copie as duas chaves usando o botão de copiar e guarde ambas para a próxima etapa no BeeFood.
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/mercado-pago/imagens-tratadas/06-mp-copiar-chaves.png"
+  width="800"
+  height="450"
+  alt="Tela de credenciais do Mercado Pago mostrando a Public Key e o Access Token"
+  caption="Copiar Public Key e Access Token"
+/>
+
+</Step>
+<Step title="Abrir Aplicativos no BeeFood" icon="7" title-type="p">
+
+No BeeFood, clique em **Aplicativos** no menu lateral. Depois, na seção **Pagamento Online**, abra o card **Mercado Pago**.
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/mercado-pago/imagens-tratadas/07-beefood-aplicativos.png"
+  width="800"
+  height="450"
+  alt="Tela do BeeFood com o menu Aplicativos e o card Mercado Pago destacado"
+  caption="Aplicativos (1) → Mercado Pago (2)"
+/>
+
+</Step>
+<Step title="Colar as chaves, habilitar e salvar" icon="8" title-type="p">
+
+No modal de configuração, cole a **Public Key** no campo `1`, cole o **Access Token** no campo `2`, deixe ligado o switch **Habilitar Cartão de Crédito** no item `3` e clique em **Salvar** no item `4`.
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/mercado-pago/imagens-tratadas/09-beefood-modal-chaves.png"
+  width="800"
+  height="450"
+  alt="Modal de configuração do Mercado Pago no BeeFood com os campos Public Key, Access Token, switch de habilitação e botão Salvar"
+  caption="Public Key (1), Access Token (2), switch (3), Salvar (4)"
+/>
+
+| Nº | Campo no BeeFood | O que fazer |
+|---|---|---|
+| 1 | **Public Key** | Cole a Public Key de produção |
+| 2 | **Access Token** | Cole o Access Token de produção |
+| 3 | **Habilitar Cartão de Crédito** | Deixe ligado para o cartão aparecer no cardápio digital |
+| 4 | **Salvar** | Grava a configuração |
+
+<Callout kind="alert" collapsed="false">
+Não preencha credenciais de teste. Sempre use as credenciais de PRODUÇÃO.
+</Callout>
+
+</Step>
+</Steps>
+
+<Callout kind="tip" collapsed="false">
+Depois de salvar, o pagamento por cartão de crédito fica ativo no cardápio digital. Para verificar, abra o cardápio e confirme se a opção de cartão aparece na finalização do pedido.
+</Callout>
+
+## Problemas comuns
+
+| Problema | O que verificar |
+|---|---|
+| Cartão não aparece no cardápio | Verifique se o switch **Habilitar Cartão de Crédito** está ligado e se você salvou a configuração |
+| Pagamento recusado / conta em risco | Verifique se você testou com o próprio cartão. Se testou, pare e use um cartão diferente |
+| Chaves não salvam | Confirme se a Public Key e o Access Token são credenciais de **produção**, e não de teste |
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+<Expandable title="Não encontro minhas credenciais de produção" default-open="false">
+
+Verifique se a conta do Mercado Pago já teve a identidade validada e se os dados do negócio foram preenchidos corretamente. Se o botão ou a área de produção não aparecer, conclua as etapas pendentes no portal do Mercado Pago e tente novamente.
+
+</Expandable>
+<Expandable title="Posso usar credenciais de teste?" default-open="false">
+
+Não. As credenciais de teste não processam pagamentos reais no cardápio digital. Para ativar o cartão de crédito no BeeFood, use apenas a **Public Key** e o **Access Token** de produção.
+
+</Expandable>
+<Expandable title="O que é o switch Habilitar Cartão de Crédito?" default-open="false">
+
+Esse switch controla se a opção de pagamento por cartão de crédito online aparece para o cliente no cardápio digital. Mesmo com as chaves preenchidas, o método não aparece no checkout se o switch estiver desligado.
+
+</Expandable>
+</ExpandableGroup>
+
+## Precisa de ajuda?
+
+Fale com o suporte BeeFood informando o nome da loja, o CNPJ e um print do modal, sem expor o Access Token inteiro.

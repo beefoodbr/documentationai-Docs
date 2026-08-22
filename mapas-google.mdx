@@ -1,0 +1,270 @@
+---
+title: Mapas do Google
+description: Crie uma chave de API do Google Maps no Google Cloud, ative as APIs necessárias e habilite mapas no cardápio digital BeeFood.
+---
+
+## Ative os mapas do Google no cardápio digital com uma chave de API
+
+O BeeFood usa o Google Maps para mapa, rotas e geolocalização. Para isso, você precisa criar uma chave de API ligada à sua conta Google e depois colar essa chave no BeeFood em **Aplicativos → Mapas Google**.
+
+Depois de salvar a chave, o sistema consegue usar recursos como busca de endereço, cálculo de distância e exibição do mapa no cardápio digital. Se você também precisa desenhar a área de entrega, use o manual de [Área de entrega](/area-entrega).
+
+<Callout kind="info" collapsed="false">
+
+Você vai fazer duas partes neste processo:
+
+- **Google Cloud**: criar ou localizar a chave e ativar as APIs necessárias
+- **BeeFood**: colar a chave no cardápio e salvar
+
+</Callout>
+
+## Vou pagar pela chave de API da Google?
+
+A criação da conta e da chave de API pode começar sem custo de uso imediato, mas o Google exige uma conta de faturamento com cartão cadastrado. Esse cartão funciona como validação da conta e também cobre uso acima dos créditos disponíveis.
+
+<Callout kind="tip" collapsed="false">
+
+**Crédito inicial de teste**: o Google oferece **US$ 300** em créditos válidos por **90 dias**. Esse crédito é oferecido uma vez, não renova todo mês, e termina quando você usa todo o valor ou quando os 90 dias acabam.
+
+</Callout>
+
+<Callout kind="info" collapsed="false">
+
+**Crédito mensal depois do teste**: após o período inicial, o Google oferece **US$ 200 por mês** para APIs de mapas. Em muitos casos, esse valor cobre o uso normal do cardápio digital sem cobrança adicional.
+
+</Callout>
+
+<Callout kind="alert" collapsed="false">
+
+Mesmo em conta de teste, o Google pode pedir **cartão de crédito internacional** para ativar o faturamento. Se o uso passar do crédito disponível, a cobrança acontece na conta Google, não no BeeFood.
+
+</Callout>
+
+## Crie a chave no Google e cole no BeeFood
+
+<Steps>
+<Step title="Criar uma conta Google, se ainda não tiver" icon="users" title-type="p">
+
+Abra a página de criação de conta do Google e finalize o cadastro. Se você já usa Gmail ou outra conta Google, pode seguir com essa mesma conta.
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/mapas-google/imagens-tratadas/01-google-criar-conta.png"
+  width="800"
+  height="450"
+  alt="Tela de criação de conta Google"
+  caption="Criar conta Google"
+/>
+
+Quando a conta estiver pronta, siga para a plataforma do Google Maps.
+
+</Step>
+
+<Step title="Abrir a plataforma do Google Maps e iniciar a configuração" icon="map" title-type="p">
+
+Acesse a plataforma do Google Maps no Google Cloud e clique em **Primeiros Passos**. Se o Google pedir login, entre com a conta criada ou com a conta que vai administrar a chave.
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/mapas-google/imagens-tratadas/02-maps-primeiros-passos.png"
+  width="800"
+  height="450"
+  alt="Tela inicial da plataforma do Google Maps com o botão Primeiros Passos"
+  caption="Primeiros Passos"
+/>
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/mapas-google/imagens-tratadas/03-maps-login-google.png"
+  width="800"
+  height="450"
+  alt="Tela de login do Google para acessar a plataforma"
+  caption="Login Google"
+/>
+
+Você deve chegar na etapa de configuração de faturamento da plataforma.
+
+</Step>
+
+<Step title="Ativar o faturamento da conta Google Cloud" icon="credit-card" title-type="p">
+
+Na primeira configuração, o Google pede os dados de faturamento da conta. Preencha o país, os dados pessoais e os dados do cartão para liberar o uso das APIs.
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/mapas-google/imagens-tratadas/04-faturamento-pais.png"
+  width="800"
+  height="450"
+  alt="Tela de seleção de país no faturamento do Google"
+  caption="Faturamento — país"
+/>
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/mapas-google/imagens-tratadas/05-faturamento-dados.png"
+  width="800"
+  height="450"
+  alt="Tela de preenchimento de dados pessoais no faturamento do Google"
+  caption="Faturamento — dados"
+/>
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/mapas-google/imagens-tratadas/06-faturamento-cartao.png"
+  width="800"
+  height="450"
+  alt="Tela de cadastro do cartão de crédito no faturamento do Google"
+  caption="Faturamento — cartão"
+/>
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/mapas-google/imagens-tratadas/07-faturamento-continuar.png"
+  width="800"
+  height="450"
+  alt="Tela de continuação da configuração de faturamento no Google"
+  caption="Continuar"
+/>
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/mapas-google/imagens-tratadas/08-faturamento-confirmar.png"
+  width="800"
+  height="450"
+  alt="Tela de confirmação final do faturamento no Google"
+  caption="Confirmar"
+/>
+
+Quando o faturamento estiver ativo, a plataforma libera a ativação das APIs e a criação da chave.
+
+</Step>
+
+<Step title="Ativar as APIs necessárias para o BeeFood" icon="settings" title-type="p">
+
+Ative as APIs que o BeeFood precisa para mapas, busca de endereço e cálculo de rota. As APIs exigidas são estas:
+
+- **Geocoding API**
+- **Maps JavaScript API**
+- **Places API (New)** ou **Places API**
+- **Routes API** ou **Distance Matrix API**
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/mapas-google/imagens-tratadas/09-apis-necessarias.png"
+  width="800"
+  height="450"
+  alt="Tela com as APIs do Google Maps necessárias para integração com o BeeFood"
+  caption="APIs necessárias"
+/>
+
+<Callout kind="alert" collapsed="false">
+
+Se faltar alguma dessas APIs, o BeeFood pode reprovar a validação quando você salvar a chave.
+
+</Callout>
+
+Depois de ativar as APIs, vá para a área de chaves e credenciais.
+
+</Step>
+
+<Step title="Localizar as chaves já cadastradas" icon="key-round" title-type="p">
+
+Antes de criar uma nova chave, confira se sua conta já tem uma chave pronta. Na área de **Chaves e credenciais**, veja a lista de chaves cadastradas.
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/mapas-google/imagens-tratadas/10-chaves-cadastradas.png"
+  width="800"
+  height="450"
+  alt="Lista de chaves cadastradas no Google Cloud"
+  caption="Chaves cadastradas"
+/>
+
+Se já existir uma chave que você quer usar, copie esse valor. Se não existir, crie uma nova no próximo passo.
+
+</Step>
+
+<Step title="Criar uma nova chave de API e copiar o valor" icon="plus" title-type="p">
+
+Na área de credenciais, clique em **CRIAR CREDENCIAIS** e depois em **Chave de API**. O Google gera a chave na hora.
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/mapas-google/imagens-tratadas/11-criar-chave-api.png"
+  width="800"
+  height="450"
+  alt="Tela de criação de chave de API no Google Cloud"
+  caption="Criar chave de API"
+/>
+
+A chave costuma começar com `AIzaSy...`. Copie esse valor completo, porque ele é o que você vai colar no BeeFood.
+
+</Step>
+
+<Step title="Abrir Aplicativos e entrar em Mapas Google no BeeFood" icon="app-window" title-type="p">
+
+No BeeFood, clique em **Aplicativos** no menu lateral. Depois role até a seção de entrega e abra **Mapas Google**.
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/mapas-google/imagens-tratadas/12-beefood-aplicativos.png"
+  width="800"
+  height="450"
+  alt="Tela do BeeFood mostrando Aplicativos e a opção Mapas Google"
+  caption="Aplicativos (1) → Mapas Google (2)"
+/>
+
+Essa tela abre o modal de configuração da chave do Google Maps.
+
+</Step>
+
+<Step title="Colar a chave, salvar e validar" icon="check-circle" title-type="p">
+
+No modal **Configurar Google Maps**, cole a chave no campo da API e clique em **SALVAR (F2)**.
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/mapas-google/imagens-tratadas/14-beefood-modal-chave.png"
+  width="800"
+  height="450"
+  alt="Modal do BeeFood para colar a chave da API do Google Maps e salvar"
+  caption="Chave (1) + SALVAR (2)"
+/>
+
+| Nº | Campo | O que fazer |
+|----|-------|-------------|
+| 1 | **Chave da API do Google Maps** | Cole a chave copiada no Google Cloud |
+| 2 | **SALVAR (F2)** | Grava a configuração. Se o BeeFood validar as APIs, confirme a validação |
+
+Se a validação passar, a chave já libera geolocalização no cardápio e no sistema. Isso inclui busca de endereço, distância e mapa.
+
+</Step>
+</Steps>
+
+## Problemas comuns
+
+| Problema | O que verificar |
+|----------|------------------|
+| Mapa não carrega no cardápio | Confira se a chave foi salva no cardápio certo e se as 4 APIs necessárias estão ativas no Google Cloud |
+| Validação reprova uma API | Ative a API que faltou, como **Places API (New)**, **Places API**, **Routes API** ou **Distance Matrix API**, e salve novamente |
+| Cobrança inesperada | Verifique o uso no faturamento do Google. O crédito mensal de US$ 200 tem limite, e uso acima desse valor pode gerar cobrança |
+| A chave não funciona depois de colar | Confirme se a chave foi copiada inteira e se começa no formato esperado, como `AIzaSy...` |
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+<Expandable title="A chave do Google Maps serve para quê?" default-open="false">
+
+Ela habilita os recursos de geolocalização no BeeFood e no cardápio digital. Isso inclui busca de endereço, cálculo de distância, rotas e exibição do mapa.
+
+</Expandable>
+
+<Expandable title="Preciso desenhar a área de entrega nesta mesma tela?" default-open="false">
+
+Não. A configuração da chave libera o uso do Google Maps, mas o desenho da área de entrega é outro processo. Para isso, use o manual de [Área de entrega](/area-entrega).
+
+</Expandable>
+
+<Expandable title="Preciso pagar para criar a chave?" default-open="false">
+
+Você pode criar a conta e a chave com os créditos oferecidos pelo Google, mas precisa cadastrar uma forma de pagamento para ativar o faturamento da conta.
+
+</Expandable>
+
+<Expandable title="Posso usar uma chave já existente?" default-open="false">
+
+Sim. Se sua conta Google Cloud já tem uma chave cadastrada e as APIs necessárias estão ativas, você pode copiar essa mesma chave e colar no BeeFood.
+
+</Expandable>
+</ExpandableGroup>
+
+## Precisa de ajuda?
+
+Fale com o suporte BeeFood informando o **nome da loja**, o **CNPJ** e um print do modal de configuração. Não compartilhe a chave completa em canais públicos.

@@ -70,6 +70,14 @@
                         ]
                       },
                       {
+                        "title": "📍 Pixel da Meta somente",
+                        "path": "pixel-meta-somente"
+                      },
+                      {
+                        "title": "📊 Pixel da Meta + API de Conversões",
+                        "path": "pixel-meta-api"
+                      },
+                      {
                         "group": "🏷️ Google Tag Manager",
                         "pages": [
                           {
@@ -128,6 +136,10 @@
                   {
                     "title": "📢 Banners de Avisos",
                     "path": "avisos-cardapio-digital"
+                  },
+                  {
+                    "title": "🖼️ Capas e Destaques",
+                    "path": "capas-e-destaques"
                   }
                 ]
               },
@@ -400,6 +412,30 @@
           {
             "group": "📱 Aplicativos",
             "pages": [
+              {
+                "title": "🗺️ Mapas do Google",
+                "path": "mapas-google"
+              },
+              {
+                "title": "🔗 Domínio próprio",
+                "path": "dominio-proprio"
+              },
+              {
+                "title": "💵 Gaveta de dinheiro",
+                "path": "gaveta-dinheiro"
+              },
+              {
+                "title": "💳 TEF PayGo",
+                "path": "tef-paygo"
+              },
+              {
+                "title": "💳 TEF Stone (AutoTEF)",
+                "path": "tef-stone"
+              },
+              {
+                "title": "💰 Mercado Pago",
+                "path": "mercado-pago"
+              },
               {
                 "group": "📲 Cardápio Digital Tablet",
                 "pages": [

@@ -1,0 +1,299 @@
+---
+title: Pixel da Meta + API de Conversões
+description: Conecte o Pixel da Meta com a API de Conversões ao cardápio digital BeeFood e rastreie visualizações, carrinhos e compras
+---
+
+## Conecte o Pixel da Meta ao cardápio digital e rastreie eventos de venda
+
+Conecte o **Pixel da Meta** com a **API de Conversões** ao seu cardápio digital BeeFood. Esse é o método recomendado porque os eventos seguem pelo navegador **e** pelo servidor, o que reduz perda de dados quando o celular do cliente bloqueia cookies.
+
+Ao configurar com sucesso, o cardápio passa a enviar estes eventos:
+
+- **Visualizar conteúdo** — toda vez que um produto ou página é vista
+- **Adicionar ao Carrinho** — toda vez que um produto entra no carrinho
+- **Inicialização de Compra** — quando o cliente informa o login e começa a finalizar
+- **Compra** — toda vez que uma compra é realizada
+
+<Callout kind="info" collapsed="false">
+
+As imagens deste manual usam marcações em verde nas telas do BeeFood para indicar campos e botões.
+
+</Callout>
+
+## Antes de começar
+
+Separe as contas e dados abaixo antes de abrir a configuração. Com isso em mãos, o processo fica direto e você evita refazer etapas na Meta e no BeeFood.
+
+- Conta **Business** da Meta com acesso ao **Gerenciador de Eventos**
+- Conta BeeFood com pelo menos um **cardápio digital**
+- **Identificador** do Pixel, também chamado de **Pixel ID**
+- **Token de acesso** gerado na Meta
+
+<Callout kind="alert" collapsed="false">
+
+Se você só tem o **Pixel ID** e ainda não tem o **token**, use o caminho **Pixel da Meta somente**. Este manual precisa dos dois dados.
+
+</Callout>
+
+## Configure na Meta e depois cole no BeeFood
+
+<Steps>
+<Step title="Abrir o Gerenciador de Eventos" icon="monitor" title-type="p">
+
+Na sua conta Business da Meta, abra o **Gerenciador de Eventos** pelo menu superior.
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/pixel-meta-api/imagens-tratadas/01-meta-gerenciador-eventos.png"
+  width="800"
+  height="450"
+  alt="Tela do Gerenciador de Eventos da Meta"
+  caption="Meta → Gerenciador de Eventos"
+/>
+
+Você está no lugar certo quando a tela da Meta mostrar a área de eventos e fontes de dados.
+
+</Step>
+
+<Step title="Conectar uma fonte de dados" icon="plus" title-type="p">
+
+Clique em **Conectar fontes de dados**.
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/pixel-meta-api/imagens-tratadas/02-meta-conectar-fontes.png"
+  width="800"
+  height="450"
+  alt="Botão Conectar fontes de dados na Meta"
+  caption="Conectar fontes de dados"
+/>
+
+Esse fluxo cria a fonte que vai gerar o identificador e o token usados depois no BeeFood.
+
+</Step>
+
+<Step title="Escolher a fonte Web" icon="globe" title-type="p">
+
+Selecione **Web** e clique em **Avançar**.
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/pixel-meta-api/imagens-tratadas/03-meta-fonte-web.png"
+  width="800"
+  height="450"
+  alt="Seleção da fonte Web na Meta"
+  caption="Fonte Web"
+/>
+
+A configuração deste manual parte da fonte web porque o rastreamento será ligado ao cardápio digital.
+
+</Step>
+
+<Step title="Dar um nome fácil de localizar ao Pixel" icon="edit" title-type="p">
+
+Use um nome simples de achar depois, como **Cardápio Digital BeeFood**, e clique em **Avançar**.
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/pixel-meta-api/imagens-tratadas/04-meta-nome-pixel.png"
+  width="800"
+  height="450"
+  alt="Tela para nomear o Pixel na Meta"
+  caption="Nome do Pixel"
+/>
+
+Esse nome serve só para organização da sua conta Meta.
+
+</Step>
+
+<Step title="Escolher API de Conversões e Pixel da Meta" icon="settings" title-type="p">
+
+Selecione **API de Conversões e Pixel da Meta** e clique em **Avançar**.
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/pixel-meta-api/imagens-tratadas/05-meta-api-conversoes.png"
+  width="800"
+  height="450"
+  alt="Opção API de Conversões e Pixel da Meta selecionada"
+  caption="API de Conversões e Pixel da Meta"
+/>
+
+Essa é a opção recomendada porque combina o envio pelo navegador com o envio pelo servidor.
+
+</Step>
+
+<Step title="Concluir a criação da fonte" icon="check-circle" title-type="p">
+
+Clique em **Concluir** para criar a fonte de dados.
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/pixel-meta-api/imagens-tratadas/06-meta-concluir.png"
+  width="800"
+  height="450"
+  alt="Tela de conclusão da criação da fonte na Meta"
+  caption="Concluir"
+/>
+
+Depois disso, a fonte já aparece na sua conta e você pode abrir as configurações dela.
+
+</Step>
+
+<Step title="Copiar o Identificador do Pixel" icon="copy" title-type="p">
+
+Abra a fonte recém-criada, entre na aba **Configurações** e clique em **Identificação do conjunto de dados** para copiar o número.
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/pixel-meta-api/imagens-tratadas/07-meta-identificador.png"
+  width="800"
+  height="450"
+  alt="Tela da Meta mostrando onde copiar o identificador do Pixel"
+  caption="Copiar Identificador"
+/>
+
+Esse número será usado no BeeFood como **Pixel ID Delivery**.
+
+</Step>
+
+<Step title="Gerar o token de acesso" icon="lock" title-type="p">
+
+Ainda em **Configurações**, localize **Configurar integração direta** e clique em **Gerar token de acesso**.
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/pixel-meta-api/imagens-tratadas/08-meta-gerar-token.png"
+  width="800"
+  height="450"
+  alt="Tela da Meta mostrando o botão Gerar token de acesso"
+  caption="Gerar token"
+/>
+
+Esse token é a segunda parte da configuração. Sem ele, este manual não funciona completo.
+
+</Step>
+
+<Step title="Copiar o token gerado" icon="copy" title-type="p">
+
+Clique sobre o token para copiar e guarde esse valor com cuidado.
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/pixel-meta-api/imagens-tratadas/09-meta-copiar-token.png"
+  width="800"
+  height="450"
+  alt="Tela da Meta mostrando o token gerado para cópia"
+  caption="Copiar token"
+/>
+
+A Meta não volta a mostrar o token inteiro com facilidade. Esse valor será usado no BeeFood como **Token Delivery**.
+
+</Step>
+
+<Step title="Abrir Aplicativos e entrar em Facebook Pixel no BeeFood" icon="grid" title-type="p">
+
+No BeeFood, clique em **Aplicativos** no menu lateral. Depois role até **Marketing e CRM** e abra o card **Facebook Pixel**.
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/pixel-meta-api/imagens-tratadas/10-beefood-aplicativos.png"
+  width="800"
+  height="450"
+  alt="Tela do BeeFood mostrando Aplicativos e o card Facebook Pixel"
+  caption="Aplicativos (1) → Facebook Pixel (2)"
+/>
+
+Você chegou ao lugar certo quando a janela listar os cardápios disponíveis para configuração.
+
+</Step>
+
+<Step title="Escolher o cardápio que vai receber o rastreamento" icon="folder" title-type="p">
+
+Na janela **Facebook Pixel**, clique em **CONFIGURAR** no cardápio digital que deve enviar os eventos.
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/pixel-meta-api/imagens-tratadas/11-beefood-pixel-lista.png"
+  width="800"
+  height="450"
+  alt="Lista de cardápios no BeeFood com o botão CONFIGURAR"
+  caption="CONFIGURAR no cardápio"
+/>
+
+A própria tela informa que a API de Conversões é o método recomendado.
+
+</Step>
+
+<Step title="Colar Pixel ID, colar o token e salvar" icon="save" title-type="p">
+
+No modal **Pixel da Meta (Facebook)**, preencha os campos e finalize com **SALVAR (F2)**.
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/pixel-meta-api/imagens-tratadas/12-beefood-modal-pixel.png"
+  width="800"
+  height="450"
+  alt="Modal do BeeFood para preencher Pixel ID Delivery, Token Delivery e salvar"
+  caption="Pixel ID Delivery (1), Token Delivery (2), SALVAR (3)"
+/>
+
+| Nº | Campo no BeeFood | O que colar |
+|---|---|---|
+| 1 | **Pixel ID Delivery** | Identificador copiado na Meta |
+| 2 | **Token Delivery** | Clique em **Adicionar token** ou **Alterar token** e cole o token gerado na Meta |
+| 3 | **SALVAR (F2)** | Grava a configuração |
+
+O rastreamento fica ativo depois que você salva no cardápio correto.
+
+<Callout kind="alert" collapsed="false">
+
+Não preencha **Pixel ID Presencial** nem **Token Presencial** neste manual. Esses campos não fazem parte da configuração do cardápio digital delivery.
+
+</Callout>
+
+</Step>
+</Steps>
+
+## O que passa a ser rastreado
+
+Depois de salvar, o cardápio digital envia estes eventos para a Meta:
+
+- **Visualizar conteúdo**
+- **Adicionar ao Carrinho**
+- **Inicialização de Compra**
+- **Compra**
+
+<Callout kind="tip" collapsed="false">
+
+Se a configuração foi feita no cardápio certo e salva corretamente, os eventos começam a sair a partir do uso normal do cardápio pelos clientes.
+
+</Callout>
+
+## Problemas comuns
+
+| Sintoma | O que verificar |
+|---|---|
+| Eventos não aparecem na Meta | Confira se o **Pixel ID** e o **Token** foram colados no cardápio correto e se você clicou em **SALVAR (F2)** |
+| Só tenho o Pixel ID, sem token | Este caminho precisa dos **dois** dados. Se você não tem token, use o manual **Pixel da Meta somente** |
+| Token parece cortado | Isso é normal. O BeeFood mostra só o começo e o fim do valor, como `abc…xyz` |
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+<Expandable title="Preciso preencher os campos Presencial?" default-open="false">
+
+Não. Neste manual, você preenche apenas **Pixel ID Delivery** e **Token Delivery**. Os campos **Presencial** ficam de fora.
+
+</Expandable>
+
+<Expandable title="Se eu já tenho só o Pixel ID, este manual serve?" default-open="false">
+
+Não. Este caminho exige **Pixel ID** e **token**. Se você só tem o identificador, use o fluxo **Pixel da Meta somente**.
+
+</Expandable>
+
+<Expandable title="Quais eventos o cardápio envia depois da configuração?" default-open="false">
+
+O cardápio envia **Visualizar conteúdo**, **Adicionar ao Carrinho**, **Inicialização de Compra** e **Compra**.
+
+</Expandable>
+
+<Expandable title="Por que a API de Conversões é o método recomendado?" default-open="false">
+
+Porque o evento segue pelo navegador e também pelo servidor. Com isso, menos dados se perdem quando o aparelho do cliente bloqueia cookies ou restringe o rastreamento no navegador.
+
+</Expandable>
+</ExpandableGroup>
+
+## Precisa de ajuda?
+
+Fale com o suporte BeeFood informando o **nome da loja**, o **CNPJ**, qual **cardápio digital** você configurou e, se possível, um print do modal sem expor o token inteiro em canais públicos.

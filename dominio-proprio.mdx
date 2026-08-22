@@ -1,0 +1,185 @@
+---
+title: Domínio próprio
+description: Configure um domínio próprio no cardápio digital BeeFood e verifique esse endereço na Meta para usar anúncios com mais confiança
+---
+
+## Use seu próprio domínio no cardápio digital
+
+Aponte um domínio seu, como `www.seurestaurante.com.br`, para o cardápio digital BeeFood. Assim, o cliente abre o cardápio pelo seu endereço, não pelo link padrão.
+
+No BeeFood3, você não cola DNS dentro do sistema. Você pede os dados ao suporte BeeFood e depois configura os servidores no seu provedor de domínio, como Registro.br, HostGator ou outro.
+
+<Callout kind="info" collapsed="false">
+
+Com o domínio verificado na Meta, seus anúncios podem apontar direto para o seu endereço personalizado. Isso ajuda a passar mais confiança para o cliente.
+
+</Callout>
+
+## Antes de começar
+
+<Callout kind="info" collapsed="false">
+
+Antes de seguir, confirme estes três pontos:
+
+- Você já contratou um domínio com um registrador, como Registro.br, GoDaddy ou HostGator.
+- Você tem acesso à zona DNS desse domínio.
+- Você tem uma conta BeeFood para abrir o pedido com o suporte.
+
+</Callout>
+
+## Configure o domínio e faça a verificação na Meta
+
+<Steps>
+<Step title="Peça os DNS ao suporte BeeFood" icon="help-circle" title-type="p">
+
+Abra o BeeFood3 e clique em **Aplicativos**. Na seção **Marketing e CRM**, abra **Domínio Próprio**.
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/dominio-proprio/imagens-tratadas/05-beefood-aplicativos.png"
+  width="800"
+  height="450"
+  alt="Tela do BeeFood com o menu Aplicativos e a opção Domínio Próprio destacada"
+  caption="Aplicativos (1) → Domínio Próprio (2)"
+/>
+
+No modal **Domínio Personalizado**, clique em **Fale com o suporte**. Informe o domínio contratado, como `seurestaurante.com.br`, e aguarde o envio dos **4 servidores de DNS** da sua loja.
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/dominio-proprio/imagens-tratadas/06-beefood-modal-dominio.png"
+  width="800"
+  height="450"
+  alt="Modal de domínio próprio no BeeFood com o botão Fale com o suporte em destaque"
+  caption="Fale com o suporte (1)"
+/>
+
+Você vai usar exatamente os quatro servidores enviados pelo suporte BeeFood. Não copie DNS de outra loja, mesmo que também use BeeFood.
+
+</Step>
+
+<Step title="Cole os DNS no provedor do seu domínio" icon="settings" title-type="p">
+
+Depois de receber os quatro servidores, abra o painel do seu provedor de domínio e localize a área de DNS ou servidores de nomes. É nessa etapa que o apontamento do domínio é feito.
+
+Se o seu domínio estiver no **Registro.br**, abra a zona DNS do domínio e preencha os servidores informados pelo suporte BeeFood.
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/dominio-proprio/imagens-tratadas/01-registro-br-dns.png"
+  width="800"
+  height="450"
+  alt="Tela do Registro.br mostrando a configuração de DNS do domínio"
+  caption="DNS no Registro.br"
+ />
+
+Se o seu domínio estiver na **HostGator**, o caminho pode passar pela troca da plataforma de hospedagem. Primeiro, clique em **Alterar plataforma** na área de DNS.
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/dominio-proprio/imagens-tratadas/02-hostgator-alterar.png"
+  width="800"
+  height="450"
+  alt="Tela da HostGator com a opção Alterar plataforma destacada"
+  caption="HostGator — Alterar plataforma"
+ />
+
+Depois, escolha **Outra Plataforma de Hospedagem** e continue.
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/dominio-proprio/imagens-tratadas/03-hostgator-outra-plataforma.png"
+  width="800"
+  height="450"
+  alt="Tela da HostGator com a opção Outra Plataforma de Hospedagem"
+  caption="Outra plataforma"
+ />
+
+Na etapa seguinte, preencha os DNS enviados pelo suporte BeeFood e confirme a alteração.
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/dominio-proprio/imagens-tratadas/04-hostgator-preencher-dns.png"
+  width="800"
+  height="450"
+  alt="Tela da HostGator para preencher os servidores DNS"
+  caption="Preencher DNS"
+ />
+
+<Callout kind="tip" collapsed="false">
+
+Os prints são exemplos do local onde você cola os dados. Os nomes corretos dos servidores são sempre os que o suporte BeeFood enviou para a sua loja.
+
+</Callout>
+
+<Callout kind="alert" collapsed="false">
+
+Depois que você salvar os DNS no provedor e o time BeeFood concluir a parte interna da configuração, a propagação pode levar até 24 horas.
+
+</Callout>
+
+Quando a configuração estiver ativa, o seu domínio passa a abrir o cardápio digital BeeFood.
+
+</Step>
+
+<Step title="Verifique o domínio na Meta" icon="shield" title-type="p">
+
+Com o domínio próprio configurado, faça a verificação na Meta para usar esse endereço nos anúncios.
+
+Siga este caminho nas configurações de negócio da Meta:
+
+| Etapa | O que fazer |
+|-------|-------------|
+| 1 | Clique na engrenagem de configurações do negócio |
+| 2 | Abra **Adequação e Segurança** |
+| 3 | Entre em **Domínios** |
+| 4 | Escolha a opção de atualizar o registro **TXT** no DNS com o registrador |
+| 5 | Copie o valor TXT gerado pela Meta |
+
+Depois de copiar o TXT, envie esse valor ao suporte BeeFood. O time publica o registro TXT no DNS do cardápio.
+
+Quando o suporte confirmar que o TXT foi publicado, volte na Meta e clique em **Verificar domínio**. Se tudo estiver certo, a Meta conclui a validação do seu endereço.
+
+</Step>
+</Steps>
+
+## Problemas comuns
+
+| Problema | O que verificar |
+|----------|-----------------|
+| O domínio ainda abre a página antiga | Aguarde a propagação DNS por até 24 horas e limpe o cache do navegador |
+| Não sei quais 4 servidores usar | Use apenas os 4 servidores enviados pelo suporte BeeFood |
+| A Meta não verifica o TXT | Confirme com o suporte se o registro TXT já foi publicado no DNS |
+| Não encontro onde configurar no BeeFood | Abra **Aplicativos** e, em **Marketing e CRM**, entre em **Domínio Próprio** |
+
+## Dúvidas frequentes
+
+<ExpandableGroup>
+<Expandable title="O BeeFood registra domínio para minha loja?" default-open="false">
+
+Não. O domínio precisa ser contratado por você em um registrador. O BeeFood faz o apontamento para o cardápio digital, mas não vende nem registra domínio.
+
+</Expandable>
+
+<Expandable title="Posso copiar o DNS de outra loja BeeFood?" default-open="false">
+
+Não. Os quatro servidores são gerados para a sua loja. Use apenas os dados enviados pelo suporte BeeFood no seu atendimento.
+
+</Expandable>
+
+<Expandable title="Preciso configurar o DNS dentro do BeeFood?" default-open="false">
+
+Não. No BeeFood3 não existe campo para colar DNS. A configuração é feita no painel do provedor do seu domínio.
+
+</Expandable>
+
+<Expandable title="Quanto tempo demora para funcionar?" default-open="false">
+
+Depois que você salvar os DNS no provedor e o time BeeFood concluir a configuração do lado deles, o domínio pode levar até 24 horas para responder corretamente.
+
+</Expandable>
+
+<Expandable title="Por que verificar o domínio na Meta?" default-open="false">
+
+A verificação permite que seus anúncios apontem direto para o seu domínio próprio. Isso evita usar o link padrão do cardápio e reforça a confiança do cliente ao abrir o anúncio.
+
+</Expandable>
+</ExpandableGroup>
+
+## Precisa de ajuda?
+
+Use **Fale com o suporte** no modal **Domínio Próprio** e informe o domínio contratado. Se você estiver na etapa da Meta, envie também o valor TXT gerado para a verificação.

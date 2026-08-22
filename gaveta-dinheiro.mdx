@@ -1,0 +1,109 @@
+---
+title: Gaveta de dinheiro
+description: Configure a gaveta de dinheiro pela impressora térmica no BeeFood3, com os ajustes da porta de gaveta e o que verificar quando ela não abre.
+---
+
+## Configuração pela impressora
+
+A gaveta de dinheiro não tem tela própria no BeeFood3. A abertura acontece pelo comando da impressora térmica: o sistema imprime o cupom e a impressora envia o pulso que destrava a gaveta pelo cabo RJ-11 ligado na porta de periféricos da impressora.
+
+Esse ajuste é feito no painel ou utilitário da impressora, não no BeeFood. O exemplo desta página usa a impressora Control iD, mas a lógica é a mesma em outras marcas: procure a opção de abertura de gaveta, cash drawer ou gaveta no driver ou no menu da impressora.
+
+## O que você precisa
+
+Antes de configurar, confirme estes itens:
+
+- Impressora térmica com porta de gaveta RJ-11 ou RJ-12
+- Gaveta compatível ligada nessa porta da impressora
+- Impressora já cadastrada no Windows, ou já configurada em conexão direta, e usada no caixa
+
+<Callout kind="alert" collapsed="false">
+
+A gaveta deve ficar ligada na porta da impressora, não na USB do computador. Sem a impressora no meio, o BeeFood não envia o pulso de abertura.
+
+</Callout>
+
+<Callout kind="info" collapsed="false">
+
+A gaveta só abre quando a impressora imprime um documento, como cupom de venda ou sangria. Sem impressão, não há pulso para destravar a gaveta.
+
+</Callout>
+
+## Control iD — abertura de gaveta
+
+No painel da impressora Control iD, ative a abertura de gaveta no momento da impressão. Esse é o ponto central da configuração.
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/gaveta-dinheiro/imagens-tratadas/01-control-id-gaveta.png"
+  width="800"
+  height="450"
+  alt="Painel da impressora Control iD com opção de abertura de gaveta"
+  caption="Painel Control iD — abertura de gaveta"
+/>
+
+Confira no painel da impressora:
+
+- **Gaveta habilitada**
+- **Pulso ou tempo de abertura** no valor recomendado pelo fabricante
+- **Porta da gaveta** selecionada na própria impressora
+
+Depois de ajustar, salve no utilitário da impressora.
+
+<Callout kind="tip" collapsed="false">
+
+Se você não encontrar nenhuma opção de gaveta no BeeFood3, isso está correto. Esse ajuste existe somente no utilitário, driver ou painel da impressora.
+
+</Callout>
+
+## Relação com a impressora no BeeFood
+
+A gaveta segue a impressora do caixa. Se o cupom não sai, a gaveta também não abre.
+
+Para o modelo **Print iD – Control iD** em **conexão direta**, use estes parâmetros no BeeFood:
+
+| Configuração | Valor |
+|---|---|
+| Modelo | EscPosEpson |
+| Página de código | 850 |
+| Colunas | 48 |
+| Espaço entre linhas | 0 |
+| Linhas entre cupons | 0 |
+
+A conexão direta só funciona com o caixa aberto. Se o caixa estiver fechado, a impressora não recebe o comando e a gaveta não abre.
+
+## Problemas comuns
+
+| Problema | O que verificar |
+|---|---|
+| Gaveta não abre | O cabo está na porta da impressora, e não no computador? A abertura de gaveta está ligada no painel da Control iD? |
+| Abre só às vezes | O cupom está imprimindo? O caixa está aberto? |
+| Não acho a tela no BeeFood | Não existe tela de gaveta no BeeFood. O ajuste é no utilitário ou no painel da impressora. |
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+  <Expandable title="Por que a gaveta não abre sozinha no BeeFood?" default-open="false">
+
+A gaveta não recebe comando direto do BeeFood. Quem envia o pulso de abertura é a impressora térmica no momento da impressão.
+
+  </Expandable>
+  <Expandable title="Posso ligar a gaveta na USB do computador?" default-open="false">
+
+Não. Ligue a gaveta na porta RJ-11 ou RJ-12 da impressora. Se ela estiver ligada no computador, a impressora não consegue enviar o pulso de abertura.
+
+  </Expandable>
+  <Expandable title="A gaveta abre sem imprimir?" default-open="false">
+
+Não. A abertura depende da impressão de um documento, como cupom de venda ou sangria. Sem impressão, não há pulso.
+
+  </Expandable>
+  <Expandable title="Uso outra marca de impressora. Este manual ainda serve?" default-open="false">
+
+Sim. O caminho pode mudar de nome, mas o tipo de ajuste é o mesmo. Procure por abertura de gaveta, cash drawer ou gaveta no driver ou no menu da impressora.
+
+  </Expandable>
+</ExpandableGroup>
+
+## Precisa de ajuda?
+
+Se a impressora estiver imprimindo normalmente e a gaveta continuar sem abrir, fale com o suporte BeeFood informando o modelo da impressora, como a gaveta está ligada e se o problema acontece em todas as impressões ou só em algumas.
