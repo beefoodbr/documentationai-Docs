@@ -124,6 +124,10 @@
                   {
                     "title": "🔗 Link Multilojas",
                     "path": "link-multilojas"
+                  },
+                  {
+                    "title": "📢 Banners de Avisos",
+                    "path": "avisos-cardapio-digital"
                   }
                 ]
               },

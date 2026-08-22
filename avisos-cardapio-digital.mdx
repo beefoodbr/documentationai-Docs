@@ -1,0 +1,240 @@
+---
+title: Avisos do Cardápio Digital
+description: >-
+  Coloque recados no cardápio digital — feriado, horário especial, salão fechado
+  — com cartaz quadrado, agenda por dia da semana e canal de entrega, sem
+  cadastrar produto
+---
+## Coloque um recado no cardápio digital do seu cliente
+
+Mostre feriado, horário novo ou salão fechado sem cadastrar um produto de R$ 0,00. O aviso não vende, não abre combo, não vai para o carrinho e não tem botão de pedir. Quando você quer mostrar um produto, use **Destaques** na aba Configurações.
+
+<Callout kind="info" collapsed="false">
+  As imagens deste manual contêm setas numeradas que indicam onde clicar ou o que conferir em cada passo.
+</Callout>
+
+## Duas coisas para saber antes de começar
+
+Os avisos funcionam por **dia da semana**, não por data específica. Isso muda principalmente o uso em feriados e comunicados pontuais.
+
+<Callout kind="alert" collapsed="false">
+  Não existe data de calendário. Os chips são domingo a sábado, não uma data como `7 de setembro`. Num feriado, ligue o aviso e, no dia seguinte, pause ou apague. Se você deixar o aviso marcado só na segunda, ele volta a aparecer em toda segunda.
+</Callout>
+
+A aba também não tem um botão geral de salvar. Cada ação grava no momento em que você executa: enviar a imagem, salvar o modal, arrastar a ordem ou remover um aviso.
+
+<Callout kind="info" collapsed="false">
+  Não existe botão Salvar na aba. Fechar o modal sem salvar descarta o aviso recém-enviado, porque o título é obrigatório para ele entrar na lista.
+</Callout>
+
+Depois de gravar, o cardápio do cliente pode demorar um pouco para refletir a mudança. Esse atraso é esperado.
+
+<Callout kind="info" collapsed="false">
+  Depois de salvar, o cardápio do cliente pode levar até 1 minuto para atualizar. Não é instantâneo, e isso é normal.
+</Callout>
+
+## Onde fica
+
+Abra **Cardápio Digital → Avisos** no menu lateral. A aba ainda aparece marcada como **Novo**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-avisos/imagens-tratadas/01-aba-vazia.png" width="800" alt="Aba Avisos vazia no menu Cardápio Digital com bloco de regras e área de upload" />
+
+| Nº | Item                      | Para que serve                                                                                              |
+| -- | ------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| 1  | **Avisos**                | A tela deste manual.                                                                                        |
+| 2  | **Bloco de regras**       | Imagem só, sem vídeo, formato ideal quadrado `1:1`, título até 60, descrição até 500 e no máximo 10 avisos. |
+| 3  | **Arraste a imagem aqui** | Área onde o aviso nasce. Sem imagem, o card não entra.                                                      |
+
+O texto da tela ainda fala em **promoções**. Ignore esse rótulo nessa aba: promoção de produto é **Destaque**. Aviso é recado operacional.
+
+## Criar e configurar um aviso
+
+<Steps>
+  <Step title="Enviar a imagem (o cartaz)" icon="image" title-type="p">
+    O cliente lê o aviso no celular, então a imagem é a mensagem. Use um cartaz quadrado, com texto grande e alto contraste. Foto de fachada com um papel pequeno tende a sumir na tela.
+
+    Arraste o arquivo ou clique na área pontilhada. Você pode usar JPG, PNG, WEBP ou GIF. Vídeo é recusado nessa aba.
+
+    O sistema otimiza a imagem sozinho. Se a proporção ficar longe de `1:1`, a tela avisa que pode haver corte em alguns aparelhos.
+
+    Assim que a imagem sobe, o modal **Editar aviso** abre. O título vem vazio e é obrigatório. Sem descrição, o cliente vê o cartaz, mas tocar no card não abre o detalhe.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-avisos/imagens-tratadas/02-modal-titulo-vazio.png" width="800" alt="Modal Editar aviso recém-aberto com título obrigatório vazio e campo de descrição opcional" />
+
+    | Nº | Item            | O que fazer                                                 |
+    | -- | --------------- | ----------------------------------------------------------- |
+    | 1  | **Título \***   | Obrigatório. Exemplo: **Fechados no feriado**.              |
+    | 2  | **Descrição**   | Opcional. É o texto que aparece no modal do cardápio.       |
+    | 3  | **SALVAR (F2)** | Grava o aviso. **CANCELAR (ESC)** descarta este aviso novo. |
+  </Step>
+
+  <Step title="O recado do feriado" icon="calendar" title-type="p">
+    No exemplo da hamburgueria, o primeiro aviso serve só para dizer que a loja não abre no feriado. O cartaz já carrega a mensagem principal, e o título com a descrição repetem o recado para quem tocar no card.
+
+    Nesse caso, os dias ficam todos ligados e **Dia inteiro** também. Como não existe data de calendário, esse é o caminho prático para feriado: ligar quando precisar e pausar depois.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-avisos/imagens-tratadas/03-modal-feriado.png" width="800" alt="Aviso de feriado preenchido com cartaz, título, descrição, dias da semana e botão SALVAR" />
+
+    | Nº | Item               | O que fazer                                                              |
+    | -- | ------------------ | ------------------------------------------------------------------------ |
+    | 1  | **Cartaz**         | A imagem que o cliente lê no celular.                                    |
+    | 2  | **Título**         | **Fechados no feriado**.                                                 |
+    | 3  | **Descrição**      | **No dia 7 de setembro a loja não abre. Não estamos recebendo pedidos.** |
+    | 4  | **Dias da semana** | Todos, neste exemplo. Não dá para marcar uma data específica.            |
+    | 5  | **SALVAR (F2)**    | Grava. O switch **Exibindo** já vem ligado.                              |
+
+    O switch **Exibindo / Pausado**, ao lado do título, desliga o aviso sem apagar. Use esse switch no dia seguinte ao feriado.
+  </Step>
+
+  <Step title="Horário novo com faixa de hora" icon="clock" title-type="p">
+    Quando o recado vale só em uma faixa, desligue **Dia inteiro**. A tela passa a mostrar os campos **Início** e **Fim**.
+
+    No exemplo, o aviso aparece de segunda a sábado, das 18:00 às 23:00. O domingo fica de fora.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-avisos/imagens-tratadas/04-modal-horario.png" width="800" alt="Aviso de horário configurado com faixa de 18h às 23h e domingo desmarcado" />
+
+    | Nº | Item            | O que fazer                                    |
+    | -- | --------------- | ---------------------------------------------- |
+    | 1  | **DOM**         | Desmarcado. O aviso não aparece no domingo.    |
+    | 2  | **Dia inteiro** | Desligado, para valer só nessa faixa.          |
+    | 3  | **Início**      | `18:00`.                                       |
+    | 4  | **Fim**         | `23:00`. O início precisa ser menor que o fim. |
+
+    Quem decide se o aviso está no ar é o relógio do celular do cliente. Fora da faixa, o card some sozinho.
+
+    <Callout kind="alert" collapsed="false">
+      A faixa de hora não cruza meia-noite. Se você tentar usar `18:00` até `02:00`, o horário fica inválido. Para madrugada, ajuste a grade em **Horário de Atendimento**.
+    </Callout>
+  </Step>
+
+  <Step title="Escolher o canal: Delivery, Presencial ou ambos" icon="truck" title-type="p">
+    Cada aviso pode aparecer no **Delivery**, no **Presencial** ou nos dois canais. Você não consegue deixar os dois desligados ao mesmo tempo.
+
+    No terceiro exemplo, o salão está fechado e só o **Delivery** fica ligado. Quem pede pela mesa não vê esse recado.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-avisos/imagens-tratadas/05-modal-delivery.png" width="800" alt="Aviso configurado só no canal Delivery com Presencial desligado" />
+
+    | Nº | Item           | O que fazer                           |
+    | -- | -------------- | ------------------------------------- |
+    | 1  | **Delivery**   | Ligado. Roxo, com o ícone da moto.    |
+    | 2  | **Presencial** | Desligado. Azul, com o ícone da loja. |
+  </Step>
+</Steps>
+
+## A lista de avisos: ordem e remoção
+
+A lista funciona como um carrossel. A ordem da esquerda para a direita é a mesma ordem exibida no cardápio do cliente. Arraste pela alça do card para reordenar, e a mudança grava na hora.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-avisos/imagens-tratadas/06-lista-tres-avisos.png" width="800" alt="Lista de três avisos na aba com carrossel, selo Exibindo e botões de editar e remover" />
+
+| Nº | Item                    | O que é                                    |
+| -- | ----------------------- | ------------------------------------------ |
+| 1  | **Dropzone**            | Ainda cabem 7. O limite total é 10 avisos. |
+| 2  | **Fechados no feriado** | Todo dia · 24h · Delivery e Presencial.    |
+| 3  | **Novo horário**        | Seg a sáb · a faixa que você gravou.       |
+| 4  | **Hoje só delivery**    | Todo dia · 24h · só Delivery.              |
+
+O selo verde **Exibindo** aparece no canto do cartaz. O botão **Editar** reabre o modal do aviso.
+
+Quando você usa a lixeira, a tela pede confirmação e grava na hora.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-avisos/imagens-tratadas/07-confirmar-remover.png" width="600" alt="Confirmação para remover aviso com botões REMOVER e CANCELAR" />
+
+| Nº | Botão               | O que fazer              |
+| -- | ------------------- | ------------------------ |
+| 1  | **REMOVER (ENTER)** | Apaga o aviso.           |
+| 2  | **CANCELAR (ESC)**  | Mantém o aviso na lista. |
+
+Sem nenhum aviso, a faixa some do cardápio do cliente.
+
+## O que o cliente vê no computador
+
+Depois de salvar, espere até 1 minuto e abra o cardápio. Os avisos entram entre o filtro de categorias e os produtos. Eles não se misturam com combo e não funcionam como botão de pedido.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-avisos/imagens-tratadas/09-cardapio-desktop.png" width="800" alt="Cardápio digital no computador mostrando os três avisos entre o filtro de categorias e os produtos" />
+
+| Nº | Aviso                   | Recado                            |
+| -- | ----------------------- | --------------------------------- |
+| 1  | **Fechados no feriado** | A loja não abre no 7 de setembro. |
+| 2  | **Novo horário**        | 18h às 23h, segunda a sábado.     |
+| 3  | **Hoje só delivery**    | Salão fechado; delivery segue.    |
+
+No desktop, os três cards podem aparecer lado a lado. Tocar em qualquer um com descrição abre o detalhe, mas não existe botão de pedir.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-avisos/imagens-tratadas/10-cardapio-desktop-modal.png" width="600" alt="Modal do aviso aberto no computador com cartaz em cima e texto embaixo" />
+
+O detalhe abre um modal com o cartaz em cima e o texto embaixo. Nesse modal, o cliente só fecha o aviso no **X** do canto.
+
+## O que o cliente vê no celular
+
+No celular, a faixa vira carrossel. O cliente vê um card e meio, com o próximo já aparecendo na lateral. Por isso o cartaz precisa ser legível sem zoom.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-avisos/imagens-tratadas/11-cardapio-mobile.png" width="400" alt="Cardápio digital no celular com carrossel de avisos mostrando um card e meio" />
+
+| Nº | Aviso                   | O que o cliente lê no cartaz        |
+| -- | ----------------------- | ----------------------------------- |
+| 1  | **Fechados no feriado** | FECHADOS NO FERIADO · 7 de setembro |
+| 2  | **Novo horário**        | NOVO HORÁRIO · 18h – 23h            |
+
+Quando existe descrição, tocar no card abre o recado inteiro. O único botão visível nesse modal é **FECHAR**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-avisos/imagens-tratadas/12-cardapio-mobile-modal.png" width="400" alt="Modal do aviso aberto no celular com botão FECHAR" />
+
+## Resumo do caminho
+
+1. Abra **Cardápio Digital → Avisos**.
+2. Arraste um cartaz quadrado `1:1`, com o recado em texto grande.
+3. Preencha o **Título**, que é obrigatório.
+4. Adicione uma **Descrição** se você quiser que o toque abra o detalhe.
+5. Escolha os **dias da semana** e use **Dia inteiro** ou uma **faixa de hora**.
+6. Marque **Delivery**, **Presencial** ou os dois.
+7. Clique em **SALVAR (F2)**, espere até 1 minuto e confira no cardápio no computador e no celular.
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+  <Expandable title="Posso usar o aviso para o combo do dia?" default-open="false">
+    Não. Combo é produto. Coloque em **Destaques** ou no próprio cardápio. O aviso não tem call to action e não leva a nenhum item.
+  </Expandable>
+
+  <Expandable title="Marquei só o domingo e o aviso não aparece hoje" default-open="false">
+    Hoje não é domingo. Quem decide se o aviso aparece é o dia e a hora no celular do cliente.
+  </Expandable>
+
+  <Expandable title="Desliguei Dia inteiro, pus 18:00 → 02:00, e o horário sumiu" default-open="false">
+    A faixa não cruza meia-noite. O início precisa ser menor que o fim. Para madrugada, use a grade de **Horário de Atendimento**.
+  </Expandable>
+
+  <Expandable title="Salvei e o cliente ainda não vê" default-open="false">
+    Espere até 1 minuto e peça para atualizar a página do cardápio.
+  </Expandable>
+
+  <Expandable title="Fechei o modal sem salvar e o aviso sumiu" default-open="false">
+    Esse comportamento é esperado no aviso novo. Sem título, ele não entra na lista, e fechar sem salvar descarta o envio.
+  </Expandable>
+
+  <Expandable title="Quantos avisos posso ter?" default-open="false">
+    Até 10. Sem nenhum, a faixa de avisos some do cardápio.
+  </Expandable>
+
+  <Expandable title="O aviso vale para todas as lojas?" default-open="false">
+    Não. O aviso vale por cardápio, ou seja, por filial.
+  </Expandable>
+</ExpandableGroup>
+
+## Manuais relacionados
+
+<Columns cols="3">
+  <Card title="Horário de Atendimento" href="/horario-atendimento" icon="calendar" cta="Abrir manual" horizontal="false">
+    Configure a grade semanal de abertura e fechamento da loja.
+  </Card>
+
+  <Card title="Pausa Programada" href="/pausa-programada" icon="pause" cta="Abrir manual" horizontal="false">
+    Pause a loja agora ou programe um fechamento fora da rotina.
+  </Card>
+
+  <Card title="Cardápio — Fundamentos" href="/cardapio-fundamentos" icon="book-open" cta="Abrir manual" horizontal="false">
+    Revise a estrutura básica do cardápio e quando usar cada recurso.
+  </Card>
+</Columns>
+
