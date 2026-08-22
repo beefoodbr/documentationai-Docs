@@ -1,0 +1,55 @@
+---
+title: Parâmetros Gerais
+description: >-
+  Configure o Motivo de Cancelamento e a identificação de Operador no card Geral
+  para reforçar o controle e a segurança do seu PDV.
+---
+## Parâmetros Gerais
+
+No card **Geral**, em **Configuração → Parâmetros**, você define duas regras que aumentam o controle sobre descontos, cancelamentos e acesso ao PDV. As alterações são salvas automaticamente em cerca de 500 ms, então não existe botão de salvar.
+
+Esses parâmetros atuam em momentos diferentes da operação. **Motivo de Cancelamento** controla a justificativa de ações sensíveis, enquanto **Operador** controla quem pode entrar no PDV ou em **Mesas**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/parametros-geral/imagens-tratadas/01-card-geral.png" width="600" alt="Card Geral em Configuração e Parâmetros" />
+
+### Motivo de Cancelamento
+
+Quando você ativa essa opção, o sistema exige uma justificativa por escrito sempre que uma venda, um item ou um desconto for cancelado. O preenchimento acontece no modal **Motivo do Desconto/Cancelamento**, no campo **Descrição**.
+
+A justificativa precisa ter pelo menos **2 palavras**. Se o texto não atender essa regra, o processo não avança.
+
+Se a configuração de **Senha Gerente** também estiver ativa para a ação, o sistema primeiro pede o motivo e só depois solicita a senha do gerente. Essa ordem ajuda a registrar a justificativa antes da liberação da operação.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/parametros-geral/imagens-tratadas/02-motivo-ligado.png" width="600" alt="Interruptor Motivo de Cancelamento ligado" />
+
+### Operador
+
+Quando você ativa essa opção, o caixa precisa se identificar antes de acessar o **PDV** ou **Mesas**. O sistema abre o modal **Identificação do Operador** com um teclado numérico de **6 dígitos** para informar o código do funcionário.
+
+Esse código vem do cadastro do colaborador em **Cadastros → Funcionários**. Se o código não estiver configurado corretamente no cadastro, a identificação não funciona como esperado.
+
+O card também exibe o botão **Testar**, que abre a mesma validação para você conferir o comportamento da regra sem precisar entrar em uma venda.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/parametros-geral/imagens-tratadas/03-operador-ligado.png" width="600" alt="Interruptor Operador ligado" />
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/parametros-geral/imagens-tratadas/04-testar-operador.png" width="600" alt="Botão Testar do parâmetro Operador" />
+
+### Como o parâmetro Operador se comporta
+
+O acesso varia conforme a configuração e o vínculo do usuário com um funcionário cadastrado:
+
+- **Usuário com&#x20;****`funcionarioID`****&#x20;vinculado** — o acesso é liberado automaticamente.
+- **Parâmetro desligado** — o acesso é liberado automaticamente.
+- **Parâmetro ligado sem&#x20;****`funcionarioID`****&#x20;vinculado** — o sistema abre o teclado de identificação para informar o código do operador.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/parametros-geral/imagens-tratadas/06-motivo-cancelar.png" width="600" alt="Modal de motivo de cancelamento em uso" />
+
+<Callout kind="info" collapsed="false">
+  O sinalizador `operadorPDVObrigar` existe na API e no aplicativo mobile, mas não aparece como opção de configuração na tela desktop do BeeFood3.
+</Callout>
+
+### Quando usar cada opção
+
+Ative **Motivo de Cancelamento** quando você precisa registrar o motivo de descontos e cancelamentos para auditoria interna, conferência de caixa ou acompanhamento da equipe.
+
+Ative **Operador** quando mais de uma pessoa usa o mesmo caixa e você quer identificar quem entrou no PDV antes de iniciar o atendimento. Isso ajuda a rastrear operações por funcionário com mais clareza.

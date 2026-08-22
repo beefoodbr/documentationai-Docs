@@ -262,12 +262,32 @@
                 "group": "🔧 Parâmetros",
                 "pages": [
                   {
+                    "title": "⚙️ Parâmetros Gerais",
+                    "path": "parametros-geral"
+                  },
+                  {
                     "title": "🔢 Código do Operador",
                     "path": "parametros-codigo-operador"
                   },
                   {
                     "title": "🔑 Senha Gerente",
                     "path": "parametros-senha-gerente"
+                  },
+                  {
+                    "title": "📱 App do Garçom",
+                    "path": "app-garcom-parametros"
+                  },
+                  {
+                    "title": "🛵 Pagamento Automático Delivery",
+                    "path": "delivery-pagamento-auto"
+                  },
+                  {
+                    "title": "🪑 Taxas e Mesas",
+                    "path": "mesas-taxas-obrigatorias"
+                  },
+                  {
+                    "title": "⚖️ Balança no PDV",
+                    "path": "pdv-balanca"
                   }
                 ]
               },

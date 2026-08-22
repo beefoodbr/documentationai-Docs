@@ -1,0 +1,70 @@
+---
+title: Taxas e Campos Obrigatórios em Mesas
+description: Defina taxa de serviço padrão, percentual aplicado e quais campos são obrigatórios ao abrir vendas em mesas e comandas.
+---
+
+## Taxas e Campos Obrigatórios em Mesas
+
+Configure como a taxa de serviço e os campos obrigatórios devem funcionar em pedidos de mesas e comandas. Essas opções ficam em **Configuração → Parâmetros**, no card **Taxa de Serviço e Mesas**, dentro do bloco **Parâmetros gerais para Mesas/Comandas**.
+
+As alterações são salvas automaticamente. Isso significa que, ao ligar, desligar ou ajustar um campo, o sistema já passa a usar a nova configuração nos próximos pedidos.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/mesas-taxa-obrigatorias/imagens-tratadas/01-bloco-gerais.png" width="600" alt="Bloco Parâmetros gerais para Mesas e Comandas" />
+
+### O que cada configuração faz
+
+### Taxa de Serviço Padrão
+
+Aplica automaticamente a taxa de serviço em todo novo pedido aberto com **mesa** ou **comanda**. O padrão da loja fica pré-preenchido, mas o operador ainda pode desligar a taxa em um pedido específico.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/mesas-taxa-obrigatorias/imagens-tratadas/02-taxa-10.png" width="600" alt="Taxa de serviço padrão configurada em 10 por cento" />
+
+### Valor da Taxa (%)
+
+Define o percentual usado na taxa de serviço. Para cobrar 10%, informe 10.
+
+### Cliente Obrigatório na Mesa
+
+Impede salvar o pedido sem identificar um cliente na venda da mesa.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/mesas-taxa-obrigatorias/imagens-tratadas/03-cliente-obrigatorio.png" width="600" alt="Interruptor Cliente Obrigatório na Mesa ligado" />
+
+### Comanda Obrigatória
+
+Exige selecionar uma comanda antes de salvar o pedido.
+
+### Mesa Obrigatória
+
+Exige selecionar uma mesa antes de salvar o pedido. Quando esse parâmetro está ativo, o botão **Salvar** fica desabilitado até o preenchimento da mesa.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/mesas-taxa-obrigatorias/imagens-tratadas/08-mesa-obrigatoria.png" width="600" alt="Interruptor Mesa Obrigatória ligado" />
+
+### Como a taxa de serviço aparece na venda
+
+Quando a taxa de serviço padrão está ativa, o pedido mostra a taxa como um interruptor com o valor calculado em tempo real. Você verá algo como `Taxa Serviço (10%) + R$ 0,80`, de acordo com o percentual configurado e o total atual da venda.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/mesas-taxa-obrigatorias/imagens-tratadas/06-mesa-com-taxa.png" width="600" alt="Mesa aberta com taxa de serviço aplicada automaticamente" />
+
+Esse comportamento agiliza a operação porque o valor já vem marcado nos novos pedidos de mesa ou comanda. Ainda assim, o operador pode desativar a taxa naquele pedido, se necessário.
+
+### Quando a taxa é aplicada automaticamente
+
+A taxa de serviço automática só entra em pedidos que tenham **mesa** ou **comanda**. Em uma venda comum de balcão no PDV, sem mesa vinculada, o sistema não aplica esse percentual automaticamente.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/mesas-taxa-obrigatorias/imagens-tratadas/04-mapa-mesas.png" width="600" alt="Mapa de mesas no painel" />
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/mesas-taxa-obrigatorias/imagens-tratadas/05-abrir-mesa.png" width="600" alt="Tela de abertura de mesa no PDV" />
+
+Essa diferença evita que a taxa de serviço seja adicionada em atendimentos que não fazem parte do fluxo de salão.
+
+<Callout kind="alert">
+
+Alterar o percentual da taxa de serviço não atualiza pedidos que já estão abertos. Apenas novos pedidos passam a usar o novo valor configurado.
+
+</Callout>
+
+### Quando ativar campos obrigatórios
+
+Os campos obrigatórios ajudam a padronizar o atendimento e evitar pedidos incompletos. Se sua operação precisa sempre identificar o cliente, controlar comanda ou impedir abertura de venda sem mesa definida, ative essas exigências conforme a rotina da casa.
+
+Em operações mais rápidas ou flexíveis, deixe ativos apenas os campos que realmente fazem parte do processo. Assim, você mantém o controle sem travar etapas desnecessárias no atendimento.

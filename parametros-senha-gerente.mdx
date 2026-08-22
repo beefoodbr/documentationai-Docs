@@ -1,12 +1,58 @@
 ---
 title: Senha Gerente
-description: Entenda para que serve a senha de gerente no BeeFood3 e veja no vídeo como configurar, usar e gerenciar esse acesso no dia a dia.
+description: >-
+  Entenda para que serve a senha de gerente no BeeFood3 e veja no vídeo como
+  configurar, usar e gerenciar esse acesso no dia a dia.
 ---
-
 ## O que é a senha de gerente
 
 A senha de gerente controla ações mais sensíveis no BeeFood3, como cancelamentos, descontos acima do limite, ajustes de caixa e outras funções restritas. Use essa senha apenas com pessoas de confiança, pois ela dá acesso a operações que impactam diretamente o financeiro e o controle do seu negócio.
 
 No vídeo abaixo você vê como configurar a senha de gerente, alterar quando necessário e usar no PDV nas situações em que o sistema exige autorização especial.
 
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/senha-gerente/imagens-tratadas/01-menu-parametros.png" width="600" alt="Menu de parâmetros com o card Solicitar Senha Gerente" />
+
 <Video uid="CeXewqyMX6w" src="https://www.youtube.com/embed/CeXewqyMX6w" render-type="iframe" width="560" height="315" controls="true" allow-full-screen="true" style="width: 560px; height: auto; cursor: pointer; margin: 0 auto;" />
+
+## Configurações disponíveis
+
+Todas as opções ficam em **Configuração → Parâmetros**, no primeiro card **Solicitar Senha Gerente**. As alterações são salvas automaticamente em cerca de 500 ms.
+
+Cada interruptor ativa a exigência de senha de gerente para uma ação específica:
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/senha-gerente/imagens-tratadas/03-switches-ligados.png" width="600" alt="Interruptores do card Solicitar Senha Gerente ligados" />
+
+- **Cancelar Operação Caixa** — cancelar sangria ou acréscimo no caixa.
+- **Cancelar Pagamento** — estornar um pagamento já registrado.
+- **Cancelar Venda** — cancelar uma venda inteira (PDV, Delivery e Mesas).
+- **Cancelar Produto Lançado** — remover um item já salvo no pedido.
+- **Editar Estoque** — alterar a quantidade em estoque de um produto.
+- **Aplicar Desconto** — aplicar qualquer desconto em uma venda.
+- **Desconto máximo (%)** — define o teto de desconto permitido. O valor `0` significa sem limite. Quando definido, o bloqueio é absoluto: mesmo um gerente não consegue aplicar desconto acima do percentual configurado.
+
+## Atalho de gerente
+
+Quando o usuário logado já é um gerente (campo `gerente` ativo), o sistema não abre o modal de senha — o acesso é liberado automaticamente. Por isso, para testar o comportamento da senha de gerente, você precisa estar logado com um usuário que **não** seja gerente.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/senha-gerente/imagens-tratadas/04-testar-como-gerente.png" width="600" alt="Botão Testar exibindo acesso autorizado para gerente" />
+
+## Fluxo de desconto
+
+Quando **Aplicar Desconto** e **Motivo de Cancelamento** (do card Geral) estão ambos ativos, o sistema segue esta ordem de verificação:
+
+1. **Limite de desconto** — confere o percentual máximo configurado em **Desconto máximo (%)**. Se o desconto solicitado ultrapassar o limite, o sistema bloqueia na hora, sem possibilidade de override.
+2. **Motivo do cancelamento** — se o parâmetro **Motivo de Cancelamento** estiver ligado, o sistema pede uma justificativa por escrito antes de continuar.
+3. **Senha de gerente** — se o parâmetro **Aplicar Desconto** estiver ligado, o sistema solicita a senha de gerente para liberar o desconto.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/senha-gerente/imagens-tratadas/11-modal-desconto.png" width="600" alt="Modal de desconto solicitando senha de gerente" />
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/senha-gerente/imagens-tratadas/13-pede-senha.png" width="600" alt="Modal de validação da senha de gerente" />
+
+## Botão Testar
+
+O card exibe um botão **Testar** que permite conferir o comportamento da validação sem precisar iniciar uma venda:
+
+- **Logado como gerente** — o sistema exibe a mensagem "Acesso autorizado!" imediatamente, sem abrir o modal.
+- **Logado como não-gerente** — o sistema abre o modal de senha de gerente para validação.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/senha-gerente/imagens-tratadas/08-atendente-parametros.png" width="600" alt="Tela do atendente visualizando os parâmetros" />

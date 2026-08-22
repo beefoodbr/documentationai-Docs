@@ -1,0 +1,94 @@
+---
+title: Pagamento Automático do Delivery
+description: >-
+  Ative o registro automático de pagamento quando o pedido delivery é entregue,
+  eliminando o passo manual de confirmação do caixa.
+---
+## Pagamento Automático do Delivery
+
+Pagamento Automático do Delivery registra o pagamento do pedido no momento em que ele muda para o status **ENTREGUE**, desde que as condições da automação estejam atendidas.
+
+Você encontra essa configuração em **Configuração → Parâmetros**, no card **Delivery**. A alteração é salva automaticamente, então não existe botão de salvar.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/delivery-pagamento-auto/imagens-tratadas/02-pagamento-auto-ligado.png" width="600" alt="Interruptor Pagamento Automático Delivery ligado no card Delivery" />
+
+### Pagamento Automático Delivery
+
+Ativa o registro automático de pagamento em pedidos delivery quando o pedido chega ao status **ENTREGUE** e ainda não possui pagamento lançado.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/delivery-pagamento-auto/imagens-tratadas/03-kanban.png" width="600" alt="Kanban de pedidos delivery com status Aguardando, Preparo e Pronto" />
+
+### Quando o pagamento automático acontece
+
+O sistema só registra o pagamento automaticamente quando **as três condições abaixo** são verdadeiras ao mesmo tempo:
+
+- **Parâmetro ligado**: a opção **Pagamento Automático Delivery** está ativada.
+- **Intenção de pagamento informada**: o pedido já tem uma forma de pagamento definida.
+- **Pedido ainda sem pagamento lançado**: o valor pago do pedido ainda é zero.
+
+Na prática, a intenção de pagamento é identificada quando existe um tipo de pagamento informado no pedido. O sistema considera intenção de pagamento válida quando `tipoPag` é maior que zero ou quando `tipoPagStr` não está vazio.
+
+Os tipos de pagamento reconhecidos nesse fluxo são:
+
+- **1** — Dinheiro
+- **2** — Débito
+- **3** — Crédito
+- **4** — Carteira Digital
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/delivery-pagamento-auto/imagens-tratadas/05-coxinha-no-pedido.png" width="600" alt="Item adicionado no pedido delivery" />
+
+### Como o fluxo funciona no dia a dia
+
+Quando o parâmetro está ligado, o uso é simples: você informa como o cliente vai pagar e segue o fluxo normal do delivery. Ao marcar o pedido como entregue, o sistema conclui também o registro do pagamento.
+
+<Steps>
+  <Step title="Crie o pedido delivery" icon="plus" title-type="p">
+    Abra um novo pedido delivery e adicione os produtos normalmente.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/delivery-pagamento-auto/imagens-tratadas/06-intencao-dinheiro.png" width="600" alt="Intenção de pagamento definida como Dinheiro no pedido" />
+  </Step>
+
+  <Step title="Defina a intenção de pagamento" icon="credit-card" title-type="p">
+    Informe a forma de pagamento do pedido, como **Dinheiro**, **Débito**, **Crédito** ou **Carteira Digital**.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/delivery-pagamento-auto/imagens-tratadas/07-pedido-no-preparo.png" width="600" alt="Pedido no status Preparo no kanban" />
+  </Step>
+
+  <Step title="Salve o pedido" icon="check-circle" title-type="p">
+    Confirme o pedido com a forma de pagamento definida. Nesse momento, o sistema ainda não registra o pagamento; ele apenas guarda a intenção de pagamento.
+  </Step>
+
+  <Step title="Avance o pedido no fluxo de entrega" icon="arrow-right" title-type="p">
+    Mova o pedido de **Aguardando** para **PEDIDO PRONTO** e depois clique em **PEDIDO ENTREGUE**.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/delivery-pagamento-auto/imagens-tratadas/08-detalhe-preparo.png" width="600" alt="Detalhe do pedido em preparo" />
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/delivery-pagamento-auto/imagens-tratadas/09-pedido-pronto.png" width="600" alt="Pedido no status Pronto no kanban" />
+  </Step>
+
+  <Step title="Confira o registro automático do pagamento" icon="check" title-type="p">
+    Ao marcar **PEDIDO ENTREGUE**, o sistema registra o pagamento automaticamente. Como resultado, o pedido passa a exibir o status **ENTREGUE**, aparece a informação **Formas de Pagamento — Dinheiro — Pago** ou equivalente à forma escolhida, e o contador de pedidos **Sem pagamento** é reduzido.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/delivery-pagamento-auto/imagens-tratadas/10-depois-entregue.png" width="600" alt="Pedido entregue com pagamento registrado automaticamente" />
+  </Step>
+</Steps>
+
+### O que muda na operação
+
+Esse parâmetro reduz uma etapa manual no fechamento dos pedidos delivery. Em vez de entregar o pedido e depois voltar para lançar o pagamento, você informa a intenção de pagamento antes e deixa o sistema concluir esse lançamento no momento da entrega.
+
+Esse fluxo funciona melhor em operações em que a forma de pagamento já está definida durante o atendimento. Assim, o controle do pedido continua organizado sem exigir uma confirmação manual separada no final.
+
+<Callout kind="alert" collapsed="false">
+  Se o pedido chegar ao status **ENTREGUE** sem uma intenção de pagamento informada, o pagamento automático não acontece. Nesse caso, você precisa registrar o pagamento manualmente.
+</Callout>
+
+<Callout kind="info" collapsed="false">
+  Depois que o pagamento automático é registrado, a intenção de pagamento não pode mais ser alterada diretamente. A tela do pedido passa a exibir a mensagem **"Remova o pagamento para alterar"**. Para mudar a forma de pagamento, é necessário remover o pagamento lançado e registrar novamente.
+</Callout>
+
+### Quando usar essa configuração
+
+Use essa opção quando sua equipe já define a forma de pagamento durante a criação do pedido e quer evitar lançamentos manuais na etapa final da entrega.
+
+Se a forma de pagamento costuma ser decidida só no momento da entrega, mantenha atenção ao preenchimento desse campo. Sem a intenção de pagamento informada antes, o sistema não faz o registro automático.

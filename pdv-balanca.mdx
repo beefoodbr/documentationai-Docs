@@ -1,0 +1,139 @@
+---
+title: Balança no PDV
+description: >-
+  Integre leitura de código de barras EAN-13 de balanças no PDV, configurando
+  tipo de leitura peso ou valor e posições dos dígitos.
+---
+## Balança no PDV
+
+Balança no PDV permite lançar produtos vendidos por peso ou por valor a partir de um código EAN-13 digitado ou lido no caixa. Essa configuração fica em **Configuração → Parâmetros**, no card **PDV**, bloco **Balança**, com salvamento automático.
+
+Quando **Balança Ativada** está desligada, o PDV trata o EAN-13 como uma busca comum de produto. Quando a opção está ligada, o sistema passa a interpretar códigos válidos de balança e separa automaticamente o código do produto e o trecho de peso ou valor.
+
+<Callout kind="alert" collapsed="false">
+  Não confunda esse recurso com **Aplicativos → Balança**. A configuração do PDV lê códigos EAN-13 de balança no caixa, enquanto a integração em **Aplicativos → Balança** usa outro fluxo, com cadastro de modelo e comunicação própria.
+</Callout>
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/pdv-balanca/imagens-tratadas/01-bloco-balanca.png" width="600" alt="Bloco Balança dentro do card PDV em Configuração e Parâmetros" />
+
+### Como o código EAN-13 é reconhecido
+
+O PDV só trata o número como código de balança quando ele segue estas regras:
+
+- tem **exatamente 13 dígitos**
+- começa com **2**
+- contém **apenas números**
+
+Se qualquer uma dessas condições não for atendida, o código não entra na lógica de balança e segue o comportamento normal de busca.
+
+### Estrutura do código
+
+O formato esperado é dividido em quatro partes:
+
+```text
+[2][dígitos do código do produto][dígitos do peso ou valor][dígito verificador]
+```
+
+Na configuração mais comum, a leitura fica assim:
+
+```text
+Posição:   1  2 3 4 5 6  7 8 9 10 11 12  13
+Conteúdo:  2  C C C C C  P P P  P  P  P   V
+```
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/pdv-balanca/imagens-tratadas/02-digitos-2-6.png" width="600" alt="Configuração das posições dos dígitos do código e do preço" />
+
+Nesse exemplo, `C` representa o código do produto, `P` representa o peso ou valor embutido no código e `V` representa o dígito verificador final.
+
+### Campos de configuração
+
+Os campos do bloco **Balança** definem quais posições do EAN-13 o sistema deve ler.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/pdv-balanca/imagens-tratadas/04-cadastro-queijo.png" width="600" alt="Cadastro do produto queijo com código 199" />
+
+### Balança Ativada
+
+Chave principal do recurso. O padrão é desligado. Quando está desligada, o PDV não interpreta o EAN-13 como código de balança.
+
+### Tipo de Leitura
+
+O padrão é Peso. Use **Peso** quando os dígitos representam gramas. Use **Valor** quando os dígitos representam centavos.
+
+### Dígito Código Início
+
+O padrão é 1. Define a posição inicial do trecho usado como código do produto.
+
+### Dígito Código Fim
+
+O padrão é 5. Define a posição final do trecho usado como código do produto.
+
+### Dígito Preço Início
+
+O padrão é 6. Define a posição inicial do trecho que carrega o peso ou o valor.
+
+### Dígito Preço Fim
+
+O padrão é 11. Define a posição final do trecho que carrega o peso ou o valor.
+
+### Como funciona a leitura por peso
+
+Na opção **Peso**, o trecho numérico configurado representa a quantidade em **gramas**. O PDV converte esse valor para quilos dividindo por `1000` e calcula o total com base no preço cadastrado do produto.
+
+Exemplo com o EAN `2001990003501`:
+
+- código do produto: `00199` → `199`
+- peso lido: `000350`
+- quantidade em quilos: `350 / 1000 = 0,350 kg`
+- preço do produto: `R$ 39,90`
+- total: `0,350 × 39,90 = R$ 13,97`
+
+Se o produto de código `199` estiver cadastrado com preço por quilo, o item entra no PDV com a quantidade calculada automaticamente.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/pdv-balanca/imagens-tratadas/05-pdv-vazio.png" width="600" alt="Tela do PDV vazia antes da leitura do código" />
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/pdv-balanca/imagens-tratadas/06-pdv-digitando-ean.png" width="600" alt="Digitando o código EAN-13 no campo de busca do PDV" />
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/pdv-balanca/imagens-tratadas/07-pdv-queijo-0350.png" width="600" alt="Produto queijo adicionado no PDV com 0,350 kg calculado automaticamente" />
+
+### Como funciona a leitura por valor
+
+Na opção **Valor**, o trecho numérico configurado representa o total em **centavos**. O PDV converte esse valor para reais e depois calcula a quantidade dividindo o valor total pelo preço do produto.
+
+Exemplo com o EAN `2001990019957`:
+
+- código do produto: `00199` → `199`
+- valor lido: `001995`
+- valor convertido: `1995 / 100 = R$ 19,95`
+- preço do produto: `R$ 39,90`
+- quantidade calculada: `19,95 / 39,90 = 0,500 kg`
+
+Esse modo é útil quando a etiqueta da balança já traz o valor final da venda em vez do peso bruto.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/pdv-balanca/imagens-tratadas/08-tipo-valor.png" width="600" alt="Tipo de Leitura configurado para Valor" />
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/pdv-balanca/imagens-tratadas/09-pdv-digitando-valor.png" width="600" alt="Digitando o código EAN-13 no modo Valor no PDV" />
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/pdv-balanca/imagens-tratadas/10-pdv-queijo-0500.png" width="600" alt="Produto queijo adicionado no PDV com 0,500 kg calculado no modo Valor" />
+
+### Como o produto é encontrado
+
+O sistema remove zeros à esquerda do trecho do código do produto antes de fazer a busca. Na prática, `00199` vira `199`.
+
+A consulta usa o campo **Código** do cadastro do produto, não o campo de código de barras. Se a balança estiver configurada para gerar `00199`, o produto precisa existir no BeeFood com código `199` para ser localizado corretamente.
+
+<Callout kind="tip" collapsed="false">
+  Você não precisa de uma balança física para testar. Ative a configuração, abra o PDV e digite um EAN-13 válido no campo de busca. Se o código estiver correto e o produto existir pelo campo **Código**, o item entra automaticamente na venda.
+</Callout>
+
+### O que revisar se a leitura não funcionar
+
+Os erros mais comuns estão na montagem dos dígitos e no cadastro do produto.
+
+- confirme se **Balança Ativada** está ligada
+- valide se o código tem **13 números** e começa com **2**
+- confira se as posições de início e fim do código do produto estão corretas
+- confira se as posições de início e fim do peso ou valor estão corretas
+- verifique se o produto está cadastrado pelo campo **Código**
+- confirme se o **Tipo de Leitura** está compatível com a etiqueta gerada pela balança
+
+Uma configuração incorreta das posições pode fazer o PDV ler parte do prefixo ou do valor como se fosse o código do produto. Quando isso acontece, o item não é encontrado mesmo com o EAN digitado corretamente.
