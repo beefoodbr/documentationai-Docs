@@ -1,0 +1,228 @@
+---
+title: App Entregador
+description: >-
+  Configure o app do entregador para que seus motoboys recebam pedidos,
+  escaneiem o código de barras do cupom, abram a rota no mapa e finalizem
+  entregas — incluindo pedidos do iFood.
+---
+## App Entregador
+
+Use o **BeeFood Entregador** para que seus motoboys recebam pedidos no celular, escaneiem o código de barras do cupom, abram a rota no mapa e finalizem as entregas. Esse aplicativo é separado do painel web e é usado exclusivamente pelos entregadores.
+
+O app está disponível na **Google Play** para Android e na **App Store** para iPhone. O painel web funciona como retaguarda da configuração: é nele que você cadastra o entregador, cria o usuário e habilita o código de barras no cupom.
+
+Todas as imagens deste manual são telas reais do aplicativo, e os **números em verde** nas imagens são os mesmos números citados no texto ao lado de cada uma.
+
+<Callout kind="info" collapsed="false">
+  Você vai precisar de:
+
+  - O aplicativo **BeeFood Entregador** baixado no celular do entregador (Google Play ou App Store)
+  - Um **funcionário cadastrado** com a função **Entregador** no painel web
+  - Um **usuário** vinculado a esse funcionário com o acesso a **Aplicativos** ativado
+  - O **código de barras** habilitado no layout do cupom de delivery
+</Callout>
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregadores/imagens-tratadas/01-play-store.png" width="200" alt="Badge de download do BeeFood Entregador na Google Play" />
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregadores/imagens-tratadas/02-app-store.png" width="200" alt="Badge de download do BeeFood Entregador na App Store" />
+
+## Visão geral do processo
+
+Faça a configuração em duas partes: primeiro no painel web e, depois disso, o entregador usa o aplicativo no celular. Quando o processo está completo, o motoboy consegue vincular pedidos pelo código de barras, abrir a rota e concluir a entrega.
+
+As 4 etapas de configuração são estas:
+
+1. Abrir o card **BeeFood Entregador** no menu **Aplicativos**.
+2. Cadastrar o motoboy como **funcionário** com a função **Entregador**.
+3. Criar um **usuário** vinculado a esse funcionário e ativar o acesso a **Aplicativos**.
+4. Habilitar o **código de barras** no layout do cupom de delivery.
+
+## Parte 1 — Abrir o card do app no painel
+
+<Steps>
+  <Step title="Abra o menu Aplicativos" title-type="p">
+    No painel web, acesse **Menu → Aplicativos**. Na seção **Entrega**, localize o card **BeeFood Entregador**.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregadores/imagens-tratadas/11-aplicativos-entregador.png" width="614" height="384" alt="Tela de Aplicativos com o card BeeFood Entregador" />
+
+    | Nº | Onde                        | O que fazer                                             |
+    | -- | --------------------------- | ------------------------------------------------------- |
+    | 1  | Seção **Entrega**           | Vá até a área dos aplicativos ligados à entrega.        |
+    | 2  | Card **BeeFood Entregador** | Clique no card para abrir as orientações do aplicativo. |
+  </Step>
+
+  <Step title="Abra o modal do app" title-type="p">
+    Clique no card para abrir o modal do aplicativo. Esse modal é somente de orientação e não salva nenhuma configuração.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregadores/imagens-tratadas/12-modal-app-entregador.png" width="614" height="384" alt="Modal do BeeFood Entregador com instruções e links para download" />
+
+    | Nº | Onde                           | O que fazer                                            |
+    | -- | ------------------------------ | ------------------------------------------------------ |
+    | 1  | Link de cadastro do entregador | Use esse atalho para abrir o cadastro de funcionários. |
+    | 2  | Link de criação do usuário     | Use esse atalho para abrir o cadastro de usuários.     |
+    | 3  | Botão da **Google Play**       | Baixe o app em aparelhos Android.                      |
+    | 4  | Botão da **App Store**         | Baixe o app em aparelhos iPhone.                       |
+
+    O modal serve para mostrar os passos obrigatórios de configuração e os links de download do app para o entregador.
+  </Step>
+</Steps>
+
+## Parte 2 — Cadastrar o entregador como funcionário
+
+<Steps>
+  <Step title="Abra o cadastro de funcionários" title-type="p">
+    Acesse **Cadastro → Funcionários** e clique em **Novo Funcionário (F1)**. Depois, abra a aba **Função** no cadastro.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregadores/imagens-tratadas/13-modal-funcionario-funcao.png" width="614" height="384" alt="Cadastro de funcionário na aba Função com a opção Entregador" />
+
+    | Nº | Onde                  | O que fazer                                               |
+    | -- | --------------------- | --------------------------------------------------------- |
+    | 1  | Aba **Função**        | Abra a aba onde você define o papel do funcionário.       |
+    | 2  | Opção **Entregador**  | Marque essa função para cadastrar o motoboy corretamente. |
+    | 3  | Campo de diária       | Preencha se você controla valor de diária no cadastro.    |
+    | 4  | Campo de valor por km | Preencha se você controla pagamento por quilômetro.       |
+    | 5  | Botão **SALVAR (F2)** | Grave o cadastro depois de configurar a função.           |
+  </Step>
+
+  <Step title="Marque a função Entregador" title-type="p">
+    Na aba **Função**, selecione o botão de opção **Entregador**. Se quiser, preencha também os campos de **diária** e **valor por km** para controle interno da loja.
+
+    Depois de marcar a função correta, clique em **SALVAR (F2)** para concluir o cadastro do funcionário.
+  </Step>
+</Steps>
+
+<Callout kind="alert" collapsed="false">
+  Sem a função **Entregador** marcada no cadastro do funcionário, o motoboy não aparece na lista de entregadores do sistema.
+</Callout>
+
+## Parte 3 — Criar o usuário e ativar o acesso ao app
+
+<Steps>
+  <Step title="Abra o cadastro de usuários" title-type="p">
+    Acesse **Configuração → Usuários** e clique em **Novo Usuário**. É nesse cadastro que você cria o login que o entregador vai usar no aplicativo.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregadores/imagens-tratadas/14-modal-usuario.png" width="614" height="384" alt="Cadastro de usuário com vínculo ao funcionário e acesso a Aplicativos" />
+
+    | Nº | Onde                     | O que fazer                                                  |
+    | -- | ------------------------ | ------------------------------------------------------------ |
+    | 1  | Campo do **Funcionário** | Vincule o usuário ao funcionário cadastrado como entregador. |
+    | 2  | Chave **Aplicativos**    | Ative para liberar o login no app do entregador.             |
+    | 3  | Chave **Gerente**        | Deixe desligada para esse tipo de usuário.                   |
+    | 4  | Botão **SALVAR (F2)**    | Grave o usuário depois de concluir o vínculo.                |
+  </Step>
+
+  <Step title="Vincule o funcionário e ative o acesso" title-type="p">
+    No cadastro do usuário, vincule o campo de funcionário ao entregador criado na parte anterior. Em seguida, ative a chave **Aplicativos**, que corresponde ao acesso mobile do app.
+
+    Deixe a opção **Gerente** desligada e salve em **SALVAR (F2)**. Depois disso, entregue o login e a senha desse usuário ao motoboy.
+  </Step>
+</Steps>
+
+<Callout kind="alert" collapsed="false">
+  Sem a chave **Aplicativos** ativada, o login falha no app do entregador.
+</Callout>
+
+## Parte 4 — Habilitar o código de barras no cupom
+
+<Steps>
+  <Step title="Abra o layout do cupom" title-type="p">
+    Acesse **Configuração → Impressão → Layout → Cupom Pedido** e abra a aba **Texto Padrão**. Nessa tela você habilita o código de barras que o entregador vai escanear no app.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregadores/imagens-tratadas/15-modal-layout-barcode.png" width="614" height="384" alt="Layout do cupom com a opção Código de Barras App Entrega" />
+
+    | Nº | Onde                                   | O que fazer                                                   |
+    | -- | -------------------------------------- | ------------------------------------------------------------- |
+    | 1  | Tipo **Cupom Pedido**                  | Abra o layout do cupom usado nos pedidos.                     |
+    | 2  | Aba **Texto Padrão**                   | Vá até a área das opções de impressão desse cupom.            |
+    | 3  | Opção **Código de Barras App Entrega** | Marque para imprimir o código de barras no cupom de delivery. |
+  </Step>
+
+  <Step title="Ative o código de barras" title-type="p">
+    Marque a opção **Código de Barras App Entrega**. Com essa configuração ativa, o sistema imprime no cupom o código de barras baseado no **preVendaID** do pedido de entrega.
+
+    Depois de salvar o layout, imprima um cupom de delivery para conferir o resultado.
+  </Step>
+</Steps>
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregadores/imagens-tratadas/10-cupom-barcode-resultado.png" width="614" height="384" alt="Cupom físico de delivery com o código de barras impresso" />
+
+<Callout kind="info" collapsed="false">
+  O código de barras só é impresso quando o pedido é **DELIVERY + ENTREGA**, a opção **Código de Barras App Entrega** está marcada e o plano permite esse recurso, com plano `5` ou com entrega ativa.
+</Callout>
+
+## Usando o app — Funcionalidades do entregador
+
+Depois da configuração no painel, o fluxo do entregador acontece todo no celular. Na prática, o motoboy escaneia o código do cupom para assumir o pedido, acompanha a lista de entregas, abre a rota no mapa e finaliza a entrega quando concluir o atendimento.
+
+### Escanear o código de barras
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregadores/imagens-tratadas/03-app-ler-barcode.png" width="614" height="384" alt="Tela do app BeeFood Entregador para leitura do código de barras" />
+
+Na opção **LER CÓDIGO BARRAS**, o entregador aponta a câmera do celular para o código impresso no cupom. Quando a leitura é feita, o pedido fica vinculado àquele entregador no aplicativo.
+
+### Ver entregas
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregadores/imagens-tratadas/04-app-entregas.png" width="614" height="384" alt="Tela de entregas com lista de pedidos e detalhes da entrega" />
+
+A tela **ENTREGAS** mostra as entregas ativas e o histórico recente. Ao abrir um pedido, o entregador vê os produtos, o endereço de entrega, a forma de pagamento e os botões **ABRIR ROTA** e **FINALIZAR**.
+
+### Abrir rota
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregadores/imagens-tratadas/05-app-rotas.png" width="614" height="384" alt="Tela de escolha do aplicativo de rota entre Google Maps e Waze" />
+
+No botão **ABRIR ROTA**, o aplicativo envia o endereço do cliente para um app de navegação. O entregador escolhe se quer abrir no **Google Maps** ou no **Waze**.
+
+### Finalizar entrega
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregadores/imagens-tratadas/06-app-finalizar.png" width="614" height="384" alt="Tela de finalização da entrega com campo de observação" />
+
+No botão **FINALIZAR**, o entregador pode escrever uma observação antes de concluir a entrega. Depois, basta confirmar em **FINALIZAR** para marcar o pedido como entregue.
+
+### Confirmar entrega do iFood
+
+Pedidos vindos do **iFood** mostram uma etapa extra de confirmação. Esse botão não aparece em pedidos de outras origens.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregadores/imagens-tratadas/07-app-ifood-confirmar.png" width="614" height="384" alt="Tela do app com o botão Confirmar Entrega iFood" />
+
+Primeiro, o entregador abre a opção **CONFIRMAR ENTREGA IFOOD** no pedido.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregadores/imagens-tratadas/08-app-ifood-localizador.png" width="614" height="384" alt="Tela para informar o localizador do pedido do iFood" />
+
+Depois, ele copia o **localizador** do pedido mostrado no topo da tela.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregadores/imagens-tratadas/09-app-ifood-codigo.png" width="614" height="384" alt="Tela para digitar o código de confirmação do cliente no iFood" />
+
+Por fim, ele pede ao cliente o **código de confirmação do iFood**, informa esse código no app e toca em **CONTINUAR** para concluir a entrega.
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+  <Expandable title="O entregador não consegue fazer login no app." default-open="false">
+    Confira primeiro se o usuário está vinculado a um **funcionário** com a função **Entregador**. Depois, verifique se a chave **Aplicativos** está ativada no cadastro do usuário.
+
+    Se um desses dois pontos estiver faltando, o login no aplicativo não funciona.
+  </Expandable>
+
+  <Expandable title="O pedido não aparece para o entregador." default-open="false">
+    O motivo mais comum é o pedido ainda não ter sido escaneado em **LER CÓDIGO BARRAS**. Sem essa leitura, o pedido não fica vinculado ao motoboy.
+
+    Também confirme se o pedido é realmente de **entrega**. Pedidos de **retirada** não entram nesse fluxo.
+  </Expandable>
+
+  <Expandable title="O cupom não sai com código de barras." default-open="false">
+    Verifique se a opção **Código de Barras App Entrega** está marcada no layout do cupom. Depois, confira se o pedido é **DELIVERY + ENTREGA** e não retirada ou atendimento presencial.
+
+    Se a configuração estiver correta e ainda assim o código não sair, confirme se o plano da loja atende a esse recurso ou se a entrega está ativa.
+  </Expandable>
+
+  <Expandable title="O botão de confirmar entrega do iFood não aparece." default-open="false">
+    Esse botão aparece somente em pedidos cuja origem é o **iFood**. Em pedidos de outras plataformas ou pedidos lançados por outro fluxo, essa opção não é exibida.
+  </Expandable>
+
+  <Expandable title="Preciso repetir a configuração para cada entregador?" default-open="false">
+    Sim. Cada motoboy precisa ter seu próprio cadastro de **funcionário** com a função **Entregador** e seu próprio **usuário** vinculado com acesso a **Aplicativos** ativado.
+
+    Esse vínculo individual é o que permite ao sistema identificar qual entregador recebeu e finalizou cada pedido.
+  </Expandable>
+</ExpandableGroup>
+

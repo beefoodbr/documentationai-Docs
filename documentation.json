@@ -433,6 +433,10 @@
                 "path": "tef-stone"
               },
               {
+                "title": "🛵 Entregador",
+                "path": "app-entregadores"
+              },
+              {
                 "title": "💰 Mercado Pago",
                 "path": "mercado-pago"
               },
