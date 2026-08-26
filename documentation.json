@@ -404,6 +404,40 @@
                         "path": "integracao-foodcrm"
                       }
                     ]
+                  },
+                  {
+                    "group": "💳 Pagamentos",
+                    "pages": [
+                      {
+                        "title": "💳 TEF PayGo",
+                        "path": "tef-paygo"
+                      },
+                      {
+                        "title": "💳 TEF Stone (AutoTEF)",
+                        "path": "tef-stone"
+                      },
+                      {
+                        "title": "💰 Mercado Pago",
+                        "path": "mercado-pago"
+                      },
+                      {
+                        "title": "💵 Gaveta de dinheiro",
+                        "path": "gaveta-dinheiro"
+                      }
+                    ]
+                  },
+                  {
+                    "group": "🌐 Plataformas",
+                    "pages": [
+                      {
+                        "title": "🗺️ Mapas do Google",
+                        "path": "mapas-google"
+                      },
+                      {
+                        "title": "🔗 Domínio próprio",
+                        "path": "dominio-proprio"
+                      }
+                    ]
                   }
                 ]
               }
@@ -413,32 +447,8 @@
             "group": "📱 Aplicativos",
             "pages": [
               {
-                "title": "🗺️ Mapas do Google",
-                "path": "mapas-google"
-              },
-              {
-                "title": "🔗 Domínio próprio",
-                "path": "dominio-proprio"
-              },
-              {
-                "title": "💵 Gaveta de dinheiro",
-                "path": "gaveta-dinheiro"
-              },
-              {
-                "title": "💳 TEF PayGo",
-                "path": "tef-paygo"
-              },
-              {
-                "title": "💳 TEF Stone (AutoTEF)",
-                "path": "tef-stone"
-              },
-              {
                 "title": "🛵 Entregador",
                 "path": "app-entregadores"
-              },
-              {
-                "title": "💰 Mercado Pago",
-                "path": "mercado-pago"
               },
               {
                 "group": "📲 Cardápio Digital Tablet",
