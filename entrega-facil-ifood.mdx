@@ -1,0 +1,227 @@
+---
+title: Entrega Fácil iFood
+description: Solicite entregadores do iFood diretamente pelo BeeFood: cotar frete, despachar e acompanhar pelo Gestor do iFood e WhatsApp sem equipe própria
+---
+
+## Entrega Fácil iFood
+
+Com a **Entrega Fácil iFood** (Entrega Sob Demanda), o BeeFood cota, solicita e acompanha um entregador do iFood para pedido **delivery**, do próprio iFood ou de outro canal, como cardápio ou pedido manual.
+
+Você consegue:
+
+- Cotar disponibilidade, tempo e valor do frete
+- Solicitar o entregador
+- Acompanhar no Gestor do iFood e pelo WhatsApp, com o BeeBot
+- Pedir o cancelamento, quando o iFood permitir
+
+<Callout kind="info" collapsed="false">
+
+As imagens do **BeeFood web** têm **marcações em verde**, com setas e números. As telas do **Portal e do Gestor do iFood** e a mensagem de WhatsApp vêm do artigo original.
+
+No BeeFood web, não existe o botão vermelho *Solicitar Entrega Fácil iFood* do Windows. O caminho novo é: **Delivery → detalhes do pedido → Adicionar Entregador → iFood Entrega Fácil**.
+
+</Callout>
+
+## Antes de começar
+
+1. Integração **iFood** ligada no BeeFood (**Aplicativos → iFood**).
+2. Aplicativo **BeeFood** **Ativo** no Portal de Aplicativos do iFood.
+3. Módulo **Entrega Fácil iFood** (**Entrega Sob Demanda**) ativo no painel do iFood.
+4. Chave do **Google Maps** no BeeFood (**Aplicativos → Mapas Google**). O endereço precisa ter coordenadas.
+5. Um pedido **Delivery com endereço**, incluindo CEP, rua, número e bairro.
+
+<Callout kind="alert" collapsed="false">
+
+A Entrega Fácil atende **um pedido por vez**.
+
+</Callout>
+
+## Parte 1: Liberar no iFood
+
+<Steps>
+  <Step title="Passo 1: Ativar Entrega Sob Demanda" title-type="p">
+
+No Portal do Parceiro iFood, abra **Serviços** e deixe **Entrega Sob Demanda** como **Ativo**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/entrega-facil-ifood/imagens-tratadas/07-portal-ifood-entrega-sob-demanda.png" width="800" alt="Portal do Parceiro iFood com o serviço Entrega Sob Demanda ativo" />
+
+  </Step>
+  <Step title="Passo 2: Confirmar o aplicativo BeeFood ativo" title-type="p">
+
+No Portal de Aplicativos do iFood, o card **BeeFood** precisa estar **Ativo**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/entrega-facil-ifood/imagens-tratadas/08-portal-ifood-app-beefood.png" width="800" alt="Portal de Aplicativos do iFood com o aplicativo BeeFood ativo" />
+
+  </Step>
+</Steps>
+
+## Parte 2: Conectar o iFood no BeeFood
+
+<Steps>
+  <Step title="Passo 3: Abrir as credenciais" title-type="p">
+
+No BeeFood, abra **Aplicativos**. No bloco de marketplaces, clique em **iFood**. Na aba **Credenciais**, a loja precisa aparecer como **Ativo**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/entrega-facil-ifood/imagens-tratadas/03-modal-ifood-credenciais.png" width="800" alt="Modal de credenciais do iFood no BeeFood" />
+
+| Nº | O que fazer |
+|----|-------------|
+| 1 | **+ Novo Cardápio**: cadastra o Merchant ID da loja. |
+| 2 | Selo **Ativo**: a loja já está conectada ao iFood. |
+
+  </Step>
+  <Step title="Passo 4: Colar o Merchant ID" title-type="p">
+
+No modal **Nova Credencial iFood**, cole o **Merchant ID** (1) e clique em **SALVAR (F2)** (2).
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/entrega-facil-ifood/imagens-tratadas/03b-ifood-novo-cardapio.png" width="800" alt="Modal Nova Credencial iFood para informar o Merchant ID" />
+
+| Nº | O que fazer |
+|----|-------------|
+| 1 | **Merchant ID** \*: cole o identificador da loja no iFood. |
+| 2 | **SALVAR (F2)**. A conexão pode levar até **1 hora**. |
+
+  </Step>
+</Steps>
+
+## Parte 3: O card Entrega Fácil iFood
+
+<Steps>
+  <Step title="Passo 5: Abrir Aplicativos e Entrega" title-type="p">
+
+Ainda em **Aplicativos**, role até a seção **Entrega** e clique em **Entrega Fácil iFood** (1).
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/entrega-facil-ifood/imagens-tratadas/01-aplicativos-entrega-facil.png" width="800" alt="Seção Entrega dos Aplicativos do BeeFood com o card Entrega Fácil iFood" />
+
+| Nº | O que fazer |
+|----|-------------|
+| 1 | Card **Entrega Fácil iFood**: *Solicite entregadores*. |
+
+  </Step>
+  <Step title="Passo 6: Ler como habilitar" title-type="p">
+
+O modal explica: ative **Entrega Sob Demanda** no iFood (1). Depois, a solicitação aparece em **Delivery** (2). O botão **Manual de Configuração** (3) abre este artigo.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/entrega-facil-ifood/imagens-tratadas/02-modal-entrega-facil.png" width="800" alt="Modal Entrega Fácil iFood com as instruções para habilitar o recurso" />
+
+| Nº | O que fazer |
+|----|-------------|
+| 1 | Texto **Como habilitar**. |
+| 2 | Atalho **Delivery**. |
+| 3 | **Manual de Configuração**. |
+
+  </Step>
+</Steps>
+
+## Parte 4: Solicitar o entregador
+
+<Steps>
+  <Step title="Passo 7: Abrir o Delivery e o pedido" title-type="p">
+
+No menu, clique em **Delivery** (1). Crie um pedido de **entrega** ou use um que já esteja no quadro. Depois, clique no card do pedido (2).
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/entrega-facil-ifood/imagens-tratadas/04-delivery.png" width="800" alt="Quadro Delivery do BeeFood com o card de um pedido" />
+
+| Nº | O que fazer |
+|----|-------------|
+| 1 | Menu **Delivery**. |
+| 2 | Card do pedido: abre os detalhes. |
+
+  </Step>
+  <Step title="Passo 8: Adicionar o entregador" title-type="p">
+
+Nos detalhes do pedido, clique em **Adicionar Entregador** (1).
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/entrega-facil-ifood/imagens-tratadas/04b-detalhes-pedido.png" width="800" alt="Detalhes do pedido no BeeFood com o botão Adicionar Entregador" />
+
+| Nº | O que fazer |
+|----|-------------|
+| 1 | **Adicionar Entregador**: abre a lista. |
+
+Na lista, em **Entrega Terceirizada**, clique em **iFood Entrega Fácil** (1).
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/entrega-facil-ifood/imagens-tratadas/05-lista-entregadores.png" width="800" alt="Lista de entregadores com a opção iFood Entrega Fácil" />
+
+| Nº | O que fazer |
+|----|-------------|
+| 1 | **iFood Entrega Fácil**: abre a cotação. |
+
+  </Step>
+  <Step title="Passo 9: Conferir a cotação" title-type="p">
+
+O BeeFood busca a cotação sozinho. A tela **Cotação de Entrega** mostra:
+
+- Previsão de entrega
+- Distância
+- Desconto/Acréscimo
+- Frete, com o valor líquido
+
+Para um pedido **do iFood**, clique em **CONFIRMAR**. Para um pedido **manual** ou de outro canal, clique em **CONTINUAR**.
+
+  </Step>
+  <Step title="Passo 10: Informar a forma de pagamento" title-type="p">
+
+Para um pedido que não é do iFood, escolha **Pedido pago** ou **Pagamento na entrega**. Depois, clique em **CONFIRMAR**.
+
+Ao solicitar uma entrega de pedido manual, o iFood cria um **pedido espelho** no Gestor.
+
+  </Step>
+  <Step title="Passo 11: Confirmar a entrega" title-type="p">
+
+Se der certo, o BeeFood mostra **Entrega confirmada!** e vincula o pedido ao entregador **Entrega Fácil iFood**.
+
+  </Step>
+</Steps>
+
+## Parte 5: Acompanhar e cancelar
+
+### Acompanhar no Gestor do iFood
+
+O pedido aparece no Gestor de Pedidos como **via Sob Demanda**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/entrega-facil-ifood/imagens-tratadas/09-gestor-ifood.png" width="800" alt="Gestor de Pedidos do iFood mostrando um pedido via Sob Demanda" />
+
+### WhatsApp: link automático
+
+Com o **BeeBot** conectado, quando o pedido sai para entrega, o cliente recebe o link *Acompanhe a entrega*.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/entrega-facil-ifood/imagens-tratadas/10-whatsapp-acompanhamento.png" width="800" alt="Mensagem de WhatsApp do BeeBot com o link para acompanhar a entrega" />
+
+### Cancelar
+
+No BeeFood web, o cancelamento da Entrega Fácil é feito pelo **Gestor do iFood**. O resultado aparece no **Histórico de Alterações** do pedido.
+
+<Callout kind="alert" collapsed="false">
+
+O cancelamento da Entrega Fácil no BeeFood web só pode ser feito pelo **Gestor do iFood**. Alguns status não permitem o cancelamento.
+
+</Callout>
+
+## Problemas comuns
+
+| Sintoma | O que verificar |
+|---------|-----------------|
+| Não aparece **iFood Entrega Fácil** | Módulo Entrega Sob Demanda ativo? BeeFood **Ativo** no portal? |
+| Opção *Não configurado* | Credencial iFood **Ativa** em Aplicativos → iFood? |
+| Cotação recusa o endereço | CEP, rua, número, bairro e **coordenadas** (Maps Google)? |
+| Sem botão de cotação | O pedido é **Delivery com entrega** e tem endereço? |
+| *Selecione apenas uma venda* | A Entrega Fácil aceita **um** pedido por vez. |
+| Pagamento na entrega some | O iFood é quem libera crédito, débito ou PIX naquela cotação. |
+| Cliente sem link no WhatsApp | BeeBot conectado? O recado sai quando o pedido **sai para entrega**. |
+| Cancelamento recusado | Normal em alguns status; tente pelo Gestor do iFood. |
+
+## Precisa de ajuda?
+
+Fale com o **suporte BeeFood** informando: nome da loja, **CNPJ**, se o pedido é do iFood ou manual e um print do erro, se houver.
+
+## Manuais relacionados
+
+<Columns cols={3}>
+
+<Card title="Integrações" href="/integracoes" icon="settings" cta="Acessar manual" />
+
+<Card title="Uber Direct" href="/integracao-uber-direct" icon="truck" cta="Acessar manual" />
+
+<Card title="99 Entrega" href="/99-entrega" icon="package" cta="Acessar manual" />
+
+</Columns>

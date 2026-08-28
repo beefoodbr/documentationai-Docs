@@ -1,0 +1,184 @@
+---
+title: Pick N Go!
+description: Cote e solicite entregadores da Pick N Go! pelo BeeFood: configure credenciais, sincronize manual ou automático em PREPARO/PRONTO, filtre origens e acompanhe pelo WhatsApp
+---
+
+## Pick N Go!: cotar e solicitar entregador no Delivery
+
+Com a integração **Pick n Go!** no BeeFood você consegue, nos pedidos de **entrega**:
+
+- Cotar disponibilidade, distância e valor da corrida
+- Solicitar um entregador
+- Cancelar a entrega na Pick n Go! sem cancelar o pedido no BeeFood
+
+<Callout kind="info" collapsed="false">
+
+As imagens têm **marcações em verde** com setas e números. O artigo antigo era do BeeFood Windows. Nesta página, use a tela nova do painel web.
+
+</Callout>
+
+## Antes de começar
+
+1. Tenha uma conta BeeFood ativa e permissão para **Aplicativos**.
+2. Solicite o **App ID** e o **App Key** ao **suporte da Pick n Go!**. Informe que deseja ativar a integração via API com o **BeeFood: Sistema para Restaurantes**.
+3. Configure a chave do **Google Maps** no BeeFood em **Aplicativos → Entrega → Mapas Google**. Sem o mapa, a cotação e o botão da integração podem não aparecer. Consulte o manual [Mapas Google](/mapas-google) para configurar a chave.
+4. Use um pedido **Delivery com endereço de entrega**. Pedidos de retirada ou sem endereço não exibem a cotação.
+
+## Parte 1: Configurar no BeeFood
+
+<Steps>
+  <Step title="Passo 1: Abrir o card Pick N Go!" title-type="p">
+
+No menu, abra **Aplicativos**. Na seção **Entrega**, clique em **Pick n Go!** (1).
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-pick-n-go/imagens-tratadas/01-aplicativos-pick-n-go.png" width="800" alt="Tela Aplicativos com o card Pick N Go destacado na seção Entrega" />
+
+| Nº | O que fazer |
+|----|-------------|
+| 1 | Card **Pick N Go!**: *Sua frota ou solicite entregadores*. |
+
+  </Step>
+
+  <Step title="Passo 2: Colar as credenciais e escolher a sincronização" title-type="p">
+
+O modal **Configurar Pick n Go!** é a tela em que o BeeFood grava a integração.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-pick-n-go/imagens-tratadas/02-modal-credenciais.png" width="800" alt="Modal Configurar Pick n Go com os campos de credenciais e opções de sincronização" />
+
+| Nº | Campo | O que fazer |
+|----|-------|-------------|
+| 1 | **App ID** (*) | Cole o App ID enviado pela Pick n Go!. |
+| 2 | **App Key** (*) | Cole o App Key. |
+| 3 | **Opções de sincronização** | Escolha uma opção: manual, PREPARO ou PRONTO. |
+| 4 | **SALVAR E SAIR** | Grava a configuração. O atalho é **F2**. |
+
+**Opções de sincronização:**
+
+| Opção | O que faz |
+|-------|-----------|
+| **Sincronizar manualmente** | Você escolhe o pedido e clica em Pick n Go! na hora da entrega. |
+| **Sincronizar todos na situação PREPARO** | Todo pedido novo ou atualizado para **Preparo** vai sozinho para a Pick n Go!. |
+| **Sincronizar todos na situação PRONTO** | O envio automático acontece quando o pedido vai para **Pronto / Em entrega**. |
+
+<Callout kind="info" collapsed="false">
+
+**Frota própria:** se a sua operação usa motoboys da Pick n Go! em frota própria, ligue o switch. Nesse modo, o BeeFood **não abre a tela de cotação** e envia o pedido diretamente. Com a frota terceirizada, mantenha o switch desligado para exibir a cotação antes da confirmação.
+
+</Callout>
+
+Revise as informações e clique em **SALVAR E SAIR**.
+
+  </Step>
+
+  <Step title="Passo 3: Filtrar as origens da sincronização automática" title-type="p">
+
+Se você escolheu **PREPARO** ou **PRONTO**, o modal mostra **Origens da sincronização automática**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-pick-n-go/imagens-tratadas/03-modal-origens.png" width="800" alt="Modal de origens da sincronização automática da integração Pick n Go" />
+
+| Nº | O que fazer |
+|----|-------------|
+| 1 | Radio **Sincronizar todos na situação PREPARO** ou **PRONTO**: é o que libera o bloco de origens. |
+| 2 | Switch **Todas as origens**: ligado, mantém o comportamento padrão e sincroniza tudo. |
+| 3 | Lista de origens: desligue **Todas as origens** e marque apenas os canais que devem ser sincronizados automaticamente. |
+
+As origens disponíveis são **iFood**, **99Food**, **Keeta**, **AIQFome**, **Rappi**, **DeliveryMuch**, **UaiRango** e **Cardápio Digital / Delivery Manual**.
+
+Os pedidos de origens que não estão na lista continuam no BeeFood, mas não disparam o envio automático. Você ainda pode sincronizá-los **manualmente**.
+
+  </Step>
+</Steps>
+
+## Parte 2: Pedir o entregador no dia a dia
+
+### Sincronização manual
+
+1. Abra **Delivery** e localize um pedido do tipo **entrega**, com endereço.
+2. Clique em **Adicionar Entregador** ou em **Selecionar entregador** nos detalhes do pedido.
+3. Em **Entrega Terceirizada**, escolha **Pick n Go!**.
+4. Se houver outros serviços ativos, como iFood Entrega Fácil ou 99 Entrega, o BeeFood consulta as cotações ao mesmo tempo e pode marcar **Mais rápido**, **Mais barato** ou **Melhor escolha**.
+5. Confira a cotação no modal **Cotação Pick n Go!**:
+   - Taxa cobrada do cliente
+   - Taxa do entregador
+   - Distância calculada
+   - Forma de pagamento
+
+   O BeeFood tenta pré-selecionar a forma de pagamento do pedido e exibe o selo **Pré-selecionada**. Se nenhuma forma de pagamento for informada, a Pick n Go! trata o pedido como **já pago online**.
+6. Clique em **Confirmar Entrega**.
+
+<Callout kind="info" collapsed="false">
+
+**Frota própria:** o passo da cotação não aparece. O BeeFood envia o pedido diretamente e o botão muda para **Enviar para Pick n Go**.
+
+</Callout>
+
+<Callout kind="alert" collapsed="false">
+
+A frota terceirizada aceita **um pedido por vez**. Para enviar vários pedidos de uma vez, use a frota própria ou sincronize os pedidos um a um.
+
+</Callout>
+
+### Sincronização automática em PREPARO ou PRONTO
+
+Com o radio automático ligado, o despacho acontece sozinho quando você move o pedido para a situação configurada. Não é preciso abrir o modal de entregador. O filtro de origens definido no Passo 3 continua valendo.
+
+## Parte 3: Acompanhar, histórico e cancelar
+
+### Entregador Pick n Go!
+
+No primeiro pedido sincronizado, o BeeFood cria o entregador **Pick n Go!**. Os próximos pedidos da integração ficam vinculados a ele. Na lista de Delivery e nos relatórios, você consegue identificar os pedidos que também estão na Pick n Go!.
+
+Nos detalhes do pedido, a guia **Entregador** mostra **Entregue por Pick n Go!**.
+
+### WhatsApp: link de acompanhamento
+
+<Callout kind="info" collapsed="false">
+
+Com o **BeeBot** conectado, o cliente recebe o **link de acompanhamento** da corrida quando o pedido sai para entrega, além da notificação que o WhatsApp já envia.
+
+</Callout>
+
+### Histórico
+
+Para consultar a sincronização e o cancelamento, use o **Histórico** da tela de Delivery, disponível no menu de mais opções, ou o histórico nos **detalhes do pedido**.
+
+As linhas típicas são **Pedido Sincronizado** e **Pedido Cancelado** da Pick n Go!.
+
+### Cancelar a sincronização
+
+Na guia **Entregador**, clique na lixeira, identificada como **Cancelar entrega Pick n Go!**, e confirme a ação.
+
+O pedido **não** é cancelado no BeeFood. Apenas a entrega é removida da Pick n Go!, e o pedido fica livre para outro entregador.
+
+## Como funciona no dia a dia
+
+1. O pedido entra no BeeFood pelo cardápio, iFood, balcão ou outro canal.
+2. Você avança o pedido no fluxo da cozinha.
+3. Na hora da entrega, manual ou automática, o BeeFood pede a cotação e cria a corrida.
+4. A Pick n Go! aloca o entregador.
+5. O status volta para o BeeFood e atualiza o pedido, o WhatsApp e os marketplaces quando aplicável.
+
+## Se o botão ou a cotação não aparecer
+
+| Sintoma | O que verificar |
+|---------|-----------------|
+| Card ou botão some | A integração está salva? O App ID e o App Key estão corretos? |
+| Cotação não abre | O pedido é **Delivery com endereço**? A chave do **Google Maps** está configurada? |
+| *Não configurado* no modal de entregador | Volte ao Passo 2 e clique em **SALVAR E SAIR**. |
+| *Selecione apenas uma venda* | Na frota terceirizada, marque apenas **um** pedido. |
+| Automático não dispara | O radio está configurado como PREPARO ou PRONTO? A origem do pedido está no filtro? |
+| Status não atualiza | Confira o **Histórico** do pedido e entre em contato com o suporte da Pick n Go!. |
+
+## Precisa de ajuda?
+
+Fale com o **suporte BeeFood** e informe o nome da loja e o CNPJ, a filial, se você já tem o App ID e o App Key, um print do erro e o horário da tentativa.
+
+As credenciais são fornecidas pelo **suporte da Pick n Go!**.
+
+## Manuais relacionados
+
+<Columns cols={3}>
+  <Card title="Integrações" href="/integracoes" icon="settings" />
+  <Card title="Foody Delivery" href="/integracao-foody-delivery" icon="truck" />
+  <Card title="Let's Express" href="/integracao-lets-express" icon="zap" />
+</Columns>

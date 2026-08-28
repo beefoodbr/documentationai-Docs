@@ -1,0 +1,296 @@
+---
+title: Campanhas SMS
+description: Envie promoções, lembretes e recuperações de clientes por SMS com segmentação, variáveis e controle de créditos por PIX
+---
+
+## Campanhas SMS
+
+O SMS chega **direto no celular**, sem o cliente precisar ter WhatsApp aberto ou estar online. É o canal certo para promoção rápida, lembrete e recuperação, e **não usa o número de WhatsApp da loja**, então não existe risco de banimento.
+
+Este manual ensina a:
+
+- Entender **créditos e segmentos**, incluindo como economizar sem acento e emoji
+- **Criar** uma campanha nos três passos: mensagem, destinatários e resumo
+- **Enviar** e ler o resultado
+- **Comprar créditos** por PIX
+- Usar a **blacklist / opt-out**
+
+<Callout kind="info" collapsed="false">
+
+As imagens têm **setas com números** (1, 2, 3...). No texto, cada número indica exatamente o campo ou botão correspondente na tela.
+
+</Callout>
+
+## Onde encontrar
+
+No menu lateral, em **Food Marketing**, abra **Campanhas SMS**. A página tem três abas:
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/campanhas-sms/imagens-tratadas/01-lista-campanhas.png" width="800" alt="As três abas da página Campanhas SMS no menu Food Marketing" />
+
+1. Aba **Campanhas**: a lista e o botão de criar
+2. Aba **Saldo & Extrato**: créditos, PIX pendente e movimentações
+3. Aba **Blacklist / Opt-out**: quem não recebe mais
+4. **NOVA CAMPANHA**: abre o editor
+5. **Saldo SMS**: quantos créditos a loja tem agora
+6. **COMPRAR CRÉDITOS**: gera um PIX (veja a seção de compra)
+
+A lista mostra nome, status (**Rascunho**, **Enviando**, **Enviada**), destinatários, enviados e entregues, além dos créditos gastos. Em rascunho, você edita, envia ou descarta. Depois de enviada, só dá para **ver o detalhe**. Não é possível excluir a campanha.
+
+A versão para celular tem as mesmas três abas. Este manual é do **desktop**.
+
+## Como o crédito é cobrado
+
+Cada **segmento** da mensagem custa **1 crédito por destinatário**.
+
+O celular corta o SMS em pedaços. O tamanho de cada pedaço depende do alfabeto:
+
+| Codificação | Quando entra | 1 segmento | Se passar disso |
+|---|---|---|---|
+| **GSM-7** | só letras sem acento (e uns poucos símbolos) | **160** caracteres | 153 por segmento extra |
+| **UCS-2** | qualquer acento fora do GSM, ou emoji | **70** caracteres | 67 por segmento extra |
+
+Uma mensagem curta e sem acento custa **1 crédito**. A mesma ideia com `"Olá"` e um emoji já cai em UCS-2: o limite despenca para 70, e o segundo pedaço começa muito antes.
+
+O sistema cobra o **pior caso** da lista. Se um único nome da lista tiver acento e o switch estiver desligado, **toda a campanha** pode ir para UCS-2.
+
+<Callout kind="info" collapsed="false">
+
+**Regra prática:** deixe o switch ligado. Escreva curto. Use `{{meu_link}}` em vez de colar um link enorme. Confira o canto do editor: `88 chars · 1 cred./envio · GSM` é o que você quer ver antes de avançar.
+
+</Callout>
+
+## Passo 1: a mensagem
+
+Clique em **NOVA CAMPANHA** (a seta 4 da imagem acima). O editor abre à direita, em três passos: **Mensagem**, **Destinatários** e **Resumo**.
+
+<Steps>
+  <Step title="Preencher a mensagem" title-type="p">
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/campanhas-sms/imagens-tratadas/02-passo1-mensagem.png" width="800" alt="Passo 1 da campanha SMS com nome, cardápio, variáveis e switch de acento e emoji" />
+
+1. **Cardápio**: de qual loja sai o `{{meu_link}}`. É obrigatório quando a mensagem usa essa variável. O nome da campanha fica no campo logo acima, por exemplo, Promoção Quarta Maluca.
+2. Os botões de **variável** inserem `{{chave}}` no cursor. Use somente as variáveis disponíveis nos botões.
+3. A variável `{{primeiro_nome}}` no texto.
+4. A variável `{{meu_link}}` no texto. No canto do editor, o **contador** mostra caracteres, créditos por envio e se está em **GSM** ou **UCS-2**.
+5. A **prévia** do celular. O switch **Enviar sem acento e emoji** fica acima dela e vem ligado por padrão.
+
+O quadro amarelo aparece quando a mensagem tem link. SMS com link pode ir para spam, demorar mais ou não chegar a todo mundo. Você confirma esse risco novamente no envio.
+
+Variáveis que o sistema reconhece:
+
+| Botão na tela | O que entra na mensagem | Exemplo na prévia |
+|---|---|---|
+| Primeiro nome | `{{primeiro_nome}}` | Maria |
+| Nome completo | `{{nome}}` | Maria Silva |
+| Saldo de cashback | `{{saldo_cashback}}` | R$ 00,00 |
+| Link do cardápio | `{{meu_link}}` | `menu.beefood.com.br/seurestaurante?sms=…` |
+
+A prévia do celular troca as variáveis por exemplos. No envio, cada cliente recebe os dados dele. O `{{meu_link}}` ganha `?sms=` com o número da campanha. É assim que o sistema conta clique e conversão.
+
+O link de outro domínio, que não seja `menu.beefood.com.br` ou `shop.beetech.com.br`, **não é medido**.
+
+Se a mensagem usa `{{saldo_cashback}}`, quem **não tem saldo** não recebe e **não consome crédito**.
+
+Variável digitada à mão que o sistema não conhece trava o passo 1. Um aviso vermelho lista o que está errado.
+
+<Callout kind="alert" collapsed="false">
+
+**Não existe salvamento automático.** O rascunho só é gravado quando você avança do passo 1 para o 2. Se estiver só ensaiando, saia por **FECHAR (ESC)**. Nada é criado.
+
+</Callout>
+
+  </Step>
+</Steps>
+
+### Quando o limite cai para 70 caracteres
+
+Desligue o switch e escreva com acento ou emoji. O contador muda para **UCS-2** e o aviso aparece:
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/campanhas-sms/imagens-tratadas/03-aviso-ucs2.png" width="800" alt="Aviso de UCS-2 causado por acento ou emoji na mensagem SMS" />
+
+1. O contador em **UCS-2**: 1 crédito ainda, mas o teto é 70 (ou 67 se passar)
+2. O aviso: acentos e emojis ativam UCS-2
+3. O switch **desligado**: religue para voltar ao GSM e economizar
+
+Atalho do passo: **AVANÇAR (F2)**. O botão só habilita com nome e mensagem preenchidos.
+
+## Passo 2: os destinatários
+
+Você pode montar a lista de três jeitos e misturar as opções.
+
+<Steps>
+  <Step title="Adicionar destinatários por segmentação" title-type="p">
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/campanhas-sms/imagens-tratadas/05-passo2-segmentacao.png" width="800" alt="Passo 2 da campanha SMS com seleção de destinatários por segmentação" />
+
+1. **Por segmentação**: um público que você já salvou em **Food Marketing → Segmentação de Cliente**
+2. **Telefone avulso**: um número por vez
+3. **Planilha**: vários números de uma vez, usando arquivo `.xlsx`, `.xls` ou `.csv`
+4. O seletor do público, que mostra somente segmentações **ativas**, e o botão **ADICIONAR**
+
+A segmentação já traz somente clientes com telefone válido, ativo e que aceitam mensagem. Quem está na blacklist não entra. O sistema avisa quantos foram ignorados por duplicidade ou opt-out.
+
+  </Step>
+
+  <Step title="Adicionar um telefone avulso" title-type="p">
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/campanhas-sms/imagens-tratadas/06-passo2-avulso.png" width="800" alt="Inclusão manual de um telefone com DDD e nome opcional na campanha SMS" />
+
+1. Os campos do modo **Telefone avulso**: número com DDD e nome opcional
+2. A **lista** de quem já foi adicionado
+3. **LIMPAR LISTA**: esvazia tudo depois de uma confirmação
+4. Uma linha na lista, com origem **Manual**. A lixeira à direita remove somente aquele número
+
+  </Step>
+
+  <Step title="Importar uma planilha" title-type="p">
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/campanhas-sms/imagens-tratadas/07-passo2-excel.png" width="800" alt="Importação de destinatários de uma planilha Excel ou CSV na campanha SMS" />
+
+1. O modo **Planilha**
+2. **SELECIONAR ARQUIVO**: aceita arquivos Excel e CSV
+
+**LIMPAR LISTA** esvazia tudo depois de uma confirmação. A lixeira de cada linha remove somente aquele número. Sem pelo menos um destinatário, o **AVANÇAR (F2)** não libera.
+
+  </Step>
+</Steps>
+
+## Passo 3: resumo e envio
+
+O passo 3 mostra a prévia do celular, já com o nome de exemplo e o link medido, além do **Resumo do envio**: destinatários, créditos por envio, custo total e saldo.
+
+<Steps>
+  <Step title="Conferir o resumo e enviar" title-type="p">
+
+Se a mensagem tem link, o quadro amarelo volta. Clique em **ENVIAR AGORA (F2)**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/campanhas-sms/imagens-tratadas/09-aviso-link.png" width="800" alt="Aviso sobre risco de spam, atraso ou falha de entrega em SMS com link" />
+
+1. O texto do risco: spam, atraso ou falha de entrega
+2. **ENVIAR COM LINK (ENTER)**: use somente se você realmente quer enviar o link. **CANCELAR (ESC)** volta sem gastar crédito.
+
+Depois vem a confirmação final. **Essa ação não tem volta.**
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/campanhas-sms/imagens-tratadas/09b-confirmar-envio.png" width="800" alt="Confirmação final do envio da campanha SMS com destinatários, custo e saldo" />
+
+1. Destinatários, custo estimado e saldo atual: confira os três
+2. **ENVIAR (ENTER)**
+
+Na conta de testes deste manual, o disparo foi para 3 destinatários, a **1 crédito** cada: custo **3**, saldo **95 → 92**.
+
+  </Step>
+</Steps>
+
+## Depois de enviar
+
+A lista troca o selo para **Enviada**. O ícone de olho abre o detalhe.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/campanhas-sms/imagens-tratadas/14-lista-apos-envio.png" width="800" alt="Lista de campanhas SMS após o envio com selo Enviada e saldo descontado" />
+
+1. O selo **Enviada**
+2. O saldo já descontado
+3. O ícone de **ver detalhe**
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/campanhas-sms/imagens-tratadas/15-detalhe-envio.png" width="800" alt="Detalhe da campanha SMS com destinatários, entregas, falhas e créditos consumidos" />
+
+1. Os cartões: destinatários, enviados, entregues, falhas e créditos consumidos
+2. **EXPORTAR CSV** da lista de envios
+3. **ATUALIZAR**: a operadora confirma a entrega com o tempo. O número em **Entregues** começa em 0 e sobe quando você atualiza.
+
+Status que aparecem na tabela:
+
+- **Aceito**: a operadora recebeu
+- **Enviado**
+- **Entregue**
+- **Falha**
+- **Opt-out**
+- **Sem cashback**
+
+O débito entra no extrato na hora:
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/campanhas-sms/imagens-tratadas/16-extrato-apos-envio.png" width="800" alt="Extrato SMS com débito da campanha, créditos gastos e saldo após o envio" />
+
+1. O saldo depois do envio
+2. A linha **Débito** da campanha, com os créditos gastos e o saldo após
+
+Outras linhas de **Confirmação de telefone** no extrato não são campanha. O sistema também gasta 1 crédito quando manda SMS para validar o celular de um cupom.
+
+## Comprar créditos por PIX
+
+Você pode comprar créditos pelo badge **COMPRAR CRÉDITOS**, disponível em qualquer aba, ou pela aba **Saldo & Extrato**.
+
+<Steps>
+  <Step title="Gerar um PIX para comprar créditos" title-type="p">
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/campanhas-sms/imagens-tratadas/10-comprar-creditos.png" width="800" alt="Modal de compra de créditos SMS com quantidade, total em reais, slider e pacotes sugeridos" />
+
+1. Quanto você vai levar e o **total em reais**
+2. O **slider**, ou o campo ao lado, para ajustar a quantidade
+3. Os **pacotes sugeridos**: um clique já posiciona o slider
+
+  </Step>
+</Steps>
+
+O preço cai por faixa:
+
+| Faixa | Preço por crédito |
+|---|---|
+| Até 1.000 | R$ 0,16 |
+| Até 10.000 | R$ 0,14 |
+| Acima | R$ 0,12 |
+
+Mínimo de compra: **R$ 5,00** (32 créditos na faixa mais cara). Máximo por pedido: **R$ 10.000**. Para comprar mais, faça outro PIX.
+
+**GERAR PIX (F2)** cria o QR e o código copia-e-cola. O pedido fica em **Saldo & Extrato → Pagamentos pendentes** até o pagamento cair. O saldo só sobe depois da confirmação. Você não precisa ficar na tela: volte e clique em **ATUALIZAR**.
+
+## Blacklist / opt-out
+
+Telefone nesta lista **não recebe** campanha e **não gasta crédito**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/campanhas-sms/imagens-tratadas/12-blacklist.png" width="800" alt="Aba Blacklist e Opt-out com números bloqueados para receber campanhas SMS" />
+
+1. O texto da própria tela: o número entra sozinho quando o cliente pede para sair ou quando a operadora devolve um erro **permanente**
+2. **ADICIONAR MANUAL**: inclui um número
+3. A tabela com telefone, motivo, origem e campanha de origem, além da opção **REMOVER**
+
+O cliente sai respondendo o SMS com **SAIR**, **PARAR**, **STOP**, **CANCELAR** ou **DESCADASTRAR**.
+
+Erro permanente, como número inválido, rejeitado, bloqueio Anatel ou da operadora, internacional não habilitado ou número expirado na operadora, também coloca o telefone na blacklist.
+
+**SMS com erro de entrega não devolve crédito**, por isso a lista existe.
+
+**Conteúdo bloqueado não coloca o número na blacklist.** Se a operadora barrar o *texto*, ajuste a mensagem e reenvie. O telefone continua apto.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/campanhas-sms/imagens-tratadas/13-adicionar-blacklist.png" width="800" alt="Tela para adicionar manualmente um número de telefone à blacklist SMS" />
+
+1. O telefone com DDD
+2. **SALVAR (F2)**
+
+Se você colocou um número por engano, clique em **REMOVER**. O número volta a poder receber.
+
+Na parte de baixo da aba há a **Legenda dos status de SMS**, que mostra o que é permanente e fica na blacklist e o que pode ser reenviado.
+
+## Dicas
+
+- **Deixe o switch de acento ligado.** É a economia mais fácil.
+- **Prefira `{{meu_link}}` a um link colado.** Você mede clique e conversão, e o texto fica mais curto.
+- **Teste com um telefone avulso** antes de enviar para uma segmentação grande. O envio não tem volta.
+- **Não dispare para quem pediu para sair.** A blacklist cuida disso. Não remova um número de opt-out para tentar de novo.
+- **Saldo baixo?** Compre antes. Sem crédito suficiente, o passo 3 trava e oferece **COMPRAR CRÉDITOS**.
+- Segmentação é assunto do manual **Segmentação de clientes**. Campanha automática de WhatsApp é o **Campanhas Inteligentes**.
+
+## Manuais relacionados
+
+<Columns cols={3}>
+  <Card title="Food Marketing" href="/food-marketing" icon="bar-chart" cta="Abrir manual" horizontal="false">
+    Acesse os recursos de marketing disponíveis para sua loja.
+  </Card>
+
+  <Card title="Segmentação de Clientes" href="/segmentacao-clientes" icon="users" cta="Abrir manual" horizontal="false">
+    Crie e gerencie públicos de clientes para suas campanhas.
+  </Card>
+
+  <Card title="Campanhas Inteligentes WhatsApp" href="/campanhas-inteligentes-whatsapp" icon="message-circle" cta="Abrir manual" horizontal="false">
+    Configure campanhas automáticas de WhatsApp para seus clientes.
+  </Card>
+</Columns>

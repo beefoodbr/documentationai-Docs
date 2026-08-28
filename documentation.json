@@ -46,7 +46,7 @@
                 "path": "videos"
               },
               {
-                "group": "📣 Food Marketing",
+                "group": "📣 Food Marketing e CRM",
                 "path": "food-marketing",
                 "pages": [
                   {
@@ -56,6 +56,14 @@
                   {
                     "title": "🤖 Campanhas Inteligentes WhatsApp",
                     "path": "campanhas-inteligentes-whatsapp"
+                  },
+                  {
+                    "title": "📱 Campanhas SMS",
+                    "path": "campanhas-sms"
+                  },
+                  {
+                    "title": "🏷️ Cupom de Desconto",
+                    "path": "cupom-desconto"
                   },
                   {
                     "group": "📈 Marketing Cardápío Digital",
@@ -376,6 +384,10 @@
                       {
                         "title": "🍔 Aiqfome",
                         "path": "aiqfome"
+                      },
+                      {
+                        "title": "🍽️ Uai Rango",
+                        "path": "integracao-uai-rango"
                       }
                     ]
                   },
@@ -393,6 +405,22 @@
                       {
                         "title": "🏍️ Uber Direct",
                         "path": "integracao-uber-direct"
+                      },
+                      {
+                        "title": "🛵 Entrega Fácil iFood",
+                        "path": "entrega-facil-ifood"
+                      },
+                      {
+                        "title": "📦 Let's Express",
+                        "path": "integracao-lets-express"
+                      },
+                      {
+                        "title": "🛵 Foody Delivery",
+                        "path": "integracao-foody-delivery"
+                      },
+                      {
+                        "title": "🛵 Pick N Go!",
+                        "path": "integracao-pick-n-go"
                       }
                     ]
                   },
