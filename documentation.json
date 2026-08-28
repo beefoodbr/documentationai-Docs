@@ -271,6 +271,10 @@
                   {
                     "title": "📬 Boletim do WhatsApp",
                     "path": "whatsapp-boletim"
+                  },
+                  {
+                    "title": "🧠 IA ChatGPT no WhatsApp",
+                    "path": "ia-chatgpt-whatsapp"
                   }
                 ]
               },
