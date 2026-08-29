@@ -25,10 +25,6 @@
                 "path": "boas-vindas"
               },
               {
-                "title": "🔄 Como migrar para BeeFood3",
-                "path": "como-migrar-para-beefood3"
-              },
-              {
                 "title": "💰 Planos e Preços",
                 "path": "planos-e-precos"
               },
@@ -174,15 +170,6 @@
                   {
                     "title": "🍣 Comida Japonesa",
                     "path": "cardapio-comida-japonesa"
-                  }
-                ]
-              },
-              {
-                "group": "⚙️ Geral",
-                "pages": [
-                  {
-                    "title": "📊 Como migrar os dados?",
-                    "path": "migrar-dados"
                   }
                 ]
               },
