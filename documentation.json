@@ -169,24 +169,34 @@
                 "path": "cardapio",
                 "pages": [
                   {
-                    "title": "📖 Fundamentos",
-                    "path": "cardapio-fundamentos"
+                    "group": "📖 Fundamentos",
+                    "path": "cardapio-fundamentos",
+                    "pages": [
+                      {
+                        "title": "🍕 Pizza",
+                        "path": "cardapio-pizza"
+                      },
+                      {
+                        "title": "🍔 Hambúrguer",
+                        "path": "cardapio-hamburguer"
+                      },
+                      {
+                        "title": "🍨 Açaí",
+                        "path": "cardapio-acai"
+                      },
+                      {
+                        "title": "🍣 Comida Japonesa",
+                        "path": "cardapio-comida-japonesa"
+                      }
+                    ]
                   },
                   {
-                    "title": "🍕 Pizza",
-                    "path": "cardapio-pizza"
+                    "title": "👁️ Exibir / Ocultar",
+                    "path": "cardapio-exibir-ocultar"
                   },
                   {
-                    "title": "🍔 Hambúrguer",
-                    "path": "cardapio-hamburguer"
-                  },
-                  {
-                    "title": "🍨 Açaí",
-                    "path": "cardapio-acai"
-                  },
-                  {
-                    "title": "🍣 Comida Japonesa",
-                    "path": "cardapio-comida-japonesa"
+                    "title": "💰 Preço Programado",
+                    "path": "cardapio-preco-programado"
                   }
                 ]
               },

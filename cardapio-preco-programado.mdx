@@ -1,0 +1,146 @@
+---
+title: Preço Programado
+description: >-
+  Agende alterações de preço no cardápio (happy hour, promoções) sem modificar o
+  preço cadastrado do produto.
+---
+## Preço Programado
+
+Use **Preço Programado** quando o valor de um item muda em determinados dias ou horários, como em um happy hour ou promoção semanal, sem alterar o preço cadastrado do produto. O cliente vê o preço promocional, o preço antigo riscado e o percentual de desconto.
+
+Neste manual, você configurará **20% de desconto** no **Milk Shake de Morango**, reduzindo o valor de **R$ 18,90** para **R$ 15,12** todos os dias no cardápio digital.
+
+As imagens têm setas com números. Cada número indica o campo ou botão correspondente na tela. Campos com **\*** são obrigatórios.
+
+## Antes de começar
+
+<Callout kind="info" collapsed="false">
+  - Acesse **Cardápio → Preço Programado**.
+  - Confirme que o produto já existe no cardápio. Neste exemplo, use **Milk Shake de Morango**.
+  - Marque pelo menos um dia. Uma tabela sem dia fica com `0d` e não funciona.
+  - Para alterar o preço da loja online, ative o canal **Cardápio Digital**.
+
+  Depois de salvar, o cardápio do cliente pode levar **até 5 minutos** para exibir a alteração.
+
+  Esta tela altera apenas o preço. Para esconder um produto, use **Exibir / Ocultar**. Para configurar rodízio, acesse a tela **Rodízio**.
+</Callout>
+
+## Parte 1: Onde fica
+
+Acesse **Cardápio → Preço Programado** (1) e clique em **Novo Preço Programado (F1)** (2). Cada tabela aparece como um card com o título, o status **Ativo**, o selo **Altera Preço** e os dias configurados (3).
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/preco-programado/imagens-tratadas/01-lista-preco-programado.png" width="800" height="450" alt="Tela Preço Programado com a tabela Happy hour milk-shake ativa" caption="Lista de preços programados" />
+
+| Nº | Campo                          | O que faz                                                                    |
+| -- | ------------------------------ | ---------------------------------------------------------------------------- |
+| 1. | **Preço Programado**           | Abre a tela de preços programados                                            |
+| 2. | **Novo Preço Programado (F1)** | Cria uma tabela nova                                                         |
+| 3. | **Card Happy hour milk-shake** | Mostra a tabela ativa, o comportamento Altera Preço e os 7 dias configurados |
+
+Use o lápis para editar uma tabela. A lixeira apaga a tabela sem possibilidade de desfazer. A busca filtra os cards pelo nome da tabela.
+
+## Parte 2: Configurar a tabela
+
+Clique em **Novo Preço Programado (F1)** ou no lápis de uma tabela existente. Configure os dados da promoção antes de adicionar os produtos.
+
+O campo **Título \*** aceita um nome que ajude você a reconhecer a promoção, como `Happy hour milk-shake`. Se o título ficar vazio e você acessar a aba **Produtos**, o sistema preencherá um nome no formato `Preço dd/mm hh:mm`.
+
+O comportamento **Alterar Preço** é fixo nesta tela. Você não pode substituí-lo por outro comportamento.
+
+O campo **Ativo** determina se o preço programado vale no momento. Deixe-o ligado para aplicar a promoção ou desligue-o para pausá-la.
+
+Em **Canais**, selecione **Delivery**, **Presencial** e **Cardápio Digital** conforme os canais em que a alteração deve aparecer. Para alterar o preço na loja online, ative **Cardápio Digital**.
+
+Em **Dias e Horários**, marque os dias em que a tabela deve funcionar. Quando o horário fica vazio, o sistema considera o período completo, de **00:00 às 23:59**. Para um happy hour específico, informe o intervalo, como **17:00 às 20:00**. Neste exemplo, os sete dias ficam marcados durante todo o dia.
+
+Salve com **SALVAR (F2)** ou acesse a aba **Produtos**. Em uma tabela nova, a configuração é salva automaticamente quando você troca de aba.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/preco-programado/imagens-tratadas/02-modal-config.png" width="800" height="450" alt="Modal de configuração com comportamento Alterar Preço e os 7 dias marcados" caption="Modal: Alterar Preço, canais e os 7 dias" />
+
+| Nº | Campo                | O que faz                                               |
+| -- | -------------------- | ------------------------------------------------------- |
+| 1. | **Título \***        | Define o nome da promoção                               |
+| 2. | **Comportamento**    | Mantém o comportamento fixo **Alterar Preço**           |
+| 3. | **Ativo**            | Liga ou pausa a promoção                                |
+| 4. | **Cardápio Digital** | Permite que o preço promocional apareça no menu público |
+| 5. | **Dias e Horários**  | Define quando a tabela vale                             |
+| 6. | **SALVAR (F2)**      | Grava a configuração                                    |
+
+Em **Cardápios**, mais abaixo no modal, selecione a filial em que a tabela deve funcionar. Se houver apenas uma loja disponível, deixe essa loja marcada.
+
+## Parte 3: Adicionar produtos e aplicar o desconto
+
+Acesse a aba **Produtos** e clique em **Adicionar** para incluir itens na tabela. O botão **Desconto** aparece somente depois que você seleciona pelo menos um produto.
+
+<Steps>
+  <Step title="Selecione o produto" title-type="p">
+    Marque **Milk Shake de Morango** ou use **Selecionar todos** para escolher vários produtos.
+  </Step>
+
+  <Step title="Abra o desconto" title-type="p">
+    Clique em **Desconto (1)**.
+  </Step>
+
+  <Step title="Escolha o tipo de desconto" title-type="p">
+    Selecione **Porcentagem (%)**. Você também pode escolher **Valor Fixo em R$** quando a promoção usar um valor específico.
+  </Step>
+
+  <Step title="Informe o valor" title-type="p">
+    Digite `20` para aplicar 20% de desconto.
+  </Step>
+
+  <Step title="Aplique o desconto" title-type="p">
+    Clique em **APLICAR (F2)**. O modal de desconto será fechado, e a lista mostrará **Desc. 20%** e o **Valor Final**.
+  </Step>
+
+  <Step title="Salve a tabela" title-type="p">
+    Clique em **SALVAR (F2)** no modal principal para gravar os produtos e a promoção.
+  </Step>
+</Steps>
+
+No exemplo, o **Milk Shake de Morango** tem preço cadastrado de **R$ 18,90**. Com 20% de desconto, o valor final fica em **R$ 15,12**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/preco-programado/imagens-tratadas/03-modal-produtos.png" width="800" height="450" alt="Aba Produtos mostrando o Milk Shake com desconto de 20% e valor final de R$ 15,12" caption="Produto com 20% e valor final R$ 15,12" />
+
+| Nº | Campo                     | O que faz                                            |
+| -- | ------------------------- | ---------------------------------------------------- |
+| 1. | **Milk Shake de Morango** | Mostra o desconto de 20% e o valor final de R$ 15,12 |
+
+Use o lápis da linha para editar o desconto de um único produto, seja em porcentagem ou em reais. Use **Excluir** para tirar o produto da tabela. Essa ação não altera o preço cadastrado no cardápio.
+
+## Parte 4: O que o cliente vê
+
+No cardápio digital, o cliente verá o preço novo, o preço anterior riscado e o percentual de desconto: **R$ 15,12 | R$ 18,90 | −20%**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/preco-programado/imagens-tratadas/04-cardapio-digital.png" width="800" height="450" alt="Cardápio digital mostrando o Milk Shake com preço novo de R$ 15,12 e o antigo riscado" caption="Cardápio: Milk Shake com 20% de desconto" />
+
+| Nº | O que mostra                                                                                  |
+| -- | --------------------------------------------------------------------------------------------- |
+| 1. | **R$ 15,12** como preço novo, **R$ 18,90** riscado como preço anterior e **−20%** de desconto |
+
+A atualização pode levar **até 5 minutos** para aparecer. Se o cliente continuar vendo o preço cheio, confira se a tabela está **Ativa**, se o dia atual está marcado, se o canal **Cardápio Digital** está ligado e se o desconto foi aplicado ao produto.
+
+Adicionar o produto à tabela não aplica o desconto sozinho. Você precisa selecionar o item, clicar em **Desconto** e clicar em **APLICAR (F2)**.
+
+Para voltar ao preço cheio, desligue **Ativo** ou tire o produto da tabela e aguarde a atualização do cardápio. O preço cadastrado continuará em **R$ 18,90**.
+
+## Problemas comuns
+
+| Sintoma                                          | O que verificar                                                                                           |
+| ------------------------------------------------ | --------------------------------------------------------------------------------------------------------- |
+| Cliente ainda vê o preço cheio                   | Aguarde até 5 minutos e confirme se a tabela está **Ativa** e se o canal **Cardápio Digital** está ligado |
+| Produto está na tabela, mas não aparece com −20% | Selecione o produto, clique em **Desconto** e clique em **APLICAR (F2)**                                  |
+| Botão **Desconto** sumiu                         | O botão aparece somente quando pelo menos um produto está marcado                                         |
+| A tabela aparece no card com **0d**              | Nenhum dia foi marcado. Selecione pelo menos um dia e salve                                               |
+| Você queria esconder o item                      | Use **Cardápio → Exibir / Ocultar**                                                                       |
+| Você queria configurar rodízio                   | Use **Cardápio → Rodízio**                                                                                |
+
+## O que esta tela não é
+
+<Callout kind="alert" collapsed="false">
+  - **Exibir / Ocultar** esconde o produto do cardápio, mas não altera o preço.
+  - **Rodízio** configura produtos liberados para o rodízio no atendimento presencial.
+  - Desconto por forma de recebimento, como **PIX** ou dinheiro, é configurado em **Cardápio Digital → Formas Recebimento**.
+  - Reajuste permanente do produto é feito em **Cardápio → Produtos**.
+</Callout>
+

@@ -1,0 +1,169 @@
+---
+title: "Exibir / Ocultar"
+description: "Oculte produtos do cardápio em determinados dias, horários ou canais sem excluir o cadastro do item."
+---
+
+## Exibir produtos do cardápio sem excluir o cadastro
+
+Use **Exibir / Ocultar** quando um item precisa desaparecer do cardápio em determinados dias, horários ou canais, sem apagar o cadastro.
+
+O produto continua no estoque, no PDV e no cadastro. A tabela apenas oculta o item. Neste manual, você vai ocultar o **Brownie** do cardápio digital todos os dias.
+
+As imagens têm setas numeradas. Cada número identifica o campo ou botão correspondente na tela. Campos com **\*** são obrigatórios.
+
+## Antes de começar
+
+<Callout kind="info">
+
+- Acesse **Cardápio → Exibir / Ocultar**.
+- Confirme que o produto já existe no cardápio. Neste exemplo, use o **Brownie**.
+- Marque pelo menos um dia. Uma tabela sem dia marcado fica como `0d` e não funciona.
+- Para o cliente da loja online ver a alteração, ative o canal **Cardápio Digital**. Sem esse canal, o menu público não muda.
+
+Depois de salvar, o cardápio do cliente pode levar até **5 minutos** para atualizar.
+
+Esta tela apenas oculta produtos. Para alterar o preço por horário, use **Preço Programado**. Para configurar rodízio, acesse a tela **Rodízio**.
+
+</Callout>
+
+## Parte 1: onde fica
+
+Acesse **Cardápio → Exibir / Ocultar** (1). Para criar uma configuração, clique em **Nova Tabela (F1)** (2), e não em “Novo”.
+
+Cada tabela aparece em um card com o título, o status **Ativo**, o badge **Oculta**, os canais selecionados e os dias configurados (3). Use a busca acima da lista para filtrar pelo nome da tabela.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/exibir-ocultar/imagens-tratadas/01-lista-exibir-ocultar.png" width="800" height="450" alt="Tela Exibir Ocultar com a tabela do Brownie ativa" caption="Lista Exibir / Ocultar com a tabela do Brownie" />
+
+| Nº | Campo | O que faz |
+| -- | -- | -- |
+| 1. | **Exibir / Ocultar** | Abre esta tela |
+| 2. | **Nova Tabela (F1)** | Cria uma tabela nova |
+| 3. | Card **Ocultar Brownie** | Mostra a tabela ativa, o badge Oculta e os 7 dias configurados como Todos |
+
+Clique no ícone de lápis para abrir e editar uma tabela existente. O ícone de lixeira exclui a tabela, e essa ação não pode ser desfeita.
+
+A aba **Todos os Produtos** lista os produtos que já foram incluídos em alguma tabela. Use essa aba para localizar um item. A configuração continua disponível no card da tabela ou pelo ícone de lápis.
+
+## Parte 2: configurar a tabela
+
+Clique em **Nova Tabela (F1)** para criar uma tabela ou no ícone de lápis para editar uma tabela existente.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/exibir-ocultar/imagens-tratadas/02-modal-config.png" width="800" height="450" alt="Modal de configuração da tabela com comportamento Ocultar Item e os 7 dias marcados" caption="Modal com Ocultar Item, canais e os 7 dias" />
+
+| Nº | Campo | O que faz |
+| -- | -- | -- |
+| 1. | **Título \*** | Define o nome da tabela |
+| 2. | **Comportamento** | Mantém o comportamento fixo **Ocultar Item** |
+| 3. | **Ativo** | Liga ou pausa a tabela |
+| 4. | **Cardápio Digital** | Permite ocultar o produto no menu público |
+| 5. | **Dias e Horários** | Define quando a tabela funciona |
+| 6. | **SALVAR (F2)** | Grava as alterações. Cancelar descarta o que ainda não foi salvo |
+
+<Steps>
+
+<Step title="Nomeie a tabela" icon="edit">
+
+Preencha **Título \*** com um nome que facilite a identificação, como `Ocultar Brownie`.
+
+Se você deixar o título vazio e acessar a aba **Produtos**, o sistema preencherá o nome automaticamente no formato `Tabela dd/mm hh:mm`.
+
+</Step>
+
+<Step title="Ative o comportamento e os canais" icon="settings">
+
+O campo **Comportamento** permanece fixo como **Ocultar Item**. Não é possível alterar esse comportamento nesta tela.
+
+Mantenha **Ativo** ligado para que a tabela funcione imediatamente conforme os dias e horários configurados. Ao desligar essa opção, o produto volta a aparecer depois da atualização do cache.
+
+Selecione os canais em que o produto deve desaparecer:
+
+- **Delivery**
+- **Presencial**
+- **Cardápio Digital**
+
+Para ocultar o produto na loja online, selecione **Cardápio Digital**.
+
+</Step>
+
+<Step title="Defina os dias e salve" icon="check-circle">
+
+Em **Dias e Horários**, marque pelo menos um dia. Quando o horário fica vazio, o sistema considera o período completo, das `00:00` às `23:59`.
+
+Neste exemplo, marque os 7 dias para ocultar o Brownie durante todo o dia.
+
+Clique em **SALVAR (F2)**. Em uma tabela nova, ao mudar para a aba **Produtos**, a configuração também é salva automaticamente.
+
+</Step>
+
+</Steps>
+
+O campo **Cardápios**, localizado mais abaixo no modal, define a filial em que a tabela será aplicada. No ambiente com uma única filial, mantenha a opção disponível marcada.
+
+## Parte 3: escolher quais produtos somem
+
+Abra a aba **Produtos** (1) e clique em **Adicionar** para pesquisar um item. Neste exemplo, adicione o **Brownie** do setor **Sobremesas** (2).
+
+O produto incluído nessa lista desaparece dos canais selecionados quando a tabela está ativa. Esta tela não aplica descontos.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/exibir-ocultar/imagens-tratadas/03-modal-produtos.png" width="800" height="450" alt="Aba Produtos do modal mostrando o Brownie adicionado à tabela" caption="Aba Produtos com o Brownie" />
+
+| Nº | Campo | O que faz |
+| -- | -- | -- |
+| 1. | **Aba Produtos** | Lista os itens que a tabela esconde |
+| 2. | **Brownie** | Inclui o produto na tabela de ocultação |
+
+<Steps>
+
+<Step title="Adicione o produto" icon="plus">
+
+Na aba **Produtos**, clique em **Adicionar** e pesquise por **Brownie**. Selecione o produto do setor **Sobremesas** para incluí-lo na tabela.
+
+</Step>
+
+<Step title="Revise a lista e salve" icon="check-circle">
+
+Confirme que o Brownie aparece na lista. Você pode selecionar vários produtos na mesma tabela.
+
+Para remover um item da tabela, selecione-o e clique em **Excluir**. Essa ação remove o produto apenas da tabela; o cadastro do produto continua intacto.
+
+Clique em **SALVAR (F2)** para fechar o modal e gravar a configuração.
+
+</Step>
+
+</Steps>
+
+## Parte 4: o que o cliente vê
+
+No cardápio digital, o Brownie aparecia na categoria **Sobremesas** pelo preço de **R$ 11,90** (1). Com a tabela ativa, o produto deixa de aparecer na lista (2).
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/exibir-ocultar/imagens-tratadas/04-cardapio-digital.png" width="800" height="450" alt="Cardápio digital mostrando o Brownie antes e depois de ser ocultado" caption="Cardápio: Brownie visível e depois oculto" />
+
+| Nº | O que mostra |
+| -- | -- |
+| 1. | **Antes:** Brownie na categoria **Sobremesas**, por **R$ 11,90** |
+| 2. | **Depois:** tabela ativa e Brownie oculto do cardápio |
+
+A atualização pode levar até **5 minutos**. Se o produto continuar aparecendo, confirme se a tabela está **Ativa**, se o dia atual está marcado e se o canal **Cardápio Digital** está ligado.
+
+Para exibir o produto novamente, desligue **Ativo** ou remova o produto da tabela. Depois, aguarde a atualização do cache. Não exclua o cadastro do produto.
+
+## Problemas comuns
+
+| Sintoma | O que verificar |
+| -- | -- |
+| Cliente ainda vê o produto | Aguarde até **5 minutos** e confirme se a tabela está **Ativa** e se o canal **Cardápio Digital** está selecionado |
+| Tabela aparece com `0d` no card | Nenhum dia foi marcado. Selecione os dias e salve a tabela |
+| Produto some no PDV, mas não na loja online | O canal **Cardápio Digital** não foi selecionado |
+| Você não encontra o botão “Novo” | O botão correto é **Nova Tabela (F1)** |
+| Você queria apenas mudar o preço | Use **Preço Programado**, não **Exibir / Ocultar** |
+| Você queria configurar rodízio | Acesse **Cardápio → Rodízio** |
+
+## O que esta tela não é
+
+<Callout kind="alert">
+
+- **Preço Programado:** altera o valor do produto, como em uma configuração de happy hour. Não oculta o item.
+- **Rodízio:** define o produto que libera o rodízio no atendimento presencial.
+- **Apagar produto do cadastro:** remove o produto pela tela **Cardápio → Produtos**.
+
+</Callout>
