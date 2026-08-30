@@ -169,7 +169,7 @@
                 "path": "cardapio",
                 "pages": [
                   {
-                    "group": "📖 Fundamentos",
+                    "group": "📖 Cadastrar Cardápio",
                     "path": "cardapio-fundamentos",
                     "pages": [
                       {
