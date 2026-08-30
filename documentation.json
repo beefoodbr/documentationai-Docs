@@ -157,6 +157,10 @@
                   {
                     "title": "🖼️ Capas e Destaques",
                     "path": "capas-e-destaques"
+                  },
+                  {
+                    "title": "💰 Desconto e Acréscimo nas Formas",
+                    "path": "cardapio-digital-desconto-formas"
                   }
                 ]
               },

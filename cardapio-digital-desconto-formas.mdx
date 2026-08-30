@@ -1,0 +1,167 @@
+---
+title: Desconto e Acréscimo nas Formas de Recebimento
+description: >-
+  Configure desconto ou acréscimo por forma de recebimento no cardápio digital,
+  barateie o PIX Online, dê desconto no dinheiro ou cobre no vale.
+---
+## Configure ajustes por forma de recebimento
+
+No cardápio digital, você pode dar desconto ou aplicar acréscimo conforme a forma de recebimento escolhida pelo cliente. O ajuste incide sobre o subtotal dos produtos e aparece no fechamento da sacola.
+
+Configure o ajuste em dois lugares:
+
+- **Pagamento Online:** PIX Online, que aceita apenas desconto, e cartão Mercado Pago.
+- **Formas Recebimento:** dinheiro, cartão na entrega, vales e Pix com chave.
+
+<Callout kind="info" collapsed="false">
+  **Antes de começar**
+
+  1. Tenha acesso ao **Cardápio Digital**.
+  2. Contrate e ative o **PIX Online** se quiser configurar desconto nessa forma.
+  3. Use formas de recebimento que já existem na lista. Este manual configura descontos e acréscimos, mas não cria novas formas.
+
+  A configuração do **PIX Online grava automaticamente**. Nas **Formas Recebimento**, clique em **SALVAR (F2)** para gravar. Depois de salvar, o cardápio pode levar até 1 minuto para refletir a alteração.
+</Callout>
+
+<Callout kind="tip" collapsed="false">
+  As imagens têm setas com números. Cada número no texto corresponde ao campo ou botão indicado na tela.
+</Callout>
+
+<Steps>
+  <Step title="Parte 1: encontre as formas de recebimento" title-type="p">
+    No menu, acesse **Cardápio Digital > Formas Recebimento** (1). A aba superior tem o mesmo nome (2). Quando nenhuma forma tem ajuste, a lista não mostra badges de desconto ou acréscimo, apenas os status **Ativo** ou **Inativo**.
+
+    Para configurar uma forma, clique no **lápis** (3). Não altere o switch apenas para testar, porque ele ativa ou desativa a forma no cardápio.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-desconto-formas/imagens-tratadas/01-formas-vazias.png" width="2160" height="1350" alt="Lista de formas de recebimento sem ajuste" caption="Lista sem desconto nem acréscimo" />
+
+    | Nº | Campo                      | O que faz                                                  |
+    | -- | -------------------------- | ---------------------------------------------------------- |
+    | 1. | **Formas Recebimento**     | Formas que o cliente vê no fechamento, exceto o PIX Online |
+    | 2. | Aba **Formas Recebimento** | Abre a mesma tela                                          |
+    | 3. | **Lápis**                  | Abre o editor da forma selecionada                         |
+
+    O **PIX Online** não aparece nessa lista. Ele fica na aba **Pagamento Online**, descrita na Parte 5. O **Pix** disponível na lista é outra forma: o cliente paga usando a chave informada e envia o comprovante.
+  </Step>
+
+  <Step title="Parte 2: configure desconto no dinheiro" title-type="p">
+    No editor da forma **Dinheiro**, localize a seção **Ajuste e exibição** e o campo **Ajuste no pagamento** (1). O campo oferece estas opções:
+
+    - **Sem ajuste:** mantém o preço cheio.
+    - **Desconto em %:** reduz o subtotal por percentual.
+    - **Desconto em R$:** reduz o subtotal por valor fixo.
+    - **Acréscimo em %:** soma um percentual ao subtotal.
+    - **Acréscimo em R$:** soma um valor fixo ao subtotal.
+
+    Para reproduzir o exemplo, selecione **Desconto em %** e informe **5,00** no percentual (2). Clique em **SALVAR (F2)** (3).
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-desconto-formas/imagens-tratadas/02-editor-dinheiro.png" width="614" height="437" alt="Editor da forma Dinheiro com desconto de 5%" caption="Desconto de 5% no dinheiro" />
+
+    | Nº | Campo                   | O que faz                                                 |
+    | -- | ----------------------- | --------------------------------------------------------- |
+    | 1. | **Ajuste no pagamento** | Define o tipo de ajuste. Neste exemplo: **Desconto em %** |
+    | 2. | **Percentual (%)**      | Define quanto será retirado do subtotal. Informe **5,00** |
+    | 3. | **SALVAR (F2)**         | Grava a configuração. **Cancelar** descarta a alteração   |
+
+    O texto exibido na tela informa que o valor do ajuste aparece para o cliente ao escolher essa forma.
+  </Step>
+
+  <Step title="Parte 3: configure acréscimo no vale alimentação" title-type="p">
+    Siga o mesmo caminho para configurar o vale. Neste exemplo, use **Vale - Alelo Refeição / Visa Vale**, vinculado à forma de pagamento **Vale Alimentação** (1).
+
+    Selecione **Acréscimo em %** em **Ajuste no pagamento** (2), informe **5,00** no percentual (3), ative a opção **Ativo** (4) e clique em **SALVAR (F2)**. Um vale inativo não aparece no cardápio.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-desconto-formas/imagens-tratadas/03-editor-vale.png" width="614" height="437" alt="Editor da forma Vale com acréscimo de 5%" caption="Acréscimo de 5% no vale alimentação" />
+
+    | Nº | Campo                             | O que faz                                                                        |
+    | -- | --------------------------------- | -------------------------------------------------------------------------------- |
+    | 1. | **Vincular à Forma de Pagamento** | Liga a opção do cardápio à forma do sistema. Neste exemplo: **Vale Alimentação** |
+    | 2. | **Ajuste no pagamento**           | Define **Acréscimo em %**                                                        |
+    | 3. | **Percentual (%)**                | Define quanto será somado ao subtotal. Informe **5,00**                          |
+    | 4. | **Ativo**                         | Exibe o vale para o cliente no cardápio                                          |
+
+    As opções **Disponível para Delivery** e **Disponível para Retirada** controlam os canais em que a forma aparece. No exemplo, as duas opções ficam ativadas.
+  </Step>
+
+  <Step title="Parte 4: confira a lista depois de salvar" title-type="p">
+    Depois de salvar, a lista mostra um badge em cada forma configurada. O **Dinheiro** exibe **Desconto 5,00%** (1), e o vale exibe **Acréscimo 5,00%** (2).
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-desconto-formas/imagens-tratadas/04-formas-configuradas.png" width="2160" height="1350" alt="Lista de formas com badges de desconto e acréscimo" caption="Lista com desconto e acréscimo configurados" />
+
+    | Nº | O que conferir                                   |
+    | -- | ------------------------------------------------ |
+    | 1. | **Dinheiro:** Ativo e **Desconto 5,00%**         |
+    | 2. | **Vale - Alelo...:** Ativo e **Acréscimo 5,00%** |
+
+    Para remover o ajuste, abra o editor pelo lápis, selecione **Sem ajuste** e salve. O badge desaparece da lista.
+  </Step>
+
+  <Step title="Parte 5: configure desconto no PIX Online" title-type="p">
+    Abra a aba **Pagamento Online** (1). No card do **PIX Online**, clique em **Desconto** ou **Sem desconto**. O editor abre imediatamente e salva as alterações sozinho, sem botão **SALVAR**.
+
+    O PIX Online oferece estas opções:
+
+    - **Sem desconto**
+    - **Desconto em %**
+    - **Desconto em R$**
+
+    O PIX Online não aceita acréscimo. Para reproduzir o exemplo, selecione **Desconto em %** (3) e informe **5,00** (4). O badge muda para **Desconto de 5,00%** (2). O aviso **Ajuste no pagamento salvo!** confirma a gravação.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-desconto-formas/imagens-tratadas/05-pix-online.png" width="2160" height="1350" alt="Configuração de desconto no PIX Online" caption="PIX Online com 5% de desconto" />
+
+    | Nº | Campo                       | O que faz                                       |
+    | -- | --------------------------- | ----------------------------------------------- |
+    | 1. | **Pagamento Online**        | Reúne o PIX Online e o cartão Mercado Pago      |
+    | 2. | Badge **Desconto de 5,00%** | Indica que o cliente verá 5% de desconto no PIX |
+    | 3. | **Desconto no pagamento**   | Define **Desconto em %**                        |
+    | 4. | **Percentual (%)**          | Recebe **5,00** e grava ao sair do campo        |
+
+    O cartão **Mercado Pago**, exibido abaixo, aceita desconto ou acréscimo nas mesmas cinco opções das formas normais: **Sem ajuste**, desconto em percentual ou valor, e acréscimo em percentual ou valor. Neste exemplo, o cartão permanece em **Sem ajuste**.
+
+    A opção **Presencial** nessa aba está **Em breve**.
+  </Step>
+
+  <Step title="Parte 6: confira o que o cliente vê" title-type="p">
+    No cardápio digital, o ajuste aparece apenas no fechamento, depois que o cliente escolhe a forma de recebimento. O ajuste não aparece na página inicial.
+
+    Considere um pedido de **Combo One Burger** no valor de **R$ 39,00**, para retirada, sem cashback nem cupom:
+
+    | Forma          | Badge           | Conta     | Total        |
+    | -------------- | --------------- | --------- | ------------ |
+    | **PIX Online** | 5% de desconto  | − R$ 1,95 | **R$ 37,05** |
+    | **Dinheiro**   | 5% de desconto  | − R$ 1,95 | **R$ 37,05** |
+    | **Vale Alelo** | 5% de acréscimo | + R$ 1,95 | **R$ 40,95** |
+
+    O **PIX Online** aparece em destaque. **Dinheiro** e **Vale Alelo** aparecem em **Outras formas de pagamento**, na opção **Pague na retirada**.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-desconto-formas/imagens-tratadas/06-cardapio-digital.png" width="822" height="910" alt="Cardápio digital mostrando desconto no PIX e no dinheiro e acréscimo no vale" caption="Cardápio: PIX, dinheiro e vale com ajustes" />
+
+    | Nº | O que o cliente vê                                                                                     |
+    | -- | ------------------------------------------------------------------------------------------------------ |
+    | 1. | Com o **PIX Online** escolhido, aparece a linha **Desconto 5% (Pix) − R$ 1,95** e o total **R$ 37,05** |
+    | 2. | Em **Outras formas**, o cliente vê **Dinheiro** com 5% de desconto e o vale com 5% de acréscimo        |
+    | 3. | Com o **Vale** escolhido, aparece a linha **Acréscimo 5% ... + R$ 1,95** e o total **R$ 40,95**        |
+  </Step>
+</Steps>
+
+<Callout kind="alert" collapsed="false">
+  A alteração pode levar até 1 minuto para sair do painel e aparecer no cardápio. Durante os testes, não finalize o pedido. Se o cliente de teste tiver cashback, clique em **CANCELAR** no desconto automático, porque o valor de R$ 5 pode esconder o efeito do ajuste.
+</Callout>
+
+## Resolva problemas comuns
+
+| Sintoma                         | O que verificar                                                                                                     |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| Cliente não vê o desconto       | Esperou 1 minuto? A forma está **Ativa**? O canal **Delivery** ou **Retirada** está ligado?                         |
+| PIX Online sem badge            | O ajuste foi configurado em **Pagamento Online**, e não no Pix da lista de **Formas Recebimento**?                  |
+| Vale não aparece                | A opção **Ativo** está ligada no editor? Sem ela, a forma desaparece do cardápio                                    |
+| **Desconto no PDV não mudou**   | Este ajuste vale apenas para o cardápio digital. Configure o desconto do PDV em **Cadastros > Formas de pagamento** |
+| PIX Online não aceita acréscimo | O PIX Online aceita apenas desconto                                                                                 |
+| Total não bate                  | O ajuste incide sobre o subtotal dos produtos. Taxa de entrega e cashback entram no cálculo separadamente           |
+
+## Precisa de ajuda?
+
+<Callout kind="info" collapsed="false">
+  Fale com o suporte BeeFood e informe o link do cardápio, a forma de recebimento, o percentual configurado e o que o cliente viu no fechamento.
+</Callout>
+
