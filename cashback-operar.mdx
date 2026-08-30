@@ -1,0 +1,220 @@
+---
+title: Cashback — operar no dia a dia
+description: Veja histórico de cashback, consulte saldo por cliente, ajuste saldo manualmente, entenda a fila da madrugada, use cashback no PDV e acompanhe o que o cliente vê no cardápio digital.
+---
+
+## Operar o cashback no dia a dia
+
+Acompanhe o histórico, consulte o saldo de cada cliente, faça ajustes manuais e aplique cashback em vendas do PDV, Mesas e Delivery. Você também verá como o cliente identifica o saldo e usa o benefício no cardápio digital.
+
+O crédito automático de uma venda acontece somente de madrugada, depois que o pedido é pago e finalizado. Ajustes manuais e uso do saldo na venda acontecem na hora.
+
+<Callout kind="info" collapsed="false">
+
+**Antes de começar**
+
+- Confirme que o programa está ativado em **CRM → Cashback → Configuração**.
+- Identifique o cliente no painel ou no cardápio digital.
+- Para testes, use o telefone **(15) 99999-8888**, identificado como **Teste Manual**. Não use o telefone de um cliente real.
+
+</Callout>
+
+<Callout kind="tip" collapsed="false">
+
+**Telefone de teste:** use **(15) 99999-8888** para validar histórico, saldo, ajustes e uso do cashback sem expor dados de clientes reais.
+
+</Callout>
+
+<Callout kind="info" collapsed="false">
+
+As imagens têm setas com números. Cada número no texto corresponde ao campo ou botão indicado na tela.
+
+</Callout>
+
+## Histórico
+
+Consulte quanto foi gerado, usado e vencido em um período pela aba **Histórico**. Use o telefone de teste na busca para visualizar somente os registros do cliente Teste Manual.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cashback-operar/imagens-tratadas/01-historico.png" width="1532" height="856" alt="Histórico de cashback filtrado pelo telefone de teste" caption="Histórico filtrado pelo telefone de teste" />
+
+| Nº | Campo | O que faz |
+| --- | --- | --- |
+| **1** | Aba **Histórico** | Abre o resumo do cashback no período selecionado. |
+| **2** | Período e busca | Filtra os dados por data e por cliente. Na imagem, a busca usa `99999`. |
+| **3** | Cartões de resumo | Mostra o total gerado, usado, vencido e a quantidade de clientes. |
+| **4** | Gráfico | Exibe a movimentação do cashback por semana, dia ou mês. |
+
+Use **Excel** para exportar a lista. As áreas **Top clientes** e a tabela de transações mostram quem gerou e quem usou cashback.
+
+Neste exemplo, o cliente **Teste Manual** tem **R$ 5,00** gerados por um ajuste manual, e não por uma venda.
+
+## Saldo por cliente
+
+Abra a aba **Saldo por Cliente** para localizar clientes com saldo disponível. Busque pelo nome ou pelo telefone de teste.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cashback-operar/imagens-tratadas/02-saldo-clientes.png" width="1532" height="856" alt="Lista de saldo por cliente filtrada pelo telefone de teste" caption="Busca pelo telefone de teste" />
+
+| Nº | Campo | O que faz |
+| --- | --- | --- |
+| **1** | Aba **Saldo por Cliente** | Lista os clientes que têm saldo de cashback. |
+| **2** | Busca | Localiza um cliente pelo nome ou telefone. Na imagem, a busca usa `99999`. |
+| **3** | Cartão do cliente | Mostra nome, telefone e saldo total. Neste exemplo, o saldo é **R$ 5,00**. |
+| **4** | **Novo Saldo** | Abre o atalho para creditar saldo sem abrir o cartão do cliente. |
+
+Toque no cartão do cliente para abrir o extrato e os botões de ajuste.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cashback-operar/imagens-tratadas/03-detalhe-cliente.png" width="1532" height="856" alt="Detalhe do cliente com extrato e botões Adicionar e Remover" caption="Extrato e botões Adicionar e Remover" />
+
+| Nº | Campo | O que faz |
+| --- | --- | --- |
+| **1** | **Saldo atual** | Mostra quanto o cliente pode usar neste momento. |
+| **2** | **Adicionar** | Credita saldo manualmente. O motivo é obrigatório. |
+| **3** | **Remover** | Debita saldo manualmente. O motivo também é obrigatório. |
+| **4** | **Extrato** | Lista os lançamentos gerados, usados e vencidos, linha a linha. |
+
+O saldo de **R$ 5,00** deste exemplo entrou por **Adicionar**. No extrato, ele aparece como **Ajuste manual +R$ 5,00**. O mesmo fluxo está disponível no cadastro do cliente, na aba **Cashback**.
+
+## Colocar e tirar saldo na mão
+
+Use os ajustes manuais quando precisar corrigir um saldo, conceder um bônus ou fazer um teste. O ajuste é aplicado imediatamente e fica registrado no extrato.
+
+### Adicionar saldo
+
+O formulário **Adicionar** exige um valor e um motivo. A validade em dias é opcional. Quando o campo de validade fica vazio, o sistema usa a validade definida na configuração do programa.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cashback-operar/imagens-tratadas/04-modal-ajuste.png" width="614" height="437" alt="Modal Adicionar saldo com valor e motivo preenchidos" caption="Adicionar saldo com valor e motivo" />
+
+| Nº | Campo | O que faz |
+| --- | --- | --- |
+| **1** | **Valor a adicionar** | Informa quanto será creditado. Exemplo: **R$ 5,00**. |
+| **2** | **Motivo** | Explica o ajuste, como bônus de cadastro ou crédito de teste. O texto fica no extrato. |
+| **3** | **Expira em (dias)** | Define uma validade específica. Em branco, usa o padrão do programa. |
+| **4** | **Adicionar saldo (F2)** | Confirma e grava o crédito. **Cancelar** não altera o saldo. |
+
+Use um valor pequeno durante os testes. O sistema não permite gravar o ajuste sem um motivo.
+
+### Remover saldo
+
+Use **Remover** para debitar parte ou todo o saldo atual. O valor informado não pode ser maior que o saldo disponível.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cashback-operar/imagens-tratadas/05-modal-remover.png" width="614" height="437" alt="Modal Remover saldo com valor e motivo preenchidos" caption="Remover saldo com valor e motivo" />
+
+| Nº | Campo | O que faz |
+| --- | --- | --- |
+| **1** | **Valor a remover** | Informa quanto será debitado. Exemplo: **R$ 1,00**. |
+| **2** | **Motivo** | Explica a retirada, como ajuste de conferência. O texto fica no extrato. |
+| **3** | **Máximo permitido** | Mostra o saldo atual, que limita o valor da retirada. |
+| **4** | **Remover saldo (F2)** | Confirma e grava o débito. **Cancelar** mantém o saldo. |
+
+No extrato, o crédito aparece como **Gerado** ou **Ajuste manual**. A retirada aparece como **Usado**.
+
+## Fila da madrugada
+
+A aba **Fila Processamento** acompanha as vendas que aguardam o crédito automático. O sistema tenta creditar cashback durante o processamento da madrugada, somente para pedidos pagos e finalizados.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cashback-operar/imagens-tratadas/06-fila-processamento.png" width="1532" height="856" alt="Fila de processamento de cashback durante a madrugada" caption="Fila da madrugada" />
+
+| Nº | Campo | O que faz |
+| --- | --- | --- |
+| **1** | Aba **Fila Processamento** | Abre o acompanhamento do lote de processamento. |
+| **2** | Cartões de resumo | Mostra o total de itens, pendentes, processados com sucesso e com erro. |
+| **3** | Status na tabela | Identifica cada item como **Pendente**, **Sucesso** ou **Erro**. |
+| **4** | Mensagem | Explica por que o crédito ainda não ocorreu ou informa o valor gerado. |
+
+Exemplos de mensagens:
+
+- **Pendente:** *Venda ainda não paga, aguardando pagamento.*
+- **Erro:** *Venda cancelada.*
+- **Sucesso:** *Cashback gerado: R$ …*
+
+<Callout kind="alert" collapsed="false">
+
+A fila de processamento só roda de madrugada. Não tente forçar o crédito durante o dia. Regularize o pagamento e aguarde o próximo processamento. Se o cliente precisar do saldo imediatamente, use **Adicionar**.
+
+</Callout>
+
+## Usar no PDV (e nas Mesas)
+
+No PDV, vincule o cliente à venda antes de abrir o pagamento. Depois, aplique o valor de cashback respeitando o saldo disponível e o total que ainda falta pagar. O mesmo painel existe no pagamento das **Mesas** e do **Delivery**.
+
+<Callout kind="alert" collapsed="false">
+
+Sem cliente vinculado à venda, o botão **Usar cashback** não aparece. Se o botão estiver ausente, selecione o cliente antes de abrir **Receber (F3)**.
+
+</Callout>
+
+<Steps>
+
+<Step title="Vincule o cliente e abra o pagamento" icon="users">
+
+No PDV, selecione o cliente **Teste Manual**, usando o telefone **99999-8888**. Adicione o item à venda e abra **Receber (F3)**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cashback-operar/imagens-tratadas/07-pdv-usar-cashback.png" width="1532" height="856" alt="Tela de pagamento do PDV com o botão Usar cashback" caption="Botão Usar cashback no pagamento do PDV" />
+
+| Nº | Campo | O que faz |
+| --- | --- | --- |
+| **1** | Cliente na venda | Vincula o cliente ao pedido. Sem essa vinculação, o botão de cashback não aparece. |
+| **2** | **Usar cashback** | Mostra o saldo disponível. Neste exemplo, o saldo é **R$ 5,00**. |
+| **3** | Total da venda | Limita o cashback ao valor total que precisa ser pago. |
+
+</Step>
+
+<Step title="Informe e aplique o valor" icon="check-circle">
+
+Toque em **Usar cashback** para abrir o modal de aplicação.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cashback-operar/imagens-tratadas/08-pdv-modal-aplicar.png" width="614" height="437" alt="Modal Usar Cashback com saldo disponível e valor a aplicar" caption="Modal Usar Cashback" />
+
+| Nº | Campo | O que faz |
+| --- | --- | --- |
+| **1** | **Saldo disponível** | Mostra quanto o cliente tem para usar. Neste exemplo, **R$ 5,00**. |
+| **2** | **Máximo aplicável** | Usa o menor valor entre o saldo disponível e o valor que falta pagar. |
+| **3** | **Valor a aplicar** | Vem preenchido com o máximo aplicável, mas pode ser reduzido. |
+| **4** | **Aplicar (F2)** | Adiciona o cashback como desconto na venda. **Cancelar** não usa o saldo. |
+
+Nesta venda, o lanche custa **R$ 14,00** e o cliente tem **R$ 5,00** de saldo. O máximo aplicável é **R$ 5,00**, portanto a conta não fica zerada. O limite mínimo de saldo e o dia da semana configurados também são respeitados.
+
+Se você cancelar o modal, o saldo não será gasto.
+
+</Step>
+
+</Steps>
+
+## O cliente no cardápio digital
+
+Depois de se identificar com o telefone de teste, o cliente monta o pedido e abre a **Sacola**. O saldo aparece no fechamento, depois da escolha entre **Entrega** e **Retirada**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cashback-operar/imagens-tratadas/09-cardapio-checkout.png" width="1532" height="856" alt="Checkout do cardápio digital mostrando saldo e uso de cashback" caption="Cardápio: saldo e uso na sacola" />
+
+O sistema tenta usar o cashback automaticamente. Se o cliente tocar em **CANCELAR**, o desconto é removido e o total volta ao valor cheio.
+
+| Nº | O que o cliente vê |
+| --- | --- |
+| **1** | **R$ 5,00 de cashback disponível**, correspondente ao saldo do telefone de teste. |
+| **2** | **Usar**, que aplica o saldo como desconto sem ultrapassar o total do pedido. |
+| **3** | **Utilizando R$ 5,00 de desconto**, indicando que o saldo entrou no pedido. |
+| **4** | **Total R$ 34,00**, resultado do combo de **R$ 39,00** menos **R$ 5,00** de cashback. |
+
+A mensagem **Ganhe R$ … de cashback** informa quanto a compra poderá creditar durante o processamento da madrugada.
+
+Cupom não combina com cashback ativo. Neste exemplo, **Finalizar** não foi tocado, portanto o saldo de teste continua em **R$ 5,00**.
+
+Se a faixa da página inicial não atualizar depois de ativar o programa, aguarde até **1 minuto** para o cardápio refletir a configuração.
+
+## Problemas comuns
+
+| Sintoma | O que verificar |
+| --- | --- |
+| O botão **Usar cashback** não aparece. | Confirme se há um cliente vinculado à venda. Verifique também se o canal do PDV ou das Mesas está ativado e se o dia da semana está marcado. |
+| O valor não pode ser aplicado. | Verifique se o saldo está abaixo do mínimo configurado ou se o valor informado é maior que o total da venda. |
+| Um pedido de ontem não recebeu crédito. | Abra a **Fila Processamento** e consulte o status e a mensagem. Confirme se o pedido está pago e finalizado. |
+| O cliente não vê saldo no cardápio. | Confirme o telefone usado na identificação. Se o saldo veio de uma venda, aguarde o processamento da madrugada. Se precisar liberar o saldo antes, faça um ajuste manual. |
+| Um pedido não gerou cashback. | Verifique se o produto está em uma exceção, se o item está em promoção e se a configuração permite cashback para produtos promocionais. |
+
+## Precisa de ajuda?
+
+<Callout kind="info" collapsed="false">
+
+Fale com o suporte BeeFood e informe o **número da venda**, o **telefone de teste** usado e um print da **fila**, do **extrato** ou do modal **Usar cashback**. Esses dados ajudam a identificar se o problema está no pagamento, no processamento ou na aplicação do saldo.
+
+</Callout>

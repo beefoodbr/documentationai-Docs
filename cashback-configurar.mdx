@@ -1,0 +1,133 @@
+---
+title: Cashback — configurar o programa
+description: >-
+  Configure o programa de cashback: ative, defina limites e canais, ajuste
+  percentual e dias de crédito, e veja o que o cliente enxerga no cardápio
+  digital.
+---
+## Visão geral
+
+Configure o programa de cashback no BeeFood3: ative a funcionalidade, defina limites e canais, ajuste o percentual por dia e confira o que o cliente vê no cardápio digital.
+
+O cashback devolve ao cliente um **percentual da compra** para usar na próxima. Ele vale no **cardápio digital**, no **PDV**, nas **Mesas**, no **Delivery manual** e no **Totem**, desde que você ligue cada canal.
+
+Este manual cobre **só a configuração**. O dia a dia, incluindo histórico, saldo, ajuste e uso na venda, está no manual **Cashback — operar**.
+
+<Callout kind="info" collapsed="false">
+  ### Antes de começar
+
+  - Tenha acesso a **Fidelidade (CRM) → Cashback**.
+  - O cardápio precisa ter **Cardápio Digital** contratado e **link** configurado.
+  - O crédito do cliente **não cai na hora**. O sistema processa o crédito **toda madrugada** e somente para pedidos **pagos e finalizados**.
+
+  O caminho antigo **Cardápio Digital → Cashback** apenas avisa que a tela mudou.
+</Callout>
+
+<Callout kind="tip" collapsed="false">
+  As imagens deste manual usam **setas com números**, como **1**, **2** e **3**. Cada número no texto corresponde ao campo ou botão indicado na tela.
+</Callout>
+
+## Parte 1 — Abrir e ativar
+
+Abra **Fidelidade (CRM)** no menu e clique em **Cashback** (1). A primeira aba é **Configuração** (2). Ligue **Ativar programa de Cashback** (3). A mesma tela também mostra a **Validade do saldo** (4).
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cashback-configurar/imagens-tratadas/01-crm-cashback-config.png" width="2160" height="1350" alt="Tela de configuração do cashback com o menu CRM, a aba Configuração, o ativador do programa e a validade do saldo" caption="Menu CRM e ativação do programa de cashback" />
+
+| Nº | Campo                 | O que faz                                                                                                                          |
+| -- | --------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| 1. | **Cashback** no menu  | Abre o programa.                                                                                                                   |
+| 2. | Aba **Configuração**  | Define as regras de ganho e uso.                                                                                                   |
+| 3. | **Ativar programa**   | Liga ou desliga tudo. Quando está desligado, o cliente não acumula nem usa cashback.                                               |
+| 4. | **Validade do saldo** | Define quantos dias o saldo permanece válido depois do último pedido. **0** significa que o saldo não expira. O máximo é 365 dias. |
+
+<Callout kind="alert" collapsed="false">
+  O saldo só é creditado **de madrugada**, em venda quitada. Pedido em aberto, parcial ou cancelado **não gera** cashback até ser regularizado.
+</Callout>
+
+A configuração é gravada **automaticamente**. Não existe botão **Salvar**.
+
+## Parte 2 — Limites e canais
+
+Role a tela para definir a **validade**, quem ganha cashback e onde o programa funciona.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cashback-configurar/imagens-tratadas/02-limites-canais.png" width="2160" height="1350" alt="Tela de limites e canais do cashback com formas de recebimento, saldo mínimo, modalidades e percentual por dia" caption="Formas de recebimento, saldo mínimo, canais e percentual por dia" />
+
+| Nº | Campo                          | O que faz                                                                                                |
+| -- | ------------------------------ | -------------------------------------------------------------------------------------------------------- |
+| 1. | **Formas de recebimento**      | Define quais formas de recebimento **geram** cashback. Se ficar vazio, todas as formas são consideradas. |
+| 2. | **Saldo mínimo para resgatar** | Impede o uso do cashback abaixo do valor definido. **R$ 0,00** significa que não existe valor mínimo.    |
+| 3. | **Modalidades**                | Define em quais canais o programa funciona.                                                              |
+| 4. | **Definir percentual por dia** | Ativa o modo em que cada dia da semana pode ter um percentual próprio.                                   |
+
+**Cardápio digital delivery** fica sempre ligado como padrão. Você escolhe os outros canais: presencial no cardápio, delivery manual, mesas, PDV e totem.
+
+## Parte 3 — Percentual e dias
+
+Escolha entre dois modos de definição:
+
+- **Percentual padrão**: usa o mesmo percentual todos os dias.
+- **Percentual por dia da semana**: define um percentual para cada dia e permite desligar dias individualmente.
+
+No sandbox, o modo **por dia** está ligado, com **3%** de segunda a domingo.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cashback-configurar/imagens-tratadas/03-percentual-dias.png" width="2160" height="1350" alt="Tela de percentual por dia da semana e exceções de produtos do cashback" caption="Percentual por dia da semana e exceções" />
+
+| Nº | Campo          | O que faz                                                                                                |
+| -- | -------------- | -------------------------------------------------------------------------------------------------------- |
+| 1. | Aviso vermelho | Mostra que o dia **desmarcado** está com o cashback **totalmente desligado**.                            |
+| 2. | Grade dos dias | Permite marcar cada dia e escolher o percentual, usando presets ou um valor personalizado.               |
+| 3. | **Exemplo**    | Calcula um pedido de R$ 100,00 com o percentual atual e mostra a validade.                               |
+| 4. | **Exceções**   | Define produtos que **não geram** cashback e controla se itens em promoção também participam do cálculo. |
+
+<Callout kind="alert" collapsed="false">
+  Um dia desmarcado **não acumula e também não permite usar** o saldo que o cliente já tem. O cashback fica totalmente desligado naquele dia, e não apenas a geração de novo saldo.
+</Callout>
+
+O quadro **Exemplo de como funciona** calcula um pedido de R$ 100,00 com o percentual atual e mostra a validade.
+
+Use **APLICAR** para repetir o mesmo percentual em todos os dias preenchidos. A ação não altera os dias desmarcados.
+
+A opção **Permitir que produtos promocionais também gerem cashback** funciona assim:
+
+- Ligada: itens em promoção entram na base de cálculo.
+- Desligada: itens em promoção não geram cashback.
+
+Use **Adicionar exceção** para retirar um produto específico do ganho. Sem exceções, todos os produtos, respeitando as outras regras, geram cashback.
+
+## Parte 4 — O que o cliente vê no cardápio
+
+O cardápio público, como `menu.beefood.com.br/...`, mostra a faixa amarela assim que o programa fica ativo. Uma mudança de configuração pode levar **até 1 minuto** para aparecer.
+
+<Callout kind="alert" collapsed="false">
+  Se a faixa não aparecer imediatamente depois da ativação, aguarde **até 1 minuto** antes de testar novamente.
+</Callout>
+
+Para o saldo aparecer no pedido, o cliente precisa se identificar pelo WhatsApp. Use um **telefone de teste** da loja, nunca o telefone de um cliente real em capturas ou testes. No sandbox, use **(15) 99999-8888**. No rodapé, toque em **Perfil**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cashback-configurar/imagens-tratadas/05-cardapio-digital.png" width="822" height="910" alt="Cardápio digital mostrando a faixa de cashback, o telefone de teste e o botão Continuar" caption="Cardápio digital: faixa de cashback e identificação do cliente" />
+
+| Nº | O que o cliente vê                                                                        |
+| -- | ----------------------------------------------------------------------------------------- |
+| 1. | A faixa **Ganhe dinheiro de volta a cada compra**, que indica que o programa está ligado. |
+| 2. | O campo **Telefone WhatsApp**, preenchido com o número de teste.                          |
+| 3. | O botão **CONTINUAR**, que entra com esse telefone.                                       |
+
+Depois da identificação, o saldo aparece no **fechamento da sacola**, não na página inicial, com a mensagem **R$ … de cashback disponível** e o botão **Usar**. O sistema pode aplicar o saldo automaticamente. O print dessa etapa está no manual **Cashback — operar**.
+
+No painel, o operador aplica o mesmo saldo no PDV ou nas Mesas.
+
+## Problemas comuns
+
+| Sintoma                            | O que verificar                                                                                        |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| Cliente não vê a faixa             | O programa está **Ativado**? Você esperou **1 minuto**? O link do cardápio está correto?               |
+| Ganhou no PDV, mas não no cardápio | Confira o canal **Cardápio digital delivery**, que fica sempre ligado, e compare com o canal da venda. |
+| Cliente não usa o saldo hoje       | O **dia da semana** está desmarcado?                                                                   |
+| Pedido de hoje não gerou crédito   | O crédito só cai **de madrugada** e somente se o pedido estiver **pago e finalizado**.                 |
+| Produto não gerou cashback         | O produto está nas **exceções**? É uma promoção com o switch de produtos promocionais desligado?       |
+
+## Precisa de ajuda?
+
+<Callout kind="info" collapsed="false">
+  Fale com o **suporte BeeFood** e informe o **cardápio**, o **telefone de teste** usado e o que o cliente viu: faixa, saldo ou recusa.
+</Callout>

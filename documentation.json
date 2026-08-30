@@ -95,6 +95,19 @@
                         ]
                       }
                     ]
+                  },
+                  {
+                    "group": "💰 Cashback",
+                    "pages": [
+                      {
+                        "title": "⚙️ Configurar Cashback",
+                        "path": "cashback-configurar"
+                      },
+                      {
+                        "title": "📲 Operar Cashback",
+                        "path": "cashback-operar"
+                      }
+                    ]
                   }
                 ]
               },
