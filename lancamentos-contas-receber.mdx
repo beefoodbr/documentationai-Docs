@@ -1,0 +1,136 @@
+---
+title: Lançamentos — Contas a receber
+description: >-
+  Entenda como as vendas pagas viram contas a receber com o valor líquido após
+  taxas e registre receitas extras fora das vendas do PDV.
+---
+## Lançamentos de contas a receber
+
+Quando uma venda é paga no PDV, o sistema já cria a conta a receber. Você não lança essa venda novamente. O valor mostrado é o **líquido**, ou seja, o que sobra depois da taxa da forma de pagamento.
+
+Neste manual, você verá o receber que veio da venda, o lançamento manual de uma **receita extra** e a aba **Todos lançamentos**. As imagens têm setas com números, e cada número indica o campo ou botão correspondente na tela. Campos com **\*** são obrigatórios.
+
+## Antes de começar
+
+<Callout kind="info" collapsed="false">
+  1. Abra **Financeiro → Lançamentos** e selecione a aba **Contas a receber**.
+  2. Para uma receita extra, use a forma de pagamento do topo de **Formas Pagamento**, como Pix, Boleto ou Dinheiro. Essas formas são usadas para contas, não para vendas do PDV.
+  3. **Conta** é opcional. Se você não cadastrou uma conta bancária, deixe o campo vazio.
+</Callout>
+
+## Parte 1 — O receber que veio da venda
+
+Abra **Financeiro → Lançamentos** e clique na aba **Contas a receber** (1). Cada venda paga no PDV aparece como uma linha. A descrição costuma ser **Venda Nº …** (2), a categoria é **Receita de Pedidos** e o valor (3) é o líquido daquela forma de pagamento.
+
+Neste exemplo, a busca está filtrada pela venda **915**. A venda, paga com **Débito Visa**, já aparece como **Recebido**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/lancamentos-contas-receber/imagens-tratadas/01-receber-vendas.png" width="800" height="450" alt="Tela de contas a receber mostrando a venda número 915 como Recebido" caption="Lista de contas a receber com a venda #915" />
+
+| Nº | Campo                     | O que mostra                             |
+| -- | ------------------------- | ---------------------------------------- |
+| 1. | **Contas a receber**      | Só o que entra                           |
+| 2. | **Venda Nº 915 - Manual** | Veio do PDV e foi criada automaticamente |
+| 3. | **R$ 13,69**              | Valor líquido depois da taxa de 2,19%    |
+
+Clique no **lápis** da linha, não no checkbox. O sistema abre o detalhe da venda.
+
+No PDV, o cliente pagou **R$ 14,00** (1). A taxa da Visa é **2,19%** (3). Por isso, o valor da conta a receber fica em **R$ 13,69** (2).
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/lancamentos-contas-receber/imagens-tratadas/02-detalhe-venda.png" width="800" height="450" alt="Modal de detalhe da venda mostrando valor original, valor líquido e taxa" caption="Modal da venda #915: original 14,00, líquido 13,69, taxa 2,19%" />
+
+| Nº | Campo              | O que mostra                 |
+| -- | ------------------ | ---------------------------- |
+| 1. | **Valor original** | O que o cliente pagou no PDV |
+| 2. | **Valor líquido**  | O que entra depois da taxa   |
+| 3. | **Taxa (%)**       | A taxa da forma ou bandeira  |
+
+O sistema já considera essa linha recebida porque a venda foi paga no caixa. Você não precisa confirmar o recebimento novamente.
+
+<Callout kind="alert" collapsed="false">
+  Não pague de novo uma venda que já está no receber. Para vendas, não use as formas do topo da tela **Formas Pagamento**, como Dinheiro, Boleto ou Pix. As vendas usam as formas de recebimento exibidas na parte inferior da tela.
+</Callout>
+
+## Parte 2 — Receita extra (não é venda)
+
+Patrocínio, aluguel de espaço e reembolso não passam pelo PDV. Lance esses valores manualmente como uma receita.
+
+<Steps>
+  <Step title="Abra um novo lançamento" title-type="p">
+    Clique em **+ Novo (F1)** e escolha **Receita**.
+  </Step>
+
+  <Step title="Informe a descrição" title-type="p">
+    Em **Descrição \*** (1), informe o nome da receita. Neste exemplo, use **Patrocínio da festa junina**.
+  </Step>
+
+  <Step title="Informe o valor" title-type="p">
+    Em **Valor \*** (2), informe quanto será recebido. Neste exemplo, digite **200**.
+  </Step>
+
+  <Step title="Defina o vencimento" title-type="p">
+    Em **Vencimento**, mantenha a data de hoje.
+  </Step>
+
+  <Step title="Escolha a forma de pagamento" title-type="p">
+    Em **Forma de pagamento \*** (3), selecione **Pix**. Use uma forma do topo de **Formas Pagamento**, que corresponde às contas a receber.
+  </Step>
+
+  <Step title="Confira a categoria" title-type="p">
+    O sistema preenche **Outras Receitas** no campo **Categoria** (4). Mantenha essa categoria para identificar que o valor não veio de uma venda.
+  </Step>
+
+  <Step title="Informe a conta bancária, se aplicável" title-type="p">
+    Se você não cadastrou uma conta bancária, deixe **Conta** vazia.
+  </Step>
+
+  <Step title="Marque o recebimento" title-type="p">
+    Ligue **Recebido** se o dinheiro já entrou. Ao marcar essa opção, o cadastro exibe data, encargos, desconto e valor recebido.
+  </Step>
+
+  <Step title="Salve o lançamento" title-type="p">
+    Clique em **SALVAR (F2)** (5). Fechar o cadastro sem salvar descarta o lançamento.
+  </Step>
+</Steps>
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/lancamentos-contas-receber/imagens-tratadas/03-receita-extra.png" width="800" height="450" alt="Modal de receita extra com patrocínio de 200 reais no Pix marcado como recebido" caption="Receita extra: patrocínio R$ 200 no Pix, já recebida" />
+
+| Nº | Campo                     | O que faz                           |
+| -- | ------------------------- | ----------------------------------- |
+| 1. | **Descrição \***          | Nome da receita                     |
+| 2. | **Valor \***              | Quanto entra                        |
+| 3. | **Forma de pagamento \*** | Pix, Boleto, Dinheiro…              |
+| 4. | **Categoria**             | Sempre Outras Receitas              |
+| 5. | **SALVAR (F2)**           | Grava o lançamento. Fechar descarta |
+
+Depois de salvar, a linha entra em **Contas a receber** como **Recebido** (1). A categoria é **Outras Receitas** (2), e o valor da receita extra aparece em verde (3).
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/lancamentos-contas-receber/imagens-tratadas/04-lista-receita.png" width="800" height="450" alt="Lista de contas a receber mostrando o patrocínio como recebido" caption="Patrocínio recebido na lista" />
+
+| Nº | Campo               | O que mostra                                             |
+| -- | ------------------- | -------------------------------------------------------- |
+| 1. | **Recebido**        | Já entrou, pelo switch no cadastro ou pelo cifrão depois |
+| 2. | **Outras Receitas** | Receita que não veio de uma venda                        |
+| 3. | **R$ 200,00**       | Valor da receita extra                                   |
+
+## Parte 3 — Todos os lançamentos
+
+A aba **Todos lançamentos** (1) reúne contas a pagar e contas a receber. Use essa visão quando quiser consultar o mês inteiro sem alternar entre as abas.
+
+O campo **Busca** (2) filtra os lançamentos pela descrição. Ao digitar **Aluguel**, a lista mostra somente a despesa correspondente (3).
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/lancamentos-contas-receber/imagens-tratadas/05-todos.png" width="800" height="450" alt="Aba Todos lançamentos filtrada pela busca Aluguel" caption="Aba Todos lançamentos filtrada por Aluguel" />
+
+| Nº | Campo                 | O que faz                                             |
+| -- | --------------------- | ----------------------------------------------------- |
+| 1. | **Todos lançamentos** | Mostra contas a pagar e a receber juntas              |
+| 2. | **Busca**             | Filtra pela descrição                                 |
+| 3. | **Aluguel do ponto**  | Mostra a despesa do manual de contas a pagar, já paga |
+
+## O que esta tela não é
+
+<Callout kind="alert" collapsed="false">
+  - **Relatório Recebimentos e Pagamentos:** mostra os totais do dia. Em **Lançamentos**, você cria e quita cada linha.
+  - **DRE e cadastros:** bancos, fornecedores, funcionários e categorias são administrados em outras telas.
+  - **Taxa da forma de pagamento:** a configuração da taxa fica em outra tela. Aqui você vê apenas o efeito: o receber da venda já nasce com o valor líquido.
+</Callout>
+

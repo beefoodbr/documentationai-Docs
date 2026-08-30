@@ -1,0 +1,134 @@
+---
+title: "Lançamentos — Contas a pagar"
+description: "Registre despesas únicas e parceladas no BeeFood3 e marque-as como pagas para manter o fluxo de caixa sempre atualizado."
+---
+
+## Lançamentos — contas a pagar
+
+Registre manualmente contas que não surgem de uma venda, como a conta de **luz**, o **aluguel** e uma **máquina parcelada**, em **Financeiro → Lançamentos**.
+
+Neste manual, você vai encontrar a tela, criar uma **despesa única**, marcar a despesa como paga e lançar uma **despesa parcelada**.
+
+As imagens têm setas com números, como 1, 2 e 3. Cada número no texto indica o campo ou botão correspondente na tela. Campos marcados com `*` são obrigatórios.
+
+## Antes de começar
+
+<Callout kind="info">
+
+- Acesse **Financeiro → Lançamentos**.
+- Use a forma de pagamento, como Pix, Boleto ou Dinheiro, cadastrada no **topo** de **Formas Pagamento**. Essa opção é usada para contas, não para vendas no PDV.
+- **Conta** e **categoria** são opcionais. Se você ainda não cadastrou uma conta bancária, deixe o campo vazio.
+
+</Callout>
+
+## Parte 1 — Onde fica
+
+Acesse **Financeiro → Lançamentos** (1). A tela tem três abas: **Contas a pagar** (2), que mostra despesas com valores em vermelho, **Contas a receber** e **Todos lançamentos**. Clique em **+ Novo (F1)** (3) para abrir o cadastro.
+
+O período padrão é **Este mês**. Os cards no topo somam os valores vencidos, com vencimento hoje, ainda a vencer e já pagos.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/lancamentos-contas-pagar/imagens-tratadas/01-menu-lancamentos.png" width="800" height="450" alt="Menu Financeiro Lançamentos com a aba Contas a pagar destacada" caption="Menu Lançamentos e aba Contas a pagar" />
+
+| Nº | Campo | O que faz |
+| --- | --- | --- |
+| 1. | **Lançamentos** | Fica dentro de Financeiro |
+| 2. | **Contas a pagar** | Mostra apenas despesas |
+| 3. | **+ Novo (F1)** | Abre as opções Despesa ou Receita |
+
+## Parte 2 — Nova despesa
+
+Clique em **+ Novo (F1)** e escolha **Despesa** (1). A opção **Receita** (2) é usada para contas a receber.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/lancamentos-contas-pagar/imagens-tratadas/02-novo-dropdown.png" width="800" height="450" alt="Dropdown com as opções Despesa e Receita" caption="Novo: Despesa ou Receita" />
+
+| Nº | Campo | O que faz |
+| --- | --- | --- |
+| 1. | **Despesa** | Cria uma conta a pagar |
+| 2. | **Receita** | Cria uma conta a receber |
+
+Preencha os campos da despesa. Para um aluguel de R$ 800,00 no Pix, informe a descrição, o valor, o vencimento e a forma de pagamento. Mantenha o **Tipo de lançamento** como **Único** e clique em **SALVAR (F2)** (4).
+
+- **Descrição** `*` (1): o nome da conta, como **Aluguel do ponto**.
+- **Valor** `*` (2): quanto será pago, como **R$ 800,00**.
+- **Vencimento** `*`: o dia do pagamento. O campo já vem preenchido com a data de hoje.
+- **Forma de pagamento** `*` (3): a forma usada para pagar, como **Pix**.
+- **Tipo de lançamento**: mantenha **Único** para uma despesa sem parcelas.
+- **SALVAR (F2)** (4): grava a despesa.
+
+**Conta**, **fornecedor**, **categoria** e **observações** podem ficar vazios. Mantenha o switch **Pago** desligado se a conta ainda não foi quitada.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/lancamentos-contas-pagar/imagens-tratadas/03-despesa-unico.png" width="800" height="450" alt="Modal de despesa única com aluguel de R$ 800 no Pix" caption="Despesa única: aluguel R$ 800 no Pix" />
+
+| Nº | Campo | O que faz |
+| --- | --- | --- |
+| 1. | **Descrição** `*` | Informa o nome da conta |
+| 2. | **Valor** `*` | Informa quanto será pago |
+| 3. | **Forma de pagamento** `*` | Define Pix, Boleto, Dinheiro ou outra forma |
+| 4. | **SALVAR (F2)** | Grava a despesa; **Fechar** descarta as alterações |
+
+Use **NOVA IGUAL** para salvar a despesa e abrir outra com os mesmos dados. Use **NOVA EM BRANCO** para salvar e abrir um cadastro vazio.
+
+## Parte 3 — Marcar como paga
+
+Depois de salvar, a despesa aparece em **Vencem hoje** (1) ou em **A vencer**, se o vencimento estiver em outra data. O status fica como **Vence hoje** (2). Clique no **cifrão verde** (3) para registrar o pagamento.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/lancamentos-contas-pagar/imagens-tratadas/04-lista-a-vencer.png" width="800" height="450" alt="Lista de contas a pagar com despesa em aberto e cifrão verde" caption="Despesa na lista, ainda em aberto" />
+
+| Nº | Campo | O que mostra |
+| --- | --- | --- |
+| 1. | **Vencem hoje** | A soma das despesas do dia, como R$ 800,00 |
+| 2. | **Status** | Indica que a despesa ainda não foi paga |
+| 3. | **Cifrão** | Abre a confirmação do pagamento |
+
+Na confirmação, escolha se o pagamento ocorreu na data de vencimento (1). Clique em **Confirmar Pagamento** (2) para quitar a despesa. Para informar outra data, desmarque **Pagar na data de vencimento**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/lancamentos-contas-pagar/imagens-tratadas/05-confirmar-pago.png" width="800" height="450" alt="Modal de confirmação de pagamento do aluguel" caption="Confirmar pagamento do aluguel" />
+
+| Nº | Campo | O que faz |
+| --- | --- | --- |
+| 1. | **Pagar na data de vencimento** | Usa o vencimento como data do pagamento |
+| 2. | **Confirmar Pagamento** | Marca a despesa como paga |
+
+Depois da confirmação, a linha muda para **Pago** (1), e o card **Pagos** (2) passa a incluir o valor. Use o lápis para editar a despesa. Use o ícone laranja para desfazer o pagamento.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/lancamentos-contas-pagar/imagens-tratadas/06-lista-pago.png" width="800" height="450" alt="Lista de contas a pagar com aluguel marcado como pago" caption="Aluguel marcado como pago" />
+
+| Nº | Campo | O que mostra |
+| --- | --- | --- |
+| 1. | **Pago** | O status depois da confirmação |
+| 2. | **Pagos** | A soma das despesas já quitadas |
+
+Também é possível marcar **Pago** durante o cadastro, usando o switch no modal. Ao ativar essa opção, o formulário exibe campos para data, encargos, desconto e valor pago.
+
+## Parte 4 — Despesa parcelada
+
+No mesmo caminho, clique em **+ Novo → Despesa**. Mude o tipo para **Parcelado** (1) e escolha **2x**. O campo **Valor** passa a ser **Valor Parcela** `*` (2), e o formulário informa que serão criadas 2 parcelas de R$ 150,00 (3).
+
+A primeira parcela vence na data informada no cadastro. A segunda parcela vence no mês seguinte.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/lancamentos-contas-pagar/imagens-tratadas/07-despesa-parcelado.png" width="800" height="450" alt="Modal de despesa parcelada em 2 vezes de R$ 150" caption="Despesa parcelada em 2x de R$ 150" />
+
+| Nº | Campo | O que faz |
+| --- | --- | --- |
+| 1. | **Parcelado** | Cria várias parcelas da despesa |
+| 2. | **Valor Parcela** `*` | Define o valor de cada parcela |
+| 3. | **Aviso** | Informa a quantidade e o valor das parcelas |
+
+No período do mês atual, a lista mostra a parcela **1/2** (1). A parcela **2/2** aparece no mês seguinte. Altere o período do filtro para consultá-la. O aluguel já pago continua na lista (2).
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/lancamentos-contas-pagar/imagens-tratadas/08-lista-parcelas.png" width="800" height="450" alt="Lista mostrando parcela 1/2 em aberto e aluguel já pago" caption="Parcela 1/2 no mês e aluguel pago" />
+
+| Nº | Campo | O que mostra |
+| --- | --- | --- |
+| 1. | **Máquina de café (1/2)** | A primeira parcela, ainda em aberto |
+| 2. | **Aluguel do ponto** | A despesa única, já paga |
+
+## O que esta tela não é
+
+<Callout kind="alert">
+
+- **Venda no PDV:** o pagamento do cliente gera uma conta a **receber** automaticamente. Consulte o manual de contas a receber.
+- **Desconto do cardápio** e **taxa da maquininha:** são configurados em outras telas.
+- **Recebimentos**, **Pagamentos** e **DRE:** são telas vizinhas que agregam lançamentos já registrados. Você não cria a despesa nessas telas.
+
+</Callout>

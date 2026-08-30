@@ -485,6 +485,14 @@
               {
                 "title": "💳 Taxas das Formas de Recebimento",
                 "path": "taxas-formas-pagamento"
+              },
+              {
+                "title": "📋 Contas a Pagar",
+                "path": "lancamentos-contas-pagar"
+              },
+              {
+                "title": "📋 Contas a Receber",
+                "path": "lancamentos-contas-receber"
               }
             ]
           },
