@@ -149,39 +149,61 @@ No **Mastercard**, usando a mesma lupa em outra venda, a taxa é **2,89%**, o l�
 | 2. | **Valor Líquido** | O que entra na conta, R$ 13,69        |
 | 3. | **Datas**         | Recebimento e previsto, iguais no D+0 |
 
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/taxas-formas-pagamento/imagens-tratadas/07b-detalhe-mastercard.png" width="800" height="450" alt="Detalhe do pagamento de débito Mastercard mostrando taxa de 2,89 por cento, líquido de 13,60 e recebimento no mesmo dia" caption="Mastercard 2,89%, líquido 13,60, D+0" />
+
+No **crédito**, o PDV pode somar o acréscimo do cadastro (**+3%**). Isso **não** é a taxa da operadora. A taxa do crédito (**3,49%**) e o líquido **R$ 13,92** aparecem no mesmo bloco. O recebimento é **29/09/2026** (D+30).
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/taxas-formas-pagamento/imagens-tratadas/07c-detalhe-credito.png" width="800" height="450" alt="Detalhe do pagamento de crédito mostrando taxa de 3,49 por cento, líquido de 13,92 e recebimento em 30 dias" caption="Crédito 3,49%, líquido 13,92, D+30" />
+
+No **vale**, a taxa é **5%**, o líquido é **R$ 13,30** e o recebimento ocorre em **14/09/2026** (D+15).
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/taxas-formas-pagamento/imagens-tratadas/07d-detalhe-vale.png" width="800" height="450" alt="Detalhe do pagamento de vale refeição mostrando taxa de 5 por cento, líquido de 13,30 e recebimento em 15 dias" caption="Vale 5%, líquido 13,30, D+15" />
+
 A lupa também existe no **Histórico de Vendas**: clique no ícone de cartão da linha e depois na lupa do pagamento.
 
-No **crédito**, o PDV pode somar o acréscimo do cadastro (**+3%**). Isso **não** é a taxa da operadora. A taxa do crédito, **3,49% em 30 dias**, aparece no mesmo bloco, com recebimento em **29/09/2026**. No vale, a taxa é **5%**, o líquido é **R$ 13,30** e o recebimento ocorre em **14/09/2026**.
+Vendas pagas **hoje** (30/08/2026) usadas no detalhe:
+
+| Venda | Forma             | Taxa  | Líquido  | Recebe em    |
+| ----- | ----------------- | ----- | -------- | ------------ |
+| #915  | Débito Visa       | 2,19% | R$ 13,69 | 30/08 (hoje) |
+| #916  | Débito Mastercard | 2,89% | R$ 13,60 | 30/08 (hoje) |
+| #917  | Crédito           | 3,49% | R$ 13,92 | 29/09        |
+| #914  | Vale Refeição     | 5,00% | R$ 13,30 | 14/09        |
 
 ## Parte 5: relatório de faturado e realizado
 
-Abra o menu **Desempenho**, que não é o Financeiro da barra. No menu interno do relatório, acesse **Vendas → Recebimento** (1).
+Abra o menu **Desempenho**, que não é o Financeiro da barra. No menu interno do relatório, acesse **Vendas → Resumo** (1), com a **data de hoje**.
 
-A aba **Resumo** tem **Valor Pago**, que representa o faturado (2), e **Valor Realizado** (3). Quando existe taxa no pagamento, as duas colunas **diferem**. No débito do dia, o resultado é **R$ 42,00** pago e **R$ 40,98** realizado (4): duas Visas, com taxa de 2,19% cada, e uma Mastercard, com taxa de 2,89%.
+Não é **Vendas → Recebimento**. O Recebimento lista o que **cai** no dia. O **Resumo** lista o que **vendeu** no dia: faturado de todas as formas e realizado só do que entra na conta hoje.
 
-Crédito e vale com recebimento em outro dia **não entram** na lista deste dia.
+Na tabela **Total**, **Valor Pago** (2) é o faturado (o cliente pagou). **Valor Realizado** (3) é o líquido que caiu hoje. No exemplo do dia: **R$ 183,26** pago e **R$ 95,56** realizado.
 
-<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/taxas-formas-pagamento/imagens-tratadas/08-desemp-recebimento.png" width="800" height="450" alt="Relatório Desempenho Recebimento com o resumo dos valores faturado e realizado" caption="Resumo: faturado 42,00 × realizado 40,98" />
+O bloco **Pagamentos** (4) quebra por forma. Aí aparece o crédito e o vale no faturado, mesmo com o dinheiro caindo outro dia.
 
-| Nº | Campo               | O que mostra                         |
-| -- | ------------------- | ------------------------------------ |
-| 1. | **Recebimento**     | Dentro de Vendas                     |
-| 2. | **Valor Pago**      | Soma faturada, o que o cliente pagou |
-| 3. | **Valor Realizado** | Soma líquida                         |
-| 4. | **Débito**          | 42,00 faturado · 40,98 realizado     |
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/taxas-formas-pagamento/imagens-tratadas/08-desemp-resumo.png" width="800" height="450" alt="Relatório Desempenho Vendas Resumo com os valores faturado e realizado do dia" caption="Vendas → Resumo: pago 183,26 × realizado 95,56" />
 
-A aba **Dados** (1) lista cada pagamento. **Valor** é o faturado; **V. Realizado** é o líquido; **Taxa** é a da bandeira. As duas Visas mostram **−2,19%** (2 e 4), e a Mastercard mostra **−2,89%** (3). Todas têm venda e vencimento no **mesmo dia**.
+| Nº | Campo               | O que mostra                               |
+| -- | ------------------- | ------------------------------------------ |
+| 1. | **Resumo**          | Dentro de Vendas, com a data de hoje       |
+| 2. | **Valor Pago**      | Soma faturada do dia (R$ 183,26)           |
+| 3. | **Valor Realizado** | Soma líquida que caiu hoje (R$ 95,56)      |
+| 4. | **Pagamentos**      | Uma linha por forma — faturado e realizado |
 
-<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/taxas-formas-pagamento/imagens-tratadas/09-desemp-dados.png" width="800" height="450" alt="Aba Dados do relatório mostrando duas vendas Visa com taxa de 2,19 por cento e uma Mastercard com taxa de 2,89 por cento" caption="Duas Visas −2,19% e Mastercard −2,89%" />
+No **Pagamentos**, cada forma tem as duas colunas:
 
-| Nº | Campo            | O que mostra                         |
-| -- | ---------------- | ------------------------------------ |
-| 1. | **Aba Dados**    | Lista do dia, um pagamento por linha |
-| 2. | **Visa**         | 14,00 → 13,69 · taxa −2,19%          |
-| 3. | **Mastercard**   | 14,00 → 13,60 · taxa −2,89%          |
-| 4. | **Visa de novo** | Mesma bandeira, mesma taxa −2,19%    |
+- **Débito** (1) — faturado **R$ 98,00**, realizado **R$ 95,56**. Cai hoje (D+0); a diferença é a taxa (Visa 2,19% e Mastercard 2,89%).
+- **Crédito** (2) — faturado **R$ 43,26**, realizado **R$ 0,00**. A venda foi hoje; o dinheiro cai em 30 dias.
+- **Vale Refeição** (3) — faturado **R$ 42,00**, realizado **R$ 0,00**. A venda foi hoje; o dinheiro cai em 15 dias.
 
-Se quiser consultar apenas o financeiro, acesse **Financeiro → Recebimentos** e use o filtro **Previsto e Realizado**, nas abas Tipo e Datas. O relatório de **Desempenho → Recebimento** é o que separa faturado e realizado da venda.
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/taxas-formas-pagamento/imagens-tratadas/09-desemp-pagamentos.png" width="800" height="450" alt="Bloco Pagamentos do relatório mostrando débito crédito e vale com faturado e realizado" caption="Débito, crédito e vale: faturado × realizado" />
+
+| Nº | Campo             | O que mostra                                 |
+| -- | ----------------- | -------------------------------------------- |
+| 1. | **Débito**        | 98,00 faturado · 95,56 realizado (cai hoje)  |
+| 2. | **Crédito**       | 43,26 faturado · 0,00 realizado (cai depois) |
+| 3. | **Vale Refeição** | 42,00 faturado · 0,00 realizado (cai depois) |
+
+Outro lugar, se quiser só o financeiro: **Financeiro → Recebimentos**, filtro **Previsto e Realizado**, abas Tipo e Datas. Para ver faturado do dia **e** realizado do dia juntos, use **Desempenho → Vendas → Resumo**.
 
 ## O que esta taxa não é
 
@@ -207,7 +229,7 @@ Aqui, a taxa é da **operadora**. O cliente não vê. O relatório de recebiment
   </Expandable>
 
   <Expandable title="Onde vejo o relatório de faturado e realizado?" default-open="false">
-    Acesse **Desempenho → Vendas → Recebimento**. Na aba **Resumo**, compare **Valor Pago** e **Valor Realizado**. Na aba **Dados**, consulte cada pagamento, incluindo valor, valor realizado, taxa e datas.
+    Acesse **Desempenho → Vendas → Resumo**, com a data de hoje. Na tabela **Total**, compare **Valor Pago** (faturado) e **Valor Realizado** (líquido). No bloco **Pagamentos**, veja o faturado e o realizado por forma.
   </Expandable>
 
   <Expandable title="A taxa da operadora aumenta o preço pago pelo cliente?" default-open="false">
