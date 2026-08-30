@@ -1,0 +1,233 @@
+---
+title: Taxas das formas de recebimento
+description: >-
+  Configure a taxa da operadora (débito, crédito, vale) por forma de recebimento
+  no BeeFood3 e entenda a diferença entre faturado e realizado no relatório de
+  vendas.
+---
+## Taxas das formas de recebimento
+
+A taxa da **maquininha** ou do **vale** não é desconto para o cliente. O cliente paga o valor cheio. A taxa é o que a operadora fica, e o restaurante recebe o **líquido**, às vezes **no mesmo dia**, às vezes **depois**.
+
+Neste manual: configurar **débito** (geral **2,50%** no mesmo dia, **Visa 2,19%** e **Mastercard 2,89%**), **crédito (3,49% em 30 dias)** e **vale refeição (5% em 15 dias)**; vender no débito **duas vezes na Visa** e **uma na Mastercard**; ver o detalhe com taxa; e ler **faturado** e **realizado** no relatório do dia.
+
+## Antes de começar
+
+1. Acesso a **Financeiro → Formas Pagamento**.
+2. Caixa **aberto** para vender no PDV.
+3. Esta taxa **não** é o desconto ou acréscimo do cardápio digital nem o ajuste que aparece no botão do PDV (Dinheiro −1%, Crédito +3%). Aquilo muda o preço da venda. Aqui muda **o que entra na conta**.
+
+<Callout kind="alert" collapsed="false">
+  A tela tem **SALVAR E SAIR (F2)**. Não é auto-save. Fechar a tela sem salvar descarta as alterações.
+</Callout>
+
+<Callout kind="alert" collapsed="false">
+  Não deixe bandeira **ativa sem taxa**. O sistema trata a linha vazia como regra daquela bandeira, e a configuração geral **não vale** para ela. Essa configuração vira uma bandeira “fantasma”.
+</Callout>
+
+## Parte 1: onde fica
+
+No menu: **Financeiro → Formas Pagamento** (1). O topo da página é outra coisa: formas para **contas a pagar e a receber** (Boleto, Pix…). A taxa da venda fica no **final da página**, em **Formas de Recebimento das Vendas** (2). As colunas mostram **Dias Receb.** e **Taxa (%)** (3).
+
+Clique na **linha** da forma para abrir a configuração. A tela avisa que o cadastro completo continua em **Cadastros → Formas de Recebimento**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/taxas-formas-pagamento/imagens-tratadas/01-formas-pagamento.png" width="800" height="450" alt="Tela Financeiro Formas Pagamento com o bloco Formas de Recebimento das Vendas destacado" caption="Financeiro → Formas Pagamento, bloco das vendas" />
+
+| Nº | Campo                                | O que faz                                       |
+| -- | ------------------------------------ | ----------------------------------------------- |
+| 1. | **Formas Pagamento**                 | Dentro de Financeiro                            |
+| 2. | **Formas de Recebimento das Vendas** | Taxa e prazo da maquininha ou vale              |
+| 3. | **Dias Receb.** e **Taxa (%)**       | Quando o dinheiro cai e quanto a operadora fica |
+
+## Parte 2: três taxas que fazem sentido
+
+Os números abaixo são típicos de restaurante no Brasil. Use os valores da **sua** operadora quando forem diferentes.
+
+### Débito: geral 2,50% e 0 dias, no mesmo dia
+
+Clique em **Débito**. Em **Configuração Geral**, que vale quando **não** há bandeira específica ou quando a bandeira está desligada, informe:
+
+- **Taxa (%)** (1): **2,50**
+- **Dias para Recebimento** (2): **0**, quando o valor cai no mesmo dia
+- **SALVAR E SAIR (F2)** (3)
+
+**Desconto Fixo (R$)** fica vazio se você usa percentual. Os dois não somam: use taxa percentual ou valor fixo.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/taxas-formas-pagamento/imagens-tratadas/02-debito-config.png" width="800" height="450" alt="Configuração geral do débito com taxa de 2,50 por cento e recebimento em zero dias" caption="Débito geral 2,50% e 0 dias" />
+
+| Nº | Campo                     | O que faz                             |
+| -- | ------------------------- | ------------------------------------- |
+| 1. | **Taxa (%)**              | Quanto a operadora desconta. **2,50** |
+| 2. | **Dias para Recebimento** | **0** = recebido no dia da venda      |
+| 3. | **SALVAR E SAIR (F2)**    | Grava. Fechar descarta                |
+
+### Débito: taxa por bandeira, Visa e Mastercard
+
+No final do mesmo modal, localize **Bandeiras de Cartão**. Só ligue a bandeira se ela tiver taxa ou prazo **diferente** da configuração geral. Preencha os três campos, taxa, desconto fixo se for o caso e dias, **antes** de salvar.
+
+- **Visa** (1): **2,19%** e **0** dias
+- **Mastercard** (2): **2,89%** e **0** dias
+- **SALVAR E SAIR (F2)** (3)
+
+Bandeira ligada e taxa vazia vira uma “fantasma”: o pagamento daquela bandeira **não herda** a configuração geral.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/taxas-formas-pagamento/imagens-tratadas/02b-debito-bandeiras.png" width="800" height="450" alt="Configuração do débito com Visa em 2,19 por cento e Mastercard em 2,89 por cento" caption="Visa 2,19% e Mastercard 2,89%" />
+
+| Nº | Campo                  | O que faz                       |
+| -- | ---------------------- | ------------------------------- |
+| 1. | **Visa**               | Taxa própria. **2,19** · 0 dias |
+| 2. | **Mastercard**         | Taxa própria. **2,89** · 0 dias |
+| 3. | **SALVAR E SAIR (F2)** | Grava geral e bandeiras juntos  |
+
+### Crédito: 3,49% e 30 dias
+
+Use os mesmos campos da configuração geral. Informe taxa **3,49** (1) e **30** dias (2). Grave em **SALVAR E SAIR (F2)** (3). Não ligue nenhuma bandeira.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/taxas-formas-pagamento/imagens-tratadas/03-credito-config.png" width="800" height="450" alt="Configuração do crédito com taxa de 3,49 por cento e recebimento em 30 dias" caption="Crédito 3,49% e 30 dias" />
+
+### Vale Refeição, VR: 5% e 15 dias
+
+Informe taxa **5,00** (1) e **15** dias (2). Grave em **SALVAR E SAIR (F2)** (3). Deixe as bandeiras **desligadas** se a taxa for a mesma para todas.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/taxas-formas-pagamento/imagens-tratadas/04-vr-config.png" width="800" height="450" alt="Configuração do Vale Refeição com taxa de 5 por cento e recebimento em 15 dias" caption="Vale Refeição 5% e 15 dias" />
+
+### Como fica a tabela
+
+Na lista, a linha **sem badge** é a configuração geral. Cada bandeira ligada vira uma linha com o nome no badge.
+
+No exemplo, ao buscar **Débito**, aparecem **Mastercard 2,89%** (1), **Visa 2,19%** (2) e a configuração geral **2,5%** (3). Todas têm **0** dias.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/taxas-formas-pagamento/imagens-tratadas/05-tabela-configurada.png" width="800" height="450" alt="Tabela de débito configurada com as linhas geral, Visa e Mastercard" caption="Lista: Mastercard, Visa e geral" />
+
+| Nº | Campo                   | O que mostra                       |
+| -- | ----------------------- | ---------------------------------- |
+| 1. | **Débito · Mastercard** | 0 dias · 2,89%                     |
+| 2. | **Débito · Visa**       | 0 dias · 2,19%                     |
+| 3. | **Débito** (sem badge)  | 0 dias · 2,5%: as outras bandeiras |
+
+## Parte 3: conta das datas, faturado e realizado
+
+**Faturado** é o que o cliente pagou, no **dia da venda**. **Realizado** é o líquido que cai na conta, no **dia da venda + dias**.
+
+Considere uma venda de **R$ 100,00** no dia **30/08/2026**.
+
+| Forma             | Taxa  | Dias | Faturado  | Realizado (líquido) | Data faturado | Data realizado |
+| ----------------- | ----- | ---- | --------- | ------------------- | ------------- | -------------- |
+| Débito (geral)    | 2,50% | 0    | R$ 100,00 | R$ 97,50            | 30/08/2026    | 30/08/2026     |
+| Débito Visa       | 2,19% | 0    | R$ 100,00 | R$ 97,81            | 30/08/2026    | 30/08/2026     |
+| Débito Mastercard | 2,89% | 0    | R$ 100,00 | R$ 97,11            | 30/08/2026    | 30/08/2026     |
+| Crédito           | 3,49% | 30   | R$ 100,00 | R$ 96,51            | 30/08/2026    | 29/09/2026     |
+| Vale Refeição     | 5,00% | 15   | R$ 100,00 | R$ 95,00            | 30/08/2026    | 14/09/2026     |
+
+No débito com **0 dias**, os dois valores aparecem **no mesmo dia**, por isso ele é o melhor para conferir o relatório hoje. No crédito e no vale, o faturado entra hoje, mas o realizado só aparece na data da última coluna.
+
+Calcule o líquido com `valor × (1 − taxa/100)`.
+
+- Visa: 100 × 0,9781 = **97,81**
+- Mastercard: 100 × 0,9711 = **97,11**
+- Crédito: 100 × 0,9651 = **96,51**
+- Vale: 100 × 0,95 = **95,00**
+
+<Callout kind="tip" collapsed="false">
+  Use a data de recebimento para conciliar o valor que efetivamente entra na conta. A data faturada mostra quando o cliente pagou, enquanto a data realizada considera o prazo configurado.
+</Callout>
+
+## Parte 4: venda por bandeira e detalhe da taxa
+
+No **PDV**, use o mesmo item, **One Burger R$ 14,00**. Selecione **Receber (F3)** → **Débito** → escolha a **bandeira** → **CONFIRMAR (ENTER/F1)**.
+
+Se a bandeira está configurada, **preencha a bandeira** na venda. Faça **duas vendas Visa**, com a mesma taxa, e **uma Mastercard**.
+
+O pagamento aparece em **Pagamentos realizados** como **Débito · Pago**, com a bandeira (1). A **lupa** (2) abre o detalhe.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/taxas-formas-pagamento/imagens-tratadas/06-pdv-pago.png" width="800" height="450" alt="Tela do PDV mostrando uma venda de débito Visa paga e o ícone de lupa" caption="Venda débito Visa + lupa" />
+
+| Nº | Campo                    | O que faz                                  |
+| -- | ------------------------ | ------------------------------------------ |
+| 1. | **Débito · Visa · Pago** | Pagamento registrado, no valor de R$ 14,00 |
+| 2. | **Lupa**                 | Abre o detalhe com taxa, líquido e datas   |
+
+Quando a taxa está no pagamento, o detalhe mostra **Configuração de taxa**. No **Visa**:
+
+- **Taxa (%)** (1): **2,19**
+- **Valor Líquido** (2): **R$ 13,69** (`14,00 × 0,9781`)
+- **Data de Recebimento** e **Recebimento Previsto** (3): **30/08/2026**, D+0, o mesmo dia
+
+No **Mastercard**, usando a mesma lupa em outra venda, a taxa é **2,89%**, o líquido é **R$ 13,60** e as datas também são **30/08/2026**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/taxas-formas-pagamento/imagens-tratadas/07-detalhe-pagamento.png" width="800" height="450" alt="Detalhe do pagamento de débito Visa mostrando taxa de 2,19 por cento, líquido de 13,69 e recebimento no mesmo dia" caption="Visa 2,19%, líquido 13,69, D+0" />
+
+| Nº | Campo             | O que mostra                          |
+| -- | ----------------- | ------------------------------------- |
+| 1. | **Taxa (%)**      | A da bandeira, 2,19% no Visa          |
+| 2. | **Valor Líquido** | O que entra na conta, R$ 13,69        |
+| 3. | **Datas**         | Recebimento e previsto, iguais no D+0 |
+
+A lupa também existe no **Histórico de Vendas**: clique no ícone de cartão da linha e depois na lupa do pagamento.
+
+No **crédito**, o PDV pode somar o acréscimo do cadastro (**+3%**). Isso **não** é a taxa da operadora. A taxa do crédito, **3,49% em 30 dias**, aparece no mesmo bloco, com recebimento em **29/09/2026**. No vale, a taxa é **5%**, o líquido é **R$ 13,30** e o recebimento ocorre em **14/09/2026**.
+
+## Parte 5: relatório de faturado e realizado
+
+Abra o menu **Desempenho**, que não é o Financeiro da barra. No menu interno do relatório, acesse **Vendas → Recebimento** (1).
+
+A aba **Resumo** tem **Valor Pago**, que representa o faturado (2), e **Valor Realizado** (3). Quando existe taxa no pagamento, as duas colunas **diferem**. No débito do dia, o resultado é **R$ 42,00** pago e **R$ 40,98** realizado (4): duas Visas, com taxa de 2,19% cada, e uma Mastercard, com taxa de 2,89%.
+
+Crédito e vale com recebimento em outro dia **não entram** na lista deste dia.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/taxas-formas-pagamento/imagens-tratadas/08-desemp-recebimento.png" width="800" height="450" alt="Relatório Desempenho Recebimento com o resumo dos valores faturado e realizado" caption="Resumo: faturado 42,00 × realizado 40,98" />
+
+| Nº | Campo               | O que mostra                         |
+| -- | ------------------- | ------------------------------------ |
+| 1. | **Recebimento**     | Dentro de Vendas                     |
+| 2. | **Valor Pago**      | Soma faturada, o que o cliente pagou |
+| 3. | **Valor Realizado** | Soma líquida                         |
+| 4. | **Débito**          | 42,00 faturado · 40,98 realizado     |
+
+A aba **Dados** (1) lista cada pagamento. **Valor** é o faturado; **V. Realizado** é o líquido; **Taxa** é a da bandeira. As duas Visas mostram **−2,19%** (2 e 4), e a Mastercard mostra **−2,89%** (3). Todas têm venda e vencimento no **mesmo dia**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/taxas-formas-pagamento/imagens-tratadas/09-desemp-dados.png" width="800" height="450" alt="Aba Dados do relatório mostrando duas vendas Visa com taxa de 2,19 por cento e uma Mastercard com taxa de 2,89 por cento" caption="Duas Visas −2,19% e Mastercard −2,89%" />
+
+| Nº | Campo            | O que mostra                         |
+| -- | ---------------- | ------------------------------------ |
+| 1. | **Aba Dados**    | Lista do dia, um pagamento por linha |
+| 2. | **Visa**         | 14,00 → 13,69 · taxa −2,19%          |
+| 3. | **Mastercard**   | 14,00 → 13,60 · taxa −2,89%          |
+| 4. | **Visa de novo** | Mesma bandeira, mesma taxa −2,19%    |
+
+Se quiser consultar apenas o financeiro, acesse **Financeiro → Recebimentos** e use o filtro **Previsto e Realizado**, nas abas Tipo e Datas. O relatório de **Desempenho → Recebimento** é o que separa faturado e realizado da venda.
+
+## O que esta taxa não é
+
+- **Desconto do cardápio digital**: fica em outra tela e em outro manual. Ele barateia ou encarece o pedido para o cliente.
+- **Ajuste no botão do PDV** (Dinheiro −1%, Crédito +3%): também altera o total da venda.
+- **Taxa de serviço da mesa**: representa gorjeta e usa outro parâmetro.
+
+Aqui, a taxa é da **operadora**. O cliente não vê. O relatório de recebimento vê.
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+  <Expandable title="O que é uma bandeira fantasma?" default-open="false">
+    Uma bandeira fantasma é uma bandeira que está ativa, mas não tem taxa preenchida. O sistema trata a linha vazia como uma configuração própria, então o pagamento daquela bandeira **não herda** a taxa geral.
+
+    Desligue a bandeira quando ela não tiver uma taxa ou prazo específico. Se ela estiver ativa, preencha a taxa e os dias antes de salvar.
+  </Expandable>
+
+  <Expandable title="Qual é a diferença entre faturado e realizado?" default-open="false">
+    **Faturado** é o valor que o cliente pagou no dia da venda. **Realizado** é o valor líquido que entra na conta, considerando a taxa da operadora e o prazo configurado.
+
+    No débito com 0 dias, faturado e realizado aparecem no mesmo dia. No crédito e no vale, o faturado aparece na data da venda, e o realizado aparece depois, conforme o prazo.
+  </Expandable>
+
+  <Expandable title="Onde vejo o relatório de faturado e realizado?" default-open="false">
+    Acesse **Desempenho → Vendas → Recebimento**. Na aba **Resumo**, compare **Valor Pago** e **Valor Realizado**. Na aba **Dados**, consulte cada pagamento, incluindo valor, valor realizado, taxa e datas.
+  </Expandable>
+
+  <Expandable title="A taxa da operadora aumenta o preço pago pelo cliente?" default-open="false">
+    Não. A taxa da operadora é descontada do valor recebido pelo restaurante. O cliente paga o valor cheio.
+
+    O desconto ou acréscimo do cardápio digital e o ajuste no botão do PDV são configurações diferentes. Esses ajustes alteram o total da venda.
+  </Expandable>
+</ExpandableGroup>
+
