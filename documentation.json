@@ -161,6 +161,10 @@
                   {
                     "title": "💰 Desconto e Acréscimo nas Formas",
                     "path": "cardapio-digital-desconto-formas"
+                  },
+                  {
+                    "title": "📅 Agendamento",
+                    "path": "cardapio-digital-agendamento"
                   }
                 ]
               },

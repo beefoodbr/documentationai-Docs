@@ -1,0 +1,198 @@
+---
+title: Agendamento do Cardápio Digital
+description: >-
+  Configure pedidos agendados no cardápio digital, defina dias mínimos e
+  máximos, horários de corte e o intervalo entre faixas.
+---
+## Agende pedidos para uma data e hora futuras
+
+No cardápio digital, o cliente pode marcar data e hora em vez de pedir para agora. Você decide se aceita agendamento, com quanto tempo de antecedência e de quanto em quanto tempo os horários aparecem.
+
+O cliente escolhe a opção na **sacola**, depois da modalidade **Entrega** ou **Retirada**. A tela se chama **AGENDAR PEDIDO**: os dias aparecem na parte superior e a **Hora Aproximada** aparece abaixo.
+
+Nas imagens da Parte 2, o recorte da esquerda mostra o painel de configuração e o da direita mostra o cardápio do cliente. A seta indica o que cada campo altera.
+
+## Antes de começar
+
+<Callout kind="info" collapsed="false">
+  1. Abra **Cardápio Digital → Agendamento**.
+  2. Configure primeiro a grade de **Horário de Atendimento**. Os horários exibidos para o cliente saem dessa grade. A aba Agendamento apenas recorta e espaça os horários.
+  3. Não existe botão **SALVAR**. A tela grava automaticamente e mostra a indicação **Salvo automaticamente**. Campos vazios ou fora da faixa válida não são gravados.
+  4. O agendamento funciona somente para **Delivery**, nas modalidades **Entrega** e **Retirada**. Não existe agendamento no presencial, como **QR Code** ou mesa.
+</Callout>
+
+<Callout kind="info" collapsed="false">
+  Depois de gravar uma configuração, o cardápio do cliente pode levar até **1 minuto** para exibir a alteração.
+</Callout>
+
+## Parte 1: onde fica
+
+No menu lateral, abra **Cardápio Digital → Agendamento**. O aviso amarelo informa que o agendamento não se aplica ao salão.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-agendamento/imagens-tratadas/01-aba-switches.png" width="800" alt="Aba Agendamento no menu Cardápio Digital com aviso e três chaves" />
+
+| Nº | Campo                                          | O que faz                                                       |
+| -- | ---------------------------------------------- | --------------------------------------------------------------- |
+| 1  | **Agendamento** no menu                        | Abre esta aba.                                                  |
+| 2  | **Aviso**                                      | Informa que o recurso funciona somente para Entrega e Retirada. |
+| 3  | **Agendamento**                                | Liga ou desliga o agendamento no cardápio.                      |
+| 4  | **Agendamento com o Cardápio Digital fechado** | Permite pedidos agendados fora do horário de atendimento.       |
+| 5  | **Só aceita agendamento**                      | Remove a opção de pedido imediato.                              |
+
+O card **Configurações de Tempo** aparece somente quando o switch **Agendamento** está ligado.
+
+## Parte 2: do painel para o cardápio
+
+Cada imagem mostra a relação entre a configuração e o resultado no cardápio: o que você liga ou digita no painel altera o que o cliente vê.
+
+O exemplo didático desta seção usa:
+
+- Mínimo de **2 dias**
+- Máximo de **7 dias**
+- **60 minutos** depois da abertura
+- **60 minutos** antes do fechamento
+- Intervalo de **60 minutos**
+- Até **5 pedidos por faixa**
+
+### As três chaves
+
+Quando você liga **Agendamento**, o cardápio exibe os botões **Hoje** e **Agendar** na Retirada e na Entrega.
+
+- **Hoje** permite um pedido imediato, com o prazo de aproximadamente 25 a 35 minutos definido pela grade.
+- **Agendar** abre o calendário para o cliente escolher uma data e um horário.
+- Com **Só aceita agendamento** desligado, os dois botões aparecem.
+- Com **Só aceita agendamento** ligado, o botão **Hoje** desaparece.
+
+O switch **Agendamento com o Cardápio Digital fechado** não altera os botões. Ele permite que a opção **Agendar** continue disponível quando a loja estiver fora do horário de atendimento.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-agendamento/imagens-tratadas/02-par-chaves.png" width="800" alt="Recorte painel: três switches → cardápio: botões Hoje e Agendar" />
+
+### Dias mínimo e máximo
+
+O **mínimo de 2 dias** remove **HOJE** e o dia seguinte. A primeira bolinha passa a ser **TER 01**, considerando o exemplo em que hoje é domingo, dia 30/08.
+
+O **máximo de 7 dias** define quantas bolinhas aparecem a partir do primeiro dia disponível. A contagem não significa hoje mais 7 dias. Nesse exemplo, a faixa termina em **SEG 07**. Deslize a faixa para o lado para ver os últimos dias.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-agendamento/imagens-tratadas/03-par-dias.png" width="800" alt="Recorte painel: 2 e 7 dias → cardápio: bolinhas TER 01, QUA 02 e outros dias" />
+
+- **0** no mínimo: a primeira bolinha é **HOJE**.
+- **1** no mínimo: a primeira bolinha é amanhã.
+
+### Primeiro horário e último: os dois 60
+
+A lista **Hora Aproximada** não é um relógio livre. Cada linha representa uma faixa de atendimento.
+
+Os dois campos de **60 minutos** não definem o intervalo entre as faixas. Cada campo corta um lado da janela que veio da grade de **Horário de Atendimento**:
+
+- **Iniciar depois de aberto** remove os primeiros minutos da janela.
+- **Finalizar antes de fechar** remove os últimos minutos da janela.
+
+#### Exemplo 1: começar mais tarde
+
+Se a loja abre às **01:00** e **Iniciar depois de aberto** está configurado como **60 minutos**, a primeira faixa começa às **02:00**.
+
+`01:00 + 60 minutos = 02:00`
+
+A primeira faixa exibida para o cliente é **02:00 a 02:30**.
+
+#### Exemplo 2: terminar mais cedo
+
+Se a loja fecha às **23:59** e **Finalizar antes de fechar** está configurado como **60 minutos**, o limite passa a ser **22:59**.
+
+A última faixa não começa às 22:59. Como o intervalo entre os inícios é de 1 hora, a última faixa que ainda cabe no limite é **22:00 a 22:30**.
+
+No horário de almoço, com uma grade das **11:00 às 15:00** e os dois campos configurados como 60 minutos:
+
+- Primeira faixa: `11:00 + 60 minutos = 12:00 a 12:30`
+- Limite final: `15:00 - 60 minutos = 14:00`
+- A última faixa é a que ainda começa dentro desse limite.
+
+Sem esses dois cortes, a lista começaria na abertura e avançaria até o fechamento.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-agendamento/imagens-tratadas/04-par-horarios.png" width="800" alt="Recorte painel: 60 depois e 60 antes → primeira e última faixa de horário" />
+
+- **0** em **Iniciar depois de aberto**: começa na abertura.
+- **0** em **Finalizar antes de fechar**: vai até o fechamento.
+- Dois turnos na grade, como almoço e jantar, aparecem como dois blocos na lista.
+
+### O intervalo é outra coisa
+
+O **Intervalo de 60 minutos** não participa da conta de abertura e fechamento. Ele define o passo entre o início de uma faixa e o início da próxima:
+
+- 02:00
+- 03:00
+- 04:00
+
+A faixa exibida dura 30 minutos. Por isso, a lista mostra **02:00 a 02:30** e depois **03:00 a 03:30**, e não uma faixa de 02:00 a 03:00.
+
+O **Tempo mínimo para iniciar agendamento agora** afeta somente o dia atual. Com o mínimo de 2 dias, o cliente não vê hoje, então esse campo não altera a lista exibida. Com o mínimo configurado como 0, o primeiro horário de hoje fica pelo menos 90 minutos à frente do horário atual quando esse for o valor configurado.
+
+A **Quantidade máxima** define quantos pedidos cabem em cada faixa. Com o limite de 5 pedidos, o horário desaparece quando atingir essa quantidade. O sistema não cria uma nova faixa para substituí-lo.
+
+## Parte 3: o fluxo inteiro no celular
+
+Na sacola, o cliente toca em **Continuar** e escolhe **Retirar no estabelecimento** ou **Entrega**. Não toque em **Retirada** na página inicial do cardápio, porque essa opção abre o mapa.
+
+Depois, o cliente:
+
+1. Escolhe **Hoje** ou **Agendar**.
+2. Seleciona uma faixa de **Dia**.
+3. Seleciona uma **Hora Aproximada** e toca em **AGENDAR PEDIDO**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-agendamento/imagens-tratadas/05-cardapio-digital.png" width="800" alt="Fluxo no celular: Hoje e Agendar, dias e horários" />
+
+| Nº | O que o cliente vê                                                                      |
+| -- | --------------------------------------------------------------------------------------- |
+| 1  | **Hoje** e **Agendar**, definidos pelas três chaves.                                    |
+| 2  | Bolinhas de **Dia**, definidas pelos dias mínimo e máximo.                              |
+| 3  | **Hora Aproximada**, definida pela grade e pelos campos iniciar, finalizar e intervalo. |
+
+<Callout kind="info" collapsed="false">
+  A alteração pode levar até **5 minutos** para aparecer. Não finalize o pedido de teste. Se aparecer uma tela de cashback, toque em **CANCELAR**.
+</Callout>
+
+<Callout kind="alert" collapsed="false">
+  **Consumir no local** não permite agendamento.
+</Callout>
+
+## Problemas comuns
+
+| Sintoma                                                       | O que verificar                                                                                                                                         |
+| ------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Cliente não vê **Agendar**                                    | O switch **Agendamento** está ligado? A modalidade é Entrega ou Retirada? O cardápio já aguardou até 5 minutos para atualizar?                          |
+| Loja fechada e ninguém consegue pedir                         | Ligue **Agendamento com o Cardápio Digital fechado**.                                                                                                   |
+| O botão **Hoje** desapareceu                                  | Verifique se **Só aceita agendamento** está ligado.                                                                                                     |
+| O calendário começa depois de amanhã                          | O **Dias mínimo** está maior que 0.                                                                                                                     |
+| Aparecem poucos dias na faixa                                 | Aumente ou revise o **Dias máximo**.                                                                                                                    |
+| O primeiro horário aparece tarde demais                       | Verifique **Iniciar depois de aberto** e o horário de abertura da grade. Para hoje, verifique também o **Tempo mínimo para iniciar agendamento agora**. |
+| A lista termina cedo                                          | Verifique **Finalizar antes de fechar** e o horário de fechamento da grade.                                                                             |
+| As faixas duram 30 minutos em vez de aparecerem a cada 1 hora | O **Intervalo** define o passo entre os inícios, não a duração da faixa.                                                                                |
+| Um horário desaparece no meio do dia                          | A faixa atingiu a **Quantidade máxima** de pedidos.                                                                                                     |
+| Cliente tenta agendar no presencial                           | Agendamento não existe no presencial. Use Entrega ou Retirada.                                                                                          |
+| Você procurou o botão **Salvar**                              | Não existe botão Salvar. A tela grava automaticamente.                                                                                                  |
+
+## O que esta tela não é
+
+<Callout kind="alert" collapsed="false">
+  - **Horário de Atendimento:** define a grade semanal de abertura e fechamento. Sem essa grade, a aba Agendamento não tem horários para usar.
+  - **Pausa temporária ou programada:** fecha a loja agora ou em uma data. Consulte o manual **Fechar a loja fora do horário**.
+  - **Só aceita agendamento** no cadastro do produto: é outro interruptor, configurado item a item.
+  - **Filtro de pedidos agendados no Delivery:** é outra tela do sistema.
+</Callout>
+
+## Manuais relacionados
+
+<Columns cols="3">
+  <Card title="Horário de Atendimento" href="/horario-atendimento" icon="calendar" cta="Abrir manual" horizontal="false">
+    Configure a grade semanal de abertura e fechamento da loja.
+  </Card>
+
+  <Card title="Pausa Programada" href="/pausa-programada" icon="pause" cta="Abrir manual" horizontal="false">
+    Pause a loja agora ou programe um fechamento fora da rotina.
+  </Card>
+
+  <Card title="Área de Entrega" href="/area-entrega" icon="map-pin" cta="Abrir manual" horizontal="false">
+    Defina onde você entrega e como cobra o frete.
+  </Card>
+</Columns>
+
