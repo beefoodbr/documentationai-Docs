@@ -1,0 +1,162 @@
+---
+title: Aparência e Layout do Cardápio Digital
+description: >-
+  Coloque foto de perfil e capa, escolha as cores do tema e defina a navegação
+  por lista, setores, rolagem, passos e vitrine de promoções.
+---
+## Personalize a aparência e a navegação do cardápio
+
+Coloque a foto de perfil, altere a capa da loja, escolha o logo e defina as cores e a forma como o cliente navega: por lista ou setores, com rolagem ou passos, e pela aba de promoções. Tudo fica no mesmo card: **Cardápio Digital → Configurações → Aparência**. A partir da Parte 2, o recorte da esquerda mostra o painel e o da direita mostra o cardápio. A seta indica o que cada campo altera.
+
+<Callout kind="info" collapsed="false">
+  Capas com vídeo e carrossel são outro assunto. Consulte o manual **Capas e Destaques**. Aqui, a capa da loja é a foto fixa do preview, ou seja, a foto larga do topo.
+</Callout>
+
+## Antes de começar
+
+<Callout kind="info" collapsed="false">
+  Antes de alterar a aparência, confira estes pontos:
+
+  1. Acesse **Cardápio Digital → Configurações**.
+  2. Não existe botão **SALVAR**. A tela grava sozinha e exibe **Salvo automaticamente**. Não clique em uma opção “só para ver”.
+  3. A capa da loja e a foto de perfil, usada como logo, aceitam PNG, JPG ou WEBP de até **1 MB**. O sistema otimiza a imagem e não faz recorte. A imagem entra como `object-cover`.
+  4. A foto do setor, usada na navegação por setores, é cadastrada em **Cardápio → Setores**. Ela não é a foto de perfil.
+</Callout>
+
+<Callout kind="info" collapsed="false">
+  Depois de gravar, o cardápio do cliente pode levar até **1 minuto** para atualizar.
+</Callout>
+
+## Parte 1: onde fica
+
+Abra **Cardápio Digital → Configurações** (1). O card **Aparência** mostra o preview do cardápio. Para colocar ou alterar uma foto, clique na **capa da loja** (2) ou na **foto de perfil** e no **logo** (3). O ícone de câmera vermelho indica o alvo. Abaixo do preview ficam **Cor do Tema** (4) e **Cor da Capa** (5).
+
+No computador, um aparelho aparece à direita e mostra a prévia imediatamente.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-aparencia-layout/imagens-tratadas/01-onde-fica.png" width="800" alt="Card Aparência com preview, identidade e cores" />
+
+| Nº | Campo                     | O que faz                                                           |
+| -- | ------------------------- | ------------------------------------------------------------------- |
+| 1. | **Configurações**         | Abre a aba desta tela.                                              |
+| 2. | **Capa da loja**          | Define a foto larga do topo. Clique para colocar ou alterar a foto. |
+| 3. | **Foto de perfil (logo)** | Define o círculo sobre a capa. Clique para trocar a foto do perfil. |
+| 4. | **Cor do Tema**           | Abre o modal da cor dos botões e da aba ativa.                      |
+| 5. | **Cor da Capa**           | Define o fundo da capa quando não existe uma imagem.                |
+
+**Nome Fantasia** e **Categoria do Estabelecimento** ficam em **Identidade**. O **ID** é somente para leitura e serve para o suporte.
+
+## Parte 2: coloque a foto de perfil e a capa da loja
+
+Clique diretamente no preview para alterar uma foto. Não existe outro botão de upload. Ao passar o mouse sobre a área da foto, aparecem o controle para enviar uma imagem e o **X** para removê-la.
+
+- **Capa da loja**, também chamada de foto da capa ou foto larga: aparece no topo do cardápio.
+- **Foto de perfil**, também chamada de foto do perfil, logo ou logotipo: aparece no círculo sobre a capa.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-aparencia-layout/imagens-tratadas/02-par-capa-logo.png" width="800" alt="Recorte painel: câmeras da capa e da foto de perfil → cardápio: topo" />
+
+A capa fixa da loja é o primeiro slide do carrossel. Os banners do manual **Capas e Destaques** entram depois. A capa desta tela aceita somente imagem; o vídeo fica no modal do outro manual.
+
+## Parte 3: defina a cor do tema
+
+Clique na barra **Cor do Tema** para abrir o modal **Cor do Tema Principal**. Escolha uma cor na paleta ou cole o código hexadecimal (1). O próprio modal mostra uma prévia do cardápio, incluindo os botões **Ver sacola** (2) e **Adicionar** (3) na nova cor.
+
+Se o contraste da cor com o texto branco ficar abaixo de `4,5:1`, o modal exibe um aviso. Nesse caso, escolha uma tonalidade mais escura na paleta.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-aparencia-layout/imagens-tratadas/03-cor-tema.png" width="800" alt="Modal da cor: paleta e prévia dos botões Ver sacola e Adicionar" />
+
+| Nº | Campo             | O que faz                                    |
+| -- | ----------------- | -------------------------------------------- |
+| 1. | Cor e hexadecimal | Define a cor dos botões e da aba ativa.      |
+| 2. | **Ver sacola**    | Mostra a prévia do botão no rodapé da lista. |
+| 3. | **Adicionar**     | Mostra a prévia do botão no produto.         |
+
+O botão **SALVAR (F2)** confirma a escolha dentro do modal. Depois disso, a aba grava a alteração automaticamente. **Cor da Capa** é o seletor preto ao lado e define o fundo quando a capa não tem foto.
+
+## Parte 4: escolha entre lista completa e setores
+
+**Layout do cardápio** define a primeira tela que o cliente vê.
+
+### Lista completa
+
+**Lista completa** é a opção padrão. Ela mostra todos os produtos em uma página. O cliente rola a tela e usa o filtro de setores para encontrar uma categoria específica. No exemplo, o filtro está em **Combos** e os produtos desse setor já aparecem.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-aparencia-layout/imagens-tratadas/04-par-lista.png" width="800" alt="Recorte painel: Lista completa → cardápio: primeiro setor" />
+
+### Navegação por setores
+
+Em **Navegação por setores**, o cliente escolhe primeiro um setor e só depois vê os produtos daquela categoria. Essa opção organiza melhor catálogos grandes.
+
+Se um setor não tiver foto, o card usa o logo da loja. Cadastre a imagem do setor em **Cardápio → Setores**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-aparencia-layout/imagens-tratadas/05-par-setores.png" width="800" alt="Recorte painel: Navegação por setores → cardápio: grid" />
+
+## Parte 5: escolha entre rolagem e passos no produto
+
+**Layout de seleção das opções no produto** vale para a loja inteira. Um exemplo é o **Combo One Burger**, que tem grupos para burger, acompanhamento e bebida.
+
+### Em Rolagem
+
+**Em Rolagem** é a opção padrão. Os três grupos aparecem na mesma tela. O cliente rola até o final e toca em **Adicionar**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-aparencia-layout/imagens-tratadas/06-par-rolagem.png" width="800" alt="Recorte painel: Em Rolagem → cardápio: todos os grupos" />
+
+### Em Passos
+
+Em **Em Passos**, o cliente vê um grupo por vez. A tela indica a sequência com **1 · 2 · 3**, como **Detalhes**, **Burger** e **acompanhamentos**, e mostra o botão **Próximo**.
+
+Use **Em Rolagem** quando o cliente precisar ir direto ao total e preferir visualizar todas as opções na mesma tela.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-aparencia-layout/imagens-tratadas/07-par-passos.png" width="800" alt="Recorte painel: Em Passos → cardápio: 1, 2, 3 e botão Próximo" />
+
+## Parte 6: configure a vitrine de promoções
+
+A aba **Promoções** aparece no rodapé do cardápio de três formas. A aba só existe quando há um produto com preço promocional válido naquele horário, como uma promoção programada.
+
+| Opção                       | O que o cliente vê                                                       |
+| --------------------------- | ------------------------------------------------------------------------ |
+| **Destacar promoções**      | A aba fica no rodapé e a vitrine abre sozinha na primeira visita do dia. |
+| **Deixar a aba disponível** | A aba fica no rodapé e o cliente decide quando abrir.                    |
+| **Não mostrar promoções**   | A aba não aparece, mas o preço riscado continua no produto.              |
+
+No exemplo, a opção é **Deixar a aba disponível**. O cliente toca em **Promoções** e vê a lista de ofertas, como Milk Shake e burgers em promoção.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-aparencia-layout/imagens-tratadas/08-par-vitrine.png" width="800" alt="Recorte painel: as três opções → cardápio: aba Promoções" />
+
+## Resolva problemas comuns
+
+| Sintoma                                               | O que verificar                                                                                    |
+| ----------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| Alterei a foto e ela não mudou, na capa ou no perfil. | Espere até 1 minuto, confirme que o arquivo tem até 1 MB e recarregue o cardápio.                  |
+| Procurei “foto de perfil” ou “capa da loja”.          | Clique diretamente no preview. O círculo é o perfil ou logo; a faixa larga é a capa.               |
+| Procurei o botão **Salvar**.                          | Não existe botão na tela. A alteração é gravada automaticamente.                                   |
+| O setor está sem foto no grid.                        | Cadastre a imagem em **Cardápio → Setores**. Sem foto, o card usa o logo da loja.                  |
+| A aba **Promoções** sumiu.                            | Confira se existe um produto em promoção agora e se a opção não está em **Não mostrar promoções**. |
+| Mudei a cor, mas o botão não mudou.                   | Confirme a cor no modal e aguarde o salvamento automático e até 1 minuto de atualização.           |
+| Queria colocar um vídeo na capa.                      | Use **Capas e Destaques**. O clique no preview aceita somente a imagem fixa da capa.               |
+| Cliquei em uma opção apenas para ver como ficava.     | A opção já foi gravada. Se necessário, volte à opção anterior.                                     |
+
+## O que esta tela não é
+
+<Callout kind="alert" collapsed="false">
+  - **Capas e Destaques:** configura carrossel e vitrine com imagem ou vídeo.
+  - **Avisos:** publica recados, como feriado ou salão fechado, sem vender produtos.
+  - **Agendamento:** define a data e a hora do pedido.
+  - **Horário de Atendimento:** define quando a loja abre e fecha.
+</Callout>
+
+## Manuais relacionados
+
+<Columns cols="3">
+  <Card title="Capas e Destaques" href="/capas-e-destaques" icon="image" cta="Abrir manual" horizontal="false">
+    Configure o carrossel e a vitrine com imagem ou vídeo.
+  </Card>
+
+  <Card title="Avisos do Cardápio Digital" href="/avisos-cardapio-digital" icon="megaphone" cta="Abrir manual" horizontal="false">
+    Coloque recados no cardápio sem cadastrar um produto.
+  </Card>
+
+  <Card title="Agendamento do Cardápio Digital" href="/cardapio-digital-agendamento" icon="calendar" cta="Abrir manual" horizontal="false">
+    Configure pedidos agendados por data e hora.
+  </Card>
+</Columns>
+

@@ -165,6 +165,10 @@
                   {
                     "title": "📅 Agendamento",
                     "path": "cardapio-digital-agendamento"
+                  },
+                  {
+                    "title": "🎨 Aparência e Layout",
+                    "path": "cardapio-digital-aparencia-layout"
                   }
                 ]
               },
