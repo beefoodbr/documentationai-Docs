@@ -545,6 +545,15 @@
                 ]
               }
             ]
+          },
+          {
+            "group": "📁 Outras",
+            "pages": [
+              {
+                "title": "🔢 Entendendo a numeração dos pedidos",
+                "path": "numeracao-pedidos"
+              }
+            ]
           }
         ],
         "product": "BeeFood3"

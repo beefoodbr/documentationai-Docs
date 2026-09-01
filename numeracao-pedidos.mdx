@@ -1,0 +1,240 @@
+---
+title: "Entendendo a numeração dos pedidos"
+description: "Entenda por que toda venda no BeeFood tem dois números — o número da venda (único e crescente) e o número do pedido (que reinicia a cada caixa) — e onde cada um aparece."
+---
+
+## Entenda os dois números
+
+Toda venda no BeeFood tem dois números, e cada um serve para uma finalidade diferente: o número da venda identifica a venda na loja, enquanto o número do pedido organiza os pedidos do caixa aberto.
+
+## Os dois números
+
+| Número | O que é | Reinicia? |
+|--------|---------|-----------|
+| **Número da venda** | O número oficial da venda. É único na sua loja. | **Nunca** |
+| **Número do pedido** | O número do pedido **no caixa aberto**. | **Sim**: volta para 1 quando você abre um caixa novo |
+
+Os dois aparecem juntos no detalhe da venda.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/numeracao-pedidos/imagens-tratadas/05-venda-detalhe.png" width="800" alt="Detalhe da venda com os dois números: Venda Nº 931 e Pedido Nº 1" />
+
+| Nº | Item | O que é |
+|----|------|---------|
+| 1 | **Venda Nº 931** | O número da venda: único na loja e nunca reinicia. |
+| 2 | **Pedido Nº 1** | O número do pedido: é o primeiro pedido do caixa que está aberto. |
+
+A mesma venda pode ser, ao mesmo tempo, a **venda 931** da loja e o **pedido 1** do caixa. São duas contagens diferentes funcionando juntas.
+
+## Como o sistema escreve os dois
+
+Quando a venda tem os dois números, o BeeFood escreve o número do pedido primeiro e o número da venda entre parênteses. Quando a venda tem apenas o número da venda, mostra somente esse número.
+
+| Situação | Como aparece | Leia assim |
+|----------|--------------|------------|
+| Tem os dois | `1 (931)` | pedido 1, venda 931 |
+| Só o da venda | `931` | venda 931 |
+
+A palavra ou o símbolo na frente muda de uma tela para outra, mas a ordem dos números continua igual.
+
+| Onde | Com os dois números | Só com o da venda |
+|------|---------------------|-------------------|
+| Histórico de Vendas | `1 (931)` | `931` |
+| Delivery | `#1 (931)` | `#931` |
+| Cupom do cliente | `Pedido #1 (931)` | `Venda Nº 931` |
+| Detalhe da venda | `Venda Nº 931 • Pedido Nº 1` | `Venda Nº 931` |
+
+No Delivery, cada card mostra o número do pedido e, entre parênteses, o número da venda.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/numeracao-pedidos/imagens-tratadas/04-delivery.png" width="800" alt="Cards do Delivery no formato #pedido (venda)" />
+
+| Nº | Item | O que é |
+|----|------|---------|
+| 1 | **#59 (929)** | Pedido 59 do caixa, venda 929 da loja. |
+| 2 | **#60 (930)** | Pedido 60 do caixa, venda 930 da loja. |
+
+No cupom que o cliente recebe, o número do pedido aparece em destaque, porque é esse número que você usa para chamar o cliente.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/numeracao-pedidos/imagens-tratadas/06-cupom.png" width="800" alt="Cupom do cliente com Pedido #1 (931) em destaque" />
+
+| Nº | Item | O que conferir |
+|----|------|----------------|
+| 1 | **Pedido #1 (931)** | O pedido aparece em destaque e a venda aparece entre parênteses. |
+
+<Callout kind="info" collapsed="false">
+  **Atenção a um detalhe da tela do PDV.** Enquanto você monta a venda, o PDV mostra **VENDA Nº 931**, que é o número da venda. O número do pedido aparece depois, no Histórico de Vendas, no cupom e nos relatórios.
+</Callout>
+
+## O número da venda nunca reinicia
+
+O número da venda é o contador único da loja. Ele continua subindo quando você fecha o caixa, muda o mês ou começa um novo ano.
+
+Três consequências práticas:
+
+- **Cada venda tem um número que é só dela**, para sempre.
+- **Venda cancelada mantém o número dela.** O número não é reaproveitado.
+- **Se dois números seguidos existem, não faltou venda no meio.** A contagem não pula.
+
+<Callout kind="info" collapsed="false">
+  **Em breve:** a BeeFood vai disponibilizar um **reset opcional** do número da venda. Hoje essa opção ainda não existe, então o número da venda continua subindo.
+</Callout>
+
+## O número do pedido é a contagem do caixa
+
+O número do pedido pertence ao caixa, não à loja. Cada vez que você abre um caixa novo, a contagem dos pedidos começa novamente em 1.
+
+A imagem mostra o momento em que a contagem reinicia. A venda mais recente do caixa anterior foi a **930**, com o pedido **60**. A primeira venda do caixa novo foi a **931**, com o pedido **1**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/numeracao-pedidos/imagens-tratadas/02-historico-virada.png" width="800" alt="A virada do contador: pedido volta a 1 e a venda segue para 931" />
+
+| Nº | Item | O que aconteceu |
+|----|------|-----------------|
+| 1 | **1 (931)** | Primeiro pedido do caixa novo. O pedido voltou para **1**, mas a venda seguiu para **931**. |
+| 2 | **60 (930)** | Último pedido do caixa anterior: a contagem chegou ao pedido **60**. |
+| 3 | **924** | Uma venda **sem** número de pedido, apenas com o número da venda. |
+
+Os dois contadores avançaram de formas diferentes no mesmo momento:
+
+| | Caixa anterior, última venda | Caixa novo, primeira venda | O que fez |
+|---|---:|---:|-----------|
+| **Número do pedido** | 60 | **1** | **Reiniciou** |
+| **Número da venda** | 930 | **931** | Continuou subindo |
+
+O pedido caiu de 60 para 1 porque o caixa mudou. A venda passou de 930 para 931 porque a loja continuou a mesma.
+
+## Por que vale fechar o caixa todo dia
+
+O período em que o caixa permanece aberto define o período da contagem dos pedidos.
+
+| Como você usa o caixa | O que o número do pedido passa a significar |
+|-----------------------|--------------------------------------------|
+| **Fecha todo dia** | A contagem do dia. O pedido 37 é o 37º pedido de hoje. |
+| Fecha de vez em quando | A contagem do período inteiro. O pedido 412 pode ser o 412º pedido de três semanas. |
+
+Fechar o caixa todos os dias faz o número do pedido virar uma informação útil para o balcão: um número menor, fácil de falar e alinhado ao movimento do dia.
+
+<Callout kind="info" collapsed="false">
+  Fechar o caixa é o procedimento de conferência dos valores e fechamento. Essa ação não muda o número da venda; ela apenas reinicia a contagem dos pedidos.
+</Callout>
+
+## Quem recebe número de pedido
+
+O canal da venda define se ela recebe um número de pedido.
+
+| Canal | Recebe número de pedido? | Depende de quê |
+|-------|--------------------------|----------------|
+| **Delivery** | Sim, automaticamente | Da contagem do caixa aberto. Não há nada para ligar. |
+| **PDV** (balcão) | Só se você ligar | Do parâmetro **Número de Pedido no PDV** |
+| **Mesa / Comanda** | **Não**, nunca | Não existe opção para ligar. |
+
+### Ligando no PDV
+
+Para as vendas de balcão receberem número de pedido, acesse **Configuração → Parâmetros**, localize o card **PDV** e ligue **Número de Pedido no PDV**. A alteração é gravada automaticamente.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/numeracao-pedidos/imagens-tratadas/01-parametros-pdv.png" width="800" alt="Configuração → Parâmetros, card PDV, switch Número de Pedido no PDV" />
+
+| Nº | Item | O que fazer |
+|----|------|-------------|
+| 1 | **Número de Pedido no PDV** | Ligue o parâmetro para as vendas do balcão entrarem na contagem dos pedidos. |
+| 2 | O botão à direita | Verde ou ligado indica que as vendas de PDV recebem número de pedido. |
+
+Com o parâmetro desligado, a venda de balcão continua funcionando normalmente. Ela fica sem número de pedido, mas mantém o número da venda.
+
+### Mesa e comanda não recebem e não gastam número
+
+Vendas de mesa e de comanda nunca recebem número de pedido. Não existe parâmetro para mudar esse comportamento, então essas vendas usam apenas o número da venda.
+
+A mesa também não consome número de pedido. No exemplo abaixo, cinco vendas de mesa ficam entre dois pedidos de Delivery, mas a contagem passa diretamente de **5** para **6**, sem criar um intervalo.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/numeracao-pedidos/imagens-tratadas/03-historico-mesa.png" width="800" alt="Cinco vendas de mesa sem número de pedido, entre os pedidos 5 e 6" />
+
+| Nº | Item | O que observar |
+|----|------|----------------|
+| 1 | **6 (859)** | Delivery: pedido 6, venda 859. |
+| 2 | As cinco linhas **MESA** (854 a 858) | Mostram apenas o número da venda. Nenhuma tem número de pedido. |
+| 3 | **5 (850)** | O Delivery anterior era o pedido 5. Entre ele e o pedido 6 houve cinco vendas de mesa, mas a contagem não pulou. |
+
+Cada uma das cinco vendas de mesa consumiu um número de venda, de 854 a 858, mas nenhuma consumiu um número de pedido. A contagem dos pedidos só avança quando uma venda de um canal que recebe pedido é registrada.
+
+## Resumo
+
+1. **Número da venda** é o contador único da loja e nunca reinicia.
+2. **Número do pedido** é o contador do caixa aberto e volta para 1 a cada caixa novo.
+3. Quando os dois existem, o sistema escreve **`pedido (venda)`**, como em `1 (931)`.
+4. **Feche o caixa todo dia** para o número do pedido representar a contagem do dia.
+5. **Delivery** recebe sempre; **PDV** recebe apenas com o parâmetro ligado; **mesa** nunca recebe.
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+  <Expandable title="Por que meu pedido é o nº 1 se a loja já vendeu 900 vezes?">
+
+  São dois contadores. O 900 e tantos é o número da **venda**, que nunca reinicia. O 1 é o número do **pedido**, que reiniciou porque você abriu um caixa novo.
+
+  </Expandable>
+
+  <Expandable title="Apareceram dois pedidos nº 1 no relatório. É erro?">
+
+  Não. Eles são de **caixas diferentes**. Para distinguir os pedidos, use o número da venda entre parênteses, porque esse número não se repete.
+
+  </Expandable>
+
+  <Expandable title="Liguei o parâmetro no PDV e a tela continua mostrando VENDA Nº 931.">
+
+  É o comportamento esperado. A tela do PDV mostra o número da venda. O número do pedido aparece no **Histórico de Vendas**, no formato `1 (931)`, no cupom e nos relatórios.
+
+  </Expandable>
+
+  <Expandable title="Como faço a mesa ter número de pedido?">
+
+  Não é possível. Mesa e comanda usam apenas o número da venda, e não existe parâmetro para mudar esse comportamento.
+
+  </Expandable>
+
+  <Expandable title="Uma venda apareceu sem número de pedido. Perdi alguma coisa?">
+
+  Não. A venda pode ser de mesa ou comanda, ou pode ser uma venda de PDV feita com o parâmetro desligado. A venda continua completa e mantém o número de venda; ela apenas não entrou na contagem dos pedidos.
+
+  </Expandable>
+
+  <Expandable title="Pulou um número da venda. Perdi uma venda?">
+
+  Não. O número da venda não pula. Se você não encontra uma venda no Histórico, confira o **período do filtro** e o filtro de **situação**. Uma venda cancelada mantém o número e aparece no filtro *Cancelado*.
+
+  </Expandable>
+
+  <Expandable title="Posso escolher ou corrigir o número de um pedido?">
+
+  Não. O sistema atribui os dois números quando registra a venda, e não existe campo para digitá-los. Reabrir uma venda também não gera número novo: a venda reaberta continua com os mesmos dois números.
+
+  </Expandable>
+
+  <Expandable title="Dá para zerar o número da venda?">
+
+  Hoje não. A BeeFood vai disponibilizar em breve um reset opcional desse número.
+
+  </Expandable>
+</ExpandableGroup>
+
+## Manuais relacionados
+
+<Columns cols={3}>
+
+<Card title="Abrir Caixa" href="/caixa-abrir" icon="unlock" cta="Abrir manual">
+
+Abrir o caixa é o que reinicia a contagem dos pedidos.
+
+</Card>
+
+<Card title="Fechar Caixa" href="/caixa-fechar" icon="lock" cta="Abrir manual">
+
+O fechamento diário que dá a contagem do dia.
+
+</Card>
+
+<Card title="Número e Cupom no PDV" href="/pdv-numero-cupom" icon="receipt" cta="Abrir manual">
+
+O card PDV dos Parâmetros e o cupom que sai ao receber.
+
+</Card>
+
+</Columns>
