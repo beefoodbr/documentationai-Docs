@@ -364,6 +364,19 @@
                 ]
               },
               {
+                "group": "👤 Usuários",
+                "pages": [
+                  {
+                    "title": "👤 Criar Usuários",
+                    "path": "manuais/usuarios-criar"
+                  },
+                  {
+                    "title": "👥 Grupos de Acesso",
+                    "path": "manuais/grupos-acesso"
+                  }
+                ]
+              },
+              {
                 "group": "🖨️ Impressão",
                 "pages": [
                   {

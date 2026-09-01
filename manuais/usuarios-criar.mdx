@@ -1,0 +1,299 @@
+---
+title: Criar Usuários
+description: >-
+  Crie usuários e grupos de acesso para que cada pessoa na sua operação veja só o que precisa — e fique livre do risco de mexer onde não deve.
+---
+
+## A tela de usuários
+
+Crie usuários e organize os acessos da equipe em **Configuração → Usuários**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/usuarios-criar/imagens-tratadas/01-aba-usuarios-limite-do-plano.png" width="1532" height="856" alt="Aba Usuários com o limite do plano e a lista de usuários" />
+
+| Nº | Item | O que fazer |
+| --- | --- | --- |
+| 1 | **+Novo Usuário (F1)** | Abre o cadastro de um novo usuário. |
+| 2 | Contador do plano | Mostra quantos usuários estão cadastrados e o limite disponível no plano. |
+| 3 | Coluna **Função** | Indica se a pessoa está marcada como gerente. |
+| 4 | Coluna **Grupo de Acesso** | Mostra o grupo de permissões atribuído ao usuário. |
+| 5 | Ícones de chave e lápis | Use a chave para alterar a senha e o lápis para editar o cadastro. |
+
+<Callout kind="info">
+
+Não existe opção para excluir um usuário. Para tirar o acesso de alguém, desative o cadastro e mantenha o histórico da pessoa na lista.
+
+</Callout>
+
+## Passo 1: criar o grupo de acesso
+
+Um **grupo de acesso** reúne as permissões de um cargo ou função. Crie o grupo antes do usuário para poder atribuir o acesso correto no cadastro.
+
+Abra a aba **Grupos de Acesso** e clique em **+Novo Grupo**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/usuarios-criar/imagens-tratadas/06-modal-novo-grupo-preenchido.png" width="600" alt="Modal de criação de grupo de acesso preenchido" />
+
+| Nº | Item | O que fazer |
+| --- | --- | --- |
+| 1 | **Descrição** | Informe o cargo ou a função, como **Atendente de Caixa**, **Estoquista** ou **Gerente de Cardápio**. Use o nome do cargo, não o nome de uma pessoa. |
+| 2 | **Salvar** | O botão permanece apagado enquanto a descrição estiver vazia. |
+
+<Steps>
+<Step title="Nomeie o grupo">
+
+Use uma descrição que continue fazendo sentido mesmo quando outra pessoa assumir a mesma função.
+
+</Step>
+
+<Step title="Salve o grupo">
+
+Depois de preencher a descrição, clique em **Salvar**. O grupo aparecerá na lista e as permissões serão carregadas.
+
+</Step>
+</Steps>
+
+Após salvar, o BeeFood abre a lista de permissões do grupo.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/usuarios-criar/imagens-tratadas/07-grupo-novo-permissoes-iniciais.png" width="1532" height="856" alt="Grupo de acesso novo com as permissões iniciais" />
+
+| Nº | Item | O que observar |
+| --- | --- | --- |
+| 1 | Título do grupo | O título passa a mostrar a descrição informada no cadastro. |
+| 2 | Switches verdes | Os recursos aparecem liberados inicialmente. |
+| 3 | Lista de permissões | O grupo novo começa com as **93 permissões** ligadas. |
+
+<Callout kind="alert">
+
+Um grupo novo não restringe nada. Ele nasce com todas as permissões ligadas. Ajuste os switches antes de atribuir o grupo a uma pessoa.
+
+</Callout>
+
+## Passo 2: criar o usuário
+
+Com o grupo pronto, volte para a aba **Usuários** e clique em **+Novo Usuário**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/usuarios-criar/imagens-tratadas/02-modal-novo-usuario-vazio.png" width="600" alt="Modal vazio de criação de usuário" />
+
+| Nº | Item | O que fazer |
+| --- | --- | --- |
+| 1 | **Login*** | Informe um e-mail ou um nome curto para a pessoa usar no acesso. |
+| 2 | **Senha*** | Defina a senha inicial. Esse campo é obrigatório na criação. |
+| 3 | Ícone de olho | Clique para mostrar ou ocultar a senha digitada. |
+| 4 | **Funcionário** | Opcionalmente, vincule o usuário a um funcionário já cadastrado. |
+| 5 | **Grupo de Acesso** | Escolha o grupo que corresponde à função da pessoa. |
+| 6 | Switches **Ativo**, **Gerente** e **Aplicativos** | Defina o status do cadastro, a função de gerente e o acesso aos aplicativos. |
+| 7 | **SALVAR (F2)** | Cria o usuário com os dados preenchidos. |
+
+<Steps>
+<Step title="Preencha o login e a senha">
+
+Informe um login único e uma senha com pelo menos quatro caracteres.
+
+</Step>
+
+<Step title="Vincule o funcionário, se necessário">
+
+Escolha um funcionário cadastrado quando precisar relacionar o usuário à ficha da pessoa. Esse vínculo é opcional.
+
+</Step>
+
+<Step title="Escolha o grupo de acesso">
+
+Selecione o grupo criado no passo anterior. Não deixe o campo como **Nenhum**.
+
+</Step>
+
+<Step title="Salve o cadastro">
+
+Confira os switches e clique em **SALVAR (F2)**. O novo usuário aparecerá na aba **Usuários**.
+
+</Step>
+</Steps>
+
+<Callout kind="alert">
+
+Tenha cuidado com o switch **Gerente**. O gerente não precisa informar a senha de gerente nas ações protegidas pelos parâmetros do sistema. Marque essa opção somente para quem realmente exerce essa função.
+
+</Callout>
+
+## O erro mais caro: deixar o grupo em Nenhum
+
+O campo **Grupo de Acesso** aceita **Nenhum** como valor padrão. O BeeFood não mostra erro nem aviso quando você salva o usuário sem escolher um grupo.
+
+Quando o sistema não encontra uma permissão atribuída ao usuário, ele considera essa permissão liberada. Por isso, um usuário sem grupo pode enxergar mais telas do que uma pessoa vinculada a um grupo restrito.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/usuarios-criar/imagens-tratadas/15-comparativo-com-e-sem-grupo.png" width="1532" height="856" alt="Comparação entre usuário com grupo restrito e usuário sem grupo de acesso" />
+
+Na imagem, o lado esquerdo mostra o usuário com um grupo restrito. O lado direito mostra o usuário sem grupo.
+
+- Com grupo restrito, aparecem **108 permissões bloqueadas**.
+- Sem grupo, aparecem apenas **7 permissões bloqueadas**.
+- Sem grupo, o usuário mantém acesso a itens como **KDS**, **Histórico de Vendas**, **Aplicativos**, **Pix Online**, **WhatsApp**, **Desempenho** e **Cardápio Digital**.
+
+<Callout kind="alert">
+
+Todo usuário precisa de um grupo de acesso. Escolher **Nenhum** não bloqueia o acesso: na prática, libera permissões que não foram encontradas para a pessoa.
+
+</Callout>
+
+## Passo 3: ajustar as permissões do grupo
+
+Abra a aba **Grupos de Acesso**, localize o grupo e clique no ícone de lápis. Desligue as permissões que o cargo não precisa usar.
+
+Consulte o manual **Grupos de Acesso** para ver o efeito de cada uma das 93 permissões. O cadastro do grupo permite restringir telas inteiras e ações específicas, como criar, editar, alterar preços ou excluir itens do cardápio.
+
+<Steps>
+<Step title="Abra o grupo">
+
+Na aba **Grupos de Acesso**, clique no lápis da linha do grupo que deseja configurar.
+
+</Step>
+
+<Step title="Localize a permissão">
+
+Use o filtro por categoria ou o campo de busca para encontrar o recurso. Expanda a linha quando ela tiver subpermissões.
+
+</Step>
+
+<Step title="Desligue o que não faz parte do cargo">
+
+Clique nos switches das permissões que a função não precisa. Um switch verde indica acesso liberado; um switch cinza indica acesso bloqueado.
+
+</Step>
+</Steps>
+
+<Callout kind="alert">
+
+Cada switch salva no momento do clique. A alteração pode levar cerca de 85 segundos para chegar à sessão da pessoa, e o usuário precisa sair e entrar novamente para receber as novas permissões. Nunca desligue **Usuários** no grupo que você está usando para administrar a própria conta.
+
+</Callout>
+
+## Trocar o grupo de alguém
+
+Quando a pessoa muda de função, troque o grupo em vez de editar várias permissões individualmente.
+
+Na aba **Usuários**, clique no lápis do cadastro da pessoa e altere o campo **Grupo de Acesso**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/usuarios-criar/imagens-tratadas/10-escolher-grupo-de-acesso.png" width="600" alt="Campo Grupo de Acesso com a lista de grupos disponíveis" />
+
+| Nº | Item | O que fazer |
+| --- | --- | --- |
+| 1 | Grupo atual | Mostra o grupo atribuído à pessoa no momento. |
+| 2 | **Nenhum** | Evite essa opção. Um usuário sem grupo pode receber permissões que você pretendia bloquear. |
+| 3 | Lista de grupos | Escolha o grupo correspondente à nova função. |
+
+Salve o cadastro depois de selecionar o novo grupo.
+
+<Callout kind="info">
+
+Trocar o grupo altera todas as permissões da pessoa. A mudança pode levar cerca de 85 segundos para valer, e o usuário deve sair e entrar novamente.
+
+</Callout>
+
+## Alterar a senha
+
+A senha é definida na criação do usuário. Depois disso, altere-a pelo botão **ALTERAR SENHA** ou pelo ícone de chave na lista de usuários.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/usuarios-criar/imagens-tratadas/13-modal-alterar-senha.png" width="600" alt="Modal para alterar a senha de um usuário" />
+
+| Nº | Item | O que fazer |
+| --- | --- | --- |
+| 1 | Login | Confirme o login da pessoa cuja senha será alterada. |
+| 2 | **Nova Senha** | Informe uma senha com pelo menos quatro caracteres. |
+| 3 | **Confirmar Senha** | Digite exatamente a mesma senha do campo anterior. |
+
+<Callout kind="info">
+
+Você não precisa saber a senha antiga para definir uma nova senha.
+
+</Callout>
+
+## Tirar o acesso de alguém
+
+Quando uma pessoa sai da empresa ou não deve mais entrar no sistema, desative o usuário em vez de excluí-lo.
+
+Abra o cadastro pelo lápis, desligue o switch **Ativo** e clique em **SALVAR (F2)**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/usuarios-criar/imagens-tratadas/17-usuario-inativo-na-lista.png" width="1532" height="856" alt="Lista de usuários mostrando um usuário com status Inativo" />
+
+| Nº | Item | O que observar |
+| --- | --- | --- |
+| 1 | Status **Inativo** | Confirma que o usuário não está ativo para acesso. |
+| 2 | Contador do plano | O número de usuários do plano não diminui ao desativar alguém. |
+
+Use esta regra para cada situação:
+
+| Situação | Ação |
+| --- | --- |
+| A pessoa saiu da empresa | Desligue **Ativo**. |
+| A pessoa mudou de função | Troque o **Grupo de Acesso**. |
+| A pessoa continua na empresa, mas não deve ver uma tela | Desligue a permissão correspondente no grupo. |
+
+<Callout kind="alert">
+
+Desativar um usuário não libera uma vaga no plano. O cadastro continua na lista com o status **Inativo**.
+
+</Callout>
+
+## O usuário principal
+
+O usuário principal é vinculado ao e-mail da conta. Ele tem algumas limitações de edição diferentes dos usuários comuns.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/usuarios-criar/imagens-tratadas/14-usuario-principal-login-bloqueado.png" width="600" alt="Cadastro do usuário principal com o login bloqueado para edição" />
+
+| Nº | Item | O que observar |
+| --- | --- | --- |
+| 1 | Aviso | Informa que o usuário principal não pode ser editado como um usuário comum. |
+| 2 | Login bloqueado | O login não pode ser alterado e não exibe o lápis de edição. |
+| 3 | **ALTERAR SENHA** | Continua disponível para trocar a senha do usuário principal. |
+
+<Callout kind="alert">
+
+O usuário principal não escapa das restrições do grupo. Se você desligar uma permissão no grupo atribuído a ele, a tela ou ação também ficará restrita para o usuário principal.
+
+</Callout>
+
+## Perguntas rápidas
+
+<ExpandableGroup>
+<Expandable title="Posso mudar o login de um usuário?">
+
+Sim. Edite o cadastro de um usuário comum pelo ícone de lápis e altere o login. O login do usuário principal não pode ser alterado.
+
+</Expandable>
+
+<Expandable title="Duas pessoas podem usar o mesmo grupo?">
+
+Sim. O grupo representa um cargo ou função, então várias pessoas podem compartilhar as mesmas permissões.
+
+</Expandable>
+
+<Expandable title="Um usuário pode ter dois grupos?">
+
+Não. Cada usuário recebe um único grupo de acesso. Para combinar permissões, ajuste o grupo atribuído à pessoa.
+
+</Expandable>
+
+<Expandable title="O que acontece se eu não vincular um funcionário?">
+
+O usuário continua funcionando normalmente. A coluna **Nome** da lista fica com um traço porque não existe um funcionário associado ao cadastro.
+
+</Expandable>
+
+<Expandable title="O usuário não consegue entrar. O que conferir?">
+
+Confira se o switch **Ativo** está ligado e confirme a senha. Na criação ou alteração, a senha precisa ter pelo menos quatro caracteres.
+
+</Expandable>
+
+<Expandable title="A permissão não mudou na tela da pessoa. O que fazer?">
+
+Aguarde cerca de 85 segundos e peça para a pessoa sair e entrar novamente. Recarregar a página sem encerrar a sessão pode não atualizar as permissões.
+
+</Expandable>
+
+<Expandable title="O que cada permissão controla?">
+
+Consulte o manual **Grupos de Acesso** para ver o efeito de cada permissão, incluindo as restrições do Cardápio, Caixa, Financeiro, Estoque e demais áreas do BeeFood.
+
+</Expandable>
+</ExpandableGroup>
