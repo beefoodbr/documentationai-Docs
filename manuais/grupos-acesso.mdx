@@ -1,28 +1,28 @@
 ---
 title: Grupos de Acesso
 description: >-
-  Controle fino do que cada grupo pode ver e fazer no sistema — do cardápio ao caixa, sem travar quem precisa agir.
+  Controle fino do que cada grupo pode ver e fazer no sistema — do cardápio ao
+  caixa, sem travar quem precisa agir.
 ---
-
 ## O mapa geral
 
 Um grupo de acesso reúne permissões que definem o que cada pessoa vê e faz no BeeFood. Cada usuário pertence a um grupo, e uma alteração no grupo afeta todas as pessoas associadas a ele.
 
 O sistema possui **93 permissões**, divididas em **38 itens principais** e **55 sub-itens**, distribuídos em **10 categorias**. Os sub-itens aparecem quando você expande a seta ao lado de um item principal.
 
-| Categoria | Itens principais | Sub-itens | Do que trata |
-| --- | ---: | ---: | --- |
-| **Empresa** | 8 | 0 | Usuários, funcionários, caixas, impressoras, TEF e plano |
-| **Gestão** | 6 | 22 | Estoque, financeiro, WhatsApp, PIX, aplicativos e fidelidade |
-| **Venda** | 6 | 3 | Caixa, PDV, Delivery, Mesas, Histórico de Vendas e KDS |
-| **Fiscal** | 5 | 0 | NFe, NFCe, notas recebidas e configurações fiscais |
-| **Cliente** | 3 | 0 | Clientes, Fiado e Avaliações |
-| **Cadastros Básicos** | 3 | 0 | Mesas, Comandas e Formas de Recebimento |
-| **Configurações** | 3 | 1 | Cardápio Digital, Tablet e Inteligência Artificial |
-| **Cadastros** | 2 | 6 | Cadastro de Cardápio e Exibir / Ocultar Produtos |
-| **Relatórios** | 1 | 20 | Desempenho e seus relatórios |
-| **Marketing** | 1 | 3 | Pixel, Segmentação e campanhas SMS |
-| **Total** | **38** | **55** | **93 permissões** |
+| Categoria             | Itens principais | Sub-itens | Do que trata                                                 |
+| --------------------- | ---------------: | --------: | ------------------------------------------------------------ |
+| **Empresa**           |                8 |         0 | Usuários, funcionários, caixas, impressoras, TEF e plano     |
+| **Gestão**            |                6 |        22 | Estoque, financeiro, WhatsApp, PIX, aplicativos e fidelidade |
+| **Venda**             |                6 |         3 | Caixa, PDV, Delivery, Mesas, Histórico de Vendas e KDS       |
+| **Fiscal**            |                5 |         0 | NFe, NFCe, notas recebidas e configurações fiscais           |
+| **Cliente**           |                3 |         0 | Clientes, Fiado e Avaliações                                 |
+| **Cadastros Básicos** |                3 |         0 | Mesas, Comandas e Formas de Recebimento                      |
+| **Configurações**     |                3 |         1 | Cardápio Digital, Tablet e Inteligência Artificial           |
+| **Cadastros**         |                2 |         6 | Cadastro de Cardápio e Exibir / Ocultar Produtos             |
+| **Relatórios**        |                1 |        20 | Desempenho e seus relatórios                                 |
+| **Marketing**         |                1 |         3 | Pixel, Segmentação e campanhas SMS                           |
+| **Total**             |           **38** |    **55** | **93 permissões**                                            |
 
 ### Os três comportamentos das permissões
 
@@ -30,17 +30,17 @@ O sistema possui **93 permissões**, divididas em **38 itens principais** e **55
 
 **Mexe por dentro.** A tela continua disponível, mas perde campos, botões ou informações. Nove permissões funcionam assim:
 
-| Permissão | Efeito |
-| --- | --- |
-| **Adicionar Novo** | Esconde os botões de criação no Cardápio |
-| **Editar (exceto preço)** | Trava os campos gerais do produto |
-| **Editar Preço** | Trava Preço de Venda e Custo |
-| **Editar Ativo (Delivery, Presencial, etc)** | Trava as chaves de ativação |
-| **Editar em Lote** | Esconde a edição em lote |
-| **Excluir** | Esconde os comandos de exclusão |
-| **Visualizar Valores de Referência** | Oculta os valores do caixa |
-| **Visualizar Caixas Fechados** | Limita a listagem ao caixa aberto |
-| **Transferência de Operações** | Remove o botão de transferência e o histórico de cancelados |
+| Permissão                                    | Efeito                                                      |
+| -------------------------------------------- | ----------------------------------------------------------- |
+| **Adicionar Novo**                           | Esconde os botões de criação no Cardápio                    |
+| **Editar (exceto preço)**                    | Trava os campos gerais do produto                           |
+| **Editar Preço**                             | Trava Preço de Venda e Custo                                |
+| **Editar Ativo (Delivery, Presencial, etc)** | Trava as chaves de ativação                                 |
+| **Editar em Lote**                           | Esconde a edição em lote                                    |
+| **Excluir**                                  | Esconde os comandos de exclusão                             |
+| **Visualizar Valores de Referência**         | Oculta os valores do caixa                                  |
+| **Visualizar Caixas Fechados**               | Limita a listagem ao caixa aberto                           |
+| **Transferência de Operações**               | Remove o botão de transferência e o histórico de cancelados |
 
 **Põe cadeado.** O item permanece visível, mas aparece apagado com o aviso **Acesso restrito**. Isso ocorre principalmente nos cartões da tela Aplicativos. A permissão **Multilojas** funciona somente dessa forma.
 
@@ -50,100 +50,78 @@ Configure os grupos em **Configuração → Usuários → Grupos de Acesso**.
 
 <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/grupos-acesso/imagens-tratadas/01-usuarios-aba-usuarios.png" width="1532" height="856" alt="Aba Usuários, com as pessoas da empresa e o grupo de cada uma" />
 
-| Nº | Item | O que é |
-| --- | --- | --- |
-| 1 | Menu **Usuários** | Acesso à tela dentro de Configuração |
-| 2 | Aba **Usuários** | Lista as pessoas e permite escolher o grupo de cada uma |
-| 3 | Aba **Grupos de Acesso** | Lista os grupos e suas permissões |
-| 4 | Coluna **Grupo de Acesso** | Mostra o grupo atribuído a cada pessoa |
+| Nº | Item                       | O que é                                                 |
+| -- | -------------------------- | ------------------------------------------------------- |
+| 1  | Menu **Usuários**          | Acesso à tela dentro de Configuração                    |
+| 2  | Aba **Usuários**           | Lista as pessoas e permite escolher o grupo de cada uma |
+| 3  | Aba **Grupos de Acesso**   | Lista os grupos e suas permissões                       |
+| 4  | Coluna **Grupo de Acesso** | Mostra o grupo atribuído a cada pessoa                  |
 
 Clique na linha de uma pessoa para abrir o cadastro e atribuir o grupo.
 
 <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/grupos-acesso/imagens-tratadas/20-cadastro-usuario-gerente.png" width="1532" height="856" alt="Cadastro do usuário, com o Grupo de Acesso e a Função Gerente" />
 
-| Nº | Campo | O que faz |
-| --- | --- | --- |
-| 1 | **Grupo de Acesso** | Define as permissões herdadas pela pessoa |
-| 2 | **Gerente** | Libera funções específicas e dispensa a senha de gerente em ações protegidas |
-| 3 | **Aplicativos** | Controla o acesso da pessoa aos aplicativos |
-| 4 | **SALVAR (F2)** | Salva o cadastro da pessoa |
+| Nº | Campo               | O que faz                                                                    |
+| -- | ------------------- | ---------------------------------------------------------------------------- |
+| 1  | **Grupo de Acesso** | Define as permissões herdadas pela pessoa                                    |
+| 2  | **Gerente**         | Libera funções específicas e dispensa a senha de gerente em ações protegidas |
+| 3  | **Aplicativos**     | Controla o acesso da pessoa aos aplicativos                                  |
+| 4  | **SALVAR (F2)**     | Salva o cadastro da pessoa                                                   |
 
 A aba **Aplicativos** não altera as permissões do painel web. Ela controla o acesso da pessoa aos aplicativos do BeeFood.
 
 <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/grupos-acesso/imagens-tratadas/02-aba-grupos-de-acesso.png" width="1532" height="856" alt="Aba Grupos de Acesso, com os grupos da empresa" />
 
-| Nº | Item | O que fazer |
-| --- | --- | --- |
-| 1 | **+ Novo Grupo** | Cria um grupo com todas as permissões ligadas |
-| 2 | Linha do grupo | Clique no lápis para editar as permissões |
-| 3 | **Buscar grupo...** | Filtra a lista de grupos |
+| Nº | Item                | O que fazer                                   |
+| -- | ------------------- | --------------------------------------------- |
+| 1  | **+ Novo Grupo**    | Cria um grupo com todas as permissões ligadas |
+| 2  | Linha do grupo      | Clique no lápis para editar as permissões     |
+| 3  | **Buscar grupo...** | Filtra a lista de grupos                      |
 
 ### O modal de permissões
 
 <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/grupos-acesso/imagens-tratadas/03-modal-grupo-todas-permissoes.png" width="1532" height="856" alt="Modal do grupo, com as permissões agrupadas por categoria" />
 
-| Nº | Item | O que é |
-| --- | --- | --- |
-| 1 | **Descrição** | Nome do grupo. Use o botão Salvar para alterar esse campo |
-| 2 | **Buscar permissão...** | Procura uma permissão pelo nome |
-| 3 | **Todos os recursos** | Filtra as permissões por categoria |
-| 4 | Selo da categoria | Mostra a categoria e a quantidade de itens |
-| 5 | Seta | Expande os sub-itens |
-| 6 | Switch | Verde indica liberado; cinza indica bloqueado |
+| Nº | Item                    | O que é                                                   |
+| -- | ----------------------- | --------------------------------------------------------- |
+| 1  | **Descrição**           | Nome do grupo. Use o botão Salvar para alterar esse campo |
+| 2  | **Buscar permissão...** | Procura uma permissão pelo nome                           |
+| 3  | **Todos os recursos**   | Filtra as permissões por categoria                        |
+| 4  | Selo da categoria       | Mostra a categoria e a quantidade de itens                |
+| 5  | Seta                    | Expande os sub-itens                                      |
+| 6  | Switch                  | Verde indica liberado; cinza indica bloqueado             |
 
 Os switches são salvos no momento do clique. O botão **Salvar** serve para salvar a **Descrição** do grupo.
 
 <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/grupos-acesso/imagens-tratadas/04-filtro-por-recurso.png" width="1532" height="856" alt="Filtro por recurso aberto, com as dez categorias" />
 
-| Nº | Item | O que observar |
-| --- | --- | --- |
-| 1 | **Todos os recursos** | Opção padrão, que mostra todas as permissões |
-| 2 | Lista de categorias | Exibe as dez categorias em ordem alfabética |
+| Nº | Item                  | O que observar                               |
+| -- | --------------------- | -------------------------------------------- |
+| 1  | **Todos os recursos** | Opção padrão, que mostra todas as permissões |
+| 2  | Lista de categorias   | Exibe as dez categorias em ordem alfabética  |
 
 <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/grupos-acesso/imagens-tratadas/05-busca-permissao.png" width="1532" height="856" alt="Busca por caixa dentro do modal" />
 
 <Callout kind="info" collapsed="false">
-
-A busca encontra o **item principal**, não o sub-item. Ao procurar por `caixa`, o resultado pode mostrar categorias diferentes, como Cadastro de Caixas, Financeiro e Abrir e Fechar Caixa. Expanda cada resultado para localizar o sub-item correspondente.
-
+  A busca encontra o **item principal**, não o sub-item. Ao procurar por `caixa`, o resultado pode mostrar categorias diferentes, como Cadastro de Caixas, Financeiro e Abrir e Fechar Caixa. Expanda cada resultado para localizar o sub-item correspondente.
 </Callout>
 
 ## Seis regras que evitam problemas
 
 <Callout kind="alert" collapsed="false">
-
-**Cada switch salva na hora.** Não existe uma etapa de salvar todas as permissões no final. O clique já altera o acesso de todas as pessoas do grupo.
-
+  **Nunca desligue Usuários no seu próprio grupo.** Essa permissão dá acesso à tela onde os grupos são administrados. Se você removê-la do próprio grupo, perderá o caminho para reativá-la pelo sistema.
 </Callout>
 
 <Callout kind="info" collapsed="false">
-
-**A mudança pode levar cerca de 85 segundos.** O sistema mantém as permissões em memória por aproximadamente um minuto e meio, e o navegador pode manter uma cópia. Se a tela continuar igual, espere esse período e peça para a pessoa sair e entrar novamente. Recarregar a página não basta.
-
-</Callout>
-
-<Callout kind="alert" collapsed="false">
-
-**Nunca desligue Usuários no seu próprio grupo.** Essa permissão dá acesso à tela onde os grupos são administrados. Se você removê-la do próprio grupo, perderá o caminho para reativá-la pelo sistema.
-
+  **O usuário Principal também respeita o grupo.** Ele não ignora as permissões. Teste alterações usando uma pessoa de teste associada a outro grupo.
 </Callout>
 
 <Callout kind="info" collapsed="false">
-
-**O usuário Principal também respeita o grupo.** Ele não ignora as permissões. Teste alterações usando uma pessoa de teste associada a outro grupo.
-
-</Callout>
-
-<Callout kind="info" collapsed="false">
-
-**Permissão inexistente significa acesso liberado.** Por esse motivo, um grupo novo começa com todas as permissões ligadas e os aplicativos continuam visíveis.
-
+  **Permissão inexistente significa acesso liberado.** Por esse motivo, um grupo novo começa com todas as permissões ligadas e os aplicativos continuam visíveis.
 </Callout>
 
 <Callout kind="tip" collapsed="false">
-
-**Desligar o item principal não desliga os sub-itens.** Os sub-itens continuam ligados, mas perdem o efeito enquanto a tela principal estiver bloqueada. Ao religar o item principal, os sub-itens voltam a funcionar como estavam.
-
+  **Desligar o item principal não desliga os sub-itens.** Os sub-itens continuam ligados, mas perdem o efeito enquanto a tela principal estiver bloqueada. Ao religar o item principal, os sub-itens voltam a funcionar como estavam.
 </Callout>
 
 ## Catálogo completo, por categoria
@@ -152,169 +130,165 @@ As tabelas mostram o que deixa de aparecer quando cada permissão é desligada. 
 
 ### Venda
 
-| Permissão | O que desaparece |
-| --- | --- |
-| **Abrir e Fechar Caixa** | Caixa no menu lateral |
-| ↳ **Visualizar Valores de Referência** | Valores e saldos dentro do Caixa |
-| ↳ **Visualizar Caixas Fechados** | Histórico de caixas fechados |
-| ↳ **Transferência de Operações** | TRANSFERIR, Cancelamentos e Excluídos |
-| **PDV** | PDV no menu lateral |
-| **Pedidos Delivery** | Delivery no menu lateral |
-| **Mesas** | Mesas/Comandas no menu lateral |
-| **Histórico de Vendas** | Histórico de Vendas no menu lateral |
-| **KDS** | KDS no menu e o cartão Monitor KDS em Aplicativos |
+| Permissão                              | O que desaparece                                  |
+| -------------------------------------- | ------------------------------------------------- |
+| **Abrir e Fechar Caixa**               | Caixa no menu lateral                             |
+| ↳ **Visualizar Valores de Referência** | Valores e saldos dentro do Caixa                  |
+| ↳ **Visualizar Caixas Fechados**       | Histórico de caixas fechados                      |
+| ↳ **Transferência de Operações**       | TRANSFERIR, Cancelamentos e Excluídos             |
+| **PDV**                                | PDV no menu lateral                               |
+| **Pedidos Delivery**                   | Delivery no menu lateral                          |
+| **Mesas**                              | Mesas/Comandas no menu lateral                    |
+| **Histórico de Vendas**                | Histórico de Vendas no menu lateral               |
+| **KDS**                                | KDS no menu e o cartão Monitor KDS em Aplicativos |
 
 ### Cadastros
 
-| Permissão | O que desaparece |
-| --- | --- |
-| **Cadastro de Cardápio** | Cardápio, Produtos, Grupo de Opções, Complementos e Reordenar |
-| ↳ **Adicionar Novo** | Botões de criar |
-| ↳ **Editar (exceto preço)** | Campos gerais do produto |
-| ↳ **Editar Preço** | Edição de Preço de Venda e Custo |
-| ↳ **Editar Ativo (Delivery, Presencial, etc)** | Chaves de ativação |
-| ↳ **Editar em Lote** | Edição em lote |
-| ↳ **Excluir** | Comandos de exclusão |
-| **Cardápio - Exibir / Ocultar Produtos** | Exibir / Ocultar, Rodízio e Preço Programado |
+| Permissão                                      | O que desaparece                                              |
+| ---------------------------------------------- | ------------------------------------------------------------- |
+| **Cadastro de Cardápio**                       | Cardápio, Produtos, Grupo de Opções, Complementos e Reordenar |
+| ↳ **Adicionar Novo**                           | Botões de criar                                               |
+| ↳ **Editar (exceto preço)**                    | Campos gerais do produto                                      |
+| ↳ **Editar Preço**                             | Edição de Preço de Venda e Custo                              |
+| ↳ **Editar Ativo (Delivery, Presencial, etc)** | Chaves de ativação                                            |
+| ↳ **Editar em Lote**                           | Edição em lote                                                |
+| ↳ **Excluir**                                  | Comandos de exclusão                                          |
+| **Cardápio - Exibir / Ocultar Produtos**       | Exibir / Ocultar, Rodízio e Preço Programado                  |
 
 ### Cadastros Básicos
 
-| Permissão | O que desaparece |
-| --- | --- |
-| **Mesas** | Cadastros → Mesas |
-| **Comandas** | Cadastros → Comandas |
+| Permissão                 | O que desaparece               |
+| ------------------------- | ------------------------------ |
+| **Mesas**                 | Cadastros → Mesas              |
+| **Comandas**              | Cadastros → Comandas           |
 | **Formas de Recebimento** | Cadastros → Formas Recebimento |
 
 ### Cliente
 
-| Permissão | O que desaparece |
-| --- | --- |
-| **Clientes** | Clientes no menu lateral |
-| **Fiado** | Fiado no menu lateral |
+| Permissão      | O que desaparece           |
+| -------------- | -------------------------- |
+| **Clientes**   | Clientes no menu lateral   |
+| **Fiado**      | Fiado no menu lateral      |
 | **Avaliações** | Avaliações no menu lateral |
 
 ### Empresa
 
-| Permissão | O que desaparece |
-| --- | --- |
-| **Usuários** | Configuração → Usuários |
-| **Funcionários** | Cadastros → Funcionários |
-| **Dados da Empresa** | Configuração → Empresa e Configuração → Parâmetros |
-| **Cadastro de Caixas** | Configuração → Caixa |
+| Permissão                   | O que desaparece                                    |
+| --------------------------- | --------------------------------------------------- |
+| **Usuários**                | Configuração → Usuários                             |
+| **Funcionários**            | Cadastros → Funcionários                            |
+| **Dados da Empresa**        | Configuração → Empresa e Configuração → Parâmetros  |
+| **Cadastro de Caixas**      | Configuração → Caixa                                |
 | **Cadastro de Impressoras** | Configuração → Impressão e o cartão Impressão Cupom |
-| **Cadastro de TEF** | Configuração → TEF |
-| **Histórico Alterações** | Configuração → Histórico Alteração |
-| **Plano** | Configuração → Meu Plano |
+| **Cadastro de TEF**         | Configuração → TEF                                  |
+| **Histórico Alterações**    | Configuração → Histórico Alteração                  |
+| **Plano**                   | Configuração → Meu Plano                            |
 
 <Callout kind="alert" collapsed="false">
-
-**Dados da Empresa também controla Parâmetros.** Não existe uma permissão separada para Parâmetros. Ao desligar Dados da Empresa, a pessoa perde também a tela que contém a senha de gerente, o operador do PDV e outros comportamentos do sistema.
-
+  **Dados da Empresa também controla Parâmetros.** Não existe uma permissão separada para Parâmetros. Ao desligar Dados da Empresa, a pessoa perde também a tela que contém a senha de gerente, o operador do PDV e outros comportamentos do sistema.
 </Callout>
 
 ### Configurações
 
-| Permissão | O que desaparece |
-| --- | --- |
-| **Cardápio Digital** | Grupo Cardápio Digital e os cartões Cardápio Digital, Cashback, Cupom Desconto, Facebook Pixel, Google Analytics, Google Tag Manager e Cardápio QR Code |
-| ↳ **Multilojas** | Link Multilojas e o cartão Multi Lojas |
-| **Cardápio Digital Tablet** | Cardápio Digital Tablet no menu e o cartão correspondente |
-| **Inteligência Artificial (ChatGPT)** | WhatsApp → Inteligência Artificial e o cartão de IA |
+| Permissão                             | O que desaparece                                                                                                                                        |
+| ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Cardápio Digital**                  | Grupo Cardápio Digital e os cartões Cardápio Digital, Cashback, Cupom Desconto, Facebook Pixel, Google Analytics, Google Tag Manager e Cardápio QR Code |
+| ↳ **Multilojas**                      | Link Multilojas e o cartão Multi Lojas                                                                                                                  |
+| **Cardápio Digital Tablet**           | Cardápio Digital Tablet no menu e o cartão correspondente                                                                                               |
+| **Inteligência Artificial (ChatGPT)** | WhatsApp → Inteligência Artificial e o cartão de IA                                                                                                     |
 
 ### Gestão: estoque
 
-| Permissão | O que desaparece |
-| --- | --- |
-| **Estoque** | Grupo Estoque e Meu Estoque |
-| ↳ **Movimentações de Estoque** | Estoque → Movimentações |
-| ↳ **Importação de NF-e** | Estoque → Importar NFe |
-| ↳ **Receitas** | Estoque → Receitas |
-| ↳ **Produção** | Estoque → Produção |
+| Permissão                      | O que desaparece            |
+| ------------------------------ | --------------------------- |
+| **Estoque**                    | Grupo Estoque e Meu Estoque |
+| ↳ **Movimentações de Estoque** | Estoque → Movimentações     |
+| ↳ **Importação de NF-e**       | Estoque → Importar NFe      |
+| ↳ **Receitas**                 | Estoque → Receitas          |
+| ↳ **Produção**                 | Estoque → Produção          |
 
 ### Gestão: financeiro
 
-| Permissão | O que desaparece |
-| --- | --- |
-| **Financeiro** | Grupo Financeiro |
-| ↳ **Lançamentos** | Financeiro → Lançamentos |
-| ↳ **Fluxo de Caixa** | Financeiro → Fluxo Caixa |
-| ↳ **Relatório Recebimentos** | Financeiro → Recebimentos |
-| ↳ **Relatório Pagamentos** | Financeiro → Pagamentos |
-| ↳ **Relatório DRE** | Financeiro → DRE |
-| ↳ **Categorias** | Financeiro → Categorias Despesas |
-| ↳ **Fornecedores** | Financeiro → Fornecedores |
-| ↳ **Formas Pagamento** | Financeiro → Formas Pagamento |
-| ↳ **Contas Bancárias** | Financeiro → Contas Bancárias |
+| Permissão                    | O que desaparece                 |
+| ---------------------------- | -------------------------------- |
+| **Financeiro**               | Grupo Financeiro                 |
+| ↳ **Lançamentos**            | Financeiro → Lançamentos         |
+| ↳ **Fluxo de Caixa**         | Financeiro → Fluxo Caixa         |
+| ↳ **Relatório Recebimentos** | Financeiro → Recebimentos        |
+| ↳ **Relatório Pagamentos**   | Financeiro → Pagamentos          |
+| ↳ **Relatório DRE**          | Financeiro → DRE                 |
+| ↳ **Categorias**             | Financeiro → Categorias Despesas |
+| ↳ **Fornecedores**           | Financeiro → Fornecedores        |
+| ↳ **Formas Pagamento**       | Financeiro → Formas Pagamento    |
+| ↳ **Contas Bancárias**       | Financeiro → Contas Bancárias    |
 
 ### Gestão: WhatsApp, PIX, Aplicativos e CRM
 
-| Permissão | O que desaparece |
-| --- | --- |
-| **WhatsApp** | Grupo WhatsApp, Conexão e o cartão WhatsApp |
-| ↳ **Resumo / Histórico de Mensagens** | WhatsApp → Histórico |
-| ↳ **Campanhas** | WhatsApp → Envios em Massa e as campanhas no Food Marketing |
-| ↳ **Resumo diário / semanal** | WhatsApp → Resumo Diário |
-| ↳ **Notificações** | WhatsApp → Notificações |
-| ↳ **Respostas Automática** | WhatsApp → Respostas |
-| **PIX** | Pix Online no menu e o cartão Pix Online |
-| **Aplicativos** | Aplicativos no menu lateral |
-| **Fidelidade (CRM)** | Grupo Fidelidade (CRM) |
-| ↳ **Relatório de Fidelidade** | Fidelidade (CRM) → Fidelidade |
-| ↳ **Cupom de Desconto** | Fidelidade (CRM) → Cupom de Desconto |
-| ↳ **Cashback** | Fidelidade (CRM) → Cashback |
-| ↳ **Avaliações** | Fidelidade (CRM) → Avaliações |
+| Permissão                             | O que desaparece                                            |
+| ------------------------------------- | ----------------------------------------------------------- |
+| **WhatsApp**                          | Grupo WhatsApp, Conexão e o cartão WhatsApp                 |
+| ↳ **Resumo / Histórico de Mensagens** | WhatsApp → Histórico                                        |
+| ↳ **Campanhas**                       | WhatsApp → Envios em Massa e as campanhas no Food Marketing |
+| ↳ **Resumo diário / semanal**         | WhatsApp → Resumo Diário                                    |
+| ↳ **Notificações**                    | WhatsApp → Notificações                                     |
+| ↳ **Respostas Automática**            | WhatsApp → Respostas                                        |
+| **PIX**                               | Pix Online no menu e o cartão Pix Online                    |
+| **Aplicativos**                       | Aplicativos no menu lateral                                 |
+| **Fidelidade (CRM)**                  | Grupo Fidelidade (CRM)                                      |
+| ↳ **Relatório de Fidelidade**         | Fidelidade (CRM) → Fidelidade                               |
+| ↳ **Cupom de Desconto**               | Fidelidade (CRM) → Cupom de Desconto                        |
+| ↳ **Cashback**                        | Fidelidade (CRM) → Cashback                                 |
+| ↳ **Avaliações**                      | Fidelidade (CRM) → Avaliações                               |
 
 ### Fiscal
 
-| Permissão | O que desaparece |
-| --- | --- |
-| **NFCe - Nota Fiscal do Consumidor Eletrônica** | Fiscal → NFCe |
-| **NFe - Nota Fiscal Eletrônica** | Fiscal → NFe |
-| **NFe - Recebidas** | Fiscal → NFe Recebidas |
-| **Configuração Fiscal - Regra Fiscal** | Fiscal → Configuração |
-| **Configuração Fiscal - Edição** | Fiscal → Edição Fiscal |
+| Permissão                                       | O que desaparece       |
+| ----------------------------------------------- | ---------------------- |
+| **NFCe - Nota Fiscal do Consumidor Eletrônica** | Fiscal → NFCe          |
+| **NFe - Nota Fiscal Eletrônica**                | Fiscal → NFe           |
+| **NFe - Recebidas**                             | Fiscal → NFe Recebidas |
+| **Configuração Fiscal - Regra Fiscal**          | Fiscal → Configuração  |
+| **Configuração Fiscal - Edição**                | Fiscal → Edição Fiscal |
 
 ### Marketing
 
-| Permissão | O que desaparece |
-| --- | --- |
-| **Food Marketing** | Grupo Food Marketing |
+| Permissão                     | O que desaparece                         |
+| ----------------------------- | ---------------------------------------- |
+| **Food Marketing**            | Grupo Food Marketing                     |
 | ↳ **BeeFood Pixel Analytics** | Food Marketing → BeeFood Pixel Analytics |
-| ↳ **Segmentação de Clientes** | Food Marketing → Segmentação de Cliente |
-| ↳ **Campanhas SMS** | Food Marketing → Campanhas SMS |
+| ↳ **Segmentação de Clientes** | Food Marketing → Segmentação de Cliente  |
+| ↳ **Campanhas SMS**           | Food Marketing → Campanhas SMS           |
 
 <Callout kind="info" collapsed="false">
-
-**Campanhas WhatsApp não pertence à categoria Marketing.** A permissão é um sub-item de WhatsApp, na categoria Gestão. Ela controla Campanhas WhatsApp e Campanhas Inteligentes dentro de Food Marketing.
-
+  **Campanhas WhatsApp não pertence à categoria Marketing.** A permissão é um sub-item de WhatsApp, na categoria Gestão. Ela controla Campanhas WhatsApp e Campanhas Inteligentes dentro de Food Marketing.
 </Callout>
 
 ### Relatórios: Desempenho
 
 **Desempenho (Gráficos)** remove Desempenho do menu. Seus 20 sub-itens controlam relatórios individuais dentro da tela.
 
-| Sub-item | Relatório |
-| --- | --- |
-| **Resumo** | Resumo |
-| **Vendas - Origem** | Vendas → Origem |
-| **Vendas - Resumo** | Vendas → Resumo |
-| **Vendas - Recebimento** | Vendas → Recebimento |
-| **Vendas - Descontos** | Vendas → Descontos |
-| **Vendas - Cancelamentos** | Vendas → Cancelamentos |
-| **Produtos - Produtos** | Produtos → Produtos |
-| **Produtos - Setor** | Produtos → Setor |
-| **Produtos - Sem opções** | Produtos → Produtos sem opções |
-| **Produtos - Com opções** | Produtos → Produtos com opções |
-| **Produtos - Grupo de opções** | Produtos → Grupo de Opções |
-| **Delivery - Mapa de calor** | Mapa de Calor e Top Bairros |
-| **Delivery - Oportunidades** | Delivery → Oportunidades |
-| **Delivery - Sugestões** | Delivery → Sugestões |
-| **Presencial - Taxa Serviço** | Presencial → Taxa Serviço |
+| Sub-item                                     | Relatório                                |
+| -------------------------------------------- | ---------------------------------------- |
+| **Resumo**                                   | Resumo                                   |
+| **Vendas - Origem**                          | Vendas → Origem                          |
+| **Vendas - Resumo**                          | Vendas → Resumo                          |
+| **Vendas - Recebimento**                     | Vendas → Recebimento                     |
+| **Vendas - Descontos**                       | Vendas → Descontos                       |
+| **Vendas - Cancelamentos**                   | Vendas → Cancelamentos                   |
+| **Produtos - Produtos**                      | Produtos → Produtos                      |
+| **Produtos - Setor**                         | Produtos → Setor                         |
+| **Produtos - Sem opções**                    | Produtos → Produtos sem opções           |
+| **Produtos - Com opções**                    | Produtos → Produtos com opções           |
+| **Produtos - Grupo de opções**               | Produtos → Grupo de Opções               |
+| **Delivery - Mapa de calor**                 | Mapa de Calor e Top Bairros              |
+| **Delivery - Oportunidades**                 | Delivery → Oportunidades                 |
+| **Delivery - Sugestões**                     | Delivery → Sugestões                     |
+| **Presencial - Taxa Serviço**                | Presencial → Taxa Serviço                |
 | **Presencial - Pedidos (Mobile e Comissão)** | Presencial → Pedidos (Mobile e Comissão) |
-| **Presencial - Sugestões** | Presencial → Sugestões |
-| **Clientes - Base de clientes** | Clientes → Base de Clientes |
-| **Clientes - Análise RFV** | Clientes → Análise RFV |
-| **Clientes - Análise Recorrência** | Clientes → Análise Recorrência |
+| **Presencial - Sugestões**                   | Presencial → Sugestões                   |
+| **Clientes - Base de clientes**              | Clientes → Base de Clientes              |
+| **Clientes - Análise RFV**                   | Clientes → Análise RFV                   |
+| **Clientes - Análise Recorrência**           | Clientes → Análise Recorrência           |
 
 Os cabeçalhos Vendas, Produtos, Delivery, Presencial e Clientes desaparecem quando todos os relatórios daquele grupo são desligados. O relatório Entregador (Taxa / KM) não possui switch e continua disponível para quem acessar Desempenho.
 
@@ -324,14 +298,14 @@ Seis sub-itens de **Cadastro de Cardápio** alteram o que a pessoa pode fazer no
 
 <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/grupos-acesso/imagens-tratadas/06-acoes-do-cardapio.png" width="1532" height="856" alt="Os seis sub-itens de Cadastro de Cardápio" />
 
-| Nº | Permissão | O que controla |
-| --- | --- | --- |
-| 1 | **Excluir** | Exclusão de produtos, opções e setores |
-| 2 | **Editar (exceto preço)** | Campos gerais do produto |
-| 3 | **Editar Preço** | Preço de Venda e Custo |
-| 4 | **Editar Ativo** | Ativação em Delivery, Presencial e Totem |
-| 5 | **Adicionar Novo** | Criação de produtos e setores |
-| 6 | **Editar em Lote** | Alterações em vários itens |
+| Nº | Permissão                 | O que controla                           |
+| -- | ------------------------- | ---------------------------------------- |
+| 1  | **Excluir**               | Exclusão de produtos, opções e setores   |
+| 2  | **Editar (exceto preço)** | Campos gerais do produto                 |
+| 3  | **Editar Preço**          | Preço de Venda e Custo                   |
+| 4  | **Editar Ativo**          | Ativação em Delivery, Presencial e Totem |
+| 5  | **Adicionar Novo**        | Criação de produtos e setores            |
+| 6  | **Editar em Lote**        | Alterações em vários itens               |
 
 ### A tela completa
 
@@ -339,23 +313,23 @@ Use a tela completa como referência para entender o efeito de cada restrição.
 
 <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/grupos-acesso/imagens-tratadas/30a-lista-cardapio-completo.png" width="1532" height="856" alt="Lista do Cardápio com todas as permissões ligadas" />
 
-| Nº | Item | Depende de |
-| --- | --- | --- |
-| 1 | **+ Novo Produto (F1)** | Adicionar Novo |
-| 2 | **+ Novo Setor** | Adicionar Novo |
-| 3 | **Editar em Lote** | Editar em Lote |
-| 4 | Menu de três pontos | Editar, ativação e Excluir |
+| Nº | Item                    | Depende de                 |
+| -- | ----------------------- | -------------------------- |
+| 1  | **+ Novo Produto (F1)** | Adicionar Novo             |
+| 2  | **+ Novo Setor**        | Adicionar Novo             |
+| 3  | **Editar em Lote**      | Editar em Lote             |
+| 4  | Menu de três pontos     | Editar, ativação e Excluir |
 
 <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/grupos-acesso/imagens-tratadas/30b-produto-completo.png" width="1532" height="856" alt="Cadastro de produto com todas as permissões ligadas" />
 
-| Nº | Item | Depende de |
-| --- | --- | --- |
-| 1 | Seis abas | Acesso ao cadastro |
-| 2 | Nome, Setor, Código, Unidade e Descrição | Editar (exceto preço) |
-| 3 | Preço de Venda | Editar Preço |
-| 4 | Custo | Editar Preço controla a edição, mas não a visualização |
-| 5 | **OPÇÕES** | Excluir |
-| 6 | **SALVAR E SAIR (F2)** | Pelo menos uma permissão de edição |
+| Nº | Item                                     | Depende de                                             |
+| -- | ---------------------------------------- | ------------------------------------------------------ |
+| 1  | Seis abas                                | Acesso ao cadastro                                     |
+| 2  | Nome, Setor, Código, Unidade e Descrição | Editar (exceto preço)                                  |
+| 3  | Preço de Venda                           | Editar Preço                                           |
+| 4  | Custo                                    | Editar Preço controla a edição, mas não a visualização |
+| 5  | **OPÇÕES**                               | Excluir                                                |
+| 6  | **SALVAR E SAIR (F2)**                   | Pelo menos uma permissão de edição                     |
 
 As chaves Ativo, Delivery, Presencial e Totem ficam na aba **Cardápios**, não na aba Produto.
 
@@ -366,17 +340,15 @@ As chaves Ativo, Delivery, Presencial e Totem ficam na aba **Cardápios**, não 
 Sem essa permissão, Setor, Etiqueta e Unidade ficam apagados. Nome, Código, Código de Barras e Descrição mantêm a aparência normal, mas não aceitam digitação.
 
 <Callout kind="tip" collapsed="false">
-
-Essa restrição pode parecer um defeito porque alguns campos continuam com aparência normal. A pessoa consegue clicar no campo, mas nada é digitado. Avise a equipe antes de aplicar o perfil.
-
+  Essa restrição pode parecer um defeito porque alguns campos continuam com aparência normal. A pessoa consegue clicar no campo, mas nada é digitado. Avise a equipe antes de aplicar o perfil.
 </Callout>
 
 A permissão controla os seguintes campos:
 
-| Aba | Campos afetados |
-| --- | --- |
-| **Produto** | Nome, Setor, Subsetor, Código, Código de Barras, Unidade, Descrição, botão de IA, Observações internas, Sem taxa de serviço, Somente agendamento, Enviar para balança, Setor de produção e Nome de produção |
-| **Restrições / Detalhes** | A aba inteira |
+| Aba                       | Campos afetados                                                                                                                                                                                             |
+| ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Produto**               | Nome, Setor, Subsetor, Código, Código de Barras, Unidade, Descrição, botão de IA, Observações internas, Sem taxa de serviço, Somente agendamento, Enviar para balança, Setor de produção e Nome de produção |
+| **Restrições / Detalhes** | A aba inteira                                                                                                                                                                                               |
 
 ### Sem Editar Preço
 
@@ -385,9 +357,7 @@ A permissão controla os seguintes campos:
 Preço de Venda e Custo continuam visíveis, mas não aceitam digitação. Os preços de Delivery e Presencial na aba Cardápios também ficam travados.
 
 <Callout kind="alert" collapsed="false">
-
-Não existe uma permissão para esconder o Custo. Quem abrir o cadastro continuará vendo Custo, Custo Ficha Técnica e Custo Total. Para ocultar o custo, desligue Cadastro de Cardápio.
-
+  Não existe uma permissão para esconder o Custo. Quem abrir o cadastro continuará vendo Custo, Custo Ficha Técnica e Custo Total. Para ocultar o custo, desligue Cadastro de Cardápio.
 </Callout>
 
 ### Sem Editar Ativo
@@ -421,10 +391,10 @@ O menu **OPÇÕES** do produto fica vazio. Setores, opções, complementos e gru
 
 <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/grupos-acesso/imagens-tratadas/35-comparativo-sem-novo-lote.png" width="1532" height="856" alt="Comparação do cabeçalho do Cardápio com e sem as duas permissões" />
 
-| Permissão desligada | O que desaparece |
-| --- | --- |
-| **Adicionar Novo** | + Novo Produto e + Novo Setor |
-| **Editar em Lote** | Editar em Lote |
+| Permissão desligada | O que desaparece              |
+| ------------------- | ----------------------------- |
+| **Adicionar Novo**  | + Novo Produto e + Novo Setor |
+| **Editar em Lote**  | Editar em Lote                |
 
 Os filtros Todos, Ativos, Inativos e Importar continuam disponíveis. Desligar apenas Editar em Lote permite criar e editar produtos individualmente, mas impede alterações em massa.
 
@@ -438,24 +408,24 @@ Os seis sub-itens permanecem ligados, mas não produzem efeito enquanto Cadastro
 
 ### O que não dá para restringir na tela de produto
 
-| Você gostaria de... | Situação |
-| --- | --- |
-| Esconder o Custo e manter o restante do Cardápio | Não existe permissão própria |
-| Esconder a aba Ficha Técnica | Não existe permissão própria |
-| Esconder a aba Grupo de Opções | Não existe permissão própria |
-| Travar Aceita Estoque Negativo | A permissão existe, mas não possui switch na tela de grupos |
-| Esconder a aba Estoque | Depende indiretamente das permissões Estoque e Meu Estoque |
-| Permitir edição de preço até um limite | Não existe essa configuração |
+| Você gostaria de...                              | Situação                                                    |
+| ------------------------------------------------ | ----------------------------------------------------------- |
+| Esconder o Custo e manter o restante do Cardápio | Não existe permissão própria                                |
+| Esconder a aba Ficha Técnica                     | Não existe permissão própria                                |
+| Esconder a aba Grupo de Opções                   | Não existe permissão própria                                |
+| Travar Aceita Estoque Negativo                   | A permissão existe, mas não possui switch na tela de grupos |
+| Esconder a aba Estoque                           | Depende indiretamente das permissões Estoque e Meu Estoque  |
+| Permitir edição de preço até um limite           | Não existe essa configuração                                |
 
 ## Restrições do Caixa
 
 Os três sub-itens de **Abrir e Fechar Caixa** alteram o conteúdo da tela sem removê-la do menu.
 
-| Sub-item | O que acontece |
-| --- | --- |
-| **Visualizar Valores de Referência** | Remove Saldo Final, Conf. Saldo Final e Quebra de Caixa. O fechamento vira uma conferência cega |
-| **Visualizar Caixas Fechados** | A lista mostra somente o caixa aberto |
-| **Transferência de Operações** | Remove TRANSFERIR e os ícones de Cancelamentos e Excluídos. O servidor também recusa a transferência |
+| Sub-item                             | O que acontece                                                                                       |
+| ------------------------------------ | ---------------------------------------------------------------------------------------------------- |
+| **Visualizar Valores de Referência** | Remove Saldo Final, Conf. Saldo Final e Quebra de Caixa. O fechamento vira uma conferência cega      |
+| **Visualizar Caixas Fechados**       | A lista mostra somente o caixa aberto                                                                |
+| **Transferência de Operações**       | Remove TRANSFERIR e os ícones de Cancelamentos e Excluídos. O servidor também recusa a transferência |
 
 Para ver as telas e as demais regras do caixa, consulte o manual [Restrições de caixa](/manuais/caixa-restricoes/).
 
@@ -463,23 +433,21 @@ Para ver as telas e as demais regras do caixa, consulte o manual [Restrições d
 
 Algumas restrições existem no BeeFood, mas não pertencem ao grupo de acesso.
 
-| Restrição | Onde configurar |
-| --- | --- |
-| Aba Cancelamentos do caixa | Campo **Gerente**, no cadastro do usuário |
-| Copiar do iFood, Copiar de Imagem e Migrar Dados | Campo **Gerente**, no cadastro do usuário |
-| Tela inicial de gerente ou funcionário | Campo **Gerente**, no cadastro do usuário |
-| Cards de resumo da NFe e NFCe | Campo **Gerente**, no cadastro do usuário |
-| Linha Taxa de Serviço no resumo do caixa | Campo **Gerente**, no cadastro do usuário |
-| Senha para cancelar venda, estornar pagamento, excluir item, dar desconto ou alterar estoque | Configuração → Parâmetros |
-| Limite máximo de desconto | Configuração → Parâmetros |
-| Identificação do operador no PDV | Configuração → Parâmetros |
-| Exibição somente do próprio caixa | Campo **Usuário Fixo**, em Configuração → Caixa |
-| Acesso aos aplicativos | Campo **Aplicativos**, no cadastro do usuário |
+| Restrição                                                                                    | Onde configurar                                 |
+| -------------------------------------------------------------------------------------------- | ----------------------------------------------- |
+| Aba Cancelamentos do caixa                                                                   | Campo **Gerente**, no cadastro do usuário       |
+| Copiar do iFood, Copiar de Imagem e Migrar Dados                                             | Campo **Gerente**, no cadastro do usuário       |
+| Tela inicial de gerente ou funcionário                                                       | Campo **Gerente**, no cadastro do usuário       |
+| Cards de resumo da NFe e NFCe                                                                | Campo **Gerente**, no cadastro do usuário       |
+| Linha Taxa de Serviço no resumo do caixa                                                     | Campo **Gerente**, no cadastro do usuário       |
+| Senha para cancelar venda, estornar pagamento, excluir item, dar desconto ou alterar estoque | Configuração → Parâmetros                       |
+| Limite máximo de desconto                                                                    | Configuração → Parâmetros                       |
+| Identificação do operador no PDV                                                             | Configuração → Parâmetros                       |
+| Exibição somente do próprio caixa                                                            | Campo **Usuário Fixo**, em Configuração → Caixa |
+| Acesso aos aplicativos                                                                       | Campo **Aplicativos**, no cadastro do usuário   |
 
 <Callout kind="alert" collapsed="false">
-
-Marcar uma pessoa como **Gerente** dispensa a senha de gerente nas ações protegidas por Parâmetros e também libera outras funções. Use essa opção somente quando a pessoa realmente precisar dessas permissões.
-
+  Marcar uma pessoa como **Gerente** dispensa a senha de gerente nas ações protegidas por Parâmetros e também libera outras funções. Use essa opção somente quando a pessoa realmente precisar dessas permissões.
 </Callout>
 
 ### Itens que nenhum grupo consegue esconder
@@ -499,21 +467,21 @@ A permissão **NFe - Recebidas** remove o item do menu, mas a URL digitada diret
 
 Algumas permissões produzem efeitos em mais de um local.
 
-| Permissão | Efeito adicional |
-| --- | --- |
-| **Dados da Empresa** | Também esconde Parâmetros |
-| **Cardápio - Exibir / Ocultar Produtos** | Também esconde Rodízio e Preço Programado |
-| **Cadastro de Cardápio** | Também esconde Produtos, Grupo de Opções, Complementos e Reordenar |
-| **Estoque** | Também esconde Meu Estoque |
-| **Cadastro de Impressoras** | Põe cadeado em Aplicativos → Impressão Cupom |
-| **Cardápio Digital** | Põe cadeado em sete aplicativos relacionados |
-| **Cardápio Digital Tablet** | Também controla o cartão do aplicativo Tablet |
-| **Inteligência Artificial (ChatGPT)** | Põe cadeado no aplicativo de IA |
-| **WhatsApp** | Também esconde Conexão e põe cadeado no aplicativo WhatsApp |
-| **Campanhas**, sub-item de WhatsApp | Também esconde Campanhas WhatsApp e Campanhas Inteligentes |
-| **PIX** | Também esconde o aplicativo Pix Online |
-| **KDS** | Põe cadeado em Aplicativos → Monitor KDS |
-| **Multilojas** | Põe cadeado no aplicativo Multi Lojas |
+| Permissão                                | Efeito adicional                                                   |
+| ---------------------------------------- | ------------------------------------------------------------------ |
+| **Dados da Empresa**                     | Também esconde Parâmetros                                          |
+| **Cardápio - Exibir / Ocultar Produtos** | Também esconde Rodízio e Preço Programado                          |
+| **Cadastro de Cardápio**                 | Também esconde Produtos, Grupo de Opções, Complementos e Reordenar |
+| **Estoque**                              | Também esconde Meu Estoque                                         |
+| **Cadastro de Impressoras**              | Põe cadeado em Aplicativos → Impressão Cupom                       |
+| **Cardápio Digital**                     | Põe cadeado em sete aplicativos relacionados                       |
+| **Cardápio Digital Tablet**              | Também controla o cartão do aplicativo Tablet                      |
+| **Inteligência Artificial (ChatGPT)**    | Põe cadeado no aplicativo de IA                                    |
+| **WhatsApp**                             | Também esconde Conexão e põe cadeado no aplicativo WhatsApp        |
+| **Campanhas**, sub-item de WhatsApp      | Também esconde Campanhas WhatsApp e Campanhas Inteligentes         |
+| **PIX**                                  | Também esconde o aplicativo Pix Online                             |
+| **KDS**                                  | Põe cadeado em Aplicativos → Monitor KDS                           |
+| **Multilojas**                           | Põe cadeado no aplicativo Multi Lojas                              |
 
 ## Perfis prontos
 
@@ -557,27 +525,26 @@ O botão **SALVAR E SAIR** fica apagado, mas os valores continuam visíveis, inc
 
 ## Resumo
 
-| Quero que o usuário não... | Desligue | Onde |
-| --- | --- | --- |
-| Abra o Cardápio ou veja o custo | **Cadastro de Cardápio** | Cadastros |
-| Crie produto ou setor | **Adicionar Novo** | Sub-item de Cadastro de Cardápio |
-| Mude nome, descrição, setor ou unidade | **Editar (exceto preço)** | Sub-item de Cadastro de Cardápio |
-| Mude preço ou custo | **Editar Preço** | Sub-item de Cadastro de Cardápio |
-| Tire produto do ar | **Editar Ativo** | Sub-item de Cadastro de Cardápio |
-| Exclua produto, opção ou setor | **Excluir** | Sub-item de Cadastro de Cardápio |
-| Altere muitos itens de uma vez | **Editar em Lote** | Sub-item de Cadastro de Cardápio |
-| Oculte produtos ou altere Preço Programado | **Cardápio - Exibir / Ocultar Produtos** | Cadastros |
-| Entre no Caixa | **Abrir e Fechar Caixa** | Venda |
-| Veja saldos e quebras do Caixa | **Visualizar Valores de Referência** | Sub-item de Abrir e Fechar Caixa |
-| Veja o faturamento | **Histórico de Vendas**, **Desempenho** e **Financeiro** | Venda, Relatórios e Gestão |
-| Mexa em Parâmetros | **Dados da Empresa** | Empresa |
-| Crie ou edite usuários | **Usuários** | Empresa |
-| Veja o custo, mas continue no Cardápio | Não é possível hoje | Não existe permissão própria |
-| Abra somente uma integração, como iFood | Não é possível hoje | Controle disponível é Aplicativos |
-| Veja Parâmetros sem acessar Dados da Empresa | Não é possível hoje | A permissão controla as duas telas |
+| Quero que o usuário não...                   | Desligue                                                 | Onde                               |
+| -------------------------------------------- | -------------------------------------------------------- | ---------------------------------- |
+| Abra o Cardápio ou veja o custo              | **Cadastro de Cardápio**                                 | Cadastros                          |
+| Crie produto ou setor                        | **Adicionar Novo**                                       | Sub-item de Cadastro de Cardápio   |
+| Mude nome, descrição, setor ou unidade       | **Editar (exceto preço)**                                | Sub-item de Cadastro de Cardápio   |
+| Mude preço ou custo                          | **Editar Preço**                                         | Sub-item de Cadastro de Cardápio   |
+| Tire produto do ar                           | **Editar Ativo**                                         | Sub-item de Cadastro de Cardápio   |
+| Exclua produto, opção ou setor               | **Excluir**                                              | Sub-item de Cadastro de Cardápio   |
+| Altere muitos itens de uma vez               | **Editar em Lote**                                       | Sub-item de Cadastro de Cardápio   |
+| Oculte produtos ou altere Preço Programado   | **Cardápio - Exibir / Ocultar Produtos**                 | Cadastros                          |
+| Entre no Caixa                               | **Abrir e Fechar Caixa**                                 | Venda                              |
+| Veja saldos e quebras do Caixa               | **Visualizar Valores de Referência**                     | Sub-item de Abrir e Fechar Caixa   |
+| Veja o faturamento                           | **Histórico de Vendas**, **Desempenho** e **Financeiro** | Venda, Relatórios e Gestão         |
+| Mexa em Parâmetros                           | **Dados da Empresa**                                     | Empresa                            |
+| Crie ou edite usuários                       | **Usuários**                                             | Empresa                            |
+| Veja o custo, mas continue no Cardápio       | Não é possível hoje                                      | Não existe permissão própria       |
+| Abra somente uma integração, como iFood      | Não é possível hoje                                      | Controle disponível é Aplicativos  |
+| Veja Parâmetros sem acessar Dados da Empresa | Não é possível hoje                                      | A permissão controla as duas telas |
 
 <Callout kind="tip" collapsed="false">
-
-Teste as alterações com uma pessoa de teste em um grupo separado. Mude um switch por vez, anote o que foi desligado e espere cerca de 85 segundos antes de pedir um novo login. Se uma tela desaparecer sem explicação, confira primeiro o grupo de acesso e depois a função Gerente do usuário.
-
+  Teste as alterações com uma pessoa de teste em um grupo separado. Mude um switch por vez, anote o que foi desligado e espere cerca de 85 segundos antes de pedir um novo login. Se uma tela desaparecer sem explicação, confira primeiro o grupo de acesso e depois a função Gerente do usuário.
 </Callout>
+
