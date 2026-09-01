@@ -163,8 +163,18 @@
                     "path": "cardapio-digital-desconto-formas"
                   },
                   {
-                    "title": "📅 Agendamento",
-                    "path": "cardapio-digital-agendamento"
+                    "group": "📅 Agendamento",
+                    "path": "cardapio-digital-agendamento",
+                    "pages": [
+                      {
+                        "title": "⚙️ Configuração",
+                        "path": "cardapio-digital-agendamento"
+                      },
+                      {
+                        "title": "🛍️ Produto Encomenda (só agendamento)",
+                        "path": "cardapio-digital-agendamento-produto"
+                      }
+                    ]
                   },
                   {
                     "title": "🎨 Aparência e Layout",
@@ -288,6 +298,10 @@
                   {
                     "title": "📈 Estoque - Gestão Avançada",
                     "path": "estoque-gestao-avancada"
+                  },
+                  {
+                    "title": "📋 Ficha Técnica",
+                    "path": "ficha-tecnica"
                   }
                 ]
               },
