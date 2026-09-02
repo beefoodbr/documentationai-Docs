@@ -1,0 +1,285 @@
+---
+title: BeeFood Pixel Analytics
+description: >-
+  Leia o funil do cardápio digital, compare origens e acompanhe campanhas pagas
+  com filtros, KPIs, UTM e eventos ao vivo.
+---
+## Leia o funil do seu cardápio digital
+
+Acompanhe visitas, visualizações de produtos, carrinhos e pedidos no BeeFood Pixel Analytics. Use os filtros para comparar canais, entender onde os clientes abandonam a jornada e identificar quais campanhas trouxeram vendas.
+
+<Callout kind="tip" collapsed="false">
+  As imagens deste manual têm setas com números. Cada número no texto corresponde ao campo ou botão indicado na tela.
+</Callout>
+
+## Antes de começar
+
+<Callout kind="info" collapsed="false">
+  O BeeFood Pixel Analytics já está ligado ao cardápio. Você não precisa criar um Pixel, informar um Pixel ID, colar código ou solicitar uma chave à Meta ou ao Google. O painel usa o analytics próprio do BeeFood.
+
+  O rastreamento está disponível para dados a partir de **1º de junho de 2026**. O calendário não permite selecionar uma data anterior.
+</Callout>
+
+<Callout kind="alert" collapsed="false">
+  O BeeFood Pixel Analytics não é o Pixel da Meta e não substitui o Google Tag Manager. O Pixel da Meta fica em **Aplicativos → Facebook Pixel** e serve para campanhas e eventos da Meta.
+</Callout>
+
+## Onde encontrar
+
+Abra **Food Marketing** no menu lateral e clique em **BeeFood Pixel Analytics**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/pixel-analytics/imagens-tratadas/01-menu-food-marketing.png" width="800" alt="Menu lateral com Food Marketing e BeeFood Pixel Analytics" caption="Food Marketing (1) → BeeFood Pixel Analytics (2)" />
+
+| Nº | Campo                       | O que faz                                                   |
+| -- | --------------------------- | ----------------------------------------------------------- |
+| 1. | **Food Marketing**          | Abre o grupo do menu com analytics, campanhas e segmentação |
+| 2. | **BeeFood Pixel Analytics** | Abre o painel de análise do cardápio                        |
+
+A permissão do painel pertence ao grupo **Food Marketing**. Se o item não aparecer no menu, peça ao administrador para verificar se a permissão **BeeFood Pixel Analytics** está liberada para o seu grupo de acesso.
+
+## Os filtros do topo
+
+A tela abre com o contexto **Delivery**, o período dos últimos 7 dias, todos os cardápios e todas as origens. Alterar o período recarrega os dados. Alterar contexto, cardápio ou origem apenas recorta os dados que já foram carregados.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/pixel-analytics/imagens-tratadas/02-filtros-topo.png" width="800" alt="Filtros do topo do BeeFood Pixel Analytics" caption="Período, contexto, cardápio, origem, Excel, ajuda" />
+
+| Nº | Campo                   | O que faz                                                                                              |
+| -- | ----------------------- | ------------------------------------------------------------------------------------------------------ |
+| 1. | **Período**             | Define as datas analisadas. O selo ao lado compara o resultado com o período anterior de mesma duração |
+| 2. | **Contexto**            | Filtra por Delivery, Presencial, Totem ou Tablet. **Todos** reúne os canais                            |
+| 3. | **Cardápio**            | Aparece quando existe mais de um cardápio com dados no período selecionado                             |
+| 4. | **Origem**              | Filtra de onde veio a sessão, como Direto, Google, Instagram, TikTok, cupom ou SMS                     |
+| 5. | **Exportar Excel**      | Baixa o recorte atual e as segmentações em uma planilha                                                |
+| 6. | **Saiba como funciona** | Abre um resumo da jornada representada pelo funil                                                      |
+
+O ponto verde **Ao vivo** confirma que o painel está recebendo eventos. Os números também são atualizados enquanto a tela permanece aberta.
+
+## Como ler o funil
+
+O funil conta sessões que chegaram a cada etapa. A porcentagem exibida em cada card sempre usa **Visitas** como base, e não a etapa imediatamente anterior.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/pixel-analytics/imagens-tratadas/03-funil-colunas.png" width="800" alt="Funil do BeeFood Pixel Analytics no modo Colunas" caption="As 6 etapas do funil" />
+
+| Nº | Campo                   | O que faz                                                        |
+| -- | ----------------------- | ---------------------------------------------------------------- |
+| 1. | **Visitas**             | Conta sessões que abriram o cardápio. Representa 100% do recorte |
+| 2. | **Visualizações**       | Conta sessões que abriram a ficha de pelo menos um produto       |
+| 3. | **Carrinho**            | Conta sessões que adicionaram um item à sacola                   |
+| 4. | **Iniciou finalização** | Conta sessões que abriram a tela de fechamento do pedido         |
+| 5. | **Iniciou pagamento**   | Conta sessões que escolheram uma forma de pagamento              |
+| 6. | **Pedidos**             | Conta pedidos confirmados                                        |
+
+No contexto **Presencial**, a etapa **Iniciou pagamento** não aparece. Pedidos iniciados por QR Code na mesa não passam por essa etapa.
+
+No exemplo da imagem, o recorte tem **228 visitas e 8 pedidos**, com conversão de **4%**. Esse total reúne todas as origens. Para analisar uma plataforma ou campanha específica, use o filtro **Origem** e os atalhos de UTM mais abaixo.
+
+A seta verde ou vermelha compara o resultado com o período anterior de mesma duração. O selo **novo** aparece quando o período anterior não tinha valor para aquela etapa.
+
+O botão **Funil** alterna o modo de exibição. O modo **Colunas** mostra os seis cards lado a lado. O modo **Funil** usa faixas empilhadas e mostra, à direita, a perda em relação à etapa anterior.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/pixel-analytics/imagens-tratadas/04-funil-classico.png" width="800" alt="Funil do BeeFood Pixel Analytics no modo Funil" caption="Mesmo funil no modo Funil" />
+
+Use **Colunas** para acompanhar os números no dia a dia. Use **Funil** para enxergar a queda de uma etapa para a seguinte.
+
+## Os três números de resultado
+
+Role a tela até o resumo depois do gráfico de evolução diária. Os três KPIs usam o mesmo recorte aplicado nos filtros do topo.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/pixel-analytics/imagens-tratadas/05-kpis-resumo.png" width="800" alt="Resumo com receita total, ticket médio e conversão geral" caption="Receita, ticket médio e conversão" />
+
+| Nº | Campo               | O que faz                                                            |
+| -- | ------------------- | -------------------------------------------------------------------- |
+| 1. | **Receita total**   | Soma o valor dos pedidos do período e dos filtros selecionados       |
+| 2. | **Ticket médio**    | Divide a receita pelo número de pedidos. Sem pedidos, mostra R$ 0,00 |
+| 3. | **Conversão geral** | Divide o número de pedidos pelo número de visitas                    |
+
+No exemplo, **8 pedidos ÷ 228 visitas = 4%**, com receita de **R$ 281,52** e ticket médio de **R$ 35,19**. A tabela **Performance por setor** apresenta o mesmo recorte separado por categorias do cardápio.
+
+## O painel Ao vivo
+
+O painel **Ao vivo** fica no canto inferior direito e acompanha os eventos recentes do cardápio. Ele consulta novos eventos a cada 5 segundos e pausa a consulta quando a aba do navegador fica oculta.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/pixel-analytics/imagens-tratadas/06-ao-vivo.png" width="800" alt="Painel Ao vivo com eventos recentes do cardápio" caption="Painel Ao vivo" />
+
+| Nº | Campo       | O que faz                                                              |
+| -- | ----------- | ---------------------------------------------------------------------- |
+| 1. | **Ao vivo** | Abre ou fecha a lista de eventos. A bolinha verde indica conexão ativa |
+| 2. | **Evento**  | Mostra o tipo de evento, produto ou valor, contexto e origem           |
+
+Os eventos aparecem com rótulos como **Novo acesso**, **Nova visualização**, **Novo carrinho**, **Iniciou finalização**, **Selecionou pagamento** e **Novo pedido**.
+
+Quando um evento vem de uma campanha identificada, a origem pode aparecer como **Google**, **Instagram**, **TikTok**, **YouTube** ou **Kwai**. Um pedido confirmado dispara uma animação de foguete e faz o card de **Pedidos** piscar.
+
+Use os filtros do painel para mostrar **Todos**, **Pedidos**, **Carrinhos** ou **Visualizações**.
+
+## De onde veio o cliente
+
+A seção **Segmentação personalizada** mostra os dados agrupados por origem, contexto, horário, dispositivo e parâmetros UTM. O atalho **Top Origens** abre a tabela por origem, com visitas, pedidos, conversão, receita e ticket.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/pixel-analytics/imagens-tratadas/08-segmentacao.png" width="800" alt="Segmentação personalizada agrupada por origem" caption="Segmentação por origem (Top Origens)" />
+
+| Nº | Campo            | O que faz                                   |
+| -- | ---------------- | ------------------------------------------- |
+| 1. | **Top Origens**  | Agrupa as sessões pela origem identificada  |
+| 2. | **Linha Google** | Mostra as sessões classificadas como Google |
+| 3. | **Conv. %**      | Divide pedidos por visitas daquela origem   |
+
+A opção **Tabela** lista os números. A opção **Teia** desenha o fluxo entre dois agrupamentos. Outros atalhos permitem cruzar UTM, dia, hora, navegador, visitantes novos e recorrentes e contexto.
+
+## Como analisar campanha paga
+
+Separe a análise em três níveis:
+
+1. **Origem** identifica a plataforma.
+2. **Campanhas que mais vendem** identifica o nome da campanha.
+3. **UTM Source × Medium** confirma a plataforma e o tipo de tráfego pago.
+
+### 1. Coloque UTM no link do anúncio
+
+O cardápio lê os parâmetros UTM quando a pessoa abre o link. Sem UTM, a sessão pode cair em **Direto**, e o painel não consegue associá-la ao nome da campanha.
+
+Acrescente os parâmetros ao link do seu cardápio:
+
+```text
+?utm_source=google&utm_medium=cpc&utm_campaign=combo-almoco&utm_content=anuncio-pesquisa&utm_term=hamburguer+delivery
+```
+
+| Parâmetro      | O que escrever                                                                      | Onde aparece no Pixel                              |
+| -------------- | ----------------------------------------------------------------------------------- | -------------------------------------------------- |
+| `utm_source`   | A plataforma, como `google`, `facebook`, `instagram`, `tiktok`, `youtube` ou `kwai` | Filtro **Origem** e atalho **UTM Source × Medium** |
+| `utm_medium`   | O tipo de tráfego, como `cpc` ou `paid`                                             | Coluna **Medium** do atalho UTM                    |
+| `utm_campaign` | O nome da campanha no gerenciador de anúncios                                       | Atalho **Campanhas que mais vendem**               |
+| `utm_content`  | O criativo usado no anúncio                                                         | Atalho **Conteúdo de anúncio (UTM)**               |
+| `utm_term`     | A palavra-chave usada em campanhas de pesquisa                                      | Agrupamento por **UTM Term**                       |
+
+Use valores consistentes nos anúncios:
+
+- Google: `...?utm_source=google&utm_medium=cpc&utm_campaign=combo-almoco`
+- Facebook: `...?utm_source=facebook&utm_medium=paid&utm_campaign=promo-feed`
+- Instagram: `...?utm_source=instagram&utm_medium=paid&utm_campaign=stories-fds`
+- TikTok: `...?utm_source=tiktok&utm_medium=paid&utm_campaign=video-lanche`
+- YouTube: `...?utm_source=youtube&utm_medium=cpc&utm_campaign=pre-roll`
+- Kwai: `...?utm_source=kwai&utm_medium=paid&utm_campaign=clip-combo`
+
+O Google e o Facebook também podem acrescentar `gclid` e `fbclid`. Você não precisa incluir esses códigos manualmente.
+
+### 2. Isole a plataforma no filtro Origem
+
+Abra **Origem** no topo e escolha a plataforma. O funil, os KPIs e a tabela passam a mostrar somente as sessões daquela origem.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/pixel-analytics/imagens-tratadas/11-origem-google.png" width="800" alt="Funil filtrado para mostrar somente a origem Google" caption="Funil recortado na origem Google" />
+
+| Nº | Campo               | O que faz                                                                    |
+| -- | ------------------- | ---------------------------------------------------------------------------- |
+| 1. | **Origem = Google** | Recorta o funil, os KPIs e as tabelas para sessões classificadas como Google |
+| 2. | **Pedidos**         | Mostra os pedidos atribuídos à origem selecionada                            |
+| 3. | **Linha da tabela** | Confirma visitas, conversão, receita e ticket da mesma origem                |
+
+No exemplo, **Google** apresenta 12 visitas e 1 pedido, com conversão de **8%**. Compare essa taxa com a conversão geral da loja.
+
+Uma queda entre **Visitas** e **Visualizações** indica que você deve revisar capa, busca e fotos dos produtos. Uma queda entre **Carrinho** e **Pedidos** aponta para o checkout, o pagamento, a taxa ou o tempo de entrega.
+
+### 3. Veja qual campanha vendeu
+
+O filtro **Origem** reúne todas as campanhas da mesma plataforma. Para separar uma campanha da outra, abra o atalho **Campanhas que mais vendem**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/pixel-analytics/imagens-tratadas/09-campanhas-vendem.png" width="800" alt="Tabela de campanhas agrupadas por UTM Campaign" caption="Campanhas que mais vendem (UTM Campaign)" />
+
+| Nº | Campo                         | O que faz                                                                                |
+| -- | ----------------------------- | ---------------------------------------------------------------------------------------- |
+| 1. | **Campanhas que mais vendem** | Agrupa as sessões pelo parâmetro `utm_campaign` e ordena pela receita                    |
+| 2. | **Nome da campanha**          | Exibe o valor usado em `utm_campaign`. `(nenhuma)` representa sessões sem esse parâmetro |
+| 3. | **Receita e conversão**       | Mostra quanto a campanha faturou e quantas sessões geraram pedidos                       |
+
+Use nomes de campanha que identifiquem claramente a ação, o público ou o criativo. Assim, você consegue comparar campanhas sem depender apenas do nome exibido no gerenciador de anúncios.
+
+### 4. Confira se era tráfego pago
+
+Abra **UTM Source × Medium** para cruzar a plataforma com o tipo de tráfego. Combinações como `google · cpc`, `facebook · paid` e `instagram · paid` indicam os padrões usados nos links de anúncios.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/pixel-analytics/imagens-tratadas/10-utm-source-medium.png" width="800" alt="Tabela cruzando UTM Source e UTM Medium" caption="UTM Source × Medium" />
+
+| Nº | Campo                   | O que faz                                                |
+| -- | ----------------------- | -------------------------------------------------------- |
+| 1. | **UTM Source × Medium** | Agrupa as sessões pela plataforma e pelo tipo de tráfego |
+| 2. | **google · cpc**        | Representa tráfego do Google com meio `cpc`              |
+| 3. | **Conv. %**             | Mostra a conversão de cada combinação                    |
+
+Compare as linhas pagas com `(nenhum) · (nenhum)`, que representa tráfego sem UTM. Se um anúncio foi publicado com `cpc` ou `paid`, mas a combinação não aparece, confira o link usado no anúncio.
+
+Sem UTM, o BeeFood não consegue descobrir o nome da campanha. A sessão será agrupada em **Direto** ou em **(nenhuma)**.
+
+## O resto da página
+
+Todos os painéis abaixo obedecem aos filtros selecionados no topo. Eles ajudam a explicar o comportamento encontrado no funil.
+
+| Bloco                       | Para que serve                                                                           |
+| --------------------------- | ---------------------------------------------------------------------------------------- |
+| **Análise de tempo**        | Mostra o tempo médio entre as etapas. Menor tempo indica uma jornada mais rápida         |
+| **Engajamento**             | Mostra produtos vistos ou adicionados, incluindo repetições, e a duração média da visita |
+| **Análise de visitantes**   | Compara visitantes novos e recorrentes por dia                                           |
+| **Evolução diária**         | Exibe sessões, sacolas, pedidos e receita ao longo do período                            |
+| **Performance de produtos** | Ordena produtos por visitas, sacolas, pedidos e receita                                  |
+| **Cupom & Cashback**        | Mostra sessões que usaram cupom ou saldo, além de desconto e valor                       |
+| **Dispositivos**            | Compara PC, celular e tablet, incluindo Android e iOS                                    |
+
+## A jornada em uma tela
+
+Clique em **Saiba como funciona** para abrir o resumo textual da jornada. O modal apresenta as mesmas etapas do funil em uma sequência única.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/pixel-analytics/imagens-tratadas/07-como-funciona.png" width="800" alt="Modal com o resumo da jornada do BeeFood Pixel Analytics" caption="Modal Saiba como funciona" />
+
+## Dicas
+
+- Comece pelo contexto **Delivery**, que vem selecionado por padrão. Compare com **Presencial** ou **Totem** quando a loja também usa esses canais.
+- Analise a conversão junto com o volume. Uma origem com poucas visitas e muitos pedidos pode ser mais relevante do que **Direto** com grande volume e nenhum pedido.
+- Use **Origem** para isolar a plataforma, **Campanhas que mais vendem** para separar os nomes e **UTM Source × Medium** para confirmar o tráfego pago.
+- Padronize os valores de UTM antes de publicar os anúncios. `instagram`, `Instagram` e outros formatos inconsistentes podem dificultar a leitura das campanhas.
+- Se a queda maior estiver entre **Visitas** e **Visualizações**, revise capa, busca e imagens dos produtos.
+- Se a queda maior estiver entre **Carrinho** e **Pedidos**, verifique pagamento, taxas e tempo de entrega.
+- Use o Excel para compartilhar o recorte atual e as segmentações fora do BeeFood.
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+  <Expandable title="Preciso criar um Pixel na Meta ou no Google?" default-open="false">
+    Não. O BeeFood Pixel Analytics já está ligado e usa o analytics próprio do BeeFood. Ele não exige Pixel ID, código da Meta ou código do Google.
+  </Expandable>
+
+  <Expandable title="Por que a porcentagem do funil não usa a etapa anterior?" default-open="false">
+    Cada porcentagem é calculada em relação ao total de **Visitas**. Assim, você compara todas as etapas com a mesma base, mesmo quando alterna entre os modos **Colunas** e **Funil**.
+  </Expandable>
+
+  <Expandable title="Por que a etapa Iniciou pagamento não aparece?" default-open="false">
+    Essa etapa fica oculta no contexto **Presencial**, porque pedidos iniciados por QR Code na mesa não passam por essa etapa de pagamento.
+  </Expandable>
+
+  <Expandable title="Por que minha campanha aparece como Direto ou nenhuma?" default-open="false">
+    O link provavelmente foi publicado sem os parâmetros UTM. Adicione pelo menos `utm_source`, `utm_medium` e `utm_campaign` ao link do anúncio antes de divulgá-lo.
+  </Expandable>
+
+  <Expandable title="Com que frequência o painel Ao vivo é atualizado?" default-open="false">
+    O painel consulta novos eventos a cada 5 segundos enquanto a aba está visível. Um pedido confirmado dispara a animação de foguete e atualiza o card correspondente do funil.
+  </Expandable>
+</ExpandableGroup>
+
+## Manuais relacionados
+
+<Columns cols="2">
+  <Card title="Pixel da Meta somente" href="/pixel-meta-somente" icon="bar-chart" cta="Abrir manual" horizontal="false">
+    Consulte a configuração do Pixel da Meta para campanhas de anúncios.
+  </Card>
+
+  <Card title="Pixel da Meta e API de Conversões" href="/pixel-meta-api" icon="code" cta="Abrir manual" horizontal="false">
+    Configure o Pixel da Meta junto com a API de Conversões.
+  </Card>
+
+  <Card title="Segmentação de Clientes" href="/segmentacao-clientes" icon="users" cta="Abrir manual" horizontal="false">
+    Trabalhe com os recursos de segmentação de clientes do BeeFood.
+  </Card>
+
+  <Card title="Google Tag Manager" href="/criando-google-tag-manager" icon="settings" cta="Abrir manual" horizontal="false">
+    Veja como criar e usar um contêiner do Google Tag Manager.
+  </Card>
+</Columns>
+

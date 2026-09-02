@@ -108,6 +108,10 @@
                         "path": "cashback-operar"
                       }
                     ]
+                  },
+                  {
+                    "title": "📊 BeeFood Pixel Analytics",
+                    "path": "pixel-analytics"
                   }
                 ]
               },
