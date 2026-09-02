@@ -1,0 +1,285 @@
+---
+title: Cardápio Digital Presencial QRCode
+description: >-
+  Ative pedidos por QR Code nas mesas e comandas, configure a identificação do
+  cliente e gere os códigos que abrem o cardápio presencial.
+---
+O cliente escaneia o QR Code na mesa ou na comanda, abre o cardápio no celular e faz o pedido sem chamar o garçom. Você vai ativar o canal presencial, configurar como o cliente se identifica, gerar QR Codes para mesas e comandas e entender o que aparece no celular.
+
+<Callout kind="tip" collapsed="false">
+  As imagens deste manual têm setas com números. Cada número no texto corresponde ao campo ou botão indicado na tela.
+</Callout>
+
+## Antes de começar
+
+<Callout kind="info" collapsed="false">
+  1. Acesse **Cardápio Digital → Configurações** e desça até o card **Presencial (Mesas/Comandas)**.
+  2. A loja precisa ter um **link de acesso**, identificado pelo slug. No BeeFood3, o slug é `beefood3`. Sem esse link, o card Presencial não aparece.
+  3. A grade de horários do Presencial fica em **Horário de atendimento**. Sem um horário aberto, o QR Code abre, mas a loja pode aparecer como fechada.
+  4. Depois de gravar uma alteração, o cardápio do cliente pode levar até 1 minuto para atualizar.
+</Callout>
+
+## Duas coisas para não misturar
+
+<Callout kind="alert" collapsed="false">
+  **Presencial não é Consumo no Local.** A opção **Consumo no Local** fica no card **Delivery** e permite que o cliente escolha comer na loja usando o mesmo link da entrega. O QR Code da mesa pertence ao card **Presencial (Mesas/Comandas)**.
+
+  Também existem dois QR Codes com nomes parecidos. Use o QR Code do cardápio para abrir o menu no celular. O Código da Mesa ou Comanda serve para identificar a mesa no PDV ou no tablet.
+</Callout>
+
+|                  | QR do cardápio digital                                             | Código da Mesa ou Comanda              |
+| ---------------- | ------------------------------------------------------------------ | -------------------------------------- |
+| Onde             | **Configurações** ou **Meus Links → Cardápio Digital Presencial**  | **Cadastro de Mesas → Código da Mesa** |
+| O que tem dentro | Um link, como `menu.beefood.com.br` ou `presencial.beefood.com.br` | Um texto, como `empresa_1`             |
+| Quem lê          | A câmera do celular do cliente                                     | O PDV ou o tablet                      |
+| Para que serve   | Abrir o cardápio e fazer pedidos                                   | Identificar a mesa no caixa            |
+
+Este manual trata do QR Code da primeira coluna.
+
+## Parte 1: Ligar o presencial
+
+Acesse **Cardápio Digital → Configurações**. No card **Presencial (Mesas/Comandas)**, ative o switch **Presencial Ativo**. Quando o switch está desligado, os demais campos do card desaparecem e o cliente não consegue fazer pedidos pelo QR Code.
+
+O campo **Link de Acesso** já vem preenchido com o endereço do presencial:
+
+`https://menu.beefood.com.br/beefood3/?tipo=p`
+
+Use os botões ao lado do link para copiar ou abrir o endereço. Os três botões de QR Code abrem o gerador para criar códigos gerais, de mesa ou de comanda.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-presencial-qrcode/imagens-tratadas/01-onde-fica.png" width="800" alt="Card Presencial com switch, link de acesso e os três botões de QR Code" caption="Card Presencial: switch, link e os três QR" />
+
+| Nº | Campo                              | O que faz                                             |
+| -- | ---------------------------------- | ----------------------------------------------------- |
+| 1. | **Configurações**                  | Abre a aba onde ficam os parâmetros do cardápio.      |
+| 2. | **Presencial (Mesas/Comandas)**    | Exibe as configurações do canal presencial.           |
+| 3. | **Presencial Ativo**               | Liga ou desliga os pedidos por QR Code.               |
+| 4. | **Link de Acesso**                 | Mostra a URL do presencial, com o parâmetro `tipo=p`. |
+| 5. | **QR Code Geral / Mesa / Comanda** | Abre o gerador do QR Code correspondente.             |
+
+O atalho com o nome do cardápio, no topo da tela, também contém o switch **QR Code Presencial** e o mesmo link de acesso. Os dois controles alteram o mesmo campo.
+
+## Parte 2: Como o cliente se identifica
+
+No card Presencial, o bloco **Cadastro** define como o cliente será identificado durante o pedido. O campo **E-mail** e o campo **Data de nascimento** só ficam disponíveis quando o cadastro está ligado.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-presencial-qrcode/imagens-tratadas/02-parametros.png" width="800" alt="Bloco de cadastro com modos, e-mail, data de nascimento, opções do garçom e fechamento de conta" caption="Cadastro, e-mail, nascimento, garçom e fechamento" />
+
+| Nº | Campo                                             | O que faz                                                                           |
+| -- | ------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| 1. | **Cadastro**                                      | Define como o cliente se identifica no pedido.                                      |
+| 2. | **E-mail**                                        | Define se o e-mail não será exibido, será opcional ou será obrigatório.             |
+| 3. | **Data de nascimento**                            | Define se a data de nascimento não será exibida, será opcional ou será obrigatória. |
+| 4. | **Habilitar opções do Garçom**                    | Exibe o botão **Configurar** para selecionar pedidos ao salão.                      |
+| 5. | **Exibir botão de solicitar Fechamento de Conta** | Permite que o cliente peça a conta pelo celular.                                    |
+
+### Os três modos de cadastro
+
+Escolha o modo de cadastro de acordo com a forma como a loja controla as contas da mesa.
+
+| Opção na tela                                                         | O que acontece                                                                                          |
+| --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| **Cadastro rápido com nome e telefone (Venda separada por telefone)** | Cada celular cria uma conta separada. Use quando várias pessoas na mesa precisam pagar individualmente. |
+| **Sem cadastro (Venda única por Mesa/Comanda)**                       | A conta fica vinculada à mesa ou comanda. Os campos de e-mail e data de nascimento não aparecem.        |
+| **Cadastro completo com login e senha (Venda separada por cadastro)** | O cliente entra com uma conta e o pedido fica separado pelo cadastro.                                   |
+
+Quando **E-mail** ou **Data de nascimento** estiver como **Obrigatório**, o cliente precisa preencher o campo antes de concluir o cadastro.
+
+### Opções do Garçom
+
+Ative **Habilitar opções do Garçom** para exibir o botão **Configurar**. Nesse modal, selecione os pedidos que o cliente pode enviar ao salão, como água, talher ou solicitação de conta. Cada switch grava a alteração automaticamente.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-presencial-qrcode/imagens-tratadas/03-garcom-opcoes.png" width="800" alt="Modal de Opções do Garçom com switches e botão FECHAR" caption="Modal Opções do Garçom" />
+
+| Nº | Campo            | O que faz                                                           |
+| -- | ---------------- | ------------------------------------------------------------------- |
+| 1. | **Cada switch**  | Liga ou desliga uma solicitação que o cliente pode enviar ao salão. |
+| 2. | **FECHAR (ESC)** | Fecha o modal sem abrir uma etapa de salvamento.                    |
+
+As opções deste modal controlam o que o **cliente** vê no cardápio. Elas não definem os menus disponíveis no aplicativo do garçom. Para configurar o aplicativo do funcionário, consulte o manual correspondente.
+
+## Parte 3: Gerar o QR Code nas Configurações
+
+Os três botões de QR Code do card Presencial usam o mesmo modal de geração. Escolha o tipo de código de acordo com a forma como o cliente deve informar a mesa ou a comanda.
+
+### QR Code Geral
+
+O **QR Code Geral** cria um único código para o salão. O código abre o link presencial sem um número de mesa, então o cliente escolhe a mesa depois de abrir o cardápio no celular.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-presencial-qrcode/imagens-tratadas/04-qr-geral.png" width="600" alt="QR Code geral do presencial com botões Download e Imprimir" caption="QR Code geral do presencial" />
+
+| Nº | Campo        | O que faz                                                   |
+| -- | ------------ | ----------------------------------------------------------- |
+| 1. | **QR Code**  | Aponta para o link presencial, como `.../beefood3/?tipo=p`. |
+| 2. | **Download** | Baixa o QR Code em formato PNG.                             |
+| 3. | **Imprimir** | Abre uma folha com o logo, o nome da loja e o código.       |
+
+### QR Code de Mesa ou Comanda
+
+Informe o intervalo inicial e final e clique em **Gerar QR Codes**. Cada código recebe o parâmetro correspondente, como `&mesa=N` ou `&comanda=N`. A tela começa com o intervalo de 1 a 10 e permite gerar até 100 códigos por vez.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-presencial-qrcode/imagens-tratadas/05-qr-mesa.png" width="800" alt="QR Codes gerados para o intervalo de mesas com Download Todos e Imprimir Todos" caption="Intervalo de mesas gerado" />
+
+| Nº | Campo                               | O que faz                                                                                                     |
+| -- | ----------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| 1. | **Mesa Inicial / Mesa Final**       | Define o intervalo de mesas que receberá um QR Code. Na tela de comanda, os campos usam o rótulo **Comanda**. |
+| 2. | **Gerar QR Codes**                  | Monta a grade de códigos do intervalo informado.                                                              |
+| 3. | **Download Todos / Imprimir Todos** | Baixa um PNG por mesa ou abre uma folha com todos os códigos.                                                 |
+
+<Callout kind="alert" collapsed="false">
+  O gerador das **Configurações** não consulta o cadastro de mesas ou comandas. Se você informar Mesa 1 a 10, ele criará os dez códigos mesmo que apenas as mesas 1, 2 e 3 estejam cadastradas. O cliente que escanear um código inexistente cairá em uma mesa que o salão não possui.
+
+  Cadastre as mesas ou comandas antes de gerar os códigos e use apenas um intervalo que exista no salão.
+</Callout>
+
+A folha de impressão inclui o logo, o nome da loja, o rótulo de cada cartão, como **Mesa 3** ou **Comanda 12**, e a marca **Sistema BeeFood**.
+
+## Parte 4: Meus Links do presencial
+
+Abra **Meus Links** no rodapé do menu lateral e role o painel até o grupo **Cardápios Presencial**. Esse grupo reúne o link para pedir na mesa ou comanda, o cardápio de visualização e o gerador de QR Codes.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-presencial-qrcode/imagens-tratadas/06-meus-links.png" width="800" alt="Painel Meus Links com o grupo Cardápios Presencial" caption="Grupo Cardápios Presencial" />
+
+| Nº | Campo                           | O que faz                                                        |
+| -- | ------------------------------- | ---------------------------------------------------------------- |
+| 1. | **Meus Links**                  | Abre o painel lateral de links da loja.                          |
+| 2. | **Cardápios Presencial**        | Exibe os links e geradores do canal presencial.                  |
+| 3. | **Sem mesa**                    | Mantém o link genérico, sem uma mesa selecionada.                |
+| 4. | **Sem comanda**                 | Mantém o link genérico, sem uma comanda selecionada.             |
+| 5. | **Olho, copiar, WhatsApp e QR** | Abre, copia, compartilha ou gera um QR Code para o link exibido. |
+| 6. | **Cardápio de visualização**    | Abre um cardápio somente para consulta, sem pedidos.             |
+
+O grupo **Cardápios Delivery**, que aparece acima, contém os links de entrega, balcão e operação com várias lojas. Esses links não fazem parte do canal presencial.
+
+Os quatro ícones executam ações sobre o link exibido na caixa:
+
+- **Olho:** abre o link em uma nova aba.
+- **Copiar:** copia o link e mostra a mensagem **Link copiado!**
+- **WhatsApp:** monta a mensagem `Olá! Acesse nosso cardápio digital:` seguida da URL.
+- **QR:** gera um único QR Code para aquele link, sem criar um intervalo de códigos.
+
+### Um link por mesa
+
+A lista de **Meus Links** mostra apenas as mesas e comandas cadastradas. Selecione uma mesa e deixe o campo de comanda como **Sem comanda** para criar um link específico da mesa.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-presencial-qrcode/imagens-tratadas/07-meus-links-mesa.png" width="800" alt="Meus Links com a Mesa 2 selecionada e a URL com parâmetro mesa=2" caption="Link amarrado à Mesa 2" />
+
+| Nº | Campo                | O que faz                                            |
+| -- | -------------------- | ---------------------------------------------------- |
+| 1. | **Mesa 2**           | Seleciona uma mesa cadastrada.                       |
+| 2. | **URL**              | Acrescenta o parâmetro `?mesa=2` ao link presencial. |
+| 3. | **Os quatro ícones** | Executa as ações sobre o link da mesa selecionada.   |
+
+Também é possível selecionar uma mesa e uma comanda ao mesmo tempo. Nesse caso, a URL recebe parâmetros como `?mesa=2&comanda=N`.
+
+Se a loja tiver comandas cadastradas e você gerar um QR Code apenas para a mesa pelo ícone QR deste card ou pelo gerador de **Cardápio Digital Presencial**, o sistema exibirá uma recomendação. Vários clientes na mesma mesa podem acabar associados à mesma conta quando o QR usa apenas a mesa.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-presencial-qrcode/imagens-tratadas/09b-recomendacao-comanda.png" width="800" alt="Aviso recomendando QR Code de comanda quando existem comandas cadastradas" caption="Aviso: use o QR da comanda" />
+
+| Nº | Campo                      | O que faz                                                                                 |
+| -- | -------------------------- | ----------------------------------------------------------------------------------------- |
+| 1. | **QR Code de Mesa**        | Continua pelo caminho de mesa, que não é recomendado quando existem comandas cadastradas. |
+| 2. | **QR Code de Comanda**     | Gera um código para cada cliente ou comanda. A mesa continua organizando a entrega.       |
+| 3. | **QUERO GERAR DE COMANDA** | Continua o fluxo para criar QR Codes de comanda.                                          |
+
+Os três botões de QR Code das **Configurações** não exibem esse aviso.
+
+### Cardápio de visualização
+
+O **Cardápio de visualização** usa uma URL como:
+
+`https://cardapio.beefood.com.br/beefood3`
+
+Esse link permite consultar o cardápio, mas não fazer pedidos. No celular, a aba **Pedidos** não aparece. Use esse endereço em uma TV, em um totem de consulta ou ao compartilhar o cardápio sem abrir uma venda.
+
+### O gerador em passos
+
+No final do painel **Meus Links**, clique em **Abrir Gerador de QR Codes**. Primeiro, escolha se os códigos serão de mesas ou de comandas.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-presencial-qrcode/imagens-tratadas/08-gerador-passo1.png" width="800" alt="Primeiro passo do gerador: escolher QR Codes de Mesas ou de Comandas" caption="Gerador: Mesas ou Comandas" />
+
+| Nº | Campo                    | O que faz                                                  |
+| -- | ------------------------ | ---------------------------------------------------------- |
+| 1. | **QR Codes de Mesas**    | Inicia a geração de códigos para um intervalo de mesas.    |
+| 2. | **QR Codes de Comandas** | Inicia a geração de códigos para um intervalo de comandas. |
+
+No passo seguinte, escolha o conteúdo do QR Code.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-presencial-qrcode/imagens-tratadas/09-tipo-qr.png" width="800" alt="Segundo passo do gerador: escolher Cardápio Digital Presencial ou Código da Mesa" caption="Cardápio Digital × Código da Mesa" />
+
+| Nº | Campo                           | O que faz                                                       |
+| -- | ------------------------------- | --------------------------------------------------------------- |
+| 1. | **Cardápio Digital Presencial** | Gera o link que abre o cardápio e permite fazer pedidos.        |
+| 2. | **Código da Mesa**              | Gera o código usado pelo PDV ou tablet para identificar a mesa. |
+
+A opção **Cardápio Digital Presencial** abre o mesmo modal descrito na Parte 3, com intervalo, geração, download e impressão. Se você escolher mesas e a loja tiver comandas cadastradas, o sistema exibirá a recomendação para usar QR Codes de comanda.
+
+## Parte 5: O que o cliente vê
+
+O cliente pode abrir o presencial para fazer pedidos ou abrir uma versão somente para consulta. O endereço usado define se a aba **Pedidos** aparece no celular.
+
+- **Para pedir:** `https://menu.beefood.com.br/beefood3/?tipo=p`. O endereço gerado em **Meus Links**, com `presencial.beefood.com.br`, leva ao mesmo canal.
+- **Para só consultar:** `https://cardapio.beefood.com.br/beefood3`.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-digital-presencial-qrcode/imagens-tratadas/10-cardapio-digital.png" width="800" alt="Comparação entre cardápio para pedir com aba Pedidos e cardápio de visualização sem a aba" caption="Pedir × só olhar (aba Pedidos)" />
+
+| Nº | Campo               | O que faz                                                                  |
+| -- | ------------------- | -------------------------------------------------------------------------- |
+| 1. | **Aba Pedidos**     | Aparece no link de pedidos, usando `/?tipo=p` ou o endereço do presencial. |
+| 2. | **Sem aba Pedidos** | Aparece no link de visualização, usado apenas para consultar o cardápio.   |
+
+O QR Code da **Mesa 2** já abre o cardápio com a mesa preenchida. O **QR Code Geral** não tem uma mesa definida e pede que o cliente escolha uma no celular.
+
+A loja pode aparecer como **Fechado** mesmo quando o QR Code abre corretamente. Isso acontece quando a grade de horários do Presencial está fechada naquele momento ou quando existe uma pausa ativa. Nesse caso, o cliente acessa o cardápio, mas o pedido não entra.
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+  <Expandable title="Desliguei o Presencial e o delivery parou" default-open="false">
+    Os cards **Presencial** e **Delivery** são independentes. Confira se existe uma pausa cobrindo os dois canais. A pausa pode interromper o delivery e o presencial ao mesmo tempo.
+  </Expandable>
+
+  <Expandable title="O QR abre, mas a loja aparece fechada" default-open="false">
+    Confira a grade de horários do **Presencial** em **Horário de atendimento**. O horário do Delivery não controla o funcionamento do QR Code. Verifique também se existe uma pausa ativa.
+  </Expandable>
+
+  <Expandable title="Gerei Mesa 1 a 20 e o cliente caiu em uma mesa inexistente" default-open="false">
+    O gerador das **Configurações** não verifica o cadastro de mesas. Gere apenas o intervalo que existe no salão. Como alternativa, use **Meus Links**, que mostra somente as mesas cadastradas. No BeeFood3, a primeira mesa cadastrada pode ser a Mesa 2, sem existir a Mesa 1.
+  </Expandable>
+
+  <Expandable title="Qual link eu imprimo na mesa" default-open="false">
+    Para permitir pedidos, use o link das **Configurações**, com o parâmetro `tipo=p`, ou o link de **Meus Links**, como `presencial.beefood.com.br`, preferencialmente com a mesa definida. Para permitir apenas a consulta, use o link `cardapio.beefood.com.br`.
+  </Expandable>
+
+  <Expandable title="O WhatsApp de Meus Links manda o quê" default-open="false">
+    O sistema monta a mensagem **Olá! Acesse nosso cardápio digital:** seguida da URL que aparece na caixa. Se você selecionar uma mesa, a URL também incluirá o parâmetro `?mesa=`.
+  </Expandable>
+
+  <Expandable title="O QR do PDV não abre o cardápio" default-open="false">
+    Você provavelmente gerou o **Código da Mesa**, que contém um texto como `empresa_1` e serve para o PDV ou tablet. A câmera do celular não usa esse código para abrir o cardápio. Gere o QR **Cardápio Digital Presencial**.
+  </Expandable>
+
+  <Expandable title="As opções do garçom não aparecem no celular" default-open="false">
+    Ative **Habilitar opções do Garçom** e clique em **Configurar**. Ligue pelo menos um item da lista de solicitações. Depois da alteração, aguarde até 1 minuto para o cardápio do cliente atualizar.
+  </Expandable>
+</ExpandableGroup>
+
+## Manuais relacionados
+
+<Columns cols="2">
+  <Card title="Horário de atendimento" href="/horario-atendimento" icon="clock" cta="Ver" horizontal="false">
+    Configure a grade de horários do Presencial e dos demais canais.
+  </Card>
+
+  <Card title="Pausa Programada" href="/pausa-programada" icon="pause" cta="Ver" horizontal="false">
+    Confira como pausas podem interromper os pedidos da loja.
+  </Card>
+
+  <Card title="App do Garçom: parâmetros" href="/app-garcom-parametros" icon="users" cta="Ver" horizontal="false">
+    Defina os menus disponíveis no aplicativo usado pelo funcionário.
+  </Card>
+
+  <Card title="Taxas e Mesas" href="/mesas-taxas-obrigatorias" icon="settings" cta="Ver" horizontal="false">
+    Configure taxas e regras obrigatórias para o atendimento nas mesas.
+  </Card>
+</Columns>
+

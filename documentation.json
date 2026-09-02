@@ -179,6 +179,10 @@
                   {
                     "title": "🎨 Aparência e Layout",
                     "path": "cardapio-digital-aparencia-layout"
+                  },
+                  {
+                    "title": "📱 Presencial QRCode",
+                    "path": "cardapio-digital-presencial-qrcode"
                   }
                 ]
               },
