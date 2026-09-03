@@ -249,6 +249,10 @@
                   {
                     "title": "✅ Aceite automático de pedidos",
                     "path": "aceite-automatico"
+                  },
+                  {
+                    "title": "🔗 Vínculo Marketplace",
+                    "path": "vinculo-marketplace"
                   }
                 ]
               },

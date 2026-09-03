@@ -1,0 +1,321 @@
+---
+title: Vínculo Marketplace
+description: >-
+  Relacione nomes recebidos de marketplaces aos produtos do BeeFood para
+  organizar a cozinha, emitir notas fiscais e manter relatórios corretos.
+---
+Quando um pedido entra pelo iFood, Aiqfome, 99Food, Keeta, Rappi, Uai Rango ou Delivery Much, o item chega com o nome do cardápio do marketplace. Esse nome quase nunca é igual ao cadastro do produto no BeeFood. O **Vínculo Marketplace** permite indicar uma vez qual produto do seu cardápio corresponde a cada nome recebido.
+
+<Callout kind="tip" collapsed="false">
+  As imagens deste manual têm setas com números. Cada número indica o campo ou botão correspondente na tela.
+</Callout>
+
+## Por que vincular
+
+O pedido de marketplace entra e é entregue mesmo sem vínculo. O vínculo conecta o nome recebido ao seu cadastro e permite que o BeeFood use o produto correto nas etapas seguintes.
+
+| Com vínculo                                              | Sem vínculo                                                                              |
+| -------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| O item sai na via da cozinha do **setor certo**          | O item não tem setor: só imprime se você tiver configurado uma impressora de marketplace |
+| A **nota fiscal** é emitida normalmente                  | A nota fiscal **não sai** enquanto houver produto sem vínculo                            |
+| O item entra nos relatórios como produto do seu cardápio | O item fica solto, com o nome do marketplace                                             |
+| Se o produto tem ficha técnica, o estoque é baixado      | Não há produto, então não há ficha técnica para baixar                                   |
+
+Vincular é uma operação permanente até que você exclua a ligação. Depois de confirmar, o próximo pedido com o mesmo nome já entra vinculado.
+
+## Onde fica a tela
+
+Abra o **Delivery**, clique no botão de três pontinhos no topo e escolha **Vínculo Marketplace**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/vinculo-marketplace/imagens-tratadas/01-delivery-menu.png" width="800" alt="Menu do Delivery com Vínculo Marketplace destacado" caption="Delivery → botão ⋮ → Vínculo Marketplace" />
+
+| Nº | Item                         | O que fazer                                                      |
+| -: | ---------------------------- | ---------------------------------------------------------------- |
+|  1 | Botão **⋮** (três pontinhos) | Fica na barra de cima do Delivery, ao lado do filtro.            |
+|  2 | **Vínculo Marketplace**      | Abre a lista com todos os nomes que os marketplaces já enviaram. |
+
+<Callout kind="info" collapsed="false">
+  Existe um segundo caminho dentro de um pedido específico. Ele está explicado na seção [Resolver pelo próprio pedido](#resolver-pelo-proprio-pedido).
+</Callout>
+
+## Entendendo a tela
+
+A lista mostra um nome de marketplace por linha. Use a busca para encontrar o item, o filtro para exibir apenas o que falta e os contadores para acompanhar o progresso.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/vinculo-marketplace/imagens-tratadas/02-listagem.png" width="800" alt="Tela do Vínculo Marketplace com busca, filtros, contadores e colunas de vínculo e setor" caption="A tela: busca, filtro de status, contadores e as colunas Vínculo e Setor" />
+
+| Nº | Item                               | O que é                                                                                                                                     |
+| -: | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+|  1 | **Buscar por descrição**           | Procura no nome do marketplace, no produto vinculado e no setor. Use este campo para trabalhar em uma lista longa.                          |
+|  2 | **Todos / Vinculados / Pendentes** | Filtra pelo status. Em **Pendentes** ficam apenas os itens que ainda precisam de você.                                                      |
+|  3 | Os dois contadores                 | O verde mostra quanto já está vinculado; o vermelho mostra quanto está pendente.                                                            |
+|  4 | Coluna **Vínculo**                 | Mostra o produto do seu cardápio. Quando está vazia, aparece **Sem vínculo**.                                                               |
+|  5 | Coluna **Setor**                   | Mostra o setor do produto vinculado, que determina para qual impressora o item deve ser enviado. Fica com um traço enquanto não há vínculo. |
+
+Use estas duas colunas para interpretar cada linha:
+
+| Coluna     | Valores                       | O que significa                                                                                                                                     |
+| ---------- | ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Status** | **Vinculado** / **Pendente**  | **Pendente** significa que o item ainda não tem produto associado.                                                                                  |
+| **Tipo**   | **Produto** / **Grupo Opção** | **Produto** é o item principal do pedido, como um lanche ou uma bebida. **Grupo Opção** é um adicional dentro dele, como bacon extra ou sem cebola. |
+
+O **Tipo** determina o que você poderá escolher na janela de vínculo.
+
+## Vincular um item
+
+Use este fluxo quando o nome recebido pelo marketplace corresponde a um produto já cadastrado no BeeFood.
+
+Neste exemplo, o marketplace envia **Pudim - Tradicional**, enquanto o produto do cardápio se chama **Pudim - Leite Condensado**.
+
+Busque o nome, marque a caixa da linha e clique em **Vincular**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/vinculo-marketplace/imagens-tratadas/03-selecionar-item.png" width="800" alt="Item do marketplace selecionado na lista com o painel de ações visível" caption="Item marcado na lista e o painel de ações do rodapé" />
+
+| Nº | Item                      | O que fazer                                                              |
+| -: | ------------------------- | ------------------------------------------------------------------------ |
+|  1 | Caixa de seleção da linha | Marque o item que você quer vincular.                                    |
+|  2 | **1 item selecionado**    | Confira se você marcou o item correto antes de clicar em qualquer botão. |
+|  3 | **Vincular**              | Abre a lista do seu cardápio para escolher o produto.                    |
+
+A janela **Selecionar Vínculo** mostra o nome recebido no alto. Busque o produto do seu cardápio, selecione-o e confirme.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/vinculo-marketplace/imagens-tratadas/04-selecionar-vinculo.png" width="800" alt="Janela Selecionar Vínculo com um produto do cardápio escolhido" caption="Janela Selecionar Vínculo: escolher o produto do cardápio e confirmar" />
+
+| Nº | Item                              | O que fazer                                                                                                 |
+| -: | --------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+|  1 | **Vincular: Pudim - Tradicional** | Mostra o nome recebido do marketplace. Confira esse nome antes de escolher o produto.                       |
+|  2 | Campo de busca                    | Digite parte do nome do produto. Qualquer letra digitada na janela cai na busca, mesmo sem clicar no campo. |
+|  3 | O produto escolhido               | Fica verde, com um ✓ à direita. Os produtos aparecem agrupados por setor, com o preço abaixo do nome.       |
+|  4 | **Confirmar Vínculo**             | Grava a ligação entre o nome recebido e o produto selecionado.                                              |
+
+<Callout kind="alert" collapsed="false">
+  **Confirmar Vínculo** grava imediatamente. Não existe uma segunda tela de confirmação depois desse botão. Confira o nome recebido e o produto escolhido antes de confirmar.
+</Callout>
+
+Depois da confirmação, a linha volta para a lista como **Vinculado**. O produto aparece na coluna **Vínculo**, o setor é preenchido e os contadores são atualizados.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/vinculo-marketplace/imagens-tratadas/05-vinculado.png" width="800" alt="Lista mostrando o item vinculado com produto, setor e contadores atualizados" caption="Depois do vínculo: status Vinculado, produto, setor e contadores" />
+
+| Nº | Item                         | O que conferir                                                         |
+| -: | ---------------------------- | ---------------------------------------------------------------------- |
+|  1 | **Vinculado**                | O status mudou de **Pendente** para **Vinculado**.                     |
+|  2 | **Pudim - Leite Condensado** | É o produto do seu cardápio que receberá os pedidos com esse nome.     |
+|  3 | **Sobremesas**               | O setor veio do produto vinculado e determina a impressora da cozinha. |
+|  4 | Contadores                   | O contador verde aumentou e o vermelho diminuiu.                       |
+
+## Vincular vários nomes no mesmo produto
+
+Vários nomes recebidos podem representar o mesmo produto do seu cardápio. Selecione os nomes de uma vez e indique um único produto para todos eles.
+
+Neste exemplo, **Sachê Maionese** e **Sachê Maionese Temperada** correspondem ao produto **Maionese Grill (Defumada/Tasty)**.
+
+Use a busca para encontrar os nomes, marque a caixa do cabeçalho para selecionar as linhas exibidas, confira a contagem e clique em **Vincular**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/vinculo-marketplace/imagens-tratadas/06-lote-selecao.png" width="800" alt="Dois nomes de marketplace selecionados para receber o mesmo vínculo" caption="Dois nomes selecionados de uma vez" />
+
+| Nº | Item                          | O que fazer                                                                                           |
+| -: | ----------------------------- | ----------------------------------------------------------------------------------------------------- |
+|  1 | Caixa de seleção do cabeçalho | Marca todas as linhas da página. Combine a seleção com a busca para escolher apenas o grupo desejado. |
+|  2 | **2 itens selecionados**      | A contagem mostra o que está marcado, não apenas o que aparece na tela.                               |
+|  3 | **Vincular**                  | Abre a mesma janela de escolha. O produto selecionado será aplicado a todos os itens marcados.        |
+
+Confira o resultado na coluna **Vínculo**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/vinculo-marketplace/imagens-tratadas/07-lote-resultado.png" width="800" alt="Dois nomes diferentes apontando para o mesmo produto do cardápio" caption="Os dois nomes apontando para o mesmo produto" />
+
+| Nº | Item                               | O que conferir                                                                                                                             |
+| -: | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+|  1 | Coluna **Vínculo** nas duas linhas | O mesmo produto aparece nas duas linhas. Esse é o resultado esperado quando nomes diferentes representam um único produto do seu cardápio. |
+
+<Callout kind="info" collapsed="false">
+  A seleção vale **por página**. Se a busca trouxer mais itens do que cabem na página, aumente o número de **Itens por página** no rodapé ou repita a operação na página seguinte.
+</Callout>
+
+## Vincular uma opção (adicional)
+
+Quando o item é do tipo **Grupo Opção**, a janela de escolha passa a mostrar produtos e opções de grupo do seu cardápio.
+
+Neste exemplo, o marketplace envia **Adicionar queijo cheddar** e a opção correspondente no BeeFood é **Fatia de queijo cheddar**, do grupo **Adicionais**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/vinculo-marketplace/imagens-tratadas/08-opcao-selecionar.png" width="800" alt="Janela Selecionar Vínculo exibindo produtos e opções de grupo para um item adicional" caption="Item Grupo Opção: a janela passa a oferecer produtos e opções de grupo" />
+
+| Nº | Item                                      | O que é                                                                                                                                                                                |
+| -: | ----------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|  1 | **Mostrando: Produtos / Opções de Grupo** | Com um item do tipo **Grupo Opção** selecionado, você pode escolher um produto ou uma opção. Se houver qualquer item do tipo **Produto** na seleção, a janela mostra somente produtos. |
+|  2 | O grupo entre parênteses                  | A opção aparece uma vez para cada produto que a usa. Escolha a opção do produto que o pedido recebido costuma trazer.                                                                  |
+|  3 | A opção escolhida                         | Fica verde e será usada no botão **Confirmar Vínculo**, assim como acontece com um produto.                                                                                            |
+
+<Callout kind="alert" collapsed="false">
+  Não misture **Produto** e **Grupo Opção** na mesma seleção. Se você marcar um produto junto com opções, a janela oferecerá somente produtos e a opção poderá ser vinculada a um produto incorreto.
+</Callout>
+
+Depois de confirmar, a linha fica como **Vinculado** e a opção aparece na coluna **Vínculo**. A coluna **Setor** continua com um traço, porque o setor só é preenchido quando o vínculo é feito com um produto.
+
+## Criar produto e vincular
+
+Use **Criar produto e vincular** somente quando o item recebido realmente não existir no seu cardápio. A ação cria um produto com o nome recebido e já registra o vínculo.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/vinculo-marketplace/imagens-tratadas/09-criar-produto.png" width="800" alt="Lista com a ação Criar produto e vincular e o diálogo de confirmação aberto" caption="Criar produto e vincular e o diálogo de confirmação" />
+
+| Nº | Item                         | O que fazer                                                                                                                                             |
+| -: | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|  1 | **Criar produto e vincular** | Cria um produto com o nome recebido e registra o vínculo. Essa ação aparece na lista geral, mas não quando você abre o vínculo por dentro de um pedido. |
+|  2 | **Sim, criar (ENTER)**       | Confirma a criação de um produto para cada item selecionado.                                                                                            |
+
+<Callout kind="alert" collapsed="false">
+  **Procure antes de criar.** Se o produto já existir com outro nome, use **Vincular**. Criar outro produto para a mesma coisa divide os registros dos relatórios entre dois cadastros.
+</Callout>
+
+O produto criado aparece no **Cardápio**, dentro de um setor chamado **Vínculo Marketplace**. Ele recebe o nome exato enviado pelo marketplace e não recebe preço automaticamente.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/vinculo-marketplace/imagens-tratadas/10-cardapio-produto-criado.png" width="800" alt="Produto criado no Cardápio dentro do setor Vínculo Marketplace e sem preço" caption="O produto criado no Cardápio, no setor Vínculo Marketplace e sem preço" />
+
+| Nº | Item                          | O que fazer                                                                                                                                 |
+| -: | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+|  1 | Setor **Vínculo Marketplace** | É criado automaticamente na primeira utilização. Todos os produtos criados por essa ação ficam nele.                                        |
+|  2 | O produto criado              | Nasce com o nome exato recebido do marketplace, sem foto e sem descrição.                                                                   |
+|  3 | O preço, em branco            | Complete o cadastro com preço, setor definitivo, foto e ficha técnica, se você usar esse recurso. O produto já nasce ativo nos seus canais. |
+
+<Callout kind="alert" collapsed="false">
+  O produto criado nasce **sem preço**. Enquanto estiver sem preço e no setor **Vínculo Marketplace**, ele deve ser tratado como uma pendência de cadastro, não como um produto pronto.
+</Callout>
+
+## Excluir um vínculo
+
+Use **Excluir** quando o vínculo foi feito com o produto errado. A exclusão remove somente a ligação e devolve o nome recebido para o status **Pendente**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/vinculo-marketplace/imagens-tratadas/11-excluir-dialogo.png" width="800" alt="Diálogo de confirmação para excluir um vínculo de marketplace" caption="Excluir e o aviso de que a ação não pode ser desfeita" />
+
+| Nº | Item                     | O que fazer                                                                          |
+| -: | ------------------------ | ------------------------------------------------------------------------------------ |
+|  1 | **Excluir**              | Apaga a ligação, não o produto do cardápio. O nome recebido volta para **Pendente**. |
+|  2 | **Sim, excluir (ENTER)** | Confirma a exclusão. A ação não pode ser desfeita; para corrigir, refaça o vínculo.  |
+
+<Callout kind="info" collapsed="false">
+  Excluir não apaga o produto, não apaga vendas e não altera pedidos antigos. A alteração afeta o reconhecimento dos próximos pedidos com aquele nome.
+</Callout>
+
+## Resolver pelo próprio pedido
+
+Quando um pedido chega com um produto ainda sem vínculo, o próprio pedido mostra um aviso abaixo do item.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/vinculo-marketplace/imagens-tratadas/12-venda-aviso.png" width="800" alt="Pedido com a faixa Produto não associado no pedido indicando falta de vínculo marketplace" caption="A faixa Produto não associado no pedido dentro do pedido" />
+
+| Nº | Item             | O que é                                                                                                     |
+| -: | ---------------- | ----------------------------------------------------------------------------------------------------------- |
+|  1 | O nome do item   | É o nome usado no cardápio do marketplace. Esse nome ainda não está associado a um produto do seu cadastro. |
+|  2 | A faixa de aviso | É um atalho. Clique nela para abrir a janela **Selecionar Vínculo** já com esse item preenchido.            |
+
+Para conferir todos os itens do pedido, abra o menu do próprio pedido pelo botão **^** ao lado de **PAGAMENTO** e escolha **Vínculo Marketplace**. A tela é a mesma, mas mostra apenas os itens daquele pedido.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/vinculo-marketplace/imagens-tratadas/13-modo-venda.png" width="800" alt="Modal de Vínculo Marketplace aberta dentro de um pedido com coluna Nível" caption="O mesmo modal aberto por um pedido: título com o número e coluna Nível" />
+
+| Nº | Item                                  | O que é                                                                                                                                                                |
+| -: | ------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|  1 | **Vínculo Marketplace - Pedido #871** | O título mostra o número do pedido. Nesse modo, a lista contém somente os itens dele.                                                                                  |
+|  2 | Coluna **Nível**                      | **1º** é o produto do pedido; **2º** é uma opção que veio dentro dele.                                                                                                 |
+|  3 | As linhas **2º** pendentes            | Os dois produtos do pedido estão vinculados, mas as quatro opções não. A tela do pedido não mostra aviso para opção pendente; somente produto recebe a faixa vermelha. |
+
+Nesse modo, o rodapé oferece apenas **Vincular**. As ações **Criar produto e vincular** e **Excluir** ficam disponíveis somente na lista geral.
+
+<Callout kind="tip" collapsed="false">
+  Vincular por dentro do pedido resolve o pedido aberto e registra o nome na lista geral. Depois da operação, o item aparece como **Vinculado** na tela do Delivery, com o setor preenchido quando o vínculo foi feito com um produto.
+</Callout>
+
+## O bloqueio da nota fiscal
+
+Se você tentar emitir a NFC-e de um pedido de marketplace que contém um produto sem vínculo, o BeeFood bloqueia a emissão e abre a janela de pendência.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/vinculo-marketplace/imagens-tratadas/14-bloqueio-fiscal.png" width="800" alt="Janela Produtos sem vínculo marketplace com a emissão fiscal bloqueada" caption="Produtos sem vínculo marketplace: a NFC-e barrada e o EMITIR FISCAL desabilitado" />
+
+| Nº | Item                              | O que fazer                                                                                                                                                                    |
+| -: | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+|  1 | O item pendente, com **Vincular** | Clique na linha para abrir a janela de escolha e vincule o produto. Depois da resolução, a linha fica verde com o status **Vinculado**.                                        |
+|  2 | **EMITIR FISCAL (F2)**            | Fica desabilitado enquanto houver produto pendente. Quando todos os produtos estiverem vinculados, o botão será liberado e você poderá emitir a nota sem reiniciar o processo. |
+
+Para sair sem emitir, use **FECHAR (ESC)**.
+
+<Callout kind="alert" collapsed="false">
+  A trava verifica somente os **produtos** do pedido. Uma opção pendente não impede a emissão, mas continua sem setor e fora dos relatórios. Resolva opções pendentes para manter o pedido organizado.
+</Callout>
+
+## Resumo
+
+1. O marketplace envia o nome dele; o vínculo indica qual é o seu produto.
+2. Trabalhe pela lista em **Delivery → ⋮ → Vínculo Marketplace** e use o filtro **Pendentes**.
+3. **Vincular** grava diretamente, sem uma segunda confirmação. Confira o item antes de confirmar.
+4. Vários nomes recebidos podem apontar para um único produto do seu cardápio.
+5. Use **Criar produto e vincular** somente quando o produto realmente não existir e complete o cadastro depois.
+6. Um item do tipo **Grupo Opção** pode ser vinculado a um produto ou a uma opção; um item do tipo **Produto** pode ser vinculado somente a um produto.
+7. Produto sem vínculo bloqueia a nota fiscal; opção sem vínculo não bloqueia a emissão.
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+  <Expandable title="Preciso vincular antes de aceitar o pedido?" default-open="false">
+    Não. O pedido entra, é preparado e entregue normalmente. O vínculo organiza a impressão da cozinha, a nota fiscal e os relatórios, além de evitar que o mesmo problema se repita nos próximos pedidos.
+  </Expandable>
+
+  <Expandable title="Vinculei um item. Preciso fazer isso de novo no próximo pedido?" default-open="false">
+    Não. O vínculo vale para os próximos pedidos que chegarem com o mesmo nome.
+  </Expandable>
+
+  <Expandable title="O mesmo nome aparece mais de uma vez na lista. Qual linha devo vincular?" default-open="false">
+    Vincule as linhas que estiverem **Pendentes**. Você pode marcar todas de uma vez e apontá-las para o mesmo produto.
+  </Expandable>
+
+  <Expandable title="Vinculei no produto errado. Como corrijo?" default-open="false">
+    Marque a linha, clique em **Excluir**, confirme a exclusão e faça o vínculo novamente com o produto correto.
+  </Expandable>
+
+  <Expandable title="Excluir o vínculo apaga meu produto?" default-open="false">
+    Não. A exclusão remove somente a ligação. O produto continua no cardápio.
+  </Expandable>
+
+  <Expandable title="Criei um produto sem querer. O que faço?" default-open="false">
+    O produto fica no **Cardápio**, no setor **Vínculo Marketplace**. Complete o cadastro ou desative e exclua o produto por lá. Na lista de vínculos, exclua a ligação e vincule o nome ao produto correto.
+  </Expandable>
+
+  <Expandable title="A nota não emite e a janela de pendência abriu. Posso emitir sem vincular?" default-open="false">
+    Não. **EMITIR FISCAL (F2)** só é habilitado quando nenhum produto do pedido está pendente. Vincule o produto pela própria janela e emita a nota em seguida.
+  </Expandable>
+
+  <Expandable title="O item do marketplace não imprime na cozinha. O que devo verificar?" default-open="false">
+    Sem vínculo, o item não tem setor e a impressão por setor não sabe para onde enviá-lo. Vincule o item. Se você recebe muitos pedidos de marketplace, configure também o **Local de Impressão padrão para Marketplace** em **Configuração → Impressão → Cozinha**.
+  </Expandable>
+
+  <Expandable title="Abri o vínculo de um pedido cancelado e a lista veio vazia. Isso é um erro?" default-open="false">
+    Não. Pedido cancelado não lista itens para vincular.
+  </Expandable>
+
+  <Expandable title="Onde vejo o que ainda falta vincular?" default-open="false">
+    Veja o contador vermelho no topo da lista e use o filtro **Pendentes**.
+  </Expandable>
+</ExpandableGroup>
+
+## Manuais relacionados
+
+Consulte estes manuais para completar a configuração da operação:
+
+<Columns cols="3">
+  <Card title="Aiqfome" href="/aiqfome" icon="cloud" horizontal="false">
+    Ative e configure a integração com o Aiqfome.
+  </Card>
+
+  <Card title="Uai Rango" href="/integracao-uai-rango" icon="cloud" horizontal="false">
+    Configure a integração com o Uai Rango e outros marketplaces.
+  </Card>
+
+  <Card title="Cadastrar Cardápio" href="/cardapio-fundamentos" icon="database" horizontal="false">
+    Cadastre produtos, grupos de opções e complementos no BeeFood.
+  </Card>
+
+  <Card title="Ficha Técnica" href="/ficha-tecnica" icon="book-open" horizontal="false">
+    Configure custos e baixa de estoque para os produtos vinculados.
+  </Card>
+
+  <Card title="Impressão da Cozinha" href="/impressao-cozinha-automatica" icon="printer" horizontal="false">
+    Defina como os pedidos e itens de marketplace serão enviados para as impressoras.
+  </Card>
+</Columns>
+
