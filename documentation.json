@@ -230,6 +230,10 @@
                 "group": "👥 Cliente",
                 "pages": [
                   {
+                    "title": "📊 Classificação RFV",
+                    "path": "classificacao-rfv"
+                  },
+                  {
                     "title": "🤝 Gestão de fiado",
                     "path": "fiado"
                   }
