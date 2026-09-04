@@ -1,0 +1,289 @@
+---
+title: Cadastrar comandas e gerar o QR Code
+description: Cadastre comandas no BeeFood, crie faixas numeradas e gere QR Codes para o cardápio presencial, o PDV e códigos de barras.
+---
+
+## Cadastrar comandas e gerar o QR Code
+
+Cadastre as comandas que acompanham os clientes no salão e gere os QR Codes para vincular pedidos à conta correta. Você pode cadastrar cada comanda individualmente ou criar uma faixa numerada de uma vez.
+
+## Onde fica
+
+Acesse **Cadastros** no menu lateral e clique em **Comandas**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cadastro-comandas/imagens-tratadas/01-menu-cadastros.png" width="800" alt="Menu lateral do BeeFood com as opções Cadastros e Comandas destacadas" caption="Menu lateral: Cadastros e Comandas" />
+
+| Nº | Item | O que fazer |
+| -: | ---- | ----------- |
+| 1 | Cadastros | Abra o menu de cadastros no menu lateral. |
+| 2 | Comandas | Clique para abrir o cadastro de comandas. |
+
+## A tela de comandas
+
+A tela mostra uma comanda por card, em ordem de código. Cada card exibe o código, a descrição e a etiqueta **Ativo** ou **Inativo**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cadastro-comandas/imagens-tratadas/02-tela-comandas.png" width="800" alt="Tela de comandas com os botões Nova Comanda, busca, contador, Criar em Lote e Gerar QR Code" caption="A tela: Nova Comanda, busca, contador, Criar em Lote e Gerar QR Code" />
+
+| Nº | Item | O que fazer |
+| -: | ---- | ----------- |
+| 1 | Nova Comanda (F1) | Cadastre uma comanda por vez. |
+| 2 | Buscar comanda | Filtre os cards por código ou descrição. |
+| 3 | Contador | Consulte quantas comandas existem no cadastro. |
+| 4 | Criar em Lote | Crie uma faixa numerada de comandas. |
+| 5 | Gerar QR Code | Abra as opções para gerar os três tipos de código. |
+
+<Callout kind="alert" collapsed="false">**Ativo** pertence ao cadastro. **Livre**, **Ocupado** e **Fechado** indicam a situação da comanda no dia a dia.</Callout>
+
+## Cadastrar uma comanda
+
+Clique em **Nova Comanda (F1)** para abrir o cadastro. O BeeFood sugere o próximo número livre e monta uma descrição inicial para a comanda.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cadastro-comandas/imagens-tratadas/03-nova-comanda.png" width="800" alt="Modal Nova Comanda com os campos código, descrição e Ativo" caption="Modal Nova Comanda: código, descrição e Ativo" />
+
+| Nº | Item | O que fazer |
+| -: | ---- | ----------- |
+| 1 | Código* | Informe o número impresso na comanda física. |
+| 2 | Descrição* | Informe o nome exibido no card. O padrão é Comanda seguido do código. |
+| 3 | Ativo | Mantenha ligado para exibir a comanda na tela Mesas/Comandas. |
+| 4 | Salvar | Grave o cadastro. |
+
+<Callout kind="alert" collapsed="false">O código tem de ser o número do cartão. Se as comandas físicas vão de 1 a 50, cadastre os números de 1 a 50.</Callout>
+
+## Editar e excluir
+
+Clique no card da comanda para reabrir o cadastro e editar a descrição ou o status. A tela de edição também apresenta o botão **Excluir**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cadastro-comandas/imagens-tratadas/04-excluir-comanda.png" width="800" alt="Janela de confirmação de exclusão de uma comanda com a descrição exibida" caption="Confirmação de exclusão, que repete a descrição" />
+
+| Nº | Item | O que fazer |
+| -: | ---- | ----------- |
+| 1 | Texto do aviso | Confira a descrição da comanda antes de confirmar. |
+| 2 | Excluir | Confirme a exclusão da comanda. A ação não pode ser desfeita. |
+
+<Callout kind="alert" collapsed="false">Se a comanda saiu de circulação, prefira desativar a excluir. Assim, ela deixa de aparecer para uso sem precisar remover o cadastro.</Callout>
+
+## Criar a faixa inteira de uma vez
+
+Use **Criar em Lote** para cadastrar blocos de comandas, como 50 ou 100 cartões. O lote aceita de 1 a 100 comandas por vez.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cadastro-comandas/imagens-tratadas/05-lote-previsao.png" width="800" alt="Janela Criar em Lote mostrando a faixa de comandas que será criada" caption="Criar em Lote com a previsão da faixa" />
+
+| Nº | Item | O que fazer |
+| -: | ---- | ----------- |
+| 1 | Quantas comandas | Informe uma quantidade entre 1 e 100. |
+| 2 | Iniciar na numeração | Informe o primeiro código da faixa. |
+| 3 | Previsão | Confira o primeiro e o último código antes de criar. |
+
+Se algum código da faixa já existir, o BeeFood informa o conflito e bloqueia a criação do lote. Ajuste a numeração ou crie apenas os códigos que ainda não foram cadastrados.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cadastro-comandas/imagens-tratadas/06-lote-resultado.png" width="800" alt="Lista de comandas depois da criação em lote com o contador atualizado" caption="A lista depois do lote, com o contador atualizado" />
+
+| Nº | Resultado | O que conferir |
+| -: | --------- | -------------- |
+| 1 | Novos cards | A faixa aparece na lista em ordem de código. |
+| 2 | Contador | A quantidade total de comandas aumenta. |
+
+## Os três tipos de QR Code
+
+O BeeFood oferece três tipos de código para situações diferentes. Escolha o código conforme quem fará a leitura e onde ele será usado.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cadastro-comandas/imagens-tratadas/07-qr-tipos.png" width="800" alt="Tela do BeeFood com os três tipos de QR Code para comandas" caption="Os três tipos de QR Code" />
+
+| Tipo | Quem usa | Para que serve |
+| ---- | -------- | -------------- |
+| Cardápio Digital Presencial | Cliente | Abre o cardápio no celular e já identifica a comanda. |
+| Código da Comanda | Operador | Permite ler a comanda no PDV. |
+| Código de Barras | Operador | Permite ler a comanda no PDV usando EAN-13. |
+
+<Callout kind="info" collapsed="false">O QR de comanda é melhor que o de mesa quando cada cliente recebe um cartão próprio. O cliente lê o código da própria comanda, reduzindo o risco de o pedido entrar na conta errada.</Callout>
+
+### 1. Cardápio Digital Presencial
+
+Use este tipo para imprimir um QR Code e colá-lo em cada cartão. O cliente aponta a câmera do celular para o código, abre o cardápio e acessa a própria comanda.
+
+Informe a faixa de comandas que deseja gerar.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cadastro-comandas/imagens-tratadas/08-qr-cardapio-presencial.png" width="800" alt="Tela de geração de QR Codes do Cardápio Digital Presencial para uma faixa de comandas" caption="Faixa de comandas e os QR Codes gerados" />
+
+| Nº | Item | O que fazer |
+| -: | ---- | ----------- |
+| 1 | Comanda Inicial | Informe o primeiro número da faixa. |
+| 2 | Comanda Final | Informe o último número da faixa. O limite é de 100 por vez. |
+| 3 | Gerar QR Codes | Desenhe os códigos da faixa informada. |
+| 4 | Imprimir Todos | Abra a folha pronta para impressão. |
+
+A folha é organizada em grade, com o logo e o número de cada comanda.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cadastro-comandas/imagens-tratadas/09-folha-impressa.png" width="800" alt="Folha com QR Codes do Cardápio Digital Presencial pronta para imprimir e colar nas comandas" caption="A folha pronta para imprimir e colar nas comandas" />
+
+<Callout kind="alert" collapsed="false">A geração gera pela faixa informada, sem conferir se as comandas existem no cadastro. Confira os números antes de imprimir e cole cada QR Code no cartão correspondente.</Callout>
+
+### 2. Código da Comanda
+
+Use este tipo quando o operador fará a leitura no PDV. O código é interno e não representa um endereço.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cadastro-comandas/imagens-tratadas/10-qr-codigo-comanda.png" width="800" alt="QR Code individual identificado como Código da Comanda para leitura no PDV" caption="QR Code Código da Comanda, usado na leitura do PDV" />
+
+| Nº | Item | O que fazer |
+| -: | ---- | ----------- |
+| 1 | QR de cada comanda | Gere a etiqueta da comanda cadastrada. A etiqueta identifica o número interno. |
+| 2 | Download Todos | Baixe os arquivos PNG das comandas existentes. |
+
+### 3. Código de Barras
+
+Use o código de barras quando o operador preferir fazer a leitura por um leitor no balcão ou no PDV. O BeeFood gera um código EAN-13 exclusivo para a comanda.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cadastro-comandas/imagens-tratadas/11-codigo-barras.png" width="800" alt="Código de barras EAN-13 de uma comanda" caption="Código de barras EAN-13 das comandas" />
+
+| Nº | Item | O que fazer |
+| -: | ---- | ----------- |
+| 1 | Código de barras | Gere o EAN-13 da comanda e use a etiqueta no cartão ou no balcão. |
+
+<Callout kind="info" collapsed="false">O código da comanda e o código da mesa são diferentes. Não reutilize uma etiqueta de mesa em uma comanda.</Callout>
+
+## O que o cadastro habilita no dia a dia
+
+Depois do cadastro, cada comanda ativa aparece como um card na aba **Comandas** da tela **Mesas/Comandas**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cadastro-comandas/imagens-tratadas/12-mapa-comandas.png" width="800" alt="Aba Comandas da tela Mesas e Comandas com cards de comandas livres e ocupadas" caption="A aba Comandas da tela Mesas/Comandas" />
+
+| Nº | Item | O que indica |
+| -: | ---- | ----------- |
+| 1 | Aba Comandas | Alterna a visualização entre comandas e mesas. |
+| 2 | Card Livre | Não há venda aberta na comanda. |
+| 3 | Card Ocupado | A comanda está em uso e mostra o valor e o tempo da venda. |
+
+<Callout kind="info" collapsed="false">Uma comanda inativa continua no cadastro, mas não aparece na tela Mesas/Comandas para uso.</Callout>
+
+## Exemplo prático: 30 comandas em circulação
+
+Use este fluxo para preparar 30 cartões numerados de 1 a 30.
+
+<Steps>
+<Step title="Conte os cartões físicos">
+
+Conte os cartões disponíveis e confirme que a numeração vai de 1 a 30.
+
+</Step>
+
+<Step title="Cadastre a primeira comanda">
+
+Abra **Nova Comanda (F1)** e cadastre a comanda número 1. Confira o código antes de salvar.
+
+</Step>
+
+<Step title="Crie o restante em lote">
+
+Abra **Criar em Lote**, informe 4 comandas e comece pela numeração 27. O lote criará as comandas 27, 28, 29 e 30.
+
+</Step>
+
+<Step title="Gere os QR Codes do cardápio">
+
+Abra **Gerar QR Code**, escolha **Cardápio Digital Presencial**, informe a faixa de 1 a 30 e gere os códigos.
+
+</Step>
+
+<Step title="Imprima e prepare os cartões">
+
+Clique em **Imprimir Todos**, recorte a folha e cole cada QR Code no cartão com o mesmo número.
+
+</Step>
+
+<Step title="Entregue a comanda ao cliente">
+
+Na chegada, entregue um cartão ao cliente. O cliente deve ler o QR Code do próprio cartão para abrir o cardápio e fazer pedidos na comanda correta.
+
+</Step>
+
+<Step title="Acompanhe o salão">
+
+Abra a aba **Comandas** para acompanhar quais cartões estão livres ou ocupados.
+
+</Step>
+</Steps>
+
+Se o balcão usar leitor, gere também o **Código de Barras** e cole a etiqueta no verso do cartão.
+
+## Resumo
+
+1. Acesse **Cadastros** e depois **Comandas** para abrir o cadastro.
+2. Use como código o número impresso no cartão físico.
+3. Use **Criar em Lote** para cadastrar até 100 comandas por vez.
+4. Use o **Cardápio Digital Presencial** para o cliente, o **Código da Comanda** para o PDV e o **Código de Barras** para leitores EAN-13.
+5. Quando cada cliente recebe um cartão, use o QR de comanda, que é melhor que o de mesa para identificar a conta individual.
+6. Desative comandas fora de circulação para removê-las da operação sem excluir o cadastro.
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+<Expandable title="Preciso cadastrar mesas também?" default-open="false">
+
+Cadastre mesas somente se o seu atendimento também for controlado por mesa. Muitos estabelecimentos trabalham apenas com comandas.
+
+</Expandable>
+
+<Expandable title="Tenho 200 comandas. Posso criar todas de uma vez?" default-open="false">
+
+Não. O lote aceita até 100 comandas por vez. Faça duas rodadas, mantendo a numeração contínua.
+
+</Expandable>
+
+<Expandable title="Perdi um cartão. O que devo fazer?" default-open="false">
+
+Abra a comanda correspondente e desative o cadastro. Se você imprimir outro cartão com o mesmo número, reative a comanda.
+
+</Expandable>
+
+<Expandable title="Posso repetir o número de uma comanda?" default-open="false">
+
+Não. O BeeFood não permite repetir números. Ao tentar criar uma faixa com códigos existentes, o sistema informa o conflito e bloqueia a criação.
+
+</Expandable>
+
+<Expandable title="O cliente leu o QR Code e o pedido caiu em outra comanda. Como corrigir?" default-open="false">
+
+Confira se o adesivo foi colado no cartão correto e se o número do QR Code corresponde ao número impresso na comanda física.
+
+</Expandable>
+
+<Expandable title="Excluí uma comanda com vendas antigas. Perdi o histórico?" default-open="false">
+
+Não. As vendas continuam disponíveis no **Histórico**. Para evitar problemas de controle, prefira desativar comandas que saíram de circulação.
+
+</Expandable>
+
+<Expandable title="Qual QR Code devo colar no cartão?" default-open="false">
+
+Cole o QR Code do **Cardápio Digital Presencial**. Esse código permite que o cliente abra o cardápio e acesse a própria comanda.
+
+</Expandable>
+</ExpandableGroup>
+
+## Manuais relacionados
+
+<Columns cols={2}>
+<Card title="Cadastrar mesas e gerar o QR Code" href="/cadastro-mesas" icon="database">
+
+Cadastre mesas e configure os códigos usados no atendimento por mesa.
+
+</Card>
+
+<Card title="Cardápio digital presencial e QR Code" href="/cardapio-digital-presencial-qrcode" icon="qr-code">
+
+Configure o uso do cardápio digital presencial com QR Code.
+
+</Card>
+
+<Card title="Taxa e obrigatoriedades de mesa" href="/mesas-taxas-obrigatorias" icon="settings">
+
+Consulte as regras relacionadas ao atendimento por mesa.
+
+</Card>
+
+<Card title="Cadastrar forma de recebimento" href="/formas-recebimento" icon="credit-card">
+
+Cadastre as formas de pagamento usadas no fechamento das contas.
+
+</Card>
+</Columns>

@@ -1,0 +1,345 @@
+---
+title: Cadastrar mesas e gerar o QR Code
+description: Cadastre o salão do BeeFood, organize mesas no mapa e gere QR Codes para clientes e operadores do restaurante.
+---
+
+## Onde fica
+
+Cadastre as mesas pelo menu lateral do BeeFood. Clique em **Cadastros** e depois em **Mesas**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cadastro-mesas/imagens-tratadas/01-menu-cadastros.png" width="800" alt="Menu lateral com as opções Cadastros e Mesas" caption="Menu lateral: Cadastros e Mesas" />
+
+| Nº | Item | O que é |
+| -: | ---- | ------- |
+| 1 | Mesas | Abre o cadastro de mesas |
+| 2 | Voltar | Sai do submenu Cadastros |
+
+No mesmo submenu ficam **Comandas** e **Formas de recebimento**.
+
+<Callout kind="tip" collapsed="false">
+
+As setas numeradas nas imagens correspondem aos itens das tabelas de cada seção.
+
+</Callout>
+
+## A tela de mesas
+
+A tela lista uma mesa por card, em ordem de código. Cada card mostra o código, a descrição e a situação do cadastro.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cadastro-mesas/imagens-tratadas/02-tela-mesas.png" width="800" alt="Tela de mesas com os botões Nova Mesa, Buscar mesa, contador, Criar em Lote e Gerar QR Code" caption="A tela: Nova Mesa, busca, contador, Criar em Lote e Gerar QR Code" />
+
+| Nº | Item | O que é |
+| -: | ---- | ------- |
+| 1 | Nova Mesa | Abre o cadastro de uma mesa |
+| 2 | Buscar mesa | Filtra a lista por código ou descrição |
+| 3 | Contador | Mostra quantas mesas estão cadastradas |
+| 4 | Criar em Lote | Cria várias mesas de uma vez |
+| 5 | Gerar QR Code | Abre as opções de QR Code |
+
+<Callout kind="alert" collapsed="false">
+
+**Ativo** não é igual a **Livre**. Ativo indica se a mesa faz parte do cadastro. Livre, Ocupado e Fechado indicam a situação da mesa no dia a dia.
+
+</Callout>
+
+## Cadastrar uma mesa
+
+Use **Nova Mesa** ou pressione **F1** para cadastrar uma mesa individual. O BeeFood sugere o próximo código livre e preenche a descrição com o nome da mesa.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cadastro-mesas/imagens-tratadas/03-nova-mesa.png" width="800" alt="Modal Nova Mesa com os campos código, descrição e Ativo" caption="Modal Nova Mesa: código, descrição e Ativo" />
+
+| Nº | Item | O que fazer |
+| -: | ---- | ----------- |
+| 1 | Código | Informe o número da mesa. O sistema sugere o próximo código livre |
+| 2 | Descrição | Informe o nome exibido no card. O sistema sugere um nome com o código da mesa |
+| 3 | Ativo | Mantenha ligado para incluir a mesa no mapa do salão |
+| 4 | Salvar | Grava o cadastro |
+
+<Callout kind="tip" collapsed="false">
+
+Use no cadastro o mesmo número colado na mesa física. Se precisar de um nome diferente na tela, mantenha o número em **Código** e ajuste apenas a **Descrição**.
+
+</Callout>
+
+## Editar e excluir
+
+Clique no card de uma mesa para abrir a tela **Editar Mesa**. Altere a descrição ou a situação e selecione **Salvar** para gravar.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cadastro-mesas/imagens-tratadas/05-editar-mesa.png" width="800" alt="Modal Editar Mesa com o botão Excluir" caption="Modal Editar Mesa, com o botão Excluir" />
+
+| Nº | Item | O que fazer |
+| -: | ---- | ----------- |
+| 1 | Excluir | Inicia a exclusão da mesa e pede confirmação |
+| 2 | Salvar | Grava as alterações da mesa |
+
+Ao selecionar **Excluir**, o BeeFood mostra uma confirmação com a descrição da mesa.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cadastro-mesas/imagens-tratadas/06-excluir-mesa.png" width="800" alt="Confirmação de exclusão de mesa com a descrição da mesa" caption="Confirmação de exclusão, que repete a descrição da mesa" />
+
+<Callout kind="alert" collapsed="false">
+
+Prefira desativar a mesa a excluir. Desligue o switch **Ativo** para retirar a mesa do mapa e preservar o cadastro. A exclusão pede confirmação e não pode ser desfeita.
+
+</Callout>
+
+## Criar o salão inteiro de uma vez
+
+Use **Criar em Lote** quando precisar cadastrar várias mesas consecutivas. Informe a quantidade e o primeiro número da sequência.
+
+Quando a faixa incluir códigos já cadastrados, o BeeFood mostra o conflito e bloqueia a criação.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cadastro-mesas/imagens-tratadas/07-lote-conflito.png" width="800" alt="Tela Criar em Lote mostrando conflito de numeração" caption="Criar em Lote com Conflito de numeração" />
+
+| Nº | Item | O que é |
+| -: | ---- | ------- |
+| 1 | Quantas mesas | Quantidade de mesas a criar, de 1 a 100 por vez |
+| 2 | Iniciar na numeração | Primeiro código da sequência |
+| 3 | Conflito | Lista os códigos que já existem na faixa escolhida |
+
+Escolha uma faixa livre para visualizar a previsão antes de criar as mesas.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cadastro-mesas/imagens-tratadas/08-lote-previsao.png" width="800" alt="Tela Criar em Lote com faixa livre e previsão das mesas" caption="Criar em Lote com a faixa livre e a previsão" />
+
+| Nº | Item | O que é |
+| -: | ---- | ------- |
+| 1 | Previsão | Mostra a primeira e a última mesa da faixa |
+| 2 | Criar Mesas | Cria toda a sequência prevista |
+
+Após a criação, o contador aumenta e os novos cards aparecem na lista.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cadastro-mesas/imagens-tratadas/09-lote-resultado.png" width="800" alt="Lista de mesas após a criação em lote com contador atualizado" caption="A lista depois do lote, com o contador atualizado" />
+
+## Os três tipos de QR Code
+
+O botão **Gerar QR Code** oferece três opções. Escolha o tipo conforme quem fará a leitura e o resultado esperado.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cadastro-mesas/imagens-tratadas/10-qr-tipos.png" width="800" alt="Tela com os três tipos de QR Code para mesas" caption="Os três tipos de QR Code" />
+
+| Nº | Tipo | Quem usa | Resultado |
+| -: | ---- | -------- | --------- |
+| 1 | Cardápio Digital Presencial | Cliente | Abre o cardápio no celular já associado à mesa |
+| 2 | Código da Mesa | Operador | Permite ler o código da mesa no PDV |
+| 3 | Código de Barras das Mesas | Operador | Permite ler a mesa por código de barras EAN-13 |
+
+### 1. Cardápio Digital Presencial
+
+Selecione **Cardápio Digital Presencial** para gerar um QR Code que o cliente lê com a câmera do celular.
+
+O BeeFood pergunta se o estabelecimento trabalha com comandas.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cadastro-mesas/imagens-tratadas/11-qr-gate-comanda.png" width="800" alt="Pergunta sobre o uso de comandas no estabelecimento" caption="A pergunta Você usa Comanda no seu estabelecimento?" />
+
+| Nº | Opção | O que acontece |
+| -: | ------ | -------------- |
+| 1 | Sim, uso Comanda | Mostra o comparativo e recomenda o QR Code de comanda |
+| 2 | Não, só Mesas | Continua para a geração do QR Code de mesa |
+
+Se você usa comandas, compare os dois formatos antes de continuar.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cadastro-mesas/imagens-tratadas/12-qr-recomendacao.png" width="800" alt="Comparativo entre QR Code de mesa e QR Code de comanda" caption="O comparativo entre QR Code de mesa e QR Code de comanda" />
+
+Você pode aceitar a recomendação de QR Code de comanda ou continuar com QR Code de mesa. Para gerar os códigos das mesas, informe a faixa desejada.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cadastro-mesas/imagens-tratadas/13-qr-cardapio-presencial.png" width="800" alt="Tela com faixa de mesas e QR Codes do cardápio gerados" caption="Faixa de mesas e os QR Codes do cardápio gerados" />
+
+| Nº | Item | O que fazer |
+| -: | ---- | ----------- |
+| 1 | Mesa Inicial | Informe o primeiro número da faixa |
+| 2 | Mesa Final | Informe o último número. O limite é 100 mesas por vez |
+| 3 | Gerar QR Codes | Desenha os códigos na tela |
+| 4 | Imprimir Todos | Prepara uma folha com os códigos para imprimir |
+
+<Callout kind="alert" collapsed="false">
+
+O QR Code do cardápio é gerado pela faixa informada, não pela quantidade de mesas cadastradas. Se você pedir a faixa de 1 a 20, o BeeFood desenha 20 códigos mesmo que uma das mesas ainda não esteja cadastrada.
+
+</Callout>
+
+### 2. Código da Mesa
+
+Selecione **Código da Mesa** para gerar códigos internos que o operador pode ler no PDV. Esse QR Code não é um endereço de internet.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cadastro-mesas/imagens-tratadas/14-qr-codigo-mesa.png" width="800" alt="QR Code de Código da Mesa para leitura no PDV" caption="QR Code Código da Mesa, usado para leitura no PDV" />
+
+| Nº | Item | O que é |
+| -: | ---- | ------- |
+| 1 | QR de cada mesa | Gera uma etiqueta para cada mesa existente |
+| 2 | Download Todos | Baixa os arquivos PNG de todas as mesas |
+
+### 3. Código de Barras das Mesas
+
+Selecione **Código de Barras das Mesas** para gerar um código EAN-13 para leitura pelo operador.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cadastro-mesas/imagens-tratadas/15-codigo-barras.png" width="800" alt="Código de barras EAN-13 de uma mesa" caption="Código de barras EAN-13 das mesas" />
+
+| Nº | Item | O que é |
+| -: | ---- | ------- |
+| 1 | Código de barras | Gera o código EAN-13 exclusivo da mesa |
+
+O limite do código de mesa é 9999.
+
+## O que o cadastro habilita no dia a dia
+
+Depois do cadastro, cada mesa aparece como um card na tela **Mesas/Comandas**. O mapa ajuda a acompanhar as mesas livres e as vendas em andamento.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cadastro-mesas/imagens-tratadas/16-mapa-salao.png" width="800" alt="Tela Mesas e Comandas com as mesas cadastradas no mapa do salão" caption="A tela Mesas/Comandas com as mesas cadastradas" />
+
+| Nº | Item | O que é |
+| -: | ---- | ------- |
+| 1 | Aba Mesas | Alterna entre a visualização de mesas e comandas |
+| 2 | Card Livre | Mesa sem venda aberta |
+| 3 | Card Ocupado | Mesa com venda em andamento |
+
+<Callout kind="info" collapsed="false">
+
+Mesa inativa não aparece no mapa do salão, mas continua no cadastro. Para mostrá-la novamente, abra a mesa e ligue o switch **Ativo**.
+
+</Callout>
+
+## Exemplo prático: montando um salão de 19 mesas
+
+Use este fluxo para montar um salão com 19 mesas e instalar o cardápio digital presencial.
+
+<Steps>
+<Step title="Cadastre a primeira mesa" icon="plus">
+
+Abra **Nova Mesa** com **F1** e cadastre a mesa 1.
+
+</Step>
+
+<Step title="Crie o restante em lote" icon="database">
+
+Em **Criar em Lote**, informe quantidade **4** e início na numeração **16**. A faixa criará as mesas 16, 17, 18 e 19.
+
+</Step>
+
+<Step title="Ajuste as descrições" icon="edit">
+
+Abra os cards que precisam de nomes específicos e altere a descrição.
+
+</Step>
+
+<Step title="Gere os QR Codes do cardápio" icon="code">
+
+Abra **Gerar QR Code**, escolha **Cardápio Digital Presencial** e informe a faixa de 1 a 4.
+
+</Step>
+
+<Step title="Imprima e recorte a folha" icon="download">
+
+Selecione **Imprimir Todos** para preparar a folha com os QR Codes.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cadastro-mesas/imagens-tratadas/17-folha-impressa.png" width="800" alt="Folha de QR Codes pronta para imprimir e recortar" caption="A folha de QR Codes pronta para imprimir e recortar" />
+
+</Step>
+
+<Step title="Cole os adesivos nas mesas" icon="upload">
+
+Recorte os códigos e cole cada etiqueta na mesa correspondente.
+
+</Step>
+
+<Step title="Confira a leitura no celular" icon="check-circle">
+
+Aponte a câmera do celular para um QR Code. O cardápio deve abrir associado à mesa.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cadastro-mesas/imagens-tratadas/18-cardapio-celular.png" width="800" alt="Cardápio digital presencial abrindo no celular do cliente" caption="O cardápio abrindo no celular do cliente" />
+
+</Step>
+
+<Step title="Acompanhe o salão" icon="bar-chart">
+
+Abra **Mesas/Comandas** para acompanhar os cards das mesas no mapa do salão.
+
+</Step>
+</Steps>
+
+## Resumo
+
+1. Acesse **Cadastros** e depois **Mesas** para cadastrar o salão.
+2. Use **Criar em Lote** para criar uma sequência de mesas.
+3. Use o código para representar o número da mesa e a descrição para definir o nome exibido na tela.
+4. Escolha entre **Cardápio Digital Presencial**, **Código da Mesa** e **Código de Barras das Mesas** conforme o uso.
+5. Desative mesas que não estão em uso para removê-las do mapa sem excluir o cadastro.
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+<Expandable title="Posso ter mesa 1 e mesa 01?" default-open="false">
+
+Não. O código é numérico, então 01 e 1 representam a mesma mesa. Use a **Descrição** para diferenciar nomes na tela.
+
+</Expandable>
+
+<Expandable title="Criei mesas demais no lote. Preciso apagar uma por uma?" default-open="false">
+
+Sim, a exclusão é feita mesa por mesa. Como alternativa, desligue o switch **Ativo** para retirar as mesas do mapa e preservar o cadastro.
+
+</Expandable>
+
+<Expandable title="A mesa não aparece no mapa. O que devo fazer?" default-open="false">
+
+Confira se o switch **Ativo** está ligado. Depois, atualize a tela com **F5**.
+
+</Expandable>
+
+<Expandable title="Excluí uma mesa com vendas antigas. Perdi o histórico?" default-open="false">
+
+Não. As vendas continuam disponíveis no **Histórico**.
+
+</Expandable>
+
+<Expandable title="O QR Code parou de funcionar. O que devo fazer?" default-open="false">
+
+Se o link do cardápio mudou, gere o QR Code novamente e imprima uma nova etiqueta.
+
+</Expandable>
+
+<Expandable title="Dá para imprimir um QR Code por folha?" default-open="false">
+
+A opção de impressão organiza os códigos em uma grade. Para baixar um arquivo por mesa, use **Download Todos** no tipo de QR Code correspondente.
+
+</Expandable>
+
+<Expandable title="Qual QR Code eu colo na mesa?" default-open="false">
+
+Cole o **Cardápio Digital Presencial**. O **Código da Mesa** e o **Código de Barras das Mesas** são destinados ao operador.
+
+</Expandable>
+
+<Expandable title="Uso comanda. Ainda preciso cadastrar mesas?" default-open="false">
+
+Sim, se o seu atendimento também controla vendas por mesa. Para pedidos do cliente por QR Code, o BeeFood recomenda o QR Code de comanda quando o estabelecimento trabalha com comandas.
+
+</Expandable>
+</ExpandableGroup>
+
+## Manuais relacionados
+
+<Columns cols={2}>
+
+<Card title="Cadastrar comandas e gerar o QR Code" href="/cadastro-comandas" icon="users" cta="Abrir manual">
+
+Configure comandas e escolha o QR Code adequado para o atendimento.
+
+</Card>
+
+<Card title="Cardápio digital presencial e QR Code" href="/cardapio-digital-presencial-qrcode" icon="code" cta="Abrir manual">
+
+Entenda o fluxo do cardápio digital para pedidos feitos na mesa.
+
+</Card>
+
+<Card title="Taxa e obrigatoriedades de mesa" href="/mesas-taxas-obrigatorias" icon="settings" cta="Abrir manual">
+
+Consulte as configurações relacionadas ao atendimento por mesa.
+
+</Card>
+
+<Card title="Cadastrar forma de recebimento" href="/formas-recebimento" icon="database" cta="Abrir manual">
+
+Cadastre as formas de recebimento usadas no caixa do restaurante.
+
+</Card>
+
+</Columns>

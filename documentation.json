@@ -257,11 +257,19 @@
                 ]
               },
               {
-                "group": "🍽️ Mesas",
+                "group": "🍽️ Mesas / Comandas",
                 "pages": [
                   {
                     "title": "🪑 Pedido Mesas / Comandas",
                     "path": "mesas"
+                  },
+                  {
+                    "title": "🍽️ Cadastrar Mesas",
+                    "path": "cadastro-mesas"
+                  },
+                  {
+                    "title": "🪑 Cadastrar Comandas e QR Code",
+                    "path": "cadastro-comandas"
                   }
                 ]
               },
@@ -543,6 +551,10 @@
           {
             "group": "💰 Financeiro",
             "pages": [
+              {
+                "title": "💳 Cadastrar Forma de Recebimento",
+                "path": "formas-recebimento"
+              },
               {
                 "title": "💳 Taxas das Formas de Recebimento",
                 "path": "taxas-formas-pagamento"

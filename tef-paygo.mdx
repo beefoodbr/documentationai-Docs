@@ -1,8 +1,9 @@
 ---
 title: TEF PayGo (Client PayGo)
-description: Receba pagamentos com cartão no BeeFood Windows usando TEF PayGo, com instalação do Client PayGo, configuração técnica e cadastro no sistema.
+description: >-
+  Receba pagamentos com cartão no BeeFood Windows usando TEF PayGo, com
+  instalação do Client PayGo, configuração técnica e cadastro no sistema.
 ---
-
 ## Receba cartão no BeeFood Windows com TEF PayGo
 
 O TEF PayGo funciona no BeeFood Windows a partir da versão **2.1.4.9**. Para receber cartão, você precisa instalar o **Client PayGo** no computador do caixa, fazer a configuração técnica no menu Administrativo e depois cadastrar o TEF no BeeFood em **Configuração → TEF**.
@@ -10,10 +11,8 @@ O TEF PayGo funciona no BeeFood Windows a partir da versão **2.1.4.9**. Para re
 O card **Aplicativos → TEF PayGo** serve só para contratação de quantidade. O cadastro que faz a integração funcionar fica em **Configuração → TEF → Novo TEF PayGo (F2)**.
 
 <Callout kind="info" collapsed="false">
-
-O PayGo **não usa StoneCode nem porta de pinpad** no modal do BeeFood. No cadastro do BeeFood, você preenche apenas **Título** e **Vias**.  
-A parte técnica, como **PDC**, **senha técnica** e **servidor**, fica no **Client PayGo / menu Administrativo**.
-
+  O PayGo **não usa StoneCode nem porta de pinpad** no modal do BeeFood. No cadastro do BeeFood, você preenche apenas **Título** e **Vias**.\
+  A parte técnica, como **PDC**, **senha técnica** e **servidor**, fica no **Client PayGo / menu Administrativo**.
 </Callout>
 
 ## Boas práticas no Windows
@@ -21,27 +20,19 @@ A parte técnica, como **PDC**, **senha técnica** e **servidor**, fica no **Cli
 Antes de instalar, ajuste o ambiente do caixa. Isso evita falhas de driver, bloqueio do antivírus e problemas de comunicação com o pinpad.
 
 <Callout kind="tip" collapsed="false">
-
-- Instale os **drivers oficiais do pinpad**.
-- Use um **usuário administrador do Windows** para a instalação.
-- Mantenha **runtime C++** e **.NET** atualizados.
-- Libere no antivírus os caminhos usados pelo PayGo:
-  - `C:\ProgramData\PayGo\PGWebLib\warsaw_64\warsaw.dll`
-  - `C:\ProgramData\PayGo\PGWebLib\warsaw_32\warsaw.dll`
-  - `C:\ProgramData\PayGo\Atualizacoes`
-  - `C:\ProgramData\PayGo\Data`
-  - `C:\Program Files (x86)\PayGo`
-  - `C:\Users\SeuUsuarioDaMaquina\Desktop\PayGo.lnk`
-
+  - Instale os **drivers oficiais do pinpad**.
+  - Use um **usuário administrador do Windows** para a instalação.
+  - Mantenha **runtime C++** e **.NET** atualizados.
+  - Libere no antivírus os caminhos usados pelo PayGo:
+    - `C:\ProgramData\PayGo\PGWebLib\warsaw_64\warsaw.dll`
+    - `C:\ProgramData\PayGo\PGWebLib\warsaw_32\warsaw.dll`
+    - `C:\ProgramData\PayGo\Atualizacoes`
+    - `C:\ProgramData\PayGo\Data`
+    - `C:\Program Files (x86)\PayGo`
+    - `C:\Users\SeuUsuarioDaMaquina\Desktop\PayGo.lnk`
 </Callout>
 
-<Image
-  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/tef-paygo/imagens-tratadas/01-pinpad.png"
-  width="800"
-  height="450"
-  alt="Pinpad usado com o TEF PayGo no Windows"
-  caption="Pinpad"
-/>
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/tef-paygo/imagens-tratadas/01-pinpad.png" width="800" height="450" alt="Pinpad usado com o TEF PayGo no Windows" caption="Pinpad" />
 
 ## Pré-requisitos
 
@@ -49,27 +40,19 @@ Você precisa do **PDC**, que é o **ponto de captura** do caixa. Na prática, o
 
 Se a loja tem dois caixas, cada caixa precisa do seu próprio PDC. Um mesmo PDC não deve ser reaproveitado em outro terminal.
 
-<Image
-  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/tef-paygo/imagens-tratadas/02-exemplo-pdc.png"
-  width="800"
-  height="450"
-  alt="Exemplo de identificação do PDC do caixa"
-  caption="Exemplo PDC"
-/>
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/tef-paygo/imagens-tratadas/02-exemplo-pdc.png" width="800" height="450" alt="Exemplo de identificação do PDC do caixa" caption="Exemplo PDC" />
 
-| Dado | Valor |
-|------|-------|
-| **Versão mínima do BeeFood Windows** | `2.1.4.9` |
-| **Senha técnica** | `314159` |
-| **Servidor de produção** | `pos-transac.pgweb.io:31735` |
-| **Servidor de homologação** | `pos-transac-sb.tpgweb.io:31735` |
-| **PDC** | Número do checkout daquele caixa |
-| **CNPJ** | CNPJ do cliente final |
+| Dado                                 | Valor                            |
+| ------------------------------------ | -------------------------------- |
+| **Versão mínima do BeeFood Windows** | `2.1.4.9`                        |
+| **Senha técnica**                    | `314159`                         |
+| **Servidor de produção**             | `pos-transac.pgweb.io:31735`     |
+| **Servidor de homologação**          | `pos-transac-sb.tpgweb.io:31735` |
+| **PDC**                              | Número do checkout daquele caixa |
+| **CNPJ**                             | CNPJ do cliente final            |
 
 <Callout kind="alert" collapsed="false">
-
-Sem o **PDC correto** daquele caixa, a instalação não conclui. Confirme esse número antes de iniciar.
-
+  Sem o **PDC correto** daquele caixa, a instalação não conclui. Confirme esse número antes de iniciar.
 </Callout>
 
 ## Instalar, configurar e cadastrar o TEF PayGo
@@ -78,173 +61,109 @@ O processo tem quatro partes. Primeiro você instala o Client PayGo no computado
 
 <Steps>
   <Step title="Instale o Client PayGo no computador" icon="download" title-type="p">
+    O Client PayGo precisa estar instalado mesmo quando a comunicação usa DLL. Ele atualiza a DLL e aplica as rotinas de proteção antifraude.
 
-  O Client PayGo precisa estar instalado mesmo quando a comunicação usa DLL. Ele atualiza a DLL e aplica as rotinas de proteção antifraude.
+    <Callout kind="tip" collapsed="false">
+      Baixe o **Kit de Integração PayGo Windows** sempre pela página oficial da PayGo. Lá você encontra a versão mais recente e as instruções de instalação:
 
-  Instale a versão liberada para o cliente. Como referência, o material técnico usa a versão **5.1.47.2**.
+      [**⬇ Página oficial do Kit PayGo**](https://paygodev.readme.io/docs/kit-de-integra%C3%A7%C3%A3o-2)
 
-  <Image
-    src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/tef-paygo/imagens-tratadas/03-paygo-chave.png"
-    width="800"
-    height="450"
-    alt="Tela do Client PayGo com seleção de chave no canto superior direito"
-    caption="Chave no Client PayGo"
-  />
+      Após descompactar o arquivo, execute o instalador do PayGo.
+    </Callout>
 
-  Depois de abrir o Client PayGo, selecione a **chave** no canto superior direito.
+    A página também oferece uma **versão alternativa sem a camada de proteção Warsaw**, para casos de incompatibilidade de antivírus ou ambiente restrito. Esta versão não tem proteção contra o vírus Prilex — use apenas quando a versão padrão não funcionar.
 
-  <Image
-    src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/tef-paygo/imagens-tratadas/04-paygo-cnpj-pdc.png"
-    width="800"
-    height="450"
-    alt="Tela do Client PayGo com campos de CNPJ e PDC preenchidos"
-    caption="CNPJ e PDC"
-  />
+    <Callout kind="info" collapsed="false">
+      O PayGo Windows exige no mínimo **Windows 7**. Para solicitar integração ou suporte direto com a PayGo, use o [portal de atendimento da PayGo](https://dev.proj.setis.com.br/servicedesk/customer/portal/16).
+    </Callout>
 
-  Informe:
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/tef-paygo/imagens-tratadas/03-paygo-chave.png" width="800" height="450" alt="Tela do Client PayGo com seleção de chave no canto superior direito" caption="Chave no Client PayGo" />
 
-  - **CNPJ do cliente final**
-  - **Ponto de captura**, também chamado de **N. Checkout** ou **PDC**
+    Depois de abrir o Client PayGo, selecione a **chave** no canto superior direito.
 
-  Se os dados estiverem corretos, o Client PayGo reconhece o caixa que será configurado.
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/tef-paygo/imagens-tratadas/04-paygo-cnpj-pdc.png" width="800" height="450" alt="Tela do Client PayGo com campos de CNPJ e PDC preenchidos" caption="CNPJ e PDC" />
 
+    Informe:
+
+    - **CNPJ do cliente final**
+    - **Ponto de captura**, também chamado de **N. Checkout** ou **PDC**
+
+    Se os dados estiverem corretos, o Client PayGo reconhece o caixa que será configurado.
   </Step>
 
   <Step title="Faça a configuração técnica no menu Administrativo" icon="settings" title-type="p">
+    Agora configure o ponto de captura e o servidor de comunicação dentro do menu Administrativo do TEF.
 
-  Agora configure o ponto de captura e o servidor de comunicação dentro do menu Administrativo do TEF.
+    No Client PayGo, abra **CONFIGURAÇÃO → Menu Administrativo TEF → Configuração**.
 
-  No Client PayGo, abra **CONFIGURAÇÃO → Menu Administrativo TEF → Configuração**.
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/tef-paygo/imagens-tratadas/05-adm-configuracao.png" width="800" height="450" alt="Tela do menu Administrativo na opção Configuração do TEF" caption="ADM → Configuração" />
 
-  <Image
-    src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/tef-paygo/imagens-tratadas/05-adm-configuracao.png"
-    width="800"
-    height="450"
-    alt="Tela do menu Administrativo na opção Configuração do TEF"
-    caption="ADM → Configuração"
-  />
+    Digite a senha técnica quando o sistema solicitar.
 
-  Digite a senha técnica quando o sistema solicitar.
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/tef-paygo/imagens-tratadas/06-senha-tecnica.png" width="800" height="450" alt="Tela de digitação da senha técnica do PayGo" caption="Senha técnica" />
 
-  <Image
-    src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/tef-paygo/imagens-tratadas/06-senha-tecnica.png"
-    width="800"
-    height="450"
-    alt="Tela de digitação da senha técnica do PayGo"
-    caption="Senha técnica"
-  />
+    Use a senha:
 
-  Use a senha:
+    - **Senha técnica:** `314159`
 
-  - **Senha técnica:** `314159`
+    Em seguida, informe o PDC do caixa.
 
-  Em seguida, informe o PDC do caixa.
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/tef-paygo/imagens-tratadas/07-id-ponto-captura.png" width="800" height="450" alt="Tela de configuração com o campo ID do ponto de captura" caption="ID ponto de captura" />
 
-  <Image
-    src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/tef-paygo/imagens-tratadas/07-id-ponto-captura.png"
-    width="800"
-    height="450"
-    alt="Tela de configuração com o campo ID do ponto de captura"
-    caption="ID ponto de captura"
-  />
+    No campo de servidor, informe o ambiente correto.
 
-  No campo de servidor, informe o ambiente correto.
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/tef-paygo/imagens-tratadas/08-ip-servidor.png" width="800" height="450" alt="Tela de configuração com o campo de IP ou nome do servidor preenchido" caption="IP servidor" />
 
-  <Image
-    src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/tef-paygo/imagens-tratadas/08-ip-servidor.png"
-    width="800"
-    height="450"
-    alt="Tela de configuração com o campo de IP ou nome do servidor preenchido"
-    caption="IP servidor"
-  />
+    Use um destes endereços:
 
-  Use um destes endereços:
+    - **Produção:** `pos-transac.pgweb.io:31735`
+    - **Homologação:** `pos-transac-sb.tpgweb.io:31735`
 
-  - **Produção:** `pos-transac.pgweb.io:31735`
-  - **Homologação:** `pos-transac-sb.tpgweb.io:31735`
-
-  Aguarde alguns segundos após confirmar. Se a tela avançar sem erro, a configuração técnica foi aceita.
-
+    Aguarde alguns segundos após confirmar. Se a tela avançar sem erro, a configuração técnica foi aceita.
   </Step>
 
   <Step title="Execute a instalação no Administrativo" icon="play-circle" title-type="p">
+    Depois da configuração, rode a instalação do TEF para vincular o PDC ao CNPJ do cliente.
 
-  Depois da configuração, rode a instalação do TEF para vincular o PDC ao CNPJ do cliente.
+    No Client PayGo, abra **INSTALAÇÃO → Menu Administrativo TEF → Instalação**.
 
-  No Client PayGo, abra **INSTALAÇÃO → Menu Administrativo TEF → Instalação**.
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/tef-paygo/imagens-tratadas/09-adm-instalacao.png" width="800" height="450" alt="Tela do menu Administrativo na opção Instalação do TEF" caption="ADM → Instalação" />
 
-  <Image
-    src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/tef-paygo/imagens-tratadas/09-adm-instalacao.png"
-    width="800"
-    height="450"
-    alt="Tela do menu Administrativo na opção Instalação do TEF"
-    caption="ADM → Instalação"
-  />
+    Digite novamente a senha técnica.
 
-  Digite novamente a senha técnica.
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/tef-paygo/imagens-tratadas/10-senha-instalacao.png" width="800" height="450" alt="Tela de senha durante a etapa de instalação do PayGo" caption="Senha na instalação" />
 
-  <Image
-    src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/tef-paygo/imagens-tratadas/10-senha-instalacao.png"
-    width="800"
-    height="450"
-    alt="Tela de senha durante a etapa de instalação do PayGo"
-    caption="Senha na instalação"
-  />
+    Informe o **CNPJ do cliente**.
 
-  Informe o **CNPJ do cliente**.
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/tef-paygo/imagens-tratadas/11-cnpj-cliente.png" width="800" height="450" alt="Tela de instalação com o campo de CNPJ do cliente" caption="CNPJ" />
 
-  <Image
-    src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/tef-paygo/imagens-tratadas/11-cnpj-cliente.png"
-    width="800"
-    height="450"
-    alt="Tela de instalação com o campo de CNPJ do cliente"
-    caption="CNPJ"
-  />
+    Aguarde o processamento até o fim. A mensagem **TRANSACAO AUTORIZADA** e a emissão do comprovante com as redes confirmam que o terminal está apto para uso.
 
-  Aguarde o processamento até o fim. A mensagem **TRANSACAO AUTORIZADA** e a emissão do comprovante com as redes confirmam que o terminal está apto para uso.
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/tef-paygo/imagens-tratadas/12-instalacao-ok.png" width="800" height="450" alt="Tela final da instalação do PayGo com confirmação de sucesso" caption="Instalação OK" />
 
-  <Image
-    src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/tef-paygo/imagens-tratadas/12-instalacao-ok.png"
-    width="800"
-    height="450"
-    alt="Tela final da instalação do PayGo com confirmação de sucesso"
-    caption="Instalação OK"
-  />
-
-  Se você chegou nessa confirmação, a parte técnica do PayGo está concluída.
-
+    Se você chegou nessa confirmação, a parte técnica do PayGo está concluída.
   </Step>
 
   <Step title="Cadastre o TEF PayGo no BeeFood" icon="check-circle" title-type="p">
+    Com o Client PayGo já instalado e validado, faça o cadastro no BeeFood web.
 
-  Com o Client PayGo já instalado e validado, faça o cadastro no BeeFood web.
+    Vá em **Configuração → TEF** e clique em **Novo TEF PayGo (F2)**.
 
-  Vá em **Configuração → TEF** e clique em **Novo TEF PayGo (F2)**.
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/tef-paygo/imagens-tratadas/15-beefood-lista-tef.png" width="800" height="450" alt="Tela de configuração de TEF no BeeFood com a opção Novo TEF PayGo" caption="Novo TEF PayGo (F2)" />
 
-  <Image
-    src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/tef-paygo/imagens-tratadas/15-beefood-lista-tef.png"
-    width="800"
-    height="450"
-    alt="Tela de configuração de TEF no BeeFood com a opção Novo TEF PayGo"
-    caption="Novo TEF PayGo (F2)"
-  />
+    Preencha os campos do modal conforme a tabela:
 
-  Preencha os campos do modal conforme a tabela:
+    | Campo           | O que informar                                              |
+    | --------------- | ----------------------------------------------------------- |
+    | **Título**      | Use o código PDC no título, por exemplo: `PayGo PDC 12345`  |
+    | **Vias**        | Escolha via consumidor, via estabelecimento ou via reduzida |
+    | **SALVAR (F2)** | Grava o cadastro                                            |
 
-  | Campo | O que informar |
-  |------|-----------------|
-  | **Título** | Use o código PDC no título, por exemplo: `PayGo PDC 12345` |
-  | **Vias** | Escolha via consumidor, via estabelecimento ou via reduzida |
-  | **SALVAR (F2)** | Grava o cadastro |
+    O botão de salvar conclui o cadastro do TEF no BeeFood. Depois disso, o recebimento com cartão passa a usar o terminal configurado naquele caixa.
 
-  O botão de salvar conclui o cadastro do TEF no BeeFood. Depois disso, o recebimento com cartão passa a usar o terminal configurado naquele caixa.
-
-  <Callout kind="info" collapsed="false">
-
-  No cadastro do BeeFood para PayGo, **não existem** os campos **StoneCode** e **Porta PinPad**. Se você estiver procurando esses campos, está no fluxo errado.
-
-  </Callout>
-
+    <Callout kind="info" collapsed="false">
+      No cadastro do BeeFood para PayGo, **não existem** os campos **StoneCode** e **Porta PinPad**. Se você estiver procurando esses campos, está no fluxo errado.
+    </Callout>
   </Step>
 </Steps>
 
@@ -252,25 +171,17 @@ O processo tem quatro partes. Primeiro você instala o Client PayGo no computado
 
 A maioria dos problemas aparece quando o BeeFood tenta disparar o TEF no recebimento do cartão. Comece pelos sintomas abaixo.
 
-| Sintoma | O que fazer |
-|---------|--------------|
-| **Sistema trava e o TEF não funciona** | Reinicie o computador e teste novamente. |
-| **ERRO DE AUTENTICACAO DO PONTO DE CAPTURA** | Faça reset do PDC e refaça a configuração e a instalação técnica. |
+| Sintoma                                       | O que fazer                                                                               |
+| --------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| **Sistema trava e o TEF não funciona**        | Reinicie o computador e teste novamente.                                                  |
+| **ERRO DE AUTENTICACAO DO PONTO DE CAPTURA**  | Faça reset do PDC e refaça a configuração e a instalação técnica.                         |
 | **Botão de cadastro desabilitado no BeeFood** | Verifique se a quantidade contratada no card **Aplicativos → TEF PayGo** está disponível. |
-| **Mesmo terminal em dois caixas** | Confira se cada caixa está usando o seu próprio PDC. |
+| **Mesmo terminal em dois caixas**             | Confira se cada caixa está usando o seu próprio PDC.                                      |
 
-<Image
-  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/tef-paygo/imagens-tratadas/13-erro-autenticacao.png"
-  width="800"
-  height="450"
-  alt="Tela com erro de autenticação do ponto de captura no TEF PayGo"
-  caption="Erro de autenticação"
-/>
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/tef-paygo/imagens-tratadas/13-erro-autenticacao.png" width="800" height="450" alt="Tela com erro de autenticação do ponto de captura no TEF PayGo" caption="Erro de autenticação" />
 
 <Callout kind="alert" collapsed="false">
-
-Se aparecer **ERRO DE AUTENTICACAO DO PONTO DE CAPTURA**, faça um **reset para reinstalação** antes de repetir o processo. Sem o reset, a reinstalação pode falhar de novo.
-
+  Se aparecer **ERRO DE AUTENTICACAO DO PONTO DE CAPTURA**, faça um **reset para reinstalação** antes de repetir o processo. Sem o reset, a reinstalação pode falhar de novo.
 </Callout>
 
 Para pedir o reset, use o **Discord do Projeto ACBr**, no canal **ACBR TEF**, grupo **tef-produção**. Se você não tiver acesso, peça ao suporte BeeFood informando:
@@ -281,13 +192,7 @@ Para pedir o reset, use o **Discord do Projeto ACBr**, no canal **ACBR TEF**, gr
 
 Depois que o ACBr confirmar o reset, repita as etapas de **Configuração** e **Instalação** do Client PayGo.
 
-<Image
-  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/tef-paygo/imagens-tratadas/14-reset-acbr.png"
-  width="800"
-  height="450"
-  alt="Exemplo de solicitação de reset no canal do ACBr para reinstalação do PDC"
-  caption="Reset ACBr"
-/>
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/tef-paygo/imagens-tratadas/14-reset-acbr.png" width="800" height="450" alt="Exemplo de solicitação de reset no canal do ACBr para reinstalação do PDC" caption="Reset ACBr" />
 
 ## Troca do pinpad
 
@@ -295,69 +200,55 @@ Quando o pinpad for trocado, libere a nova instalação antes de tentar reconfig
 
 <Steps>
   <Step title="Peça a liberação da instalação" icon="help-circle" title-type="p">
+    Com o **PDC da TEF trocada**, peça no canal TEF do ACBr a liberação da instalação informando:
 
-  Com o **PDC da TEF trocada**, peça no canal TEF do ACBr a liberação da instalação informando:
-
-  - **CNPJ**
-  - **PDC**
-
+    - **CNPJ**
+    - **PDC**
   </Step>
 
   <Step title="Apague a pasta TEF do sistema" icon="trash" title-type="p">
-
-  Exclua a pasta TEF dos arquivos do sistema antes de abrir o BeeFood novamente.
-
+    Exclua a pasta TEF dos arquivos do sistema antes de abrir o BeeFood novamente.
   </Step>
 
   <Step title="Rode as rotinas administrativas" icon="settings" title-type="p">
+    Abra o sistema e execute:
 
-  Abra o sistema e execute:
+    - **ADM → Manutenção**
+    - **ADM → Instalação**
 
-  - **ADM → Manutenção**
-  - **ADM → Instalação**
-
-  Depois disso, teste uma transação no caixa.
-
+    Depois disso, teste uma transação no caixa.
   </Step>
 </Steps>
 
 ## Perguntas frequentes
 
 <ExpandableGroup>
+  <Expandable title="Onde eu baixo o Client PayGo?" default-open="false">
+    Baixe o Kit de Integração PayGo Windows diretamente no [site oficial da PayGo](https://paygodev.readme.io/docs/kit-de-integra%C3%A7%C3%A3o-2). Lá você sempre encontra a versão mais recente e também a versão alternativa sem Warsaw para casos de incompatibilidade de antivírus.
+  </Expandable>
+
   <Expandable title="O Client PayGo é obrigatório mesmo usando DLL?" default-open="false">
-
-  Sim. O Client PayGo continua obrigatório porque ele atualiza a DLL e aplica os mecanismos de proteção antifraude.
-
+    Sim. O Client PayGo continua obrigatório porque ele atualiza a DLL e aplica os mecanismos de proteção antifraude.
   </Expandable>
 
   <Expandable title="Onde eu contrato o PayGo e onde eu cadastro no sistema?" default-open="false">
-
-  A contratação de quantidade fica no card **Aplicativos → TEF PayGo**. O cadastro que integra o caixa fica em **Configuração → TEF → Novo TEF PayGo (F2)**.
-
+    A contratação de quantidade fica no card **Aplicativos → TEF PayGo**. O cadastro que integra o caixa fica em **Configuração → TEF → Novo TEF PayGo (F2)**.
   </Expandable>
 
   <Expandable title="O que é PDC?" default-open="false">
-
-  PDC é o **ponto de captura** do caixa. Ele identifica cada checkout de forma única no processo de instalação do PayGo.
-
+    PDC é o **ponto de captura** do caixa. Ele identifica cada checkout de forma única no processo de instalação do PayGo.
   </Expandable>
 
   <Expandable title="Posso usar o mesmo PDC em dois caixas?" default-open="false">
-
-  Não. Cada caixa precisa do seu próprio PDC.
-
+    Não. Cada caixa precisa do seu próprio PDC.
   </Expandable>
 
   <Expandable title="Qual servidor devo usar?" default-open="false">
-
-  Use `pos-transac.pgweb.io:31735` em produção e `pos-transac-sb.tpgweb.io:31735` em homologação.
-
+    Use `pos-transac.pgweb.io:31735` em produção e `pos-transac-sb.tpgweb.io:31735` em homologação.
   </Expandable>
 
   <Expandable title="Quais campos eu preencho no BeeFood para o PayGo?" default-open="false">
-
-  Preencha apenas **Título** e **Vias**. O PayGo não usa **StoneCode** nem **Porta PinPad** no modal do BeeFood.
-
+    Preencha apenas **Título** e **Vias**. O PayGo não usa **StoneCode** nem **Porta PinPad** no modal do BeeFood.
   </Expandable>
 </ExpandableGroup>
 

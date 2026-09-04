@@ -1,0 +1,350 @@
+---
+title: Cadastrar forma de recebimento
+description: Cadastre dinheiro, cartões, PIX e vales e defina onde cada forma aparece no Delivery, no Presencial e no Cardápio Digital.
+---
+
+Cadastre as formas de recebimento da sua loja e ligue cada uma aos canais em que ela deve aparecer: Delivery, Presencial, PDV, mesa e comanda.
+
+## Antes de começar: três telas parecidas
+
+Antes de cadastrar, identifique qual tela atende à sua necessidade:
+
+| Tela | Onde fica | Para que serve |
+| --- | --- | --- |
+| Formas de Recebimento | **Cadastros > Formas Recebimento** | Define as formas usadas nas vendas do PDV, mesa, comanda e Delivery. |
+| Formas Recebimento do cardápio | **Cardápio Digital > Formas Recebimento** | Define as formas que o cliente vê na sacola do cardápio digital. |
+| Formas Pagamento do financeiro | **Financeiro > Formas Pagamento** | Controla contas a pagar e a receber. Não altera as formas usadas nas vendas. |
+
+A regra é: quem recebe configura em **Cadastros**; quem o cliente escolhe configura no **Cardápio Digital**; quem paga ou recebe contas consulta no **Financeiro**.
+
+## Onde fica
+
+No menu lateral, clique em **Cadastros** e depois em **Formas Recebimento**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/formas-recebimento/imagens-tratadas/01-menu-cadastros.png" width="800" alt="Menu lateral com as opções Cadastros e Formas Recebimento" caption="Menu lateral: Cadastros e Formas Recebimento" />
+
+## A tela: é aqui que se liga o canal
+
+Cada forma aparece em uma linha. Use os interruptores para decidir se ela fica ativa e em quais canais estará disponível.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/formas-recebimento/imagens-tratadas/02-listagem.png" width="800" alt="Listagem de formas de recebimento com os switches Ativo, Delivery e Presencial" caption="A listagem com os switches Ativo, Delivery e Presencial" />
+
+| Nº | Campo | O que fazer |
+| ---: | --- | --- |
+| 1 | Nova Forma (F1) | Cadastra uma nova forma de recebimento. |
+| 2 | Filtro de usuário | Filtra entre todas as formas, formas sem usuário ou formas vinculadas a um usuário. |
+| 3 | Ativo | Desligue para ocultar a forma de todos os canais. |
+| 4 | Delivery | Ligue para mostrar a forma nos pedidos de Delivery no painel. |
+| 5 | Presencial | Ligue para mostrar a forma no PDV, nas mesas e nas comandas. |
+
+### Onde você quer receber
+
+| Onde você quer receber | Switch que deve ser ligado |
+| --- | --- |
+| PDV, no balcão | Presencial |
+| Mesa e comanda | Presencial |
+| Pedido de Delivery | Delivery |
+| Sacola do Cardápio Digital | Cadastre também em **Cardápio Digital > Formas Recebimento** |
+
+<Callout kind="alert" collapsed="false">
+
+Não existe switch **PDV**. O PDV, as mesas e as comandas fazem parte do canal **Presencial**.
+
+</Callout>
+
+<Callout kind="info" collapsed="false">
+
+As formas de integração, como BeeFood e Mercado Pago, são criadas pelo sistema e não podem ser editadas.
+
+</Callout>
+
+## Cadastrar uma forma
+
+Clique em **Nova Forma (F1)** para abrir o cadastro.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/formas-recebimento/imagens-tratadas/03-nova-forma.png" width="800" alt="Tela Nova Forma na aba Configuração" caption="O cadastro, aba Configuração" />
+
+| Nº | Campo | O que fazer |
+| ---: | --- | --- |
+| 1 | Título | Informe o nome que o operador verá. Seja específico, como `Vale Refeição Sodexo`. |
+| 2 | Tipo | Selecione o tipo que representa a forma de recebimento. |
+| 3 | Delivery/Retirada | Ligue para disponibilizar a forma no canal Delivery. |
+| 4 | Presencial | Ligue para disponibilizar a forma no PDV, nas mesas e nas comandas. |
+| 5 | Abas do cadastro | Use **Configuração**, **Taxas e Bandeiras** e **TEF** conforme o tipo escolhido. |
+| 6 | Salvar e sair (F2) | Grava a forma e fecha o cadastro. |
+
+Na aba **Configuração**, você também encontra **Ativo**, **Aplicativo Garçom**, **Ordem** e **Usuário Vinculado**.
+
+### Os tipos disponíveis
+
+Escolha o tipo de acordo com a forma como a loja recebe o valor:
+
+| Tipo | Quando usar | Tem aba de taxas? |
+| --- | --- | --- |
+| Dinheiro | Recebimento em espécie. | Não |
+| Cartão de Crédito | Crédito recebido pela maquininha. | Sim |
+| Cartão de Débito | Débito recebido pela maquininha. | Sim |
+| Crédito Loja | Crédito concedido pela própria loja. | Sim |
+| Vale Alimentação | Recebimento de vale-alimentação. | Sim |
+| Vale Refeição | Recebimento de vale-refeição. | Sim |
+| Carteira Digital (PIX) | PIX recebido pela maquininha. | Sim |
+| PIX Online | PIX integrado ao BeeFood. | Não |
+| Fiado | Venda para pagamento posterior. | Não |
+| Outros | Formas que não se encaixam nos tipos anteriores. | Sim |
+
+### Desconto ou acréscimo na forma
+
+Use o ajuste para aplicar um desconto ou acréscimo sobre o subtotal dos produtos.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/formas-recebimento/imagens-tratadas/04-ajuste-pagamento.png" width="800" alt="Opções de ajuste no pagamento de uma forma de recebimento" caption="As cinco opções de Ajuste no pagamento" />
+
+| Nº | Opção | O que acontece |
+| ---: | --- | --- |
+| 1 | Sem ajuste | Não aplica desconto nem acréscimo. |
+| 2 | Desconto em % | Desconta um percentual do subtotal dos produtos. |
+| 3 | Desconto R$ | Desconta um valor fixo do subtotal dos produtos. |
+| 4 | Acréscimo em % | Acrescenta um percentual ao subtotal dos produtos. |
+| 5 | Acréscimo R$ | Acrescenta um valor fixo ao subtotal dos produtos. |
+
+Selecione uma opção e informe o valor no campo que aparece. O ajuste altera o valor no momento do pagamento, não a taxa contratada com a adquirente.
+
+## Aba Taxas e Bandeiras
+
+Use esta aba para registrar as condições do contrato com a adquirente: o desconto aplicado sobre a venda e o prazo para o dinheiro entrar.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/formas-recebimento/imagens-tratadas/05-aba-taxas.png" width="800" alt="Aba Taxas e Bandeiras com taxa, desconto fixo e dias para recebimento" caption="Aba Taxas e Bandeiras: taxa, desconto fixo e dias para recebimento" />
+
+| Nº | Campo | O que fazer |
+| ---: | --- | --- |
+| 1 | Aba Taxas e Bandeiras | Use para cartões, vales, Carteira Digital (PIX) e outros tipos que aceitam taxas. |
+| 2 | Taxa (%) | Informe o percentual descontado pela adquirente. |
+| 3 | Desconto Fixo (R$) | Informe um desconto fixo quando o contrato usar valor em reais. |
+| 4 | Dias para Recebimento | Informe em quantos dias o valor cai. Use `0` para recebimento no mesmo dia. |
+| 5 | Conta Bancária | Selecione a conta relacionada ao recebimento. |
+| 6 | Bandeiras de cartão | Cadastre cada bandeira quando ela tiver uma taxa própria. |
+
+**Taxa (%)** e **Desconto Fixo (R$)** são alternativas. Quando um deles estiver preenchido, o outro fica bloqueado.
+
+A aba não aparece para **Dinheiro**, **Fiado** e **PIX Online**, porque esses tipos não usam esse cadastro de taxas.
+
+<Callout kind="info" collapsed="false">
+
+As taxas e os dias para recebimento ajudam a manter os relatórios de recebimento alinhados com as condições negociadas com a adquirente. Eles não representam um preço cobrado do cliente.
+
+</Callout>
+
+## Aba TEF (Stone/PayGo)
+
+Use a aba **TEF** quando a loja trabalha com uma maquininha integrada ao BeeFood.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/formas-recebimento/imagens-tratadas/06-aba-tef.png" width="800" alt="Aba TEF com as configurações de provedor e vínculo" caption="Aba TEF (Stone/PayGo)" />
+
+| Nº | Campo | O que fazer |
+| ---: | --- | --- |
+| 1 | Aba TEF | Abra para configurar a integração com a maquininha. |
+| 2 | Provedor Padrão | Selecione o provedor usado como padrão. |
+| 3 | TEF Vinculada | Escolha a configuração TEF relacionada à forma. |
+
+Se não houver uma configuração TEF cadastrada, não há nada para preencher nessa aba.
+
+## Conferindo o resultado
+
+Depois de salvar, confirme se a forma está ativa e se os canais corretos estão ligados.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/formas-recebimento/imagens-tratadas/07-forma-criada.png" width="800" alt="Forma de recebimento nova na listagem com Delivery e Presencial ligados" caption="A forma nova na listagem, com os dois canais ligados" />
+
+| Nº | O que conferir | Resultado esperado |
+| ---: | --- | --- |
+| 1 | Forma nova | O título e o tipo aparecem na listagem. |
+| 2 | Canal Delivery | O switch está ligado quando a forma deve aparecer no painel de Delivery. |
+| 3 | Canal Presencial | O switch está ligado quando a forma deve aparecer no PDV, em mesas e comandas. |
+| 4 | Ajuste | Formas com desconto ou acréscimo mostram o valor abaixo do nome. |
+
+Na hora de receber, a forma aparece como opção de pagamento e pode ter um atalho de teclado.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/formas-recebimento/imagens-tratadas/08-pagamento-presencial.png" width="800" alt="Forma de recebimento disponível no pagamento de uma mesa" caption="A forma aparecendo na hora de receber uma mesa" />
+
+| Nº | Teste | Resultado esperado |
+| ---: | --- | --- |
+| 1 | Abra uma mesa ocupada | Acesse a tela de pagamento. |
+| 2 | Verifique as formas | A forma cadastrada aparece entre as opções disponíveis. |
+| 3 | Confira o atalho | A forma pode aparecer com um atalho, como `CTRL+1`, conforme a ordem configurada. |
+
+## Para o cliente ver na sacola: a outra tela
+
+As formas que o cliente escolhe na sacola do Cardápio Digital vêm de uma lista diferente.
+
+No menu, acesse **Cardápio Digital > Formas Recebimento**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/formas-recebimento/imagens-tratadas/09-cardapio-digital-formas.png" width="800" alt="Tela Formas Recebimento do Cardápio Digital" caption="Cardápio Digital - Formas Recebimento: a lista que o cliente vê" />
+
+| Nº | Campo | O que fazer |
+| ---: | --- | --- |
+| 1 | Aba Formas Recebimento | Consulte as formas exibidas ao cliente. |
+| 2 | Adicionar | Cadastre uma nova forma para o Cardápio Digital. |
+| 3 | Delivery e Retirada | Defina em quais canais do cliente a forma estará disponível. |
+
+Ao clicar em **Adicionar**, preencha as informações da forma no modal.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/formas-recebimento/imagens-tratadas/10-cardapio-adicionar.png" width="800" alt="Modal para adicionar forma de recebimento no Cardápio Digital" caption="O modal do cardápio digital, com Vincular a Forma de Pagamento" />
+
+| Campo | O que fazer |
+| --- | --- |
+| Nome | Informe o nome que o cliente verá na sacola. |
+| Vincular a Forma de Pagamento | Aponte para a forma cadastrada em **Cadastros > Formas Recebimento**. |
+| Instruções | Informe orientações para o cliente concluir o pagamento. |
+| Chave PIX | Informe a chave quando a forma usar PIX. |
+| Ajuste | Configure desconto ou acréscimo para essa forma. |
+| Ordem | Defina a posição da forma na lista. |
+| Ativo | Ligue para disponibilizar a forma. |
+| Disponível para Delivery/Retirada | Escolha os canais em que o cliente poderá selecionar a forma. |
+
+<Callout kind="alert" collapsed="false">
+
+O vínculo é opcional, mas faça o vínculo. Sem ele, o pedido pode chegar com uma forma de recebimento que o cadastro da loja não conhece.
+
+</Callout>
+
+### E a terceira tela?
+
+**Financeiro > Formas Pagamento** é outra área. Ela controla formas de contas a pagar e a receber e não altera as formas usadas nas vendas.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/formas-recebimento/imagens-tratadas/11-financeiro-formas.png" width="800" alt="Tela Formas Pagamento do módulo Financeiro" caption="Financeiro - Formas Pagamento, a terceira tela" />
+
+## Exemplo prático: aceitar um vale novo
+
+Use este fluxo para cadastrar um vale-refeição da Sodexo com taxa de 4,5% e recebimento em 30 dias.
+
+<Steps>
+<Step title="Abra o cadastro" icon="settings">
+
+Acesse **Cadastros > Formas Recebimento** e clique em **Nova Forma (F1)**.
+
+</Step>
+
+<Step title="Defina o título e o tipo" icon="edit">
+
+Informe **Vale Refeição Sodexo** no título e selecione **Vale Refeição** no tipo.
+
+</Step>
+
+<Step title="Ligue os canais" icon="check-circle">
+
+Mantenha **Ativo** ligado. Ligue **Delivery** e **Presencial** se a loja aceitar o vale nesses dois canais. Deixe o ajuste como **Sem ajuste**.
+
+</Step>
+
+<Step title="Informe as condições da adquirente" icon="bar-chart">
+
+Abra **Taxas e Bandeiras** e informe `4,5` em **Taxa (%)** e `30` em **Dias para Recebimento**. Cadastre a bandeira Sodexo se ela for necessária para o controle da loja.
+
+</Step>
+
+<Step title="Salve e confira" icon="check">
+
+Clique em **Salvar e sair (F2)**. Confirme na listagem se a forma está ativa e com os canais corretos.
+
+</Step>
+
+<Step title="Teste no pagamento presencial" icon="play-circle">
+
+Abra uma mesa ocupada, clique em **Pagamento** e confirme se **Vale Refeição Sodexo** aparece entre as formas disponíveis.
+
+</Step>
+
+<Step title="Disponibilize no Cardápio Digital" icon="cloud">
+
+Acesse **Cardápio Digital > Formas Recebimento**, clique em **Adicionar**, cadastre a forma e vincule-a ao cadastro criado. Selecione **Delivery** ou **Retirada** conforme a operação da loja.
+
+</Step>
+</Steps>
+
+## Resumo
+
+1. **Cadastros > Formas Recebimento** é o cadastro das formas usadas nas vendas.
+2. **Presencial** inclui PDV, mesa e comanda.
+3. **Delivery** controla a exibição da forma nos pedidos de Delivery no painel.
+4. Não existe switch **PDV**: use o switch **Presencial**.
+5. O tipo escolhido define se a forma terá a aba **Taxas e Bandeiras**.
+6. Taxa e dias para recebimento registram as condições da adquirente, enquanto desconto e acréscimo alteram o pagamento sobre o subtotal.
+7. Para o cliente ver a forma na sacola, cadastre-a também em **Cardápio Digital > Formas Recebimento** e faça o vínculo com a forma da venda.
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+<Expandable title="Cadastrei a forma, mas ela não aparece no PDV." default-open="false">
+
+Confira se **Ativo** e **Presencial** estão ligados. Se a forma estiver vinculada a um usuário, confirme também o campo **Usuário Vinculado**.
+
+</Expandable>
+
+<Expandable title="Liguei Delivery, mas o cliente não vê a forma no cardápio." default-open="false">
+
+As telas usam listas diferentes. Cadastre a forma também em **Cardápio Digital > Formas Recebimento** e habilite o canal correto para o cliente.
+
+</Expandable>
+
+<Expandable title="Qual é a diferença entre Delivery no cadastro e Delivery no Cardápio Digital?" default-open="false">
+
+O switch **Delivery** do cadastro controla onde a forma aparece para o operador no painel. A configuração do Cardápio Digital controla o que o cliente pode escolher na sacola.
+
+</Expandable>
+
+<Expandable title="Não consigo abrir a aba Taxas e Bandeiras." default-open="false">
+
+O tipo escolhido não usa essa aba. **Dinheiro**, **Fiado** e **PIX Online** não têm cadastro de taxas.
+
+</Expandable>
+
+<Expandable title="Preenchi Taxa, mas o Desconto Fixo ficou bloqueado." default-open="false">
+
+**Taxa (%)** e **Desconto Fixo (R$)** são alternativas. Zere o campo preenchido para liberar o outro.
+
+</Expandable>
+
+<Expandable title="Como aplico 5% de desconto no PIX?" default-open="false">
+
+Selecione **Desconto em %** no ajuste e informe `5`. Se o cliente também usar o Cardápio Digital, repita o ajuste no cadastro da forma nessa tela.
+
+</Expandable>
+
+<Expandable title="Não consigo editar o PIX Online." default-open="false">
+
+O **PIX Online** é uma forma de integração criada pelo sistema e não pode ser editada.
+
+</Expandable>
+
+<Expandable title="Como altero a ordem das formas?" default-open="false">
+
+Arraste a linha na listagem ou preencha o campo **Ordem** no cadastro.
+
+</Expandable>
+
+<Expandable title="Para que serve o Usuário Vinculado?" default-open="false">
+
+Use o vínculo para separar recebimentos por operador ou caixa.
+
+</Expandable>
+
+<Expandable title="Posso excluir uma forma de recebimento?" default-open="false">
+
+Não há exclusão da forma. Desligue o switch **Ativo** para deixar de exibi-la nos canais.
+
+</Expandable>
+</ExpandableGroup>
+
+## Manuais relacionados
+
+<Columns cols={3}>
+<Card title="Taxas das formas de recebimento" href="/taxas-formas-pagamento" icon="bar-chart" />
+
+<Card title="Desconto e acréscimo nas formas" href="/cardapio-digital-desconto-formas" icon="settings" />
+
+<Card title="Cadastrar mesas" href="/cadastro-mesas" icon="users" />
+
+<Card title="Cadastrar comandas" href="/cadastro-comandas" icon="clipboard" />
+
+<Card title="TEF Stone" href="/tef-stone" icon="credit-card" />
+
+<Card title="TEF PayGo" href="/tef-paygo" icon="credit-card" />
+</Columns>
