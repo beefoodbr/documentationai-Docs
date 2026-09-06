@@ -187,6 +187,14 @@
                   {
                     "title": "📱 Presencial QRCode",
                     "path": "cardapio-digital-presencial-qrcode"
+                  },
+                  {
+                    "title": "💰 Configurar Cashback",
+                    "path": "cashback-configurar"
+                  },
+                  {
+                    "title": "📲 Operar Cashback",
+                    "path": "cashback-operar"
                   }
                 ]
               },
@@ -367,6 +375,10 @@
                   {
                     "title": "📣 Campanhas de WhatsApp",
                     "path": "campanhas-whatsapp"
+                  },
+                  {
+                    "title": "🤖 Campanhas Inteligentes WhatsApp",
+                    "path": "campanhas-inteligentes-whatsapp"
                   },
                   {
                     "title": "📈 Indicadores do WhatsApp",
