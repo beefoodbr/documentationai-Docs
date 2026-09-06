@@ -345,16 +345,40 @@
                 "group": "💬 WhatsApp",
                 "pages": [
                   {
+                    "title": "🔗 Conectar o WhatsApp",
+                    "path": "whatsapp-conectar"
+                  },
+                  {
+                    "title": "🤝 Atendimento no BeeBot",
+                    "path": "whatsapp-atendimento-beebot"
+                  },
+                  {
+                    "title": "🛒 Pedidos pelo chat no WhatsApp",
+                    "path": "whatsapp-pedidos-chat"
+                  },
+                  {
+                    "title": "🔔 Notificações do WhatsApp",
+                    "path": "whatsapp-notificacoes"
+                  },
+                  {
+                    "title": "💬 Respostas do WhatsApp",
+                    "path": "whatsapp-respostas"
+                  },
+                  {
+                    "title": "📣 Campanhas de WhatsApp",
+                    "path": "campanhas-whatsapp"
+                  },
+                  {
+                    "title": "📈 Indicadores do WhatsApp",
+                    "path": "whatsapp-indicadores"
+                  },
+                  {
+                    "title": "📋 Histórico do WhatsApp",
+                    "path": "whatsapp-historico"
+                  },
+                  {
                     "title": "🤖 Bot de WhatsApp",
                     "path": "whatsapp"
-                  },
-                  {
-                    "title": "💬 Pedidos pelo chat no WhatsApp",
-                    "path": "manuais/whatsapp-pedidos-chat"
-                  },
-                  {
-                    "title": "🔔 Notificações de cada etapa do pedido",
-                    "path": "manuais/whatsapp-notificacoes"
                   },
                   {
                     "title": "📬 Boletim do WhatsApp",
