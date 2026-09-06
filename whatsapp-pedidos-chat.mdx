@@ -1,0 +1,293 @@
+---
+title: 🛒 Pedidos pelo chat no WhatsApp
+description: >-
+  Configura o Pedido Chat no BeeBot e veja como o cliente monta o pedido
+  completo pelo WhatsApp — do setor ao pagamento, sem abrir o cardápio digital.
+---
+
+## 🛒 Pedidos pelo chat no WhatsApp
+
+O cliente manda mensagem para o **WhatsApp da loja** e o **BeeBot** monta o pedido sozinho: setor, produto, grupos de opção, quantidade, entrega ou retirada, pagamento e confirmação. Com o **Pedido Chat** ligado, o cliente não precisa abrir o cardápio digital.
+
+## O que é Pedido Chat
+
+O **Pedido Chat** transforma a conversa do WhatsApp em um pedido de verdade. O bot lista as opções, o cliente responde com o número da opção ou digita o nome do produto, e o bot mostra o resumo para confirmação.
+
+A função atende pedidos para **delivery** e **retirada**. Preços, descontos, acréscimos de pagamento, taxa de entrega, formas de pagamento e área de entrega vêm do mesmo cadastro usado no cardápio digital. O Pedido Chat não mantém um cardápio separado.
+
+O Pedido Chat não é a mesma coisa que a **IA do ChatGPT**:
+
+- **IA do ChatGPT:** responde perguntas em texto livre, como “vocês têm Coca Zero?” ou “qual é o horário de atendimento?”.
+- **Pedido Chat:** conduz a venda, registra produtos e complementos, coleta entrega ou retirada, recebe a forma de pagamento e envia o pedido para o Delivery.
+
+As duas funções têm interruptores diferentes e podem ficar ligadas ao mesmo tempo.
+
+## Antes de começar
+
+<Callout kind="info">
+
+Antes de ativar o Pedido Chat, confirme estes requisitos:
+
+- **BeeBot contratado** na loja.
+- **Acesso ao menu WhatsApp** no BeeFood ou ao endereço `bot.beefood.com.br`.
+- **Cardápio cadastrado**, incluindo produtos, grupos de opção, formas de pagamento e área de entrega ou retirada.
+- **WhatsApp da loja conectado** para que o cliente receba e envie mensagens.
+
+</Callout>
+
+Você consegue ligar o Pedido Chat mesmo com o WhatsApp desconectado, mas o cliente só conversa com o bot depois que o número estiver conectado.
+
+## Abrir o BeeBot
+
+Abra o painel pelo BeeFood ou entre diretamente no endereço do BeeBot.
+
+<Steps>
+  <Step title="Passo 1. Abrir o painel pelo BeeFood" title-type="h3">
+
+No BeeFood, abra **WhatsApp**, entre na aba **Conexão** e clique em **Abrir Conversas WhatsApp**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/whatsapp-pedidos-chat/imagens-tratadas/01-beefood-whatsapp.png" width="800" height="450" alt="Tela de WhatsApp no BeeFood" caption="Aba Conexão e botão Abrir Conversas WhatsApp" />
+
+| Nº | Item | O que faz |
+|---|---|---|
+| 1 | **Conexão** | Mostra o status do número do WhatsApp. |
+| 2 | **Abrir Conversas WhatsApp** | Abre o painel do BeeBot em uma nova aba. |
+
+O botão verde **Conectar** dessa tela tem outra função: ele gera o QR Code para conectar o número. O Pedido Chat fica dentro do painel do BeeBot.
+
+  </Step>
+
+  <Step title="Passo 2. Entrar diretamente no BeeBot" title-type="h3">
+
+Também é possível acessar diretamente `bot.beefood.com.br`. Use o mesmo usuário e senha do BeeFood.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/whatsapp-pedidos-chat/imagens-tratadas/02-login-bot.png" width="800" height="450" alt="Tela de login do BeeBot" caption="Login no painel do BeeBot" />
+
+Depois do login, você verá a coluna de interruptores da loja e a lista de conversas do WhatsApp.
+
+  </Step>
+</Steps>
+
+## Ativar o Pedido Chat
+
+No painel do BeeBot, localize a coluna de interruptores à esquerda e ligue **Pedido Chat**. O sistema salva a alteração imediatamente e mostra a mensagem *Pedido via Chat ativado com sucesso.*
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/whatsapp-pedidos-chat/imagens-tratadas/03-pedido-chat.png" width="800" height="450" alt="Interruptor Pedido Chat ativado no BeeBot" caption="Interruptor Pedido Chat ativado no BeeBot" />
+
+| Nº | Item | O que faz |
+|---|---|---|
+| 1 | **Pedido Chat** | Quando está ligado, permite que o bot monte o pedido pela conversa. |
+| 2 | **Outros interruptores** | Controlam funções diferentes, como respostas, campanhas, som de alerta e ChatGPT. |
+
+<Callout kind="alert">
+
+O **Pedido Chat** ligado não conecta o WhatsApp automaticamente. Se o número estiver desconectado, o cliente não receberá as mensagens do bot. O interruptor e a conexão do WhatsApp precisam estar ativos.
+
+</Callout>
+
+## Como o cliente faz o pedido
+
+O cliente inicia a conversa escrevendo **fazer pedido** ou uma frase equivalente. O BeeBot apresenta os setores do cardápio, permite escolher pelo número ou buscar um produto pelo nome e conduz o restante do pedido.
+
+<Steps>
+  <Step title="Iniciar o pedido" title-type="h3">
+
+O cliente escreve **fazer pedido**. O bot mostra os setores disponíveis.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/whatsapp-pedidos-chat/imagens-tratadas/04-whatsapp-iniciar.png" width="800" height="450" alt="Cliente iniciando o pedido no WhatsApp" caption="Cliente iniciando o pedido pelo WhatsApp" />
+
+O cliente pode responder com o número de um setor ou digitar o nome de um produto, como “burger”, “coca” ou “pizza”. Quando encontra resultados, o bot mostra os produtos correspondentes.
+
+  </Step>
+
+  <Step title="Escolher o item e finalizar" title-type="h3">
+
+Depois de escolher o produto, o bot pergunta os grupos de opção um por vez. Podem aparecer opções como ponto da carne, bebida, adicional, sabor ou borda, respeitando os mínimos e máximos cadastrados no cardápio.
+
+Em seguida, o cliente informa a quantidade e escolhe uma ação:
+
+- **1:** continuar o pedido e adicionar outro item;
+- **2:** visualizar o pedido atual;
+- **3:** finalizar o pedido.
+
+Na finalização, o bot pergunta se o pedido será entregue ou retirado, solicita localização ou endereço quando necessário, registra a observação, mostra as formas de pagamento e apresenta o resumo.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/whatsapp-pedidos-chat/imagens-tratadas/05-whatsapp-finalizar.png" width="800" height="450" alt="Cliente finalizando o pedido no WhatsApp" caption="Cliente confirmando o pedido no WhatsApp" />
+
+No resumo, o cliente escolhe **1 - Confirmar Pedido**. Depois da confirmação, o pedido entra no **Delivery** da loja, como um pedido feito pelo cardápio digital.
+
+  </Step>
+</Steps>
+
+A retirada usa o endereço da loja. Na entrega, o endereço precisa estar dentro da área de entrega cadastrada. Se estiver fora da área, o bot oferece retirada ou permite escolher outro tipo de entrega disponível.
+
+## Palavras que o cliente pode escrever
+
+O cliente pode usar estas palavras durante o pedido:
+
+| O que escrever | O que acontece |
+|---|---|
+| **Cancelar** | Sai do pedido atual e cancela o fluxo em andamento. |
+| **Voltar** ou **V** | Volta uma etapa no pedido. |
+| **Ajuda** | Mostra o que já está no carrinho e as ações disponíveis, como setores, finalizar, atendente e cancelar. |
+| **Atendente** | Cancela o pedido em andamento e chama um atendente humano. |
+
+Se o cliente digitar um produto e o bot não encontrar resultados, o bot volta a mostrar os setores do cardápio.
+
+## O que o bot pergunta na ordem
+
+O fluxo segue esta sequência:
+
+1. Setor ou busca de produto.
+2. Produto e confirmação, quando necessário.
+3. Grupos de opção, um por vez.
+4. Observação do item ou a opção **1** para continuar.
+5. Quantidade.
+6. Continuar o pedido, visualizar o carrinho ou finalizar.
+7. Entrega, compartilhamento de localização ou retirada.
+8. Endereço, quando o pedido for para entrega, incluindo bairro ou CEP, número e complemento.
+9. Observação do pedido.
+10. Forma de pagamento.
+11. Resumo do pedido e confirmação.
+
+## Problemas comuns
+
+| Sintoma | O que verificar |
+|---|---|
+| O cliente pede, mas o bot não monta o pedido. | Confirme se o **Pedido Chat** está ligado e se o WhatsApp está conectado. |
+| Não aparece setor ou produto. | Verifique se o item está ativo no cardápio e liberado para o canal Delivery. |
+| O endereço aparece fora da área. | Confira a área de entrega cadastrada para a loja. Fora dela, o cliente só poderá escolher uma opção disponível, como retirada. |
+| A forma de pagamento não aparece. | Ative a forma de pagamento no cardápio digital. O bot usa essa mesma lista. |
+| O pedido não chega ao painel. | Confirme se o cliente escolheu **1 - Confirmar Pedido** no resumo e se o caixa de Delivery está aberto. |
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+  <Expandable title="O cliente pode fazer pedido pelo WhatsApp sem abrir o cardápio?" default-open="false">
+
+Sim. Com o **Pedido Chat** ligado, a conversa substitui o cardápio digital durante o pedido. O bot lista os setores, monta os itens, coleta as informações de entrega ou retirada e pede a confirmação final. O link do cardápio continua disponível para quem preferir usá-lo.
+
+  </Expandable>
+
+  <Expandable title="Como ativar o pedido pelo chat no BeeFood?" default-open="false">
+
+Abra **WhatsApp → Conexão → Abrir Conversas WhatsApp** ou entre diretamente em `bot.beefood.com.br`. No painel do BeeBot, ligue o interruptor **Pedido Chat** na coluna à esquerda.
+
+O botão **Conectar** da tela de Conexão não ativa o Pedido Chat. Esse botão gera o QR Code para conectar o número do WhatsApp.
+
+  </Expandable>
+
+  <Expandable title="Qual é a diferença entre Pedido Chat e a IA do ChatGPT?" default-open="false">
+
+O **Pedido Chat** fecha a venda: escolhe produtos e complementos, coleta endereço ou retirada, registra pagamento e envia o resumo para confirmação.
+
+A **IA do ChatGPT** responde perguntas sobre a loja, como horário de funcionamento, produtos e informações gerais. Cada função tem seu próprio interruptor, e as duas podem ficar ligadas ao mesmo tempo.
+
+  </Expandable>
+
+  <Expandable title="O que o cliente precisa escrever para começar?" default-open="false">
+
+O cliente pode escrever **fazer pedido** ou usar a frase equivalente mostrada pelo bot. Depois, ele responde com o número de uma opção ou digita o nome de um produto para buscar.
+
+  </Expandable>
+
+  <Expandable title="O pedido pelo WhatsApp cai no Delivery igual aos outros?" default-open="false">
+
+Sim. Depois que o cliente escolhe **1 - Confirmar Pedido** no resumo, o pedido entra na fila de **Delivery** do BeeFood, com o mesmo número, impressão e notificações dos pedidos feitos pelo cardápio.
+
+  </Expandable>
+
+  <Expandable title="O Pedido Chat funciona com pizza, hambúrguer, açaí e grupos de opções?" default-open="false">
+
+Sim. O bot usa o cadastro do cardápio. Se o produto tiver grupos de opção, como sabor, ponto da carne, adicional ou borda, o bot apresenta cada grupo conforme os mínimos e máximos cadastrados.
+
+  </Expandable>
+
+  <Expandable title="Dá para pedir entrega e retirada no mesmo bot?" default-open="false">
+
+Sim. Na finalização, o bot pergunta se o cliente quer entrega, compartilhamento de localização ou retirada na loja. A taxa de entrega e a área atendida são as cadastradas para a loja.
+
+  </Expandable>
+
+  <Expandable title="Como o cliente chama um atendente humano?" default-open="false">
+
+O cliente deve escrever **Atendente**. O pedido em andamento é cancelado e a conversa fica disponível para atendimento humano.
+
+A palavra **Ajuda** apenas mostra o carrinho e as ações disponíveis. Ela não chama um atendente.
+
+  </Expandable>
+
+  <Expandable title="O bot cobra o mesmo preço do cardápio digital?" default-open="false">
+
+Sim. Preços, descontos ou acréscimos da forma de pagamento e taxa de entrega vêm do mesmo cadastro do cardápio digital. O WhatsApp não usa uma tabela de preços separada.
+
+  </Expandable>
+
+  <Expandable title="Preciso de WhatsApp Business para usar o Pedido Chat?" default-open="false">
+
+O BeeBot conecta o número da loja pelo QR Code. Para o cliente conversar com o bot, esse número precisa estar conectado ao BeeBot.
+
+  </Expandable>
+
+  <Expandable title="Posso desligar o Pedido Chat e deixar apenas o cardápio?" default-open="false">
+
+Sim. Desligue o interruptor **Pedido Chat** no painel do BeeBot. O WhatsApp continuará disponível para outras funções ativas, como notificações, respostas automáticas e campanhas.
+
+  </Expandable>
+
+  <Expandable title="O cliente pode colocar mais de um produto no mesmo pedido?" default-open="false">
+
+Sim. Depois de adicionar um item, o cliente escolhe **1 - Continuar pedido** para voltar aos setores e adicionar outros produtos. A opção **2 - Visualizar pedido** mostra o que já está no carrinho, e a opção **3 - Finalizar pedido** inicia a etapa de entrega ou retirada.
+
+  </Expandable>
+
+  <Expandable title="O pedido aparece se a loja estiver fechada?" default-open="false">
+
+Quando o cliente chama a loja com o estabelecimento fechado, ele pode receber a mensagem de **Respostas** informando que a loja está fechada e mostrando o horário configurado na grade de atendimento.
+
+  </Expandable>
+
+  <Expandable title="Precisa de PIX Online para pedir pelo WhatsApp?" default-open="false">
+
+Não. O bot lista as formas de pagamento ativas no cardápio digital, como dinheiro, cartão na entrega, PIX com chave e PIX Online, caso a loja tenha essa opção configurada.
+
+  </Expandable>
+
+  <Expandable title="O cliente vê o resumo antes de confirmar?" default-open="false">
+
+Sim. O último passo mostra os itens, o total, o tipo de entrega e a forma de pagamento. O pedido só segue para a loja depois que o cliente escolhe **1 - Confirmar Pedido**.
+
+  </Expandable>
+
+  <Expandable title="O pedido pelo chat usa caixa de Delivery?" default-open="false">
+
+Sim. Como qualquer pedido de Delivery, o pedido feito pelo WhatsApp precisa de um caixa de Delivery aberto para aparecer e seguir o fluxo da loja.
+
+  </Expandable>
+</ExpandableGroup>
+
+## Manuais relacionados
+
+<Columns cols={2}>
+  <Card title="Atender no BeeBot" href="/whatsapp-atendimento-beebot" icon="message-circle" cta="Abrir manual" horizontal="false">
+
+Aprenda a assumir conversas, usar respostas rápidas e montar pedidos manualmente pelo atendimento humano.
+
+  </Card>
+
+  <Card title="Notificações do WhatsApp" href="/whatsapp-notificacoes" icon="bell" cta="Abrir manual" horizontal="false">
+
+Veja como funcionam as mensagens automáticas e as notificações enviadas pelo WhatsApp da loja.
+
+  </Card>
+
+  <Card title="WhatsApp" href="/whatsapp" icon="message-circle" cta="Abrir manual" horizontal="false">
+
+Consulte as configurações gerais de conexão e os recursos de WhatsApp do BeeFood.
+
+  </Card>
+</Columns>
+
+## Precisa de ajuda?
+
+Confira primeiro se o **Pedido Chat** está ligado, se o WhatsApp está conectado e se o produto, a forma de pagamento e a área de entrega estão ativos no cardápio. Se o pedido ainda não aparecer, verifique se o cliente confirmou o resumo e se o caixa de Delivery está aberto.

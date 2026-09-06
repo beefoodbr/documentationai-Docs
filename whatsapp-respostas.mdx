@@ -1,0 +1,145 @@
+---
+title: 💬 Respostas do WhatsApp
+description: >-
+  Configure respostas automáticas por palavras-chave no WhatsApp, edite a mensagem de boas-vindas, o aviso de loja fechada e veja as variáveis disponíveis.
+---
+
+## 💬 Respostas do WhatsApp
+
+Quando o cliente digita uma palavra-chave, como horário, cardápio ou pix, o BeeBot responde automaticamente. Você configura esse recurso em **WhatsApp → Respostas**.
+
+## Onde encontrar
+
+Abra **WhatsApp → Respostas** para consultar as respostas cadastradas, criar novos gatilhos e configurar a mensagem enviada quando a loja estiver fechada.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/whatsapp-respostas/imagens-tratadas/01-lista.png" alt="Lista de respostas automáticas do WhatsApp" width="800" height="450" />
+
+| Nº | Item | O que faz |
+| --- | --- | --- |
+| 1 | Aba **Respostas** | Lista as respostas automáticas da filial. |
+| 2 | **Nova Resposta** | Cria uma nova resposta acionada por palavra-chave. |
+| 3 | **Mensagem de Loja Fechada** | Configura o aviso enviado fora do horário de funcionamento. |
+
+A conta já vem com respostas padrão, como **Boas Vindas**, **Ajuda**, **Atendente**, **Horario** e **PIX**. O ponto verde ao lado da resposta indica que ela está ativa. O selo **Alerta** na resposta **Atendente** faz o BeeBot destacar a conversa para que uma pessoa assuma o atendimento.
+
+## Loja fechada (mensagem do sistema)
+
+A mensagem de loja fechada não depende de palavra-chave. O BeeBot envia o aviso quando o cliente chama a loja enquanto o delivery está fechado, de acordo com a grade semanal e as pausas configuradas.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/whatsapp-respostas/imagens-tratadas/02-loja-fechada.png" alt="Configuração da mensagem automática de loja fechada" width="800" height="450" />
+
+| Nº | Item | O que faz |
+| --- | --- | --- |
+| 1 | **Resposta automática ativa** | Liga ou desliga o aviso de loja fechada. |
+| 2 | **Mensagem principal** | Define o texto enviado quando o cliente chama a loja fechada. |
+| 3 | **Mensagem de agendamento** | Define a mensagem enviada quando a loja aceita encomendas com o cardápio fechado. |
+
+Use estas variáveis nas mensagens:
+
+- **SAUDACAO**: é substituída por Bom dia, Boa tarde ou Boa noite.
+- **MEU_HORARIO**: mostra os horários configurados na grade do cardápio digital.
+
+## Como editar uma resposta
+
+Use a resposta **Boas Vindas** como modelo para editar qualquer resposta cadastrada.
+
+<Steps>
+  <Step title="Editar a resposta Boas Vindas" title-type="p">
+
+Clique no ícone de lápis na linha da resposta **Boas Vindas** e ajuste os campos necessários.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/whatsapp-respostas/imagens-tratadas/03-boas-vindas.png" alt="Edição da resposta automática Boas Vindas" width="800" height="450" />
+
+| Nº | Item | O que faz |
+| --- | --- | --- |
+| 1 | **Título** | Define o nome interno da resposta. O cliente não vê esse título. |
+| 2 | **Ativo / Alerta** | **Ativo** permite o envio automático. **Alerta** destaca a conversa no BeeBot para chamar a atenção de um atendente. |
+| 3 | **Resposta principal** | Define o texto enviado ao cliente. As variáveis **CLIENTE_NOME** e **MEU_LINK** são substituídas quando a mensagem é enviada. |
+
+Na mesma tela, configure as **Palavras-chave**, as **Opções numeradas** e o **Arquivo anexo**, quando necessário. Clique em **SALVAR** ou pressione **F2** para gravar as alterações.
+
+  </Step>
+</Steps>
+
+## Variáveis úteis
+
+Use as variáveis abaixo no texto das respostas. O BeeBot substitui cada variável pelo dado correspondente quando envia a mensagem.
+
+| Variável | Informação inserida |
+| --- | --- |
+| `MEU_LINK` | Link do cardápio digital da loja. |
+| `MEU_LINK_CONSULTA` | Link para consultar informações do pedido. |
+| `MEU_TELEFONE` | Telefone da loja. |
+| `MEU_HORARIO` | Horário de funcionamento configurado no cardápio digital. |
+| `MEU_TEMPO_ENTREGA` | Tempo de entrega informado pela loja. |
+| `MEU_ENDERECO` | Endereço da loja. |
+| `MEU_PIX` | Chave ou informação de pagamento via Pix. |
+| `MEU_FORMA_PAGAMENTO` | Formas de pagamento aceitas pela loja. |
+| `CLIENTE_NOME` | Nome do cliente. |
+| `CLIENTE_CASHBACK` | Saldo ou informação de cashback do cliente. |
+
+## O que o cliente vê
+
+A imagem mostra uma simulação de uma resposta automática enviada pelo WhatsApp. O cliente recebe o texto configurado na resposta e as variáveis são preenchidas com as informações da loja ou do cliente.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/whatsapp-respostas/imagens-tratadas/04-whatsapp-respostas.png" alt="Simulação de resposta automática enviada ao cliente no WhatsApp" width="800" height="450" />
+
+<Callout kind="info" collapsed="false">
+
+**Respostas**, **Pedido Chat** e **IA** são recursos diferentes e têm interruptores próprios:
+
+- **Respostas**: envia mensagens quando o cliente digita uma palavra-chave cadastrada.
+- **Pedido Chat**: conduz o cliente para montar o pedido pelo bot.
+- **IA**: responde a perguntas em texto livre usando o ChatGPT.
+
+Se o cliente estiver no meio de um pedido pelo Pedido Chat, o fluxo do pedido tem prioridade. Fora desse fluxo, as palavras-chave das respostas automáticas são processadas normalmente.
+
+</Callout>
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+  <Expandable title="O cliente digitou horario e nada aconteceu" default-open="false">
+
+Verifique se a palavra está cadastrada na resposta **Horario**, se o interruptor **Resposta** do BeeBot está verde e se o WhatsApp está conectado.
+
+  </Expandable>
+
+  <Expandable title="Posso usar Pedido Chat e resposta automática juntos" default-open="false">
+
+Sim. Quando o cliente está no meio de um pedido pelo Pedido Chat, o fluxo do pedido conduz a conversa. Fora desse fluxo, as respostas automáticas respondem às palavras-chave cadastradas.
+
+  </Expandable>
+
+  <Expandable title="A IA responde no lugar da palavra-chave" default-open="false">
+
+Não. A IA e as respostas automáticas usam interruptores diferentes. A IA atende perguntas fora da lista de palavras-chave, enquanto as respostas automáticas enviam os textos que você cadastrou.
+
+  </Expandable>
+</ExpandableGroup>
+
+## Manuais relacionados
+
+<Columns cols={2}>
+  <Card title="Notificações do WhatsApp" href="/whatsapp-notificacoes" icon="bell" cta="Abrir manual" horizontal="false">
+
+Configure notificações e mensagens enviadas pelo WhatsApp.
+
+  </Card>
+
+  <Card title="Pedido Chat" href="/whatsapp-pedidos-chat" icon="message-circle" cta="Abrir manual" horizontal="false">
+
+Veja como o cliente monta o pedido diretamente na conversa.
+
+  </Card>
+
+  <Card title="IA ChatGPT no WhatsApp" href="/ia-chatgpt-whatsapp" icon="zap" cta="Abrir manual" horizontal="false">
+
+Configure respostas da IA para perguntas em texto livre.
+
+  </Card>
+</Columns>
+
+## Precisa de ajuda?
+
+Confira se a resposta está ativa, se a palavra-chave foi cadastrada corretamente e se o WhatsApp está conectado. Se o comportamento continuar diferente do esperado, envie à equipe de suporte o nome da resposta e um exemplo da mensagem digitada pelo cliente.

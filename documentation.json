@@ -353,6 +353,10 @@
                     "path": "manuais/whatsapp-pedidos-chat"
                   },
                   {
+                    "title": "🔔 Notificações de cada etapa do pedido",
+                    "path": "manuais/whatsapp-notificacoes"
+                  },
+                  {
                     "title": "📬 Boletim do WhatsApp",
                     "path": "whatsapp-boletim"
                   },

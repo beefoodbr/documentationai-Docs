@@ -1,0 +1,122 @@
+---
+title: 🤝 Atendimento no BeeBot
+description: Atenda clientes em tempo real pelo painel do BeeBot com respostas rápidas, assumir conversa e pedido assistido.
+---
+
+## 🤝 Atendimento no BeeBot
+
+O BeeBot é a caixa de entrada do WhatsApp da sua loja: reúne a lista de conversas, os interruptores e o chat. Use o painel para acompanhar clientes, responder mensagens, assumir conversas e montar pedidos com atendimento humano.
+
+## Abrir o painel do BeeBot
+
+No BeeFood, acesse **WhatsApp → Conexão → Abrir Conversas WhatsApp**. Você também pode entrar diretamente em [bot.beefood.com.br](https://bot.beefood.com.br) usando o mesmo login do BeeFood.
+
+<Callout kind="info">
+
+As imagens deste manual mostram uma simulação de atendimento. Os dados da lista de conversas foram ofuscados.
+
+</Callout>
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/whatsapp-atendimento-beebot/imagens-tratadas/01-inbox.png" alt="Inbox de conversas no BeeBot" caption="Inbox de conversas no painel do BeeBot" width="800" height="450" />
+
+| Nº | Item | O que faz |
+| --- | --- | --- |
+| 1 | **Anti Banimento** | Envia campanhas e notificações apenas para contatos que falaram com a loja há pouco tempo. |
+| 2 | **Resposta** | Ativa as respostas automáticas por palavra-chave. |
+| 3 | **Pedido Chat** | Permite que o cliente monte o próprio pedido pelo fluxo automático. |
+
+A coluna do meio mostra as conversas disponíveis. Clique em uma conversa para abrir o chat e responder ao cliente.
+
+## Os interruptores
+
+Os interruptores controlam comportamentos do BeeBot e ficam disponíveis no painel.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/whatsapp-atendimento-beebot/imagens-tratadas/02-switches.png" alt="Interruptores do BeeBot" caption="Interruptores: Anti Banimento, Resposta e Pedido Chat" width="800" height="450" />
+
+| Nº | Item | O que faz |
+| --- | --- | --- |
+| 1 | **Anti Banimento** | Protege o número ao limitar campanhas e notificações a contatos que já falaram com a loja recentemente. |
+| 2 | **Resposta** | Ativa o atendimento automático por palavras-chave cadastradas. |
+| 3 | **Pedido Chat** | Ativa o fluxo em que o cliente monta o pedido sozinho. |
+
+**Som Alerta** emite um aviso quando uma conversa precisa da atenção de um atendente. **ChatGPT** identifica a integração da inteligência artificial no BeeBot.
+
+## Respostas rápidas
+
+Use respostas rápidas para enviar frases frequentes sem redigitá-las.
+
+No campo da mensagem, digite `/` para abrir os atalhos cadastrados. Selecione uma resposta para inserir o texto no chat. Você também pode criar, editar ou apagar atalhos sem sair da conversa.
+
+Cadastre atalhos para informações como taxa de entrega, horário de funcionamento e status do pedido. Por exemplo, um atalho `/entrega` pode inserir uma resposta pronta sobre uma entrega em andamento.
+
+## Atendente humano
+
+Quando o cliente escreve uma palavra configurada na resposta **Atendente**, o BeeBot avisa que uma pessoa vai assumir a conversa. O mesmo acontece quando o cliente envia **Atendente** durante o fluxo do Pedido Chat.
+
+A resposta recebe o selo **Alerta**, que faz a conversa piscar na lista e indica que o atendente precisa assumir o contato.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/whatsapp-atendimento-beebot/imagens-tratadas/03-whatsapp-atendimento.png" alt="Atendimento em andamento no BeeBot" caption="Atendimento humano em uma conversa do WhatsApp" width="800" height="450" />
+
+| Nº | Item | O que faz |
+| --- | --- | --- |
+| 1 | **Alerta** | Destaca a conversa que precisa de atendimento humano. |
+| 2 | **Resposta rápida** | Permite inserir um atalho, como `/entrega`, no campo da mensagem. |
+| 3 | **Novo pedido pelo BeeBot** | Abre o cardápio para o atendente montar o pedido na própria conversa. |
+
+## Pedido assistido
+
+Monte o pedido do cliente sem sair do chat do BeeBot. Abra o cardápio em uma janela, selecione os produtos e conclua o lançamento enquanto conversa com o cliente.
+
+Esse fluxo é o **Novo pedido pelo BeeBot**. Quem monta o pedido é o atendente, e não o fluxo automático do Pedido Chat. Depois de criado, o pedido aparece no **Delivery** como os demais pedidos.
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+
+<Expandable title="A lista está vazia" default-open="false">
+
+A lista pode estar vazia porque ainda não houve conversa nesse número ou porque o WhatsApp está desconectado. Verifique a conexão do WhatsApp antes de usar o painel.
+
+</Expandable>
+
+<Expandable title="Anti Banimento desligado" default-open="false">
+
+Com o Anti Banimento desligado, campanhas e notificações também podem ser enviadas para contatos que nunca responderam à loja. Mantenha o interruptor ligado, a menos que exista um motivo específico para desligá-lo.
+
+</Expandable>
+
+<Expandable title="Pedido Chat ligado atrapalha o atendente?" default-open="false">
+
+Não. O cliente pode escrever **Atendente** durante o pedido para sair do fluxo automático e solicitar atendimento humano.
+
+</Expandable>
+
+</ExpandableGroup>
+
+## Manuais relacionados
+
+<Columns cols={2}>
+
+<Card title="Pedido Chat" href="/whatsapp-pedidos-chat" icon="shopping-bag" cta="Abrir manual" horizontal="false">
+
+Configure o fluxo para o cliente montar o próprio pedido pelo WhatsApp.
+
+</Card>
+
+<Card title="Conectar o WhatsApp" href="/whatsapp-conectar" icon="settings" cta="Abrir manual" horizontal="false">
+
+Conecte o número da loja ao BeeBot e verifique o status da conexão.
+
+</Card>
+
+<Card title="IA ChatGPT no WhatsApp" href="/ia-chatgpt-whatsapp" icon="zap" cta="Abrir manual" horizontal="false">
+
+Configure a integração do ChatGPT no atendimento do WhatsApp.
+
+</Card>
+
+</Columns>
+
+## Precisa de ajuda?
+
+Se o painel não carregar, a lista continuar vazia ou as mensagens não forem enviadas, verifique primeiro se o WhatsApp está conectado. Persistindo o problema, procure o suporte do BeeFood.

@@ -1,0 +1,99 @@
+---
+title: 📋 Histórico do WhatsApp
+description: >-
+  Veja o log de envio de mensagens do WhatsApp, com pendências, envios concluídos e falhas, e saiba interpretar cada status.
+---
+
+## 📋 Histórico do WhatsApp
+
+A aba **Histórico** lista o que o BeeBot tentou enviar: notificações de pedidos, campanhas e boletins. Ela **não é o chat**. Para conversas ao vivo, use o painel **Abrir Conversas WhatsApp**.
+
+<Callout kind="info">
+
+O **Histórico** é o log de envio de mensagens, não a caixa de entrada das conversas.
+
+</Callout>
+
+## Onde encontrar
+
+Acesse **WhatsApp → Histórico**.
+
+<Image
+  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/whatsapp-historico/imagens-tratadas/01-historico.png"
+  width="800"
+  height="450"
+  alt="Tela de historico do WhatsApp"
+/>
+
+| Nº | Item | O que faz |
+| --- | --- | --- |
+| 1. | Aba **Histórico** | Mostra os envios recentes. |
+| 2. | Filtro **Pendente** | Exibe apenas as mensagens que ainda não foram enviadas. |
+| 3. | **Resultado** | Mostra se a mensagem está aguardando envio, foi enviada ou falhou. |
+
+A busca cobre **categoria**, **tipo**, **telefone**, **nome** e **número do pedido**.
+
+As colunas mostram:
+
+- **Data**
+- **Categoria**: Delivery, Campanha ou Boletim
+- **Tipo**
+- **Telefone**
+- **Nome**
+- **Resultado**
+
+## Como ler o resultado
+
+| Situação | Significa |
+| --- | --- |
+| **Aguardando envio** | A mensagem foi gerada, mas o número não estava conectado ou a fila ainda não processou o envio. |
+| **Enviado** | A mensagem saiu pelo WhatsApp da loja. |
+| **Falha** | A API recusou o envio ou o número é inválido. |
+
+A notificação de pedido aparece no Histórico depois que um pedido real passa pela etapa correspondente. Uma campanha publicada aparece com a categoria **Campanha**.
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+
+<Expandable title="Não achei a conversa do cliente." default-open="false">
+
+O Histórico não guarda o bate-papo. Abra o painel **Abrir Conversas WhatsApp** para localizar e responder à conversa.
+
+</Expandable>
+
+<Expandable title="O boletim está pendente todos os dias." default-open="false">
+
+Conecte o número antes das **07h** ou mantenha o WhatsApp conectado. O resumo diário depende dessa conexão para ser enviado.
+
+</Expandable>
+
+</ExpandableGroup>
+
+## Manuais relacionados
+
+<Columns cols={2}>
+
+<Card title="Campanhas WhatsApp" href="/campanhas-whatsapp" icon="send" cta="Abrir manual" horizontal="false">
+
+Crie e publique campanhas para enviar mensagens aos clientes.
+
+</Card>
+
+<Card title="Indicadores de WhatsApp" href="/whatsapp-indicadores" icon="bar-chart" cta="Abrir manual" horizontal="false">
+
+Acompanhe acessos, pedidos, receita e conversão gerados pelo WhatsApp.
+
+</Card>
+
+<Card title="Resumo diário do WhatsApp" href="/whatsapp-resumo-diario" icon="book-open" cta="Abrir manual" horizontal="false">
+
+Entenda o horário e o funcionamento do boletim diário.
+
+</Card>
+
+</Columns>
+
+## Precisa de ajuda?
+
+Confira primeiro o status da mensagem e a conexão do WhatsApp. Se o registro continuar como **Falha**, use os dados da linha, como telefone, categoria e número do pedido, ao solicitar suporte.

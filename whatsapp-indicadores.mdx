@@ -1,0 +1,118 @@
+---
+title: 📈 Indicadores do WhatsApp
+description: >-
+  Veja o funil de conversao dos links do WhatsApp — BeeBot, Campanhas e Campanhas Inteligentes — em um so painel.
+---
+
+## 📈 Indicadores do WhatsApp
+
+A aba **Indicadores** mostra se o clique em um link do WhatsApp virou visita, adição à sacola e pedido. A fonte dos dados é o **BeeFood Pixel**.
+
+## Onde encontrar
+
+Acesse **Food Marketing → Campanhas WhatsApp → Indicadores**. Essa é a primeira aba da seção.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/whatsapp-indicadores/imagens-tratadas/01-indicadores.png" width="800" height="450" alt="Painel de indicadores do WhatsApp" />
+
+| Nº | Item | O que faz |
+| --- | --- | --- |
+| 1. | **Aba Indicadores** | Mostra o funil de conversão do WhatsApp. |
+| 2. | **Período e Canal** | Filtra por semana ou mês e por canal. |
+| 3. | **Aviso vazio** | Informa que não houve acesso rastreado no intervalo. |
+
+## Os três canais
+
+| Canal | De onde vem o clique |
+| --- | --- |
+| **BeeBot** | Links enviados no chat, em respostas, pedidos ou atendimentos. |
+| **Campanhas WhatsApp** | Links da campanha publicada com o parâmetro `?whatsc=`. |
+| **Campanhas Inteligentes** | Links enviados pelas automações. |
+
+Cada bloco mostra **Acessos**, **Pedidos**, **Receita** e **Conversão**. A conversão compara o número de pedidos com o número de acessos.
+
+## O funil de conversão
+
+| Nº | Etapa | O que representa |
+| --- | --- | --- |
+| 1. | **Acessos** | Pessoas que abriram o cardápio pelo link rastreado. |
+| 2. | **Visualizaram** | Pessoas que visualizaram produtos no cardápio. |
+| 3. | **Sacola** | Pessoas que adicionaram produtos à sacola. |
+| 4. | **Checkout** | Pessoas que avançaram para finalizar o pedido. |
+| 5. | **Pagamento** | Pessoas que chegaram à etapa de pagamento. |
+| 6. | **Pedidos** | Pedidos concluídos. |
+
+<Callout kind="info">
+
+Conversão = pedidos / acessos.
+
+</Callout>
+
+## Como gerar números aqui
+
+<Steps>
+  <Step title="Publique uma campanha" title-type="p">
+
+  Publique uma campanha usando o link do cardápio.
+
+  </Step>
+
+  <Step title="Envie um link pelo BeeBot" title-type="p">
+
+  Envie `MEU_LINK` em uma resposta automática.
+
+  </Step>
+
+  <Step title="Faça um pedido pelo link" title-type="p">
+
+  Alguém precisa abrir o cardápio pelo link rastreado e concluir um pedido.
+
+  </Step>
+</Steps>
+
+<Callout kind="info">
+
+Se não houver cliques rastreados no período, a prévia cinza é o estado correto da tela. Isso não indica um erro.
+
+</Callout>
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+  <Expandable title="Por que não uso o Pixel Analytics?" default-open="false">
+
+  Você pode usar o Pixel Analytics. Ele mostra o funil geral, incluindo acessos vindos do Google, Instagram e cardápio. A aba Indicadores separa apenas os acessos de **WhatsApp**, **BeeBot** e **Campanhas Inteligentes**.
+
+  </Expandable>
+
+  <Expandable title="Campanha em rascunho aparece?" default-open="false">
+
+  Não. Uma campanha em rascunho ainda não envia o link rastreado. Para gerar dados, publique a campanha e aguarde alguém acessar o cardápio e concluir um pedido.
+
+  </Expandable>
+</ExpandableGroup>
+
+## Manuais relacionados
+
+<Columns cols={2}>
+  <Card title="Campanhas WhatsApp" href="/campanhas-whatsapp" icon="message-circle" cta="Abrir manual" horizontal="false">
+
+  Crie e publique campanhas com links rastreados.
+
+  </Card>
+
+  <Card title="Histórico do WhatsApp" href="/whatsapp-historico" icon="clock" cta="Abrir manual" horizontal="false">
+
+  Consulte as mensagens que o BeeBot tentou enviar.
+
+  </Card>
+
+  <Card title="Resumo diário" href="/whatsapp-resumo-diario" icon="bar-chart" cta="Abrir manual" horizontal="false">
+
+  Entenda o boletim diário enviado pelo WhatsApp.
+
+  </Card>
+</Columns>
+
+## Precisa de ajuda?
+
+Se os indicadores continuarem vazios depois de publicar uma campanha e concluir um pedido pelo link, confirme se o link mantém o rastreio e se o **BeeFood Pixel** está ativo.

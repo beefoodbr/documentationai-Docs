@@ -1,0 +1,96 @@
+---
+title: 📊 Resumo Diario do WhatsApp
+description: >-
+  Cadastre contatos para receber boletins automaticos de vendas — diario as 07h e semanal toda segunda-feira.
+---
+
+## 📊 Resumo Diario do WhatsApp
+
+Todos os dias, às 07h no horário de Brasília, o BeeBot envia um boletim de vendas pelo WhatsApp para as pessoas cadastradas. Na segunda-feira, o resumo semanal também é enviado, com a comparação da semana anterior.
+
+O envio sai pelo número conectado ao BeeBot do cardápio principal.
+
+## Onde encontrar
+
+Acesse **WhatsApp → Resumo Diario**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/whatsapp-resumo-diario/imagens-tratadas/01-lista.png" alt="Lista de contatos do resumo diario" width="800" height="450" />
+
+| Item | O que faz |
+|---|---|
+| **Texto das 07h00** | Lembra o horário fixo do envio e informa que o boletim sai pelo cardápio principal. |
+| **Novo Contato (F1)** | Abre o cadastro de nome e telefone. |
+
+A lista mostra apenas o nome e o telefone de cada destinatário. Use o ícone de lápis para editar um contato e o ícone de lixeira para excluí-lo.
+
+## Como cadastrar quem recebe
+
+Cadastre o proprietário, o gerente, o contador ou qualquer outra pessoa que precise acompanhar as vendas. O destinatário não precisa ser cliente da loja.
+
+<Steps>
+  <Step title="Adicionar um contato" title-type="p">
+
+    Clique em **Novo Contato (F1)**, preencha os dados e selecione **SALVAR (F2)**.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/whatsapp-resumo-diario/imagens-tratadas/02-novo-contato.png" alt="Formulario de novo contato" width="800" height="450" />
+
+    | Campo | O que informar |
+    |---|---|
+    | **Nome** | Nome como a pessoa deve aparecer na lista. |
+    | **Telefone** | Número do WhatsApp com DDD, com 10 ou 11 dígitos. |
+    | **SALVAR (F2)** | Grava o contato para receber os boletins. |
+
+    Depois de salvar, o nome e o telefone aparecem na lista de contatos.
+
+  </Step>
+</Steps>
+
+## Como o boletim funciona
+
+O boletim diário é gerado às 07h e reúne as vendas do dia anterior. O boletim semanal é enviado toda segunda-feira, com o resultado da semana que passou e a comparação com a semana anterior.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/whatsapp-resumo-diario/imagens-tratadas/03-whatsapp-boletim.png" alt="Boletim diario recebido no WhatsApp" width="800" height="450" />
+
+Se o WhatsApp não estiver conectado às 07h, o envio fica com o status **Aguardando envio**. Consulte **WhatsApp → Histórico** para acompanhar a tentativa. Quando a conexão for restabelecida, o BeeBot tenta enviar a mensagem.
+
+<Callout kind="info">
+
+O horário do boletim é fixo: 07h no horário de Brasília. Não é possível alterar esse horário.
+
+</Callout>
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+  <Expandable title="Cadastrei e não chegou nada" default-open="false">
+
+    Confira se o telefone foi cadastrado com DDD e se o número do WhatsApp está correto. Verifique também se o boletim usa o cardápio principal e se o BeeBot estava conectado às 07h.
+
+    Se o WhatsApp estava desconectado, abra **WhatsApp → Histórico** e procure o resultado **Aguardando envio**.
+
+  </Expandable>
+
+  <Expandable title="Dá para mudar o horário?" default-open="false">
+
+    Não. O envio acontece sempre às 07h no horário de Brasília.
+
+  </Expandable>
+
+  <Expandable title="Isso substitui as notificações do pedido?" default-open="false">
+
+    Não. As notificações do pedido informam o cliente sobre cada etapa da entrega. O boletim diário e semanal é enviado para a equipe da loja acompanhar as vendas.
+
+  </Expandable>
+</ExpandableGroup>
+
+## Manuais relacionados
+
+<Columns cols={2}>
+  <Card title="Notificações do WhatsApp" href="/whatsapp-notificacoes" icon="bell" cta="Abrir manual" horizontal="false" />
+  <Card title="Histórico do WhatsApp" href="/whatsapp-historico" icon="database" cta="Abrir manual" horizontal="false" />
+  <Card title="Boletim do WhatsApp" href="/whatsapp-boletim" icon="bar-chart" cta="Abrir manual" horizontal="false" />
+</Columns>
+
+## Precisa de ajuda?
+
+Se o boletim continuar aguardando mesmo com o WhatsApp conectado, confira o telefone cadastrado e o cardápio principal usado pelo BeeBot. Se o problema persistir, entre em contato com o suporte BeeFood.
