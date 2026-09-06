@@ -1,10 +1,9 @@
 ---
-title: 🔔 Notificações do WhatsApp
+title: "\U0001F514 Notificações do WhatsApp"
 description: >-
   Configure as notificações automáticas que o BeeBot envia ao cliente em cada
   etapa do pedido, do recebimento à entrega, e edite o texto de cada aviso.
 ---
-
 ## 🔔 Notificações do WhatsApp
 
 Cada vez que um pedido muda de situação no Delivery, o BeeBot pode enviar uma mensagem de WhatsApp para o cliente. Ative, desative e edite o texto dos avisos em **WhatsApp → Notificações**.
@@ -15,11 +14,11 @@ Abra **WhatsApp → Notificações**.
 
 <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/whatsapp-notificacoes/imagens-tratadas/01-lista.png" width="800" height="450" alt="Lista de notificações do WhatsApp" />
 
-| Nº | Item | O que faz |
-|---|---|---|
+| Nº | Item               | O que faz                                            |
+| -- | ------------------ | ---------------------------------------------------- |
 | 1. | Grupo **Delivery** | Reúne as mensagens relacionadas às etapas do pedido. |
-| 2. | **Interruptor** | Liga ou desliga o aviso daquela etapa. |
-| 3. | **Lápis** | Abre a mensagem para edição. |
+| 2. | **Interruptor**    | Liga ou desliga o aviso daquela etapa.               |
+| 3. | **Lápis**          | Abre a mensagem para edição.                         |
 
 O grupo **Entregador** reúne avisos destinados ao motoboy, como nova entrega, cancelamento e relatório diário. O cliente não recebe essas três notificações.
 
@@ -27,16 +26,16 @@ O grupo **Entregador** reúne avisos destinados ao motoboy, como nova entrega, c
 
 Os oito avisos do grupo **Delivery** começam ligados. Desligue os tipos que a loja não utiliza.
 
-| Tipo | Quando dispara |
-|---|---|
-| **Pedido feito** | O pedido entrou no Delivery. |
-| **Pedido confirmado** | A loja confirmou o pedido ou começou o preparo. |
-| **Pedido pronto para retirada** | O pedido está pronto para retirada no balcão. |
-| **Pedido saiu para entrega** | O pedido saiu com o entregador. |
-| **Pedido retirado ou entregue** | O pedido foi retirado ou entregue ao cliente. |
-| **Pedido cancelado** | O pedido foi cancelado. |
-| **Pedido pronto para consumo no local** | O pedido está pronto para consumo no salão. |
-| **Entregador próximo** | O entregador está dentro do raio definido em relação ao cliente. |
+| Tipo                                    | Quando dispara                                                   |
+| --------------------------------------- | ---------------------------------------------------------------- |
+| **Pedido feito**                        | O pedido entrou no Delivery.                                     |
+| **Pedido confirmado**                   | A loja confirmou o pedido ou começou o preparo.                  |
+| **Pedido pronto para retirada**         | O pedido está pronto para retirada no balcão.                    |
+| **Pedido saiu para entrega**            | O pedido saiu com o entregador.                                  |
+| **Pedido retirado ou entregue**         | O pedido foi retirado ou entregue ao cliente.                    |
+| **Pedido cancelado**                    | O pedido foi cancelado.                                          |
+| **Pedido pronto para consumo no local** | O pedido está pronto para consumo no salão.                      |
+| **Entregador próximo**                  | O entregador está dentro do raio definido em relação ao cliente. |
 
 ## Como editar o texto
 
@@ -44,20 +43,18 @@ Edite uma mensagem quando precisar ajustar o tom da loja, incluir informações 
 
 <Steps>
   <Step title="Editar a mensagem de Pedido feito" title-type="p">
+    Clique no lápis de **Pedido feito**, altere o conteúdo e salve a mensagem.
 
-Clique no lápis de **Pedido feito**, altere o conteúdo e salve a mensagem.
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/whatsapp-notificacoes/imagens-tratadas/02-editar-pedido-feito.png" width="800" height="450" alt="Tela de edição da notificação Pedido feito" />
 
-<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/whatsapp-notificacoes/imagens-tratadas/02-editar-pedido-feito.png" width="800" height="450" alt="Tela de edição da notificação Pedido feito" />
+    | Nº | Item                   | O que faz                                                                              |
+    | -- | ---------------------- | -------------------------------------------------------------------------------------- |
+    | 1. | **Mensagem principal** | Define o texto padrão enviado ao cliente.                                              |
+    | 2. | **Variações**          | Permite cadastrar até três textos extras. O sistema escolhe uma mensagem a cada envio. |
+    | 3. | **SALVAR (F2)**        | Grava as alterações feitas na mensagem.                                                |
+    | 4. | **Restaurar padrão**   | Recupera o texto original da fábrica.                                                  |
 
-| Nº | Item | O que faz |
-|---|---|---|
-| 1. | **Mensagem principal** | Define o texto padrão enviado ao cliente. |
-| 2. | **Variações** | Permite cadastrar até três textos extras. O sistema escolhe uma mensagem a cada envio. |
-| 3. | **SALVAR (F2)** | Grava as alterações feitas na mensagem. |
-| 4. | **Restaurar padrão** | Recupera o texto original da fábrica. |
-
-Use **CANCELAR (ESC)** para sair sem gravar as alterações.
-
+    Use **CANCELAR (ESC)** para sair sem gravar as alterações.
   </Step>
 </Steps>
 
@@ -65,20 +62,20 @@ Use **CANCELAR (ESC)** para sair sem gravar as alterações.
 
 Insira as variáveis no texto para preencher automaticamente os dados do cliente, do pedido e da loja.
 
-| Variável | Informação inserida |
-|---|---|
-| `**CLIENTE_NOME**` | Nome do cliente. |
-| `**VENDA_NUMERO**` | Número do pedido. |
-| `**VENDA_PRODUTOS**` | Produtos do pedido. |
-| `**VENDA_TOTAIS**` | Totais do pedido. |
-| `**VENDA_ENTREGA**` | Informações da entrega. |
-| `**VENDA_PAGAMENTO**` | Forma de pagamento. |
-| `**MEU_NOME_FANTASIA**` | Nome fantasia da loja. |
+| Variável                   | Informação inserida                    |
+| -------------------------- | -------------------------------------- |
+| `**CLIENTE_NOME**`         | Nome do cliente.                       |
+| `**VENDA_NUMERO**`         | Número do pedido.                      |
+| `**VENDA_PRODUTOS**`       | Produtos do pedido.                    |
+| `**VENDA_TOTAIS**`         | Totais do pedido.                      |
+| `**VENDA_ENTREGA**`        | Informações da entrega.                |
+| `**VENDA_PAGAMENTO**`      | Forma de pagamento.                    |
+| `**MEU_NOME_FANTASIA**`    | Nome fantasia da loja.                 |
 | `**MEU_MINUTOS_DELIVERY**` | Tempo estimado do Delivery em minutos. |
-| `**MEU_LINK_CONSULTA**` | Link para consultar o pedido. |
-| `**VENDA_LINK_AVALIACAO**` | Link para avaliar o pedido. |
+| `**MEU_LINK_CONSULTA**`    | Link para consultar o pedido.          |
+| `**VENDA_LINK_AVALIACAO**` | Link para avaliar o pedido.            |
 
-Para alternar palavras automaticamente, use chaves com barra. O formato ``{Olá|Oi}`` faz o sistema escolher uma das opções a cada envio.
+Para alternar palavras automaticamente, use chaves com barra. O formato `{Olá|Oi}` faz o sistema escolher uma das opções a cada envio.
 
 Você também pode cadastrar até três variações completas da mensagem. Alterar o texto e usar variações reduz a repetição de frases nas conversas.
 
@@ -88,10 +85,10 @@ A notificação **Entregador próximo** tem um campo adicional para definir a di
 
 <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/whatsapp-notificacoes/imagens-tratadas/03-editar-entregador.png" width="800" height="450" alt="Tela de edição da notificação Entregador próximo" />
 
-| Nº | Item | O que faz |
-|---|---|---|
+| Nº | Item              | O que faz                                                                |
+| -- | ----------------- | ------------------------------------------------------------------------ |
 | 1. | **km do cliente** | Define a distância entre o entregador e o cliente para disparar o aviso. |
-| 2. | **Mensagem** | Texto enviado quando o entregador entra no raio configurado. |
+| 2. | **Mensagem**      | Texto enviado quando o entregador entra no raio configurado.             |
 
 O valor padrão é **2 km**. Informe uma distância entre **0,1 e 50 km**. Quanto maior o valor, mais cedo o cliente recebe o aviso.
 
@@ -103,57 +100,43 @@ Com o WhatsApp conectado, a notificação chega ao cliente como uma conversa nor
 
 <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/whatsapp-notificacoes/imagens-tratadas/04-whatsapp-notificacao.png" width="800" height="450" alt="Notificação de pedido recebida pelo cliente no WhatsApp" />
 
-| Nº | Item | O que mostra |
-|---|---|---|
+| Nº | Item                 | O que mostra                                          |
+| -- | -------------------- | ----------------------------------------------------- |
 | 1. | **Mensagem da loja** | O aviso correspondente à etapa alcançada pelo pedido. |
 
-<Callout kind="alert">
-
-Deixe o interruptor **Notificação Campanhas** ligado no BeeBot. Se essa opção estiver desligada, as notificações do pedido não serão disparadas.
-
+<Callout kind="alert" collapsed="false">
+  Deixe o interruptor **Notificação Campanhas** ligado no BeeBot. Se essa opção estiver desligada, as notificações do pedido não serão disparadas.
 </Callout>
 
 ## Perguntas frequentes
 
 <ExpandableGroup>
   <Expandable title="Editei e o cliente não recebeu" default-open="false">
-
-Confirme se o número do WhatsApp está conectado, se o interruptor da notificação está ligado e se o pedido realmente passou pela situação correspondente no Delivery.
-
+    Confirme se o número do WhatsApp está conectado, se o interruptor da notificação está ligado e se o pedido realmente passou pela situação correspondente no Delivery.
   </Expandable>
 
   <Expandable title="Posso mandar a mesma frase em todas as etapas?" default-open="false">
-
-Pode, mas o WhatsApp pode tratar textos repetidos como risco. Use variações com ``{a|b}`` e cadastre as quatro opções de texto disponíveis na tela para variar as mensagens.
-
+    Pode, mas o WhatsApp pode tratar textos repetidos como risco. Use variações com `{a|b}` e cadastre as quatro opções de texto disponíveis na tela para variar as mensagens.
   </Expandable>
 
   <Expandable title="O boletim das 07h entra aqui?" default-open="false">
-
-Não. O boletim de faturamento da loja pertence ao **Resumo Diário**, não às notificações de cada etapa do pedido.
-
+    Não. O boletim de faturamento da loja pertence ao **Resumo Diário**, não às notificações de cada etapa do pedido.
   </Expandable>
 </ExpandableGroup>
 
 ## Manuais relacionados
 
-<Columns cols={2}>
+<Columns cols="2">
   <Card title="Pedidos pelo WhatsApp" href="/whatsapp-pedidos-chat" icon="shopping-cart" cta="Abrir manual" horizontal="false">
-
-  Saiba como o cliente monta um pedido pelo chat do BeeBot.
-
+    Saiba como o cliente monta um pedido pelo chat do BeeBot.
   </Card>
 
   <Card title="Respostas do WhatsApp" href="/whatsapp-respostas" icon="message-circle" cta="Abrir manual" horizontal="false">
-
-  Configure respostas automáticas para palavras-chave e mensagens recebidas.
-
+    Configure respostas automáticas para palavras-chave e mensagens recebidas.
   </Card>
 
   <Card title="Histórico do WhatsApp" href="/whatsapp-historico" icon="history" cta="Abrir manual" horizontal="false">
-
-  Consulte os envios, pendências e falhas das mensagens do WhatsApp.
-
+    Consulte os envios, pendências e falhas das mensagens do WhatsApp.
   </Card>
 </Columns>
 
