@@ -1,0 +1,112 @@
+---
+title: 🔗 Conectar o WhatsApp
+description: Aprenda a gerar o QR Code e conectar seu número de WhatsApp ao BeeFood3 passo a passo.
+---
+
+## 🔗 Conectar o WhatsApp
+
+O BeeBot usa o número de WhatsApp da sua loja. Para ativar esse número, o BeeFood gera um QR Code que você escaneia pelo WhatsApp no celular.
+
+## Onde encontrar
+
+No BeeFood, acesse **WhatsApp → Conexão**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/whatsapp-conectar/imagens-tratadas/01-desconectado.png" width="800" height="450" alt="Aba Conexão do WhatsApp no BeeFood com o número desconectado" caption="Aba Conexão do WhatsApp com o número desconectado" />
+
+| Nº | Item | O que faz |
+| --- | --- | --- |
+| 1. | **Conexão** | Mostra o status do número de WhatsApp da loja. |
+| 2. | **Conectar** | Inicia a geração do QR Code. |
+| 3. | **Abrir Conversas WhatsApp** | Abre o painel do BeeBot para atender conversas. Esse botão não gera o QR Code. |
+
+Enquanto não houver uma sessão ativa, o card mostra o status **Desconectado**.
+
+## Como gerar o QR Code
+
+Siga as etapas abaixo para conectar o número usado pela loja.
+
+<Steps>
+  <Step title="Passo 1. Gerar o QR Code" title-type="p">
+    Na aba **WhatsApp → Conexão**, clique em **Conectar**.
+
+    O card muda para **Conectando** e exibe a mensagem *Gerando QR Code…*. Aguarde alguns segundos até o código aparecer.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/whatsapp-conectar/imagens-tratadas/02-qr-card.png" width="800" height="450" alt="QR Code pequeno no card de conexão do WhatsApp" caption="O QR Code aparece no card enquanto o status está Conectando" />
+
+    | Nº | Item | O que faz |
+    | --- | --- | --- |
+    | 1. | QR Code no card | Mostra o código pequeno para conectar o número. |
+    | 2. | **Conectando** | Indica que o BeeFood está preparando a sessão. |
+  </Step>
+
+  <Step title="Passo 2. Expandir o código" title-type="p">
+    Quando o QR Code aparecer, clique em **Expandir** para abrir o código em tamanho maior.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/whatsapp-conectar/imagens-tratadas/03-qr-expandido.png" width="800" height="450" alt="QR Code expandido para conexão do WhatsApp" caption="Use o código ampliado para facilitar a leitura pela câmera do celular" />
+
+    | Nº | Item | O que faz |
+    | --- | --- | --- |
+    | 1. | QR Code expandido | Exibe o código em tamanho de leitura. |
+    | 2. | **Expandir** | Abre o QR Code maior na tela. |
+  </Step>
+
+  <Step title="Passo 3. Escanear pelo celular" title-type="p">
+    No celular, abra o **WhatsApp → Configurações → Aparelhos conectados → Conectar um aparelho**.
+
+    Aponte a câmera para o QR Code exibido no BeeFood. Quando a leitura terminar, a sessão será conectada ao BeeBot e o status do card mudará de **Conectando** para conectado.
+  </Step>
+</Steps>
+
+<Callout kind="alert" collapsed="false">
+  O QR Code expira. Se a tela voltar para *Gerando QR Code…* ou o código desaparecer, clique em **Conectar** novamente. O botão **Atualizar**, no topo da tela, também pode ajudar quando a geração ficar travada.
+</Callout>
+
+## O que o QR não faz
+
+<Callout kind="alert" collapsed="false">
+  Escanear o QR Code conecta o número da loja ao BeeBot, mas não ativa o **Pedido Chat**, a **IA** nem as **campanhas**. Sem escanear o código, o número continua **Desconectado** e as notificações, respostas e boletins não são enviados ao cliente.
+
+  O botão **Abrir Conversas WhatsApp** apenas abre o painel de atendimento. Ele não gera um QR Code.
+</Callout>
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+  <Expandable title="O QR não aparece" default-open="false">
+
+  Aguarde a mensagem *Gerando QR Code…* terminar. A geração pode levar até meio minuto. Se a tela ficar travada, clique em **Atualizar** e depois em **Conectar** novamente.
+
+  </Expandable>
+
+  <Expandable title="Posso usar WhatsApp Business?" default-open="false">
+
+  Sim. O caminho **Aparelhos conectados** existe tanto no WhatsApp comum quanto no WhatsApp Business.
+
+  </Expandable>
+
+  <Expandable title="Preciso deixar o computador ligado?" default-open="false">
+
+  Não. A sessão fica no BeeBot. Se o número for desconectado, o card volta para **Desconectado** e você precisa gerar e escanear um novo QR Code.
+
+  </Expandable>
+</ExpandableGroup>
+
+## Manuais relacionados
+
+<Columns cols={2}>
+  <Card title="Atender no BeeBot" href="/whatsapp-atendimento-beebot" icon="message-circle" cta="Abrir manual" horizontal="false">
+    Responda clientes, assuma conversas e monte pedidos pelo painel do BeeBot.
+  </Card>
+
+  <Card title="Pedido Chat" href="/whatsapp-pedidos-chat" icon="shopping-cart" cta="Abrir manual" horizontal="false">
+    Configure o fluxo para o cliente montar o próprio pedido pelo WhatsApp.
+  </Card>
+
+  <Card title="Notificações do WhatsApp" href="/whatsapp-notificacoes" icon="bell" cta="Abrir manual" horizontal="false">
+    Entenda como o BeeFood envia notificações de pedidos e outros avisos.
+  </Card>
+</Columns>
+
+## Precisa de ajuda?
+
+Entre em contato com o suporte BeeFood e informe o **nome da loja**, o **CNPJ** e o status exibido no card de conexão. Esses dados ajudam a localizar a conta e verificar a sessão do WhatsApp.
