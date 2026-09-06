@@ -1,0 +1,175 @@
+---
+title: "\U0001F4CA Relatório de Taxa de Serviço"
+description: >-
+  Acompanhe a gorjeta de 10% arrecadada por garçom e por forma de pagamento,
+  entenda a diferença entre taxa de serviço e comissão, e veja quais produtos
+  são excluídos da base.
+---
+## Relatório de Taxa de Serviço
+
+Acompanhe a gorjeta das mesas por garçom, filtre o período do relatório, confira quais produtos não entram na base da taxa e consulte o resumo diretamente no caixa.
+
+## Taxa de serviço vs. Comissão
+
+A taxa de serviço é a gorjeta da conta, enquanto a comissão corresponde ao percentual do garçom sobre cada item vendido.
+
+|                               | **Taxa de serviço** (este manual)    | **Comissão**              |
+| ----------------------------- | ------------------------------------ | ------------------------- |
+| O que é                       | Gorjeta da conta (em geral 10%)      | % do garçom sobre o item  |
+| Onde se configura             | Parâmetro da loja + switch no pedido | Cadastro do funcionário   |
+| O relatório agrupa            | Por venda                            | Por item                  |
+| Produto "Sem taxa de serviço" | Sai da base da gorjeta               | Continua gerando comissão |
+
+Ana lançou Chicken Deluxe, no valor de R$ 14,50, e Anéis de Cebula Empanada, no valor de R$ 19,20. A comissão dela foi 10% dos dois itens, totalizando R$ 3,37. A taxa foi 10% somente do lanche, no valor de R$ 1,45, porque o anel está marcado sem taxa.
+
+Por isso, a coluna **% Taxa** da Ana aparece como 4,2% sobre o total da conta, e não como 10%.
+
+<Callout kind="alert" collapsed="false">
+  Comissão é o percentual do garçom sobre cada item lançado. Taxa de serviço é a gorjeta da conta. São dois dinheiros diferentes, com dois relatórios diferentes.
+</Callout>
+
+## Filtrar o período
+
+Acesse **Desempenho → Presencial → Taxa Serviço**. O padrão do relatório também é de 30 dias, portanto ajuste o período quando quiser analisar apenas o movimento de uma data.
+
+<Steps>
+  <Step title="Escolha o dia" title-type="p">
+    Abra o calendário e escolha **Hoje** para isolar o movimento do dia. Você também pode informar uma data inicial e uma data final.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/relatorio-taxa-servico/imagens-tratadas/01-filtro-data.png" width="800" alt="Calendário do Desempenho para isolar o dia" caption="Calendário do Desempenho para isolar o dia" />
+
+    | Nº | Item          | O que fazer                                                      |
+    | -: | ------------- | ---------------------------------------------------------------- |
+    |  1 | Botão da data | Não deixe 30 dias selecionado se o caixa está aberto há semanas. |
+    |  2 | **Hoje**      | Isola o movimento do dia.                                        |
+    |  3 | **Confirmar** | Aplica o período escolhido.                                      |
+  </Step>
+
+  <Step title="Confira o filtro de situação" title-type="p">
+    O filtro de situação já vem preenchido como **RECEBIDO**. Confirme o período para atualizar os resultados com as vendas recebidas.
+
+    <Callout kind="tip" collapsed="false">
+      Filtre **Hoje** para isolar o movimento do dia. O gesto é o mesmo usado no relatório de comissão.
+    </Callout>
+  </Step>
+</Steps>
+
+## Ler o relatório
+
+Os indicadores mostram os totais do período filtrado, e a tabela organiza a taxa de serviço por garçom.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/relatorio-taxa-servico/imagens-tratadas/02-relatorio-taxa.png" width="800" alt="KPIs e tabela de taxa de serviço por garçom" caption="KPIs e tabela de taxa de serviço por garçom" />
+
+| Nº | Item                          | O que é                                                                      |
+| -: | ----------------------------- | ---------------------------------------------------------------------------- |
+|  1 | **Presencial → Taxa Serviço** | O relatório da gorjeta.                                                      |
+|  2 | Os cinco KPIs                 | Total Taxa Serviço, Total Pago, Taxa Média, **% Média** e Faturamento Total. |
+|  3 | **Taxa Serviço por Garçom**   | Clique no nome para abrir as vendas relacionadas.                            |
+
+O exemplo apresenta duas vendas recebidas em dinheiro:
+
+| Garçom       | Vendas |  Valor total |        Taxa | % Taxa |
+| ------------ | -----: | -----------: | ----------: | -----: |
+| Bruno Garçom |      1 |     R$ 21,69 |     R$ 1,99 |   9,2% |
+| Ana Garçom   |      1 |     R$ 34,81 |     R$ 1,45 |   4,2% |
+| **Total**    |  **2** | **R$ 56,50** | **R$ 3,44** |      — |
+
+O Bruno ficou perto de 10%. O resultado de 9,2% considera o efeito do desconto de 1% da forma de pagamento **Dinheiro** sobre o valor pago. A Ana ficou em 4,2% porque parte da conta não entra na base, por causa do produto sem taxa.
+
+O relatório também mostra **Taxa Serviço por Pagamento**, que neste exemplo contém apenas pagamentos em dinheiro, e o tipo da taxa, que pode ser **% Percentual** ou **R$ Fixo**.
+
+## Detalhamento por venda
+
+Clique no nome de um garçom para abrir a aba **Análise por Venda**. O detalhamento apresenta uma linha por conta, e não uma linha por produto.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/relatorio-taxa-servico/imagens-tratadas/04-detalhe-venda.png" width="800" alt="Detalhamento da taxa de serviço por venda ao clicar no garçom" caption="Detalhamento da taxa de serviço por venda ao clicar no garçom" />
+
+| Nº | Item                                | O que conferir                                          |
+| -: | ----------------------------------- | ------------------------------------------------------- |
+|  1 | **Taxa Serviço / Ana Garçom**       | O detalhe da taxa atribuída à garçom.                   |
+|  2 | **Situação RECEBIDO** e **Mesa 16** | A conta que gerou a gorjeta.                            |
+|  3 | **Tipo Taxa % (Percentual)**        | Neste exemplo, a casa usa percentual, e não valor fixo. |
+
+## Produtos sem taxa de serviço
+
+Marque um produto como **Sem taxa de serviço** quando ele não deve entrar na base usada para calcular a gorjeta de mesas e comandas.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/relatorio-taxa-servico/imagens-tratadas/03-produto-sem-taxa.png" width="800" alt="Produto marcado como sem taxa de serviço" caption="Produto marcado como sem taxa de serviço" />
+
+| Nº | Item                    | O que fazer                                                                                      |
+| -: | ----------------------- | ------------------------------------------------------------------------------------------------ |
+|  1 | **Opções avançadas**    | Abra o bloco no cadastro do produto.                                                             |
+|  2 | **Sem taxa de serviço** | Ligue a opção. O texto informa que o produto não vai cobrar taxa de serviço em Mesas e Comandas. |
+
+<Callout kind="alert" collapsed="false">
+  O produto marcado como **Sem taxa de serviço** sai da base da gorjeta, mas continua gerando comissão se o garçom estiver identificado. Foi assim que os Anéis saíram da gorjeta da Ana e a **% Taxa** dela caiu para 4,2%.
+</Callout>
+
+## Atalho no caixa: Resumo Presencial
+
+No caixa aberto, acesse **Caixa → ver o caixa → Resumo → Resumo Presencial**. A seção **Taxa de Serviço** aparece somente para quem tem **Função Gerente**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/relatorio-taxa-servico/imagens-tratadas/05-caixa-resumo-taxa.png" width="800" alt="Resumo Presencial com a taxa de serviço no caixa" caption="Resumo Presencial com a taxa de serviço no caixa" />
+
+| Nº | Item                  | O que é                                                                              |
+| -: | --------------------- | ------------------------------------------------------------------------------------ |
+|  1 | **Resumo Presencial** | O seletor do painel.                                                                 |
+|  2 | **Taxa de Serviço**   | Seção visível somente para gerente. No exemplo, Ana tem R$ 1,45 e Bruno tem R$ 1,99. |
+|  3 | **Comissão Garçom**   | O atalho para o outro relatório.                                                     |
+
+<Callout kind="alert" collapsed="false">
+  A seção **Taxa de Serviço** do Resumo Presencial exige **Função Gerente**. Quem não é gerente vê a comissão, não a gorjeta agrupada.
+</Callout>
+
+<Callout kind="info" collapsed="false">
+  A lista é do caixa inteiro. Se o caixa foi aberto há dias, vendas antigas também aparecem. Use o checkbox **Exibir somente pedidos pagos por completo** para esconder contas ainda abertas.
+</Callout>
+
+## Resumo
+
+1. Acesse **Desempenho → Presencial → Taxa Serviço**.
+2. Filtre o período para analisar o dia ou intervalo desejado.
+3. Consulte os KPIs e a tabela **Taxa Serviço por Garçom**.
+4. Clique no garçom para conferir a **Análise por Venda**.
+5. Use **Resumo Presencial** no caixa para consultar a taxa, se você tiver **Função Gerente**.
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+  <Expandable title="A comissão cai quando ligo Sem taxa de serviço?" default-open="false">
+    Não. Só a gorjeta ignora o item. A comissão continua sendo calculada normalmente.
+  </Expandable>
+
+  <Expandable title="Por que a porcentagem não deu 10% redondo?" default-open="false">
+    O resultado pode variar quando existe um produto sem taxa na mesma conta, quando a forma de pagamento aplica desconto ou quando a taxa está configurada em R$ fixo em vez de percentual.
+  </Expandable>
+
+  <Expandable title="Quem não é gerente não vê a taxa no caixa?" default-open="false">
+    Correto. A seção **Taxa de Serviço** do **Resumo Presencial** exige **Função Gerente**. O relatório de **Desempenho** segue a permissão da tela.
+  </Expandable>
+
+  <Expandable title="Qual a diferença entre taxa de serviço e comissão?" default-open="false">
+    Taxa de serviço é a gorjeta da conta, geralmente 10%, agrupada por venda. Comissão é o percentual do garçom sobre cada item, agrupada por item.
+  </Expandable>
+</ExpandableGroup>
+
+## Manuais relacionados
+
+<Columns cols="2">
+  <Card title="Comissão do Garçom" href="/comissao-garcom-cadastrar" icon="user-check" horizontal="false">
+    Cadastre o garçom e defina o percentual de comissão.
+  </Card>
+
+  <Card title="Relatório de Comissão do Garçom" href="/relatorio-comissao-garcom" icon="bar-chart" horizontal="false">
+    Veja quanto cada garçom recebeu de comissão.
+  </Card>
+
+  <Card title="Taxas e Campos Obrigatórios em Mesas" href="/mesas-taxas-obrigatorias" icon="settings" horizontal="false">
+    Configure a taxa de serviço padrão e os campos obrigatórios.
+  </Card>
+
+  <Card title="Fechar Caixa" href="/caixa-fechar" icon="lock" horizontal="false">
+    Feche o caixa e confira os totais do dia.
+  </Card>
+</Columns>
+

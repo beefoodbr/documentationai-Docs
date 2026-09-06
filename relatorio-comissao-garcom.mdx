@@ -1,0 +1,204 @@
+---
+title: "📊 Relatório de Comissão do Garçom"
+description: "Feche a comissão da equipe: filtre o período, leia os KPIs, veja item a item quanto cada garçom recebeu e exporte para Excel."
+---
+
+## Relatório de Comissão do Garçom
+
+Feche a comissão da equipe filtrando o período, conferindo os KPIs, vendo o detalhe item a item e exportando a grade para Excel.
+
+## Onde fica
+
+Acesse **Desempenho → Presencial → Pedidos (Mobile e Comissão)**.
+
+<Callout kind="info" collapsed="false">
+
+O nome Mobile no título é histórico: o relatório traz todo item com garçom identificado, do aplicativo e do painel web. O KPI **% Mobile** só indica qual fatia saiu do celular.
+
+</Callout>
+
+<Callout kind="alert" collapsed="false">
+
+Comissão não é taxa de serviço. A gorjeta de 10% da mesa é conferida no **Relatório de Taxa de Serviço**.
+
+</Callout>
+
+## Filtrar o período
+
+O padrão do Desempenho é **últimos 30 dias**. Se o caixa estiver aberto há semanas, a tela pode incluir vendas antigas e dificultar o fechamento do dia.
+
+<Steps>
+
+<Step title="Escolha o dia">
+
+Abra o calendário no topo e escolha **Hoje**. Para fechar outro período, selecione a **Data de Início** e a **Data de Fim** correspondentes.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/relatorio-comissao-garcom/imagens-tratadas/01-filtro-data.png" width="800" alt="Calendário do Desempenho com Hoje selecionado" caption="Calendário do Desempenho com Hoje selecionado" />
+
+| Nº | Item | O que fazer |
+| -: | ---- | ----------- |
+| 1 | Botão da data | Mostra o intervalo atual. O padrão longo mistura vendas de outros dias. |
+| 2 | **Hoje** | Isola o dia. Também é possível marcar o início e o fim do período manualmente. |
+| 3 | **Confirmar** | Aplica o período escolhido. Sem este clique, o período pendente não muda. |
+
+</Step>
+
+<Step title="Confira o filtro de situação">
+
+O filtro de situação já vem em **RECEBIDO**. Pedido aberto, sem pagamento, não entra no fechamento.
+
+</Step>
+
+</Steps>
+
+<Callout kind="tip">
+
+Filtre **Hoje** para isolar o dia. Sem o filtro, o relatório puxa o caixa aberto desde o início do mês.
+
+</Callout>
+
+## Ler o relatório
+
+Com o período correto, confira os KPIs, a tabela **Comissão por Garçom** e a grade de itens. Use o botão **Excel** para exportar os dados exibidos.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/relatorio-comissao-garcom/imagens-tratadas/02-relatorio-comissao.png" width="800" alt="Relatório com KPIs e tabela de comissão por garçom" caption="Relatório com KPIs e tabela de comissão por garçom" />
+
+| Nº | Item | O que é |
+| -: | ---- | ----------- |
+| 1 | **Presencial → Pedidos (Mobile e Comissão)** | O relatório de comissão. |
+| 2 | Os cinco KPIs | Venda Total, Pedidos, Itens, Comissão Total e % Mobile. |
+| 3 | **Comissão por Garçom** | Clique no nome para abrir o detalhe do garçom. |
+| 4 | **Excel** | Exporta a grade exibida no relatório. |
+
+O exemplo apresenta dois garçons e três itens no total:
+
+| Garçom | Itens | Venda | Comissão | % |
+|--------|------:|------:|---------:|--:|
+| Ana Garçom | 2 | R$ 33,70 | R$ 3,37 | 10% |
+| Bruno Garçom | 1 | R$ 19,90 | R$ 0,99 | 5% |
+| **Total** | **3** | **R$ 53,60** | **R$ 4,36** | — |
+
+## Detalhe item a item
+
+Clique no nome de um garçom na tabela **Comissão por Garçom** para abrir os itens vendidos, os valores e o percentual aplicado em cada linha.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/relatorio-comissao-garcom/imagens-tratadas/03-detalhe-itens.png" width="800" alt="Detalhamento da comissão por item ao clicar no garçom" caption="Detalhamento da comissão por item ao clicar no garçom" />
+
+| Nº | Item | O que conferir |
+| -: | ---- | ----------- |
+| 1 | O caminho | **Pedidos Mobile / Ana Garçom** identifica o detalhe da Ana. |
+| 2 | **Comissão R$** | 10% de R$ 14,50 = **R$ 1,45** e 10% de R$ 19,20 = **R$ 1,92**. |
+| 3 | **Comissão %** | Percentual vindo do cadastro do funcionário e copiado para a linha do item. |
+
+A aba **Itens Vendidos** apresenta as colunas:
+
+- Nº da venda
+- Data
+- Garçom
+- Descrição
+- Qtd
+- Situação
+- Mesa
+- Mobile, com **Sim** ou **Não**
+- Login
+- Venda
+- Comissão R$
+- Comissão %
+
+## Atalho no caixa: Resumo Presencial
+
+No caixa aberto, acesse **Caixa → ver o caixa**. No título **Resumo**, mude o seletor para **Resumo Presencial**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/relatorio-comissao-garcom/imagens-tratadas/04-caixa-resumo-comissao.png" width="800" alt="Resumo Presencial do caixa com os filtros da comissão" caption="Resumo Presencial do caixa com os filtros da comissão" />
+
+| Nº | Item | O que é |
+| -: | ---- | ----------- |
+| 1 | **Resumo Presencial** | Seletor no topo do painel direito. |
+| 2 | **Taxa de Serviço** | Gorjeta por funcionário. |
+| 3 | **Comissão Garçom** | Mostra Qtd, Venda Total e Comissão. Os três filtros alteram o que entra no resultado. |
+
+<Callout kind="alert">
+
+O resumo do caixa agrupa o período inteiro daquele caixa. Se ele está aberto há dias, mistura venda antiga. A conferência item a item continua sendo feita no relatório de Desempenho.
+
+</Callout>
+
+A seção **Comissão Garçom** possui estes filtros:
+
+- **Exibir somente pedidos Mobile**
+- **Exibir somente pedidos com Taxa de Serviço**
+- **Exibir somente pedidos pagos por completo**
+
+<Callout kind="tip">
+
+Deixe **Exibir somente pedidos Mobile** desmarcado para incluir o painel web. Os pedidos do aplicativo continuam disponíveis no Desempenho, com **% Mobile** acima de zero.
+
+</Callout>
+
+## Resumo
+
+1. Acesse **Desempenho → Presencial → Pedidos (Mobile e Comissão)**.
+2. Filtre **Hoje** ou informe a data de início e a data de fim do período.
+3. Confirme se a situação está em **RECEBIDO**.
+4. Confira os KPIs, a tabela por garçom e o detalhe dos itens vendidos.
+5. Use **Excel** para exportar a grade e mantenha o **Resumo Presencial** como atalho para consultar o caixa.
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+
+<Expandable title="O relatório só conta o aplicativo?">
+
+Não. Mobile no título é o nome da tela. Vendas do painel web com usuário do garçom ou código de operador também entram. Nesse caso, o **% Mobile** fica em 0%.
+
+</Expandable>
+
+<Expandable title="Por que apareceu venda de outro dia?">
+
+O calendário estava em 30 dias ou o caixa permaneceu aberto durante a virada do dia. Filtre **Hoje** ou informe o intervalo correto do fechamento.
+
+</Expandable>
+
+<Expandable title="Situação diferente de RECEBIDO entra?">
+
+O padrão é somente **RECEBIDO**. Abra o filtro se quiser consultar pedidos abertos ou cancelados, mas não use essas situações para pagar a equipe.
+
+</Expandable>
+
+<Expandable title="Qual a diferença entre comissão e taxa de serviço?">
+
+Comissão é o percentual do garçom sobre cada item lançado. Taxa de serviço é a gorjeta de 10% da mesa, conferida no **Relatório de Taxa de Serviço**.
+
+</Expandable>
+
+</ExpandableGroup>
+
+## Manuais relacionados
+
+<Columns cols={2}>
+
+<Card title="Comissão do Garçom" href="/comissao-garcom-cadastrar" icon="user-check">
+
+Cadastre o garçom e defina o percentual de comissão.
+
+</Card>
+
+<Card title="Relatório de Taxa de Serviço" href="/relatorio-taxa-servico" icon="receipt">
+
+Acompanhe a gorjeta de 10% arrecadada.
+
+</Card>
+
+<Card title="Abrir Caixa" href="/caixa-abrir" icon="unlock">
+
+Abra o caixa para iniciar o expediente.
+
+</Card>
+
+<Card title="Fechar Caixa" href="/caixa-fechar" icon="lock">
+
+Feche o caixa e confira os totais do dia.
+
+</Card>
+
+</Columns>

@@ -270,6 +270,18 @@
                   {
                     "title": "🪑 Cadastrar Comandas e QR Code",
                     "path": "cadastro-comandas"
+                  },
+                  {
+                    "title": "🧾 Comissão do Garçom",
+                    "path": "comissao-garcom-cadastrar"
+                  },
+                  {
+                    "title": "📊 Relatório de Comissão do Garçom",
+                    "path": "relatorio-comissao-garcom"
+                  },
+                  {
+                    "title": "📊 Relatório de Taxa de Serviço",
+                    "path": "relatorio-taxa-servico"
                   }
                 ]
               },

@@ -1,0 +1,231 @@
+---
+title: "🧾 Comissão do Garçom"
+description: "Cadastre o garçom como funcionário, defina o percentual de comissão e vincule um usuário para o sistema calcular a comissão automaticamente em cada item lançado."
+---
+
+## Comissão do Garçom
+
+Cadastre o garçom, defina o percentual de comissão, vincule o usuário ao funcionário e confira o valor calculado em cada item lançado no relatório.
+
+## Comissão só existe quando o sistema sabe quem lançou
+
+A comissão é calculada quando o sistema identifica o garçom responsável pelo lançamento por um destes três métodos:
+
+- **App garçom:** o celular identifica quem está logado.
+- **Login web vinculado ao funcionário:** o usuário do painel está associado ao cadastro do garçom. Este é o caminho deste manual.
+- **Código do operador:** o sistema pede o código cadastrado antes de abrir o pedido.
+
+<Callout kind="alert" collapsed="false">
+
+Se o pedido for lançado com o usuário da loja, sem funcionário no login e sem código de operador, o item entra sem comissão.
+
+</Callout>
+
+<Callout kind="info" collapsed="false">
+
+Comissão não é taxa de serviço, que corresponde à gorjeta de 10%. São dois dinheiros diferentes.
+
+</Callout>
+
+## Cadastrar o garçom e o percentual
+
+Cadastre primeiro o funcionário e depois defina a função Garçom e o percentual que será aplicado aos produtos lançados por ele.
+
+<Steps>
+<Step title="Acesse a lista de funcionários">
+
+Acesse **Cadastros → Funcionários** e clique em **+ Novo Funcionário (F1)**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/comissao-garcom-cadastrar/imagens-tratadas/01-lista-funcionarios.png" width="800" alt="Lista de funcionários com garçons cadastrados" caption="Lista de funcionários com garçons cadastrados" />
+
+| Nº | Item | O que observar |
+| -: | ---- | -------------- |
+| 1 | **+ Novo Funcionário (F1)** | Abre o cadastro do funcionário. |
+| 2 | Card **Garçons** | Conta quantos funcionários estão com a função Garçom. |
+| 3 | Coluna **Função** | Mostra o selo azul **Garçom** depois que a função é salva. |
+
+</Step>
+
+<Step title="Preencha os dados do funcionário">
+
+Na aba **Dados**, informe o nome do funcionário e, se a operação utilizar esse recurso, o código de operador.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/comissao-garcom-cadastrar/imagens-tratadas/02-ana-dados.png" width="800" alt="Aba Dados com nome e código de operador preenchidos" caption="Aba Dados: nome e código de operador" />
+
+| Nº | Campo | O que fazer |
+| -: | ----- | ----------- |
+| 1 | **Nome \*** | Informe o nome do funcionário. O campo é obrigatório. |
+| 2 | **Código Operador** | Informe um número curto para uso no teclado do operador. |
+| 3 | **CADASTRAR (F2)** | Grava os dados. Sem preencher a aba Função, o funcionário ainda não recebe comissão. |
+
+</Step>
+
+<Step title="Marque a função Garçom e defina a comissão">
+
+Abra a aba **Função**, marque **Garçom** e informe o percentual. O campo **Comissão (%)** aparece depois que a função é marcada.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/comissao-garcom-cadastrar/imagens-tratadas/03-ana-funcao.png" width="800" alt="Aba Função com Garçom marcado e comissão preenchida" caption="Função Garçom marcada e comissão preenchida" />
+
+| Nº | Campo | O que fazer |
+| -: | ----- | ----------- |
+| 1 | **Garçom** | Marque a função do funcionário. |
+| 2 | **Comissão (%)** | Informe o percentual aplicado sobre cada item lançado pelo garçom. |
+| 3 | **CADASTRAR (F2)** | Grava a função e o percentual de comissão. |
+
+</Step>
+</Steps>
+
+No exemplo, os percentuais ficam no cadastro de cada garçom:
+
+| Garçom | Comissão |
+| ------ | --------: |
+| **Ana Garçom** | 10% |
+| **Bruno Garçom** | 5% |
+
+<Callout kind="alert">
+
+Não existe campo de comissão no cadastro do produto. O mesmo lanche paga 10% se a Ana lançar e 5% se o Bruno lançar.
+
+</Callout>
+
+## Vincular o usuário ao funcionário
+
+Para lançar pedidos pelo painel web, associe o usuário de acesso ao funcionário correspondente. Acesse **Configuração → Usuários** e clique em **+ Novo Usuário (F1)**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/comissao-garcom-cadastrar/imagens-tratadas/04-usuario-ana.png" width="800" alt="Novo usuário vinculado à garçonete Ana" caption="Usuário vinculado à garçonete Ana" />
+
+| Nº | Campo | O que fazer |
+| -: | ----- | ----------- |
+| 1 | **Login** e **Senha** | Informe os dados que a pessoa usará para entrar no sistema. |
+| 2 | **Funcionário** | Escolha **Ana Garçom**. Sem essa associação, o pedido web não carrega a comissão dela. |
+| 3 | **Grupo de Acesso** | Escolha um grupo de acesso. Não deixe o campo como **Nenhum**. |
+| 4 | **Aplicativos** | Ative a opção se a pessoa também usar o app do garçom. |
+| 5 | **SALVAR (F2)** | Clique no botão para gravar. O atalho F2 desta tela não salva sozinho. |
+
+Depois de salvar, confira se o login aparece associado ao funcionário.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/comissao-garcom-cadastrar/imagens-tratadas/05-lista-usuarios.png" width="800" alt="Lista de usuários mostrando garçons vinculados" caption="Lista de usuários mostrando garçons vinculados" />
+
+| Nº | Item | O que observar |
+| -: | ---- | -------------- |
+| 1 | **ana.garcom** | Mostra o nome **Ana Garçom** e a função **Garçom**. |
+| 2 | **bruno.garcom** | Mostra o segundo garçom, configurado com comissão de 5%. |
+
+## Lançar logado como o garçom
+
+Saia da conta da loja e entre com **ana.garcom**. Em **Mesas/Comandas → Novo Pedido (F1)**, o campo **Garçom** já vem preenchido com o funcionário vinculado ao login.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/comissao-garcom-cadastrar/imagens-tratadas/06-garcom-ana.png" width="800" alt="Novo pedido com o garçom Ana já preenchido pelo login" caption="Novo pedido com garçom já preenchido pelo login" />
+
+| Nº | Item | O que observar |
+| -: | ---- | -------------- |
+| 1 | **Garçom: Ana Garçom** | Veio do usuário conectado. Não é necessário escolher o garçom manualmente. |
+| 2 | **Taxa Serviço (10%)** | Representa a gorjeta da casa, que é diferente da comissão. |
+
+Escolha a mesa, lance os produtos e salve o pedido em **Salvar (F2)** ou receba o pagamento em **Pagamento (F5)**.
+
+No exemplo, Ana lançou dois itens na **Mesa 16**: Chicken Deluxe por **R$ 14,50** e Anéis de Cebola Empanada por **R$ 19,20**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/comissao-garcom-cadastrar/imagens-tratadas/07-pedido-ana.png" width="800" alt="Pedido na mesa 16 com dois itens e taxa de serviço no total" caption="Pedido com dois itens e taxa de serviço no total" />
+
+| Nº | Item | O que observar |
+| -: | ---- | -------------- |
+| 1 | **Mesa 16** | Indica a mesa onde o pedido foi lançado. |
+| 2 | **Garçom: Ana Garçom** | Continua preenchido com o funcionário do login. |
+| 3 | **Taxa Serviço (10%)** | Acrescenta **R$ 1,45** sobre a base dos produtos que cobram a taxa. |
+| 4 | **Carrinho** | Mostra os dois itens. A comissão usa o valor de cada produto, não o total com a taxa. |
+
+<Callout kind="info">
+
+A comissão usa o valor de cada produto, não o total com taxa de serviço. A taxa de 10% é gorjeta, conferida no relatório de taxa de serviço.
+
+</Callout>
+
+## A prova: a comissão no relatório
+
+Acesse **Desempenho → Presencial → Pedidos (Mobile e Comissão)**, filtre o dia das vendas e clique no nome da Ana. A grade mostra a comissão item a item.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/comissao-garcom-cadastrar/imagens-tratadas/09-prova-comissao.png" width="800" alt="Relatório de comissão com Ana a 10% e Bruno a 5%" caption="Relatório de comissão com Ana a 10% e Bruno a 5%" />
+
+| Nº | Item | O que conferir |
+| -: | ---- | -------------- |
+| 1 | **Comissão Total** | Soma das linhas. No exemplo, totaliza **R$ 4,36**. |
+| 2 | **Ana Garçom** | 2 itens, venda de **R$ 33,70** e comissão de **R$ 3,37**, correspondente a 10%. |
+| 3 | **Bruno Garçom** | 1 item, venda de **R$ 19,90** e comissão de **R$ 0,99**, correspondente a 5%. |
+
+<Callout kind="info">
+
+O **% Mobile** ficou em 0% porque o lançamento foi feito no painel web, não no celular. A comissão entrou mesmo assim, porque o relatório não é exclusivo do app.
+
+</Callout>
+
+## Resumo
+
+1. Cadastre cada garçom em **Cadastros → Funcionários**.
+2. Marque a função **Garçom** na aba **Função**.
+3. Informe o percentual no campo **Comissão (%)**.
+4. Vincule o funcionário ao usuário em **Configuração → Usuários**.
+5. Lance os pedidos usando o login do garçom, o app do garçom ou o código do operador.
+6. Confira os valores em **Desempenho → Presencial → Pedidos (Mobile e Comissão)**.
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+<Expandable title="O produto tem um campo de comissão?">
+
+Não. O percentual de comissão fica no cadastro do garçom.
+
+</Expandable>
+
+<Expandable title="Escolhi o garçom na mesa, mas lancei com o usuário da loja. Tem comissão?">
+
+Não. O sistema precisa identificar o responsável pelo lançamento usando o usuário vinculado, o app do garçom ou o código do operador.
+
+</Expandable>
+
+<Expandable title="A taxa de 10% entra na base da comissão?">
+
+Não. A comissão usa o valor do item. A taxa de serviço é uma gorjeta separada.
+
+</Expandable>
+
+<Expandable title="Posso ter dois garçons com percentuais diferentes?">
+
+Sim. Cada garçom tem seu próprio percentual no cadastro. No exemplo, Ana recebe 10% e Bruno recebe 5%.
+
+</Expandable>
+
+<Expandable title="Preciso criar um usuário para cada garçom?">
+
+Sim, se o lançamento for feito pelo painel web. Se a operação usar o app do garçom ou o código do operador, o usuário não é necessário para identificar o responsável.
+
+</Expandable>
+</ExpandableGroup>
+
+## Manuais relacionados
+
+<Columns cols={2}>
+<Card title="Relatório de Comissão do Garçom" href="/relatorio-comissao-garcom" icon="bar-chart">
+
+Veja quanto cada garçom recebeu de comissão.
+
+</Card>
+
+<Card title="Relatório de Taxa de Serviço" href="/relatorio-taxa-servico" icon="receipt">
+
+Acompanhe a gorjeta de 10% arrecadada.
+
+</Card>
+
+<Card title="Cadastrar Mesas" href="/cadastro-mesas" icon="database">
+
+Cadastre mesas para o atendimento no salão.
+
+</Card>
+
+<Card title="Cadastrar Comandas e QR Code" href="/cadastro-comandas" icon="qr-code">
+
+Cadastre comandas e gere QR Codes.
+
+</Card>
+</Columns>
