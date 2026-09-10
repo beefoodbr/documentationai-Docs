@@ -1,0 +1,221 @@
+---
+title: 📊 Fechamento Fiscal
+description: >-
+  Consulte o resumo fiscal do seu restaurante por mês de competência, exporte relatórios em PDF e Excel, baixe XMLs em ZIP e revise produtos, documentos e tributos para o fechamento mensal.
+---
+
+## Consulte o fechamento fiscal
+
+Consulte o resumo fiscal do seu restaurante por mês de competência na tela **Fiscal → Fechamento Fiscal**. O BeeFood monta o fechamento na hora, sempre com os números atuais, sem um botão de fechar o mês.
+
+## Onde fica e quem vê
+
+No menu **Fiscal**, abra **Fechamento Fiscal**, identificado com o selo **Novo**. A tela foi feita para computador. No celular, o item aparece, mas informa que você precisa acessar pelo computador.
+
+O acesso depende do grupo de acesso. Uma única permissão, **Fechamento Fiscal**, libera as duas abas da tela: **Fechamento** e **Contadores**. Sem essa permissão, o item não aparece no menu.
+
+O fechamento mostra um CNPJ por vez. Use o seletor de cardápio no canto superior direito para escolher a filial. A opção **Todos** não está disponível.
+
+## A tela de resumo
+
+Abra **Fiscal → Fechamento Fiscal**. A competência mais recente é selecionada automaticamente.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/fechamento-fiscal/imagens-tratadas/01-tela-resumo.png" width="1532" height="856" alt="Tela de resumo do fechamento fiscal" />
+
+| Nº | Item | O que é |
+| --- | --- | --- |
+| 1 | Aba **Fechamento** | Exibe os números da competência selecionada. |
+| 2 | **Cardápio / CNPJ** | Mostra a filial ativa. Ao trocar de filial, o BeeFood recarrega o fechamento do CNPJ selecionado. |
+| 3 | **Competência** | Define o mês consultado, como Setembro de 2026. |
+| 4 | **Mês inteiro** | Mostra o mês completo ou permite escolher um recorte de dias. |
+| 5 | **Exportar** | Abre as opções para gerar o resumo em PDF ou Excel. |
+| 6 | **XMLs** | Gera um arquivo ZIP com os XMLs da competência. |
+| 7 | **Valor autorizado** | Soma os valores das notas autorizadas. Notas canceladas não entram no total. |
+| 8 | **Documentos** e **Itens** | Mostra a quantidade de notas e de linhas de produtos no período. |
+| 9 | **Composição** | Detalha produtos, descontos, fretes e outros valores. |
+| 10 | **Tributos** e **por tipo** | Exibe os impostos informados nas notas e a divisão entre NFC-e e NF-e. |
+
+Se a filial não tiver CNPJ configurado, a tela orienta você a acessar **Fiscal → Configuração**.
+
+Uma competência sem movimento aparece como nenhum documento, sem indicar erro. Os totais exibidos são os mesmos que o contador consulta no portal.
+
+<Callout kind="alert">
+
+Quando faltar um arquivo ou existir um buraco na numeração das notas, um aviso âmbar aparece acima dos totais. Confira esse aviso antes de usar os valores na apuração.
+
+</Callout>
+
+## Exportar em PDF, Excel e ZIP dos XMLs
+
+Clique em **Exportar** para gerar o resumo da competência.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/fechamento-fiscal/imagens-tratadas/02-exportar-pdf-excel.png" width="600" alt="Menu Exportar com opções PDF e Excel" />
+
+| Nº | Item | O que faz |
+| --- | --- | --- |
+| 1 | **PDF** | Gera o fechamento em PDF no navegador. |
+| 2 | **Excel** | Gera uma planilha. Os produtos entram no arquivo quando a aba **Produtos** já foi carregada. |
+
+O ZIP dos **XMLs** é montado no servidor. Enquanto o arquivo é preparado, o botão fica em **Preparando…**. Não feche a página nem clique novamente até o arquivo chegar.
+
+O lojista não tem limite de downloads por hora. O portal do contador tem um limite próprio de downloads.
+
+## Recortar o mês
+
+Use o filtro de período para consultar uma quinzena ou outro intervalo dentro da competência.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/fechamento-fiscal/imagens-tratadas/03-filtro-periodo.png" width="600" alt="Filtro de período com mês inteiro, quinzenas e calendário" />
+
+| Nº | Item | O que fazer |
+| --- | --- | --- |
+| 1 | **Mês inteiro** | Volta ao mês completo, que é o padrão. |
+| 2 | **1ª quinzena** / **2ª quinzena** | Seleciona um dos recortes prontos. |
+| 3 | **De** / **Até** | Define um intervalo livre, usando apenas dias da competência selecionada. |
+| 4 | **APLICAR** | Recarrega o resumo, os produtos e os documentos com o recorte escolhido. |
+
+O recorte fica registrado na URL. Você pode copiar o link e enviar para outra pessoa, que verá a mesma competência e o mesmo intervalo.
+
+## Produtos e impostos
+
+A aba **Produtos** lista os itens das notas com os dados fiscais usados no fechamento.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/fechamento-fiscal/imagens-tratadas/04-aba-produtos.png" width="1532" height="856" alt="Aba Produtos com tabela de itens e agrupamentos" />
+
+| Nº | Item | O que é |
+| --- | --- | --- |
+| 1 | Aba **Produtos** | Lista uma linha por produto e situação fiscal. |
+| 2 | **Por CFOP**, **Por CST**, **Por NCM** | Agrupa os mesmos itens por CFOP, CST ou NCM. |
+| 3 | Busca e **Filtros** | Permite localizar itens por código, descrição ou tipo de nota. |
+| 4 | **Colunas** | Exibe grupos de impostos, como ICMS, PIS/COFINS e IBS/CBS. |
+| 5 | A tabela | Mostra código, descrição, NCM, CFOP, CST, alíquota, quantidade e valor. |
+
+O mesmo produto pode aparecer mais de uma vez quando a situação fiscal mudou durante o mês, como em casos de CST ou alíquota diferentes. Essas linhas representam situações de apuração diferentes e não duplicatas do cadastro.
+
+Para consultar os valores agrupados, selecione **Por CFOP**, **Por CST** ou **Por NCM**. O agrupamento não altera o cadastro dos produtos.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/fechamento-fiscal/imagens-tratadas/05-produtos-por-cfop.png" width="1532" height="856" alt="Visão agrupada por CFOP" />
+
+| Nº | Item | O que observar |
+| --- | --- | --- |
+| 1 | **Por CFOP** | Indica a sub-aba de agrupamento ativa. |
+| 2 | O gráfico | Destaca os CFOP com maior valor. |
+| 3 | A tabela | Detalha linhas, itens, quantidade, base e imposto por CFOP. |
+
+Para corrigir o imposto de um produto, use **Edição Fiscal**. A alteração vale para as próximas notas, não para notas já autorizadas.
+
+## Documentos da competência
+
+A aba **Documentos** lista as notas emitidas na competência selecionada.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/fechamento-fiscal/imagens-tratadas/06-aba-documentos.png" width="1532" height="856" alt="Lista de NFC-e da competência" />
+
+| Nº | Item | O que é |
+| --- | --- | --- |
+| 1 | Aba **Documentos** | Lista uma linha por nota. |
+| 2 | Busca | Localiza a nota pelo número ou pela chave de acesso. |
+| 3 | **Ver itens** | Abre os produtos da nota sem baixar o XML. |
+| 4 | **Ver XML** | Exibe o conteúdo do arquivo autorizado. |
+| 5 | **Baixar** | Baixa o XML da nota. Quando existe cancelamento, oferece os dois arquivos. |
+
+Ao abrir **Ver itens**, confira os dados de cada linha da nota.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/fechamento-fiscal/imagens-tratadas/07-dialog-itens.png" width="600" alt="Itens de uma nota abertos" />
+
+| Nº | Item | O que observar |
+| --- | --- | --- |
+| 1 | O número da nota | Confere com o número exibido na lista de documentos. |
+| 2 | Os itens | Mostra código, descrição, quantidade, valor e tributação de cada linha. |
+
+## Quem tem acesso a estes dados
+
+Na barra de abas, clique no botão **?** para consultar a explicação sobre o acesso aos documentos fiscais.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/fechamento-fiscal/imagens-tratadas/08-ajuda-acesso.png" width="600" alt="Ajuda sobre quem tem acesso aos dados" />
+
+| Nº | Item | O que fazer |
+| --- | --- | --- |
+| 1 | **?** | Abre o aviso sobre quem pode consultar os dados. |
+| 2 | **Ver contadores autorizados** | Muda para a aba **Contadores**, onde você consulta os contadores autorizados. |
+
+## A permissão no grupo de acesso
+
+A permissão fica em **Configuração → Usuários → Grupos de Acesso**, na categoria **Fiscal**.
+
+Abra o grupo de acesso, como **Administrador**, e filtre as permissões por **Fiscal**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/fechamento-fiscal/imagens-tratadas/10-permissao-fechamento-fiscal.png" width="1532" height="856" alt="Grupo Administrador filtrado em Fiscal com switch Fechamento Fiscal" />
+
+| Nº | Item | O que observar |
+| --- | --- | --- |
+| 1 | Filtro **Fiscal** | Mostra apenas as permissões fiscais. |
+| 2 | **Fechamento Fiscal** | Controla a exibição do item no menu. Com o switch ligado, o usuário acessa a tela. |
+
+<Callout kind="info">
+
+A categoria Fiscal tem 6 itens: NF-e, NFC-e, Configuração, Edição Fiscal, NFe Recebidas e Fechamento Fiscal. Uma única permissão libera as duas abas da tela, **Fechamento** e **Contadores**.
+
+Grupos novos são criados com a permissão ligada. Para impedir que caixas ou garçons vejam o fechamento, desligue o switch no grupo correspondente.
+
+Depois de alterar a permissão, espere cerca de 1 minuto e peça para a pessoa sair e entrar novamente no BeeFood. Recarregar a página não basta.
+
+Consulte também [Grupos de acesso](/manuais/grupos-acesso).
+
+</Callout>
+
+## Fechamento do lojista e o portal do contador
+
+<Callout kind="info">
+
+O fechamento do lojista e o portal do contador usam os mesmos dados fiscais. No BeeFood, você confere o mês, gera PDF ou Excel e baixa os XMLs. O contador autorizado acessa o portal para consultar e baixar os documentos da empresa.
+
+Consulte [Autorizar contador](/manuais/autorizar-contador) para definir quem pode acessar os dados e [Portal do contador](/manuais/portal-contador) para orientar o acesso externo.
+
+</Callout>
+
+## Perguntas rápidas
+
+<ExpandableGroup>
+
+<Expandable title="O fechamento substitui o Google Drive?">
+
+Sim, para o dia a dia. O contador autorizado acessa o portal e baixa o mês diretamente, sem depender de uma pasta compartilhada.
+
+</Expandable>
+
+<Expandable title="Posso corrigir uma nota já emitida por aqui?">
+
+Não. O XML autorizado é assinado e não pode ser alterado. Use **Edição Fiscal** para corrigir o cadastro fiscal do produto. A alteração vale para as próximas notas.
+
+</Expandable>
+
+<Expandable title="No celular não abre.">
+
+A tela de Fechamento Fiscal precisa ser acessada pelo computador, assim como as telas de NFC-e e Edição Fiscal.
+
+</Expandable>
+
+<Expandable title="O ZIP trava no Preparando…">
+
+Aguarde enquanto o servidor monta o arquivo nota a nota. Não feche a página. Se a conexão cair, a tela volta ao estado normal e você pode tentar novamente.
+
+</Expandable>
+
+</ExpandableGroup>
+
+## Manuais relacionados
+
+<Columns cols={2}>
+
+<Card title="🤝 Autorizar Contador" href="/manuais/autorizar-contador" icon="hand">
+
+Defina quais contadores podem consultar e baixar os documentos fiscais da empresa.
+
+</Card>
+
+<Card title="🌐 Portal do Contador" href="/manuais/portal-contador" icon="globe">
+
+Consulte as orientações para o acesso do contador aos documentos fiscais.
+
+</Card>
+
+</Columns>

@@ -1,0 +1,262 @@
+---
+title: 🌐 Portal do Contador
+description: >-
+  Acesse os dados fiscais dos seus clientes pelo portal beefood.app/contador: consulte fechamentos, baixe XMLs, revise produtos, documentos e NF-e recebidas de fornecedores, e edite impostos quando autorizado.
+---
+
+Acesse os dados fiscais dos seus clientes pelo portal `beefood.app/contador`, uma área separada do painel do restaurante. A senha é uma só para todos os clientes que usam o mesmo CPF ou CNPJ, e o fechamento que você vê é o mesmo que o lojista vê em Fiscal → Fechamento Fiscal.
+
+## O e-mail de autorização
+
+O convite chega pelo remetente **BeeFood Fiscal**. O botão disponível depende de você já ter ou não uma senha no portal.
+
+### Primeiro acesso: criar senha
+
+Clique em **CRIAR MINHA SENHA**. O botão abre o portal, onde você informa o documento autorizado e cria a senha que será usada para todos os clientes vinculados ao mesmo CPF ou CNPJ.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/portal-contador/imagens-tratadas/01-email-criar-senha.png" width="600" alt="E-mail pedindo para criar a senha" />
+
+| Nº | Item | O que fazer |
+| --- | --- | --- |
+| 1 | A empresa que autorizou | Confira se é o seu cliente. |
+| 2 | O documento | Use o mesmo CPF ou CNPJ que você informará no portal. |
+| 3 | **CRIAR MINHA SENHA** | Abre `beefood.app/contador`. |
+
+### Conta que já existe: só entrar
+
+Se você já criou uma senha, clique em **ACESSAR O PORTAL** e use a senha existente. Quando a empresa tiver mais de um CNPJ, o e-mail informa quantos estabelecimentos aparecerão na sua lista.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/portal-contador/imagens-tratadas/02-email-acessar-portal.png" width="600" alt="E-mail para quem já tem senha com aviso de 2 CNPJs" />
+
+| Nº | Item | O que observar |
+| --- | --- | --- |
+| 1 | **2 CNPJs** | Matriz e filial entram juntas na lista. |
+| 2 | **ACESSAR O PORTAL** | Não cria uma nova senha. |
+
+Se você não presta serviço para a empresa indicada, ignore o e-mail e avise em `integracao@beefood.com.br`.
+
+## Entrar no portal
+
+Abra [beefood.app/contador](https://beefood.app/contador). O portal tem login, senha e sessão próprios, separados do painel do restaurante.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/portal-contador/imagens-tratadas/03-login-identificar.png" width="600" alt="Tela inicial do portal" />
+
+| Nº | Item | O que fazer |
+| --- | --- | --- |
+| 1 | **CPF, CNPJ ou código** | Informe o documento autorizado. O portal aceita o documento com ou sem máscara. |
+| 2 | **Continuar** | O portal identifica se é o primeiro acesso ou um login existente. |
+| 3 | **Acessar painel BeeFood** | Volta para o login do restaurante. Não use essa opção para entrar como contador. |
+
+Se for o primeiro acesso, crie sua senha na tela seguinte. Se a conta já existir, informe a senha cadastrada.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/portal-contador/imagens-tratadas/05-login-senha.png" width="600" alt="Tela de senha do portal do contador" />
+
+| Nº | Item | O que fazer |
+| --- | --- | --- |
+| 1 | O nome e o documento | Confirme se os dados correspondem à sua conta. Para trocar o documento, volte ao passo anterior. |
+| 2 | **Senha** | Informe a senha criada para o portal. |
+| 3 | **Entrar** | Abre a tela **Meus clientes**. |
+| 4 | **Esqueci minha senha** | Envia um link de recuperação para o e-mail cadastrado. |
+
+<Steps>
+<Step title="Criar a senha no primeiro acesso">
+
+Informe o CPF, CNPJ ou código autorizado e selecione **Continuar**. Confirme seu nome e documento, crie a senha e selecione **Entrar**.
+
+</Step>
+
+<Step title="Confirmar o acesso">
+
+Quando **Meus clientes** abrir, confira se a empresa que autorizou você aparece na lista. Se a empresa tiver matriz e filiais, confirme se todos os CNPJs esperados estão agrupados.
+
+</Step>
+</Steps>
+
+<Callout kind="info">
+
+A sessão dura 12 horas. Depois desse período, entre novamente no portal.
+
+</Callout>
+
+## Meus clientes
+
+Cada CNPJ autorizado aparece em um cartão. Empresas com mais de um CNPJ ficam agrupadas e identificadas pelos selos **Matriz** e **Filial**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/portal-contador/imagens-tratadas/06-meus-clientes.png" width="1532" height="856" alt="Lista Meus clientes com empresas agrupadas" />
+
+| Nº | Item | O que é |
+| --- | --- | --- |
+| 1 | O resumo | Mostra quantas empresas e quantos CNPJs autorizaram você. |
+| 2 | O cartão | Mostra nome, CNPJ, última competência e quantidade de documentos. |
+| 3 | **Matriz** / **Filial** | Identifica cada estabelecimento da rede. |
+| 4 | **Edição fiscal** | Atalho para a edição fiscal quando o cliente habilitou essa permissão. |
+| 5 | As permissões | Indica as ações liberadas pelo lojista, como **Baixar**, **Ver resumo** e **Editar imposto**. |
+
+Clique no cartão da empresa para abrir as competências daquele CNPJ. Com muitos clientes, use a busca por nome ou CNPJ acima da lista.
+
+## Competências e o ZIP do mês
+
+A primeira aba do cliente lista os meses com movimento e permite consultar o fechamento ou baixar os XMLs da competência.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/portal-contador/imagens-tratadas/07-competencias.png" width="1532" height="856" alt="Competências do cliente" />
+
+| Nº | Item | O que é |
+| --- | --- | --- |
+| 1 | O seletor de cliente | Troca de CNPJ sem voltar para a lista de clientes. |
+| 2 | O mês | Mostra a competência, os chips de NFC-e e NF-e, as notas canceladas e o total. |
+| 3 | **Ver fechamento** | Abre o resumo fiscal daquele mês. |
+| 4 | **Baixar XMLs** | Gera o ZIP com os XMLs da competência. |
+
+<Callout kind="alert">
+
+Se faltar algum arquivo no mês, um aviso âmbar aparece acima dos números. Confira o aviso antes de usar o total na apuração. Para competências com mais de 1.000 documentos, o portal pede confirmação antes do download. Também existe um limite de ZIPs por hora.
+
+</Callout>
+
+## O fechamento do mês
+
+O fechamento apresenta a mesma visão fiscal disponível para o lojista, incluindo totais, tributos, tipos de nota e eventuais lacunas de numeração.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/portal-contador/imagens-tratadas/08-fechamento.png" width="1532" alt="Fechamento fiscal do mês no portal" />
+
+| Nº | Item | O que é |
+| --- | --- | --- |
+| 1 | As abas do cliente | Acessa **Competências**, **Fechamento**, **Produtos**, **Documentos**, **NFe Recebidas** e **Edição fiscal**. |
+| 2 | O recorte de período | Alterna entre o mês inteiro e um intervalo de dias. |
+| 3 | **Exportar** | Gera o fechamento em PDF ou Excel. |
+| 4 | Os cartões | Mostra valor autorizado, documentos, itens e notas canceladas. |
+| 5 | Tributos e por tipo | Apresenta os impostos informados e a divisão entre NFC-e e NF-e. |
+
+Se houver um aviso de integridade, ele aparece antes dos totais. Leia o aviso antes de usar ou assinar o fechamento.
+
+## Produtos e documentos
+
+A aba **Produtos** agrupa os itens que saíram nas notas e mostra os dados fiscais associados, como CFOP, CST e NCM.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/portal-contador/imagens-tratadas/09-produtos.png" width="1532" alt="Aba Produtos do portal" />
+
+| Nº | Item | O que é |
+| --- | --- | --- |
+| 1 | Aba **Produtos** | Mostra os mesmos totais do fechamento, detalhados por item. |
+| 2 | **Por CFOP**, **Por CST**, **Por NCM** | Reorganiza os mesmos itens por cada classificação fiscal. |
+| 3 | A tabela | Exibe código, NCM, CFOP, CST, quantidade e valor. |
+
+O mesmo produto pode aparecer mais de uma vez quando a tributação mudou durante o mês. Cada linha representa uma combinação fiscal diferente para a apuração.
+
+A aba **Documentos** lista as notas da competência e permite consultar itens, visualizar XML e baixar arquivos quando essas permissões estiverem liberadas.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/portal-contador/imagens-tratadas/10-documentos.png" width="1532" alt="Lista de documentos da competência no portal" />
+
+| Nº | Item | O que fazer |
+| --- | --- | --- |
+| 1 | A busca | Pesquise pelo número da nota ou pela chave de acesso. |
+| 2 | **Ver XML** / **Baixar** | Abra ou baixe o arquivo da nota. |
+| 3 | **Ver itens** | Consulte os itens sem baixar o XML. |
+
+Sem a permissão de baixar, os botões de ZIP e de XML avulso não aparecem.
+
+## NF-e recebidas de fornecedores
+
+A aba **NFe Recebidas** lista as notas que os fornecedores emitiram contra o CNPJ do cliente. Essas são notas de entrada, separadas das notas emitidas pelo restaurante.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/portal-contador/imagens-tratadas/11-nfe-recebidas.png" width="1532" alt="NFe recebidas no portal do contador" />
+
+| Nº | Item | O que é |
+| --- | --- | --- |
+| 1 | Aba **NFe Recebidas** | Consulta as notas recebidas independentemente do mês do fechamento. |
+| 2 | O intervalo de datas | Permite fazer a conciliação por período, como semana ou quinzena. |
+| 3 | A lista | Mostra fornecedor, número e valor, com opções para consultar XML e gerar ZIP. |
+
+<Callout kind="info">
+
+O histórico começa em março de 2026. A Distribuição de DFe da SEFAZ entrega os últimos três meses, por isso documentos anteriores a esse período não são recuperáveis.
+
+</Callout>
+
+## Edição fiscal
+
+A aba **Edição fiscal** só aparece quando o lojista habilita a permissão **Editar impostos**. A tela usa a mesma estrutura da edição fiscal do restaurante, com edição em lote e taxa de serviço.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/portal-contador/imagens-tratadas/12-edicao-fiscal.png" width="1532" alt="Edição fiscal no portal" />
+
+| Nº | Item | O que observar |
+| --- | --- | --- |
+| 1 | Aba **Edição fiscal** | Reúne as áreas de **Produtos** e **Taxa de serviço**. |
+| 2 | Os filtros | Filtra produtos sem NCM, sem CFOP ou sem CST/CSOSN. |
+| 3 | **Editar** / lote | Permite alterar os mesmos campos disponíveis para o lojista, incluindo IBS/CBS e benefício SC. |
+
+<Callout kind="alert">
+
+A edição fiscal não corrige o passado. XMLs já autorizados não são alterados, e a mudança vale para notas futuras. Produto é cadastro da empresa: editar um produto em um CNPJ alcança as filiais daquela empresa. O lojista vê a alteração no histórico de logs com o nome do contador que fez a mudança.
+
+Consulte [Autorizar Contador](/manuais/autorizar-contador) para entender como o lojista libera essa permissão.
+
+</Callout>
+
+## Diferenças entre o portal e o painel do restaurante
+
+Use o portal para consultar os dados fiscais dos clientes. O painel do restaurante continua sendo o ambiente para operar o negócio e executar ações fiscais que não estão disponíveis no portal.
+
+| Aspecto | Portal do contador | Painel do restaurante |
+| --- | --- | --- |
+| Login | CPF, CNPJ ou código autorizado, com senha própria do portal. | Login da conta do restaurante. |
+| Sessão | Sessão própria, com duração de 12 horas. | Sessão independente do portal. |
+| Escopo | Clientes que autorizaram o mesmo CPF ou CNPJ. | Empresas e filiais administradas pela conta do restaurante. |
+| Dados e telas | Fechamentos, competências, produtos, documentos, NF-e recebidas e edição fiscal autorizada. | Operação do restaurante, incluindo PDV, cardápio e configurações fiscais. |
+| Notas fiscais | Consulta documentos e baixa XMLs quando a permissão estiver liberada. | Executa as operações fiscais do restaurante, como cancelar ou inutilizar notas. |
+
+<Callout kind="info">
+
+O portal não substitui o painel do restaurante. Para cancelar ou inutilizar uma nota, acesse o painel fiscal do restaurante.
+
+</Callout>
+
+## Perguntas rápidas
+
+<ExpandableGroup>
+<Expandable title="O login do restaurante serve aqui?">
+
+Não. O portal tem conta própria, com CPF ou CNPJ e senha do portal. O dono que também atua como contador pode manter as duas sessões no mesmo navegador.
+
+</Expandable>
+
+<Expandable title="Esqueci a senha.">
+
+Na tela de senha, selecione **Esqueci minha senha**. O portal envia um link para o e-mail cadastrado. O lojista também pode disparar o link pela lista de contadores, mas não escolhe a nova senha.
+
+</Expandable>
+
+<Expandable title="Não vejo um cliente novo.">
+
+Peça ao lojista para conferir se ele autorizou o mesmo CPF ou CNPJ usado no seu acesso. Sem uma autorização para esse documento, o portal não mostra o cliente.
+
+</Expandable>
+
+<Expandable title="Os totais diferem do que o cliente me mandou.">
+
+Confira o CNPJ, principalmente a diferença entre matriz e filial, e confirme o recorte de período. O portal e o painel usam o mesmo cálculo para o fechamento.
+
+</Expandable>
+
+<Expandable title="Posso apagar uma nota pelo portal?">
+
+Não. O portal permite consultar dados e, quando autorizado, editar o cadastro fiscal. Para cancelar ou inutilizar uma nota, use o painel fiscal do restaurante.
+
+</Expandable>
+</ExpandableGroup>
+
+## Manuais relacionados
+
+<Columns cols={2}>
+<Card title="📊 Fechamento Fiscal" href="/manuais/fechamento-fiscal" icon="chart-column">
+
+Consulte os detalhes do fechamento fiscal e dos seus totais.
+
+</Card>
+
+<Card title="🤝 Autorizar Contador" href="/manuais/autorizar-contador" icon="hand">
+
+Veja como o lojista autoriza o escritório contábil e libera permissões.
+
+</Card>
+</Columns>

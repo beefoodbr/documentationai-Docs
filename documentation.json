@@ -500,6 +500,23 @@
                   {
                     "title": "📜 Reforma Tributária (IBS/CBS)",
                     "path": "reforma-tributaria"
+                  },
+                  {
+                    "group": "📁 Fechamento Fiscal",
+                    "pages": [
+                      {
+                        "title": "📊 Fechamento Fiscal",
+                        "path": "manuais/fechamento-fiscal"
+                      },
+                      {
+                        "title": "🤝 Autorizar Contador",
+                        "path": "manuais/autorizar-contador"
+                      },
+                      {
+                        "title": "🌐 Portal do Contador",
+                        "path": "manuais/portal-contador"
+                      }
+                    ]
                   }
                 ]
               },

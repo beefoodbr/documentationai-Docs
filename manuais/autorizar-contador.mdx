@@ -1,0 +1,221 @@
+---
+title: 🤝 Autorizar Contador
+description: >-
+  Libere o acesso do seu escritório contábil ao portal do contador: autorize por CPF ou CNPJ, defina permissões, acompanhe o status e revogue ou reative quando precisar.
+---
+
+## Autorize o escritório contábil
+
+Autorize seu escritório contábil a acessar os dados fiscais do seu restaurante pelo portal `beefood.app/contador`. Tudo acontece na aba **Contadores** de **Fiscal → Fechamento Fiscal**. O lojista não escolhe a senha do contador: a mesma conta serve para todos os clientes daquele CPF ou CNPJ.
+
+## A aba Contadores
+
+Em **Fiscal → Fechamento Fiscal**, abra a aba **Contadores** para consultar e gerenciar os escritórios autorizados.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/autorizar-contador/imagens-tratadas/01-aba-contadores.png" width="1532" height="856" alt="Lista de contadores autorizados com status e permissões" />
+
+| Nº | Item | O que é |
+| --- | --- | --- |
+| 1 | Aba **Contadores** | Lista quem pode acessar os documentos fiscais da empresa. |
+| 2 | **+ Autorizar contador** | Abre o cadastro de um novo acesso. |
+| 3 | **Contador** | Mostra o nome e o CPF ou CNPJ do contador. |
+| 4 | **Empresa inteira** | O acesso vale para todos os CNPJs da empresa, inclusive filiais abertas depois. |
+| 5 | **Status** | Mostra **Aguardando primeiro acesso**, **Ativo** ou **Revogado**. |
+| 6 | **Permissões** | Mostra os acessos a XML, fechamento fiscal e edição de impostos. |
+| 7 | **Último acesso** | Informa quando o contador entrou no portal ou mostra **Nunca acessou**. |
+| 8 | **Três pontinhos** | Abre as ações para alterar permissões, redefinir a senha, encerrar ou reativar o acesso. |
+
+O e-mail aparece mascarado para proteger os dados da conta. **Aguardando primeiro acesso** tem prioridade sobre **Ativo**: esse status indica que o contador ainda não criou uma senha. **Ativo** indica que a conta já tem senha e o vínculo com a empresa está válido.
+
+## Autorizar um contador
+
+Clique em **+ Autorizar contador** para abrir o formulário.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/autorizar-contador/imagens-tratadas/02-dialog-autorizar.png" width="600" alt="Formulário de autorizar contador" />
+
+| Nº | Campo | O que fazer |
+| --- | --- | --- |
+| 1 | **CPF ou CNPJ do contador** | Informe o documento com ou sem máscara. Ele identifica a conta do contador. |
+| 2 | **Nome** | Informe o nome do escritório ou do responsável. O limite é de 120 caracteres. |
+| 3 | **E-mail** | Informe o endereço que receberá o convite, os links de redefinição de senha e o aviso de encerramento. |
+| 4 | **Telefone** | Informe um telefone, se desejar. O campo é opcional. |
+| 5 | **Aviso dos CNPJs** | Confirme que o acesso vale para toda a empresa e para todos os CNPJs listados. |
+| 6 | **Baixar arquivos XML** | Permissão ligada por padrão para baixar ZIPs mensais e XMLs avulsos. |
+| 7 | **Ver fechamento fiscal** | Permissão ligada por padrão para consultar o resumo, os produtos e os documentos fiscais. |
+| 8 | **Editar impostos** | Permite editar impostos no portal. As alterações valem para as próximas notas, não para notas já emitidas. |
+
+Siga o fluxo para concluir a autorização:
+
+<Steps>
+<Step title="Preencha o documento">
+
+Informe o CPF ou CNPJ do contador. O BeeFood verifica se já existe uma conta associada ao documento.
+
+</Step>
+
+<Step title="Preencha o nome e o e-mail">
+
+Informe os dados do escritório ou do responsável e, se necessário, um telefone.
+
+</Step>
+
+<Step title="Revise as permissões">
+
+Confira o acesso a XML, fechamento fiscal e edição de impostos. Mantenha desligadas as permissões que o escritório não precisa.
+
+</Step>
+
+<Step title="Confirme a autorização">
+
+Clique em **CONFIRMAR (F2)**. Depois da confirmação, o vínculo aparece na lista e o escritório recebe o convite por e-mail.
+
+</Step>
+</Steps>
+
+<Callout kind="info">
+
+Se o CPF ou CNPJ já tiver uma conta no BeeFood, o sistema não cria outro usuário. A confirmação mostra o nome e o e-mail cadastrado de forma mascarada. Se o e-mail digitado for diferente, o e-mail cadastrado anteriormente continua valendo.
+
+</Callout>
+
+## O e-mail que o contador recebe
+
+O convite é enviado por **BeeFood Fiscal**, pelo endereço `integracao@beefood.com.br`. O assunto informa que a empresa autorizou o acesso fiscal do contador.
+
+O conteúdo varia conforme o documento já tenha ou não uma conta com senha.
+
+### Primeiro acesso: criar senha
+
+Quem ainda não tem senha recebe o botão **CRIAR MINHA SENHA**. No portal, o contador informa o mesmo CPF ou CNPJ e cria a senha que usará para todos os clientes que autorizarem esse documento.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/autorizar-contador/imagens-tratadas/06-email-primeiro-acesso.png" width="600" alt="E-mail de convite com botão CRIAR MINHA SENHA" />
+
+| Nº | Item | O que observar |
+| --- | --- | --- |
+| 1 | **Título** | Informa que o contador foi autorizado. |
+| 2 | **Empresa** | Mostra quem autorizou o acesso e qual documento foi liberado. |
+| 3 | **CRIAR MINHA SENHA** | Leva ao portal `beefood.app/contador` para criar a senha. |
+
+### Conta que já existe: só entrar
+
+Se o contador já criou uma senha para o mesmo CPF ou CNPJ, o convite mostra o botão **ACESSAR O PORTAL**. A senha existente continua valendo para todos os clientes vinculados à conta.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/autorizar-contador/imagens-tratadas/07-email-conta-existente.png" width="600" alt="E-mail de convite com botão ACESSAR O PORTAL" />
+
+| Nº | Item | O que observar |
+| --- | --- | --- |
+| 1 | **CNPJs autorizados** | Mostra que o acesso vale para a empresa inteira, não apenas para a matriz. |
+| 2 | **ACESSAR O PORTAL** | Abre o portal sem criar uma nova senha. |
+| 3 | **Frase da senha** | Orienta o contador a usar a senha já cadastrada. |
+
+O mesmo endereço também pode receber estes avisos:
+
+- **Senha criada**: informa a data e o IP usados no primeiro acesso.
+- **Redefinição de senha**: envia um link para criar uma nova senha e cita o nome da empresa no assunto.
+- **Acesso encerrado**: informa que o vínculo com a empresa foi revogado.
+
+<Callout kind="info">
+
+Se o e-mail não chegar, peça ao contador para verificar a pasta de spam. O vínculo já está válido na lista de contadores, mesmo que o convite ainda não tenha sido aberto.
+
+</Callout>
+
+## As três permissões
+
+Abra os três pontinhos da linha do contador e selecione **Alterar permissões**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/autorizar-contador/imagens-tratadas/04-dialog-permissoes.png" width="600" alt="Diálogo Alterar permissões" />
+
+| Nº | Permissão | Efeito no portal |
+| --- | --- | --- |
+| 1 | **Baixar arquivos XML** | Permite baixar o ZIP do mês e XMLs avulsos. |
+| 2 | **Ver fechamento fiscal** | Permite consultar o resumo, os produtos e os documentos fiscais. |
+| 3 | **Editar impostos** | Exibe a aba de edição fiscal e aplica a taxa de serviço correspondente. |
+
+Desligar **Ver fechamento fiscal** remove o conteúdo desse cliente, mas não remove o login do contador. Desligar **Editar impostos** esconde a aba de edição fiscal no portal.
+
+A revogação do acesso é imediata. O token do contador pode continuar válido por até 12 horas, mas cada ação consulta o vínculo atualizado. Por isso, o contador perde o acesso aos dados da empresa no momento da revogação.
+
+## Encerrar, reativar e redefinir senha
+
+Abra os três pontinhos da linha ativa para gerenciar o vínculo.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/autorizar-contador/imagens-tratadas/03-menu-acoes.png" width="600" alt="Menu de ações da linha ativa" />
+
+| Nº | Ação | Quando aparece |
+| --- | --- | --- |
+| 1 | **Alterar permissões** | Enquanto o vínculo não estiver revogado. |
+| 2 | **Enviar link de redefinição de senha** | Apenas quando a conta já estiver ativada. Você não define a nova senha. |
+| 3 | **Encerrar acesso** | Abre a confirmação para revogar o vínculo. |
+
+Na linha **Aguardando primeiro acesso**, a opção de redefinição não aparece porque o contador ainda não criou uma senha.
+
+Ao selecionar **Encerrar acesso**, confira a mensagem antes de confirmar.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/autorizar-contador/imagens-tratadas/05-confirmar-encerrar.png" width="600" alt="Confirmação para encerrar o acesso" />
+
+| Nº | Item | O que acontece |
+| --- | --- | --- |
+| 1 | **O recado** | O contador perde os documentos desta empresa. Os outros clientes dele não são afetados. |
+| 2 | **ENCERRAR (ENTER)** | Revoga o vínculo e envia o e-mail de acesso encerrado. |
+| 3 | **CANCELAR (ESC)** | Fecha a confirmação sem alterar o acesso. |
+
+<Callout kind="alert">
+
+Não existe campo de senha nesta tela. A senha pertence ao escritório e pode ser usada em outros clientes autorizados pelo mesmo CPF ou CNPJ. Uma linha revogada ganha a ação **Reativar acesso**; a conta e a senha continuam, e apenas o vínculo com a sua empresa volta a ficar válido.
+
+</Callout>
+
+## Acesso ao portal
+
+Depois de autorizado, o contador acessa os dados pelo [Portal do Contador](/manuais/portal-contador). Para entender os dados disponíveis no fechamento, consulte também [Fechamento Fiscal](/manuais/fechamento-fiscal).
+
+<Callout kind="info">
+
+O contador usa o mesmo CPF ou CNPJ informado na autorização para entrar no portal. A senha é criada pelo próprio contador no primeiro acesso ou reutilizada quando a conta já existe.
+
+</Callout>
+
+## Perguntas rápidas
+
+<ExpandableGroup>
+<Expandable title="Posso autorizar só a matriz, sem a filial?">
+
+Não. O acesso é da empresa inteira. Filiais abertas depois também entram automaticamente no vínculo.
+
+</Expandable>
+
+<Expandable title="Digitei o e-mail errado.">
+
+Se a conta já existia, o e-mail cadastrado continua valendo e aparece mascarado na confirmação. Se a conta é nova, encerre o acesso e autorize novamente com o endereço correto.
+
+</Expandable>
+
+<Expandable title="O contador não recebeu o e-mail.">
+
+O vínculo já está na lista de contadores. O contador pode acessar `beefood.app/contador`, informar o CPF ou CNPJ e criar a senha no primeiro acesso ou entrar com a senha existente. O e-mail serve como aviso, não como requisito para validar o vínculo.
+
+</Expandable>
+
+<Expandable title="Posso ter dois contadores?">
+
+Sim. Cada CPF ou CNPJ representa uma conta, e cada escritório aparece como uma linha separada na lista.
+
+</Expandable>
+
+<Expandable title="Alguém chegou antes e criou a senha do meu contador.">
+
+O primeiro acesso não exige que o contador clique no e-mail. O aviso com data e IP é enviado ao endereço cadastrado, e o status da linha mostra se a conta ainda está aguardando o primeiro acesso. Se o acesso não foi feito pelo contador, envie um link de redefinição de senha e procure o suporte para corrigir o cadastro, se necessário.
+
+</Expandable>
+</ExpandableGroup>
+
+## Manuais relacionados
+
+<Columns cols="2">
+
+<Card title="📊 Fechamento Fiscal" href="/manuais/fechamento-fiscal" icon="chart-column" />
+
+<Card title="🌐 Portal do Contador" href="/manuais/portal-contador" icon="globe" />
+
+</Columns>
