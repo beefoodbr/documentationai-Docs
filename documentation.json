@@ -290,6 +290,10 @@
                   {
                     "title": "📊 Relatório de Taxa de Serviço",
                     "path": "relatorio-taxa-servico"
+                  },
+                  {
+                    "title": "🔄 Transferir item entre mesas e comandas",
+                    "path": "transferencia-itens-mesas"
                   }
                 ]
               },

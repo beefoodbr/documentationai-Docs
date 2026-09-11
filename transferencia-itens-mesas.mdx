@@ -1,0 +1,165 @@
+---
+title: Transferir item entre mesas e comandas
+description: >-
+  Mova itens entre contas abertas de mesas e comandas sem refazer pedidos,
+  conferindo origem, destino, valores e taxas antes de confirmar.
+---
+## Transferir itens entre contas abertas
+
+Mova uma linha inteira de uma conta aberta para outra, como da Mesa 16 para a Comanda 1, sem alterar os demais itens da conta de origem. A transferência leva junto a quantidade, o valor e a observação do item.
+
+<Callout kind="info" collapsed="false">
+  O destino precisa ser outra conta com situação **ABERTO**. Mesa livre não aparece na lista porque ainda não tem uma venda aberta.
+</Callout>
+
+## Onde fica
+
+Abra **Mesas/Comandas** e clique em uma mesa ou comanda **ocupada**. O painel da venda aparece à direita. Em **Produtos**, clique em **Transferir**, ao lado de **Fazer Pedido**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/transferencia-itens-mesas/imagens-tratadas/01-conta-origem-transferir.png" width="800" height="500" alt="Mesa 16 ocupada com o botão Transferir no painel da venda" />
+
+A conta de origem deste exemplo é a **Mesa 16**, com dois itens: **Chicken Deluxe**, de **R$ 14,50**, e **Anéis de Cebola Empanada**, de **R$ 19,20**.
+
+| Nº | Item                        | O que fazer                                                                                              |
+| -- | --------------------------- | -------------------------------------------------------------------------------------------------------- |
+| 1  | Mesa ou comanda **Ocupado** | Abre o painel da conta. Mesa livre não tem Transferir porque ainda não existe uma venda.                 |
+| 2  | **Transferir**              | Abre o assistente em três passos. O botão não aparece se a conta já foi recebida, cancelada ou agrupada. |
+| 3  | Lista de produtos           | É dessa lista que você seleciona as linhas. Sem itens, o botão fica desabilitado.                        |
+
+Abrir a **Comanda 1**, mesmo vazia, é suficiente para torná-la um destino disponível. O sistema lista vendas com situação **ABERTO**, não mesas livres do mapa.
+
+## Escolher os produtos
+
+O primeiro passo mostra as linhas da conta de origem. Marque o item que será transferido. Neste exemplo, marque apenas o **Chicken Deluxe** e deixe os **Anéis de Cebola Empanada** na Mesa 16.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/transferencia-itens-mesas/imagens-tratadas/02-passo-produtos.png" width="600" height="650" alt="Passo Produtos: Chicken Deluxe marcado, Anéis desmarcados" />
+
+Clique em **Próximo** depois de selecionar pelo menos um item.
+
+| Nº | Item             | O que fazer                                                                                                   |
+| -- | ---------------- | ------------------------------------------------------------------------------------------------------------- |
+| 1  | Linha marcada    | A linha inteira será transferida, incluindo quantidade, valor e observação. Não é possível dividir uma linha. |
+| 2  | Linha desmarcada | Continua na conta de origem.                                                                                  |
+| 3  | **Próximo**      | Só fica disponível depois que você marca pelo menos um item.                                                  |
+
+Use **Selecionar Todos** para marcar todos os itens da conta. O campo de busca filtra a lista por nome do produto ou observação.
+
+<Callout kind="alert" collapsed="false">
+  Se você precisa transferir apenas uma unidade de um item com quantidade maior, lance as unidades em linhas separadas antes da transferência. O BeeFood não divide uma linha durante o processo.
+</Callout>
+
+## Escolher o destino
+
+O segundo passo mostra as outras vendas **abertas**. A conta de origem não aparece na lista. Busque por número da venda, mesa, comanda ou nome e selecione o destino.
+
+Neste exemplo, a busca por **Comanda** mostra a **Comanda 1**, venda **#942**. Selecione o card e clique em **Próximo**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/transferencia-itens-mesas/imagens-tratadas/03-passo-destino.png" width="600" height="650" alt="Passo Destino: Comanda 1 selecionada" />
+
+| Nº | Item                                    | O que fazer                                                                                    |
+| -- | --------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| 1  | **Buscar por número, mesa, comanda...** | Filtra a lista quando existem várias contas abertas.                                           |
+| 2  | Card do destino                         | Mostra a venda, a mesa ou comanda e o total atual. O fundo verde indica o destino selecionado. |
+| 3  | **Próximo**                             | Só fica disponível depois que você seleciona um destino.                                       |
+
+Se aparecer a mensagem _Nenhuma venda disponível para transferência_, não existe outra conta com situação **ABERTO**. Abra a mesa ou comanda de destino em **Novo Pedido → Salvar** e tente novamente.
+
+## Conferir e confirmar
+
+O terceiro passo resume a conta de origem, a conta de destino e os produtos selecionados. Confira essas informações antes de gravar, porque não existe uma tela de desfazer.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/transferencia-itens-mesas/imagens-tratadas/04-passo-confirmar.png" width="600" height="650" alt="Passo Confirmar: Mesa 16 para Comanda 1, 1x Chicken Deluxe" />
+
+| Nº | Item          | O que conferir                                                                    |
+| -- | ------------- | --------------------------------------------------------------------------------- |
+| 1  | **DE**        | A conta de origem. Neste exemplo, venda **#941**, Mesa 16.                        |
+| 2  | **PARA**      | A conta de destino. Neste exemplo, venda **#942**, Comanda 1.                     |
+| 3  | **PRODUTOS**  | O que será transferido. Neste exemplo, **1x Chicken Deluxe**, de **R$ 14,50**.    |
+| 4  | **Confirmar** | Grava a transferência. O aviso na tela informa quantas linhas foram transferidas. |
+
+<Callout kind="alert" collapsed="false">
+  Depois de confirmar, você não pode desfazer a operação. Se escolher o destino errado, faça uma nova transferência a partir da conta que recebeu o item.
+</Callout>
+
+## A prova nas duas contas
+
+Confira as duas contas depois da confirmação. A linha transferida deve desaparecer da origem e aparecer no destino.
+
+### Conta de origem
+
+Na **Mesa 16**, permanece apenas o **Anéis de Cebola Empanada**, no valor de **R$ 19,20**. O card da mesa no mapa também mostra o total menor.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/transferencia-itens-mesas/imagens-tratadas/05-origem-depois.png" width="800" height="500" alt="Mesa 16 depois: só os Anéis, R$ 19,20" />
+
+| Nº | Item                         | O que conferir                                         |
+| -- | ---------------------------- | ------------------------------------------------------ |
+| 1  | **Anéis de Cebola Empanada** | O item não marcado permaneceu na conta de origem.      |
+| 2  | Mesa 16 no mapa              | A mesa continua ocupada, mas exibe o valor atualizado. |
+
+### Conta de destino
+
+Na aba **Comandas**, a **Comanda 1** passa a exibir o **Chicken Deluxe**, no valor de **R$ 14,50**. A taxa de serviço que acompanha o item também é recalculada.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/transferencia-itens-mesas/imagens-tratadas/06-destino-depois.png" width="800" height="500" alt="Comanda 1 depois: Chicken Deluxe R$ 14,50" />
+
+| Nº | Item                  | O que conferir                                                                                        |
+| -- | --------------------- | ----------------------------------------------------------------------------------------------------- |
+| 1  | Comanda 1 **Ocupado** | Era o destino da transferência. Neste exemplo, o total passa para **R$ 15,95** com a taxa de serviço. |
+| 2  | **Chicken Deluxe**    | A mesma linha que saiu da Mesa 16 aparece na Comanda 1.                                               |
+
+A taxa de serviço é recalculada nas duas contas. Se houver comissão do garçom, ela acompanha o item transferido. Consulte o percentual cadastrado em [Comissão do Garçom](/comissao-garcom-cadastrar).
+
+## O que Transferir não faz
+
+- **Não divide quantidade:** duas unidades na mesma linha vão juntas. Para transferir apenas uma, lance as unidades em linhas separadas.
+- **Não abre mesa livre:** o destino precisa ser uma conta **ABERTO**. Mesas livres no mapa não aparecem na lista.
+- **Não troca o chip da mesa:** alterar o chip de Mesa 16 para Mesa 17 move a conta inteira para outro lugar, mas não transfere itens entre vendas.
+- **Não transfere operações de caixa:** o botão **TRANSFERIR** do Caixa move operações entre terminais. O botão deste manual move itens de mesas e comandas.
+- **Não funciona no delivery:** a transferência está disponível para contas presenciais de mesa ou comanda, no painel da venda aberta.
+
+O botão **Transferir** desaparece ou fica bloqueado quando a venda foi recebida, cancelada ou agrupada, ou quando existe um fechamento solicitado.
+
+<Callout kind="info" collapsed="false">
+  Não existe uma permissão específica para este botão. Quem consegue abrir **Mesas/Comandas** e editar a conta também consegue transferir itens.
+</Callout>
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+  <Expandable title="Posso transferir da mesa para a comanda ou da comanda para a mesa?" default-open="false">
+    Sim. A lista de destinos mistura mesas e comandas com vendas abertas. O exemplo deste manual transfere um item da Mesa 16 para a Comanda 1.
+  </Expandable>
+
+  <Expandable title="O que acontece se a conta de destino já tiver itens?" default-open="false">
+    Os itens que já estavam na conta permanecem. O produto transferido entra junto com eles, e o total da conta é atualizado.
+  </Expandable>
+
+  <Expandable title="O que faço se escolher o destino errado?" default-open="false">
+    Transfira o item novamente a partir da conta que recebeu o produto para a conta correta. O BeeFood não oferece um botão **Desfazer** para a transferência.
+  </Expandable>
+
+  <Expandable title="Preciso de uma permissão especial para transferir itens?" default-open="false">
+    Não. Qualquer pessoa que consiga abrir **Mesas/Comandas** e visualizar a conta em edição pode usar o botão **Transferir**.
+  </Expandable>
+</ExpandableGroup>
+
+## Manuais relacionados
+
+<Columns cols="2">
+  <Card title="Pedido Mesas e Comandas" href="/mesas" icon="users" cta="Abrir manual" horizontal="false">
+    Consulte e edite as contas abertas de mesas e comandas.
+  </Card>
+
+  <Card title="Cadastrar Mesas" href="/cadastro-mesas" icon="plus" cta="Abrir manual" horizontal="false">
+    Cadastre as mesas que aparecem no mapa do salão.
+  </Card>
+
+  <Card title="Cadastrar Comandas e QR Code" href="/cadastro-comandas" icon="plus" cta="Abrir manual" horizontal="false">
+    Cadastre comandas e configure o acesso por QR Code.
+  </Card>
+
+  <Card title="Comissão do Garçom" href="/comissao-garcom-cadastrar" icon="users" cta="Abrir manual" horizontal="false">
+    Consulte o cadastro do percentual de comissão que acompanha os itens.
+  </Card>
+</Columns>
+
