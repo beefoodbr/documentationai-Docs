@@ -1,0 +1,136 @@
+---
+title: Taxa de serviço opcional no cupom
+description: >-
+  Configure o rodapé presencial do Cupom Pedido para informar ao cliente que a
+  taxa de serviço é opcional sem alterar o pedido.
+---
+## Adicione a mensagem ao cupom do cliente
+
+Adicione **TAXA DE SERVIÇO OPCIONAL** ao rodapé presencial do Cupom Pedido para informar o cliente sem alterar a taxa ou o pedido. A configuração vale para cupons de mesa, comanda e PDV.
+
+## O que este texto faz (e o que não faz)
+
+| Onde                                                         | O que acontece                                                                     |
+| ------------------------------------------------------------ | ---------------------------------------------------------------------------------- |
+| **Rodapé presencial** do Cupom Pedido (este manual)          | A frase sai impressa no papel da mesa, da comanda e do PDV. O pedido **não** muda. |
+| [Taxa e obrigatoriedades de mesa](/mesas-taxas-obrigatorias) | Liga a taxa no pedido novo e define o percentual.                                  |
+| [Relatório de taxa de serviço](/relatorio-taxa-servico)      | Consulta o resultado e o switch **Sem taxa de serviço** no produto.                |
+
+O operador ainda pode desligar a taxa naquele pedido usando o interruptor laranja do detalhe. O rodapé apenas informa o cliente.
+
+## Abra o Cupom Pedido
+
+Acesse **Configuração → Impressão → Layout** e abra o **Cupom Pedido**. Esse é o cupom do cliente. Os layouts **Cozinha** e **Chamar Garçom** não usam esse rodapé.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cupom-taxa-servico-opcional/imagens-tratadas/01-aba-layout.png" width="800" alt="Aba Layout com o Cupom Pedido" />
+
+| Nº | Item             | O que fazer                        |
+| -- | ---------------- | ---------------------------------- |
+| 1  | **Layout**       | Abra a terceira aba de Impressão.  |
+| 2  | **Cupom Pedido** | Abra o editor do cupom do cliente. |
+
+## Vá em Texto Padrão
+
+O modal abre na aba **Configuração**, que controla o que aparece ou some no papel. A frase do rodapé fica na aba **Texto Padrão**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cupom-taxa-servico-opcional/imagens-tratadas/02-modal-abas.png" width="600" alt="Modal do Cupom Pedido: aba Texto Padrão" />
+
+<Callout kind="alert" collapsed="false">
+  Não use **Resetar Configurações**. Esse botão restaura o cabeçalho e o rodapé para o texto de fábrica e apaga o conteúdo que você digitou.
+</Callout>
+
+## Escreva no Rodapé presencial
+
+Na aba **Texto Padrão**, deixe o rodapé **Delivery** sem alterações. Delivery não tem taxa de serviço. Use o campo **Rodapé** da coluna **Texto padrão Presencial**, que atende mesa, comanda e PDV.
+
+Digite a frase no campo:
+
+```text
+TAXA DE SERVIÇO OPCIONAL
+```
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cupom-taxa-servico-opcional/imagens-tratadas/03-texto-rodape.png" width="600" alt="Rodapé presencial com a frase e SALVAR E FECHAR" />
+
+O texto sai como você digitou, centralizado e em letra menor. Cada quebra de linha feita com Enter vira uma nova linha no papel.
+
+| Nº | Item                     | O que fazer                                                         |
+| -- | ------------------------ | ------------------------------------------------------------------- |
+| 1  | **Rodapé** do Presencial | Digite a frase que deve aparecer nos cupons de mesa, comanda e PDV. |
+| 2  | **SALVAR E FECHAR**      | Salve a alteração e feche o editor.                                 |
+
+<Callout kind="info" collapsed="false">
+  **SALVAR E FECHAR** é obrigatório. A tela não salva automaticamente. Asteriscos, como em `**texto**`, não viram negrito: o cupom imprime os próprios caracteres.
+</Callout>
+
+## A taxa continua no pedido
+
+O rodapé altera apenas o layout do cupom. A taxa continua no pedido quando estiver configurada para aquela venda.
+
+Reimprimir um pedido antigo também usa o rodapé atualizado, porque o texto pertence ao layout, não à venda. No exemplo abaixo, a venda **#940**, da Mesa 17, tem Batata frita com cheddar e bacon por R$ 19,90, taxa de 10% de R$ 1,99 e total de R$ 21,69.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cupom-taxa-servico-opcional/imagens-tratadas/04-detalhe-venda.png" width="800" alt="Venda 940 com a taxa de 10% ligada" />
+
+| Nº | Item                   | O que conferir                                                          |
+| -- | ---------------------- | ----------------------------------------------------------------------- |
+| 1  | **Taxa Serviço (10%)** | A taxa continua no pedido. O rodapé não desliga a cobrança.             |
+| 2  | Ícone da impressora    | Selecione **Imprimir Cupom**. O chapéu ao lado abre a ficha da cozinha. |
+
+## O que sai no papel
+
+O cupom mostra a linha **Serviço (10%)** no total e a frase configurada no rodapé presencial.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cupom-taxa-servico-opcional/imagens-tratadas/05-cupom-presencial.png" width="600" alt="Cupom da venda 940 com a frase no rodapé" />
+
+| Nº | Item                         | O que conferir                            |
+| -- | ---------------------------- | ----------------------------------------- |
+| 1  | **Serviço (10%)**            | O valor da taxa de serviço daquela conta. |
+| 2  | **TAXA DE SERVIÇO OPCIONAL** | A frase configurada no rodapé Presencial. |
+
+<Callout kind="info" collapsed="false">
+  Se o BeeImpressão não estiver disponível no computador, o BeeFood informa **Servidor offline. Usando impressão do navegador** e abre o mesmo cupom no preview. Apenas a porta de saída muda.
+</Callout>
+
+## Perguntas rápidas
+
+<ExpandableGroup>
+  <Expandable title="Preciso preencher o rodapé do Delivery?" default-open="false">
+    Não. Delivery não cobra taxa de serviço. A frase deve ficar somente no rodapé Presencial.
+  </Expandable>
+
+  <Expandable title="A frase aparece no Cupom Cozinha?" default-open="false">
+    Não. A aba **Texto Padrão** do **Cupom Pedido** controla o papel do cliente. O Cupom Cozinha não usa esse rodapé.
+  </Expandable>
+
+  <Expandable title="Preciso relogar depois de salvar?" default-open="false">
+    Não. Ao clicar em **SALVAR E FECHAR**, o BeeFood limpa o cache do rodapé. A próxima impressão já usa o texto novo.
+  </Expandable>
+
+  <Expandable title="Posso colocar mais de uma linha?" default-open="false">
+    Pode. Inclua endereço, agradecimento e a frase da taxa no mesmo rodapé presencial. Cada quebra de linha feita com Enter aparece como uma nova linha no papel.
+  </Expandable>
+
+  <Expandable title="Isso torna a taxa opcional no sistema?" default-open="false">
+    Não. O texto apenas informa o cliente. Para não cobrar a taxa naquele pedido, desligue o interruptor no detalhe da venda. Para impedir que a taxa seja adicionada automaticamente a novos pedidos, consulte [Taxa e obrigatoriedades de mesa](/mesas-taxas-obrigatorias). Para retirar um produto da base de cálculo, use **Sem taxa de serviço** no cadastro do produto.
+  </Expandable>
+</ExpandableGroup>
+
+## Manuais relacionados
+
+<Columns cols="2">
+  <Card title="Taxa e obrigatoriedades de mesa" href="/mesas-taxas-obrigatorias" icon="settings" cta="Abrir manual" horizontal="false">
+    Configure a taxa de serviço para novos pedidos de mesa e defina o percentual aplicado.
+  </Card>
+
+  <Card title="Relatório de taxa de serviço" href="/relatorio-taxa-servico" icon="bar-chart" cta="Abrir manual" horizontal="false">
+    Consulte os valores de taxa de serviço e identifique os produtos configurados sem cobrança.
+  </Card>
+
+  <Card title="Impressão" href="/impressao" icon="printer" cta="Abrir manual" horizontal="false">
+    Encontre os recursos de impressão disponíveis no BeeFood.
+  </Card>
+
+  <Card title="Configuração de Impressão" href="/impressao-configuracao-de-impressao" icon="settings" cta="Abrir manual" horizontal="false">
+    Ajuste layouts, textos e outras opções dos cupons impressos.
+  </Card>
+</Columns>
+
