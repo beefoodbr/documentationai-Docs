@@ -1,0 +1,251 @@
+---
+title: Destaque na impressão
+description: Destaque bebidas, molhos e outros produtos no cupom com fundo escuro e letra clara para evitar esquecimentos na montagem dos pedidos.
+---
+
+## Destaque bebidas e produtos no cupom
+
+A bebida que fica na sacola e o molho que ninguém separou deixam de passar despercebidos quando você ativa **Destaque na impressão**. O campo faz a linha do produto ou complemento sair com **fundo escuro e letra clara** no Cupom Pedido e na ficha da cozinha.
+
+<Callout kind="info" collapsed="false">
+
+**Destaque na impressão** não é o selo **Destaque** do cardápio digital. O selo altera a vitrine do cliente; este campo altera somente o papel impresso.
+
+</Callout>
+
+## O que este texto faz (e o que não faz)
+
+| Onde | O que acontece |
+|------|----------------|
+| **Cadastro do produto ou do complemento** (este manual) | Liga ou desliga o destaque daquele item. |
+| **Editar em Lote** (este manual) | Liga ou desliga em vários de uma vez: todas as bebidas, todos os molhos. |
+| **Cupom Pedido e ficha da cozinha** (este manual) | A linha marcada sai com fundo escuro, no presencial e no delivery. |
+| Destaque do cardápio digital | Outro campo. Só muda a vitrine do cliente, não o papel. |
+
+O interruptor **não** muda preço, estoque, ordem do cardápio nem a disponibilidade do item. Vale para produto **e** para complemento, incluindo a opção escolhida dentro de um combo.
+
+## Como destacar um produto (bebida, sobremesa, brinde)
+
+Abra **Cardápio → Produtos** e selecione o produto. Neste exemplo, o item é **Coca Cola 350ml**, do setor **Bebidas**.
+
+O campo fica logo abaixo de **Descrição**. Ele não fica em Opções avançadas. Quando ligado, o texto de apoio indica que o item sai em destaque na impressão do pedido.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/destaque-impressao/imagens-tratadas/01-cadastro-produto.png" width="800" height="600" alt="Cadastro do produto com Destaque na impressão" />
+
+| Nº | Item | O que fazer |
+|----|------|-------------|
+| 1. | **Destaque na impressão** | Ligue para a linha deste produto sair em destaque no papel. |
+
+<Callout kind="alert" collapsed="false">
+
+A tela não salva sozinha. Clique em **SALVAR E SAIR** para gravar a alteração.
+
+</Callout>
+
+## Como destacar um complemento (molho, redução, adicional)
+
+Abra **Cardápio → Complementos** e selecione o item. Neste exemplo, o complemento é **Molho verde**.
+
+O interruptor também fica logo abaixo de **Descrição**. Dentro de um combo, a bebida, a redução ou o molho entra como **opção**, não como produto independente. Por isso, marque o complemento quando quiser destacar essa linha.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/destaque-impressao/imagens-tratadas/02-cadastro-complemento.png" width="800" height="600" alt="Cadastro do complemento com Destaque na impressão" />
+
+| Nº | Item | O que fazer |
+|----|------|-------------|
+| 1. | **Destaque na impressão** | Ligue para a opção sair em destaque debaixo do produto. |
+
+## Como destacar todas as bebidas de uma vez
+
+Para destacar um setor inteiro, abra **Cardápio → Produtos**, filtre o setor **Bebidas** e clique em **Editar em Lote**. O filtro define os itens que receberão a alteração.
+
+Na etapa 2, marque **Destaque na impressão** e altere o valor para **Sim**. Depois, clique em **PROCESSAR (F2)**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/destaque-impressao/imagens-tratadas/03-editar-lote.png" width="800" height="600" alt="Editar em Lote: Destaque na impressão marcado em Sim" />
+
+| Nº | Item | O que fazer |
+|----|------|-------------|
+| 1. | **Destaque na impressão** | Marque o campo e deixe **Sim** para ligar nos itens selecionados. |
+| 2. | **PROCESSAR (F2)** | Grave o lote. Sem este clique, nada muda. |
+
+<Callout kind="alert" collapsed="false">
+
+No Editar em Lote, o valor começa em **Não**. Marcar o campo sem trocar o valor para **Sim** desliga o destaque dos itens selecionados. O mesmo campo existe no lote de **Complementos**, para marcar molhos e reduções em conjunto.
+
+</Callout>
+
+## O pedido de prova
+
+O exemplo usa a venda **#968**, pedido **32**: um **Combo One Burger**, de R$ 39,00, com **Coca Cola 350ml** e **Sem Maionese Verde**, além de **Mozza Sticks + Molho**, de R$ 35,90, com **Molho verde**. O total é **R$ 74,15**.
+
+As linhas destacadas são **Coca Cola 350ml**, **Sem Maionese Verde** e **Molho verde**. O combo e os demais itens continuam com impressão normal.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/destaque-impressao/imagens-tratadas/04-detalhe-venda.png" width="800" height="600" alt="Detalhe da venda #968 com os itens do pedido" />
+
+## O que sai no Cupom Pedido
+
+As linhas marcadas saem com fundo escuro e letra clara. O preço fica na linha de baixo, sem o fundo escuro.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/destaque-impressao/imagens-tratadas/05-cupom-pedido.png" width="400" height="400" alt="Cupom Pedido com itens em destaque" />
+
+| Nº | Item | O que conferir |
+|----|------|----------------|
+| 1. | **Coca Cola 350ml** | Bebida do combo, marcada no cadastro do produto ou do complemento correspondente. |
+| 2. | **Sem Maionese Verde** | Redução marcada como complemento. |
+| 3. | **Molho verde** | Complemento do segundo item. |
+
+## O que sai na impressão da cozinha
+
+A ficha da cozinha não traz os valores dos itens. O destaque mantém o fundo escuro nas linhas marcadas para a equipe identificar a bebida, a redução e o molho durante a montagem.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/destaque-impressao/imagens-tratadas/06-cupom-cozinha.png" width="400" height="400" alt="Cupom da cozinha com itens em destaque" />
+
+| Nº | Item | O que conferir |
+|----|------|----------------|
+| 1. | **Coca Cola 350ml** | Mesma bebida destacada no Cupom Pedido. |
+| 2. | **Sem Maionese Verde** | A redução do combo. |
+| 3. | **Molho verde** | O molho do segundo item. |
+
+## No pedido do delivery
+
+O destaque funciona no pedido presencial e no pedido do delivery. No exemplo abaixo, a **Coca Cola 350ml** escolhida dentro de um combo aparece com fundo escuro no cupom.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/destaque-impressao/imagens-tratadas/07-cupom-delivery.png" width="400" height="400" alt="Cupom Pedido de um pedido do delivery com bebida destacada" />
+
+| Nº | Item | O que conferir |
+|----|------|----------------|
+| 1. | **Coca Cola 350ml** | A bebida do combo, no cupom de um pedido do delivery. |
+
+<Callout kind="info" collapsed="false">
+
+A linha de **Obs** também pode aparecer invertida, com fundo escuro e letra clara. Esse efeito vem do destaque da observação, chamado `obsNegrito`, e não indica que outro produto foi marcado.
+
+</Callout>
+
+## Problemas comuns
+
+| Sintoma | O que verificar |
+|---------|-----------------|
+| Marquei o produto e a linha saiu normal | O cadastro foi gravado com **SALVAR E SAIR**? A tela não salva sozinha. |
+| A bebida do combo saiu sem destaque | Dentro do combo ela é **opção**. Marque o **complemento** em **Cardápio → Complementos**, não apenas o produto solto. |
+| Passei o lote e nada mudou | Na etapa 2, além de marcar o campo, o interruptor precisa ficar em **Sim**. Depois, clique em **PROCESSAR (F2)**. |
+| O lote **desligou** o destaque | O valor começa em **Não**. Marcar o campo e processar sem trocar para **Sim** apaga a marcação. |
+| Um computador imprime com destaque e o outro não | Cada computador guarda a lista de itens marcados por até **12 horas**. No computador onde você salvou, a alteração já está valendo. |
+| Saiu tudo com fundo escuro | Marcação demais deixa de ser destaque. Deixe ligado apenas para os itens que a equipe precisa conferir. |
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+  <Expandable title="Como destacar as bebidas na impressão do pedido?" default-open="false">
+
+Abra a bebida em **Cardápio → Produtos**, ligue **Destaque na impressão** abaixo de **Descrição** e clique em **SALVAR E SAIR**. A linha da bebida sai com fundo escuro no Cupom Pedido e na ficha da cozinha.
+
+  </Expandable>
+
+  <Expandable title="Como destacar todas as bebidas de uma vez?" default-open="false">
+
+Filtre o setor **Bebidas** em **Cardápio → Produtos**, clique em **Editar em Lote**, marque **Destaque na impressão** na etapa 2, deixe o valor em **Sim** e clique em **PROCESSAR (F2)**. Use o mesmo caminho na aba **Complementos** para molhos e reduções.
+
+  </Expandable>
+
+  <Expandable title="Dá para destacar um setor ou uma categoria inteira?" default-open="false">
+
+Sim. O **Editar em Lote** permite destacar um setor inteiro, como Bebidas, ou vários itens filtrados de uma vez. Para complementos, use a aba **Complementos**.
+
+  </Expandable>
+
+  <Expandable title="Serve para não esquecer a bebida na sacola do delivery?" default-open="false">
+
+Sim. O destaque ajuda a **não esquecer a bebida na sacola** porque a linha aparece marcada no cupom que acompanha o pedido.
+
+  </Expandable>
+
+  <Expandable title="Sai um aviso TEM BEBIDA no rodapé do cupom?" default-open="false">
+
+Não. O destaque aparece **na linha do item**, não no rodapé. Para inserir uma frase fixa, use o **Texto Padrão do Cupom Pedido**. Essa frase aparece em todos os pedidos, com bebida ou sem bebida.
+
+  </Expandable>
+
+  <Expandable title="O destaque é igual ao da observação, com fundo?" default-open="false">
+
+Sim. O item usa o mesmo estilo de fundo escuro com letra clara aplicado à observação. A linha inteira fica invertida, sem fonte diferente ou asterisco.
+
+  </Expandable>
+
+  <Expandable title="Funciona no pedido do delivery e do cardápio digital?" default-open="false">
+
+Sim. O campo funciona no Cupom Pedido do presencial e do delivery, inclusive quando o pedido entra pelo cardápio digital.
+
+  </Expandable>
+
+  <Expandable title="A bebida que vem dentro do combo também sai destacada?" default-open="false">
+
+Sim, se o **complemento** estiver marcado. Dentro do combo, a bebida é uma opção do grupo; o cadastro do complemento define o destaque dessa linha.
+
+  </Expandable>
+
+  <Expandable title="Marcar um produto muda o preço, o estoque ou o cardápio digital?" default-open="false">
+
+Não. **Destaque na impressão** altera somente a forma como a linha é impressa.
+
+  </Expandable>
+
+  <Expandable title="É o mesmo Destaque que aparece na vitrine do cardápio?" default-open="false">
+
+Não. O **Destaque** do cardápio digital altera a vitrine do cliente. **Destaque na impressão** só altera o papel.
+
+  </Expandable>
+
+  <Expandable title="Como desligo o destaque de um item?" default-open="false">
+
+Desligue o interruptor no cadastro e clique em **SALVAR E SAIR**. Para vários itens, use **Editar em Lote**, marque o campo e escolha **Não** antes de clicar em **PROCESSAR (F2)**.
+
+  </Expandable>
+
+  <Expandable title="Preciso relogar depois de salvar?" default-open="false">
+
+Não. Salvar o cadastro ou processar o lote libera a alteração no computador usado. Outros computadores podem levar até **12 horas** para atualizar a lista de destaques.
+
+  </Expandable>
+
+  <Expandable title="Dá para destacar só no delivery e deixar o presencial normal?" default-open="false">
+
+Não. O item tem um único interruptor. Quando ligado, o destaque vale para os cupons presenciais e de delivery.
+
+  </Expandable>
+
+  <Expandable title="Aparece no KDS ou nas fichas de consumo do PDV?" default-open="false">
+
+Nesta versão, não. O campo vale para o **Cupom Pedido** e para a **ficha da cozinha**. Ele não aparece no KDS nem nas fichas de consumo do PDV.
+
+  </Expandable>
+</ExpandableGroup>
+
+## Manuais relacionados
+
+<Columns cols={3}>
+  <Card title="Manual do Cardápio: Fundamentos" href="/cardapio-fundamentos" icon="book-open" cta="Abrir manual" horizontal="false">
+
+Cadastro de produtos e uso do Editar em Lote.
+
+  </Card>
+
+  <Card title="Capas e Destaques" href="/capas-e-destaques" icon="zap" cta="Abrir manual" horizontal="false">
+
+Entenda o Destaque que altera a vitrine do cardápio digital.
+
+  </Card>
+
+  <Card title="Taxa de serviço opcional no cupom" href="/cupom-taxa-servico-opcional" icon="settings" cta="Abrir manual" horizontal="false">
+
+Configure o Texto Padrão do Cupom Pedido.
+
+  </Card>
+</Columns>
+
+<Columns cols={3}>
+  <Card title="Fichas de consumo no PDV" href="/pdv-fichas" icon="terminal" cta="Abrir manual" horizontal="false">
+
+Conheça as fichas que não usam o campo Destaque na impressão.
+
+  </Card>
+</Columns>

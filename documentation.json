@@ -478,6 +478,10 @@
                   {
                     "title": "🍳 Impressão da Cozinha Automática",
                     "path": "impressao-cozinha-automatica"
+                  },
+                  {
+                    "title": "🎨 Destaque na impressão",
+                    "path": "destaque-impressao"
                   }
                 ]
               },
