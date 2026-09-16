@@ -231,6 +231,10 @@
                   {
                     "title": "💰 Preço Programado",
                     "path": "cardapio-preco-programado"
+                  },
+                  {
+                    "title": "🌐 Tradução do cardápio presencial: inglês e espanhol",
+                    "path": "cardapio-presencial-ingles-espanhol"
                   }
                 ]
               },
