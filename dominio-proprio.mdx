@@ -1,185 +1,414 @@
 ---
-title: Domínio próprio
-description: Configure um domínio próprio no cardápio digital BeeFood e verifique esse endereço na Meta para usar anúncios com mais confiança
+title: Domínio próprio e subdomínio
+description: >-
+  Configure domínio próprio ou subdomínio no cardápio digital BeeFood: troque
+  servidores DNS, crie CNAME, altere a zona DNS pela própria tela e exclua o
+  domínio quando quiser.
+---
 ---
 
-## Use seu próprio domínio no cardápio digital
+## Domínio próprio no cardápio
 
-Aponte um domínio seu, como `www.seurestaurante.com.br`, para o cardápio digital BeeFood. Assim, o cliente abre o cardápio pelo seu endereço, não pelo link padrão.
+Hoje, seu cardápio digital tem um endereço BeeFood, como `menu.beefood.com.br/beefood3`. Ele funciona, mas não é o endereço que aparece na fachada, no cartão de visita ou no Instagram. Com **domínio próprio**, o cliente abre o cardápio em `www.seurestaurante.com.br`, com os mesmos produtos, pedidos e configurações.
 
-No BeeFood3, você não cola DNS dentro do sistema. Você pede os dados ao suporte BeeFood e depois configura os servidores no seu provedor de domínio, como Registro.br, HostGator ou outro.
+Faça tudo pela tela **Aplicativos → Domínio Próprio**: escolhe o cardápio, informa o endereço, recebe os dados para configurar no seu registrador e acompanha o processo até o domínio ficar **No ar**.
 
 <Callout kind="info" collapsed="false">
-
-Com o domínio verificado na Meta, seus anúncios podem apontar direto para o seu endereço personalizado. Isso ajuda a passar mais confiança para o cliente.
-
+  O BeeFood não vende domínio. Você precisa já ter um domínio registrado, como Registro.br, GoDaddy, HostGator, Hostinger, Cloudflare ou Locaweb. O BeeFood faz o apontamento desse domínio para o seu cardápio.
 </Callout>
 
 ## Antes de começar
 
 <Callout kind="info" collapsed="false">
+  Antes de começar, confirme:
 
-Antes de seguir, confirme estes três pontos:
-
-- Você já contratou um domínio com um registrador, como Registro.br, GoDaddy ou HostGator.
-- Você tem acesso à zona DNS desse domínio.
-- Você tem uma conta BeeFood para abrir o pedido com o suporte.
-
+  1. Um domínio já registrado e no ar, pago e sem pendências com o registrador.
+  2. Acesso ao painel do registrador onde você comprou o domínio.
+  3. O tipo de endereço que você quer usar: o domínio principal (`seurestaurante.com.br`) ou um endereço novo (`cardapio.seurestaurante.com.br`). A seção [Passo 2](#3-passo-2-domínio-próprio-ou-subdomínio) compara os dois. A escolha muda o que você fará no registrador e, no caso do domínio principal, pode afetar o e-mail.
+  4. Cada cardápio da conta aceita um domínio por vez. Para trocar, exclua o domínio atual e cadastre outro.
 </Callout>
 
-## Configure o domínio e faça a verificação na Meta
+## 1. Abrir a tela do Domínio Próprio
 
-<Steps>
-<Step title="Peça os DNS ao suporte BeeFood" icon="help-circle" title-type="p">
+No menu lateral, clique em **Aplicativos** (1). Desça até o grupo **Marketing e CRM** e abra **Domínio Próprio** (2).
 
-Abra o BeeFood3 e clique em **Aplicativos**. Na seção **Marketing e CRM**, abra **Domínio Próprio**.
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/dominio-proprio-configurar/imagens-tratadas/01-aplicativos-dominio.png" width="800" height="450" alt="Tela do BeeFood com o menu Aplicativos e a opção Domínio Próprio destacada" />
 
-<Image
-  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/dominio-proprio/imagens-tratadas/05-beefood-aplicativos.png"
-  width="800"
-  height="450"
-  alt="Tela do BeeFood com o menu Aplicativos e a opção Domínio Próprio destacada"
-  caption="Aplicativos (1) → Domínio Próprio (2)"
-/>
+| Nº | Item                | O que fazer                                              |
+| -- | ------------------- | -------------------------------------------------------- |
+| 1. | **Aplicativos**     | Menu lateral, abre a lista de aplicativos e integrações. |
+| 2. | **Domínio Próprio** | Card do grupo Marketing e CRM. Abre o painel do domínio. |
 
-No modal **Domínio Personalizado**, clique em **Fale com o suporte**. Informe o domínio contratado, como `seurestaurante.com.br`, e aguarde o envio dos **4 servidores de DNS** da sua loja.
+O painel abre pela direita e tem quatro passos no topo: **Cardápio → Tipo → Endereço → Pronto**. Nada é gravado até o botão **CADASTRAR DOMÍNIO** do passo 3.
 
-<Image
-  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/dominio-proprio/imagens-tratadas/06-beefood-modal-dominio.png"
-  width="800"
-  height="450"
-  alt="Modal de domínio próprio no BeeFood com o botão Fale com o suporte em destaque"
-  caption="Fale com o suporte (1)"
-/>
+## 2. Passo 1: escolher o cardápio
 
-Você vai usar exatamente os quatro servidores enviados pelo suporte BeeFood. Não copie DNS de outra loja, mesmo que também use BeeFood.
+Clique no cardápio que vai receber o domínio (1). Embaixo do nome aparece o endereço atual dele, como `menu.beefood.com.br/...`.
 
-</Step>
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/dominio-proprio-configurar/imagens-tratadas/02-escolher-cardapio.png" width="800" height="450" alt="Passo 1: escolher o cardápio que vai receber o domínio" />
 
-<Step title="Cole os DNS no provedor do seu domínio" icon="settings" title-type="p">
+| Nº | Item                   | O que fazer                                                                                                                                                          |
+| -- | ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1. | **Cartão do cardápio** | Clique nele para seguir. Se a sua conta tem mais de um cardápio, como em uma operação com várias lojas, escolha o correto. O domínio vale apenas para esse cardápio. |
 
-Depois de receber os quatro servidores, abra o painel do seu provedor de domínio e localize a área de DNS ou servidores de nomes. É nessa etapa que o apontamento do domínio é feito.
+- O cardápio que **já tem domínio** mostra o endereço e uma etiqueta de situação: **No ar**, **Configurando...** ou **Aguardando você**. Clicar nele abre a situação desse domínio, não um cadastro novo.
+- **Domínios removidos anteriormente** é apenas um histórico. A lista mostra os domínios que já foram excluídos.
 
-Se o seu domínio estiver no **Registro.br**, abra a zona DNS do domínio e preencha os servidores informados pelo suporte BeeFood.
+## 3. Passo 2: domínio próprio ou subdomínio?
 
-<Image
-  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/dominio-proprio/imagens-tratadas/01-registro-br-dns.png"
-  width="800"
-  height="450"
-  alt="Tela do Registro.br mostrando a configuração de DNS do domínio"
-  caption="DNS no Registro.br"
- />
+Aqui os dois caminhos se separam. Leia com calma, porque a escolha muda o que você fará no registrador.
 
-Se o seu domínio estiver na **HostGator**, o caminho pode passar pela troca da plataforma de hospedagem. Primeiro, clique em **Alterar plataforma** na área de DNS.
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/dominio-proprio-configurar/imagens-tratadas/03-escolher-tipo.png" width="800" height="450" alt="Passo 2: os dois caminhos, domínio próprio e subdomínio" />
 
-<Image
-  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/dominio-proprio/imagens-tratadas/02-hostgator-alterar.png"
-  width="800"
-  height="450"
-  alt="Tela da HostGator com a opção Alterar plataforma destacada"
-  caption="HostGator — Alterar plataforma"
- />
+|                               | **Domínio próprio**                                            | **Subdomínio**                                         |
+| ----------------------------- | -------------------------------------------------------------- | ------------------------------------------------------ |
+| Exemplo                       | `seurestaurante.com.br`                                        | `cardapio.seurestaurante.com.br`                       |
+| Endereço                      | O principal, já com o `www` incluído                           | Um endereço novo                                       |
+| O que você faz no registrador | Troca os **servidores DNS**, que são 4 endereços               | Cria **um registro CNAME**                             |
+| Mexe no que já existe?        | **Sim.** O domínio passa a ser gerenciado pelo BeeFood         | **Não.** O site e o e-mail atuais continuam como estão |
+| E-mail do domínio             | **Para de funcionar** até você recriar os registros na aba DNS | Não muda nada                                          |
+| Indicado para                 | Quem quer o endereço principal no cardápio                     | Quem já tem site ou e-mail no domínio                  |
 
-Depois, escolha **Outra Plataforma de Hospedagem** e continue.
+<Callout kind="alert" collapsed="false">
+  Se você usa e-mail nesse domínio, como `contato@seurestaurante.com.br`, pense duas vezes antes de escolher **Domínio próprio**. Ao trocar os servidores DNS, o e-mail deixa de receber mensagens até que você recrie os registros na aba **DNS**, na seção [Alterar a zona DNS](#7-alterar-a-zona-dns). Quando o BeeFood detecta servidores de e-mail no domínio, a própria tela sugere o subdomínio.
+</Callout>
 
-<Image
-  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/dominio-proprio/imagens-tratadas/03-hostgator-outra-plataforma.png"
-  width="800"
-  height="450"
-  alt="Tela da HostGator com a opção Outra Plataforma de Hospedagem"
-  caption="Outra plataforma"
- />
+A próxima seção segue com o **domínio próprio**. Se você escolheu **Subdomínio**, pule para a seção [Parte 2: subdomínio](#parte-2-subdomínio).
 
-Na etapa seguinte, preencha os DNS enviados pelo suporte BeeFood e confirme a alteração.
+## Parte 1: domínio próprio
 
-<Image
-  src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/dominio-proprio/imagens-tratadas/04-hostgator-preencher-dns.png"
-  width="800"
-  height="450"
-  alt="Tela da HostGator para preencher os servidores DNS"
-  caption="Preencher DNS"
- />
+## 4. Digitar e conferir o endereço
 
-<Callout kind="tip" collapsed="false">
+Digite o domínio **sem** `https://` e **sem** `www`. O `www` entra sozinho. Enquanto você digita, o BeeFood confere o endereço e mostra o resultado logo abaixo.
 
-Os prints são exemplos do local onde você cola os dados. Os nomes corretos dos servidores são sempre os que o suporte BeeFood enviou para a sua loja.
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/dominio-proprio-configurar/imagens-tratadas/04-endereco-conferido.png" width="800" height="450" alt="Passo 3: endereço do domínio conferido com aviso amarelo" />
 
+| Nº | Item                                | O que fazer                                                                                                                                  |
+| -- | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1. | **Qual é o endereço?**              | Digite apenas o domínio: `cardapioteste.com.br`. O check verde à direita indica que ele foi aprovado.                                        |
+| 2. | **Vão responder por este cardápio** | Confira os endereços que vão abrir o cardápio. No domínio próprio, são dois: com e sem `www`.                                                |
+| 3. | **Aviso amarelo**                   | É um recado, não um erro. Nesse exemplo, o domínio ainda não foi encontrado no DNS. Confirme com o seu registrador que o domínio está ativo. |
+| 4. | **CADASTRAR DOMÍNIO**               | Grava o pedido. Só fica habilitado depois que a conferência aprovar o endereço.                                                              |
+
+O bloco **O próximo passo será** adianta o que vem depois: no domínio próprio, você trocará os servidores DNS no painel do registrador.
+
+Se o endereço for recusado, a tela explica o motivo e oferece uma solução:
+
+| Mensagem                                | O que significa                                          | O que fazer                                  |
+| --------------------------------------- | -------------------------------------------------------- | -------------------------------------------- |
+| Endereço inválido, em vermelho no campo | Falta o `.com.br`, sobrou `https://` ou existe um espaço | Corrija o texto                              |
+| O domínio tem e-mail configurado        | Trocar os DNS derrubaria o e-mail                        | Use o **subdomínio** sugerido no botão       |
+| Este cardápio já tem um domínio         | Um cardápio aceita um domínio por vez                    | Veja o domínio atual ou exclua-o antes       |
+| Endereço em uso por outra empresa       | O domínio está cadastrado em outra conta BeeFood         | Fale com o suporte pelo link da própria tela |
+
+## 5. Trocar os servidores DNS
+
+Depois de clicar em **CADASTRAR DOMÍNIO**, a tela avisa que o pedido foi registrado e começa a preparar os dados do seu DNS (1). Esse processo leva cerca de **um minuto**. Deixe a tela aberta, porque os dados aparecem sozinhos.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/dominio-proprio-configurar/imagens-tratadas/05-cadastrado-preparando.png" width="800" height="450" alt="Domínio cadastrado, preparando os dados do DNS" />
+
+| Nº | Item                                       | O que fazer                                                           |
+| -- | ------------------------------------------ | --------------------------------------------------------------------- |
+| 1. | **Estamos preparando os dados do seu DNS** | Aguarde. A lista de etapas acima mostra em que ponto o processo está. |
+
+Quando o preparo termina, aparece o cartão **Troque os servidores DNS do seu domínio** com os **quatro servidores** que você precisa levar para o painel do registrador.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/dominio-proprio-configurar/imagens-tratadas/06-instrucao-ns.png" width="800" height="450" alt="Os quatro servidores DNS para colar no registrador" />
+
+| Nº | Item                               | O que fazer                                                                                                                   |
+| -- | ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| 1. | **Copiar todos**                   | Copia os quatro servidores de uma vez. Cada linha também tem um botão próprio de copiar.                                      |
+| 2. | **Os quatro servidores DNS**       | No painel do registrador, **substitua** os servidores atuais por estes quatro. Não some com os antigos: troque-os.            |
+| 3. | **Já configurei, verificar agora** | Clique depois de gravar no registrador. Assim, o BeeFood confere na hora, em vez de esperar a próxima verificação automática. |
+
+No painel do registrador, esse campo aparece com nomes diferentes: _Servidores DNS_, _Alterar servidores DNS_, _Nameservers_, _DNS personalizado_ ou _Usar servidores de outro provedor_. É sempre a mesma coisa: quatro linhas para colar.
+
+Enquanto o domínio espera por você, a etiqueta ao lado do nome fica em **Aguardando você**, e a tela se atualiza sozinha. A troca de servidores DNS **pode levar algumas horas** para valer em toda a internet. Isso é normal e, nesse período, basta aguardar.
+
+## 6. O domínio no ar
+
+Quando a propagação termina, o BeeFood cuida do restante sozinho: emite o **certificado de segurança**, que representa o cadeado do `https`, publica e libera o endereço. As cinco etapas ficam verdes e a etiqueta muda para **No ar** (1).
+
+No exemplo deste manual, o pedido foi registrado às 14:30, o apontamento do DNS foi reconhecido às 14:50 e o domínio ficou no ar às **14:54**. Foram quatro minutos entre o DNS responder e o cardápio abrir no endereço novo.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/dominio-proprio-configurar/imagens-tratadas/07-dominio-no-ar.png" width="800" height="450" alt="Domínio no ar com as cinco etapas concluídas" />
+
+| Nº | Item                      | O que fazer                                                                                                                                    |
+| -- | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1. | **Endereço e situação**   | A etiqueta **No ar** confirma que está tudo pronto.                                                                                            |
+| 2. | **Endereços do cardápio** | São os links que já funcionam. O primeiro ícone abre em uma nova aba e o segundo copia o endereço. Use-o no Instagram, no Google e no QR Code. |
+| 3. | **Etapas concluídas**     | Pedido, DNS, certificado, publicação e no ar. Use essa lista para saber onde o processo está quando algo demora.                               |
+
+O **Histórico**, embaixo, guarda cada passo com data e hora. Cada linha abre a opção **ver detalhes**, que você pode mostrar ao suporte se precisar de ajuda.
+
+Confira o endereço também fora do painel: abra-o no navegador do celular, fora do Wi-Fi da loja. O cardápio deve abrir com o cadeado do `https` e sem aviso de segurança.
+
+<Callout kind="info" collapsed="false">
+  O endereço antigo, `menu.beefood.com.br/...`, **continua funcionando**. Quem já tinha o link salvo ou um QR Code impresso não fica sem acesso.
+</Callout>
+
+## 7. Alterar a zona DNS
+
+Quando você troca os servidores DNS pelos do BeeFood, **toda a zona do domínio passa a morar aqui**, inclusive o que não é cardápio. Por isso existe a aba **DNS**: sem ela, configurar o e-mail do domínio ou apontar outro serviço exigiria voltar ao registrador, onde o domínio já não é mais gerenciado.
+
+Com o domínio no ar, clique na aba **DNS** (1). A tela mostra a zona inteira. Os registros que o BeeFood criou vêm com **cadeado** e não podem ser alterados (3). Eles fazem o cardápio abrir e o `https` funcionar. Para criar um registro seu, use **Adicionar registro** (2).
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/dominio-proprio-configurar/imagens-tratadas/08-aba-dns.png" width="800" height="450" alt="Aba DNS com a zona do domínio e os registros de cadeado" />
+
+| Nº | Item                   | O que fazer                                                                                                         |
+| -- | ---------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| 1. | **Aba DNS**            | Fica ao lado de Situação. Só existe depois que o domínio está no ar.                                                |
+| 2. | **Adicionar registro** | Cria um registro seu. É por aqui que entram o e-mail e outros serviços.                                             |
+| 3. | **Lista da zona**      | Mostra nome, tipo, valor e TTL. Os registros com cadeado são do BeeFood. O ícone ao lado do valor copia o conteúdo. |
+
+O motivo mais comum para mexer nessa área é o **e-mail do domínio**. Contrate o provedor, como Google Workspace, Zoho ou Titan, pegue os registros com ele e traga-os para cá. No exemplo abaixo, entram os dois registros **MX** do Google Workspace.
+
+Escolha o **Tipo** (1). A tela explica cada tipo e mostra um exemplo do valor. Em **Nome** (2), deixe o campo vazio para o domínio principal, representado por `@`. Logo abaixo, a tela confirma o que será criado. Em **Valores** (3), cole um valor por linha. Use **Adicionar valor** para incluir o segundo. No MX, o número na frente é a prioridade: o menor número é tentado primeiro. O **TTL** (4) define por quanto tempo o valor fica armazenado. Use 5 minutos para algo que você ainda vai alterar e 1 hora para um registro estável. Salve em **SALVAR (F2)** (5).
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/dominio-proprio-configurar/imagens-tratadas/09-form-registro.png" width="800" height="450" alt="Formulário do registro DNS com Tipo, Nome, Valores, TTL e SALVAR" />
+
+| Nº | Item            | O que fazer                                                                                      |
+| -- | --------------- | ------------------------------------------------------------------------------------------------ |
+| 1. | **Tipo**        | A, AAAA, CNAME, MX, TXT, SRV ou CAA. Quem informa o tipo é o serviço que você está configurando. |
+| 2. | **Nome**        | Vazio ou `@` representa o domínio principal. `loja` cria `loja.seudominio.com.br`.               |
+| 3. | **Valores**     | Um valor por linha. O `x` remove uma linha e **Adicionar valor** acrescenta outra.               |
+| 4. | **TTL**         | Tempo de cache. Na dúvida, deixe o padrão.                                                       |
+| 5. | **SALVAR (F2)** | Grava o registro. O atalho **F2** faz o mesmo.                                                   |
+
+O registro novo entra no topo da lista e fica destacado por alguns segundos (1). Na linha dele, aparecem dois botões que os registros do BeeFood não têm: o **lápis**, para editar, e a **lixeira**, para remover.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/dominio-proprio-configurar/imagens-tratadas/10-registro-criado.png" width="800" height="450" alt="Registro criado na zona com botões de editar e excluir" />
+
+| Nº | Item              | O que fazer                                                                      |
+| -- | ----------------- | -------------------------------------------------------------------------------- |
+| 1. | **Registro novo** | Confira nome, tipo, valores e TTL. Esses são os dados que a internet consultará. |
+
+Para alterar, clique no lápis. Tipo e nome ficam travados. Para trocá-los, remova o registro e crie outro. Você pode alterar os valores e o TTL. Depois de salvar uma alteração, aparece o aviso de propagação (1). A mudança já está no ar, mas o valor antigo pode continuar valendo em alguns provedores pelo tempo do TTL anterior. A linha já mostra o valor novo (2).
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/dominio-proprio-configurar/imagens-tratadas/11-propagacao.png" width="800" height="450" alt="Aviso de propagação depois de alterar um registro DNS" />
+
+| Nº | Item                    | O que fazer                                                                 |
+| -- | ----------------------- | --------------------------------------------------------------------------- |
+| 1. | **Aviso de propagação** | Apenas informa. O tempo mostrado é o TTL que valia antes da mudança.        |
+| 2. | **Linha alterada**      | Já mostra o valor novo. Se ele não aparecer, clique em **Atualizar lista**. |
+
+Para remover um registro, clique na lixeira e confirme. A confirmação repete o nome, o tipo e os valores, porque o serviço ligado a esse registro pode parar de funcionar.
+
+Toda mudança fica registrada em **Histórico de alterações** (1), no fim da lista. Cada linha abre e mostra **Antes** e **Depois** (2), com o TTL em segundos. Use essa área para descobrir o que foi alterado e quando, especialmente se o e-mail parar de funcionar de repente.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/dominio-proprio-configurar/imagens-tratadas/12-historico-dns.png" width="800" height="450" alt="Histórico de alterações da zona DNS com Antes e Depois" />
+
+| Nº | Item                        | O que fazer                                                                        |
+| -- | --------------------------- | ---------------------------------------------------------------------------------- |
+| 1. | **Histórico de alterações** | Clique para abrir. A lista mostra criações, alterações e remoções com data e hora. |
+| 2. | **Antes e depois**          | Clique na linha para ver os valores antigos e novos.                               |
+
+<Callout kind="info" collapsed="false">
+  A aba DNS só aparece no **domínio próprio**. No subdomínio, a zona continua no seu registrador. Nesse caso, você faz as alterações por lá.
 </Callout>
 
 <Callout kind="alert" collapsed="false">
-
-Depois que você salvar os DNS no provedor e o time BeeFood concluir a parte interna da configuração, a propagação pode levar até 24 horas.
-
+  Não tente apagar ou alterar os registros com cadeado. Eles fazem o cardápio responder no seu endereço. Sem esses registros, o site sai do ar.
 </Callout>
 
-Quando a configuração estiver ativa, o seu domínio passa a abrir o cardápio digital BeeFood.
+## 8. Excluir domínio do cardápio
 
-</Step>
+Excluir o domínio serve para dois casos: você quer **trocar** o endereço e cadastrar outro no lugar, ou vai **devolver o domínio** ao seu site antigo. Excluir não desliga o cardápio. O cardápio continua no ar pelo endereço `menu.beefood.com.br/...`.
 
-<Step title="Verifique o domínio na Meta" icon="shield" title-type="p">
+No rodapé do painel, clique em **Excluir domínio** (1).
 
-Com o domínio próprio configurado, faça a verificação na Meta para usar esse endereço nos anúncios.
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/dominio-proprio-configurar/imagens-tratadas/13-excluir-botao.png" width="800" height="450" alt="Rodapé do painel com o botão Excluir domínio" />
 
-Siga este caminho nas configurações de negócio da Meta:
+| Nº | Item                | O que fazer                                                |
+| -- | ------------------- | ---------------------------------------------------------- |
+| 1. | **Excluir domínio** | Abre a confirmação. Nada é apagado apenas com esse clique. |
 
-| Etapa | O que fazer |
-|-------|-------------|
-| 1 | Clique na engrenagem de configurações do negócio |
-| 2 | Abra **Adequação e Segurança** |
-| 3 | Entre em **Domínios** |
-| 4 | Escolha a opção de atualizar o registro **TXT** no DNS com o registrador |
-| 5 | Copie o valor TXT gerado pela Meta |
+A confirmação (1) informa exatamente o que acontecerá: o endereço para de funcionar e quem acessá-lo não encontrará mais o cardápio. Para confirmar, clique em **Excluir (ENTER)** (2) ou pressione **ENTER**. Para desistir, clique em **Não (ESC)**.
 
-Depois de copiar o TXT, envie esse valor ao suporte BeeFood. O time publica o registro TXT no DNS do cardápio.
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/dominio-proprio-configurar/imagens-tratadas/14-confirmar-exclusao.png" width="800" height="450" alt="Confirmação da exclusão do domínio" />
 
-Quando o suporte confirmar que o TXT foi publicado, volte na Meta e clique em **Verificar domínio**. Se tudo estiver certo, a Meta conclui a validação do seu endereço.
+| Nº | Item                     | O que fazer                                                                                                           |
+| -- | ------------------------ | --------------------------------------------------------------------------------------------------------------------- |
+| 1. | **Aviso da confirmação** | Leia o resumo do efeito. Quem estiver com o endereço salvo receberá um erro.                                          |
+| 2. | **Excluir (ENTER)**      | Confirma. O painel volta para a lista de cardápios e o endereço passa a aparecer em Domínios removidos anteriormente. |
 
-</Step>
+A remoção leva alguns minutos. O cartão fica em **Removendo** enquanto o BeeFood desfaz a publicação e limpa os registros do cardápio. Quando termina, o cardápio volta a aparecer com o endereço BeeFood (1), e o domínio excluído passa a ficar em **Domínios removidos anteriormente** (2). Essa lista serve apenas como histórico. Não é possível reativar o domínio por ali.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/dominio-proprio-configurar/imagens-tratadas/15-apos-exclusao.png" width="800" height="450" alt="Cardápio livre depois da exclusão e lista de domínios removidos" />
+
+| Nº | Item                                 | O que fazer                                                                      |
+| -- | ------------------------------------ | -------------------------------------------------------------------------------- |
+| 1. | **Cartão do cardápio**               | Voltou para `menu.beefood.com.br/...`. Clique nele para cadastrar outro domínio. |
+| 2. | **Domínios removidos anteriormente** | Lista o que já foi excluído. Serve para consulta.                                |
+
+Depois de excluir:
+
+- O cardápio continua funcionando no endereço `menu.beefood.com.br/...`.
+- Se você usou **domínio próprio**, os servidores DNS continuam apontando para o BeeFood, mas os registros do cardápio já foram removidos. O endereço fica **sem resposta** até você voltar ao painel do registrador e trocar os servidores DNS pelos servidores do local onde quer hospedar o domínio. Se você for usar o domínio novamente no BeeFood, basta cadastrá-lo outra vez e repetir a seção [Trocar os servidores DNS](#5-trocar-os-servidores-dns).
+- Você pode cadastrar outro domínio no mesmo cardápio, começando do zero.
+
+<Callout kind="tip" collapsed="false">
+  Trocar de endereço exige atualizar os lugares que divulgam o link: Instagram, Google Meu Negócio, WhatsApp e QR Code impresso. Atualize esses locais no mesmo dia da troca.
+</Callout>
+
+## Parte 2: subdomínio
+
+## 9. Digitar e conferir o endereço
+
+O caminho começa igual: **Aplicativos → Domínio Próprio**. Escolha o cardápio e, no passo 2, selecione o cartão **Subdomínio**, o segundo cartão, com o exemplo `cardapio.seurestaurante.com.br`.
+
+A diferença aparece a partir daí: **nada muda no seu site nem no seu e-mail**, porque o domínio continua sendo gerenciado onde já está.
+
+Digite o subdomínio inteiro (1). Você pode usar qualquer prefixo, como `cardapio`, `menu`, `pedido` ou o nome da unidade, como `centro` ou `shopping`. A tela confere o endereço na hora e mostra o que responderá pelo cardápio (2). No subdomínio, é apenas um endereço, sem o `www`. Em **O próximo passo será** (3), já aparece o registro CNAME que você criará. Confira os dados e clique em **CADASTRAR DOMÍNIO** (4).
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/dominio-proprio-configurar/imagens-tratadas/16-subdominio-conferido.png" width="800" height="450" alt="Endereço do subdomínio conferido na tela" />
+
+| Nº | Item                                | O que fazer                                                                                                 |
+| -- | ----------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| 1. | **Campo do endereço**               | Digite o subdomínio completo, sem `https://`. O sinal verde à direita indica que ele passou na conferência. |
+| 2. | **Vão responder por este cardápio** | Mostra o endereço que abrirá o cardápio.                                                                    |
+| 3. | **O próximo passo será**            | Adianta o CNAME que a tela pedirá. Assim, você já sabe o que fará no registrador.                           |
+| 4. | **CADASTRAR DOMÍNIO**               | Grava o pedido. Só nesse momento algo é criado.                                                             |
+
+<Callout kind="info" collapsed="false">
+  Diferente do domínio próprio, o subdomínio **não mostra aviso sobre e-mail**. Os servidores DNS continuam onde estão, e nada do que existe hoje é alterado.
+</Callout>
+
+## 10. Criar CNAME do cardápio
+
+Depois do cadastro, a etiqueta fica em **Aguardando você** (1). Isso significa que falta a sua parte no registrador. A tela mostra o registro pronto em três campos (2): **Tipo**, **Nome** e **Valor**, cada um com um botão de copiar. Crie esse registro no painel onde você gerencia o DNS do domínio. Quando terminar, clique em **Já configurei, verificar agora** (3).
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/dominio-proprio-configurar/imagens-tratadas/17-instrucao-cname.png" width="800" height="450" alt="Instrução do CNAME com Tipo, Nome e Valor" />
+
+| Nº | Item                               | O que fazer                                                                          |
+| -- | ---------------------------------- | ------------------------------------------------------------------------------------ |
+| 1. | **Endereço e situação**            | **Aguardando você** significa que o BeeFood já fez a parte dele.                     |
+| 2. | **Tipo, Nome e Valor**             | São os três dados do registro. Use os botões de copiar para não errar nenhuma letra. |
+| 3. | **Já configurei, verificar agora** | Pede a conferência na hora, sem esperar a checagem automática.                       |
+
+Para criar o registro no registrador, procure a área de **DNS** ou **Zona DNS**, clique em adicionar registro e preencha os dados mostrados na tela. Muitos painéis pedem apenas o prefixo no campo _Nome_. Nesse caso, digite `cardapio` em vez de `cardapio.seurestaurante.com.br`, porque o restante será completado automaticamente. Informe o **Valor** inteiro, exatamente como aparece.
+
+<Callout kind="tip" collapsed="false">
+  Se o campo _Nome_ já vier com o domínio ao lado, no formato `.seurestaurante.com.br`, ele quer apenas o prefixo.
+</Callout>
+
+## 11. O subdomínio no ar
+
+Assim que o CNAME é encontrado, o BeeFood segue sozinho: emite o certificado, publica e libera o endereço. A etiqueta muda para **No ar** (1), e o endereço fica clicável (2). No subdomínio, existe apenas um endereço, sem o `www`. As cinco etapas ficam verdes (3).
+
+No exemplo deste manual, o pedido foi registrado às 16:17, o CNAME apareceu no DNS às **18:43** e o subdomínio ficou no ar às **18:47**. As três linhas _Aguardando o apontamento do DNS_ no histórico são tentativas de conferência anteriores. Enquanto o registro não estava publicado, a tela continuou aguardando sem mostrar erro.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/dominio-proprio-configurar/imagens-tratadas/18-subdominio-no-ar.png" width="800" height="450" alt="Subdomínio no ar com as etapas concluídas" />
+
+| Nº | Item                     | O que fazer                                                                                      |
+| -- | ------------------------ | ------------------------------------------------------------------------------------------------ |
+| 1. | **Endereço e situação**  | **No ar** confirma que o subdomínio já responde.                                                 |
+| 2. | **Endereço do cardápio** | É o link que você divulgará. O primeiro ícone abre em uma nova aba e o segundo copia o endereço. |
+| 3. | **Etapas concluídas**    | Pedido, DNS, certificado, publicação e no ar.                                                    |
+
+Abra o endereço no celular, fora do Wi-Fi da loja. O cardápio deve abrir com o cadeado do `https`. O site principal e o e-mail continuam exatamente como estavam, porque o subdomínio não os altera.
+
+<Callout kind="info" collapsed="false">
+  Demorou mais do que você esperava? Alguns provedores de DNS só publicam as alterações da zona em intervalos. Enquanto isso, a tela fica em **Aguardando você** e tenta novamente sozinha.
+</Callout>
+
+## Verificar o domínio na Meta, Facebook e Instagram
+
+Com o domínio próprio ou subdomínio no ar, você pode verificar a posse do domínio na Meta para usar esse endereço nos anúncios do Facebook e Instagram.
+
+<Steps>
+  <Step title="Abra as configurações de domínio na Meta" title-type="p">
+    Nas configurações de negócio da Meta, clique no ícone de **engrenagem**, depois em **Adequação e Segurança** e em **Domínios**.
+  </Step>
+
+  <Step title="Escolha a verificação por TXT" title-type="p">
+    Selecione a opção **Atualize o registro TXT do DNS com seu registrador de domínio** e **copie o TXT** gerado.
+  </Step>
+
+  <Step title="Envie o TXT ao suporte BeeFood" title-type="p">
+    Envie esse valor ao suporte BeeFood pelo canal de atendimento. O time publica o registro TXT no DNS do cardápio.
+
+    No caso de **domínio próprio**, você também pode adicionar o registro TXT na aba **DNS** do painel.
+  </Step>
+
+  <Step title="Verifique na Meta" title-type="p">
+    Quando o suporte confirmar que o TXT foi publicado, volte à Meta e clique em **Verificar domínio**. Se tudo estiver certo, a Meta conclui a validação.
+  </Step>
 </Steps>
 
 ## Problemas comuns
 
-| Problema | O que verificar |
-|----------|-----------------|
-| O domínio ainda abre a página antiga | Aguarde a propagação DNS por até 24 horas e limpe o cache do navegador |
-| Não sei quais 4 servidores usar | Use apenas os 4 servidores enviados pelo suporte BeeFood |
-| A Meta não verifica o TXT | Confirme com o suporte se o registro TXT já foi publicado no DNS |
-| Não encontro onde configurar no BeeFood | Abra **Aplicativos** e, em **Marketing e CRM**, entre em **Domínio Próprio** |
+| Sintoma                                                     | O que está acontecendo                                                                                     | O que fazer                                                                                                                       |
+| ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| Cadastrei e a etiqueta ficou em **Aguardando você**         | Falta a sua parte: trocar os servidores DNS, no domínio próprio, ou criar o CNAME, no subdomínio           | Faça a configuração no painel do registrador e clique em **Já configurei, verificar agora**                                       |
+| Troquei os DNS e continua **Aguardando você**               | A mudança ainda não propagou                                                                               | Aguarde. A troca de servidores DNS pode levar algumas horas, e a tela se atualiza sozinha                                         |
+| Criei o CNAME e a tela não acha                             | Muitos provedores só publicam a zona em intervalos. O registro existe no painel, mas ainda não está no DNS | Confirme que a alteração foi salva ou enviada no painel do provedor e aguarde. No exemplo deste manual, levou cerca de duas horas |
+| O aviso amarelo diz que o domínio não foi encontrado no DNS | O domínio pode estar sem registro ativo, vencido ou recém-comprado                                         | Confirme com o registrador se ele está ativo e pago                                                                               |
+| O navegador acusa **erro de certificado**                   | O certificado é emitido depois do apontamento. Se o domínio ainda não está **No ar**, ele ainda não existe | Aguarde o status **No ar**. Se o problema persistir, use **Falar com o suporte** no próprio painel                                |
+| O e-mail do domínio parou depois da configuração            | Você usou **domínio próprio** e trocou os servidores DNS                                                   | Recrie os registros do provedor de e-mail, como MX e TXT, na aba **DNS**                                                          |
+| A tela diz que **este cardápio já tem um domínio**          | Um cardápio aceita um endereço por vez                                                                     | Exclua o domínio atual antes de cadastrar outro                                                                                   |
+| A etiqueta ficou em **Precisa de ajuda**                    | O processo travou em um ponto que a tela não resolve sozinha                                               | Use **Falar com o suporte**. O **Histórico**, com a opção **ver detalhes**, é o que o time pedirá                                 |
+| Não acho o card **Domínio Próprio**                         | O card fica em **Aplicativos → Marketing e CRM**                                                           | Se aparecer o modal antigo, pedindo contato com o suporte, a tela nova ainda não foi liberada para a sua conta                    |
 
-## Dúvidas frequentes
+## Perguntas frequentes
 
 <ExpandableGroup>
-<Expandable title="O BeeFood registra domínio para minha loja?" default-open="false">
+  <Expandable title="O BeeFood vende ou registra domínio?" default-open="false">
+    Não. Você compra o domínio onde preferir, como Registro.br, GoDaddy, HostGator, Hostinger ou Cloudflare, e o BeeFood faz o apontamento para o seu cardápio.
+  </Expandable>
 
-Não. O domínio precisa ser contratado por você em um registrador. O BeeFood faz o apontamento para o cardápio digital, mas não vende nem registra domínio.
+  <Expandable title="Preciso pagar a mais pelo domínio próprio no BeeFood?" default-open="false">
+    O que você paga é o domínio, no seu registrador. A configuração é feita nesta tela.
+  </Expandable>
 
-</Expandable>
+  <Expandable title="Posso usar o mesmo domínio em dois cardápios?" default-open="false">
+    Não. Cada cardápio tem um endereço próprio. Com várias lojas, use um subdomínio para cada uma, como `centro.seurestaurante.com.br` e `shopping.seurestaurante.com.br`.
+  </Expandable>
 
-<Expandable title="Posso copiar o DNS de outra loja BeeFood?" default-open="false">
+  <Expandable title="Meu site fica no ar junto com o cardápio?" default-open="false">
+    No **subdomínio**, sim. O site continua em `seurestaurante.com.br`, e o cardápio responde em `cardapio.seurestaurante.com.br`.
 
-Não. Os quatro servidores são gerados para a sua loja. Use apenas os dados enviados pelo suporte BeeFood no seu atendimento.
+    No **domínio próprio**, o endereço principal passa a abrir o cardápio.
+  </Expandable>
 
-</Expandable>
+  <Expandable title="O link antigo do BeeFood para de funcionar?" default-open="false">
+    Não. O endereço `menu.beefood.com.br/...` continua funcionando. QR Codes impressos e links salvos não quebram.
+  </Expandable>
 
-<Expandable title="Preciso configurar o DNS dentro do BeeFood?" default-open="false">
+  <Expandable title="Quanto tempo leva a propagação?" default-open="false">
+    A parte do BeeFood leva minutos. Nos dois exemplos deste manual, o cardápio ficou no ar 4 minutos depois de o DNS responder.
 
-Não. No BeeFood3 não existe campo para colar DNS. A configuração é feita no painel do provedor do seu domínio.
+    O que demora é a sua configuração chegar ao DNS. A troca de servidores levou cerca de 20 minutos no domínio próprio, e a publicação do CNAME levou cerca de duas horas no subdomínio, porque depende do seu provedor.
+  </Expandable>
 
-</Expandable>
+  <Expandable title="Dá para ter o domínio principal e um subdomínio no mesmo cardápio?" default-open="false">
+    Não ao mesmo tempo. Cada cardápio tem um endereço por vez. Se você tem mais de um cardápio na conta, pode usar um endereço para cada cardápio.
+  </Expandable>
 
-<Expandable title="Quanto tempo demora para funcionar?" default-open="false">
+  <Expandable title="Mudei de ideia: posso trocar de subdomínio para domínio próprio?" default-open="false">
+    Pode. Exclua o domínio atual e cadastre o novo. Lembre-se de atualizar os links divulgados.
+  </Expandable>
 
-Depois que você salvar os DNS no provedor e o time BeeFood concluir a configuração do lado deles, o domínio pode levar até 24 horas para responder corretamente.
+  <Expandable title="O https, representado pelo cadeado, vem incluído?" default-open="false">
+    Sim. O certificado é emitido automaticamente na etapa **Certificado de segurança** e renovado sem que você precise fazer nada.
+  </Expandable>
 
-</Expandable>
+  <Expandable title="E-mail parou depois de trocar o DNS: o que eu faço?" default-open="false">
+    Isso acontece quando você usa **domínio próprio**. Ao trocar os servidores DNS, o e-mail do domínio para de receber mensagens até que você recrie os registros, como MX e TXT, na aba **DNS** do painel.
 
-<Expandable title="Por que verificar o domínio na Meta?" default-open="false">
-
-A verificação permite que seus anúncios apontem direto para o seu domínio próprio. Isso evita usar o link padrão do cardápio e reforça a confiança do cliente ao abrir o anúncio.
-
-</Expandable>
+    Contrate o provedor de e-mail, pegue os registros com ele e adicione-os na aba DNS. Se você não quiser mexer no e-mail, use **subdomínio** em vez de domínio próprio.
+  </Expandable>
 </ExpandableGroup>
 
-## Precisa de ajuda?
+## Manuais relacionados
 
-Use **Fale com o suporte** no modal **Domínio Próprio** e informe o domínio contratado. Se você estiver na etapa da Meta, envie também o valor TXT gerado para a verificação.
+<Columns cols="2">
+  <Card title="Pixel da Meta" href="/pixel-meta-somente" icon="shield" horizontal="false">
+    Como configurar o pixel da Meta no cardápio digital para anúncios.
+  </Card>
+
+  <Card title="Cardápio Digital" href="/cardapio-digital-aparencia-layout" icon="book-open" horizontal="false">
+    Configurações de aparência e layout do cardápio que o domínio abrirá.
+  </Card>
+</Columns>
+
