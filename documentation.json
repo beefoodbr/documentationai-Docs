@@ -703,10 +703,6 @@
                       {
                         "title": "⚙️ Despacho automático",
                         "path": "painel-de-entregas/gestao-entregas-despacho-automatico"
-                      },
-                      {
-                        "title": "💬 Avisos de WhatsApp da entrega",
-                        "path": "painel-de-entregas/gestao-entregas-avisos-whatsapp"
                       }
                     ]
                   },
@@ -722,6 +718,10 @@
                         "path": "app-entregador-entrar"
                       },
                       {
+                        "title": "📊 Código de Barras",
+                        "path": "app-entregador-codigo-barras"
+                      },
+                      {
                         "title": "📦 Entregas do Dia",
                         "path": "app-entregador-entregas-do-dia"
                       },
@@ -730,14 +730,18 @@
                         "path": "app-entregador-rota"
                       },
                       {
-                        "title": "📊 Código de Barras",
-                        "path": "app-entregador-codigo-barras"
-                      },
-                      {
                         "title": "🛒 Marketplace",
                         "path": "app-entregador-marketplace"
+                      },
+                      {
+                        "title": "💰 Receber na porta",
+                        "path": "app-entregador-cobranca"
                       }
                     ]
+                  },
+                  {
+                    "title": "💬 Avisos de WhatsApp da entrega",
+                    "path": "painel-de-entregas/gestao-entregas-avisos-whatsapp"
                   },
                   {
                     "title": "📺 Painel para Entregadores",

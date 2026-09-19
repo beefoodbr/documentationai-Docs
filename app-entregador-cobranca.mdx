@@ -1,0 +1,409 @@
+---
+title: 'App do entregador: receber na porta'
+description: >-
+  Receba do cliente em dinheiro, cartão ou Pix, divida a conta entre pessoas e
+  finalize entregas sem cobrar, sem duplicar pagamentos.
+---
+## Cobrar é finalizar
+
+<Callout kind="alert" collapsed="false">
+  **Cobrar é finalizar.** Não existe “recebo agora e finalizo depois”. Ao confirmar a cobrança, o aplicativo registra o pagamento e encerra a entrega na mesma operação. O pedido sai da sua lista.
+</Callout>
+
+<Callout kind="info" collapsed="false">
+  A **Gestão de Entregas está em liberação**. Alguns nomes ou opções podem aparecer gradualmente no aplicativo.
+</Callout>
+
+## Para que serve
+
+Este é o manual do dinheiro na porta do cliente. Use o aplicativo para:
+
+- Receber do cliente e registrar o valor no caixa do restaurante.
+- Registrar o que aconteceu de verdade, mesmo quando for diferente da forma prevista no pedido.
+- Encerrar a entrega com pagamento ou sem cobrança, deixando a explicação no histórico.
+
+## Antes de começar
+
+- Confira a sacola antes de tocar em qualquer botão. Depois da confirmação, o valor fica registrado no caixa.
+- O celular precisa de internet. A cobrança é registrada no servidor, não apenas no aparelho.
+- O troco é sua responsabilidade. O aplicativo calcula o valor, mas você entrega o dinheiro ao cliente.
+- Se o cliente não estiver em casa, não finalize a entrega. Ligue para o restaurante.
+
+## 1. Por onde a cobrança começa
+
+Nos detalhes da entrega, o rodapé escuro mostra o resumo do dinheiro e os botões disponíveis.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-cobranca/imagens-tratadas/01-rodape-de-cobranca.png" width="614" height="384" alt="O rodapé escuro com a forma prevista, o total, o troco, o valor a cobrar e os dois botões" />
+
+| Nº | Onde                     | O que é                                                                               |
+| -- | ------------------------ | ------------------------------------------------------------------------------------- |
+| 1. | **Forma de pagamento**   | O que o cliente disse ao pedir. Não é necessariamente a forma que ele usará na porta. |
+| 2. | **TOTAL**                | O valor total do pedido.                                                              |
+| 3. | **TROCO**                | Para quanto o cliente pediu troco, quando pediu.                                      |
+| 4. | **COBRAR**, em verde     | O valor que você precisa receber agora. Este é o número que importa.                  |
+| 5. | **INICIAR COBRANÇA**     | Abre a tela de pagamento.                                                             |
+| 6. | **FINALIZAR SEM COBRAR** | Encerra a entrega sem registrar pagamento.                                            |
+
+**A forma no rodapé é uma previsão.** Quem decide a forma de pagamento na porta é o cliente. Registre o que aconteceu de verdade, porque o fechamento do caixa depende da forma que realmente entrou.
+
+### Se o pedido tem item em destaque, confira antes
+
+O aplicativo pode mostrar uma tela de conferência antes de cobrar ou finalizar a entrega.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-cobranca/imagens-tratadas/02-conferir-destaque.png" width="614" height="384" alt="A tela de conferência dos produtos em destaque antes da entrega" />
+
+| Nº | Onde                                                 | O que é                                                 |
+| -- | ---------------------------------------------------- | ------------------------------------------------------- |
+| 1. | **CONFIRMA E ENTREGA DESSES PRODUTOS CORRETAMENTE?** | A pergunta exibida antes da cobrança ou da finalização. |
+| 2. | **A linha preta**                                    | O item que precisa de conferência.                      |
+| 3. | **CONFIRMAR**                                        | Libera o próximo passo da operação.                     |
+
+Olhe a sacola antes de confirmar. A conferência aparece nos dois caminhos, cobrando ou finalizando sem cobrar.
+
+## 2. A tela de pagamento
+
+A tela de pagamento reúne o valor a receber, a divisão da conta, o troco, a observação e a confirmação.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-cobranca/imagens-tratadas/03-tela-de-pagamento.png" width="614" height="384" alt="A tela de pagamento com uma pessoa, mostrando o pedido, o valor a receber, o troco e a confirmação" />
+
+| Nº | Onde                       | O que é                                                                             |
+| -- | -------------------------- | ----------------------------------------------------------------------------------- |
+| 1. | **PEDIDO #1030**           | O número do pedido. Essa tela é a única do aplicativo que mostra o número completo. |
+| 2. | **A RECEBER**              | O valor que falta receber.                                                          |
+| 3. | **JÁ PAGO**                | O valor pago anteriormente, normalmente R$ 0,00.                                    |
+| 4. | **+** do **DIVIDIR CONTA** | Cria uma pessoa a mais para o pagamento.                                            |
+| 5. | **O valor da Pessoa 1**    | Com uma pessoa, começa com o valor inteiro a receber.                               |
+| 6. | **Lápis**                  | Permite editar o valor, por exemplo, quando o cliente paga apenas uma parte.        |
+| 7. | **Troco para / Troco**     | Mostra quanto o cliente entregará e o troco calculado.                              |
+| 8. | **Campo de observação**    | Permite escrever uma informação para o restaurante. O limite é de 200 caracteres.   |
+| 9. | **CONFIRMAR PAGAMENTO**    | Abre a escolha da forma de pagamento e conclui o registro.                          |
+
+Com **uma pessoa**, a forma de pagamento é escolhida depois de tocar em **CONFIRMAR PAGAMENTO**. Na divisão, cada bloco de pessoa tem sua própria forma na tela.
+
+### Escolher a forma de pagamento
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-cobranca/imagens-tratadas/04-forma-de-pagamento.png" width="614" height="384" alt="A lista de formas de pagamento com a forma prevista já marcada" />
+
+| Nº | Onde                 | O que é                                                                                    |
+| -- | -------------------- | ------------------------------------------------------------------------------------------ |
+| 1. | **Dinheiro**         | A forma prevista já aparece marcada. Se o cliente mudou de ideia, escolha a forma correta. |
+| 2. | **O tique vermelho** | Indica a forma selecionada.                                                                |
+| 3. | **Com bandeira**     | Indica as formas de cartão que permitem escolher a bandeira.                               |
+| 4. | **CANCELAR**         | Fecha a lista sem escolher uma forma.                                                      |
+
+A lista mostra o que o restaurante habilitou para delivery. **Fiado, Pix automático e formas de marketplace não aparecem de propósito**, porque não representam dinheiro trocando de mão na porta.
+
+### A bandeira do cartão é opcional
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-cobranca/imagens-tratadas/05-bandeira-do-cartao.png" width="614" height="384" alt="A tela de escolha da bandeira do cartão com a opção de continuar sem bandeira" />
+
+<Callout kind="tip" collapsed="false">
+  Escolha a bandeira quando souber qual foi usada. A bandeira é opcional e, na dúvida, siga sem bandeira. A taxa é resolvida pela forma de pagamento, mesmo quando você não informa a bandeira.
+</Callout>
+
+| Nº | Onde                       | O que é                                                             |
+| -- | -------------------------- | ------------------------------------------------------------------- |
+| 1. | **Opcional**               | Pular a bandeira não impede o registro.                             |
+| 2. | **As bandeiras**           | As bandeiras cadastradas pelo restaurante.                          |
+| 3. | **CONTINUAR SEM BANDEIRA** | Registra o pagamento pela forma escolhida, sem informar a bandeira. |
+
+### Conferir o troco
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-cobranca/imagens-tratadas/06-troco-para-quanto.png" width="614" height="384" alt="A tela para informar para quanto o cliente precisa de troco" />
+
+O valor de troco vem preenchido com o que o cliente informou no pedido. Se ele entregar outra nota, corrija o valor antes de confirmar.
+
+| Nº | Onde          | O que é                                    |
+| -- | ------------- | ------------------------------------------ |
+| 1. | **O valor**   | O valor para o qual o cliente pediu troco. |
+| 2. | **CONFIRMAR** | Confirma o valor informado no campo.       |
+| 3. | **SEM TROCO** | Indica que o cliente pagou o valor exato.  |
+
+### Fazer a última conferência
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-cobranca/imagens-tratadas/07-confirmar-cobranca.png" width="614" height="384" alt="A tela de confirmação da cobrança com a forma e o valor que serão registrados" />
+
+| Nº | Onde                                   | O que é                                    |
+| -- | -------------------------------------- | ------------------------------------------ |
+| 1. | **Vai registrar R$ ... nesta entrega** | O valor que entrará no caixa.              |
+| 2. | **A linha da forma**                   | A forma e o valor que serão registrados.   |
+| 3. | **CONFIRMAR**                          | Registra o pagamento e finaliza a entrega. |
+
+Confira o valor e a forma nesta tela. Ela é a última etapa antes do registro.
+
+### Pagamento confirmado
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-cobranca/imagens-tratadas/08-pagamento-confirmado.png" width="614" height="384" alt="A tela de pagamento confirmado após a cobrança" />
+
+A mensagem **Pagamento Confirmado!** indica que a entrega foi finalizada junto com o pagamento. Toque em **VOLTAR PARA ENTREGAS** para retornar à lista. O pedido não deve mais aparecer na aba de entregas.
+
+Se a entrega fazia parte de uma rota, o contador do cabeçalho será atualizado, por exemplo, para **1 de 3 entregues**. A entrega passa a aparecer no [histórico do dia](/app-entregador-entregas-do-dia).
+
+## 3. Quando mais de uma pessoa paga
+
+Use **DIVIDIR CONTA** quando mais de uma pessoa pagar o mesmo pedido. Cada pessoa terá seu próprio valor e sua própria forma de pagamento.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-cobranca/imagens-tratadas/09-duas-pessoas.png" width="614" height="384" alt="A conta dividida em duas pessoas com um bloco de valor para cada uma" />
+
+| Nº | Onde                  | O que é                                                                   |
+| -- | --------------------- | ------------------------------------------------------------------------- |
+| 1. | **DIVIDIR CONTA**     | Mostra em quantas partes a conta está dividida.                           |
+| 2. | **+**                 | Cria outra pessoa. O **−** junta as partes novamente.                     |
+| 3. | **O valor da pessoa** | O aplicativo divide o valor em partes iguais quando você cria as pessoas. |
+| 4. | **Selecione a forma** | Campo para escolher a forma de pagamento daquela pessoa.                  |
+| 5. | **Pessoa 2**          | O bloco da segunda pessoa.                                                |
+
+Na divisão, nenhuma forma vem marcada. O aplicativo não tenta adivinhar quem pagará em dinheiro, cartão ou Pix.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-cobranca/imagens-tratadas/10-duas-formas.png" width="614" height="384" alt="A conta dividida com Pix para uma pessoa, dinheiro para outra e o campo de troco" />
+
+| Nº | Onde                    | O que é                                                 |
+| -- | ----------------------- | ------------------------------------------------------- |
+| 1. | **A forma da Pessoa 1** | A forma escolhida para a primeira pessoa, como Pix.     |
+| 2. | **A forma da Pessoa 2** | A forma escolhida para a segunda pessoa, como dinheiro. |
+| 3. | **Troco para**          | Aparece quando uma pessoa paga em dinheiro.             |
+
+### Definir valores diferentes
+
+Use o lápis quando a divisão não for igual, por exemplo, uma pessoa pagando R$ 30,00 e outra pagando R$ 18,00.
+
+<Callout kind="alert" collapsed="false">
+  **A soma precisa fechar com o valor a receber.** Se as partes não somarem exatamente o valor de **A RECEBER**, o aplicativo não permitirá a confirmação.
+</Callout>
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-cobranca/imagens-tratadas/14-soma-nao-fecha.png" width="614" height="384" alt="O aviso de que a soma das partes precisa fechar com o valor a receber" />
+
+| Nº | Onde                            | O que é                                   |
+| -- | ------------------------------- | ----------------------------------------- |
+| 1. | **A RECEBER**                   | O valor que as partes precisam somar.     |
+| 2. | **R$ 5,00**                     | O valor editado da Pessoa 1.              |
+| 3. | **R$ 9,95**                     | O valor da Pessoa 2 que permaneceu igual. |
+| 4. | **A soma precisa ser R$ 19,90** | O aviso de que os valores não fecham.     |
+
+Corrija o valor de uma das pessoas até o aviso desaparecer. **Editar um valor não reajusta o outro.** O aplicativo divide as partes igualmente apenas quando você cria as pessoas. Depois disso, ajuste cada valor manualmente.
+
+### Confirmar a divisão
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-cobranca/imagens-tratadas/11-confirmar-duas-linhas.png" width="614" height="384" alt="A tela de confirmação com uma linha de pagamento para cada pessoa" />
+
+| Nº | Onde                       | O que é                                            |
+| -- | -------------------------- | -------------------------------------------------- |
+| 1. | **Vai registrar R$ 48,00** | O valor total da divisão.                          |
+| 2. | **As linhas numeradas**    | Uma linha para cada pessoa, com a forma e o valor. |
+
+A divisão é **tudo ou nada**. Todas as partes são enviadas juntas: ou todos os pagamentos são registrados, ou nenhum é registrado.
+
+Confirme somente depois de receber de todas as pessoas. Uma pessoa pagando metade em cartão e metade em dinheiro deve ser registrada como duas partes, porque o caixa precisa saber quanto entrou em cada forma.
+
+## 4. Finalizar sem cobrar
+
+Use **FINALIZAR SEM COBRAR** quando você entregou o pedido, mas não recebeu dinheiro na porta. Esse caminho serve para pedidos já pagos, pedidos que a loja cobrará depois ou situações combinadas com o restaurante.
+
+O aplicativo avisa três vezes: na conferência dos itens em destaque, no aviso do saldo em aberto e no campo de observação.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-cobranca/imagens-tratadas/12-finalizar-sem-cobrar.png" width="614" height="384" alt="O aviso de finalização sem cobrança mostrando o valor que ainda está em aberto" />
+
+| Nº | Onde                          | O que é                                             |
+| -- | ----------------------------- | --------------------------------------------------- |
+| 1. | **Ainda há R$ ... a receber** | Mostra o valor que não será cobrado nesta operação. |
+| 2. | **CONTINUAR**                 | Leva para a tela de observação.                     |
+| 3. | **CANCELAR**                  | Fecha o aviso sem finalizar.                        |
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-cobranca/imagens-tratadas/13-observacao-preenchida.png" width="614" height="384" alt="A tela de finalização da entrega com uma observação preenchida" />
+
+| Nº | Onde                             | O que é                                       |
+| -- | -------------------------------- | --------------------------------------------- |
+| 1. | **Finalizar Entrega · R$ 44,00** | O saldo que permanecerá em aberto.            |
+| 2. | **A observação**                 | A explicação do motivo de não haver cobrança. |
+| 3. | **O contador**                   | Indica o limite de 200 caracteres.            |
+| 4. | **FINALIZAR**                    | Encerra a entrega sem registrar pagamento.    |
+
+<Callout kind="alert" collapsed="false">
+  **Escreva sempre a observação.** Ela aparece no histórico e explica ao restaurante por que o pedido foi encerrado sem pagamento. Escreva, por exemplo: “Pedido já pago pelo marketplace”.
+</Callout>
+
+### Quando usar cada caminho
+
+| Situação                            | Caminho certo                                                            |
+| ----------------------------------- | ------------------------------------------------------------------------ |
+| Cliente paga na porta               | **INICIAR COBRANÇA**                                                     |
+| Pedido de iFood ou 99Food já pago   | **FINALIZAR SEM COBRAR**, e nesses pedidos o botão de cobrar não aparece |
+| A loja vai cobrar do cliente depois | **FINALIZAR SEM COBRAR**, explicando na observação                       |
+| Cliente pagou parte agora           | **INICIAR COBRANÇA** com o valor ajustado pelo lápis e uma observação    |
+| **Cliente não estava em casa**      | **Nenhum dos dois**. Ligue para o restaurante.                           |
+
+<Callout kind="alert" collapsed="false">
+  **Entrega que não aconteceu não deve ser finalizada.** Finalizar é informar que o pedido foi entregue. Se o cliente não estava em casa, mantenha a entrega aberta e fale com o restaurante.
+</Callout>
+
+## 5. Quando a cobrança não fecha
+
+As mensagens abaixo indicam se o pagamento foi registrado, se ainda falta corrigir os valores ou se a entrega precisa ser finalizada novamente.
+
+### “Erro no Pagamento”
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-cobranca/imagens-tratadas/15-erro-no-pagamento.png" width="614" height="384" alt="A tela de erro no pagamento com as opções de tentar novamente e voltar para entregas" />
+
+| Nº | Onde                                     | O que é                                   |
+| -- | ---------------------------------------- | ----------------------------------------- |
+| 1. | **Erro no Pagamento**                    | O título da mensagem, com marca vermelha. |
+| 2. | **O servidor não confirmou o pagamento** | Indica que o registro não foi confirmado. |
+| 3. | **TENTAR NOVAMENTE**                     | Envia novamente os mesmos valores.        |
+| 4. | **VOLTAR PARA ENTREGAS**                 | Sai da tela sem registrar o pagamento.    |
+
+Nesta tela, nada foi registrado. Confira o sinal da internet e toque em **TENTAR NOVAMENTE**.
+
+Se você já tentou novamente e ficou em dúvida, confira o [histórico](/app-entregador-entregas-do-dia) antes de cobrar outra vez. O histórico mostra se a entrega saiu da lista e apareceu como paga.
+
+### “Pedido já pago”
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-cobranca/imagens-tratadas/16-pedido-ja-pago.png" width="614" height="384" alt="A tela Pedido já pago com marca verde e a opção de fechar" />
+
+| Nº | Onde                       | O que é                                                                       |
+| -- | -------------------------- | ----------------------------------------------------------------------------- |
+| 1. | **Pedido já pago**         | Indica que não há saldo a receber. A marca verde significa que não é um erro. |
+| 2. | **Não há saldo a receber** | Orienta a finalizar a entrega se ela ainda estiver aberta.                    |
+| 3. | **FECHAR**                 | Volta aos detalhes da entrega.                                                |
+
+O pedido pode ter chegado pago por marketplace, por Pix antecipado ou por outro registro anterior.
+
+**Não receba nada do cliente.** Volte aos detalhes e use **FINALIZAR SEM COBRAR**, com uma observação explicando o motivo.
+
+### Pagamento registrado, entrega em aberto
+
+Às vezes, o pagamento entra no caixa, mas a baixa da entrega não é concluída. Isso pode acontecer quando a conexão cai entre as duas operações ou quando a rota muda enquanto você cobra.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-cobranca/imagens-tratadas/17-pagamento-sem-baixa.png" width="614" height="384" alt="A tela de pagamento confirmado que informa que a entrega ainda precisa ser finalizada" />
+
+A tela **Pagamento Confirmado!** desse caso é igual à tela de pagamento normal. **Só a frase de baixo diferencia as duas.**
+
+| Nº | Onde                                                | O que é                                                        |
+| -- | --------------------------------------------------- | -------------------------------------------------------------- |
+| 1. | **Pagamento Confirmado!**                           | O pagamento foi registrado.                                    |
+| 2. | **Finalize a entrega: o dinheiro já está no caixa** | Informa que o pagamento entrou, mas a entrega continua aberta. |
+| 3. | **VOLTAR PARA ENTREGAS**                            | Volta para a lista de entregas.                                |
+
+Ao abrir os detalhes novamente, o aplicativo mostra o alerta de pagamento registrado.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-cobranca/imagens-tratadas/18-pagamento-registrado.png" width="614" height="384" alt="O alerta de pagamento registrado sobre os detalhes da entrega com o valor antigo no rodapé" />
+
+<Callout kind="alert" collapsed="false">
+  **Não toque em INICIAR COBRANÇA.** O rodapé pode continuar mostrando o valor como se nada tivesse sido pago. O dinheiro já está no caixa; iniciar outra cobrança registra o pagamento em dobro.
+</Callout>
+
+Toque em **OK**, volte para a aba **Entregas**, arraste a lista para baixo para atualizá-la, abra a entrega novamente e use **FINALIZAR SEM COBRAR**.
+
+### “Não foi possível dar baixa”
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-cobranca/imagens-tratadas/19-nao-foi-possivel-dar-baixa.png" width="614" height="384" alt="A mensagem de que não foi possível finalizar a entrega sobre a tela de finalização" />
+
+| Nº | Onde                                   | O que é                                         |
+| -- | -------------------------------------- | ----------------------------------------------- |
+| 1. | **Não foi possível dar baixa**         | Indica que o servidor não confirmou a entrega.  |
+| 2. | **O servidor não confirmou a entrega** | Orienta verificar a conexão e tentar novamente. |
+| 3. | **OK**                                 | Fecha a mensagem.                               |
+| 4. | **FINALIZAR**                          | O botão que você tocou estava correto.          |
+
+O botão não estava errado. A lista estava desatualizada. Toque em **OK**, volte para **Entregas**, arraste a lista para baixo, abra a entrega novamente e finalize sem cobrar.
+
+### O resumo dos quatro casos
+
+| A tela diz                                          | O dinheiro                        | O que fazer                                        |
+| --------------------------------------------------- | --------------------------------- | -------------------------------------------------- |
+| **A soma precisa ser R$ ...**                       | Nada foi enviado.                 | Corrigir os valores das pessoas.                   |
+| **Erro no Pagamento**                               | Nada foi registrado.              | Conferir o sinal e tocar em **TENTAR NOVAMENTE**.  |
+| **Pedido já pago**                                  | O pagamento já estava registrado. | **FINALIZAR SEM COBRAR**, com observação.          |
+| **Finalize a entrega: o dinheiro já está no caixa** | O pagamento foi registrado.       | Atualizar a lista e usar **FINALIZAR SEM COBRAR**. |
+
+## 6. Regras que valem sempre
+
+<Callout kind="alert" collapsed="false">
+  **Não tem como desfazer.** Depois de confirmar a cobrança ou a finalização, a entrega sai da sua lista e não pode ser reaberta pelo aplicativo. Se precisar corrigir algo, fale com o restaurante pelo sistema dele.
+</Callout>
+
+**Não toque duas vezes em CONFIRMAR.** O aplicativo bloqueia o botão enquanto envia a operação. Se a tela travar ou você não souber se passou, confira o histórico antes de tentar qualquer coisa. Nunca cobre novamente sem confirmar o resultado.
+
+**Registre o que aconteceu, não o que estava combinado.** Se o pedido estava marcado como cartão, mas o cliente pagou em dinheiro, registre **dinheiro**. O fechamento do caixa depende da forma que realmente entrou.
+
+**Use a observação para o restaurante.** Escreva o que o dono precisa saber, como “cliente pagou R$ 40,00 e ficou devendo R$ 6,00” ou “conferi a sacola e faltava o refrigerante”.
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+  <Expandable title="A forma de pagamento que preciso não está na lista" default-open="false">
+    A lista mostra apenas as formas que o restaurante habilitou para delivery. Fiado, Pix automático e formas de marketplace não aparecem de propósito.
+
+    Se faltar uma forma que deveria estar disponível, use o botão de atualizar formas no alto da tela de pagamento e avise a loja.
+  </Expandable>
+
+  <Expandable title="Apareceu Forma de pagamento não encontrada ou a forma está inativa" default-open="false">
+    O restaurante pode ter alterado o cadastro da forma. O aplicativo tenta recarregar a lista automaticamente.
+
+    Se o aviso continuar, cobre por outra forma disponível e avise a loja sobre a alteração.
+  </Expandable>
+
+  <Expandable title="Não consigo confirmar a divisão" default-open="false">
+    Confira se toda pessoa tem uma forma de pagamento escolhida e se a soma das partes é igual ao valor de **A RECEBER**.
+
+    Editar o valor de uma pessoa não reajusta o valor das outras. Corrija as partes manualmente até o aviso vermelho desaparecer.
+  </Expandable>
+
+  <Expandable title="Dividi em pessoas demais" default-open="false">
+    Toque no **−** ao lado da divisão para juntar as partes. Os valores voltam a ser divididos igualmente.
+  </Expandable>
+
+  <Expandable title="Deu erro ao confirmar" default-open="false">
+    Se a tela for **Erro no Pagamento**, com marca vermelha, nada foi registrado. Confira o sinal e toque em **TENTAR NOVAMENTE**.
+
+    Se você já tentou mais de uma vez, confira o [histórico](/app-entregador-entregas-do-dia) antes de repetir a operação.
+  </Expandable>
+
+  <Expandable title="Apareceu Pedido já pago" default-open="false">
+    Não há saldo a receber. O pedido já estava pago ou alguém já registrou o pagamento.
+
+    **Não receba nada do cliente.** Volte aos detalhes e use **FINALIZAR SEM COBRAR**, com uma observação.
+  </Expandable>
+
+  <Expandable title="O pagamento foi registrado, mas a entrega continuou na lista" default-open="false">
+    O pagamento entrou no caixa, mas a baixa da entrega não foi concluída. A tela mostra a frase **Finalize a entrega: o dinheiro já está no caixa**.
+
+    Não toque em **INICIAR COBRANÇA**, mesmo que o rodapé ainda mostre o valor a cobrar. Atualize a lista e finalize sem cobrar para não registrar o pagamento em dobro.
+  </Expandable>
+
+  <Expandable title="Finalizei e apareceu Não foi possível dar baixa" default-open="false">
+    O botão estava correto, mas o aplicativo usou uma lista desatualizada. Toque em **OK**, volte para **Entregas**, arraste a lista para baixo, abra a entrega novamente e finalize.
+  </Expandable>
+
+  <Expandable title="Finalizei e a entrega continuou na lista" default-open="false">
+    O envio pode não ter chegado ao servidor. Puxe a lista para atualizar antes de tentar finalizar novamente.
+  </Expandable>
+
+  <Expandable title="Finalizei o pedido errado" default-open="false">
+    Fale com o restaurante imediatamente. O aplicativo não oferece uma forma de desfazer a finalização.
+  </Expandable>
+</ExpandableGroup>
+
+## Onde continuar
+
+<Columns cols="5">
+  <Card title="Entregas do dia e histórico" href="/app-entregador-entregas-do-dia" icon="list" cta="Abrir manual" horizontal="false">
+    Veja a lista de entregas, os detalhes e o histórico do dia.
+  </Card>
+
+  <Card title="Chegar ao endereço" href="/app-entregador-rota" icon="map" cta="Abrir manual" horizontal="false">
+    Consulte o mapa, a rota e o melhor caminho até o cliente.
+  </Card>
+
+  <Card title="Pedidos de iFood e 99Food" href="/app-entregador-marketplace" icon="shopping-bag" cta="Abrir manual" horizontal="false">
+    Entenda como tratar pedidos que já foram pagos pelo marketplace.
+  </Card>
+
+  <Card title="Formas de recebimento" href="/formas-recebimento" icon="credit-card" cta="Abrir manual" horizontal="false">
+    Veja como o restaurante define as formas que aparecem para o entregador.
+  </Card>
+
+  <Card title="Conferência de caixa" href="/caixa-conferencia-2" icon="database" cta="Abrir manual" horizontal="false">
+    Confira onde os valores recebidos na rua aparecem no fim do dia.
+  </Card>
+</Columns>
+
