@@ -669,24 +669,61 @@
                     ]
                   }
                 ]
-              }
-            ]
-          },
-          {
-            "group": "📱 Aplicativos",
-            "pages": [
-              {
-                "title": "🛵 Entregador",
-                "path": "app-entregadores"
               },
               {
-                "group": "📲 Cardápio Digital Tablet",
+                "group": "🛵 Gestão de Entrega",
                 "pages": [
+                  {
+                    "title": "🛵 Gestão de Entrega",
+                    "path": "modulos-adicionais/gestao-entrega"
+                  },
+                  {
+                    "title": "🛵 Entregador",
+                    "path": "app-entregadores"
+                  }
+                ]
+              },
+              {
+                "title": "🛒 Marketplaces",
+                "path": "modulos-adicionais/marketplaces"
+              },
+              {
+                "group": "💳 TEF",
+                "pages": [
+                  {
+                    "title": "💳 TEF PayGo",
+                    "path": "modulos-adicionais/tef-paygo"
+                  },
+                  {
+                    "title": "💳 TEF Stone (AutoTEF)",
+                    "path": "modulos-adicionais/tef-stone"
+                  }
+                ]
+              },
+              {
+                "title": "🖥️ Totem de Autoatendimento",
+                "path": "modulos-adicionais/totem-autoatendimento"
+              },
+              {
+                "group": "📱 Cardápio Digital no Tablet",
+                "pages": [
+                  {
+                    "title": "📱 Cardápio Digital no Tablet",
+                    "path": "modulos-adicionais/cardapio-digital-tablet"
+                  },
                   {
                     "title": "🔒 Modo Kiosk (Travar Tablet)",
                     "path": "modo-kiosk-travar-tablet"
                   }
                 ]
+              },
+              {
+                "title": "📄 Cardápio Adicional",
+                "path": "modulos-adicionais/cardapio-adicional"
+              },
+              {
+                "title": "🤖 Bot WhatsApp Adicional",
+                "path": "modulos-adicionais/bot-whatsapp-adicional"
               }
             ]
           },
