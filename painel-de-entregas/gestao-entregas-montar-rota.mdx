@@ -1,0 +1,188 @@
+---
+title: "Montar a rota: agrupar pedidos e escolher o entregador"
+description: "Junte pedidos de delivery numa viagem, escolha quem leva, ordene as paradas e adicione pedidos a uma rota que já existe, tudo antes de mandar para a rua."
+---
+
+## Para que serve
+
+**Rota** é uma viagem: um entregador, uma sequência de paradas e um pedido em cada parada. Montar a rota é escolher quais pedidos saem juntos, em que ordem e com quem.
+
+A rota nasce **parada**. Montar não manda ninguém para a rua: você pode montar, conferir, ajustar e só depois [despachar e acompanhar](/gestao-entregas-despachar).
+
+- Juntar pedidos que ficam perto uns dos outros.
+- Escolher o entregador, conferindo a situação e a distância até a loja.
+- Ordenar as paradas manualmente ou pelo sistema.
+- Adicionar um pedido que chegou depois a uma rota já montada.
+
+## Antes de começar
+
+- Você precisa ter pedidos de delivery na tela, em **Pedidos sem rota**.
+- O entregador precisa estar cadastrado e, para receber a viagem, disponível no aplicativo. Se necessário, veja [Liberar o entregador](/gestao-entregas-liberar-entregador).
+- O pedido precisa ter endereço com coordenada para aparecer no mapa. Sem coordenada, ele entra na rota, mas não aparece no desenho.
+- Se você ainda não conhece os elementos da tela, consulte [Ler o mapa e o painel de entregas](/gestao-entregas-mapa-painel).
+
+<Callout kind="info">
+
+A rota é criada parada. Você pode criar a viagem mesmo que algum pedido ainda esteja em preparo e despachá-la quando a cozinha terminar.
+
+</Callout>
+
+## 1. Escolher os pedidos
+
+Marque a caixinha de cada pedido em **Pedidos sem rota**. Ao marcar o primeiro, a **barra de ação** aparece no pé da tela.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/gestao-entregas-montar-rota/imagens-tratadas/01-selecao.png" alt="Três pedidos marcados e a barra de ação" width="614" height="384" />
+
+| Nº | Onde | O que faz |
+|---|---|---|
+| 1. | **Caixinha do grupo** | Marca ou desmarca todos os pedidos sem rota de uma vez. |
+| 2. | **N pedidos selecionados** | Mostra a quantidade de pedidos marcados e o valor total selecionado. |
+| 3. | **Limpar** | Desmarca tudo e fecha a barra de ação. |
+| 4. | **Marcar N prontos** | Marca na cozinha os pedidos selecionados que ainda estão em preparo. O botão informa quantos já estão prontos ou na rua. |
+| 5. | **Adicionar à rota** | Coloca os pedidos selecionados em uma rota que já existe. |
+| 6. | **Criar rota** | Abre a janela para criar uma viagem nova com os pedidos selecionados. |
+
+Ao marcar um pedido, o pino correspondente fica destacado no mapa. Use esse destaque para conferir se os pedidos ficam próximos antes de criar a viagem.
+
+> **Marcar prontos limpa a seleção.** Se você quiser marcar os pedidos como prontos e criar a rota, marque-os como prontos primeiro e selecione-os novamente.
+
+## 2. Criar a rota
+
+Com os pedidos marcados, clique em **Criar rota**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/gestao-entregas-montar-rota/imagens-tratadas/02-janela-criar-rota.png" alt="Janela de criação da rota" width="614" height="384" />
+
+| Nº | Onde | O que é |
+|---|---|---|
+| 1. | **A rota é criada parada** | Aviso de que criar a rota não despacha os pedidos. |
+| 2. | **Lista das paradas** | Mostra os pedidos na ordem em que foram selecionados. Você pode mudar a ordem depois. |
+| 3. | **N paradas** | Mostra a quantidade de pedidos e o valor total da viagem. |
+| 4. | **Sem entregador** | Permite criar a rota sem escolher ninguém. A viagem fica montada esperando um entregador. |
+| 5. | **Lista de entregadores** | Mostra os entregadores, a situação de cada um e a distância até o restaurante. |
+| 6. | **Sem app** | Indica que o entregador está cadastrado, mas nunca entrou no aplicativo. Escolher essa pessoa cria uma viagem que ela não verá no app. |
+| 7. | **CRIAR ROTA (F2)** | Cria a viagem com os pedidos selecionados. |
+
+Escolha o entregador clicando no nome dele.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/gestao-entregas-montar-rota/imagens-tratadas/03-entregador-escolhido.png" alt="Entregador selecionado na janela de criação da rota" width="614" height="384" />
+
+| Nº | Onde | O que faz |
+|---|---|---|
+| 1. | **Entregador marcado** | Destaca a pessoa escolhida. Ao clicar em outro nome, a escolha muda. |
+| 2. | **CRIAR ROTA (F2)** | Confirma a criação da viagem. |
+
+Depois de criar, a rota aparece na lateral e os pinos dos pedidos recebem a letra da viagem.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/gestao-entregas-montar-rota/imagens-tratadas/04-rota-criada.png" alt="Rota criada na lateral e identificada no mapa" width="614" height="384" />
+
+| Nº | Onde | O que mudou |
+|---|---|---|
+| 1. | **Letra da rota** | Identifica a viagem na tela e nos pinos do mapa, como `A`, `B` ou `C`. |
+| 2. | **Pronta para sair** | Mostra que a rota está montada, mas ainda não foi despachada. |
+| 3. | **Paradas** | Lista os pedidos na sequência atual da viagem. |
+| 4. | **Em rota** | O selo continua zerado porque nenhum pedido saiu para entrega. |
+| 5. | **Pedidos sem rota** | Diminui porque os pedidos selecionados agora pertencem à rota. |
+
+> **A letra é reaproveitada.** O sistema usa a menor letra livre entre as rotas abertas. Quando uma rota é concluída, a letra volta a ficar disponível. Para localizar uma viagem passada, use o pedido, não a letra.
+
+## 3. Ler o grupo da rota
+
+O grupo da rota na lateral reúne o entregador, a situação da viagem e o andamento das entregas.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/gestao-entregas-montar-rota/imagens-tratadas/05a-cabecalho-rota.png" alt="Cabeçalho do grupo da rota" width="614" height="384" />
+
+| Nº | Onde | O que lê |
+|---|---|---|
+| 1. | **Nome do entregador** | Mostra quem leva a viagem. A bolinha ao lado indica se a pessoa está online no aplicativo. |
+| 2. | **Letra** | Identifica a rota e corresponde à letra dos pinos no mapa. |
+| 3. | **Pronta para sair e N de N entregues** | Mostra a situação da viagem e o andamento. Antes de despachar, a contagem fica em `0 de N`. |
+
+Abaixo do cabeçalho ficam as paradas da rota.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/gestao-entregas-montar-rota/imagens-tratadas/05b-paradas-da-rota.png" alt="Paradas listadas dentro da rota" width="614" height="384" />
+
+| Nº | Onde | O que faz |
+|---|---|---|
+| 1. | **Linha da parada** | Mostra um pedido com número, cliente, endereço, valor e forma de pagamento. O número na bolinha indica a ordem da parada. |
+| 2. | **Alça de arrastar** | Permite segurar e arrastar a parada para mudar a ordem. |
+| 3. | **Visto** | Dá baixa na entrega. O fechamento da entrega é tratado em [Fechar a entrega no painel](/gestao-entregas-fechar-entrega). |
+
+Clique no cabeçalho do grupo para fechar ou abrir a rota. Isso ajuda quando várias viagens estão montadas na tela.
+
+## 4. Ordenar as paradas
+
+Você pode ordenar as paradas manualmente ou deixar o sistema calcular uma ordem melhor.
+
+**À mão:** arraste a parada pela alça. Use esse método quando você conhece uma condição que o sistema não conhece, como o horário combinado com o cliente, o fechamento da portaria ou uma rua em obras.
+
+**Pelo sistema:** clique em **Otimizar ordem**. O sistema reorganiza as paradas pela distância, começando pelo restaurante.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/gestao-entregas-montar-rota/imagens-tratadas/08-otimizar-ordem.png" alt="Ordem das paradas otimizada pelo sistema" width="614" height="384" />
+
+| Nº | Onde | O que mudou |
+|---|---|---|
+| 1. | **Primeira parada** | Passou a ser a parada mais próxima do restaurante. |
+| 2. | **Última parada** | A parada mais distante foi movida para o fim da fila. |
+
+> **O botão Otimizar ordem só aparece quando há uma ordem melhor.** Depois da otimização, o botão desaparece. Isso indica que a sequência atual já é a melhor calculada pelo sistema.
+
+> **O aplicativo do entregador pode reordenar a viagem.** Se a ordem definida na operação tiver um motivo específico, combine com o entregador para que ele não use a opção de melhor rota no celular.
+
+## 5. Juntar um pedido a uma rota que já existe
+
+Se chegar um pedido do mesmo bairro depois de uma rota estar montada, adicione-o à viagem existente em vez de criar outra.
+
+Marque o pedido e clique em **Adicionar à rota**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/gestao-entregas-montar-rota/imagens-tratadas/06-adicionar-a-rota.png" alt="Seleção da rota que receberá um pedido novo" width="614" height="384" />
+
+| Nº | Onde | O que faz |
+|---|---|---|
+| 1. | **Pedido marcado** | Define o pedido que entrará na viagem. Você pode marcar mais de um. |
+| 2. | **Adicionar à rota** | Abre a lista de rotas do dia. |
+| 3. | **Rota aberta** | Mostra uma viagem que ainda não terminou. É a opção indicada para receber o pedido. |
+| 4. | **Concluída** | Mostra uma rota encerrada. Não selecione essa opção, porque o pedido entraria numa viagem que acabou. |
+
+O pedido entra no fim da fila, como a última parada.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/gestao-entregas-montar-rota/imagens-tratadas/07-rota-com-parada-nova.png" alt="Pedido novo adicionado como última parada da rota" width="614" height="384" />
+
+| Nº | Onde | O que mudou |
+|---|---|---|
+| 1. | **Quarta parada** | O pedido novo foi incluído no fim da sequência. |
+| 2. | **N de N entregues** | A quantidade de paradas aumentou, por exemplo, de `3` para `4`. |
+| 3. | **Otimizar ordem** | Voltou a aparecer porque a nova parada pode ter mudado a melhor sequência. |
+
+> **Você pode adicionar um pedido a uma rota que já saiu.** O sistema permite essa ação, mas o entregador não recebe um aviso automático. Ligue para ele e informe o novo pedido antes de esperar a entrega.
+
+## 6. Trocar o entregador e desfazer a rota
+
+Clique nos três pontos ao lado da rota para abrir o menu de ações.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/gestao-entregas-montar-rota/imagens-tratadas/09-menu-da-rota.png" alt="Menu de ações da rota" width="614" height="384" />
+
+| Nº | Onde | O que faz |
+|---|---|---|
+| 1. | **Três pontos** | Abre o menu da rota. |
+| 2. | **Trocar entregador** | Escolhe outra pessoa para a mesma viagem, antes ou depois de despachar. |
+| 3. | **Remover entregador** | Deixa a rota montada sem entregador. As paradas continuam na viagem. |
+| 4. | **Excluir rota** | Desfaz a viagem e devolve os pedidos para **Pedidos sem rota**. Nada é cancelado ou perdido. |
+
+> **Excluir rota não cancela pedido.** A ação apenas desmonta o grupo e devolve os pedidos para a lista. Para cancelar um pedido, use a tela de Delivery.
+
+## Dicas
+
+- **Junte por bairro, não por horário de chegada.** Dois pedidos do mesmo condomínio costumam fazer mais sentido numa viagem do que dois pedidos que chegaram juntos, mas ficam em pontos opostos da cidade.
+- **Olhe o mapa antes de criar.** Os pinos destacados mostram rapidamente se os pedidos formam uma viagem coerente.
+- **Crie a rota mesmo com pedido em preparo.** A rota nasce parada. Você pode organizar a viagem agora e despachá-la quando a cozinha terminar.
+- **Rota com uma parada é válida.** Para um pedido distante ou isolado, essa é a forma de registrar a viagem e o entregador.
+- **O sistema permite decisões operacionais.** Adicionar pedido a uma rota na rua, trocar o entregador no meio da viagem e excluir uma rota são ações permitidas. Confira cada decisão antes de confirmar, porque o sistema não conhece todas as condições do balcão.
+
+## Onde continuar
+
+| Manual | O que cobre |
+|---|---|
+| [Despachar e acompanhar](/gestao-entregas-despachar) | Mandar a rota para a rua e acompanhar o entregador no mapa |
+| [Fechar a entrega no painel](/gestao-entregas-fechar-entrega) | Dar baixa quando o pedido chegar |
+| [Despacho automático](/gestao-entregas-despacho-automatico) | Deixar o sistema agrupar pedidos e escolher o entregador |
+| [Ler o mapa e o painel de entregas](/gestao-entregas-mapa-painel) | Entender os elementos e os estados da tela |

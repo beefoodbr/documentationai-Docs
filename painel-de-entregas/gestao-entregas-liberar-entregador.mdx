@@ -1,0 +1,189 @@
+---
+title: 'Liberar o entregador: cadastro, acesso ao app e codigo de barras'
+description: >-
+  Cadastre o motoboy como funcionario, crie o usuario do celular, ative o codigo
+  de barras no cupom e deixe um entregador novo pronto para trabalhar do zero.
+---
+---
+
+## Liberar o entregador
+
+Antes de qualquer entrega sair pelo painel, o motoboy precisa existir em dois lugares no BeeFood:
+
+1. Como **funcionário** com a função **Entregador**, para aparecer na lista de quem pode receber uma rota.
+2. Como **usuário** com **Aplicativos** ligado, para conseguir entrar no aplicativo pelo celular.
+
+Quando um dos dois cadastros falta, o problema aparece de formas diferentes. O entregador pode aparecer no painel, mas não receber entregas, ou o aplicativo pode recusar o login mesmo com a senha correta. Faça os dois cadastros nesta ordem e, no final, ative o código de barras no cupom.
+
+## Para que serve
+
+- Deixar um entregador novo pronto para trabalhar, do zero.
+- Entender por que o aplicativo recusa o login de um usuário.
+- Registrar o valor da diária e o valor por quilômetro.
+- Imprimir no cupom o código de barras que o aplicativo lê.
+
+## Antes de começar
+
+<Callout kind="info" collapsed="false">
+  - Tenha acesso a **Cadastros → Funcionários** e **Configuração → Usuários**.
+  - Tenha em mãos o nome do motoboy e o login e a senha que ele usará no celular.
+  - Confirme que a impressora do cupom de pedido está funcionando.
+</Callout>
+
+O aplicativo **BeeFood Entregador** é gratuito:
+
+- Android: [Google Play](https://play.google.com/store/apps/details?id=com.beetechentregador)
+- iPhone: [App Store](https://apps.apple.com/br/app/beefood-para-entregadores/id6736578030)
+
+> O login do app não é o seu. Cada motoboy entra com o usuário que você criar para ele.
+
+## 1. Cadastrar o funcionário
+
+Abra **Cadastros → Funcionários**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/gestao-entregas-liberar-entregador/imagens-tratadas/01-lista-funcionarios.png" width="614" height="384" alt="A lista de funcionários" />
+
+| Nº | Onde                               | O que faz                                                                                          |
+| -- | ---------------------------------- | -------------------------------------------------------------------------------------------------- |
+| 1  | **Novo Funcionário (F1)**          | Abre uma ficha em branco para cadastrar quem ainda não existe.                                     |
+| 2  | **Buscar por nome, CPF ou e-mail** | Localiza um funcionário já cadastrado para evitar duplicidade.                                     |
+| 3  | **Entregadores**                   | Mostra quantos funcionários estão cadastrados com a função Entregador.                             |
+| 4  | **Função**                         | Exibe a função de cada funcionário. Quem não tiver Entregador não aparecerá na Gestão de Entregas. |
+| 5  | **Ações**                          | O lápis abre a ficha de um funcionário existente.                                                  |
+
+Clique em **Novo Funcionário (F1)**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/gestao-entregas-liberar-entregador/imagens-tratadas/02-funcionario-dados.png" width="614" height="384" alt="A ficha do funcionário, aba Dados" />
+
+| Nº | Campo                 | O que preencher                                                                                            |
+| -- | --------------------- | ---------------------------------------------------------------------------------------------------------- |
+| 1  | **Nome**              | Campo obrigatório. Use um nome que seja fácil de reconhecer no painel.                                     |
+| 2  | **Função**            | Aba onde você marcará Entregador no próximo passo. A aba Dados, sozinha, cria apenas um funcionário comum. |
+| 3  | **Funcionário Ativo** | Deixe ligado para manter o funcionário nas listas do sistema.                                              |
+| 4  | **SALVAR (F2)**       | Grava o cadastro.                                                                                          |
+
+Os outros campos, como CPF, RG, telefone e datas, são opcionais e servem para o controle do restaurante. O **Código Operador** é o número curto usado no PDV e não tem relação com o aplicativo do entregador.
+
+## 2. Marcar a função Entregador
+
+Ainda na ficha do funcionário, abra a aba **Função**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/gestao-entregas-liberar-entregador/imagens-tratadas/03-funcionario-funcao.png" width="614" height="384" alt="Aba Função com Entregador marcado" />
+
+| Nº | Onde                  | O que faz                                                                                                       |
+| -- | --------------------- | --------------------------------------------------------------------------------------------------------------- |
+| 1  | **Entregador**        | Marque esta opção para incluir a pessoa na Gestão de Entregas. Este é o passo que cria o entregador no sistema. |
+| 2  | **Valor Diária (R$)** | Informe o valor fixo pago por diária trabalhada. O preenchimento é opcional.                                    |
+| 3  | **Valor por KM (R$)** | Informe o valor pago por quilômetro rodado. O preenchimento é opcional.                                         |
+| 4  | **Garçom**            | A função é única. Marcar Garçom desmarca Entregador.                                                            |
+| 5  | **SALVAR (F2)**       | Grava a função escolhida.                                                                                       |
+
+Os valores de diária e de quilômetro alimentam o relatório de pagamento do entregador. Eles não alteram o funcionamento do aplicativo nem a exibição do entregador no painel.
+
+> Use um nome diferente para cada pessoa. Se houver dois entregadores com o mesmo nome, use o sobrenome para diferenciá-los no mapa, nas rotas e nos relatórios.
+
+## 3. Criar o usuário do celular
+
+O funcionário não tem senha. O login é criado em outro cadastro: **Configuração → Usuários**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/gestao-entregas-liberar-entregador/imagens-tratadas/04-usuarios-lista.png" width="614" height="384" alt="A lista de usuários" />
+
+| Nº | Onde                  | O que faz                                              |
+| -- | --------------------- | ------------------------------------------------------ |
+| 1  | **Novo Usuário (F1)** | Abre a ficha para criar o login do celular.            |
+| 2  | **Função**            | Mostra a função do funcionário vinculado ao usuário.   |
+| 3  | **Entregador**        | Exibe o selo que confirma o vínculo com um entregador. |
+
+A lista de usuários também mostra o limite do plano, como a quantidade de usuários usados em relação ao total contratado. Cada motoboy consome um usuário.
+
+Clique em **Novo Usuário (F1)**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/gestao-entregas-liberar-entregador/imagens-tratadas/05-usuario-novo.png" width="614" height="384" alt="A ficha do usuário novo" />
+
+| Nº | Campo               | O que preencher                                                                                  |
+| -- | ------------------- | ------------------------------------------------------------------------------------------------ |
+| 1  | **Login**           | Informe o nome que o motoboy digitará no aplicativo. Use um login sem espaço e sem acento.       |
+| 2  | **Senha**           | Defina a senha com o motoboy. Ela poderá ser trocada depois.                                     |
+| 3  | **Funcionário**     | Escolha o entregador cadastrado no passo anterior. Não deixe o campo como Nenhum.                |
+| 4  | **Grupo de Acesso** | Pode ficar como Nenhum. O motoboy não precisa de permissões no sistema.                          |
+| 5  | **Aplicativos**     | Ligue esta opção. Desligada, ela impede o login mesmo quando o usuário e a senha estão corretos. |
+| 6  | **SALVAR (F2)**     | Grava o login.                                                                                   |
+
+Deixe **Gerente** desligado. Essa opção concede permissões administrativas que o motoboy não precisa usar.
+
+> Funcionário é a pessoa; usuário é a chave usada para entrar. O painel de entregas lê a pessoa, enquanto o aplicativo lê a chave.
+
+### Conferir se deu certo
+
+Abra a [Gestão de Entregas](/gestao-entregas-mapa-painel) e confira a lista de entregadores. O nome novo deve aparecer em **Offline**, com o aviso **Nunca usou o app**.
+
+Esse é o estado esperado antes do primeiro acesso. Depois que o motoboy entrar no aplicativo e ficar disponível, o entregador mudará de grupo no painel.
+
+## 4. Ligar o código de barras no cupom
+
+O aplicativo tem um leitor de código de barras. Para o motoboy usar esse leitor, o código precisa ser impresso no cupom do pedido.
+
+Abra **Configuração → Impressão**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/gestao-entregas-liberar-entregador/imagens-tratadas/06-impressao-layout.png" width="614" height="384" alt="Aba Layout" />
+
+| Nº | Onde             | O que faz                                             |
+| -- | ---------------- | ----------------------------------------------------- |
+| 1  | **Layout**       | Abre a área de configuração dos layouts de impressão. |
+| 2  | **Cupom Pedido** | Seleciona o cupom usado nos pedidos.                  |
+| 3  | **Lápis**        | Abre o layout selecionado para edição.                |
+
+Dentro do layout do **Cupom Pedido**, abra a aba **Texto Padrão**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/gestao-entregas-liberar-entregador/imagens-tratadas/07-cupom-texto-padrao.png" width="614" height="384" alt="Caixinha Código de Barras App Entrega" />
+
+| Nº | Onde                             | O que fazer                                                                                                   |
+| -- | -------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| 1  | **Texto Padrão**                 | Abra esta aba do layout.                                                                                      |
+| 2  | **Código de Barras App Entrega** | Marque esta opção para imprimir o código lido pelo aplicativo.                                                |
+| 3  | **QR Code Cardápio Digital**     | Não marque esta opção para substituir o código do entregador. Ela corresponde ao cardápio digital do cliente. |
+| 4  | **SALVAR E FECHAR**              | Grava o layout atualizado.                                                                                    |
+
+A partir do próximo pedido, o código aparecerá no final do cupom, depois do endereço de entrega.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/gestao-entregas-liberar-entregador/imagens-tratadas/08-cupom-impresso.png" width="614" height="384" alt="Cupom com código de barras" />
+
+O código de barras só é impresso em pedidos de **delivery com entrega**. Ele não aparece em pedidos para retirada no balcão nem em vendas presenciais.
+
+### O que acontece quando o motoboy lê o código
+
+Ler o código é despachar o pedido, não conferir os itens. Quando o motoboy faz a leitura, o BeeFood:
+
+- Marca o pedido como **saiu para entrega**.
+- Vincula o pedido àquele entregador.
+- Avisa o marketplace quando o pedido veio de um marketplace.
+- Envia o aviso ao cliente pelo WhatsApp quando os avisos estão configurados.
+
+A leitura tem o mesmo efeito do botão de despacho no painel. Por isso, não peça para o motoboy testar o leitor com um pedido real de cliente. A leitura também é irreversível pelo aplicativo; para corrigir o despacho, faça o ajuste no painel.
+
+Acesse [App Entregador](/app-entregadores) para orientar o motoboy sobre a leitura do código.
+
+<Callout kind="tip" collapsed="false">
+  O código de barras é um atalho, não o caminho principal para quem usa rotas. O painel continua sendo o local para montar uma viagem e agrupar vários pedidos.
+</Callout>
+
+## Problemas comuns
+
+| Sintoma                                                   | O que verificar                                                                                                                             |
+| --------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| O login é inválido, mas o usuário e a senha estão certos. | Confirme se **Aplicativos** está ligado no cadastro do usuário.                                                                             |
+| O motoboy entra no app, mas não vê nenhuma entrega.       | Confirme se o campo **Funcionário** está preenchido com o entregador correto.                                                               |
+| O nome não aparece na Gestão de Entregas.                 | Confirme se a função **Entregador** está marcada na ficha do funcionário.                                                                   |
+| O entregador nunca recebe uma rota.                       | Confira se ele está **Offline** ou se ainda aparece como **Nunca usou o app**.                                                              |
+| O cupom sai sem código de barras.                         | Confirme se **Código de Barras App Entrega** está marcado na aba **Texto Padrão** do **Cupom Pedido** e se o pedido é delivery com entrega. |
+| Dois motoboys ficam difíceis de diferenciar.              | Renomeie os funcionários e use o sobrenome quando houver nomes iguais.                                                                      |
+| O funcionário sumiu das listas.                           | Confirme se **Funcionário Ativo** está ligado.                                                                                              |
+
+## Onde continuar
+
+| Manual                                                            | O que cobre                                                   |
+| ----------------------------------------------------------------- | ------------------------------------------------------------- |
+| [Ler o mapa e o painel de entregas](/gestao-entregas-mapa-painel) | Entender a tela onde o entregador cadastrado aparece.         |
+| [Montar a rota](/gestao-entregas-montar-rota)                     | Agrupar pedidos em uma viagem e escolher quem fará a entrega. |
+| [App Entregador](/app-entregadores)                               | Orientar o motoboy sobre o acesso e o uso do aplicativo.      |
+

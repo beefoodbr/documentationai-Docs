@@ -1,0 +1,326 @@
+---
+title: "Uma entrega do começo ao fim: painel e aplicativo lado a lado"
+description: "Acompanhe o ciclo completo de uma entrega no BeeFood, do pedido pronto ao relatório, entendendo o que muda no painel e no app."
+---
+
+## Para que serve
+
+**Uma entrega do começo ao fim** conta a mesma viagem em duas telas: o painel do operador e o aplicativo do entregador. Você acompanha três pedidos prontos no balcão, a montagem da rota, o despacho, a entrega e os relatórios do dia.
+
+O operador entende o que o entregador vê quando toca em cada botão. O entregador entende de onde vem cada informação exibida no celular. As duas perspectivas ajudam a localizar rapidamente em qual etapa uma entrega está.
+
+<Callout kind="info">
+
+As duas metades deste manual são a mesma viagem. As imagens do painel e as do celular foram feitas no mesmo turno, com os mesmos três pedidos: **#1105**, **#1106** e **#1107**, na rota **A**. Os endereços, os valores e as horas correspondem de uma tela para a outra.
+
+</Callout>
+
+<Callout kind="info">
+
+Este manual não substitui os manuais de cada tela. Se você nunca montou uma rota, comece por [Montar a rota](/gestao-entregas-montar-rota). Aqui, cada etapa aponta o manual que explica o procedimento em detalhe.
+
+</Callout>
+
+As imagens têm **setas numeradas**. Cada número indica o campo correspondente na tela.
+
+## Antes de começar
+
+- Um entregador cadastrado, com acesso ao aplicativo. Consulte [Liberar o entregador](/gestao-entregas-liberar-entregador).
+- O entregador **online** no aplicativo. O ciclo funciona sem essa condição, mas o pino dele não aparece no mapa.
+- Pedidos com endereço e coordenada, com a área de entrega configurada.
+- **Caixa aberto** na filial, se a cobrança acontecer na porta do cliente.
+
+## O ciclo em sete momentos
+
+| Momento | O operador faz | O entregador vê |
+|---|---|---|
+| 1. Os pedidos prontos | A fila de quem espera entrega. | **Nada**. |
+| 2. A rota montada | Agrupa os pedidos e escolhe quem leva. | A rota chega à lista. |
+| 3. O despacho | Clica para avisar o cliente e os canais. | A rota vira **em rota**. |
+| 4. A rua | Acompanha o pino no mapa. | O Maps aberto. |
+| 5. A porta do cliente | Acompanha a parada mudando de estado. | Cobra e dá baixa. |
+| 6. O fim da viagem | A rota sai da tela. | A lista fica vazia. |
+| 7. O dia seguinte | Consulta o relatório. | O histórico guarda as entregas. |
+
+A primeira linha evita a confusão mais comum da operação: pedido pronto não é pedido atribuído. O pedido só aparece no aplicativo depois que um entregador é associado a ele.
+
+## 1. Os pedidos prontos e o celular vazio
+
+O ciclo começa na fila. Três pedidos saíram da cozinha, têm endereço reconhecido e esperam alguém para levá-los.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/gestao-entregas-ciclo-completo/imagens-tratadas/01-fila-de-pedidos.png" width="614" height="384" alt="A fila com três pedidos prontos e o entregador parado na loja" />
+
+| Nº | Onde | O que é |
+|---|---|---|
+| 1. | **3 prontos** | Quantidade de pedidos que saíram da cozinha e esperam entrega. |
+| 2. | **0 entregues** | Contador do dia. Nenhum pedido saiu ainda. |
+| 3. | **Pedidos sem rota (3)** | Grupo de pedidos sem rota e sem entregador. |
+| 4. | **Cartão do pedido** | Número, cliente, endereço, tempo de espera e forma de pagamento combinada no pedido. |
+| 5. | **Pino na loja** | Entregador online e parado no restaurante. |
+
+O entregador já está online, por isso o pino aparece no mapa, na loja. A lista do aplicativo permanece vazia até alguém decidir quem levará cada pedido.
+
+> Pedido pronto sem atribuição é um pedido que ninguém vê no aplicativo. Para entender o vocabulário desta tela, consulte [Ler o mapa e o painel de entregas](/gestao-entregas-mapa-painel).
+
+## 2. A rota montada e a rota que chega
+
+O operador marca os três pedidos, agrupa-os em uma rota e escolhe o entregador.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/gestao-entregas-ciclo-completo/imagens-tratadas/02-rota-montada.png" width="614" height="384" alt="A rota A montada, com três paradas e o entregador escolhido" />
+
+| Nº | Onde | O que é |
+|---|---|---|
+| 1. | **Nome do entregador** | Pessoa que fará a rota. É este campo que faz a rota aparecer no celular. |
+| 2. | **Bolinha com a letra** | Identificação da rota: A, B, C e assim por diante. |
+| 3. | **Pronta para sair · 0 de 3 entregues** | Situação da viagem e andamento. Antes do despacho, o contador é sempre 0 de N. |
+| 4. | **Avião** | Botão para despachar a rota. Ainda não foi acionado nesta tela. |
+| 5. | **Parada 1** | Primeira parada na ordem montada pelo operador, com valor e forma de pagamento. |
+| 6. | **Parada 3** | Última parada. O visto à direita permite a baixa manual pelo painel. |
+
+A rota já aparece no celular antes do despacho. Atribuir um entregador é suficiente para enviá-la à lista.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/gestao-entregas-ciclo-completo/imagens-tratadas/03-rota-no-app.png" width="614" height="384" alt="A lista do aplicativo com o grupo ROTA A recém-chegado" />
+
+| Nº | Onde | O que é |
+|---|---|---|
+| 1. | **ROTA A** | A mesma identificação exibida no painel. |
+| 2. | **0 de 3 entregues** | Nenhuma parada foi concluída. |
+| 3. | **INICIAR ROTA**, em verde | Permite ao entregador iniciar a rota sem esperar o clique no painel. |
+| 4. | **Crachá laranja** | Identifica a linha do pedido. Aqui mostra apenas o símbolo `#`; o número aparece na tela de pagamento. |
+| 5. | **Cobrar R$ 19,90** | Mesmo valor exibido na parada 1 do painel. |
+
+O botão **INICIAR ROTA** atende ao caso em que o entregador já está com os pedidos, mas o operador ainda não despachou. Quando o entregador toca nele, o efeito é igual ao despacho: o cliente é avisado, o marketplace é informado e o botão desaparece.
+
+Consulte [Montar a rota](/gestao-entregas-montar-rota) para ver a tela do painel e [App do entregador: chegar no endereço](/app-entregador-rota) para ver a tela do aplicativo.
+
+> **A ordem das paradas pertence ao operador, mas pode ser alterada no aplicativo.** O botão **MELHOR ROTA** reordena as entregas pela distância a partir da loja. Se a sequência importar, combine com o entregador antes que ele use esse botão.
+
+## 3. O despacho: um clique que avisa o mundo
+
+O operador clica no avião. Este é o clique mais importante do módulo e não pode ser desfeito.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/gestao-entregas-ciclo-completo/imagens-tratadas/04-confirmar-despacho.png" width="614" height="384" alt="A janela de confirmação do despacho da rota A" />
+
+| Nº | Onde | O que é |
+|---|---|---|
+| 1. | **Despachar rota A** | Identificação da rota que sairá. |
+| 2. | **Vai sair com 3 pedidos** | Entregador responsável e quantidade de pedidos. Confira o nome antes de confirmar. |
+| 3. | **Lista de paradas** | Os três pedidos, na ordem da rota, com cliente e endereço. |
+| 4. | **Pronto** | Estado de cada pedido na cozinha. Um pedido em preparo aparece com outro selo. |
+| 5. | **Os clientes serão avisados...** | Indica o efeito do despacho fora do painel. |
+| 6. | **DESPACHAR (F2)** | Confirma a saída da rota. |
+| 7. | **CANCELAR (ESC)** | Fecha a janela sem despachar. |
+
+O despacho altera os três pedidos de uma vez:
+
+| O que acontece | Quem sente |
+|---|---|
+| O pedido passa para **Em entrega**. | Delivery, caixa e fechamento do dia. |
+| A mensagem **pedido saiu para entrega** é enviada. | Cliente, pelo WhatsApp. |
+| O marketplace é avisado. | iFood, 99Food, aiqfome e outros canais. |
+| A impressão de entrega é acionada. | Impressora da loja. |
+
+No celular, o cabeçalho passa a mostrar **em rota**. O botão **INICIAR ROTA** é substituído por **ABRIR NO MAPS**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/gestao-entregas-ciclo-completo/imagens-tratadas/05-em-rota-no-app.png" width="614" height="384" alt="O cabeçalho da rota com a etiqueta em rota e o botão ABRIR NO MAPS" />
+
+| Nº | Onde | O que é |
+|---|---|---|
+| 1. | **Letra da rota** | Continua igual e identifica a mesma viagem. |
+| 2. | **em rota** | Etiqueta ativada pelo despacho. |
+| 3. | **ABRIR NO MAPS** | Substitui o botão **INICIAR ROTA**. |
+
+Ao tocar na primeira parada, o entregador vê endereço, complemento, telefone, itens e o valor a receber.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/gestao-entregas-ciclo-completo/imagens-tratadas/06-primeira-parada.png" width="614" height="384" alt="Os detalhes da primeira parada no aplicativo do entregador" />
+
+| Nº | Onde | O que é |
+|---|---|---|
+| 1. | **Endereço de entrega** | Mesmo endereço exibido no cartão do painel. |
+| 2. | **Observações** | Informações escritas pelo cliente, como instruções para a portaria. |
+| 3. | **Realizado às** | Horário em que o pedido foi feito. |
+| 4. | **Itens** | Produtos que o entregador está levando. |
+| 5. | **FORMA DE PAGAMENTO** | Forma combinada no pedido. É uma previsão, não a decisão final da cobrança. |
+| 6. | **COBRAR**, em verde | Ação para iniciar a cobrança na porta. |
+| 7. | **INICIAR COBRANÇA** | Caminho para registrar o pagamento e concluir a entrega. |
+
+Consulte [Despachar a rota](/gestao-entregas-despachar) para ver o painel e [App do entregador: as entregas do dia](/app-entregador-entregas-do-dia) para ver a lista e os detalhes no celular.
+
+> **Use a sequência cozinha pronta, entregador na porta e despacho.** O sistema permite despachar um pedido em preparo, mas isso avisa o cliente antes de o pedido estar pronto.
+
+### Um segundo caminho para despachar
+
+O entregador também pode despachar a rota lendo, com a câmera do aplicativo, o código de barras impresso no cupom. O efeito é igual ao clique no avião do painel. Ler o código de barras é despachar, não apenas conferir.
+
+Consulte [Código de barras: ligar a etiqueta e ler o pedido](/app-entregador-codigo-barras).
+
+## 4. A rua
+
+O entregador toca em **ABRIR NO MAPS** e o telefone abre o aplicativo de mapas. No BeeFood, esta fase altera pouco a tela: o aplicativo envia a posição periodicamente e o painel atualiza o pino.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/gestao-entregas-ciclo-completo/imagens-tratadas/07-mapa-ao-vivo.png" width="614" height="384" alt="O mapa com o pino do entregador longe da loja" />
+
+| Nº | Onde | O que é |
+|---|---|---|
+| 1. | **3 em rota** | Os três pedidos saíram. O contador de pedidos prontos zerou. |
+| 2. | **Na rua** | Situação atual da rota. Antes, o estado era **Pronta para sair**. |
+| 3. | **Entregando agora** | Parada que o entregador está fazendo. Apenas uma fica ativa por vez. |
+| 4. | **Pino longe da loja** | Última posição enviada pelo aplicativo. |
+| 5. | **Botão de finalizar** | Confirma todas as paradas pendentes e encerra a rota. |
+
+O aviso de proximidade do WhatsApp também pode ser disparado quando o entregador entra no raio configurado. Esse aviso depende de uma configuração salva por loja. Consulte [Avisos de WhatsApp da entrega](/gestao-entregas-avisos-whatsapp).
+
+> **Pino parado não significa necessariamente entregador parado.** Confira a bateria e a idade da última posição na lista de entregadores antes de ligar. A economia de energia pode interromper o envio da localização.
+
+## 5. A porta do cliente
+
+O entregador chega, entrega e cobra. No aplicativo, registrar o pagamento também dá baixa na entrega. Não existe uma etapa separada para cobrar e manter a entrega aberta.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/gestao-entregas-ciclo-completo/imagens-tratadas/08-cobranca-concluida.png" width="614" height="384" alt="A tela de sucesso da cobrança com o valor registrado" />
+
+O valor de **R$ 19,90** é o mesmo que aparece na parada do painel e em **Cobrar R$** no aplicativo. O valor não sofre arredondamento no caminho.
+
+O entregador toca em **INICIAR COBRANÇA**, escolhe a forma de pagamento, confere o troco e confirma. Se a conta for dividida, a soma das partes precisa fechar com o total do pedido.
+
+No painel, a parada muda de estado e o contador avança.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/gestao-entregas-ciclo-completo/imagens-tratadas/09-uma-de-tres.png" width="614" height="384" alt="A primeira parada entregue e o contador em 1 de 3" />
+
+| Nº | Onde | O que mudou |
+|---|---|---|
+| 1. | **1 entregues** | O contador do dia aumentou. |
+| 2. | **1 de 3 entregues** | O andamento da rota avançou. |
+| 3. | **Parada 1** | Ficou apagada, com um visto verde, e não aceita outra baixa. |
+| 4. | **Entregando agora** | Avançou para a parada 2. |
+| 5. | **Pino** | Acompanhou a parada ativa no mapa. |
+
+Consulte [App do entregador: receber na porta](/app-entregador-cobranca) para a cobrança e [Fechar a entrega no painel](/gestao-entregas-fechar-entrega) para a baixa manual.
+
+> **A baixa pode acontecer dos dois lados, mas a baixa pelo celular registra mais informações.** O painel registra que a entrega foi concluída. O celular também registra a forma de pagamento e o valor recebido.
+
+### Quando o pedido é de uma plataforma
+
+Pedidos do iFood ou 99Food chegam já pagos. Nesse caso, **Cobrar R$** aparece zerado e o aplicativo mostra o botão de confirmação da plataforma. O entregador confirma a entrega no aplicativo, e o pedido é concluído no mesmo gesto.
+
+Consulte [App do entregador: pedido de iFood e de 99Food](/app-entregador-marketplace).
+
+## 6. O fim da viagem
+
+Quando a terceira parada é concluída, o grupo da rota desaparece da lista do aplicativo.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/gestao-entregas-ciclo-completo/imagens-tratadas/10-lista-sem-a-rota.png" width="614" height="384" alt="A lista do aplicativo sem o grupo da rota" />
+
+| Nº | Onde | O que é |
+|---|---|---|
+| 1. | **Nenhuma entrega agora** | Lista vazia depois da última baixa. |
+| 2. | **Arraste a tela para baixo para atualizar** | Gesto para forçar uma nova leitura. |
+| 3. | **ATUALIZAR** | Botão que executa a mesma ação. |
+| 4. | **ONLINE** | O entregador continua conectado. Lista vazia com o indicador aceso significa fim de viagem. |
+
+No painel, a rota é encerrada automaticamente na última baixa.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/gestao-entregas-ciclo-completo/imagens-tratadas/11-rota-fora-da-tela.png" width="614" height="384" alt="O painel de rotas vazio com o contador do dia em três entregues" />
+
+| Nº | Onde | O que é |
+|---|---|---|
+| 1. | **3 entregues** | Contador do dia com as três entregas concluídas. |
+| 2. | **Nenhum pedido com os filtros atuais** | Nenhuma rota aberta ou pedido esperando na lateral. |
+| 3. | **Pino de volta à loja** | Entregador disponível novamente. |
+
+> **O botão de finalizar atende a outro caso.** Use-o quando o entregador confirmar que entregou tudo. O botão baixa todas as paradas pendentes de uma vez, sem confirmação e sem desfazer. Se uma parada estiver em dúvida, dê baixa nas outras individualmente e deixe a dúvida por último.
+
+A rota encerrada aparece ao ativar o filtro **entregues**. Consulte [Fechar a entrega no painel](/gestao-entregas-fechar-entrega) para localizar pedidos já concluídos.
+
+## 7. O que sobra do dia
+
+Depois que o ciclo termina nas duas telas, o resultado fica nos relatórios.
+
+No painel, acesse **Desempenho › Delivery › Operação de Entrega** para consultar as três entregas do dia.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/gestao-entregas-ciclo-completo/imagens-tratadas/12-relatorio-do-dia.png" width="614" height="384" alt="O relatório Operação de Entrega com a data de hoje" />
+
+| Nº | Onde | O que é |
+|---|---|---|
+| 1. | **Período** | Intervalo analisado pelo relatório. Nesta imagem, **Hoje (1 dia)**. |
+| 2. | **Operação** | Aba com os números do dia. A aba **Dados** mostra uma linha por pedido. |
+| 3. | **Entregas: 3** | As três entregas da rota. |
+| 4. | **Faturamento: R$ 126,60** | Soma dos três pedidos: R$ 19,90 + R$ 42,80 + R$ 63,90. |
+| 5. | **Poucos pedidos, mínimo 20** | As médias de tempo não são calculadas com apenas três pedidos. |
+
+Duas situações comuns não indicam erro:
+
+- **Taxas do entregador em branco** significam que não há valor por entrega configurado. Ajuste em [Entregador (Taxa / KM)](/entregador-quanto-recebe).
+- **Métricas de tempo ausentes** significam que o relatório ainda não alcançou o mínimo de volume necessário.
+
+No celular, o **Histórico** guarda as mesmas entregas, agrupadas por dia e com o horário de cada baixa.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/gestao-entregas-ciclo-completo/imagens-tratadas/13-historico-do-dia.png" width="614" height="384" alt="O Histórico do dia com as três entregas concluídas" />
+
+| Nº | Onde | O que é |
+|---|---|---|
+| 1. | **6 Entregas** | Total do período mostrado no topo, não apenas do dia aberto. |
+| 2. | **Sábado · 19/09/2026 · 3 Entregas** | Dia da viagem, expandido na tela. |
+| 3. | **Entregue às 00:46** | Horário da baixa usado também pelo relatório do painel. |
+| 4. | **Entrega nº 1 do histórico** | Última parada da rota. O histórico lista da mais recente para a mais antiga. |
+| 5. | **Entrega nº 3 do histórico** | Primeira parada da rota, que abriu a viagem. |
+
+As duas telas usam a mesma data de entrega. Se os registros divergirem, verifique se alguma baixa aconteceu depois da virada da meia-noite.
+
+Consulte [Operação de Entrega](/relatorio-operacao-entrega) para medir a operação e [Entregador (Taxa / KM)](/entregador-quanto-recebe) para consultar os valores do entregador.
+
+## Como as duas telas se encontram
+
+O número do pedido aparece em uma única tela do aplicativo: **PAGAMENTO**, no selo laranja **PEDIDO #NNNN**. Na lista e nos detalhes da entrega, o selo mostra apenas o símbolo `#`, sem o número.
+
+Enquanto o entregador não abre a cobrança, ele não tem o número do pedido para conferir. Para identificar a mesma entrega durante uma ligação, compare os dados que aparecem nos dois lados:
+
+| Os dois veem | Onde, no painel | Onde, no celular |
+|---|---|---|
+| **Letra da rota** | Bolinha no cabeçalho da rota. | Círculo amarelo do grupo **ROTA**. |
+| **Endereço** | Segunda linha do cartão. | Linha principal de cada parada. |
+| **Valor a receber** | Terceira linha do cartão. | **Cobrar R$** em verde. |
+| **Forma de pagamento** | Ao lado do valor. | **FORMA DE PAGAMENTO** no rodapé. |
+| **Posição na rota** | Número da parada. | Número do círculo na lista. |
+| **Hora da baixa** | Coluna de entrega do relatório. | **Entregue às** no Histórico. |
+
+Ao telefone, pergunte pelo endereço e pelo valor, não apenas pelo número do pedido:
+
+> “Você está na Rua Aparecida, 318, cobrando R$ 63,90?”
+
+## O mesmo ciclo sem operador
+
+O **despacho automático** pode agrupar pedidos prontos e associar um entregador disponível. Ele executa os momentos 1 e 2 automaticamente, em intervalos regulares, quando alguém mantém a tela de Gestão de Entregas aberta na filial.
+
+O despacho automático **não despacha a rota**. O clique do momento 3 continua dependendo do operador. Consulte [Despacho automático](/gestao-entregas-despacho-automatico) para conhecer as regras de associação.
+
+## As cinco coisas que a operação ensina
+
+<Callout kind="tip">
+
+1. **Pedido pronto não é pedido atribuído.** Se o entregador disser que nada chegou, confira a coluna de entregador antes de investigar o celular.
+2. **Despachar avisa o cliente.** Não use o despacho apenas para alterar um rótulo interno.
+3. **Cobrar é finalizar.** No celular, registrar o pagamento também conclui a entrega. Oriente o entregador a cobrar na porta.
+4. **MELHOR ROTA altera a sequência.** Se a ordem das paradas importar, combine isso antes de o entregador reordenar a rota.
+5. **Pino parado costuma indicar localização desatualizada.** Confira a bateria e a idade da última posição antes de ligar para o entregador.
+
+</Callout>
+
+## Onde continuar
+
+| Manual | O que cobre |
+|---|---|
+| [Liberar o entregador](/gestao-entregas-liberar-entregador) | Cadastro, acesso ao aplicativo e etiqueta de código de barras. |
+| [Ler o mapa e o painel de entregas](/gestao-entregas-mapa-painel) | Vocabulário da tela do operador. |
+| [Montar a rota](/gestao-entregas-montar-rota) | Como agrupar pedidos e escolher quem fará a entrega. |
+| [Despachar a rota](/gestao-entregas-despachar) | O clique que avisa o cliente e o acompanhamento no mapa. |
+| [Fechar a entrega no painel](/gestao-entregas-fechar-entrega) | Baixa por parada e encerramento da rota. |
+| [Despacho automático](/gestao-entregas-despacho-automatico) | Regras de associação automática e motivo pelo qual o sistema não despacha sozinho. |
+| [Avisos de WhatsApp da entrega](/gestao-entregas-avisos-whatsapp) | Os avisos enviados e a configuração do aviso de proximidade. |
+| [App do entregador: instalar, entrar e ficar disponível](/app-entregador-entrar) | Permissões, login e disponibilidade. |
+| [App do entregador: as entregas do dia](/app-entregador-entregas-do-dia) | Lista, detalhes e histórico. |
+| [App do entregador: chegar no endereço](/app-entregador-rota) | Mapa, início da rota e melhor rota. |
+| [App do entregador: receber na porta](/app-entregador-cobranca) | Cobrança, divisão de conta e conclusão sem cobrança. |
+| [App do entregador: pedido de iFood e de 99Food](/app-entregador-marketplace) | Pedidos de plataformas que já chegam pagos. |
+| [Código de barras](/app-entregador-codigo-barras) | Como ligar a etiqueta ao cupom e ler o pedido. |
+| [Operação de Entrega](/relatorio-operacao-entrega) | Relatório da operação do dia. |
+| [Entregador (Taxa / KM)](/entregador-quanto-recebe) | Valores que o entregador tem a receber. |

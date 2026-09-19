@@ -1,0 +1,149 @@
+---
+title: "Despacho automático: as sete regras"
+description: "Configure o despacho automático do BeeFood para agrupar pedidos em rotas e escolher o entregador sozinho: sem que a rota saia sem o seu clique."
+---
+
+## Para que serve
+
+O despacho automático faz duas coisas: **junta os pedidos em rotas** e **escolhe o entregador**. Ele não manda ninguém para a rua: despachar continua sendo um clique seu.
+
+Isso é de propósito. Uma rota que saísse sozinha avisaria o cliente de que o pedido está em rota antes de alguém ter pegado as sacolas.
+
+- Poupar o operador de montar rota a rota em hora de pico.
+- Agrupar pelo critério que **você** escolher: quantidade, distância e tempo de espera.
+- Escolher o entregador por proximidade, em vez de por ordem de chegada.
+
+## Antes de começar
+
+<Callout kind="info">
+
+- Você precisa de pedidos de delivery sem rota e de pelo menos um entregador **online e com GPS recente**.
+- A tela de Gestão de Entregas precisa ficar **aberta** em algum computador da loja.
+- Os pedidos precisam ter endereço com coordenada, se você usar a regra de distância.
+
+</Callout>
+
+## O que ele é, e os dois avisos da janela
+
+Clique na engrenagem ao lado do selo **Despacho** no topo da tela.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/gestao-entregas-despacho-automatico/imagens-tratadas/01a-janela-avisos.png" width="614" height="384" alt="A janela do despacho automático e os dois avisos" />
+
+| Nº | Onde | O que diz |
+| -- | ---- | --------- |
+| 1. | **Explicação do topo** | Os pedidos são agrupados e atribuídos a um entregador. **A rota não sai sozinha.** |
+| 2. | **Interruptor** | Liga e desliga. Nasce desligado. |
+| 3. | **Enquanto esta tela estiver aberta** | O agrupamento só roda com o painel aberto em algum computador do restaurante. Com o painel fechado, os pedidos ficam esperando. |
+| 4. | **Pedidos com mais de 2 horas** | Pedido antigo **nunca** é agrupado, e esse limite não é configurável. |
+
+<Callout kind="info">
+
+**Painel fechado, despacho parado.** O despacho não é um serviço que roda no servidor da loja: quem dá o pulso é a tela aberta. Se a loja fecha o navegador no fim do almoço, o agrupamento para ali.
+
+</Callout>
+
+<Callout kind="info">
+
+**O limite de 2 horas protege você.** Ao ligar o interruptor numa loja com pedidos acumulados, a primeira rodada não monta uma rota com pedido de horas atrás que, na prática, já pode ter sido resolvido por fora.
+
+</Callout>
+
+## As sete regras
+
+São sete campos, em duas colunas: o que **junta** os pedidos e o que **escolhe** o entregador.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/gestao-entregas-despacho-automatico/imagens-tratadas/01b-janela-regras.png" width="614" height="384" alt="As sete regras do despacho automático" />
+
+| Nº | Regra | O que faz |
+| -- | ----- | --------- |
+| 1. | **Máximo de entregas por viagem** | Define quantos pedidos cabem em uma mesma rota. É o teto. |
+| 2. | **Distância máxima para agrupar (metros)** | Define a distância entre os pedidos. Em branco, a regra não vale. |
+| 3. | **Tempo máximo para agrupar (minutos)** | Define a diferença de tempo de espera entre os pedidos. Em branco, a regra não vale. |
+| 4. | **Liberar o entregador quando os pedidos estiverem** | *Finalizados*: uma viagem por vez. *Em trânsito*: o entregador já recebe a próxima rota enquanto está na rua. |
+| 5. | **Raio do restaurante (metros)** | Define a distância máxima do entregador até a loja para receber uma rota. `0` não exige proximidade. |
+| 6. | **Considerar a posição do entregador** | Escolhe quem está mais perto da **primeira parada**, e não apenas quem está mais perto da loja. |
+| 7. | **Tolerância de GPS (minutos)** | Define a idade máxima da última posição recebida. Acima disso, o entregador é ignorado. `0` não exige GPS recente. |
+
+Três coisas que a janela não explica mudam o resultado:
+
+- **O agrupamento começa pelo pedido que espera há mais tempo.** Quem chegou primeiro sai primeiro. Assim, um pedido em um bairro vazio não fica para trás indefinidamente.
+- **A distância é conferida contra todos os pedidos já no grupo**, não apenas contra o primeiro. Sem essa verificação, três pedidos a 3 km um do outro poderiam formar uma rota de 6 km de ponta a ponta.
+- **A ordem das paradas é refeita depois de o grupo fechar**, pelo trajeto mais curto saindo da loja. A ordem de agrupamento não é a ordem de entrega.
+
+## Ligar
+
+Vire o interruptor e salve.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/gestao-entregas-despacho-automatico/imagens-tratadas/02-janela-ligada.png" width="614" height="384" alt="O interruptor ligado" />
+
+| Nº | Onde | O que faz |
+| -- | ---- | --------- |
+| 1. | **Interruptor** | Liga o despacho automático. |
+| 2. | **Despacho automático ligado** | O texto ao lado confirma o estado. |
+| 3. | **SALVAR (F2)** | Grava as regras **e** o estado do interruptor. Sem salvar, nada vale. |
+
+Com o despacho ligado, o selo do topo fica verde e o rodapé da lateral passa a dizer *Despacho automático ligado*. Esses são os dois lugares onde você confere o estado sem abrir a janela.
+
+## A rota nasce sem entregador
+
+Poucos segundos depois, a rota aparece na lateral e **não tem dono ainda**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/gestao-entregas-despacho-automatico/imagens-tratadas/03-rota-automatica.png" width="614" height="384" alt="A rota criada automaticamente, ainda sem entregador" />
+
+| Nº | Onde | O que lê |
+| -- | ---- | -------- |
+| 1. | **Sem entregador** | Aparece em itálico, com um ícone ao lado. O sistema montou esta rota, mas ainda não escolheu um entregador. |
+| 2. | **Montando** | Mostra a situação da rota enquanto ela ainda não tem entregador. |
+| 3. | **Pedidos sem rota** | Diminuiu porque os pedidos agrupados saíram do grupo. |
+| 4. | **Despacho ligado** | Mostra o selo verde do topo. |
+
+Isso não é meio caminho nem falha. São duas etapas separadas, e você vê a rota se formando antes de ela ganhar dono. Nesse intervalo, você pode intervir, alterar as paradas ou escolher outra pessoa manualmente.
+
+## O entregador entra depois
+
+A segunda etapa acontece quando as regras de entregador são satisfeitas.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/gestao-entregas-despacho-automatico/imagens-tratadas/04-rota-associada.png" width="614" height="384" alt="A rota com o entregador escolhido pelo sistema" />
+
+| Nº | Onde | O que mudou |
+| -- | ---- | ----------- |
+| 1. | **Nome do entregador** | O sistema escolheu o entregador, e o nome não aparece mais em itálico. |
+| 2. | **Pronta para sair** | A rota saiu de *Montando*. |
+| 3. | **Avião** | Apareceu. É aqui que o automático para: despachar continua sendo seu. |
+| 4. | **prontos** | Os três pedidos ficaram prontos na cozinha, e isso liberou a escolha. |
+
+**Se a rota fica em *Montando* e não ganha entregador**, confira estas quatro causas:
+
+| Causa | Como conferir |
+| ----- | ------------- |
+| Os pedidos ainda não estão prontos, com a regra em *Finalizados* | Confira o selo **prontos** do topo e a situação de cada pedido. |
+| A última posição do entregador é velha demais | Confira na lista de entregadores há quanto tempo a posição chegou e compare com a **tolerância de GPS**. |
+| O entregador está longe da loja | Confira na mesma lista a distância e compare com o **raio do restaurante**. |
+| O entregador já está com outra viagem, e a regra é *Finalizados* | Confira no rodapé quantos entregadores estão *em rota*. |
+
+> **Foi a tolerância de GPS que segurou a nossa rota.** Tudo estava pronto e o entregador estava na porta da loja, mas a rota continuou sem dono porque a última posição tinha mais de cinco minutos. Bastou o celular mandar uma posição nova para a escolha acontecer no minuto seguinte. Entregador com GPS velho é ignorado de propósito: o sistema não confia em uma posição que pode ser de outro bairro.
+
+## Desligar
+
+Abra a mesma janela, desligue o interruptor e **salve**. Desligar não desfaz o que já foi montado: as rotas criadas continuam na tela, com entregador e tudo, esperando o seu despacho.
+
+## Dicas
+
+<Callout kind="tip">
+
+- **Comece com regra apertada.** Máximo de 2 entregas e distância curta produzem rotas que você consegue conferir. Depois, vá afrouxando.
+- **Deixe o *Tempo máximo* em branco no começo.** É a regra que mais barra agrupamentos sem deixar claro o motivo.
+- **Use *Em trânsito* apenas com entregador sobrando.** Ele recebe a próxima rota ainda na rua. Isso ajuda com fila de pedidos, mas atrapalha quando há apenas um entregador.
+- **Raio do restaurante `0` combina com *Considerar a posição*.** Um libera quem está longe da loja, e o outro garante que a escolha ainda faça sentido geográfico.
+- **O automático não substitui o olho.** Ele agrupa por distância em linha reta, sem saber de rio, viaduto ou avenida sem retorno. Confira a rota antes de despachar.
+
+</Callout>
+
+## Onde continuar
+
+| Manual | O que cobre |
+| ------ | ----------- |
+| [Despachar e acompanhar](/gestao-entregas-despachar) | O clique que o automático não dá |
+| [Montar a rota](/gestao-entregas-montar-rota) | Fazer manualmente o que o automático faz sozinho |
+| [Liberar o entregador](/gestao-entregas-liberar-entregador) | Cadastro e acesso ao aplicativo. Sem isso, não há GPS |
+| [Ler o mapa e o painel de entregas](/gestao-entregas-mapa-painel) | O vocabulário da tela |
