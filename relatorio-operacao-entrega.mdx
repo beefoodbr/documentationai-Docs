@@ -1,0 +1,230 @@
+---
+title: Relatório Operação de Entrega
+description: Entenda onde o tempo das entregas é gasto, compare períodos, analise bairros e use os dados para ajustar a operação.
+---
+
+## Relatório Operação de Entrega: onde o tempo da entrega se perde
+
+Este relatório mostra onde o tempo da sua entrega está sendo gasto: quanto o pedido espera na cozinha, quanto passa na rua, em que horário a operação trava e em que bairro a entrega demora mais.
+
+Ele lê o que a operação produziu na Gestão de Entregas 2.0. As rotas montadas, despachadas e fechadas no painel aparecem aqui como números.
+
+<Callout kind="info">
+
+A Gestão de Entregas está em liberação. Se o item ainda não aparecer no seu menu, fale com o suporte.
+
+</Callout>
+
+## Para que serve
+
+- Ver o tempo de cada etapa: do pedido até ficar pronto, do pronto até a saída e da saída até a entrega.
+- Comparar o dia de hoje com o dia anterior, ou o mês com o mês passado.
+- Identificar o horário do dia e o bairro onde a entrega demora mais.
+- Conferir quanto você cobrou de taxa de entrega no período.
+
+## Antes de começar
+
+<Callout kind="alert">
+
+O relatório só mostra números depois que alguém entrega o pedido. Pedido pronto na bancada ainda não entra na conta.
+
+</Callout>
+
+- Algumas médias só aparecem com **20 pedidos ou mais** no período. Em um dia fraco, a mensagem *Poucos pedidos* é esperada e não indica erro.
+- O endereço do cliente precisa estar geolocalizado para aparecer no mapa.
+- Toda média vem acompanhada da cobertura. Cobertura baixa significa que o número é frágil e precisa de cautela na leitura.
+
+## 1. Achar o relatório
+
+Vá em **Desempenho**. No menu da esquerda, abra o grupo **Delivery** e clique em **Operação de Entrega**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/relatorio-operacao-entrega/imagens-tratadas/01-menu-delivery.png" width="614" height="384" alt="O caminho do menu até o relatório Operação de Entrega" />
+
+| Nº | Onde | O que é |
+| --- | --- | --- |
+| 1. | **Delivery** | O grupo de relatórios de entrega. |
+| 2. | **Operação de Entrega** | Este relatório. É o primeiro do grupo. |
+| 3. | **Entregador (Taxa / KM)** | O relatório vizinho, que fecha quanto pagar a cada entregador. |
+
+## 2. Escolher o período
+
+O botão de data fica no alto da tela, com o período escrito nele.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/relatorio-operacao-entrega/imagens-tratadas/02-periodo-hoje.png" width="614" height="384" alt="O seletor de período aberto com os atalhos e o botão Confirmar" />
+
+| Nº | Onde | O que faz |
+| --- | --- | --- |
+| 1. | **Botão de período** | Mostra o período atual e abre os atalhos e o calendário. |
+| 2. | **Hoje** | Seleciona o dia atual. Depois de escolher, clique em **Confirmar**. |
+
+<Callout kind="alert">
+
+Escolher um atalho não basta. Sem clicar em **Confirmar**, a tela não refaz a busca e os números não mudam.
+
+</Callout>
+
+Com **Hoje**, você acompanha a operação do dia, como o almoço e o jantar. Com **Últimos 30 dias**, você vê a média do mês, que é mais adequada para comparações e decisões de escala.
+
+## 3. Os seis números do topo
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/relatorio-operacao-entrega/imagens-tratadas/03-kpis.png" width="614" height="384" alt="Os indicadores do topo, o comparativo, os filtros e a aba Dados" />
+
+| Nº | Indicador | O que conta |
+| --- | --- | --- |
+| 1. | **Entregas** | Pedidos entregues no período. Abaixo, mostra a variação e o valor do período anterior. |
+| 2. | **Taxas de entrega** | A soma do frete que o cliente pagou nessas entregas. |
+| 3. | **Taxas do entregador** | Quanto você paga aos entregadores. Traço significa que o valor não veio dos pedidos. O fechamento deve ser feito no relatório **Entregador (Taxa / KM)**. |
+| 4. | **Duração média dos pedidos** | O tempo entre o pedido e a entrega. Precisa de volume para aparecer. |
+| 5. | **Comparativo** | Liga ou desliga a comparação com o período anterior. |
+| 6. | **Filtros** | Permite filtrar por origem, entregador, faixa de valor e faixa de horário. |
+| 7. | **Dados** | Abre a tabela com os pedidos do período, uma linha por pedido. |
+
+Os outros dois cartões são **Faturamento**, que mostra o valor dos pedidos entregues, e **Ticket médio**.
+
+<Callout kind="alert">
+
+Traço não é zero. Em toda esta tela, `—` significa **não medido**: não há dados suficientes ou não há como calcular o valor com o que foi registrado. Zero significa zero. Confundir os dois leva a decisões erradas.
+
+</Callout>
+
+## 4. Métricas de tempo: as quatro etapas
+
+A entrega é dividida em partes, na ordem em que acontecem.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/relatorio-operacao-entrega/imagens-tratadas/04-metricas-tempo.png" width="614" height="384" alt="As quatro etapas de tempo e a divisão entre loja e rua" />
+
+| Nº | Onde | O que lê |
+| --- | --- | --- |
+| 1. | **Confirmação até pronto** | Mostra *Não medido* quando nenhum pedido do período tem essa marcação. O cartão fica apagado, o que é normal em lojas que não usam o KDS. |
+| 2. | **Ponto de interrogação** | Explica a etapa em uma frase. Todas as quatro etapas têm essa explicação. |
+| 3. | **Saída até entrega** | Mostra o tempo de rua. A média só aparece a partir de 20 pedidos. |
+| 4. | **Onde o tempo é investido** | Divide o tempo entre cozinha e rua. Só aparece quando o horário de saída está gravado nos pedidos. |
+
+| Etapa | Do quê até quê |
+| --- | --- |
+| **Confirmação até pronto** | Do aceite do pedido até a cozinha marcar o pedido como pronto. |
+| **Pronto até sair** | Do pedido pronto até o entregador sair com ele. |
+| **Saída até entrega** | Da saída até a baixa da entrega. |
+| **Pedido até entrega** | Da entrada do pedido até a porta do cliente. |
+
+Duas linhas pequenas aparecem embaixo dos cartões:
+
+- **Com base em X% dos pedidos:** mostra a cobertura. Uma média baseada em 30% dos pedidos é uma pista, não uma verdade completa.
+- **N entregas acima de 4 h ficaram fora:** entregas que passaram de quatro horas são tratadas como erro de registro e saem da média.
+
+<Callout kind="info">
+
+Se a divisão entre loja e rua não aparecer, falta o horário de saída nos pedidos. Esse horário é registrado quando a entrega passa pela Gestão de Entregas.
+
+</Callout>
+
+## 5. Análise dos prazos de entrega
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/relatorio-operacao-entrega/imagens-tratadas/06-prazos.png" width="614" height="384" alt="Os cartões de prazo de entrega e a nota de cobertura" />
+
+| Nº | Onde | O que lê |
+| --- | --- | --- |
+| 1. | **Entregas no prazo** | Quantas entregas chegaram dentro do horário prometido. |
+| 2. | **Entregas atrasadas** | Quantas entregas passaram do horário prometido. |
+| 3. | **Atraso médio** e **Maior atraso** | O tamanho do atraso quando ele acontece. |
+| 4. | **Nota de cobertura** | Quantas entregas entraram na conta e por que as outras ficaram de fora. |
+
+<Callout kind="alert">
+
+Sem horário prometido, não há pontualidade. O prazo prometido chega com o pedido do marketplace, como iFood e 99Food. Pedidos do seu cardápio digital normalmente não têm esse prazo gravado. Em uma loja que vende apenas pelo canal próprio, os cartões de prazo podem mostrar zero e traço, com a explicação na nota de cobertura.
+
+</Callout>
+
+## 6. Por hora do dia
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/relatorio-operacao-entrega/imagens-tratadas/08-por-hora.png" width="614" height="384" alt="Pedidos e tempo médio de entrega por hora do dia" />
+
+As barras representam os pedidos e a linha representa o tempo médio. As 24 horas aparecem sempre, inclusive as horas sem pedidos, porque a comparação entre os horários mostra quando a operação concentra demanda.
+
+Use este gráfico para decidir a escala de entregadores. Quando as barras sobem e a linha sobe junto, a operação provavelmente precisa de mais gente na rua naquele horário.
+
+## 7. Onde a rua custa mais
+
+O mapa no fim da tela não é um mapa de calor de vendas. A cor representa **tempo**, não volume.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/relatorio-operacao-entrega/imagens-tratadas/09-mapa.png" width="614" height="384" alt="Mapa por tempo de entrega com as opções de cor e agrupamento de pontos" />
+
+| Nº | Onde | O que faz |
+| --- | --- | --- |
+| 1. | **Cor do mapa** | Permite escolher entre **Tempo de rua**, **Pontualidade** e **Volume**. |
+| 2. | **Pontos** | **Por bairro** agrupa as entregas. **Por pedido** mostra cada entrega individualmente. |
+| 3. | **Tela cheia** | Abre o mapa em tamanho maior para analisar os bairros. |
+| 4. | **Nota embaixo do mapa** | Mostra quantos pedidos têm endereço no mapa. Pedidos sem endereço cadastrado não podem ser desenhados. |
+
+A tabela abaixo do mapa apresenta a mesma informação em formato mais prático para comparação.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/relatorio-operacao-entrega/imagens-tratadas/09b-mapa-bairros.png" width="614" height="384" alt="Tabela por bairro com tempo de rua, pontualidade e cobertura" />
+
+| Nº | Coluna | O que lê |
+| --- | --- | --- |
+| 1. | **Tempo de rua** | A média do bairro. Mostra *Poucos pedidos* quando não há volume suficiente para calcular a média. |
+| 2. | **Pontualidade** | Só é preenchida quando há horário prometido gravado. |
+| 3. | **Cobertura** | Quanto do bairro entrou na conta. Cobertura baixa significa que o número é frágil. |
+
+Compare bairro com bairro para identificar onde a rua custa mais tempo. Não compare um bairro com a média geral sem considerar a cobertura de cada região.
+
+## 8. Filtrar
+
+O funil no alto da tela abre os filtros da operação.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/relatorio-operacao-entrega/imagens-tratadas/10-filtros.png" width="614" height="384" alt="Janela de filtros da operação de entrega" />
+
+| Nº | Filtro | Para que serve |
+| --- | --- | --- |
+| 1. | **Origem do pedido** | Separa iFood, 99Food e o seu cardápio digital. |
+| 2. | **Entregador** | Mostra a operação de uma pessoa específica. |
+| 3. | **Valor do pedido** | Define um valor mínimo e máximo para isolar pedidos, como os de ticket alto. |
+| 4. | **Horário de criação** | Filtra o dia todo, almoço, jantar ou uma faixa definida por você. |
+| 5. | **APLICAR FILTROS** | Refaz a busca com os critérios escolhidos. **LIMPAR** volta tudo ao padrão. |
+
+O filtro de origem muda bastante a leitura. Misturar marketplace com canal próprio pode fazer a pontualidade parecer pior, porque só o marketplace envia um horário prometido.
+
+## 9. A aba Dados
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/relatorio-operacao-entrega/imagens-tratadas/11-dados.png" width="614" height="384" alt="A aba Dados com uma linha por pedido e o botão de Excel" />
+
+| Nº | Onde | O que tem |
+| --- | --- | --- |
+| 1. | **Dados** | A tabela com uma linha por pedido do período. |
+| 2. | **Excel** | Baixa a mesma tabela para análise ou compartilhamento. |
+| 3. | **Entregador** | Mostra quem levou o pedido. Uma linha sem entregador representa um pedido que ninguém pegou. |
+
+Cada linha traz os horários de cada etapa e os tempos calculados. Use esta aba para conferir uma entrega específica quando um número do topo parecer estranho ou para levar os dados à planilha da operação.
+
+## Dicas
+
+- **Comece pelo período certo.** Use *Hoje* para acompanhar o turno. Para decidir escala e raio de entrega, use os últimos 30 dias.
+- **Olhe a cobertura antes de acreditar na média.** Todo número desta tela vem com a cobertura embaixo. Ela indica se o resultado tem dados suficientes.
+- **Traço em Taxas do entregador não é erro de conta.** O valor do entregador não está gravado nos pedidos. Feche esse pagamento no relatório **Entregador (Taxa / KM)**.
+- **Confira o horário de saída.** Sem ele, a divisão entre loja e rua não aparece.
+- **Considere as entregas acima de quatro horas.** Elas ficam fora da média porque são tratadas como erro de registro.
+- **Compare bairro com bairro, não bairro com a média.** A cobertura pode ser diferente em cada região.
+
+## Onde continuar
+
+<Columns cols={3}>
+
+<Card title="Fechar a entrega no painel" href="/gestao-entregas-fechar-entrega" icon="check-circle">
+
+Registre a baixa da entrega, que alimenta os números deste relatório.
+
+</Card>
+
+<Card title="Ler o mapa e o painel de entregas" href="/gestao-entregas-mapa-painel" icon="map">
+
+Entenda os principais elementos da Gestão de Entregas antes de analisar os resultados.
+
+</Card>
+
+<Card title="Despachar e acompanhar" href="/gestao-entregas-despachar" icon="rocket">
+
+Veja como o despacho registra o horário de saída usado nas métricas.
+
+</Card>
+
+</Columns>

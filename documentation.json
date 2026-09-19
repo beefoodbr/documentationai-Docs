@@ -746,6 +746,14 @@
                   {
                     "title": "📺 Painel para Entregadores",
                     "path": "manual-painel-entregador"
+                  },
+                  {
+                    "title": "📊 Relatório Operação de Entrega",
+                    "path": "relatorio-operacao-entrega"
+                  },
+                  {
+                    "title": "💵 Relatório Entregador (Taxa / KM)",
+                    "path": "relatorio-entregador-quanto-recebe-taxa-km"
                   }
                 ]
               },

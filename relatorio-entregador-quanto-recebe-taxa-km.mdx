@@ -1,0 +1,258 @@
+---
+title: Entregador (Taxa / KM)
+description: >-
+  Calcule quanto pagar a cada entregador por entrega, área ou quilômetro, com
+  resumo por funcionário e detalhamento das viagens.
+---
+## Sobre o relatório
+
+O relatório **Entregador (Taxa / KM)** mostra quanto pagar a cada entregador pelas entregas realizadas no período selecionado. O cálculo pode usar uma taxa fixa por área ou o total de quilômetros percorridos.
+
+Você encontra o relatório em **Desempenho > Delivery**, logo abaixo de **Operação de Entrega**. A tela reúne as entregas de cada funcionário, o valor de cada taxa, os totais por entregador e o detalhamento das viagens.
+
+## Para que serve
+
+- **Calcular o pagamento por entrega.** Consulte o valor devido a cada entregador.
+- **Usar taxas por área.** Pague um valor fixo conforme a região da entrega.
+- **Usar o cálculo por KM.** Considere a distância percorrida pelo entregador.
+- **Conferir as entregas realizadas.** Veja quais pedidos entraram no cálculo.
+- **Comparar os totais por funcionário.** Consulte um resumo agrupado por entregador.
+- **Verificar ida e volta.** Identifique quando o retorno ao restaurante dobra o valor da taxa.
+- **Abrir o detalhamento.** Confira a composição do valor de cada entrega.
+
+## Antes de começar
+
+Configure os valores do entregador e confira se cada funcionário está associado ao modo correto de cálculo. As entregas também precisam estar fechadas no painel para aparecerem corretamente no relatório.
+
+<Callout kind="info" collapsed="false">
+  Use o mesmo período no relatório e no fechamento dos pagamentos. Se uma entrega ainda estiver em aberto, ela pode não aparecer no resultado final.
+</Callout>
+
+## 1. Configurar os valores do entregador
+
+Configure as áreas e os valores antes de consultar o relatório. A configuração determina quanto cada entrega acrescenta ao total do funcionário.
+
+### Configurar o grupo de áreas
+
+Abra a configuração de entregadores e localize o grupo de áreas usado pela sua operação. Cada grupo reúne regiões que podem ter o mesmo valor de taxa.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/entregador-quanto-recebe/imagens-tratadas/01-area-grupo.png" width="614" height="384" alt="Configuração do grupo de áreas para calcular a taxa do entregador" />
+
+| Nº | Onde                  | O que é                                                        |
+| -- | --------------------- | -------------------------------------------------------------- |
+| 1. | **Grupo de áreas**    | Conjunto de áreas usado para organizar as regiões de entrega.  |
+| 2. | **Áreas cadastradas** | Regiões que podem receber uma taxa específica.                 |
+| 3. | **Valores**           | Local onde você informa o valor pago por entrega em cada área. |
+
+### Preencher os valores do grupo
+
+Informe o valor correspondente a cada área do grupo. Use a mesma unidade monetária usada no pagamento dos entregadores.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/entregador-quanto-recebe/imagens-tratadas/02-grupo-valores.png" width="614" height="384" alt="Grupo de áreas com os valores da taxa do entregador preenchidos" />
+
+| Nº | Onde                 | O que faz                                                          |
+| -- | -------------------- | ------------------------------------------------------------------ |
+| 1. | **Área**             | Identifica a região relacionada à taxa.                            |
+| 2. | **Valor da taxa**    | Define quanto o entregador recebe por uma entrega nessa área.      |
+| 3. | **Grupo preenchido** | Mostra as áreas que já estão prontas para serem usadas no cálculo. |
+
+### Conferir o funcionário
+
+Abra o cadastro do entregador e verifique as opções de pagamento. O cadastro apresenta as informações usadas para calcular a diária e o valor relacionado aos quilômetros.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/entregador-quanto-recebe/imagens-tratadas/03-funcionario-diaria-km.png" width="614" height="384" alt="Cadastro do funcionário com as opções de diária e quilometragem" />
+
+| Nº | Onde            | O que é                                                                  |
+| -- | --------------- | ------------------------------------------------------------------------ |
+| 1. | **Funcionário** | Entregador que receberá os valores calculados.                           |
+| 2. | **Diária**      | Valor diário configurado para o funcionário, quando usado pela operação. |
+| 3. | **KM**          | Opção relacionada ao cálculo por distância percorrida.                   |
+
+<Callout kind="alert" collapsed="false">
+  Confira o cadastro antes de fechar o período. Uma configuração incorreta de área ou KM altera o valor apresentado no relatório.
+</Callout>
+
+## 2. Conferir o valor no pedido
+
+O pedido pode entrar no relatório sem um valor de entregador preenchido. Nesse caso, edite o pedido e informe a taxa antes de fechar a conferência do período.
+
+### Como o pedido entra sem valor
+
+Abra o pedido e confira o campo relacionado ao valor do entregador. Quando o campo está vazio, a entrega não tem uma taxa definida para o cálculo.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/entregador-quanto-recebe/imagens-tratadas/04-pedido-sem-valor.png" width="614" height="384" alt="Pedido de entrega sem valor preenchido para o entregador" />
+
+| Nº | Onde                    | O que é                                         |
+| -- | ----------------------- | ----------------------------------------------- |
+| 1. | **Pedido**              | Entrega que será conferida antes do fechamento. |
+| 2. | **Valor do entregador** | Campo sem valor definido para a entrega.        |
+| 3. | **Situação sem valor**  | Indica que o pedido ainda precisa ser ajustado. |
+
+### Editar o pedido
+
+Edite o pedido para adicionar ou corrigir o valor da taxa. Use a área da entrega ou a distância percorrida como referência, conforme o modo configurado para o funcionário.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/entregador-quanto-recebe/imagens-tratadas/05-pedido-editando.png" width="614" height="384" alt="Edição do pedido para informar o valor do entregador" />
+
+| Nº | Onde                    | O que faz                                                |
+| -- | ----------------------- | -------------------------------------------------------- |
+| 1. | **Edição do pedido**    | Permite ajustar os dados da entrega.                     |
+| 2. | **Campo do entregador** | Local onde você informa o valor da taxa.                 |
+| 3. | **Salvar**              | Registra a alteração para que o pedido use o novo valor. |
+
+### Conferir o pedido com valor
+
+Depois de salvar, confirme se o valor aparece no pedido. Esse valor será considerado quando o relatório consolidar as entregas do funcionário.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/entregador-quanto-recebe/imagens-tratadas/06-pedido-com-valor.png" width="614" height="384" alt="Pedido com o valor do entregador preenchido" />
+
+| Nº | Onde                  | O que é                                               |
+| -- | --------------------- | ----------------------------------------------------- |
+| 1. | **Pedido atualizado** | Entrega depois da correção do valor.                  |
+| 2. | **Valor preenchido**  | Taxa que será usada no cálculo do entregador.         |
+| 3. | **Conferência**       | Ponto para validar se o valor foi salvo corretamente. |
+
+## 3. Abrir o relatório
+
+Acesse **Desempenho**, abra o grupo **Delivery** e clique em **Entregador (Taxa / KM)**. Selecione o período e o entregador que deseja analisar.
+
+### O relatório
+
+O cabeçalho identifica o período consultado e o funcionário selecionado. Use esses filtros para analisar um dia, um turno ou um intervalo maior.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/entregador-quanto-recebe/imagens-tratadas/07a-cabecalho.png" width="614" height="384" alt="Cabeçalho do relatório Entregador Taxa KM com período e nome do entregador" />
+
+| Nº | Onde                    | O que é                                             |
+| -- | ----------------------- | --------------------------------------------------- |
+| 1. | **Período**             | Intervalo usado para filtrar as entregas.           |
+| 2. | **Entregador**          | Funcionário cujas entregas serão analisadas.        |
+| 3. | **Título do relatório** | Identifica o relatório de pagamento por taxa ou KM. |
+
+<Callout kind="info" collapsed="false">
+  Para fechar um pagamento, selecione exatamente o período em que as entregas foram realizadas. Alterar o período muda os pedidos e os totais exibidos.
+</Callout>
+
+## 4. Ler os cartões do relatório
+
+Os cartões apresentam uma visão rápida do resultado filtrado. Use-os para conferir o volume de entregas, o total das taxas e a distância registrada.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/entregador-quanto-recebe/imagens-tratadas/07b-cartoes.png" width="614" height="384" alt="Cartões do relatório com entregas, total da taxa e distância" />
+
+| Nº | Onde              | O que lê                                              |
+| -- | ----------------- | ----------------------------------------------------- |
+| 1. | **Entregas**      | Quantidade de entregas incluídas no filtro.           |
+| 2. | **Total da taxa** | Soma dos valores a pagar ao entregador.               |
+| 3. | **Distância**     | Quilometragem registrada para as entregas do período. |
+
+## 5. Conferir o resumo por entregador
+
+O resumo agrupa os resultados por funcionário. Use essa parte para comparar os valores e validar o total antes de realizar o pagamento.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/entregador-quanto-recebe/imagens-tratadas/07c-resumo.png" width="614" height="384" alt="Resumo do relatório com os valores agrupados por entregador" />
+
+| Nº | Onde           | O que é                                             |
+| -- | -------------- | --------------------------------------------------- |
+| 1. | **Entregador** | Nome do funcionário relacionado às entregas.        |
+| 2. | **Quantidade** | Número de entregas consideradas para o funcionário. |
+| 3. | **Total**      | Soma das taxas calculadas para o entregador.        |
+
+## 6. Entender o modo de cálculo
+
+O relatório usa um dos dois modos de cálculo: **Área** ou **KM**. Consulte o modo configurado antes de validar o pagamento.
+
+### Modo Área
+
+No modo **Área**, o sistema usa uma taxa fixa associada à região da entrega. Entregas na mesma área usam o valor configurado para aquela área.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/entregador-quanto-recebe/imagens-tratadas/08-modo-area.png" width="614" height="384" alt="Relatório no modo Área com taxas definidas por região de entrega" />
+
+| Nº | Onde                | O que faz                                        |
+| -- | ------------------- | ------------------------------------------------ |
+| 1. | **Modo Área**       | Indica que o cálculo usa as regiões cadastradas. |
+| 2. | **Área da entrega** | Mostra a região usada para localizar a taxa.     |
+| 3. | **Valor por área**  | Exibe a taxa aplicada à entrega.                 |
+
+### Modo KM
+
+No modo **KM**, o sistema calcula o valor com base na distância percorrida. Use esse modo quando o pagamento depender da quilometragem de cada entrega.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/entregador-quanto-recebe/imagens-tratadas/09-modo-km.png" width="614" height="384" alt="Relatório no modo KM com o cálculo baseado na distância percorrida" />
+
+| Nº | Onde                | O que lê                                         |
+| -- | ------------------- | ------------------------------------------------ |
+| 1. | **Modo KM**         | Indica que o cálculo usa a distância da entrega. |
+| 2. | **Distância**       | Quilometragem considerada para o pedido.         |
+| 3. | **Valor calculado** | Taxa resultante do cálculo por quilômetro.       |
+
+<Callout kind="info" collapsed="false">
+  Não compare diretamente uma taxa por área com uma taxa por KM sem considerar o modo usado em cada entrega. Os dois modos usam bases diferentes para calcular o pagamento.
+</Callout>
+
+## 7. Conferir ida e volta
+
+A opção **Ida e volta** considera o retorno do entregador ao restaurante. Quando essa opção está ativa, o cálculo usa o valor correspondente ao deslocamento de ida e retorno.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/entregador-quanto-recebe/imagens-tratadas/10-ida-e-volta.png" width="614" height="384" alt="Opção de ida e volta no cálculo da taxa do entregador" />
+
+| Nº | Onde               | O que é                                               |
+| -- | ------------------ | ----------------------------------------------------- |
+| 1. | **Ida e volta**    | Indica que o retorno ao restaurante entra no cálculo. |
+| 2. | **Deslocamento**   | Representa o percurso considerado para a entrega.     |
+| 3. | **Valor ajustado** | Taxa calculada com o retorno incluído.                |
+
+<Callout kind="alert" collapsed="false">
+  Ative ida e volta somente quando essa for a regra de pagamento da sua operação. A opção pode aumentar o valor da taxa da entrega.
+</Callout>
+
+## 8. Ver todos os detalhes
+
+A seção de detalhes lista as entregas individualmente. Use essa visão para encontrar um pedido específico e conferir a origem do valor apresentado no resumo.
+
+### Todos os detalhes
+
+Abra **Todos os detalhes** para visualizar os pedidos, as áreas ou distâncias e os valores correspondentes.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/entregador-quanto-recebe/imagens-tratadas/11-todos-os-detalhes.png" width="614" height="384" alt="Tabela com todos os detalhes das entregas e das taxas calculadas" />
+
+| Nº | Onde           | O que lê                                                  |
+| -- | -------------- | --------------------------------------------------------- |
+| 1. | **Pedido**     | Identifica a entrega incluída no cálculo.                 |
+| 2. | **Área ou KM** | Mostra a base usada para calcular a taxa.                 |
+| 3. | **Valor**      | Exibe quanto a entrega acrescenta ao total do entregador. |
+
+### Detalhe por entregador
+
+Use o detalhamento individual para conferir somente as entregas de um funcionário. Essa visão ajuda a comparar o total exibido no resumo com a soma dos pedidos.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/entregador-quanto-recebe/imagens-tratadas/12-detalhe-entregador.png" width="614" height="384" alt="Detalhamento das entregas e dos valores de um entregador específico" />
+
+| Nº | Onde                    | O que é                                         |
+| -- | ----------------------- | ----------------------------------------------- |
+| 1. | **Nome do entregador**  | Funcionário selecionado para a conferência.     |
+| 2. | **Lista de entregas**   | Pedidos realizados pelo funcionário no período. |
+| 3. | **Total do entregador** | Soma final das taxas que devem ser pagas.       |
+
+## Dicas
+
+- **Confira a configuração antes do período começar.** Revise as áreas, os valores e o modo de cálculo de cada entregador.
+- **Use o resumo para pagar e os detalhes para auditar.** O resumo mostra o total; a lista de pedidos mostra como o total foi formado.
+- **Investigue valores inesperados.** Compare o pedido, a área ou a distância quando uma taxa estiver diferente do esperado.
+- **Verifique ida e volta.** Confirme se a opção está de acordo com a regra combinada com o entregador.
+- **Feche as entregas antes de gerar o relatório.** Pedidos em aberto podem ficar fora da conferência do período.
+
+## Onde continuar
+
+<Columns cols="3">
+  <Card title="Ler o relatório Operação de Entrega" href="/relatorio-operacao-entrega" icon="bar-chart" horizontal="false">
+    Analise os tempos e os resultados das entregas antes de conferir o pagamento dos entregadores.
+  </Card>
+
+  <Card title="Configurar Entregador" href="/gestao-entregas-liberar-entregador" icon="settings" horizontal="false">
+    Cadastre e ajuste as informações usadas no cálculo de cada entregador.
+  </Card>
+
+  <Card title="Fechar a entrega no painel" href="/gestao-entregas-fechar-entrega" icon="check-circle" horizontal="false">
+    Registre a baixa da entrega para que ela entre corretamente nos relatórios.
+  </Card>
+</Columns>
+
