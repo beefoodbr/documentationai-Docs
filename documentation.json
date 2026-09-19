@@ -680,6 +680,10 @@
                   {
                     "title": "🛵 Entregador",
                     "path": "app-entregadores"
+                  },
+                  {
+                    "title": "📺 Painel para Entregadores",
+                    "path": "manual-painel-entregador"
                   }
                 ]
               },

@@ -1,0 +1,115 @@
+---
+title: Painel para Entregadores
+description: >-
+  Mostre aos entregadores, numa TV ou monitor, quais pedidos estão em preparo e
+  quais já estão prontos para sair, sem responder 'já saiu?' o dia inteiro.
+---
+## Painel para Entregadores
+
+A tela para pendurar na parede, ou numa TV, no lugar onde os entregadores esperam. Ela mostra, em letra grande, quais pedidos ainda estão em preparo e quais já estão prontos para sair. O entregador chega, olha e já sabe se pode pegar o pedido ou se precisa esperar.
+
+## Para que serve
+
+Em hora de pico, a mesma pergunta se repete dezenas de vezes: _“o meu já saiu?”_. Cada pergunta tira alguém da produção para responder, e a cozinha para de produzir para conversar. O painel responde antes de a pergunta ser feita.
+
+A ideia é colocar **informação na parede em vez de conversa no balcão**. Você não gerencia nada por esta tela, porque ela é somente leitura. Quem move o pedido continua sendo a cozinha, no kanban da tela **Delivery**, e o painel acompanha as mudanças em tempo real.
+
+O painel resolve três situações:
+
+- **Fim do “já saiu?”**: o entregador consulta a informação sozinho.
+- **Entregador certo, pedido certo**: cada cartão mostra o logo do canal, como iFood, 99Food, Keeta, Aiqfome ou cardápio próprio, além do número usado por aquela plataforma. Esse é o mesmo número que aparece no aplicativo do entregador.
+- **Atraso visível para todos**: o cartão muda de cor conforme o prazo aperta, usando a mesma regra da tela Delivery.
+
+## Antes de começar
+
+<Callout kind="info" collapsed="false">
+  - Você precisa de acesso ao mapa **Gestão de Entregas**. A permissão é a mesma para as duas telas: quem não vê a Gestão de Entregas também não vê o painel.
+  - O recurso está em liberação gradual. Se o item não aparecer no seu sistema, fale com o suporte.
+  - Use um computador conectado a uma TV ou monitor. O painel abre em uma janela nova e foi feito para permanecer aberto durante todo o dia.
+</Callout>
+
+## 1. O que a tela mostra
+
+O painel tem duas colunas. À esquerda fica **Em preparo**, com os pedidos que a cozinha ainda está montando. À direita fica **Pronto**, com os pedidos que já podem sair. O cabeçalho de cada coluna mostra quantos pedidos ela contém.
+
+O campo de busca no topo procura nas duas colunas ao mesmo tempo. Você pode buscar pelo número do pedido, pelo nome do cliente ou pelo canal de venda.
+
+Cada cartão mostra o logo do canal, o número usado por esse canal, há quanto tempo o pedido está naquela etapa e, quando o prazo aperta, um aviso de atraso.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/painel-entregador/imagens-tratadas/01-painel-completo.png" width="614" height="384" alt="Painel para Entregadores aberto, com as colunas Em preparo e Pronto" />
+
+| Nº | Onde                             | O que é                                                                                                                                                 |
+| -- | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1. | Buscar pedido, cliente ou origem | Filtra as duas colunas juntas. Serve para o entregador achar o pedido dele quando a fila está grande                                                    |
+| 2. | **EM PREPARO**                   | A cozinha ainda está montando. O contador ao lado diz quantos pedidos estão nessa etapa                                                                 |
+| 3. | **PRONTO**                       | O pedido pode sair. É a coluna que o entregador olha primeiro                                                                                           |
+| 4. | Logo do canal                    | Mostra de onde o pedido veio: iFood, 99Food, Keeta, Aiqfome ou cardápio próprio. Sem logo conhecido, aparece a abelha do BeeFood                        |
+| 5. | Número grande                    | Mostra o número usado pelo canal. No iFood, é o número de coleta. No 99Food e na Keeta, é o código da plataforma. No pedido próprio, é o número interno |
+| 6. | Tempo da etapa                   | Mostra há quanto tempo o pedido está naquela coluna, como “Em preparo há 19min” ou “Pronto há 19min”. O tempo reinicia quando o pedido muda de etapa    |
+| 7. | Aviso de atraso                  | O cartão fica amarelo, laranja e depois vermelho conforme o prazo do pedido aperta. O texto mostra “Restam Nmin” ou “Atrasado • Nmin”                   |
+
+O número pequeno, como `#1133`, acima do número grande é o número interno do pedido no seu caixa. Use esse número para encontrar a venda no **Histórico de Vendas**.
+
+O painel mostra o turno atual, não um histórico. Ele exibe os pedidos das últimas **6 horas**. Um pedido de ontem não volta para a tela, mesmo que você altere a situação dele.
+
+A atualização acontece sozinha. Pedidos novos aparecem imediatamente, e o cartão muda de coluna no mesmo instante em que a cozinha arrasta o pedido no kanban do Delivery. Não existe botão de atualizar.
+
+## 2. Abrir pela tela Delivery
+
+Use este caminho quando a tela **Delivery** já estiver aberta. No cabeçalho da tela, toque nos três pontos e escolha **Painel Entregador**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/painel-entregador/imagens-tratadas/02-abrir-pela-tela-delivery.png" width="614" height="384" alt="Menu de ações da tela Delivery, com o item Painel Entregador" />
+
+| Nº | Onde                  | O que fazer                                                                                                  |
+| -- | --------------------- | ------------------------------------------------------------------------------------------------------------ |
+| 1. | **Painel Entregador** | Abre o painel em uma janela nova. Arraste essa janela para a TV e pressione **F11** para deixar a tela cheia |
+
+No celular, esse menu não aparece. Abra o painel pelo botão de bicicleta no cabeçalho do Delivery. A tela funciona no celular, com as colunas uma embaixo da outra, mas foi feita para telas grandes.
+
+## 3. Abrir por Aplicativos
+
+Use este caminho quando estiver conhecendo o recurso. Acesse **Aplicativos**, abra a categoria **Entrega** e toque no card **Painel para Entregadores**. Uma janela será aberta com a explicação do recurso e um exemplo da tela.
+
+Para abrir o painel com os pedidos reais, use **ABRIR PAINEL** ou pressione **F2**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/painel-entregador/imagens-tratadas/03-abrir-por-aplicativos.png" width="614" height="384" alt="Janela de apresentação do Painel para Entregadores em Aplicativos" />
+
+| Nº | Onde                  | O que fazer                                                                                                                    |
+| -- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| 1. | Exemplo da tela       | Mostra como o painel fica, com os cartões e o alerta de atraso. É uma ilustração, não uma lista dos seus pedidos               |
+| 2. | **ABRIR PAINEL (F2)** | Abre o painel em uma janela nova. No celular, o botão fica desabilitado e informa que o painel deve ser aberto pelo computador |
+
+## 4. Ver os detalhes de um pedido
+
+Toque em qualquer cartão para abrir uma janela com o pedido completo, em letra grande. A janela mostra a etapa e o canal, o cliente e o endereço, os itens e o total.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/painel-entregador/imagens-tratadas/04-detalhe-do-pedido.png" width="614" height="384" alt="Detalhe de um pedido aberto a partir do painel" />
+
+| Nº | Onde                      | O que é                                                                                            |
+| -- | ------------------------- | -------------------------------------------------------------------------------------------------- |
+| 1. | Etapa, canal e referência | Repete o que o cartão mostra, agora com o nome do canal escrito                                    |
+| 2. | Cliente e endereço        | Mostra para onde o pedido vai. No exemplo, o nome está desfocado porque este manual é público      |
+| 3. | **ITENS DO PEDIDO**       | Lista tudo que o entregador está levando, incluindo as opções escolhidas e a observação do cliente |
+| 4. | Total                     | Mostra os produtos, a entrega e o valor final                                                      |
+
+<Callout kind="alert" collapsed="false">
+  Esta janela é somente leitura. Não existe botão para mudar a situação, atribuir entregador ou imprimir. Se a TV ficar exposta na área dos entregadores, qualquer pessoa que tocar na tela poderá ver o nome e o endereço do cliente, mas ninguém poderá alterar o pedido.
+</Callout>
+
+## Dicas
+
+- **Deixe em tela cheia**: depois de abrir o painel, pressione **F11** no navegador. A tela não tem menu nem barra lateral, então todo o espaço fica disponível para os pedidos.
+- **Escolha o tema claro ou escuro**: o botão de sol e lua no cabeçalho do painel altera somente o tema do painel. O restante do BeeFood continua como estava. Use o tema claro em locais iluminados e o escuro em corredores ou áreas de serviço.
+- **Use uma tela grande**: a partir de 1500 pixels de largura, cada etapa passa a usar duas colunas internas, permitindo exibir mais pedidos sem rolar.
+- **Consulte o ícone de informação**: o ícone no canto explica o cálculo usado para colorir o cartão. A regra é a mesma do prazo de entrega configurado no seu Delivery.
+- **Considere apenas pedidos de entrega**: pedidos de retirada, balcão e mesa não aparecem no painel.
+- **Use a busca para localizar pedidos**: o painel não tem filtro por canal nem por entregador.
+
+## Onde continuar
+
+| Manual                                                            | O que cobre                                    |
+| ----------------------------------------------------------------- | ---------------------------------------------- |
+| [Ler o mapa e o painel de entregas](/gestao-entregas-mapa-painel) | O vocabulário da tela de Gestão de Entregas    |
+| [Despachar e acompanhar](/gestao-entregas-despachar)              | Mandar a rota para a rua e seguir o entregador |
+| [App Entregador](/app-entregadores)                               | O aplicativo que o motoboy usa no celular      |
+
