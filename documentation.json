@@ -678,6 +678,10 @@
                     "path": "painel-de-entregas/gestao-entregas-liberar-entregador"
                   },
                   {
+                    "title": "🔄 Uma entrega do começo ao fim",
+                    "path": "painel-de-entregas/gestao-entregas-ciclo-completo"
+                  },
+                  {
                     "group": "🖥️ Painel de Entregas",
                     "pages": [
                       {
@@ -714,7 +718,7 @@
                         "path": "app-entregadores"
                       },
                       {
-                        "title": "�� Entrar no App",
+                        "title": "🔑 Entrar no App",
                         "path": "app-entregador-entrar"
                       },
                       {
@@ -738,10 +742,6 @@
                   {
                     "title": "📺 Painel para Entregadores",
                     "path": "manual-painel-entregador"
-                  },
-                  {
-                    "title": "🔄 Uma entrega do começo ao fim",
-                    "path": "painel-de-entregas/gestao-entregas-ciclo-completo"
                   }
                 ]
               },
