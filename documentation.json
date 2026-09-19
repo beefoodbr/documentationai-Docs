@@ -490,49 +490,6 @@
                 ]
               },
               {
-                "group": "📋 Fiscal",
-                "path": "fiscal",
-                "pages": [
-                  {
-                    "title": "⚖️ Configuração Fiscal (NF-e e NFC-e)",
-                    "path": "fiscal-configuracao"
-                  },
-                  {
-                    "title": "📝 Edição de Impostos",
-                    "path": "edicao-fiscal"
-                  },
-                  {
-                    "title": "🧾 Emissão de NFC-e",
-                    "path": "nfce"
-                  },
-                  {
-                    "title": "🧾 Emissão de NF-e",
-                    "path": "nfe"
-                  },
-                  {
-                    "title": "📜 Reforma Tributária (IBS/CBS)",
-                    "path": "reforma-tributaria"
-                  },
-                  {
-                    "group": "📁 Fechamento Fiscal",
-                    "pages": [
-                      {
-                        "title": "📊 Fechamento Fiscal",
-                        "path": "manuais/fechamento-fiscal"
-                      },
-                      {
-                        "title": "🤝 Autorizar Contador",
-                        "path": "manuais/autorizar-contador"
-                      },
-                      {
-                        "title": "🌐 Portal do Contador",
-                        "path": "manuais/portal-contador"
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
                 "group": "🔌 Integrações",
                 "path": "integracoes",
                 "pages": [
@@ -634,23 +591,84 @@
             ]
           },
           {
-            "group": "💰 Financeiro",
+            "group": "🧩 Módulos Adicionais",
             "pages": [
               {
-                "title": "💳 Cadastrar Forma de Recebimento",
-                "path": "formas-recebimento"
+                "group": "💰 Financeiro",
+                "pages": [
+                  {
+                    "title": "💳 Cadastrar Forma de Recebimento",
+                    "path": "formas-recebimento"
+                  },
+                  {
+                    "title": "💳 Taxas das Formas de Recebimento",
+                    "path": "taxas-formas-pagamento"
+                  },
+                  {
+                    "title": "📋 Contas a Pagar",
+                    "path": "lancamentos-contas-pagar"
+                  },
+                  {
+                    "title": "📋 Contas a Receber",
+                    "path": "lancamentos-contas-receber"
+                  }
+                ]
               },
               {
-                "title": "💳 Taxas das Formas de Recebimento",
-                "path": "taxas-formas-pagamento"
+                "group": "📦 Estoque Avançado",
+                "pages": [
+                  {
+                    "title": "📈 Estoque - Gestão Avançada",
+                    "path": "estoque-gestao-avancada"
+                  },
+                  {
+                    "title": "📋 Ficha Técnica",
+                    "path": "ficha-tecnica"
+                  }
+                ]
               },
               {
-                "title": "📋 Contas a Pagar",
-                "path": "lancamentos-contas-pagar"
-              },
-              {
-                "title": "📋 Contas a Receber",
-                "path": "lancamentos-contas-receber"
+                "group": "📋 Emissão Fiscal",
+                "path": "fiscal",
+                "pages": [
+                  {
+                    "title": "⚖️ Configuração Fiscal (NF-e e NFC-e)",
+                    "path": "fiscal-configuracao"
+                  },
+                  {
+                    "title": "📝 Edição de Impostos",
+                    "path": "edicao-fiscal"
+                  },
+                  {
+                    "title": "🧾 Emissão de NFC-e",
+                    "path": "nfce"
+                  },
+                  {
+                    "title": "🧾 Emissão de NF-e",
+                    "path": "nfe"
+                  },
+                  {
+                    "title": "📜 Reforma Tributária (IBS/CBS)",
+                    "path": "reforma-tributaria"
+                  },
+                  {
+                    "group": "📁 Fechamento Fiscal",
+                    "pages": [
+                      {
+                        "title": "📊 Fechamento Fiscal",
+                        "path": "manuais/fechamento-fiscal"
+                      },
+                      {
+                        "title": "🤝 Autorizar Contador",
+                        "path": "manuais/autorizar-contador"
+                      },
+                      {
+                        "title": "🌐 Portal do Contador",
+                        "path": "manuais/portal-contador"
+                      }
+                    ]
+                  }
+                ]
               }
             ]
           },
