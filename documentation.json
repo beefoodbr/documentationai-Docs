@@ -674,44 +674,45 @@
                 "group": "🛵 Gestão de Entrega",
                 "pages": [
                   {
-                    "title": "🗺️ Ler o mapa e o painel de entregas",
-                    "path": "painel-de-entregas/gestao-entregas-mapa-painel"
+                    "title": "🔓 Configurar Entregador",
+                    "path": "painel-de-entregas/gestao-entregas-liberar-entregador"
                   },
                   {
-                    "title": "🛣️ Montar a rota",
-                    "path": "painel-de-entregas/gestao-entregas-montar-rota"
+                    "group": "🖥️ Painel de Entregas",
+                    "pages": [
+                      {
+                        "title": "🔄 Uma entrega do começo ao fim",
+                        "path": "painel-de-entregas/gestao-entregas-ciclo-completo"
+                      },
+                      {
+                        "title": "🗺️ Ler o mapa e o painel de entregas",
+                        "path": "painel-de-entregas/gestao-entregas-mapa-painel"
+                      },
+                      {
+                        "title": "🛣️ Montar a rota",
+                        "path": "painel-de-entregas/gestao-entregas-montar-rota"
+                      },
+                      {
+                        "title": "🚀 Despachar e acompanhar",
+                        "path": "painel-de-entregas/gestao-entregas-despachar"
+                      },
+                      {
+                        "title": "✅ Fechar a entrega no painel",
+                        "path": "painel-de-entregas/gestao-entregas-fechar-entrega"
+                      },
+                      {
+                        "title": "⚙️ Despacho automático",
+                        "path": "painel-de-entregas/gestao-entregas-despacho-automatico"
+                      }
+                    ]
                   },
                   {
-                    "title": "🚀 Despachar e acompanhar",
-                    "path": "painel-de-entregas/gestao-entregas-despachar"
-                  },
-                  {
-                    "title": "✅ Fechar a entrega no painel",
-                    "path": "painel-de-entregas/gestao-entregas-fechar-entrega"
-                  },
-                  {
-                    "title": "⚙️ Despacho automático",
-                    "path": "painel-de-entregas/gestao-entregas-despacho-automatico"
+                    "title": "�� Painel para Entregadores",
+                    "path": "manual-painel-entregador"
                   },
                   {
                     "title": "💬 Avisos de WhatsApp da entrega",
                     "path": "painel-de-entregas/gestao-entregas-avisos-whatsapp"
-                  },
-                  {
-                    "title": "🛵 Entregador",
-                    "path": "app-entregadores"
-                  },
-                  {
-                    "title": "📺 Painel para Entregadores",
-                    "path": "manual-painel-entregador"
-                  },
-                  {
-                    "title": "🔓 Liberar o Entregador",
-                    "path": "painel-de-entregas/gestao-entregas-liberar-entregador"
-                  },
-                  {
-                    "title": "🔄 Uma entrega do começo ao fim",
-                    "path": "painel-de-entregas/gestao-entregas-ciclo-completo"
                   }
                 ]
               },
