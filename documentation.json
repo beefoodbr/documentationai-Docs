@@ -681,10 +681,6 @@
                     "group": "🖥️ Painel de Entregas",
                     "pages": [
                       {
-                        "title": "🔄 Uma entrega do começo ao fim",
-                        "path": "painel-de-entregas/gestao-entregas-ciclo-completo"
-                      },
-                      {
                         "title": "🗺️ Ler o mapa e o painel de entregas",
                         "path": "painel-de-entregas/gestao-entregas-mapa-painel"
                       },
@@ -703,16 +699,49 @@
                       {
                         "title": "⚙️ Despacho automático",
                         "path": "painel-de-entregas/gestao-entregas-despacho-automatico"
+                      },
+                      {
+                        "title": "💬 Avisos de WhatsApp da entrega",
+                        "path": "painel-de-entregas/gestao-entregas-avisos-whatsapp"
                       }
                     ]
                   },
                   {
-                    "title": "�� Painel para Entregadores",
-                    "path": "manual-painel-entregador"
+                    "group": "📱 App Entregador",
+                    "pages": [
+                      {
+                        "title": "🛵 Entregador",
+                        "path": "app-entregadores"
+                      },
+                      {
+                        "title": "📺 Painel para Entregadores",
+                        "path": "manual-painel-entregador"
+                      },
+                      {
+                        "title": "🔑 Entrar no App",
+                        "path": "app-entregador-entrar"
+                      },
+                      {
+                        "title": "📦 Entregas do Dia",
+                        "path": "app-entregador-entregas-do-dia"
+                      },
+                      {
+                        "title": "🛣️ Rota de Entrega",
+                        "path": "app-entregador-rota"
+                      },
+                      {
+                        "title": "📊 Código de Barras",
+                        "path": "app-entregador-codigo-barras"
+                      },
+                      {
+                        "title": "🛒 Marketplace",
+                        "path": "app-entregador-marketplace"
+                      }
+                    ]
                   },
                   {
-                    "title": "💬 Avisos de WhatsApp da entrega",
-                    "path": "painel-de-entregas/gestao-entregas-avisos-whatsapp"
+                    "title": "🔄 Uma entrega do começo ao fim",
+                    "path": "painel-de-entregas/gestao-entregas-ciclo-completo"
                   }
                 ]
               },
