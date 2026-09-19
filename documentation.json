@@ -714,11 +714,7 @@
                         "path": "app-entregadores"
                       },
                       {
-                        "title": "📺 Painel para Entregadores",
-                        "path": "manual-painel-entregador"
-                      },
-                      {
-                        "title": "🔑 Entrar no App",
+                        "title": "�� Entrar no App",
                         "path": "app-entregador-entrar"
                       },
                       {
@@ -738,6 +734,10 @@
                         "path": "app-entregador-marketplace"
                       }
                     ]
+                  },
+                  {
+                    "title": "📺 Painel para Entregadores",
+                    "path": "manual-painel-entregador"
                   },
                   {
                     "title": "🔄 Uma entrega do começo ao fim",

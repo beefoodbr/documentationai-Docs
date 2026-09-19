@@ -1,8 +1,10 @@
 ---
-title: "App do entregador: instalar, entrar e ficar disponível"
-description: "Instale o app BeeFood Entregador, conceda as permissões de localização e câmera, faça login e ajuste sua disponibilidade para começar a receber entregas."
+title: 'App do entregador: instalar, entrar e ficar disponível'
+description: >-
+  Instale o app BeeFood Entregador, conceda as permissões de localização e
+  câmera, faça login e ajuste sua disponibilidade para começar a receber
+  entregas.
 ---
-
 ## Comece pelo aplicativo
 
 Este é o manual do celular do entregador para o aplicativo **BeeFood Entregador**. Ele cobre o começo: as permissões do Android, o login, a tela de trabalho, o status de disponibilidade e como sair. Da primeira abertura até ficar pronto para receber entregas são poucos minutos. Na maior parte do caminho, basta responder **Permitir**.
@@ -20,10 +22,8 @@ Este é o manual do celular do entregador para o aplicativo **BeeFood Entregador
 - Instale o aplicativo pelo arquivo enviado pelo restaurante ou pela loja de aplicativos, conforme a orientação recebida.
 - O aplicativo não tem a opção **Esqueci minha senha**. O restaurante cria e altera seu acesso.
 
-<Callout kind="info">
-
-Se você ainda não recebeu usuário e senha, fale com o restaurante antes de tentar entrar. O aplicativo não cria novos acessos.
-
+<Callout kind="info" collapsed="false">
+  Se você ainda não recebeu usuário e senha, fale com o restaurante antes de tentar entrar. O aplicativo não cria novos acessos.
 </Callout>
 
 ## 1. As permissões que o celular pede
@@ -36,6 +36,8 @@ Na primeira tela de localização, mantenha **Exata** selecionada e escolha **Du
 
 A opção **Aproximada** pode indicar uma posição a centenas de metros do local real. Essa precisão não é suficiente para o restaurante acompanhar uma entrega no mapa. A opção **Apenas esta vez** também não é recomendada, porque o aplicativo voltará a pedir a permissão depois.
 
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-entrar/imagens-tratadas/01-permissao-localizacao.png" width="614" height="384" alt="Tela de permissão de localização no app BeeFood Entregador" />
+
 ### Permita a localização em segundo plano
 
 Em seguida, o aplicativo abre as configurações do Android para solicitar a localização em segundo plano. Selecione **Permitir o tempo todo** e confirme que **Usar local exato** está ligado.
@@ -44,18 +46,22 @@ A localização em segundo plano mantém sua posição atualizada quando você g
 
 Depois de escolher a opção, use a seta de voltar do Android para retornar ao aplicativo. Não existe um botão separado para salvar essa permissão.
 
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-entrar/imagens-tratadas/02-permitir-o-tempo-todo.png" width="614" height="384" alt="Permissão de localização em segundo plano selecionada como permitir o tempo todo" />
+
 ### Autorize a câmera
 
 Quando o Android pedir acesso à câmera, escolha **Durante o uso do app**. A câmera é usada somente para ler etiquetas de código de barras do cupom. O aplicativo não usa a câmera para fotografar entregas nem para gravar vídeos.
 
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-entrar/imagens-tratadas/03-permissao-camera.png" width="614" height="384" alt="Tela de permissão de câmera no app BeeFood Entregador" />
+
 ### Para que serve cada permissão
 
-| Permissão | Para que o aplicativo usa | O que acontece sem ela |
-|---|---|---|
-| **Localização exata** | Mostrar sua posição ao restaurante e acompanhar a rota. | O restaurante deixa de ver sua posição correta no mapa. |
+| Permissão                    | Para que o aplicativo usa                                           | O que acontece sem ela                                   |
+| ---------------------------- | ------------------------------------------------------------------- | -------------------------------------------------------- |
+| **Localização exata**        | Mostrar sua posição ao restaurante e acompanhar a rota.             | O restaurante deixa de ver sua posição correta no mapa.  |
 | **Localização o tempo todo** | Continuar enviando sua posição quando o aplicativo está minimizado. | Sua posição pode congelar quando você sai do aplicativo. |
-| **Câmera** | Ler o código de barras do cupom. | O leitor de código de barras não abre. |
-| **Notificações** | Avisar quando o restaurante enviar uma nova entrega. | Você só descobre a entrega ao abrir o aplicativo. |
+| **Câmera**                   | Ler o código de barras do cupom.                                    | O leitor de código de barras não abre.                   |
+| **Notificações**             | Avisar quando o restaurante enviar uma nova entrega.                | Você só descobre a entrega ao abrir o aplicativo.        |
 
 Nenhuma dessas permissões é opcional na prática. O aplicativo pode abrir sem alguma delas, mas o restaurante pode deixar de acompanhar você, o leitor pode não funcionar ou os avisos podem chegar sem som.
 
@@ -67,7 +73,7 @@ A tela de login tem dois campos e um botão:
 - **Senha**: a senha definida para o seu acesso.
 - **ENTRAR**: confirma os dados e abre o aplicativo.
 
-O ícone de olho ao lado da senha mostra o texto que você digitou. Toque novamente no ícone para ocultar a senha.
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-entrar/imagens-tratadas/04-login.png" width="614" height="384" alt="Tela de login do app BeeFood Entregador" />
 
 ### Quando o acesso é recusado
 
@@ -81,11 +87,15 @@ Essa mensagem única evita que alguém descubra quais e-mails estão cadastrados
 
 Se você tem certeza de que os dados estão corretos e o erro continua, o restaurante pode ter trocado sua senha ou desativado seu acesso. Somente o restaurante pode resolver esses casos.
 
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-entrar/imagens-tratadas/06-erro-credencial.png" width="614" height="384" alt="Mensagem de erro de credencial inválida no login" />
+
 ### Autorize as notificações
 
 Depois que o login for aceito, o Android pedirá a permissão de notificações. Toque em **Permitir** para receber avisos de novas entregas.
 
 Se você escolher **Não permitir**, as entregas ainda podem aparecer na lista, mas o telefone não avisará quando uma nova entrega for atribuída a você.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-entrar/imagens-tratadas/07-permissao-notificacoes.png" width="614" height="384" alt="Tela de permissão de notificações no app BeeFood Entregador" />
 
 ## 3. A tela de trabalho
 
@@ -101,6 +111,8 @@ A tela principal reúne estes controles:
 
 O aplicativo mostra somente as entregas atribuídas a você. Um pedido enviado para outro entregador, ou ainda sem entregador, não aparece na sua lista mesmo depois de tocar em **ATUALIZAR**.
 
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-entrar/imagens-tratadas/08-tela-de-trabalho.png" width="614" height="384" alt="Tela de trabalho do app BeeFood Entregador com a aba Entregas aberta" />
+
 ### A sessão continua ativa
 
 O aplicativo guarda sua sessão no aparelho. Fechar o aplicativo, reiniciar o celular ou ficar alguns dias sem usar não leva você de volta à tela de login.
@@ -115,7 +127,11 @@ A pílula no canto superior direito informa sua disponibilidade ao restaurante. 
 - **Em pausa**, em laranja: você está em uma pausa temporária, como almoço, abastecimento ou uma parada rápida.
 - **Offline**, em cinza: você terminou o turno ou não está disponível no momento.
 
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-entrar/imagens-tratadas/10-tres-pilulas.png" width="614" height="384" alt="As três pílulas de disponibilidade: Online, Em pausa e Offline" />
+
 Não existe botão de confirmação. O estado muda assim que você toca em uma opção. Para fechar a tela sem alterar o estado atual, cancele ou feche a folha de disponibilidade.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-entrar/imagens-tratadas/09-folha-disponibilidade.png" width="614" height="384" alt="Folha de disponibilidade com os estados Online, Em pausa e Offline" />
 
 ### Quando a conexão está fraca
 
@@ -123,10 +139,10 @@ A pílula pode mostrar uma nuvem cortada quando o aplicativo não consegue envia
 
 O aplicativo tenta novamente sozinho, inclusive quando você retorna a ele. A nuvem cortada desaparece depois que o restaurante recebe a atualização.
 
-<Callout kind="tip">
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-entrar/imagens-tratadas/14-pilula-sem-nuvem.png" width="614" height="384" alt="Pílula de disponibilidade com nuvem cortada indicando conexão fraca" />
 
-A pílula verde mostra o estado que você declarou. Ela não confirma que o celular está conectado à internet. Se a lista não atualizar, verifique a conexão e toque em **ATUALIZAR**.
-
+<Callout kind="tip" collapsed="false">
+  A pílula verde mostra o estado que você declarou. Ela não confirma que o celular está conectado à internet. Se a lista não atualizar, verifique a conexão e toque em **ATUALIZAR**.
 </Callout>
 
 ### O que a disponibilidade faz
@@ -151,6 +167,8 @@ Os itens disponíveis são:
 - **Permissões**: mostra o estado das permissões do Android.
 - **Sair**: encerra a sessão no aparelho.
 
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-entrar/imagens-tratadas/11-menu.png" width="614" height="384" alt="Menu do app BeeFood Entregador com as opções Entregas, Histórico, Código barras, Permissões e Sair" />
+
 ### Conferir as permissões
 
 A tela **Permissões** mostra quatro cartões:
@@ -164,11 +182,13 @@ Cada cartão mostra o estado **Ativa** ou **Inativa**. O estado **Ativa** confir
 
 Toque em um cartão para abrir as configurações do Android. O aplicativo não consegue conceder a permissão sozinho. Depois de alterar a opção no Android, volte ao aplicativo e toque no ícone de recarregar para atualizar os estados.
 
-<Callout kind="alert">
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-entrar/imagens-tratadas/12-permissoes.png" width="614" height="384" alt="Tela de Permissões do app mostrando os cartões de Localização, Câmera e Notificações" />
 
-Se a localização em segundo plano estiver inativa, sua posição pode parar de atualizar quando você sair do aplicativo, mesmo que a localização normal esteja ativa.
-
+<Callout kind="alert" collapsed="false">
+  Se a localização em segundo plano estiver inativa, sua posição pode parar de atualizar quando você sair do aplicativo, mesmo que a localização normal esteja ativa.
 </Callout>
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-entrar/imagens-tratadas/15-permissao-inativa.png" width="614" height="384" alt="Cartão de permissão inativa na tela de Permissões do app" />
 
 ### Sair do aplicativo
 
@@ -181,68 +201,49 @@ Use **Sair** no fim do turno, ao trocar de aparelho ou quando outra pessoa for u
 
 As entregas não são apagadas do restaurante. Para voltar a trabalhar, entre novamente com o mesmo usuário e senha.
 
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-entrar/imagens-tratadas/13-confirmar-saida.png" width="614" height="384" alt="Janela de confirmação de saída do app BeeFood Entregador" />
+
 ## Perguntas frequentes
 
 <ExpandableGroup>
+  <Expandable title="O aplicativo abre e volta para o login sozinho" default-open="false">
+    A sessão foi encerrada no servidor. Entre novamente com seu usuário e sua senha. Se o aplicativo continuar voltando para o login, fale com o restaurante para verificar se seu acesso foi desativado ou alterado.
+  </Expandable>
 
-<Expandable title="O aplicativo abre e volta para o login sozinho">
+  <Expandable title="A pílula não fica ONLINE" default-open="false">
+    O celular provavelmente está sem internet. Procure a nuvem cortada na pílula e aguarde o aplicativo tentar novamente. Quando a conexão voltar, o estado será enviado automaticamente ao restaurante.
+  </Expandable>
 
-A sessão foi encerrada no servidor. Entre novamente com seu usuário e sua senha. Se o aplicativo continuar voltando para o login, fale com o restaurante para verificar se seu acesso foi desativado ou alterado.
+  <Expandable title="Marquei OFFLINE e recebi entrega" default-open="false">
+    Esse comportamento é esperado. A pílula informa sua disponibilidade ao restaurante, mas não bloqueia o envio de pedidos. Uma entrega que já estava atribuída a você também continua na sua lista.
+  </Expandable>
 
-</Expandable>
+  <Expandable title="Uma permissão está inativa e eu não consigo ligar" default-open="false">
+    Toque no cartão da permissão na tela **Permissões** para abrir as configurações do Android. Conceda a permissão por lá, volte ao aplicativo e toque no ícone de recarregar. Depois de duas recusas, o Android pode parar de mostrar a solicitação automaticamente.
+  </Expandable>
 
-<Expandable title="A pílula não fica ONLINE">
-
-O celular provavelmente está sem internet. Procure a nuvem cortada na pílula e aguarde o aplicativo tentar novamente. Quando a conexão voltar, o estado será enviado automaticamente ao restaurante.
-
-</Expandable>
-
-<Expandable title="Marquei OFFLINE e recebi entrega">
-
-Esse comportamento é esperado. A pílula informa sua disponibilidade ao restaurante, mas não bloqueia o envio de pedidos. Uma entrega que já estava atribuída a você também continua na sua lista.
-
-</Expandable>
-
-<Expandable title="Uma permissão está inativa e eu não consigo ligar">
-
-Toque no cartão da permissão na tela **Permissões** para abrir as configurações do Android. Conceda a permissão por lá, volte ao aplicativo e toque no ícone de recarregar. Depois de duas recusas, o Android pode parar de mostrar a solicitação automaticamente.
-
-</Expandable>
-
-<Expandable title="Nenhuma entrega aparece, mas o restaurante diz que enviou">
-
-Arraste a lista para baixo ou toque em **ATUALIZAR**. Se o pedido continuar sem aparecer, confirme com o restaurante se a entrega foi atribuída ao seu nome. Pedidos enviados para outro entregador não aparecem no seu aplicativo.
-
-</Expandable>
-
+  <Expandable title="Nenhuma entrega aparece, mas o restaurante diz que enviou" default-open="false">
+    Arraste a lista para baixo ou toque em **ATUALIZAR**. Se o pedido continuar sem aparecer, confirme com o restaurante se a entrega foi atribuída ao seu nome. Pedidos enviados para outro entregador não aparecem no seu aplicativo.
+  </Expandable>
 </ExpandableGroup>
 
 ## Onde continuar
 
-<Columns cols={2}>
+<Columns cols="2">
+  <Card title="Liberar o entregador" href="/gestao-entregas-liberar-entregador" icon="users" horizontal="false">
+    Cadastre o funcionário e ative o acesso ao aplicativo.
+  </Card>
 
-<Card title="Liberar o entregador" href="/gestao-entregas-liberar-entregador" icon="users">
+  <Card title="Ver as entregas do dia e o histórico" href="/app-entregador-entregas-do-dia" icon="clipboard" horizontal="false">
+    Consulte seus pedidos, detalhes, cobranças e entregas finalizadas.
+  </Card>
 
-Cadastre o funcionário e ative o acesso ao aplicativo.
+  <Card title="Usar o código de barras" href="/app-entregador-codigo-barras" icon="camera" horizontal="false">
+    Leia a etiqueta do cupom e entenda o que acontece depois da leitura.
+  </Card>
 
-</Card>
-
-<Card title="Ver as entregas do dia e o histórico" href="/app-entregador-entregas-do-dia" icon="clipboard">
-
-Consulte seus pedidos, detalhes, cobranças e entregas finalizadas.
-
-</Card>
-
-<Card title="Usar o código de barras" href="/app-entregador-codigo-barras" icon="camera">
-
-Leia a etiqueta do cupom e entenda o que acontece depois da leitura.
-
-</Card>
-
-<Card title="Ler o mapa e o painel de entregas" href="/gestao-entregas-mapa-painel" icon="map">
-
-Veja como o restaurante acompanha sua posição e suas entregas.
-
-</Card>
-
+  <Card title="Ler o mapa e o painel de entregas" href="/gestao-entregas-mapa-painel" icon="map" horizontal="false">
+    Veja como o restaurante acompanha sua posição e suas entregas.
+  </Card>
 </Columns>
+

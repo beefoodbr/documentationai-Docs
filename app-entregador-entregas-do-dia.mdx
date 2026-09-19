@@ -31,6 +31,8 @@ Se uma entrega não aparece na sua lista, confirme com o restaurante se ela foi 
 
 Cada cartão representa uma entrega. Os cartões aparecem pela distância em relação ao restaurante, com as entregas mais próximas primeiro.
 
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-entregas-do-dia/imagens-tratadas/01-lista.png" width="614" height="384" alt="Lista de entregas do dia no app BeeFood Entregador" />
+
 ### O que aparece no cartão
 
 - **Número do pedido:** aparece como `#` seguido do número, em uma etiqueta laranja.
@@ -40,6 +42,8 @@ Cada cartão representa uma entrega. Os cartões aparecem pela distância em rel
 - **Cobrar R$:** mostra quanto você deve receber do cliente. O botão verde não aparece quando o pedido já foi pago.
 
 A numeração dos círculos acompanha a lista atual. Se o restaurante retirar uma entrega, os pedidos que permanecerem são renumerados.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-entregas-do-dia/imagens-tratadas/02-cartao.png" width="614" height="384" alt="Cartão de uma entrega na lista do app entregador" />
 
 ### Atualizar a lista
 
@@ -53,13 +57,21 @@ Você pode atualizar a lista de três formas:
 
 Depois da atualização, os pedidos atribuídos a você aparecem novamente com a ordem e os valores atuais.
 
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-entregas-do-dia/imagens-tratadas/14-antes-e-depois.png" width="614" height="384" alt="Comparação da lista de entregas antes e depois da atualização" />
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-entregas-do-dia/imagens-tratadas/03-fim-da-lista.png" width="614" height="384" alt="Final da lista de entregas com os botões Atualizar e Melhor Rota Google Maps" />
+
 ## 2. A lista muda sozinha
 
 O restaurante pode despachar ou cancelar pedidos enquanto você está na rua. O aplicativo recebe essas alterações e atualiza a lista sem exigir que você feche e abra a tela.
 
 Quando uma entrega nova é atribuída a você, aparece a notificação **Novo pedido para você**. Toque na notificação para abrir o aplicativo e consultar o pedido. A lista será recarregada.
 
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-entregas-do-dia/imagens-tratadas/11-aviso-chegando.png" width="614" height="384" alt="Aviso de novo pedido para você no app entregador" />
+
 Quando uma entrega é retirada da sua lista, aparece a notificação **Um pedido saiu da sua lista**. A lista fica menor e os círculos são renumerados.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-entregas-do-dia/imagens-tratadas/12-lista-depois-do-toque.png" width="614" height="384" alt="Lista de entregas depois da remoção de um pedido" />
 
 <Callout kind="alert">
 
@@ -67,11 +79,15 @@ Uma entrega que sai da sua lista não entra automaticamente no seu histórico. O
 
 </Callout>
 
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-entregas-do-dia/imagens-tratadas/13-aviso-de-remocao.png" width="614" height="384" alt="Aviso de remoção de pedido da lista de entregas" />
+
 Se a lista parecer parada, isso pode indicar falta de sinal, e não um turno sem alterações. Abra uma entrega e confira se os itens carregam. Se os detalhes também não carregarem, recupere a conexão e tente atualizar novamente.
 
 ## 3. Os detalhes da entrega
 
 Toque em um cartão para abrir os detalhes. O endereço fica fixo no alto da tela e continua visível enquanto você rola para consultar os itens e a cobrança.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-entregas-do-dia/imagens-tratadas/04-detalhes.png" width="614" height="384" alt="Detalhes de uma entrega no app BeeFood Entregador" />
 
 ### Endereço e observações
 
@@ -84,6 +100,8 @@ Os detalhes podem mostrar:
 
 Use [App do entregador: chegar no endereço](/app-entregador-rota) para entender a diferença entre **VER NO MAPA**, **INICIAR ROTA** e **MELHOR ROTA GOOGLE MAPS**.
 
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-entregas-do-dia/imagens-tratadas/07-sem-complemento.png" width="614" height="384" alt="Detalhes da entrega sem complemento de endereço" />
+
 ### Itens do pedido
 
 A lista de itens mostra a quantidade de cada produto, como `1x`. Os itens destacados em preto foram marcados pelo restaurante para conferência antes da entrega.
@@ -91,6 +109,8 @@ A lista de itens mostra a quantidade de cada produto, como `1x`. Os itens destac
 Quando o pedido tem um item destacado, o aplicativo abre uma janela de confirmação antes de permitir o fechamento. Confira o item na sacola e confirme somente depois de verificar o que o restaurante marcou.
 
 Os itens são carregados quando você abre os detalhes. Sem internet, o cartão pode aparecer sem os itens. Nesse caso, aguarde uma conexão estável e abra os detalhes novamente.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-entregas-do-dia/imagens-tratadas/06-conferir-destaque.png" width="614" height="384" alt="Item destacado para conferência antes do fechamento da entrega" />
 
 ### Rodapé de cobrança e finalização
 
@@ -107,11 +127,15 @@ O rodapé concentra os dados de pagamento e os botões da entrega:
 
 Para concluir a cobrança, dividir o pagamento ou finalizar uma entrega, consulte [App do entregador: receber na porta](/app-entregador-cobranca).
 
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-entregas-do-dia/imagens-tratadas/05-rodape.png" width="614" height="384" alt="Rodapé de cobrança e finalização nos detalhes da entrega" />
+
 ## 4. O histórico
 
 Abra a aba **Histórico** para consultar as entregas que você finalizou. O aplicativo agrupa os pedidos por dia e não oferece filtro de datas. O período disponível depende do restaurante.
 
 O histórico mostra somente as entregas feitas por você. Pedidos de outro entregador não aparecem, mesmo que tenham passado pela mesma loja.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-entregas-do-dia/imagens-tratadas/08-historico-dias.png" width="614" height="384" alt="Histórico de entregas agrupado por dia no app entregador" />
 
 ### Encontrar um dia
 
@@ -122,6 +146,8 @@ Cada cartão de dia mostra:
 - A quantidade de entregas concluídas.
 
 Toque em um dia para abrir a lista correspondente. Cada entrega mostra:
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-entregas-do-dia/imagens-tratadas/09-dia-expandido.png" width="614" height="384" alt="Dia expandido no histórico mostrando as entregas concluídas" />
 
 - O número do pedido, como `#1042`.
 - O horário de conclusão no formato **Entregue às HH:MM**.
@@ -144,6 +170,8 @@ A linha do tempo registra:
 - **ENTREGUE:** quando você finalizou a entrega.
 
 Cada etapa mostra o horário registrado pelo sistema. A observação que você escreve ao finalizar fica permanentemente associada ao histórico da entrega.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-entregas-do-dia/imagens-tratadas/10-detalhe-no-historico.png" width="614" height="384" alt="Detalhe de uma entrega finalizada no histórico com a linha do tempo" />
 
 ## Perguntas frequentes
 
