@@ -1,0 +1,299 @@
+---
+title: "App do entregador: chegar no endereço"
+description: "Abra a navegação no Google Maps ou Waze para uma entrega, inicie a rota montada pelo restaurante ou use a melhor rota com várias entregas soltas."
+---
+
+## Três caminhos para chegar ao endereço
+
+Escolha o caminho conforme o tipo de entrega:
+
+| Caminho | Quando usar |
+|---|---|
+| **VER NO MAPA** | Para uma entrega individual. |
+| **INICIAR ROTA** | Quando o restaurante montou uma rota com várias entregas. |
+| **MELHOR ROTA GOOGLE MAPS** | Para várias entregas soltas, sem rota montada pelo restaurante. |
+
+Escolher o caminho errado pode aumentar o trajeto. O botão **INICIAR ROTA** também avisa o cliente que os pedidos saíram para entrega, então não use esse botão apenas para consultar o caminho.
+
+## Para que serve
+
+- Abrir a navegação até o endereço do cliente sem digitar o endereço.
+- Sair da loja com três ou quatro entregas em uma única rota.
+- Seguir a ordem de paradas definida pelo restaurante.
+
+## Antes de começar
+
+- Instale o **Google Maps**. Todas as rotas com várias paradas usam esse aplicativo.
+- O **Waze** aparece apenas para uma entrega individual e precisa estar instalado no celular.
+- Conceda ao aplicativo a permissão de localização. A rota começa na sua posição atual. Se precisar configurar essa permissão, consulte [App do entregador: instalar, entrar e ficar disponível](/app-entregador-entrar).
+
+<Callout kind="info">
+
+A localização e a internet são necessárias para calcular rotas. Se a melhor rota não for gerada, confira primeiro o sinal e depois a permissão de localização.
+
+</Callout>
+
+## 1. Uma entrega: VER NO MAPA
+
+Use **VER NO MAPA** nos detalhes da entrega quando você for levar apenas um pedido ou quiser navegar até um endereço específico.
+
+O botão fica no cartão do endereço. Ao tocar nele, o aplicativo abre uma folha para você escolher entre **GOOGLE MAPS** e **WAZE**.
+
+![A folha com as opções Google Maps e Waze](imagens-tratadas/01-ver-no-mapa.png)
+
+| Onde aparece | O que faz |
+|---|---|
+| **VER NO MAPA** | Abre as opções de aplicativos de navegação. |
+| **GOOGLE MAPS** | Abre o Google Maps com a rota até o cliente. |
+| **WAZE** | Abre o Waze com a rota até o cliente. |
+
+A rota começa na sua **posição atual** e termina no endereço do cliente.
+
+![A rota de uma entrega no Google Maps](imagens-tratadas/02-google-maps-uma-parada.png)
+
+### O endereço é enviado como texto
+
+Para uma entrega individual, o aplicativo envia o endereço escrito para o Google Maps ou para o Waze. O endereço inclui rua, número, bairro, cidade e CEP. O aplicativo de mapas procura esse texto e escolhe o ponto no mapa.
+
+Se o endereço tiver sido cadastrado de forma ambígua, o mapa pode indicar o lugar errado. Um bairro com nome parecido, por exemplo, pode levar a navegação para uma clínica ou para outra rua.
+
+<Callout kind="alert">
+
+Se o destino no mapa não parecer com o endereço do cartão, confie no endereço exibido no cartão. Confira o local no aplicativo de mapas ou digite o endereço manualmente.
+
+</Callout>
+
+Pedidos de **marketplace** são uma exceção. Neles, o aplicativo envia a coordenada porque o endereço recebido da plataforma pode estar abreviado. Consulte [App do entregador: pedido de iFood e de 99Food](/app-entregador-marketplace) para saber o que muda nesses pedidos.
+
+### O Waze precisa estar instalado
+
+O botão **WAZE** abre um link. Quando o Waze está instalado, o celular encaminha o link para o aplicativo e a navegação começa.
+
+Sem o Waze instalado, o link abre no navegador. Nesse caso, você verá uma página em vez da rota no aplicativo. Se você usa Waze durante o turno, instale-o antes de sair para as entregas.
+
+## 2. Quando o restaurante monta a rota
+
+Quando o restaurante monta uma rota, ele escolhe quais pedidos saem juntos e define a ordem das paradas. A lista do aplicativo passa a mostrar a rota como um grupo separado.
+
+![A lista com uma rota no alto](imagens-tratadas/03-rota-na-lista.png)
+
+Os pedidos da rota aparecem logo abaixo do cabeçalho e recebem uma numeração própria. O número indica a ordem definida pelo restaurante, não a posição do cartão na tela.
+
+### O cabeçalho da rota
+
+![O cabeçalho da rota com o botão INICIAR ROTA](imagens-tratadas/04-cabecalho-da-rota.png)
+
+O cabeçalho mostra:
+
+- A letra da rota, como **A** ou **B**.
+- O nome da rota, como **ROTA A**.
+- O contador de entregas, como **0 de 3 entregues**.
+- O botão verde **INICIAR ROTA**.
+
+### Duas rotas na mesma lista
+
+O restaurante pode montar mais de uma rota ao mesmo tempo. Cada rota continua independente, com sua própria letra, contador e botão.
+
+![Duas rotas na mesma lista](imagens-tratadas/11-duas-rotas.png)
+
+Toque no botão da rota que você vai fazer agora. Se iniciar duas rotas, o aplicativo poderá avisar os clientes das duas rotas ao mesmo tempo, mesmo que você ainda vá fazer a segunda depois.
+
+A numeração começa em 1 dentro de cada rota. Por isso, é normal ver uma parada número 1 na rota A e outra parada número 1 na rota B.
+
+### Entregas que não fazem parte da rota
+
+Quando existem entregas soltas junto com uma ou mais rotas, o aplicativo separa os pedidos com a faixa **OUTRAS ENTREGAS**.
+
+![A faixa OUTRAS ENTREGAS](imagens-tratadas/05-outras-entregas.png)
+
+As entregas soltas não entram na rota montada pelo restaurante. Elas continuam com a numeração própria e podem ser abertas individualmente por **VER NO MAPA** ou incluídas na **MELHOR ROTA GOOGLE MAPS**.
+
+A faixa **OUTRAS ENTREGAS** só aparece quando há uma rota e também existem entregas soltas na lista.
+
+### O que INICIAR ROTA faz
+
+**INICIAR ROTA** realiza duas ações no mesmo momento:
+
+1. Muda os pedidos da rota para **em transporte**, informa ao restaurante que você saiu e envia ao cliente a mensagem de **saiu para entrega**.
+2. Abre o Google Maps com as paradas na ordem definida para a rota.
+
+![A rota aberta no Google Maps com várias paradas](imagens-tratadas/07-rota-no-maps.png)
+
+<Callout kind="danger">
+
+**INICIAR ROTA** não é um botão para visualizar o caminho. Toque nele somente quando você estiver saindo com os pedidos. Depois do toque, o restaurante e os clientes podem considerar a rota em andamento.
+
+</Callout>
+
+As paradas da rota são enviadas por coordenada para o Google Maps. Por isso, o ponto mostrado no mapa pode ter um texto diferente do endereço do cartão. Para entregar, confira sempre o endereço exibido no cartão do pedido.
+
+### Depois de iniciar a rota
+
+Após o despacho, o cabeçalho mostra a etiqueta **em rota** e o botão verde muda para **ABRIR NO MAPS**.
+
+![O cabeçalho depois de iniciar a rota](imagens-tratadas/06-rota-despachada.png)
+
+**ABRIR NO MAPS** apenas reabre a rota no Google Maps. Você pode tocar nele novamente sem enviar uma nova notificação ao cliente.
+
+### Quando o despacho não é confirmado
+
+Se o sinal estiver fraco, o aplicativo pode não conseguir confirmar o despacho com o restaurante. Mesmo assim, ele oferece a opção de abrir o mapa para que você não fique parado.
+
+![A janela Despacho não confirmado](imagens-tratadas/10-despacho-nao-confirmado.png)
+
+A janela **Despacho não confirmado** informa que o aplicativo tentou avisar a saída, mas não recebeu uma confirmação. Você pode:
+
+- Tocar em **CANCELAR** para voltar à lista sem abrir o mapa.
+- Tocar em **ABRIR MAPA** para seguir para o Google Maps.
+
+<Callout kind="alert">
+
+Se aparecer **Despacho não confirmado**, ligue ou mande mensagem para o restaurante. O cliente pode não ter recebido a mensagem de saída. Não toque em **INICIAR ROTA** novamente por conta própria, porque o primeiro toque pode ter sido recebido e um segundo toque pode enviar o aviso outra vez.
+
+</Callout>
+
+O cabeçalho e o contador continuam como estavam até o aplicativo confirmar o despacho.
+
+### A rota organiza o caminho, mas a entrega continua sendo individual
+
+A rota define o caminho e a ordem das paradas. Para concluir cada entrega, abra o cartão do pedido, confira os itens e finalize o pedido individualmente, como descrito em [App do entregador: receber na porta](/app-entregador-cobranca).
+
+Cada entrega concluída atualiza o contador da rota. O contador passa, por exemplo, de **0 de 3** para **1 de 3** e depois para **2 de 3**.
+
+Quando a última entrega da rota é fechada, a rota termina sozinha e o grupo desaparece da lista. O contador representa o total da rota, não apenas os cartões que ainda estão visíveis.
+
+## 3. Várias entregas soltas: MELHOR ROTA
+
+Use **MELHOR ROTA GOOGLE MAPS** quando você tiver várias entregas soltas e nenhuma rota montada pelo restaurante.
+
+O botão azul fica no pé da lista e mostra entre parênteses quantas entregas serão incluídas.
+
+![A janela ABRIR ROTA](imagens-tratadas/08-abrir-rota.png)
+
+Ao tocar no botão, o BeeFood calcula uma ordem por proximidade. Depois, a folha **ABRIR ROTA** mostra a opção para abrir o trajeto no Google Maps.
+
+A melhor rota:
+
+- Inclui somente as entregas soltas.
+- Ordena as paradas pela proximidade calculada pelo BeeFood.
+- Começa na sua posição atual.
+- Abre somente no Google Maps.
+- Não segue a ordem em que os pedidos chegaram nem a ordem dos cartões na tela.
+
+![A melhor rota com várias paradas no Google Maps](imagens-tratadas/09-melhor-rota-no-maps.png)
+
+<Callout kind="info">
+
+**MELHOR ROTA GOOGLE MAPS** ignora as rotas montadas pelo restaurante. Se uma entrega pertence a uma rota, use o **INICIAR ROTA** do cabeçalho correspondente.
+
+</Callout>
+
+O botão não aparece quando há apenas uma entrega solta. Nesse caso, use **VER NO MAPA** no cartão da entrega.
+
+### Quando o cálculo não é concluído
+
+O cálculo da melhor rota acontece no servidor e depende da sua posição e de uma conexão com a internet. Se faltar internet ou a permissão de localização estiver bloqueada, o cálculo não será concluído.
+
+![A mensagem de permissão necessária ao gerar a melhor rota](imagens-tratadas/12-melhor-rota-falhou.png)
+
+A mensagem **Permissão necessária** pode aparecer tanto quando a localização foi recusada quanto quando o celular está sem internet. O texto não diferencia essas duas causas.
+
+Confira nesta ordem:
+
+1. Verifique o sinal de internet.
+2. Abra **Permissões** no menu do aplicativo e confira a localização.
+3. Feche a mensagem com **OK**.
+4. Feche a folha **ABRIR ROTA** com **FECHAR**.
+5. Tente calcular a rota novamente.
+
+Se o servidor responder, mas não conseguir calcular a rota, o aplicativo mostrará **Falha** com uma explicação. Um endereço sem coordenada é uma causa comum. Nesse caso, abra as entregas individualmente com **VER NO MAPA** e informe ao restaurante qual endereço parece incorreto.
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+
+<Expandable title="O mapa abre em um lugar que não parece o endereço">
+
+O endereço foi cadastrado de forma ambígua ou incorreta. Compare o destino do mapa com o endereço do cartão e confie no cartão. Se necessário, procure o endereço manualmente no aplicativo de mapas.
+
+</Expandable>
+
+<Expandable title="Aparece Permissão necessária">
+
+A mensagem pode indicar localização recusada ou falta de internet. Confira o sinal primeiro. Depois, confira a permissão de localização na tela **Permissões** do menu.
+
+</Expandable>
+
+<Expandable title="O mapa não traça a rota">
+
+O sinal pode estar fraco. O aplicativo de mapas precisa de internet para calcular o trajeto, mesmo quando o BeeFood já enviou o endereço ou as paradas.
+
+</Expandable>
+
+<Expandable title="Aparece Ocorreu uma falha ao gerar a melhor rota">
+
+O servidor respondeu, mas não conseguiu calcular a rota. Um endereço sem coordenadas é uma causa comum. Abra as entregas uma por uma com **VER NO MAPA** e avise o restaurante qual endereço está estranho.
+
+</Expandable>
+
+<Expandable title="Tenho duas rotas na tela">
+
+Isso é normal quando o restaurante monta mais de uma rota. Cada rota tem sua própria letra, seu contador e seu botão. Toque em **INICIAR ROTA** somente na rota que você vai fazer agora.
+
+</Expandable>
+
+<Expandable title="Apareceu Despacho não confirmado">
+
+O aplicativo não conseguiu confirmar a saída com o restaurante, geralmente por causa de sinal fraco. Ligue ou mande mensagem para a loja e não toque em **INICIAR ROTA** novamente antes de confirmar o que aconteceu.
+
+</Expandable>
+
+<Expandable title="A rota sumiu da minha lista">
+
+O restaurante pode ter excluído a rota ou transferido os pedidos para outro entregador. Os pedidos da rota saem da sua lista junto com o grupo.
+
+</Expandable>
+
+<Expandable title="O contador diz de 3 e só tem dois cartões">
+
+O contador pertence à rota e mostra o total de entregas dela. Um dos três pedidos já foi concluído, por isso restam apenas dois cartões na lista.
+
+</Expandable>
+
+</ExpandableGroup>
+
+## Onde continuar
+
+<Columns cols={2}>
+
+<Card title="As entregas do dia e o histórico" href="/app-entregador-entregas-do-dia" icon="clipboard" cta="Abrir manual">
+
+Consulte a lista, os cartões e os detalhes das entregas.
+
+</Card>
+
+<Card title="Receber na porta" href="/app-entregador-cobranca" icon="check-circle" cta="Abrir manual">
+
+Veja como cobrar, dividir a conta e finalizar cada entrega.
+
+</Card>
+
+<Card title="Pedido de iFood e de 99Food" href="/app-entregador-marketplace" icon="cloud" cta="Abrir manual">
+
+Entenda o que muda nas entregas pagas pelas plataformas.
+
+</Card>
+
+<Card title="Montar a rota" href="/gestao-entregas-montar-rota" icon="settings" cta="Abrir manual">
+
+Veja como o restaurante escolhe os pedidos e a ordem da rota.
+
+</Card>
+
+<Card title="Despachar a rota e acompanhar no mapa" href="/gestao-entregas-despachar" icon="map" cta="Abrir manual">
+
+Consulte o despacho e o acompanhamento da rota pelo painel.
+
+</Card>
+
+</Columns>
