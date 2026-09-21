@@ -195,6 +195,10 @@
                   {
                     "title": "📲 Operar Cashback",
                     "path": "cashback-operar"
+                  },
+                  {
+                    "title": "🟢 Venda Sugestiva (UpSell)",
+                    "path": "cardapio-digital-venda-sugestiva-upsell"
                   }
                 ]
               },
@@ -235,6 +239,14 @@
                   {
                     "title": "🌐 Tradução do cardápio presencial: inglês e espanhol",
                     "path": "cardapio-presencial-ingles-espanhol"
+                  },
+                  {
+                    "title": "🟢 Venda Sugestiva (UpSell)",
+                    "path": "venda-sugestiva-upsell"
+                  },
+                  {
+                    "title": "📄 Cardápio em PDF",
+                    "path": "cardapio-pdf"
                   }
                 ]
               },
@@ -775,8 +787,18 @@
                 ]
               },
               {
-                "title": "🖥️ Totem de Autoatendimento",
-                "path": "modulos-adicionais/totem-autoatendimento"
+                "group": "🖥️ Totem de Autoatendimento",
+                "path": "modulos-adicionais/totem-autoatendimento",
+                "pages": [
+                  {
+                    "title": "🟢 Venda Sugestiva (UpSell)",
+                    "path": "modulos-adicionais/totem-autoatendimento-venda-sugestiva-upsell"
+                  },
+                  {
+                    "title": "🌐 Tradução do Cardápio",
+                    "path": "modulos-adicionais/totem-autoatendimento-traducao-presencial"
+                  }
+                ]
               },
               {
                 "group": "📱 Cardápio Digital no Tablet",
@@ -788,6 +810,14 @@
                   {
                     "title": "🔒 Modo Kiosk (Travar Tablet)",
                     "path": "modo-kiosk-travar-tablet"
+                  },
+                  {
+                    "title": "🟢 Venda Sugestiva (UpSell)",
+                    "path": "modulos-adicionais/cardapio-digital-tablet-venda-sugestiva-upsell"
+                  },
+                  {
+                    "title": "🌐 Tradução do Cardápio",
+                    "path": "modulos-adicionais/cardapio-digital-tablet-traducao-presencial"
                   }
                 ]
               },
