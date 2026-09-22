@@ -607,6 +607,7 @@
             "pages": [
               {
                 "group": "💰 Financeiro",
+                "path": "financeiro",
                 "pages": [
                   {
                     "title": "💳 Cadastrar Forma de Recebimento",
@@ -628,6 +629,7 @@
               },
               {
                 "group": "📦 Estoque Avançado",
+                "path": "estoque-avancado",
                 "pages": [
                   {
                     "title": "📈 Estoque - Gestão Avançada",
@@ -778,6 +780,7 @@
               },
               {
                 "group": "💳 TEF",
+                "path": "tef-adicional",
                 "pages": [
                   {
                     "title": "💳 TEF PayGo",
@@ -805,11 +808,8 @@
               },
               {
                 "group": "📱 Cardápio Digital no Tablet",
+                "path": "modulos-adicionais/cardapio-digital-tablet",
                 "pages": [
-                  {
-                    "title": "📱 Cardápio Digital no Tablet",
-                    "path": "modulos-adicionais/cardapio-digital-tablet"
-                  },
                   {
                     "title": "🔒 Modo Kiosk (Travar Tablet)",
                     "path": "modo-kiosk-travar-tablet"
