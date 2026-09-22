@@ -684,6 +684,7 @@
               },
               {
                 "group": "🛵 Gestão de Entrega",
+                "path": "modulos-adicionais/gestao-entrega",
                 "pages": [
                   {
                     "title": "🔓 Configurar Entregador",
@@ -695,6 +696,7 @@
                   },
                   {
                     "group": "🖥️ Painel de Entregas",
+                    "path": "painel-de-entregas/gestao-entregas-painel",
                     "pages": [
                       {
                         "title": "🗺️ Ler o mapa e o painel de entregas",
@@ -720,6 +722,7 @@
                   },
                   {
                     "group": "📱 App Entregador",
+                    "path": "app-entregadores",
                     "pages": [
                       {
                         "title": "🛵 Entregador",
