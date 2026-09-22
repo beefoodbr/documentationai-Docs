@@ -1,8 +1,10 @@
 ---
-title: "App do entregador: as entregas do dia e o histórico"
-description: "Veja a lista de entregas atribuídas a você, consulte os detalhes de cada pedido (itens, endereço, cobrança) e navegue pelo histórico de entregas finalizadas."
+title: 'App do entregador: as entregas do dia e o histórico'
+description: >-
+  Veja a lista de entregas atribuídas a você, consulte os detalhes de cada
+  pedido (itens, endereço, cobrança) e navegue pelo histórico de entregas
+  finalizadas.
 ---
-
 ## A tela que acompanha o seu turno
 
 A aba **Entregas** reúne os pedidos atribuídos a você, os detalhes necessários para cada entrega e as ações de cobrança e finalização. Na aba **Histórico**, você consulta as entregas que já concluiu.
@@ -21,10 +23,8 @@ A lista é atualizada enquanto o restaurante despacha ou cancela pedidos. Por is
 - A lista mostra apenas os pedidos atribuídos a você pelo restaurante.
 - Mantenha a internet ativa para receber alterações na lista, carregar os itens e enviar a finalização das entregas.
 
-<Callout kind="info">
-
-Se uma entrega não aparece na sua lista, confirme com o restaurante se ela foi atribuída ao seu usuário. O aplicativo não mostra pedidos atribuídos a outro entregador.
-
+<Callout kind="info" collapsed="false">
+  Se uma entrega não aparece na sua lista, confirme com o restaurante se ela foi atribuída ao seu usuário. O aplicativo não mostra pedidos atribuídos a outro entregador.
 </Callout>
 
 ## 1. A lista de entregas
@@ -73,10 +73,8 @@ Quando uma entrega é retirada da sua lista, aparece a notificação **Um pedido
 
 <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-entregas-do-dia/imagens-tratadas/12-lista-depois-do-toque.png" width="614" height="384" alt="Lista de entregas depois da remoção de um pedido" />
 
-<Callout kind="alert">
-
-Uma entrega que sai da sua lista não entra automaticamente no seu histórico. O histórico guarda apenas as entregas que você finalizou.
-
+<Callout kind="alert" collapsed="false">
+  Uma entrega que sai da sua lista não entra automaticamente no seu histórico. O histórico guarda apenas as entregas que você finalizou.
 </Callout>
 
 <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-entregas-do-dia/imagens-tratadas/13-aviso-de-remocao.png" width="614" height="384" alt="Aviso de remoção de pedido da lista de entregas" />
@@ -176,93 +174,65 @@ Cada etapa mostra o horário registrado pelo sistema. A observação que você e
 ## Perguntas frequentes
 
 <ExpandableGroup>
+  <Expandable title="Uma entrega que eu já fiz continua na lista" default-open="false">
+    A finalização pode não ter chegado ao servidor. Abra os detalhes da entrega e confira se o botão de finalização ainda aparece.
 
-<Expandable title="Uma entrega que eu já fiz continua na lista">
+    Se o botão continuar disponível, finalize novamente com conexão estável. Se a entrega continuar na lista depois disso, fale com o restaurante.
+  </Expandable>
 
-A finalização pode não ter chegado ao servidor. Abra os detalhes da entrega e confira se o botão de finalização ainda aparece.
+  <Expandable title="Uma entrega desapareceu sem eu fazer nada" default-open="false">
+    O restaurante pode ter cancelado o pedido ou atribuído a entrega a outro entregador. O histórico guarda somente o que você entregou, então um pedido retirado da sua lista não aparece nele.
+  </Expandable>
 
-Se o botão continuar disponível, finalize novamente com conexão estável. Se a entrega continuar na lista depois disso, fale com o restaurante.
+  <Expandable title="Chegou o aviso de pedido novo e a lista continua igual" default-open="false">
+    Toque na própria notificação **Novo pedido para você**, e não apenas no ícone do aplicativo. O toque na notificação abre o aplicativo e inicia a atualização da lista.
 
-</Expandable>
+    Se a lista continuar igual, teste a conexão abrindo os detalhes de uma entrega. Sem sinal, o aviso pode chegar antes de o aplicativo conseguir carregar o pedido.
+  </Expandable>
 
-<Expandable title="Uma entrega desapareceu sem eu fazer nada">
+  <Expandable title="Não recebo aviso nenhum" default-open="false">
+    A permissão de notificações pode estar bloqueada no celular. Consulte [App do entregador: instalar, entrar e ficar disponível](/app-entregador-entrar) e verifique as permissões do aplicativo.
+  </Expandable>
 
-O restaurante pode ter cancelado o pedido ou atribuído a entrega a outro entregador. O histórico guarda somente o que você entregou, então um pedido retirado da sua lista não aparece nele.
+  <Expandable title="Os itens do pedido não aparecem" default-open="false">
+    Os itens são buscados quando você abre os detalhes. Uma conexão indisponível pode deixar o cartão sem essa informação.
 
-</Expandable>
+    Recupere o sinal, abra a entrega novamente e aguarde o carregamento dos itens. Se continuar sem dados, peça ao restaurante para conferir o pedido.
+  </Expandable>
 
-<Expandable title="Chegou o aviso de pedido novo e a lista continua igual">
+  <Expandable title="A forma de pagamento não é a que o cliente diz" default-open="false">
+    A forma exibida no aplicativo vem do pedido registrado pelo restaurante. Se o cliente informar outra forma de pagamento, siga o fluxo de cobrança e escolha a forma correta antes de concluir.
 
-Toque na própria notificação **Novo pedido para você**, e não apenas no ícone do aplicativo. O toque na notificação abre o aplicativo e inicia a atualização da lista.
+    Se houver dúvida sobre o valor ou sobre a alteração, confirme com o restaurante.
+  </Expandable>
 
-Se a lista continuar igual, teste a conexão abrindo os detalhes de uma entrega. Sem sinal, o aviso pode chegar antes de o aplicativo conseguir carregar o pedido.
+  <Expandable title="Uma entrega que eu fiz não está no histórico" default-open="false">
+    Se a entrega ainda aparece na aba **Entregas**, ela provavelmente não foi finalizada no servidor. Abra os detalhes e procure o botão de finalização.
 
-</Expandable>
-
-<Expandable title="Não recebo aviso nenhum">
-
-A permissão de notificações pode estar bloqueada no celular. Consulte [App do entregador: instalar, entrar e ficar disponível](/app-entregador-entrar) e verifique as permissões do aplicativo.
-
-</Expandable>
-
-<Expandable title="Os itens do pedido não aparecem">
-
-Os itens são buscados quando você abre os detalhes. Uma conexão indisponível pode deixar o cartão sem essa informação.
-
-Recupere o sinal, abra a entrega novamente e aguarde o carregamento dos itens. Se continuar sem dados, peça ao restaurante para conferir o pedido.
-
-</Expandable>
-
-<Expandable title="A forma de pagamento não é a que o cliente diz">
-
-A forma exibida no aplicativo vem do pedido registrado pelo restaurante. Se o cliente informar outra forma de pagamento, siga o fluxo de cobrança e escolha a forma correta antes de concluir.
-
-Se houver dúvida sobre o valor ou sobre a alteração, confirme com o restaurante.
-
-</Expandable>
-
-<Expandable title="Uma entrega que eu fiz não está no histórico">
-
-Se a entrega ainda aparece na aba **Entregas**, ela provavelmente não foi finalizada no servidor. Abra os detalhes e procure o botão de finalização.
-
-Se a entrega não estiver na aba **Entregas** nem no **Histórico**, fale com o restaurante. A loja pode verificar o registro da entrega.
-
-</Expandable>
-
+    Se a entrega não estiver na aba **Entregas** nem no **Histórico**, fale com o restaurante. A loja pode verificar o registro da entrega.
+  </Expandable>
 </ExpandableGroup>
 
 ## Onde continuar
 
-<Columns cols={2}>
+<Columns cols="2">
+  <Card title="Entrar e ficar disponível" href="/app-entregador-entrar" icon="users" horizontal="false">
+    Instale o aplicativo, entre com seu usuário e conceda as permissões necessárias.
+  </Card>
 
-<Card title="Entrar e ficar disponível" href="/app-entregador-entrar" icon="users">
+  <Card title="Chegar no endereço" href="/app-entregador-rota" icon="arrow-right" horizontal="false">
+    Use o mapa para uma entrega, uma rota montada pelo restaurante ou várias entregas soltas.
+  </Card>
 
-Instale o aplicativo, entre com seu usuário e conceda as permissões necessárias.
+  <Card title="Receber na porta" href="/app-entregador-cobranca" icon="check-circle" horizontal="false">
+    Confira a forma de pagamento, cobre o cliente e finalize o pedido.
+  </Card>
 
-</Card>
+  <Card title="Ler código de barras" href="/app-entregador-codigo-barras" icon="scan" horizontal="false">
+    Despache pedidos pelo leitor de código de barras quando o restaurante usar etiquetas no cupom.
+  </Card>
 
-<Card title="Chegar no endereço" href="/app-entregador-rota" icon="arrow-right">
-
-Use o mapa para uma entrega, uma rota montada pelo restaurante ou várias entregas soltas.
-
-</Card>
-
-<Card title="Receber na porta" href="/app-entregador-cobranca" icon="check-circle">
-
-Confira a forma de pagamento, cobre o cliente e finalize o pedido.
-
-</Card>
-
-<Card title="Ler código de barras" href="/app-entregador-codigo-barras" icon="scan">
-
-Despache pedidos pelo leitor de código de barras quando o restaurante usar etiquetas no cupom.
-
-</Card>
-
-<Card title="Acompanhar entregas no painel" href="/gestao-entregas-mapa-painel" icon="map">
-
-Entenda como o restaurante acompanha pedidos e entregadores pelo mapa do painel.
-
-</Card>
-
+  <Card title="Acompanhar entregas no painel" href="/painel-de-entregas/gestao-entregas-mapa-painel" icon="map" horizontal="false">
+    Entenda como o restaurante acompanha pedidos e entregadores pelo mapa do painel.
+  </Card>
 </Columns>

@@ -1,18 +1,18 @@
 ---
-title: "Código de barras: ligar a etiqueta e ler o pedido no aplicativo"
-description: "Ative a etiqueta de código de barras no cupom de delivery e use o leitor do app BeeFood Entregador para despachar pedidos pelo celular, sem voltar ao computador."
+title: 'Código de barras: ligar a etiqueta e ler o pedido no aplicativo'
+description: >-
+  Ative a etiqueta de código de barras no cupom de delivery e use o leitor do
+  app BeeFood Entregador para despachar pedidos pelo celular, sem voltar ao
+  computador.
 ---
-
 ## Código de barras: ligar a etiqueta e ler o pedido no aplicativo
 
 O cupom do delivery pode sair com uma etiqueta de código de barras no pé. O entregador aponta a câmera do aplicativo para ela, e o pedido é despachado no balcão, sem ninguém precisar voltar ao computador.
 
-<Callout kind="alert">
+<Callout kind="alert" collapsed="false">
+  Ler a etiqueta é **despachar**, não conferir. No instante da leitura, o pedido passa para **saiu para entrega**, o cliente recebe a mensagem de WhatsApp, o marketplace é avisado e o cupom imprime. O aplicativo não permite desfazer a leitura.
 
-Ler a etiqueta é **despachar**, não conferir. No instante da leitura, o pedido passa para **saiu para entrega**, o cliente recebe a mensagem de WhatsApp, o marketplace é avisado e o cupom imprime. O aplicativo não permite desfazer a leitura.
-
-Leia somente a etiqueta do pedido que você está pegando para levar.
-
+  Leia somente a etiqueta do pedido que você está pegando para levar.
 </Callout>
 
 O processo tem duas partes:
@@ -28,14 +28,12 @@ O processo tem duas partes:
 
 ## Antes de começar
 
-- O entregador precisa estar configurado para usar o aplicativo. Consulte [Liberar o entregador](/gestao-entregas-liberar-entregador).
+- O entregador precisa estar configurado para usar o aplicativo. Consulte [Liberar o entregador](/painel-de-entregas/gestao-entregas-liberar-entregador).
 - A impressora do **cupom de pedido** precisa estar funcionando.
 - O celular precisa ter concedido ao aplicativo a permissão de câmera.
 
-<Callout kind="info">
-
-A etiqueta só será impressa em novos cupons depois que você salvar o layout. Cupons impressos antes da configuração não recebem a etiqueta automaticamente.
-
+<Callout kind="info" collapsed="false">
+  A etiqueta só será impressa em novos cupons depois que você salvar o layout. Cupons impressos antes da configuração não recebem a etiqueta automaticamente.
 </Callout>
 
 ## 1. Ligar a etiqueta no cupom
@@ -43,45 +41,33 @@ A etiqueta só será impressa em novos cupons depois que você salvar o layout. 
 A etiqueta é uma opção do layout do cupom e precisa ser ativada no painel antes da leitura pelo aplicativo.
 
 <Steps>
+  <Step title="Abra a configuração de impressão" title-type="p">
+    Abra **Configuração → Impressão** e permaneça na aba **Layout**.
+  </Step>
 
-<Step title="Abra a configuração de impressão">
+  <Step title="Edite o Cupom Pedido" title-type="p">
+    Selecione **Cupom Pedido** e clique no ícone de lápis para abrir o layout.
+  </Step>
 
-Abra **Configuração → Impressão** e permaneça na aba **Layout**.
+  <Step title="Abra Texto Padrão" title-type="p">
+    Dentro do layout, abra a aba **Texto Padrão**. Ela é a terceira aba do layout. A opção do código não fica na primeira aba.
 
-</Step>
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-codigo-barras/imagens-tratadas/02-cupom-texto-padrao.png" width="614" height="384" alt="Aba Texto Padrão do layout do cupom de pedido no painel" />
+  </Step>
 
-<Step title="Edite o Cupom Pedido">
+  <Step title="Ative o código de barras" title-type="p">
+    Marque a opção **Código de Barras App Entrega**.
 
-Selecione **Cupom Pedido** e clique no ícone de lápis para abrir o layout.
+    Não confunda essa opção com **QR Code Cardápio Digital**. O QR Code é usado pelo cliente para acessar o cardápio e não é lido pelo aplicativo do entregador.
+  </Step>
 
-</Step>
+  <Step title="Salve o layout" title-type="p">
+    Clique em **SALVAR E FECHAR**.
 
-<Step title="Abra Texto Padrão">
+    A partir do próximo cupom impresso, o BeeFood incluirá a etiqueta quando o pedido atender às condições de entrega.
 
-Dentro do layout, abra a aba **Texto Padrão**. Ela é a terceira aba do layout. A opção do código não fica na primeira aba.
-
-<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-codigo-barras/imagens-tratadas/02-cupom-texto-padrao.png" width="614" height="384" alt="Aba Texto Padrão do layout do cupom de pedido no painel" />
-
-</Step>
-
-<Step title="Ative o código de barras">
-
-Marque a opção **Código de Barras App Entrega**.
-
-Não confunda essa opção com **QR Code Cardápio Digital**. O QR Code é usado pelo cliente para acessar o cardápio e não é lido pelo aplicativo do entregador.
-
-</Step>
-
-<Step title="Salve o layout">
-
-Clique em **SALVAR E FECHAR**.
-
-A partir do próximo cupom impresso, o BeeFood incluirá a etiqueta quando o pedido atender às condições de entrega.
-
-<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-codigo-barras/imagens-tratadas/03-cupom-impresso.png" width="614" height="384" alt="Cupom de pedido impresso com a etiqueta de código de barras no pé" />
-
-</Step>
-
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-codigo-barras/imagens-tratadas/03-cupom-impresso.png" width="614" height="384" alt="Cupom de pedido impresso com a etiqueta de código de barras no pé" />
+  </Step>
 </Steps>
 
 <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-codigo-barras/imagens-tratadas/01-impressao-layout.png" width="614" height="384" alt="Configuração de impressão com a aba Layout aberta no painel BeeFood" />
@@ -111,54 +97,46 @@ O leitor trabalha diretamente pela etiqueta. Você não precisa localizar o pedi
 A leitura acontece automaticamente quando o código fica dentro da faixa da câmera.
 
 <Steps>
+  <Step title="Abra a aba Código barras" title-type="p">
+    No aplicativo do entregador, toque em **Código barras**.
 
-<Step title="Abra a aba Código barras">
+    A tela do leitor mostra o título **LEITURA DE CÓDIGO**, a faixa azul de status, a área da câmera e o botão **VOLTAR**.
 
-No aplicativo do entregador, toque em **Código barras**.
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-codigo-barras/imagens-tratadas/05-leitor-aberto.png" width="614" height="384" alt="Tela do leitor de código de barras aberta no app BeeFood Entregador" />
+  </Step>
 
-A tela do leitor mostra o título **LEITURA DE CÓDIGO**, a faixa azul de status, a área da câmera e o botão **VOLTAR**.
+  <Step title="Posicione o código na faixa" title-type="p">
+    Aproxime o celular da etiqueta até o código ficar entre as duas linhas vermelhas da faixa da câmera.
 
-<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-codigo-barras/imagens-tratadas/05-leitor-aberto.png" width="614" height="384" alt="Tela do leitor de código de barras aberta no app BeeFood Entregador" />
+    Mantenha o celular firme. Não é necessário tocar em nenhum botão para iniciar a leitura.
 
-</Step>
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-codigo-barras/imagens-tratadas/06-codigo-na-faixa.png" width="614" height="384" alt="Código de barras posicionado entre as linhas vermelhas da faixa da câmera" />
+  </Step>
 
-<Step title="Posicione o código na faixa">
-
-Aproxime o celular da etiqueta até o código ficar entre as duas linhas vermelhas da faixa da câmera.
-
-Mantenha o celular firme. Não é necessário tocar em nenhum botão para iniciar a leitura.
-
-<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/app-entregador-codigo-barras/imagens-tratadas/06-codigo-na-faixa.png" width="614" height="384" alt="Código de barras posicionado entre as linhas vermelhas da faixa da câmera" />
-
-</Step>
-
-<Step title="Confira o status da leitura">
-
-Acompanhe a mensagem exibida na faixa azul. Ela informa se o aplicativo está procurando o código, enviando a leitura ou tratando uma resposta do restaurante.
-
-</Step>
-
+  <Step title="Confira o status da leitura" title-type="p">
+    Acompanhe a mensagem exibida na faixa azul. Ela informa se o aplicativo está procurando o código, enviando a leitura ou tratando uma resposta do restaurante.
+  </Step>
 </Steps>
 
 ### Elementos da tela
 
-| Elemento | Função |
-|---|---|
-| **LEITURA DE CÓDIGO** | Confirma que você está na tela do leitor. |
-| **Faixa de status** | Mostra o andamento da leitura. A tela começa em **Aguardando Leitura**. |
-| **Faixa da câmera** | Área entre as duas linhas vermelhas. Somente essa área é analisada. |
-| **VOLTAR** | Fecha o leitor e retorna à aba de entregas. |
+| Elemento              | Função                                                                  |
+| --------------------- | ----------------------------------------------------------------------- |
+| **LEITURA DE CÓDIGO** | Confirma que você está na tela do leitor.                               |
+| **Faixa de status**   | Mostra o andamento da leitura. A tela começa em **Aguardando Leitura**. |
+| **Faixa da câmera**   | Área entre as duas linhas vermelhas. Somente essa área é analisada.     |
+| **VOLTAR**            | Fecha o leitor e retorna à aba de entregas.                             |
 
 ### Mensagens de status
 
-| Mensagem | O que significa |
-|---|---|
-| **Aguardando Leitura** | O leitor está pronto e procurando um código. |
-| **Lendo código…** | O aplicativo encontrou o código e está avisando o restaurante. |
-| **Pedido lido com sucesso!** | A leitura foi concluída e o pedido foi despachado. |
-| **Pedido já lido.** | A mesma etiqueta já foi lida. O pedido não é enviado novamente. |
-| **Erro na leitura, tente novamente** | A leitura não saiu do celular. Aproxime o código e tente outra vez. |
-| **`Erro: {mensagem}`** | O servidor recebeu a leitura, mas recusou o pedido. Repassar a mensagem ao restaurante é necessário. |
+| Mensagem                             | O que significa                                                                                      |
+| ------------------------------------ | ---------------------------------------------------------------------------------------------------- |
+| **Aguardando Leitura**               | O leitor está pronto e procurando um código.                                                         |
+| **Lendo código…**                    | O aplicativo encontrou o código e está avisando o restaurante.                                       |
+| **Pedido lido com sucesso!**         | A leitura foi concluída e o pedido foi despachado.                                                   |
+| **Pedido já lido.**                  | A mesma etiqueta já foi lida. O pedido não é enviado novamente.                                      |
+| **Erro na leitura, tente novamente** | A leitura não saiu do celular. Aproxime o código e tente outra vez.                                  |
+| **`Erro: {mensagem}`**               | O servidor recebeu a leitura, mas recusou o pedido. Repassar a mensagem ao restaurante é necessário. |
 
 As duas mensagens de erro indicam situações diferentes. Em **Erro na leitura, tente novamente**, uma nova leitura pode resolver. Em **Erro: mensagem**, o restaurante respondeu recusando o pedido, então repetir a leitura tende a produzir a mesma resposta.
 
@@ -174,12 +152,10 @@ A leitura tem o mesmo efeito do botão de despacho no painel, mas é iniciada pe
 - envia a mensagem de WhatsApp ao cliente, se os avisos estiverem ativados;
 - imprime o cupom conforme a configuração da impressora.
 
-<Callout kind="danger">
+<Callout kind="danger" collapsed="false">
+  Não use um pedido real para testar o leitor. A leitura dispara o despacho e pode avisar o cliente e o marketplace.
 
-Não use um pedido real para testar o leitor. A leitura dispara o despacho e pode avisar o cliente e o marketplace.
-
-Se você ler a etiqueta errada, avise o restaurante imediatamente. A correção precisa ser feita no painel, porque o aplicativo não oferece uma opção para desfazer o despacho.
-
+  Se você ler a etiqueta errada, avise o restaurante imediatamente. A correção precisa ser feita no painel, porque o aplicativo não oferece uma opção para desfazer o despacho.
 </Callout>
 
 No histórico do pedido, o despacho fica registrado como **App Entregador**. Esse registro identifica que a saída foi feita pelo aplicativo, e não pelo computador.
@@ -200,93 +176,65 @@ Se a etiqueta não for EAN-13, o aplicativo não reage. Use a etiqueta gerada pe
 ## Perguntas frequentes
 
 <ExpandableGroup>
+  <Expandable title="A câmera abre e nada acontece" default-open="false">
+    Aguarde alguns segundos para a câmera terminar de iniciar. Depois, aproxime o celular e mantenha o código dentro da faixa entre as duas linhas vermelhas.
+  </Expandable>
 
-<Expandable title="A câmera abre e nada acontece">
+  <Expandable title="Aparece Permissão de câmera necessária" default-open="false">
+    A tela oferece as opções **Solicitar Permissão** e **Abrir Configurações**. Conceda o acesso à câmera nas permissões do celular. Sem câmera autorizada, o aplicativo não consegue fazer a leitura.
+  </Expandable>
 
-Aguarde alguns segundos para a câmera terminar de iniciar. Depois, aproxime o celular e mantenha o código dentro da faixa entre as duas linhas vermelhas.
+  <Expandable title="Bipo e a faixa fica vermelha" default-open="false">
+    Confira a mensagem exibida:
 
-</Expandable>
+    - **Erro na leitura, tente novamente:** a leitura não saiu do celular. Aproxime o código e tente novamente.
+    - **Erro:** seguido de uma mensagem: o servidor recebeu a leitura, mas recusou o pedido. Repassar a mensagem ao restaurante é necessário.
 
-<Expandable title="Aparece Permissão de câmera necessária">
+    Nos dois casos, o pedido não foi despachado pelo aplicativo.
+  </Expandable>
 
-A tela oferece as opções **Solicitar Permissão** e **Abrir Configurações**. Conceda o acesso à câmera nas permissões do celular. Sem câmera autorizada, o aplicativo não consegue fazer a leitura.
+  <Expandable title="Bipo, diz sucesso, mas o pedido não mudou no painel" default-open="false">
+    O leitor do aplicativo é um recurso contratado. Se o recurso não estiver incluído no plano do restaurante, a leitura pode mostrar sucesso sem alterar o pedido no painel. Entre em contato com o suporte.
+  </Expandable>
 
-</Expandable>
+  <Expandable title="O cupom sai sem a etiqueta" default-open="false">
+    Confira estes pontos:
 
-<Expandable title="Bipo e a faixa fica vermelha">
+    - **Código de Barras App Entrega** está marcado no layout do **Cupom Pedido**.
+    - A opção está na aba **Texto Padrão**.
+    - O pedido é de delivery **com entrega**.
+    - O cupom foi impresso depois de salvar o layout com **SALVAR E FECHAR**.
+  </Expandable>
 
-Confira a mensagem exibida:
+  <Expandable title="Preciso ler a etiqueta se o restaurante monta rota?" default-open="false">
+    Não. Quando o restaurante monta uma rota, o despacho é feito pelo painel ou pelo botão **INICIAR ROTA** no aplicativo. O leitor é indicado para restaurantes que enviam um pedido por vez, sem agrupamento em rota.
+  </Expandable>
 
-- **Erro na leitura, tente novamente:** a leitura não saiu do celular. Aproxime o código e tente novamente.
-- **Erro:** seguido de uma mensagem: o servidor recebeu a leitura, mas recusou o pedido. Repassar a mensagem ao restaurante é necessário.
-
-Nos dois casos, o pedido não foi despachado pelo aplicativo.
-
-</Expandable>
-
-<Expandable title="Bipo, diz sucesso, mas o pedido não mudou no painel">
-
-O leitor do aplicativo é um recurso contratado. Se o recurso não estiver incluído no plano do restaurante, a leitura pode mostrar sucesso sem alterar o pedido no painel. Entre em contato com o suporte.
-
-</Expandable>
-
-<Expandable title="O cupom sai sem a etiqueta">
-
-Confira estes pontos:
-
-- **Código de Barras App Entrega** está marcado no layout do **Cupom Pedido**.
-- A opção está na aba **Texto Padrão**.
-- O pedido é de delivery **com entrega**.
-- O cupom foi impresso depois de salvar o layout com **SALVAR E FECHAR**.
-
-</Expandable>
-
-<Expandable title="Preciso ler a etiqueta se o restaurante monta rota?">
-
-Não. Quando o restaurante monta uma rota, o despacho é feito pelo painel ou pelo botão **INICIAR ROTA** no aplicativo. O leitor é indicado para restaurantes que enviam um pedido por vez, sem agrupamento em rota.
-
-</Expandable>
-
-<Expandable title="Dá para ler a etiqueta de um pedido que não é meu?">
-
-O leitor pode aceitar a etiqueta, mas o pedido passa a ser vinculado ao entregador que fez a leitura. Leia somente a etiqueta do pedido que você vai levar.
-
-</Expandable>
-
+  <Expandable title="Dá para ler a etiqueta de um pedido que não é meu?" default-open="false">
+    O leitor pode aceitar a etiqueta, mas o pedido passa a ser vinculado ao entregador que fez a leitura. Leia somente a etiqueta do pedido que você vai levar.
+  </Expandable>
 </ExpandableGroup>
 
 ## Onde continuar
 
-<Columns cols={3}>
+<Columns cols="3">
+  <Card title="Liberar o entregador" href="/painel-de-entregas/gestao-entregas-liberar-entregador" icon="users" horizontal="false">
+    Configure o funcionário e o acesso ao aplicativo.
+  </Card>
 
-<Card title="Liberar o entregador" href="/gestao-entregas-liberar-entregador" icon="users">
+  <Card title="Entrar e ficar disponível" href="/app-entregador-entrar" icon="smartphone" horizontal="false">
+    Veja o primeiro acesso, as permissões e o status online.
+  </Card>
 
-Configure o funcionário e o acesso ao aplicativo.
+  <Card title="Entregas do dia" href="/app-entregador-entregas-do-dia" icon="list" horizontal="false">
+    Consulte a lista, o cartão do pedido e os detalhes da entrega.
+  </Card>
 
-</Card>
+  <Card title="Despachar a rota" href="/painel-de-entregas/gestao-entregas-despachar" icon="rocket" horizontal="false">
+    Entenda o despacho feito pelo painel e o acompanhamento da rota.
+  </Card>
 
-<Card title="Entrar e ficar disponível" href="/app-entregador-entrar" icon="smartphone">
-
-Veja o primeiro acesso, as permissões e o status online.
-
-</Card>
-
-<Card title="Entregas do dia" href="/app-entregador-entregas-do-dia" icon="list">
-
-Consulte a lista, o cartão do pedido e os detalhes da entrega.
-
-</Card>
-
-<Card title="Despachar a rota" href="/gestao-entregas-despachar" icon="rocket">
-
-Entenda o despacho feito pelo painel e o acompanhamento da rota.
-
-</Card>
-
-<Card title="Avisos de WhatsApp" href="/gestao-entregas-avisos-whatsapp" icon="message-circle">
-
-Confira as mensagens enviadas ao cliente durante a entrega.
-
-</Card>
-
+  <Card title="Avisos de WhatsApp" href="/painel-de-entregas/gestao-entregas-avisos-whatsapp" icon="message-circle" horizontal="false">
+    Confira as mensagens enviadas ao cliente durante a entrega.
+  </Card>
 </Columns>
