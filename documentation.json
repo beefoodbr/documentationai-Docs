@@ -818,11 +818,11 @@
                   },
                   {
                     "title": "🟢 Venda Sugestiva (UpSell)",
-                    "path": "modulos-adicionais/totem-autoatendimento-venda-sugestiva-upsell"
+                    "path": "venda-sugestiva-upsell"
                   },
                   {
                     "title": "🌐 Tradução do Cardápio",
-                    "path": "modulos-adicionais/totem-autoatendimento-traducao-presencial"
+                    "path": "cardapio-presencial-ingles-espanhol"
                   }
                 ]
               },
@@ -836,11 +836,11 @@
                   },
                   {
                     "title": "🟢 Venda Sugestiva (UpSell)",
-                    "path": "modulos-adicionais/cardapio-digital-tablet-venda-sugestiva-upsell"
+                    "path": "venda-sugestiva-upsell"
                   },
                   {
                     "title": "🌐 Tradução do Cardápio",
-                    "path": "modulos-adicionais/cardapio-digital-tablet-traducao-presencial"
+                    "path": "cardapio-presencial-ingles-espanhol"
                   }
                 ]
               },
