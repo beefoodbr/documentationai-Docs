@@ -1,0 +1,239 @@
+---
+title: O pedido do totem no painel
+description: >-
+  Acompanhe a venda do totem no Delivery, no Histórico de Vendas e no
+  Desempenho, incluindo pedidos pagos em dinheiro e origem AutoAtendimento.
+---
+## Antes de começar
+
+Depois que o cliente conclui o pedido no totem, a venda aparece no painel com a origem **AutoAtendimento**. Se o cliente escolher **Dinheiro**, a venda nasce sem pagamento registrado e só fica quitada depois que alguém registra o recebimento no caixa.
+
+Este manual acompanha o pedido do totem no **Delivery**, no card da venda, no **Histórico de Vendas** e no **Desempenho**. Ele mostra o que acontece no painel depois da configuração do totem.
+
+<Callout kind="info" collapsed="false">
+  Antes de acompanhar uma venda do totem:
+
+  - Configure o totem com pelo menos um meio de pagamento.
+  - Garanta que o operador tenha acesso ao **Delivery** e ao **Caixa**.
+  - Registre no caixa o recebimento dos pedidos pagos em dinheiro.
+
+  Exemplo: um pedido de **R$ 28,00**, pago em **Dinheiro**, para a **mesa 12**, aparece no painel sem pagamento até o recebimento ser registrado.
+</Callout>
+
+<Callout kind="info" collapsed="false">
+  As imagens deste manual usam setas numeradas. Cada número corresponde ao campo ou botão mostrado na tela.
+</Callout>
+
+## 1. O que acontece quando o cliente confirma o totem pago em dinheiro
+
+Quando o cliente escolhe **Dinheiro**, o totem exibe um aviso antes de concluir o pedido. O cliente precisa confirmar que fará o pagamento no caixa.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/totem-venda-no-painel/imagens-tratadas/02-totem-dinheiro.png" width="1080" height="1212" alt="Confirmação de pagamento em dinheiro no totem" />
+
+| Nº    | Item                           | O que fazer                                                                         |
+| ----- | ------------------------------ | ----------------------------------------------------------------------------------- |
+| **1** | **Aviso**                      | Informa que o pedido será enviado para a produção antes do recebimento do dinheiro. |
+| **2** | **Sim, vou pagar em Dinheiro** | Confirma o pedido, envia-o para a cozinha e deixa o pagamento pendente no painel.   |
+| **3** | **Voltar**                     | Retorna à seleção de formas de pagamento sem concluir o pedido.                     |
+
+O aviso exibido no aparelho informa: **“O pedido será enviado para a cozinha e deverá ser feito pagamento no caixa.”**
+
+<Callout kind="info" collapsed="false">
+  Em **Pix**, **Crédito**, **Débito** e **Vale**, o pagamento acontece no pinpad antes do envio do pedido. Por isso, a venda chega ao painel já paga.
+</Callout>
+
+## 2. No Delivery: o pedido do totem no quadro
+
+O pedido entra no quadro do **Delivery** junto com os demais pedidos e aparece na coluna **AGUARDANDO**. Use o chip **Totem** para mostrar somente os pedidos feitos no autoatendimento e consultar a quantidade registrada no dia.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/totem-venda-no-painel/imagens-tratadas/04-painel-delivery-pedido-totem.png" width="1532" height="856" alt="Quadro do Delivery filtrado pelos pedidos do totem" />
+
+| Nº    | Item                 | O que fazer                                                                                                                                                     |
+| ----- | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **1** | **Chip Totem**       | Filtra o quadro e mostra somente os pedidos do autoatendimento.                                                                                                 |
+| **2** | **Cartão do pedido** | Mostra a mesa ou o pager, o nome do cliente, o telefone e o tempo desde a entrada do pedido.                                                                    |
+| **3** | **Valor**            | Exibe o valor final do pedido, já considerando o desconto da forma de pagamento. Neste exemplo, R$ 27,72 corresponde a R$ 28,00 com 1% de desconto no dinheiro. |
+
+Use o chip **Sem pagamento** para localizar pedidos ainda não quitados. Esse grupo inclui os pedidos do totem pagos em dinheiro que aguardam o registro no caixa.
+
+## 3. O card do pedido: origem AutoAtendimento, itens e pagamento
+
+Abra o cartão do pedido para consultar os detalhes da venda. O card reúne a origem, os itens, a forma de pagamento, o valor final e as ações disponíveis para o operador.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/totem-venda-no-painel/imagens-tratadas/05-painel-pedido-detalhe.png" width="1532" height="856" alt="Card da venda do totem, com origem AutoAtendimento" />
+
+| Nº    | Item                    | O que fazer                                                                                                                    |
+| ----- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| **1** | **Origem**              | Identifica a venda como **AutoAtendimento**.                                                                                   |
+| **2** | **Formas de Pagamento** | Mostra **Dinheiro** e a etiqueta **Não pago**. Use **PAGAMENTO** para registrar o recebimento quando o cliente pagar no caixa. |
+| **3** | **Valor Total**         | Exibe o valor final, já com o desconto aplicado. Neste exemplo, o total é R$ 27,72.                                            |
+| **4** | **ACEITAR PEDIDO**      | Aceita o pedido, envia-o para produção e imprime o cupom quando **Imprimir Cupom ao aceitar** estiver ativo.                   |
+
+Depois de abrir o card, o operador também pode editar o tipo do pedido, trocar itens, agendar a entrega, aplicar cupom e emitir nota. Após o aceite, o pedido segue para o KDS ou para a impressora de produção configurada.
+
+<Callout kind="info" collapsed="false">
+  A mesma venda usa nomes diferentes conforme a tela:
+
+  - **AutoAtendimento** aparece no card da venda.
+  - **Totem** aparece nos filtros do Delivery e do Histórico de Vendas.
+  - **Autoatendimento** aparece no Desempenho.
+
+  Os três rótulos representam os mesmos pedidos feitos no totem.
+</Callout>
+
+## 4. Histórico de Vendas: filtrar vendas por origem Totem
+
+Use o **Histórico de Vendas** para consultar vendas do totem por período, situação, desconto e origem.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/totem-venda-no-painel/imagens-tratadas/06-painel-historico-filtro-origem.png" width="1532" height="856" alt="Filtro de origem do Histórico de Vendas" />
+
+### Filtre a venda do totem
+
+<Steps>
+  <Step title="Escolha o período" title-type="p">
+    O Histórico de Vendas usa os últimos **15 dias** como período padrão. Altere o período se a venda procurada for mais antiga.
+  </Step>
+
+  <Step title="Selecione a origem Totem" title-type="p">
+    Na seção **Origem**, selecione o chip **Totem**. O filtro restringe a lista às vendas do autoatendimento.
+  </Step>
+
+  <Step title="Aplique o filtro" title-type="p">
+    Clique em **APLICAR FILTROS (F2)**. Para voltar à configuração padrão, clique em **LIMPAR**.
+  </Step>
+</Steps>
+
+| Nº    | Item                     | O que fazer                                               |
+| ----- | ------------------------ | --------------------------------------------------------- |
+| **1** | **Período**              | Define o intervalo usado na busca. O padrão é de 15 dias. |
+| **2** | **Origem → Totem**       | Mostra somente as vendas feitas no totem.                 |
+| **3** | **APLICAR FILTROS (F2)** | Executa a busca com os filtros selecionados.              |
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/totem-venda-no-painel/imagens-tratadas/07-painel-historico-lista-totem.png" width="1532" height="856" alt="Lista do Histórico de Vendas filtrada pela origem Totem" />
+
+Depois de aplicar o filtro, a lista mostra apenas as vendas do totem. O Histórico exibe o funil com o contador de filtros ativos, a coluna **Origem** com o ícone do autoatendimento e a contagem de resultados, como **Mostrando 1-2 de 2**.
+
+As faixas de situação identificam vendas **Canceladas**, **Abertas**, **Fechadas** e **Recebidas**. A coluna **Descontos** mostra o abatimento da forma de pagamento, como R$ 0,28 por venda. Use o botão **Excel** para exportar a lista filtrada.
+
+| Nº    | Item                   | O que fazer                                                                     |
+| ----- | ---------------------- | ------------------------------------------------------------------------------- |
+| **1** | **Funil com contador** | Confirma que existe um filtro ativo e mostra a quantidade de filtros aplicados. |
+| **2** | **Coluna Origem**      | Identifica as vendas com o ícone de autoatendimento.                            |
+| **3** | **Contagem**           | Informa quantas vendas atendem aos filtros selecionados.                        |
+
+## 5. Desempenho: veja o ticket médio do totem
+
+O **Desempenho** mostra quanto o totem vendeu no período selecionado. Para consultar esses dados, acesse **Desempenho → Vendas → Origem**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/totem-venda-no-painel/imagens-tratadas/08-painel-desempenho-origem.png" width="1532" height="856" alt="Desempenho por origem, com o chip Autoatendimento" />
+
+Use o controle **Filtrar por Origem** e selecione o chip **Autoatendimento**. O seletor de período fica no alto da tela e pode estar diferente do período usado no Histórico de Vendas.
+
+| Nº    | Item                | O que fazer                                         |
+| ----- | ------------------- | --------------------------------------------------- |
+| **1** | **Vendas → Origem** | Separa os resultados de vendas por canal de origem. |
+| **2** | **Autoatendimento** | Filtra o relatório para mostrar as vendas do totem. |
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/totem-venda-no-painel/imagens-tratadas/09-painel-desempenho-autoatendimento.png" width="1532" height="856" alt="Desempenho filtrado pelo Autoatendimento" />
+
+Com **Autoatendimento** selecionado, o relatório mostra o faturamento do período, a quantidade de vendas, o ticket médio e o gráfico **Vendas por Período — Autoatendimento**.
+
+No exemplo, o relatório apresenta **R$ 97,74** de faturamento, **3 vendas** e ticket médio de **R$ 32,58**. Use esses dados para acompanhar a venda do totem e comparar o ticket médio do totem com o das vendas feitas no balcão.
+
+| Nº    | Item                      | O que fazer                                                                                                        |
+| ----- | ------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| **1** | **Chip marcado**          | Indica que o filtro Autoatendimento está ativo. O botão **Limpar (1)** aparece enquanto o filtro estiver aplicado. |
+| **2** | **Faturamento**           | Mostra o total vendido pelo autoatendimento no período.                                                            |
+| **3** | **Vendas e ticket médio** | Exibe a quantidade de vendas e o valor médio por venda.                                                            |
+| **4** | **Vendas por Período**    | Apresenta a evolução das vendas do autoatendimento no período selecionado.                                         |
+
+<Callout kind="info" collapsed="false">
+  O desconto da forma de pagamento entra como desconto da venda nos relatórios. Ele não altera o preço individual dos produtos.
+</Callout>
+
+## 6. O que não se pode esquecer no fim do dia
+
+Confira estes pontos antes de encerrar a operação:
+
+- **Pedido em dinheiro não está pago:** ele permanece em **Sem pagamento** até o recebimento ser registrado. Consulte esse chip antes de fechar o caixa.
+- **Emissão fiscal:** se a NFC-e estiver desligada no totem, a venda sai sem nota. Emita a nota pelo painel, no card da venda ou em lote.
+- **Senha e número do pedido são diferentes:** a senha pertence ao cliente e aparece na tela e no papel. O número do pedido pertence à operação e aparece no card da venda.
+- **Desconto da forma de pagamento:** o desconto aparece como desconto da venda nos relatórios. Ele não representa alteração no preço individual do produto.
+
+## Problemas comuns na venda do totem
+
+| Sintoma                                                           | O que verificar                                                                                             |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| O pedido do totem não apareceu no Delivery.                       | Verifique os filtros ativos nos chips e atualize a tela.                                                    |
+| A venda está como **Aberto** há horas.                            | O pedido pode estar aguardando pagamento no caixa. Registre o recebimento pelo botão **PAGAMENTO** no card. |
+| A venda não aparece no Histórico.                                 | Confira o funil, o contador de filtros e o período selecionado.                                             |
+| O card mostra **AutoAtendimento**, mas o filtro mostra **Totem**. | São os mesmos pedidos. O card usa o nome da origem da venda, enquanto os filtros usam o rótulo Totem.       |
+| O valor é menor que a soma dos produtos.                          | Verifique o desconto da forma de pagamento na coluna **Descontos**.                                         |
+| A venda não saiu na nota.                                         | Confira se a emissão fiscal está desligada na configuração do totem e emita a nota pelo painel.             |
+| O Desempenho não mostra **Totem**.                                | No Desempenho, o nome usado para o totem é **Autoatendimento**.                                             |
+| O Desempenho mostra mais vendas que o Histórico.                  | Compare os períodos. O Histórico usa 15 dias por padrão, enquanto o Desempenho abre com 30 dias.            |
+| O pedido não apareceu na cozinha.                                 | Confirme que o pedido foi aceito e verifique a impressora de produção ou o KDS.                             |
+
+## Perguntas frequentes sobre o pedido do totem no painel
+
+<ExpandableGroup>
+  <Expandable title="Como eu sei que uma venda veio do totem?" default-open="false">
+    Confira a origem em cada tela:
+
+    - **AutoAtendimento** no card da venda.
+    - Chip ou filtro **Totem** no Delivery e no Histórico de Vendas.
+    - **Autoatendimento** no Desempenho.
+  </Expandable>
+
+  <Expandable title="O pedido do totem chega pago?" default-open="false">
+    Em formas de pagamento processadas na maquininha, sim. Em **Dinheiro**, não. O cliente paga no caixa e o operador precisa registrar o recebimento no painel.
+  </Expandable>
+
+  <Expandable title="Preciso aceitar o pedido do totem?" default-open="false">
+    Sim. O pedido segue o mesmo fluxo dos demais pedidos e precisa ser aceito, exceto quando a loja utiliza aceite automático.
+  </Expandable>
+
+  <Expandable title="Dá para editar um pedido feito no totem?" default-open="false">
+    Sim. O card tem o mesmo comportamento dos demais pedidos e permite alterar itens, tipo, cupom, pagamento e nota.
+  </Expandable>
+
+  <Expandable title="O número da mesa que o cliente digitou aparece?" default-open="false">
+    Sim. O número aparece no cartão do Delivery e no card da venda quando a identificação de entrega está configurada como mesa ou pager.
+  </Expandable>
+
+  <Expandable title="Como exporto as vendas do totem?" default-open="false">
+    No **Histórico de Vendas**, filtre a origem por **Totem** e clique no botão **Excel**.
+  </Expandable>
+
+  <Expandable title="Onde vejo o ticket médio do totem?" default-open="false">
+    Acesse **Desempenho → Vendas → Origem** e selecione o chip **Autoatendimento**.
+  </Expandable>
+
+  <Expandable title="O desconto que aparece na venda é do cupom?" default-open="false">
+    Pode ser um desconto da forma de pagamento, como 1% no dinheiro, ou um desconto de cupom. A coluna **Descontos** soma os dois tipos, enquanto o card apresenta a origem de cada desconto.
+  </Expandable>
+
+  <Expandable title="A venda do totem entra no fechamento do caixa?" default-open="false">
+    Sim, desde que o pagamento seja registrado. No caso de **Dinheiro**, a venda só entra depois que o operador lança o recebimento.
+  </Expandable>
+</ExpandableGroup>
+
+## Manuais relacionados
+
+<Columns cols="2">
+  <Card title="⚙️ Configuração" href="/manuais/totem-configurar" icon="settings" horizontal="false">
+    Configure o aparelho, os meios de pagamento e as opções do totem.
+  </Card>
+
+  <Card title="🏷️ Cupom e cashback no totem" href="/manuais/totem-cupom-cashback" icon="ticket" horizontal="false">
+    Configure descontos, cupons e cashback para pedidos do autoatendimento.
+  </Card>
+
+  <Card title="🔓 Abrir Caixa" href="/caixa-abrir" icon="unlock" horizontal="false">
+    Abra o caixa para registrar os recebimentos da operação.
+  </Card>
+
+  <Card title="🔒 Fechar Caixa" href="/caixa-fechar" icon="lock" horizontal="false">
+    Confira os recebimentos e finalize o caixa no fim do dia.
+  </Card>
+</Columns>

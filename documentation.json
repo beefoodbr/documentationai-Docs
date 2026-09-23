@@ -757,7 +757,7 @@
                     ]
                   },
                   {
-                    "title": "�� Rastreio pelo cliente",
+                    "title": "📍 Rastreio pelo cliente",
                     "path": "manuais/gestao-entregas-rastreio-cliente"
                   },
                   {
@@ -800,6 +800,22 @@
                 "group": "🖥️ Totem de Autoatendimento",
                 "path": "modulos-adicionais/totem-autoatendimento",
                 "pages": [
+                  {
+                    "title": "⚙️ Configuração",
+                    "path": "manuais/totem-configurar"
+                  },
+                  {
+                    "title": "📋 Multicardápio",
+                    "path": "manuais/totem-multicardapio"
+                  },
+                  {
+                    "title": "🏷️ Cupom e cashback no totem",
+                    "path": "manuais/totem-cupom-cashback"
+                  },
+                  {
+                    "title": "📊 O pedido do totem no painel",
+                    "path": "manuais/totem-venda-no-painel"
+                  },
                   {
                     "title": "🟢 Venda Sugestiva (UpSell)",
                     "path": "modulos-adicionais/totem-autoatendimento-venda-sugestiva-upsell"

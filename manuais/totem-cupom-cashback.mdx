@@ -1,0 +1,291 @@
+---
+title: Cupom e cashback no totem
+description: >-
+  Configure cupom no totem e cashback no totem pelo CRM, entenda as telas do
+  autoatendimento e resolva quando o cupom não aparece.
+---
+## Antes de começar
+
+O totem **não configura cupom nem cashback**. Ele lê as configurações existentes no CRM e aplica as regras ao pedido do cliente.
+
+Para exibir cupons e oferecer cashback no autoatendimento, habilite estas duas chaves:
+
+| Onde                    | Chave                            |
+| ----------------------- | -------------------------------- |
+| Cupom de Desconto (CRM) | Canal **Totem**                  |
+| Cashback (CRM)          | Modalidade **Pedidos via Totem** |
+
+<Callout kind="info" collapsed="false">
+  Antes de configurar, confirme os seguintes requisitos:
+
+  - O totem está contratado, no ar e configurado. Consulte [Configuração](/manuais/totem-configurar).
+  - A identificação do cliente está ativa em **Aplicativos → Totem → Configuração → Identificação do Cliente**, com uma opção que inclua **Nome e Telefone**.
+  - O cliente informa o telefone para receber cashback e usar cupons que exigem login.
+  - Cupons de **Frete Grátis** não funcionam no totem, no PDV ou em Mesas, porque esses canais não trabalham com frete.
+</Callout>
+
+## 1. O cupom só aparece no totem com o canal Totem ligado
+
+No CRM, abra **Fidelidade → Cupom de Desconto** e filtre a lista pelo canal **Totem**. O totem exibe somente cupons ativos que tenham essa etiqueta de canal.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/totem-cupom-cashback/imagens-tratadas/01-crm-cupons-canal-totem.png" width="1532" height="856" alt="Lista de cupons filtrada pelo canal Totem" />
+
+| Nº    | Item                    | O que fazer                                                                     |
+| ----- | ----------------------- | ------------------------------------------------------------------------------- |
+| **1** | **Cupom de Desconto**   | Abra este item em **Fidelidade** para consultar e configurar os cupons.         |
+| **2** | **Filtro de canal**     | Selecione **Totem** para localizar os cupons compatíveis com o autoatendimento. |
+| **3** | **Etiquetas de canais** | Confira se o cartão do cupom tem a etiqueta **Totem**.                          |
+
+Cada cartão pode mostrar as etiquetas **Delivery**, **PDV**, **Mesas** e **Totem**. Os canais funcionam de forma independente. Um cupom sem a etiqueta **Totem** não aparece no aparelho, mesmo que esteja ativo para outros canais.
+
+O número de cupons compatíveis aparece no selo de cupons do cliente. Por exemplo, sete cupons ativos com canal **Totem** podem aparecer como sete opções no totem. A chave **Ativo** continua sendo geral: se você desligá-la, o cupom deixa de aparecer em todos os canais.
+
+## 2. Dentro do cupom: o canal à esquerda, as regras à direita
+
+Clique no código do cupom para abrir a configuração. A área **Canais de Visibilidade** fica à esquerda e reúne as quatro chaves independentes. A área **Regras** fica à direita e define as condições que o cliente verá no totem.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/totem-cupom-cashback/imagens-tratadas/02-crm-cupom-canais-regras.png" width="1532" height="856" alt="Modal do cupom: canais de visibilidade e regras" />
+
+| Nº    | Item                                   | O que fazer                                                                                                        |
+| ----- | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| **1** | **Canal Totem**                        | Ligue esta chave para permitir o uso do cupom no autoatendimento.                                                  |
+| **2** | **Apenas retirada e consumo no local** | Restrinja o cupom a pedidos para retirada ou consumo no local. O totem escreverá essa condição na lista de regras. |
+| **3** | **Confirmar telefone por SMS**         | Exija um código enviado por SMS antes de o cliente usar o cupom.                                                   |
+
+A regra **Apenas retirada e consumo no local** aparece no totem como: “Válido apenas para retirada ou consumo no local.”
+
+Quando você ativa **Confirmar telefone por SMS**, o cliente recebe um código, digita o código no totem e consome créditos de SMS. Essa validação funciona no Cardápio Digital e no totem. Se a conta estiver sem saldo de SMS, o cupom é liberado sem validação.
+
+<Callout kind="tip" collapsed="false">
+  A confirmação por SMS só se aplica quando o cupom está habilitado para **Totem** ou **Delivery**. Sem um desses canais, a regra de SMS não é aplicada.
+</Callout>
+
+## 3. Configurações avançadas: pagamento e itens que liberam o cupom
+
+Use **Configurações avançadas** para limitar o pagamento, definir como o desconto será aplicado e determinar quais itens permitem o uso do cupom.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/totem-cupom-cashback/imagens-tratadas/03-crm-cupom-avancadas.png" width="1532" height="856" alt="Configurações avançadas do cupom" />
+
+| Nº    | Item                       | O que fazer                                                                                                                      |
+| ----- | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| **1** | **Formas de pagamento**    | Selecione as formas aceitas pelo cupom. Se deixar vazio, qualquer forma de pagamento será aceita.                                |
+| **2** | **Como o cupom se aplica** | Escolha entre aplicar ao pedido inteiro, exigir determinados itens no carrinho ou aplicar o desconto somente sobre certos itens. |
+| **3** | **Setores que liberam**    | Selecione os setores que precisam ter pelo menos um item no carrinho para liberar o cupom.                                       |
+| **4** | **Produtos que liberam**   | Selecione produtos específicos que liberam o cupom quando estiverem no pedido.                                                   |
+
+Quando você restringe as formas de pagamento, o totem mostra uma frase como: “Válido apenas para pagamento em: PIX Bee, PIX Online, Dinheiro.”
+
+As opções de aplicação do cupom têm efeitos diferentes:
+
+- **Ao pedido inteiro**: aplica o desconto ao total elegível do pedido.
+- **Só quando o carrinho tiver certos itens**: exige a presença dos setores ou produtos selecionados.
+- **Só sobre certos itens do pedido**: limita o desconto aos itens definidos na configuração.
+
+## 4. Cashback: ligar a modalidade Pedidos via Totem
+
+No CRM, abra **Fidelidade → Cashback → Configuração**. Ative o programa geral, defina a validade do saldo e habilite a modalidade específica do totem.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/totem-cupom-cashback/imagens-tratadas/04-crm-cashback-modalidades.png" width="1532" height="856" alt="Programa de cashback e a modalidade Pedidos via Totem" />
+
+| Nº    | Item                  | O que fazer                                                                                      |
+| ----- | --------------------- | ------------------------------------------------------------------------------------------------ |
+| **1** | **Ativar programa**   | Ligue o programa geral de cashback.                                                              |
+| **2** | **Validade do saldo** | Informe por quantos dias o saldo permanece válido desde o último pedido. Por exemplo, `35` dias. |
+| **3** | **Pedidos via Totem** | Em **Permitir ganho de cashback nas modalidades**, ative esta modalidade.                        |
+
+<Steps>
+  <Step title="Ative o programa de cashback" title-type="p">
+    Em **Fidelidade → Cashback → Configuração**, ligue o programa geral. Sem essa chave, nenhuma modalidade oferece cashback.
+  </Step>
+
+  <Step title="Defina a validade do saldo" title-type="p">
+    Informe a quantidade de dias em **Validade do saldo**. O prazo é contado a partir do último pedido do cliente.
+  </Step>
+
+  <Step title="Habilite Pedidos via Totem" title-type="p">
+    Ative **Pedidos via Totem** na lista de modalidades permitidas. A alteração fica disponível para os próximos pedidos iniciados no aparelho.
+  </Step>
+</Steps>
+
+<Callout kind="alert" collapsed="false">
+  **Pedidos via Totem** é a chave principal do cashback no aparelho. Quando a modalidade está desligada, o totem não oferece cashback e também não permite usar o saldo existente.
+
+  O saldo é processado durante a madrugada. O pedido precisa estar pago e finalizado para o crédito entrar no saldo do cliente. O cliente não recebe o valor imediatamente após concluir a compra.
+</Callout>
+
+## 5. O percentual que o totem anuncia
+
+O percentual mostrado ao cliente é definido por dia da semana. Por exemplo, com o percentual de 3% ativo para hoje, o totem pode exibir: “Insira seu telefone e ganhe 3% de cashback”.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/totem-cupom-cashback/imagens-tratadas/05-crm-cashback-percentual.png" width="1532" height="856" alt="Percentual de cashback por dia da semana" />
+
+| Nº    | Item                           | O que fazer                                                                                                             |
+| ----- | ------------------------------ | ----------------------------------------------------------------------------------------------------------------------- |
+| **1** | **Definir percentual por dia** | Ligue esta opção para configurar um percentual diferente em cada dia da semana. Desligada, ela usa um único percentual. |
+| **2** | **Campo de percentual**        | Informe o percentual correspondente a cada dia habilitado.                                                              |
+| **3** | **APLICAR**                    | Preencha todos os dias com o valor escolhido. Revise os dias antes de salvar a configuração.                            |
+
+O percentual do dia atual é o valor anunciado no totem. Se você usar **APLICAR**, revise os campos para evitar substituir percentuais que deveriam ser diferentes.
+
+<Callout kind="alert" collapsed="false">
+  Um dia da semana desmarcado desliga completamente o cashback naquele dia. O cliente não acumula cashback e não pode usar saldo no totem. A tela não mostra a oferta nem o saldo disponível.
+</Callout>
+
+## 6. Como o cliente vê: a oferta antes do telefone
+
+A primeira tela de identificação mostra a oferta de cashback do dia antes de o cliente informar o telefone.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/totem-cupom-cashback/imagens-tratadas/06-totem-identificacao-cashback.png" width="1080" height="1832" alt="Tela de identificação do totem, com a oferta de cashback" />
+
+A faixa amarela informa o percentual, por exemplo: “Insira seu telefone e ganhe 3% de cashback”.
+
+| Nº    | Item                    | O que fazer                                                                                             |
+| ----- | ----------------------- | ------------------------------------------------------------------------------------------------------- |
+| **1** | **Faixa de cashback**   | Exibe o percentual que o cliente pode ganhar no dia.                                                    |
+| **2** | **Confirmar**           | Consulta o telefone no cadastro. Quando encontra o cliente, o totem mostra o nome e o saldo disponível. |
+| **3** | **Pular identificação** | Continua o pedido de forma anônima. O cliente não ganha cashback e não usa cupons que exigem login.     |
+
+O cliente precisa informar o telefone para que o totem associe o pedido ao cadastro. Pular a identificação impede o uso de cashback e de cupons com regras de login.
+
+## 7. Como o cliente vê: o selo de cupons e o saldo na confirmação
+
+Depois que o telefone é reconhecido, o totem mostra o nome do cliente, o telefone e o botão **Sair**. A mesma tela reúne os cupons disponíveis, o saldo acumulado e o valor de cashback que será gerado pelo pedido atual.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/totem-cupom-cashback/imagens-tratadas/07-totem-confirmacao-cupom-cashback.png" width="1080" height="1832" alt="Confirmação do pedido no totem, com cupom e cashback" />
+
+| Nº    | Item                        | O que fazer                                                                                                                  |
+| ----- | --------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| **1** | **Selo de cupons**          | Mostra a quantidade de cupons disponíveis. Toque no selo para abrir a lista.                                                 |
+| **2** | **Saldo disponível / USAR** | Exibe o saldo acumulado em compras anteriores. Toque em **USAR** para aplicar o saldo, se o dia e o valor mínimo permitirem. |
+| **3** | **Você ganhará**            | Mostra o crédito gerado pela compra atual. Por exemplo, R$ 0,84 correspondem a 3% de R$ 28,00.                               |
+
+<Callout kind="info" collapsed="false">
+  **Saldo disponível** é o crédito acumulado em compras anteriores e que pode ser usado agora. **Você ganhará** é o cashback da compra atual. Esse crédito só entra no saldo depois do processamento da madrugada.
+</Callout>
+
+## 8. Como o cliente vê: as regras do cupom em texto
+
+A lista de cupons mostra o código, o benefício e uma linha para cada regra, na ordem em que as regras foram cadastradas no CRM. O selo **LOGIN** identifica cupons que exigem a identificação do cliente.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/totem-cupom-cashback/imagens-tratadas/08-totem-cupons-regras.png" width="1080" height="1432" alt="Lista de cupons no totem, com as regras em texto" />
+
+O cliente também pode informar um código manualmente em **Adicionar cupom**:
+
+1. Toque em **Adicionar cupom**.
+2. Digite o código no campo **Digite o código**.
+3. Toque em **Aplicar cupom**.
+
+### De onde sai cada frase
+
+O texto exibido no totem vem diretamente das regras cadastradas no CRM:
+
+| O que você marca no cupom                  | O que o totem escreve                                             |
+| ------------------------------------------ | ----------------------------------------------------------------- |
+| Apenas primeira compra                     | “Válido apenas para a primeira compra.”                           |
+| Não aplicar em produtos em promoção        | “Não vale para itens que já estão em promoção.”                   |
+| Apenas retirada e consumo no local         | “Válido apenas para retirada ou consumo no local.”                |
+| Formas de pagamento                        | “Válido apenas para pagamento em: PIX Bee, PIX Online, Dinheiro.” |
+| Setores ou produtos que liberam o cupom    | “O pedido precisa ter: Combos, Bacon.”                            |
+| Setores ou produtos que recebem o desconto | “O desconto vale apenas sobre: Bebidas.”                          |
+| Confirmar telefone por SMS                 | “É preciso confirmar seu telefone por SMS para usar.”             |
+
+<Callout kind="tip" collapsed="false">
+  Os nomes de setores e produtos aparecem exatamente como foram cadastrados. Uma configuração confusa também produz um texto confuso para o cliente. Evite adicionar regras desnecessárias, principalmente quando existe uma fila no autoatendimento.
+</Callout>
+
+## 9. Por que o cupom não apareceu no totem?
+
+Quando o cupom não aparece no totem, confira os itens na ordem abaixo:
+
+1. O cupom está **Ativo**?
+2. O canal **Totem** está ligado?
+3. O cupom é do tipo **Frete Grátis**? Esse tipo não funciona no totem.
+4. A validade do cupom terminou?
+5. O dia da semana de hoje está permitido?
+6. O cupom exige primeira compra, um uso por cliente ou identificação?
+7. O limite total de usos já foi atingido?
+8. O pedido estava aberto quando a configuração foi alterada? O totem lê a lista de cupons no início do pedido.
+
+## Problemas comuns
+
+| Sintoma                                          | O que verificar                                                                                |
+| ------------------------------------------------ | ---------------------------------------------------------------------------------------------- |
+| O selo de cupons não aparece                     | Não existe cupom ativo com o canal **Totem**. Filtre os cupons por esse canal no CRM.          |
+| O cupom aparece, mas não pode ser usado          | O pedido não cumpre alguma regra. Leia a linha de texto exibida abaixo do cupom.               |
+| O canal **Totem** está travado                   | O cupom é do tipo **Frete Grátis**, que não funciona no autoatendimento.                       |
+| O totem não oferece cashback                     | O programa geral ou a modalidade **Pedidos via Totem** está desligada.                         |
+| O cashback aparece no Delivery, mas não no totem | Ative a modalidade **Pedidos via Totem** no CRM.                                               |
+| O totem não fala de cashback hoje                | O dia da semana está desmarcado na configuração de percentual.                                 |
+| O percentual é diferente do configurado          | O percentual é definido por dia da semana. Confira o dia atual.                                |
+| O saldo não entrou depois do pedido              | O processamento ocorre durante a madrugada. Confirme também se o pedido foi pago e finalizado. |
+| O cliente não vê o saldo                         | O cliente pode ter pulado a identificação ou informado um telefone diferente do cadastro.      |
+| O código SMS não chega                           | Sem saldo de SMS, o cupom é liberado sem validação. Consulte **Food Marketing → SMS**.         |
+| A alteração no cupom não aparece                 | Reinicie o pedido. A lista de cupons é lida quando o pedido começa.                            |
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+  <Expandable title="Onde o cupom do totem é cadastrado?" default-open="false">
+    Cadastre o cupom no mesmo local dos demais canais: **Fidelidade (CRM) → Cupom de Desconto**. Ligue o canal **Totem**. O mesmo cupom pode funcionar em Delivery, PDV, Mesas e totem quando os canais correspondentes estiverem ativos.
+  </Expandable>
+
+  <Expandable title="Quando o cliente precisa se identificar para usar um cupom no totem?" default-open="false">
+    A identificação é necessária para cupons de primeira compra, cupons limitados a um uso por cliente e cupons com validação por SMS. Sem essas exigências, o cliente pode usar o cupom de forma anônima, desde que cumpra as demais regras.
+  </Expandable>
+
+  <Expandable title="Como digitar o código do cupom no totem?" default-open="false">
+    Toque em **Adicionar cupom**, preencha **Digite o código** e toque em **Aplicar cupom**.
+  </Expandable>
+
+  <Expandable title="Cupom de Frete Grátis funciona no totem?" default-open="false">
+    Não. O canal fica travado porque o totem não trabalha com frete.
+  </Expandable>
+
+  <Expandable title="O saldo de cashback é o mesmo do Cardápio Digital?" default-open="false">
+    Sim. O saldo é o mesmo para o cliente. A modalidade habilitada pode variar por canal, portanto confirme se **Pedidos via Totem** está ativo para permitir o uso no totem.
+  </Expandable>
+
+  <Expandable title="Como uso o saldo de cashback no totem?" default-open="false">
+    Na tela de confirmação, toque em **USAR**. O dia da semana precisa estar habilitado e o saldo deve atingir o mínimo de resgate configurado.
+  </Expandable>
+
+  <Expandable title="Onde consulto o saldo do cliente?" default-open="false">
+    Acesse **Fidelidade (CRM) → Cashback** e consulte as abas **Saldo por Cliente** e **Histórico**.
+  </Expandable>
+
+  <Expandable title="Existe um percentual específico de cashback para o totem?" default-open="false">
+    Não. O percentual é definido por dia da semana e vale para todas as modalidades habilitadas naquele dia, incluindo **Pedidos via Totem**.
+  </Expandable>
+
+  <Expandable title="A confirmação por SMS tem custo?" default-open="false">
+    Sim. A confirmação consome créditos de SMS. Quando não há saldo de SMS, o cupom funciona sem validação.
+  </Expandable>
+
+  <Expandable title="Cupons fora da validade aparecem no totem?" default-open="false">
+    Não. O totem verifica a validade quando o pedido é iniciado e não exibe cupons vencidos.
+  </Expandable>
+</ExpandableGroup>
+
+## Manuais relacionados
+
+<Columns cols="2">
+  <Card title="⚙️ Configuração" href="/manuais/totem-configurar" icon="settings" horizontal="false">
+    Configure o aparelho e ative a identificação do cliente.
+  </Card>
+
+  <Card title="📊 O pedido do totem no painel" href="/manuais/totem-venda-no-painel" icon="bar-chart" horizontal="false">
+    Consulte e opere pedidos originados no autoatendimento.
+  </Card>
+
+  <Card title="🏷️ Cupom de Desconto" href="/cupom-desconto" icon="ticket" horizontal="false">
+    Cadastre cupons e defina canais, regras e condições de uso.
+  </Card>
+
+  <Card title="⚙️ Configurar Cashback" href="/cashback-configurar" icon="settings" horizontal="false">
+    Ative o programa, defina a validade e configure os percentuais.
+  </Card>
+
+  <Card title="📲 Operar Cashback" href="/cashback-operar" icon="smartphone" horizontal="false">
+    Acompanhe saldos, movimentações e operações de cashback.
+  </Card>
+</Columns>

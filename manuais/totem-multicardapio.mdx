@@ -1,0 +1,262 @@
+---
+title: Totem com dois cardápios no mesmo aparelho
+description: >-
+  Configure o multicardápio no totem, permita pedidos mistos e entenda como
+  cardápios, sacola e vendas funcionam no painel.
+---
+## Antes de começar
+
+Um único totem pode exibir vários cardápios, o que atende operações com duas marcas no mesmo espaço, como hamburgueria e sushi ou café e padaria. Ao tocar em **FAÇA SEU PEDIDO**, o cliente escolhe um cardápio ou toca em **Ver todos os cardápios**. Mesmo misturando produtos, o pedido mantém uma única sacola, um pagamento e uma venda no painel.
+
+Este manual mostra como configurar o cardápio adicional no painel e como o multicardápio no totem aparece para o cliente.
+
+<Callout kind="info" collapsed="false">
+  O totem precisa estar no ar e configurado. Consulte [Configuração](/manuais/totem-configurar) antes de continuar.
+
+  O segundo cardápio é chamado de **Cardápio Adicional**. Ele é contratado por loja, no plano da conta ou pelo suporte BeeFood. O Cardápio Adicional não é criado na tela do totem.
+
+  Cada cardápio adicional corresponde a uma loja no BeeFood, e a loja precisa ter o **Cardápio Digital** habilitado. Uma loja sem esse recurso aparece apagada, com a mensagem _Cardápio Digital não habilitado_, e a chave permanece bloqueada.
+
+  Antes de ligar o cardápio, confirme quais setores e produtos pertencem a cada operação. A seção [Onde se cadastra o que entra em cada cardápio](#onde-se-cadastra-o-que-entra-em-cada-cardápio) explica essa associação.
+</Callout>
+
+<Callout kind="info" collapsed="false">
+  As imagens deste manual usam setas numeradas. Cada número corresponde ao campo ou botão mostrado na tela.
+</Callout>
+
+## 1. Ligar o cardápio adicional no totem
+
+Acesse **Aplicativos**, abra **Totem de Autoatendimento** e entre na aba **Cardápios**. Essa aba lista as lojas disponíveis para o aparelho.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/totem-multicardapio/imagens-tratadas/01-modal-cardapios-chave.png" width="1532" height="856" alt="Aba Cardápios do totem, com o cardápio adicional ligado" />
+
+| Nº    | Item                            | O que fazer                                                                                                                     |
+| ----- | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| **1** | **Aba Cardápios**               | Escolha quais cardápios o aparelho mostra.                                                                                      |
+| **2** | **Loja principal**              | A loja principal aparece com a etiqueta _Principal_. A chave fica ligada e bloqueada porque ela é o cardápio original do totem. |
+| **3** | **Chave do cardápio adicional** | Ligue ou desligue o cardápio adicional. A alteração é gravada imediatamente.                                                    |
+
+<Steps>
+  <Step title="Abra a aba Cardápios" title-type="p">
+    Acesse **Aplicativos → Totem de Autoatendimento → Cardápios**. A loja principal aparece marcada como _Principal_ e não pode ser desligada.
+  </Step>
+
+  <Step title="Ligue uma loja adicional" title-type="p">
+    Nas outras lojas, ligue a chave da loja cujo cardápio você deseja disponibilizar no totem. Não existe botão **Salvar**. Depois do clique, o sistema grava a alteração e mostra o aviso _Cardápios salvos_.
+  </Step>
+
+  <Step title="Reabra o totem" title-type="p">
+    Feche e abra o totem novamente para que o aparelho leia a nova configuração. Com dois ou mais cardápios ativos, o botão **FAÇA SEU PEDIDO** passa a abrir a tela de escolha.
+  </Step>
+</Steps>
+
+<Callout kind="alert" collapsed="false">
+  Se houver apenas uma loja, a aba mostra somente a linha _Principal_ e a mensagem _Nenhum outro cardápio disponível_. Se uma loja aparecer apagada com o selo _Cardápio Digital não habilitado_, habilite o Cardápio Digital nessa loja. Não altere a configuração do totem para corrigir esse caso.
+</Callout>
+
+## 2. Escolher cardápio no totem
+
+Quando você liga o segundo cardápio, o botão **FAÇA SEU PEDIDO** deixa de abrir diretamente a grade de produtos. O cliente passa primeiro pela tela **Escolha um cardápio**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/totem-multicardapio/imagens-tratadas/02-totem-escolha-cardapio.png" width="1080" height="780" alt="Tela Escolha um cardápio, no totem" />
+
+| Nº    | Item                       | O que fazer                                                                                         |
+| ----- | -------------------------- | --------------------------------------------------------------------------------------------------- |
+| **1** | **Ver todos os cardápios** | Reúne os produtos de todos os cardápios ativos em uma única tela.                                   |
+| **2** | **Cardápio principal**     | Abre o cardápio da loja principal do totem.                                                         |
+| **3** | **Cardápio adicional**     | Abre somente o cardápio adicional escolhido. Cada cardápio adicional aparece em um cartão separado. |
+| **4** | **X**                      | Fecha a tela de escolha e retorna à tela de espera sem iniciar um pedido.                           |
+
+O cardápio em uso recebe o selo **SELECIONADO** e uma borda na cor principal configurada para o totem. A tela também informa: _Você pode trocar de cardápio a qualquer momento, o carrinho continua o mesmo._
+
+<Callout kind="tip" collapsed="false">
+  A tela **Escolha um cardápio** só aparece a partir do segundo cardápio ligado. Com apenas um cardápio ativo, o totem abre os produtos diretamente.
+</Callout>
+
+## 3. Ver todos os cardápios: os dois na mesma tela
+
+A opção **Ver todos os cardápios** monta uma grade única com os produtos de todos os cardápios ativos. A coluna de setores passa a reunir os setores do cardápio adicional e da loja principal.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/totem-multicardapio/imagens-tratadas/03-totem-todos-cardapios.png" width="1230" height="1920" alt="Totem com os dois cardápios na mesma tela" />
+
+| Nº    | Item               | O que fazer                                            |
+| ----- | ------------------ | ------------------------------------------------------ |
+| **1** | **CARDÁPIO ATUAL** | Indica que o cliente está usando _Todos os cardápios_. |
+| **2** | **Trocar**         | Reabre a tela **Escolha um cardápio**.                 |
+| **3** | **Setor sem foto** | Usa o logotipo da loja no lugar da foto do setor.      |
+| **4** | **Setor com foto** | Exibe a foto cadastrada para o setor.                  |
+
+A ordem dos setores mostra primeiro os setores do cardápio adicional e depois os setores da loja principal. Por exemplo, os setores de sushi podem aparecer acima dos setores da hamburgueria.
+
+Se o mesmo setor estiver associado aos dois cardápios, ele aparece uma única vez, com os produtos dos dois cardápios reunidos. **Bebidas** e **Sobremesas** são exemplos de setores que podem ser compartilhados.
+
+O totem não identifica setores parecidos pelo significado. Se os cadastros tiverem nomes diferentes, como **Molhos e Adicionais** e **Molhos adicionais**, eles aparecem como setores separados.
+
+<Callout kind="tip" collapsed="false">
+  Confira e padronize os nomes dos setores antes de ligar o segundo cardápio. Para entender as regras de fotos e layout dos setores, consulte a seção 7 de [Configuração](/manuais/totem-configurar).
+</Callout>
+
+## 4. Um cardápio só e a troca no meio do pedido
+
+Ao escolher um cardápio específico, o totem mostra somente os setores e produtos associados a ele. O cabeçalho identifica o cardápio atual, e o botão **Trocar** continua disponível.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/totem-multicardapio/imagens-tratadas/04-totem-cardapio-adicional.png" width="1230" height="1920" alt="Totem mostrando só o cardápio adicional" />
+
+| Nº    | Item               | O que fazer                                              |
+| ----- | ------------------ | -------------------------------------------------------- |
+| **1** | **CARDÁPIO ATUAL** | Exibe o nome do cardápio em uso.                         |
+| **2** | **Trocar**         | Retorna à tela de escolha sem apagar os itens da sacola. |
+
+A troca não remove os produtos já adicionados. O cliente pode começar no cardápio de sushi, trocar para o cardápio da hamburgueria e continuar o mesmo pedido.
+
+O nome mostrado para o cliente é o nome da loja associada ao cardápio. O painel pode exibir um nome curto diferente. Para alterar o nome visto no totem, ajuste o nome da loja.
+
+<Callout kind="info" collapsed="false">
+  Se um cardápio aparecer com o selo **INDISPONÍVEL** e não aceitar toque, o aparelho falhou ao baixar os dados do cardápio, geralmente por instabilidade de rede. Verifique a conexão, feche o totem e abra novamente.
+</Callout>
+
+## 5. A sacola é uma só
+
+O cliente pode misturar produtos de cardápios diferentes na mesma sacola. Por exemplo, pode adicionar um temaki no cardápio adicional, tocar em **Trocar** e adicionar um hambúrguer no cardápio principal.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/totem-multicardapio/imagens-tratadas/05-totem-sacola-mista.png" width="1230" height="860" alt="Sacola do totem com item dos dois cardápios" />
+
+A imagem combina duas partes da mesma tela: os itens aparecem na parte superior e o total aparece na parte inferior. As duas partes estão separadas por uma faixa cinza.
+
+| Nº    | Item                           | O que fazer                                                          |
+| ----- | ------------------------------ | -------------------------------------------------------------------- |
+| **1** | **Item do cardápio adicional** | Temaki escolhido no cardápio de sushi.                               |
+| **2** | **Item do cardápio principal** | Hambúrguer escolhido depois da troca de cardápio.                    |
+| **3** | **Total**                      | Soma os produtos dos dois cardápios e representa um único pagamento. |
+
+O processo continua igual ao pedido de um único cardápio: identificação do cliente, escolha de mesa ou pager, seleção do meio de consumo e pagamento.
+
+Os descontos da forma de pagamento se aplicam ao pedido inteiro. Por exemplo, um pedido de **R$ 63,00** com desconto de **1% no Dinheiro** termina em **R$ 62,37**.
+
+## 6. No painel, o pedido é uma venda só
+
+No painel, um pedido misto aparece no filtro **Totem** do **Delivery**. Os itens dos diferentes cardápios ficam no mesmo card, e o **Valor Total** representa o pedido completo.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/totem-multicardapio/imagens-tratadas/06-painel-pedido-misto.png" width="1532" height="856" alt="O pedido misto no Delivery do painel" />
+
+| Nº    | Item                           | O que fazer                                                  |
+| ----- | ------------------------------ | ------------------------------------------------------------ |
+| **1** | **Filtro Totem**               | Filtra os pedidos feitos no aparelho.                        |
+| **2** | **Card do pedido**             | Representa um único pedido. O rodapé mostra a loja do totem. |
+| **3** | **Item do cardápio adicional** | Aparece na lista comum de produtos do pedido.                |
+| **4** | **Item do cardápio principal** | Aparece na mesma lista e no mesmo pedido.                    |
+| **5** | **Valor Total**                | Soma os itens dos dois cardápios.                            |
+
+A venda é registrada na **loja do totem**. O item do cardápio adicional não cria uma venda separada na outra loja.
+
+A mesma regra vale para o **Histórico**, a ficha da cozinha, os relatórios e o **Desempenho por origem**. A origem do pedido é **AutoAtendimento**. Cupom e cashback configurados para o totem se aplicam ao pedido inteiro, não a cada cardápio.
+
+Para acompanhar outros detalhes da venda, consulte [O pedido do totem no painel](/manuais/totem-venda-no-painel).
+
+## 7. Onde se cadastra o que entra em cada cardápio
+
+Cada cardápio tem suas próprias configurações de horário, aparência, formas de recebimento e pagamento online. Por isso, confirme qual cardápio está selecionado antes de alterar qualquer cadastro.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/totem-multicardapio/imagens-tratadas/07-painel-editando-cardapio.png" width="1532" height="856" alt="Cardápio Digital editando o cardápio adicional" />
+
+| Nº    | Item                     | O que fazer                                                                                      |
+| ----- | ------------------------ | ------------------------------------------------------------------------------------------------ |
+| **1** | **Seletor de cardápios** | Troque o cardápio que está sendo editado. A bolinha indica se o cardápio está aberto ou fechado. |
+| **2** | **EDITANDO CARDÁPIO**    | Confirme qual cardápio está selecionado antes de alterar configurações.                          |
+
+O seletor aparece em **Cardápio Digital**, nas áreas de aparência, horário e pagamento, e em **Cardápio → Produtos**.
+
+No cadastro do setor, use o campo **Cardápios** para marcar **Todos os cardápios** ou selecionar cardápios específicos. A chave **Presencial** determina se o setor pode aparecer no totem.
+
+No cadastro do produto, a aba **Cardápios** mostra uma linha para cada cardápio, com as opções:
+
+- **Ativo**
+- **Delivery**
+- **Presencial**
+- **Totem**
+- **Promoção**
+
+O mesmo produto pode ter um preço diferente em cada cardápio. Também é possível disponibilizar o produto no totem de um cardápio e deixá-lo fora do outro.
+
+Se o produto estiver desativado para o cardápio selecionado, o cadastro mostra a mensagem _Produto inativo para este cardápio_ e o botão **Ativar**.
+
+<Callout kind="info" collapsed="false">
+  A faixa **EDITANDO CARDÁPIO** indica onde a alteração será aplicada. Confira o seletor antes de mudar horário, aparência, pagamento, preço ou disponibilidade de um produto.
+</Callout>
+
+## Problemas comuns
+
+| Sintoma                                                    | O que verificar                                                                                                              |
+| ---------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| O totem não pergunta o cardápio e vai direto aos produtos. | Há apenas um cardápio ativo. Ligue outra chave na aba **Cardápios** e reabra o totem.                                        |
+| Uma loja aparece apagada e a chave não liga.               | O **Cardápio Digital** não está habilitado nessa loja.                                                                       |
+| Nenhuma outra loja aparece.                                | Existe apenas uma loja ou o **Cardápio Adicional** ainda não foi contratado. Procure o suporte BeeFood.                      |
+| O aparelho não mudou depois que a chave foi ligada.        | Feche e reabra o totem.                                                                                                      |
+| O cardápio aparece como **INDISPONÍVEL**.                  | Verifique a rede e reabra o aparelho.                                                                                        |
+| O cardápio abre sem setores.                               | Confirme se existe um setor com **Presencial** ligado para esse cardápio. O aparelho pode mostrar _Nenhum setor encontrado_. |
+| Um produto adicional não aparece.                          | Confira a aba **Cardápios** do produto e a chave **Totem** na linha do cardápio.                                             |
+| Há setores repetidos ou com nomes parecidos.               | São cadastros diferentes. Padronize os nomes ou associe o mesmo setor aos dois cardápios.                                    |
+| Um setor sumiu em **Ver todos os cardápios**.              | O mesmo setor associado aos dois cardápios aparece uma única vez, reunindo os produtos.                                      |
+| O nome no totem não é o esperado.                          | O aparelho usa o nome da loja. Ajuste o nome da loja.                                                                        |
+| A venda não apareceu na outra loja.                        | Esse comportamento é esperado. O pedido é lançado na loja do totem.                                                          |
+| O preço antigo continua no totem.                          | Você pode ter editado outro cardápio. Confira a faixa **EDITANDO CARDÁPIO**.                                                 |
+
+## Perguntas frequentes sobre multicardápio no totem
+
+<ExpandableGroup>
+  <Expandable title="Quantos cardápios cabem em um totem?" default-open="false">
+    O totem pode usar quantos cardápios contratados estiverem disponíveis para as lojas. A aba **Cardápios** lista as lojas e permite ligar as desejadas.
+  </Expandable>
+
+  <Expandable title="O cliente é obrigado a escolher um cardápio no totem?" default-open="false">
+    Não. Na tela **Escolha um cardápio**, o cliente pode tocar em **Ver todos os cardápios** para visualizar os produtos de todos os cardápios ativos em uma única tela.
+  </Expandable>
+
+  <Expandable title="É possível pedir de dois cardápios no mesmo pedido?" default-open="false">
+    Sim. A sacola é única, e trocar de cardápio não apaga os itens já adicionados.
+  </Expandable>
+
+  <Expandable title="O pedido se divide entre duas lojas?" default-open="false">
+    Não. O pedido é uma venda única registrada na loja do totem. O cardápio adicional não cria uma venda separada na outra loja.
+  </Expandable>
+
+  <Expandable title="É necessário cadastrar os produtos novamente para usar duas marcas no mesmo totem?" default-open="false">
+    Não. O setor e o produto indicam em quais cardápios cada item entra. O mesmo produto também pode ter um preço próprio em cada cardápio.
+  </Expandable>
+
+  <Expandable title="Cada cardápio pode ter configurações diferentes?" default-open="false">
+    Sim. Horário, aparência, formas de recebimento e pagamento online podem variar por cardápio. Troque o cardápio pelo seletor e confira a faixa **EDITANDO CARDÁPIO** antes de editar.
+  </Expandable>
+
+  <Expandable title="Cupom e cashback funcionam em um pedido misto?" default-open="false">
+    Sim. Cupom e cashback configurados para o totem se aplicam ao pedido inteiro, mesmo quando a sacola contém itens de cardápios diferentes. Consulte [Cupom e cashback no totem](/manuais/totem-cupom-cashback).
+  </Expandable>
+
+  <Expandable title="Como remover um cardápio do totem?" default-open="false">
+    Desligue a chave do cardápio na aba **Cardápios** e reabra o aparelho. Se restar apenas um cardápio ativo, a tela de escolha desaparece.
+  </Expandable>
+
+  <Expandable title="A tela de escolha atrasa o atendimento?" default-open="false">
+    Ela adiciona um toque ao início do pedido. Se a operação não precisa de dois cardápios, deixe apenas um ligado para abrir os produtos diretamente.
+  </Expandable>
+</ExpandableGroup>
+
+## Manuais relacionados
+
+<Columns cols="2">
+  <Card title="Configuração" href="/manuais/totem-configurar" icon="settings" horizontal="false">
+    Configure as abas do totem, a URL do aparelho e as regras de exibição dos setores.
+  </Card>
+
+  <Card title="Cupom e cashback no totem" href="/manuais/totem-cupom-cashback" icon="check-circle" horizontal="false">
+    Configure descontos e cashback para pedidos feitos no totem.
+  </Card>
+
+  <Card title="O pedido do totem no painel" href="/manuais/totem-venda-no-painel" icon="bar-chart" horizontal="false">
+    Consulte pedidos do totem no Delivery, no Histórico e no Desempenho por origem.
+  </Card>
+
+  <Card title="Manual do Cardápio: fundamentos" href="/cardapio-fundamentos" icon="book-open" horizontal="false">
+    Entenda o cadastro de setores, produtos e cardápios.
+  </Card>
+</Columns>

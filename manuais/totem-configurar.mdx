@@ -1,0 +1,404 @@
+---
+title: Configurar o totem de autoatendimento
+description: >-
+  Configure o totem de autoatendimento, pagamentos, aparência, URL do totem,
+  modo kiosk e fotos do setor no cardápio presencial.
+---
+## Antes de começar
+
+Configure o totem de autoatendimento desde o contrato até a tela de pedidos, pagamentos e impressão. Ao final, você terá a URL do totem e saberá como ajustar a experiência exibida ao cliente.
+
+<Callout kind="info" collapsed="false">
+  Antes de começar, confirme estes pré-requisitos:
+
+  - O totem precisa estar contratado. Se o card não abrir a configuração, fale com o suporte BeeFood.
+  - O totem não é um aplicativo para instalar. Ele é um endereço web aberto no Edge ou Chrome em um computador Windows com tela sensível ao toque.
+  - O cardápio e os produtos vêm do cadastro normal do **Cardápio**, mas somente setores e produtos marcados como **Presencial** aparecem no totem.
+  - **Pix TEF** e cartões via TEF exigem um pinpad conectado ao computador.
+  - **Dinheiro** é o único meio que dispensa pinpad. O cliente conclui o pedido no totem e paga no caixa.
+</Callout>
+
+As imagens deste manual usam setas numeradas. Cada número corresponde ao campo, botão ou área descrita na tabela logo abaixo da imagem.
+
+## Onde fica a configuração do totem
+
+Abra **Aplicativos → Presencial** e localize o card **Totem — Autoatendimento presencial**.
+
+<Steps>
+  <Step title="Abra o card do totem" title-type="p">
+    Na faixa **Presencial** de **Aplicativos**, clique em **Totem — Autoatendimento presencial**.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/totem-configurar/imagens-tratadas/01-aplicativos-card-totem.png" width="1532" height="856" alt="Card do Totem na tela de Aplicativos" />
+
+    | Nº    | Item           | O que fazer                                |
+    | ----- | -------------- | ------------------------------------------ |
+    | **1** | **Card Totem** | Clique para abrir a configuração do totem. |
+  </Step>
+
+  <Step title="Confira as abas disponíveis" title-type="p">
+    A janela **Configuração do Totem de Autoatendimento** abre com cinco abas:
+
+    - **Configuração**
+    - **Pagamentos**
+    - **Aparência**
+    - **Cardápios**
+    - **Download**
+
+    Use a aba **Download** somente depois de concluir as configurações anteriores.
+  </Step>
+</Steps>
+
+## Aba Configuração: como o pedido funciona
+
+A aba **Configuração** controla o fluxo do pedido, a impressão, a emissão fiscal, a identificação do cliente, o uso de mesa ou pager, a senha de administrador, os acréscimos e a mensagem final.
+
+<Callout kind="alert" collapsed="false">
+  A tela **não tem botão Salvar**. As chaves são gravadas imediatamente ao clicar. Os campos de texto, como a senha do administrador e a mensagem final, são gravados pouco depois que você para de digitar. Para sair, use **FECHAR (ESC)**.
+
+  O cabeçalho mostra a quantidade de totens contratados, por exemplo, cinco. Todos os dispositivos usam a mesma configuração.
+</Callout>
+
+### Meio de consumo e impressão
+
+Em **Meio de Consumo**, habilite **Comer aqui**, **Para viagem** ou as duas opções. Quando somente uma opção está ativa, o totem não pergunta o meio de consumo. Quando as duas estão ativas, o cliente escolhe antes de concluir o pedido.
+
+Na área **Impressão**, configure **Imprimir Cupom do Pedido**, **Imprimir Senha** e a **Impressora do totem**. A lista de impressoras vem do BeeImpressão.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/totem-configurar/imagens-tratadas/02-modal-configuracao-topo.png" width="1532" height="856" alt="Aba Configuração do totem, com meio de consumo e impressão" />
+
+| Nº    | Item                   | O que fazer                                                                                  |
+| ----- | ---------------------- | -------------------------------------------------------------------------------------------- |
+| **1** | **Totens contratados** | Confira quantos dispositivos usam a configuração.                                            |
+| **2** | **Abas**               | Alterne entre **Configuração**, **Pagamentos**, **Aparência**, **Cardápios** e **Download**. |
+| **3** | **Meio de Consumo**    | Ative **Comer aqui**, **Para viagem** ou ambas.                                              |
+| **4** | **Impressão**          | Ative o cupom, a senha e selecione a impressora do totem.                                    |
+
+<Callout kind="alert" collapsed="false">
+  Se a impressora estiver indisponível, o totem exibirá um erro de impressão, mas o pedido continuará sendo enviado para a cozinha. Se o totem não tiver impressora, desative **Imprimir Cupom do Pedido** e **Imprimir Senha**.
+</Callout>
+
+### Nota fiscal, observação, idioma e identificação do cliente
+
+A parte central da aba reúne as opções fiscais e de identificação:
+
+- Em **Emissão Fiscal**, ative **Emitir NFCe e Imprimir** e **CPF/CNPJ na Nota**, conforme a operação da loja.
+- Em **Observação**, habilite **Habilitar Obs. Produto** e **Habilitar Obs. Pedido** quando o cliente precisar adicionar instruções.
+- Em **Idiomas**, ative **Habilitar tradução** para exibir as bandeiras de português, inglês e espanhol. Itens sem tradução continuam em português.
+- Em **Identificação do Cliente**, escolha uma das opções de **Nome / Telefone**:
+  - **Nenhum**
+  - **Nome Opcional**
+  - **Nome e Telefone Opcional**
+  - **Nome Obrigatório**
+  - **Nome e Telefone Obrigatório**
+
+O telefone vincula o pedido ao cliente e permite recursos que dependem de identificação, como cashback e cupons com login.
+
+Em **Identificação de Entrega do Pedido**, escolha **Desativado**, **Informar Número do Pager** ou **Informar Número da Mesa**. Quando uma das duas últimas opções está ativa, o totem solicita o número antes de concluir o pedido e envia essa informação ao painel.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/totem-configurar/imagens-tratadas/03-modal-configuracao-meio.png" width="1532" height="856" alt="Aba Configuração: emissão fiscal, observação, idiomas e identificação" />
+
+| Nº    | Item                                   | O que fazer                                                             |
+| ----- | -------------------------------------- | ----------------------------------------------------------------------- |
+| **1** | **Emissão Fiscal**                     | Configure a emissão e a impressão da NFC-e e a inclusão de CPF ou CNPJ. |
+| **2** | **Observação**                         | Permita observações no produto e no pedido.                             |
+| **3** | **Habilitar tradução**                 | Exiba as bandeiras de idioma no totem.                                  |
+| **4** | **Nome / Telefone**                    | Escolha se o cliente informa nome, telefone, ambos ou nenhum.           |
+| **5** | **Identificação de Entrega do Pedido** | Solicite o número do pager ou da mesa antes de concluir.                |
+
+### Senha do administrador, acréscimo e mensagem final
+
+A **Senha Administrador** é um código numérico usado para abrir o menu de manutenção do totem. Se você nunca preencher esse campo, o sistema sugere o código da empresa, mas o código só passa a valer depois que você informar uma senha.
+
+Em **Produto Acréscimo**, selecione um produto adicional para cada meio de consumo. Você pode usar um produto para **Comer Aqui** e outro para **Para Viagem**, como uma taxa de embalagem. Deixe **Selecione um produto…** quando não quiser acrescentar nenhum produto.
+
+Em **Mensagem ao finalizar o pedido**, informe o texto que o cliente verá ao concluir a compra. A mensagem comporta até duas linhas e é gravada automaticamente depois que você para de digitar.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/totem-configurar/imagens-tratadas/04-modal-configuracao-fim.png" width="1532" height="856" alt="Aba Configuração: senha, acréscimo e mensagem final" />
+
+| Nº    | Item                               | O que fazer                                                           |
+| ----- | ---------------------------------- | --------------------------------------------------------------------- |
+| **1** | **Senha numérica**                 | Informe o código usado para abrir o menu de manutenção.               |
+| **2** | **Produto Acréscimo**              | Escolha produtos adicionais por meio de consumo ou deixe sem seleção. |
+| **3** | **Mensagem ao finalizar o pedido** | Digite a mensagem de agradecimento que aparecerá no fim do pedido.    |
+
+## Aba Pagamentos: o que o cliente pode usar para pagar
+
+A aba **Pagamentos** lista seis meios, cada um associado a uma forma de recebimento:
+
+- **Dinheiro**
+- **Pix BeeFood**
+- **Pix TEF**
+- **Cartão de Crédito TEF**
+- **Cartão de Débito TEF**
+- **Vale Refeição TEF**
+
+Os meios TEF precisam de um pinpad conectado. **Dinheiro** funciona sem pinpad: o cliente conclui o pedido no totem e paga no caixa.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/totem-configurar/imagens-tratadas/05-modal-pagamentos.png" width="1532" height="856" alt="Aba Pagamentos do totem" />
+
+| Nº    | Item                     | O que fazer                                                         |
+| ----- | ------------------------ | ------------------------------------------------------------------- |
+| **1** | **Dinheiro**             | Permita que o cliente conclua o pedido sem pinpad e pague no caixa. |
+| **2** | **Forma de recebimento** | Associe o meio do totem à forma de recebimento cadastrada.          |
+| **3** | **Engrenagem ou TEF**    | Configure opções do TEF, como bandeira do cartão e taxas.           |
+
+### Como o cliente vê os pagamentos
+
+Depois de escolher os produtos, o cliente vê o valor devido e um cartão para cada meio de pagamento habilitado.
+
+Quando a forma de recebimento tem desconto configurado, o totem mostra o desconto abaixo do nome do meio e recalcula o total. No exemplo, **Dinheiro** tem desconto de 1% e **Pix** tem desconto de 5%.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/totem-configurar/imagens-tratadas/06-totem-pagamento.png" width="1080" height="1012" alt="Tela de pagamento do totem, com desconto por forma" />
+
+| Nº    | Item              | O que fazer                                                |
+| ----- | ----------------- | ---------------------------------------------------------- |
+| **1** | **Total a pagar** | Confira o valor final do pedido.                           |
+| **2** | **Dinheiro**      | Exibe o desconto de 1% cadastrado na forma de recebimento. |
+| **3** | **Pix**           | Exibe o desconto de 5% configurado no Pix online.          |
+
+<Callout kind="info" collapsed="false">
+  Os percentuais não são configurados no totem. O desconto de dinheiro vem de **Cadastros → Formas Recebimento**. O desconto de Pix vem de **Cardápio Digital → Pagamento Online → PIX Online**. O totem somente aplica a configuração já cadastrada nessas telas.
+</Callout>
+
+## Aba Aparência: a cara do aparelho
+
+Use a aba **Aparência** para definir como o totem será apresentado ao cliente:
+
+- **Tema**: escolha **Branco** ou **Preto**.
+- **Cor principal**: define a cor dos botões.
+- **Logotipo**: aparece no topo do menu. Use **Alterar** ou **Remover**.
+- **Capa**: define a imagem de fundo principal.
+- **Adicionar slide**: inclua imagens ou vídeos para a tela de espera.
+- **Ocupar a tela inteira do totem**: exiba o conteúdo em tela cheia.
+
+Os vídeos dos slides precisam estar no formato MP4 com codec H.264, resolução de até 1080 por 1920 e taxa de 4 a 6 Mbps. HEVC, também chamado H.265, e vídeos em 4K não são compatíveis.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/totem-configurar/imagens-tratadas/07-modal-aparencia.png" width="1532" height="856" alt="Aba Aparência do totem" />
+
+| Nº    | Item                | O que fazer                                       |
+| ----- | ------------------- | ------------------------------------------------- |
+| **1** | **Tema e cor**      | Escolha o tema e a cor usada nos botões.          |
+| **2** | **Logotipo**        | Adicione, altere ou remova o logotipo do topo.    |
+| **3** | **Capa**            | Defina a imagem de fundo da tela principal.       |
+| **4** | **Adicionar slide** | Adicione imagens ou vídeos para a tela de espera. |
+
+### Como o cliente vê a tela de espera
+
+Sem slides configurados, o cliente vê o botão **FAÇA SEU PEDIDO** na cor principal escolhida. Quando a tradução está ativa, as bandeiras de idioma aparecem abaixo do botão.
+
+Quando você adiciona um slide, ele substitui a tela de espera. O botão volta a aparecer depois que o cliente toca na tela.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/totem-configurar/imagens-tratadas/08-totem-espera.png" width="1080" height="1920" alt="Tela de espera do totem" />
+
+| Nº    | Item                | O que fazer                                                   |
+| ----- | ------------------- | ------------------------------------------------------------- |
+| **1** | **FAÇA SEU PEDIDO** | Toque para iniciar um pedido.                                 |
+| **2** | **Bandeiras**       | Escolha o idioma quando **Habilitar tradução** estiver ativo. |
+
+## Aba Cardápios: totem que vende por mais de uma loja
+
+Use a aba **Cardápios** quando o restaurante tiver mais de uma loja ou filial e quiser oferecer cardápios diferentes no mesmo totem.
+
+A loja principal permanece sempre ativa e não pode ser desligada. Quando existe somente uma loja, a tela mostra **Nenhum outro cardápio disponível**.
+
+Uma filial sem **Cardápio Digital** habilitado aparece desativada, com um aviso, e não pode ser selecionada nessa tela. Primeiro, habilite o cardápio digital da loja.
+
+Quando mais de um cardápio está ativo, o totem pode perguntar ao cliente qual cardápio deseja usar ou apresentar os cardápios juntos. A sacola continua sendo uma só. Para configurar esse cenário em detalhes, consulte [Multicardápio](/manuais/totem-multicardapio).
+
+## Aba Download: pôr o totem no ar com modo kiosk
+
+Conclua as abas **Configuração**, **Pagamentos**, **Aparência** e **Cardápios** antes de abrir **Download**.
+
+A aba mostra a **URL DO TOTEM**, formada pelo código da loja e pelo token do dispositivo. Use **Copiar** para copiar o endereço completo.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/totem-configurar/imagens-tratadas/09-modal-download.png" width="1532" height="856" alt="Aba Download do totem, com a URL e os atalhos de modo kiosk" />
+
+| Nº    | Item                          | O que fazer                                                |
+| ----- | ----------------------------- | ---------------------------------------------------------- |
+| **1** | **URL DO TOTEM**              | Consulte o endereço exclusivo do totem.                    |
+| **2** | **Copiar**                    | Copie a URL completa para abrir no computador do aparelho. |
+| **3** | **BAIXAR PARA EDGE / CHROME** | Baixe o arquivo `.cmd` que abre o navegador em modo kiosk. |
+
+Clique em **BAIXAR PARA EDGE / CHROME**, salve o arquivo na área de trabalho do Windows e abra-o com duplo clique. O arquivo abre a URL em modo kiosk, com a tela cheia e sem a barra do navegador. O Edge ou Chrome precisa estar instalado no caminho padrão do Windows.
+
+<Callout kind="alert" collapsed="false">
+  Trate a **URL do totem como uma senha**. Qualquer pessoa que tiver esse endereço poderá abrir o cardápio do totem da loja e iniciar pedidos.
+</Callout>
+
+A versão do totem aparece no rodapé da tela do aparelho. Informe essa versão ao suporte quando precisar de atendimento.
+
+## A foto do setor no totem muda o layout do cardápio
+
+A foto do setor altera a coluna esquerda do cardápio. Sem fotos, o totem mostra uma lista de nomes. Com fotos, ele mostra uma tira de miniaturas.
+
+### Sem foto no setor: coluna de texto
+
+Quando nenhum setor tem foto, a coluna esquerda exibe somente os nomes dos setores em uma lista vertical.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/totem-configurar/imagens-tratadas/10-totem-cardapio-sem-foto-setor.png" width="1080" height="1920" alt="Cardápio do totem com a coluna de setores em texto" />
+
+| Nº    | Item                  | O que fazer                                          |
+| ----- | --------------------- | ---------------------------------------------------- |
+| **1** | **Coluna de setores** | Use os nomes dos setores para navegar pelo cardápio. |
+
+### Onde cadastrar a foto do setor no totem
+
+Abra **Cardápio → Produtos**. No setor desejado, clique no menu de três pontos, selecione **Editar** e clique em **ADICIONAR FOTO**.
+
+A chave **Presencial** precisa estar ligada para o setor aparecer no totem. O campo **Cardápios** define em quais cardápios o setor estará disponível.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/totem-configurar/imagens-tratadas/11-painel-setor-foto.png" width="1532" height="856" alt="Cadastro do setor, com ADICIONAR FOTO" />
+
+| Nº    | Item               | O que fazer                                      |
+| ----- | ------------------ | ------------------------------------------------ |
+| **1** | **ADICIONAR FOTO** | Abra a janela para escolher a imagem do setor.   |
+| **2** | **Presencial**     | Ative para exibir o setor no totem.              |
+| **3** | **Cardápios**      | Escolha em quais cardápios o setor será exibido. |
+
+Na janela de imagem, arraste um arquivo ou clique para fazer upload. Use PNG, JPG ou WebP com até 5 MB. Também é possível selecionar uma imagem no **Banco de imagens**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/totem-configurar/imagens-tratadas/12-painel-foto-setor-banco.png" width="600" alt="Banco de imagens na janela da foto do setor" />
+
+| Nº    | Item                   | O que fazer                                                                              |
+| ----- | ---------------------- | ---------------------------------------------------------------------------------------- |
+| **1** | **Arrastar ou clicar** | Envie uma imagem PNG, JPG ou WebP de até 5 MB.                                           |
+| **2** | **Banco de imagens**   | Pesquise e selecione uma imagem, usando termos como combo, hambúrguer ou refrigerante.   |
+| **3** | **SALVAR**             | Salve a imagem na janela e depois clique em **SALVAR E SAIR (F2)** no cadastro do setor. |
+
+### Com foto no setor: tira de miniaturas
+
+Quando os setores têm fotos, a coluna esquerda muda para uma tira de miniaturas com o nome de cada setor abaixo da imagem.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/totem-configurar/imagens-tratadas/13-totem-cardapio-com-foto-setor.png" width="1080" height="1920" alt="Cardápio do totem com miniaturas na coluna de setores" />
+
+| Nº    | Item                      | O que fazer                                                     |
+| ----- | ------------------------- | --------------------------------------------------------------- |
+| **1** | **Coluna com miniaturas** | Use as fotos e os nomes dos setores para navegar pelo cardápio. |
+
+<Callout kind="alert" collapsed="false">
+  A regra é **ou todos os setores têm foto ou nenhum tem**. Se apenas um setor tiver foto, toda a coluna muda para o modo de miniaturas. Um setor sem foto própria usa o logotipo da loja.
+
+  A foto do produto não muda o layout. A grade de produtos continua com três colunas. Quando um produto não tem foto, o cartão mostra um ícone de imagem quebrada, não uma lista de texto.
+</Callout>
+
+## O pedido concluído: mensagem final e senha
+
+Depois do pagamento, o totem mostra o progresso do pedido, a mensagem final configurada e a senha para retirada. Após alguns segundos, o aparelho retorna automaticamente para a tela de espera.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/totem-configurar/imagens-tratadas/14-totem-pedido-feito.png" width="1080" height="835" alt="Tela de pedido concluído no totem, com a senha" />
+
+| Nº    | Item                  | O que fazer                                                                                 |
+| ----- | --------------------- | ------------------------------------------------------------------------------------------- |
+| **1** | **Erro de impressão** | Verifique a impressora, mas considere o pedido recebido pela cozinha.                       |
+| **2** | **Mensagem final**    | Consulte o texto configurado em **Configuração**.                                           |
+| **3** | **SUA SENHA**         | Use a senha do pedido para a retirada. Ela é impressa quando **Imprimir Senha** está ativo. |
+
+A mensagem de erro de impressão afeta somente a impressão. O pedido já foi enviado para a cozinha. Para acompanhar o pedido no **Delivery**, **Histórico** e relatórios, consulte [O pedido do totem no painel](/manuais/totem-venda-no-painel).
+
+## Problemas comuns
+
+| Sintoma                                               | O que verificar                                                                                                                                  |
+| ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| A tela de apresentação aparece em vez da configuração | O totem pode não estar contratado. Fale com o suporte BeeFood.                                                                                   |
+| Não existe botão **Salvar**                           | O totem grava as chaves imediatamente e salva os campos de texto depois que você para de digitar.                                                |
+| Um setor não aparece                                  | Verifique se **Presencial** está ligado e se o setor pertence ao cardápio em uso.                                                                |
+| A coluna de setores aparece em texto                  | Esse é o comportamento esperado quando nenhum setor tem foto.                                                                                    |
+| O logotipo da loja aparece no lugar da foto do setor  | O setor não tem foto própria, enquanto outros setores têm fotos.                                                                                 |
+| Um produto mostra o ícone de imagem quebrada          | O produto não tem foto cadastrada.                                                                                                               |
+| Cartão TEF ou Pix não funciona                        | Confirme se o pinpad está conectado e se a forma de recebimento foi selecionada.                                                                 |
+| Os descontos não aparecem ou estão incorretos         | Os descontos vêm de **Cadastros → Formas Recebimento** ou de **Cardápio Digital → Pagamento Online → PIX Online**, não da configuração do totem. |
+| Aparece erro de impressão                             | O erro não impede o pedido de chegar à cozinha. Verifique a impressora e o BeeImpressão.                                                         |
+| A configuração não foi atualizada no aparelho         | Feche e reabra o totem para carregar a configuração novamente.                                                                                   |
+| O aparelho mostra o menu de outra loja                | Copie novamente a **URL DO TOTEM** em **Download → Copiar**.                                                                                     |
+
+## Perguntas frequentes sobre configurar o totem
+
+<ExpandableGroup>
+  <Expandable title="Precisa instalar um aplicativo no totem?" default-open="false">
+    Não. O totem de autoatendimento é uma URL aberta no Edge ou Chrome em um computador Windows com tela sensível ao toque.
+  </Expandable>
+
+  <Expandable title="O arquivo .cmd instala alguma coisa?" default-open="false">
+    Não. O arquivo somente abre o navegador em modo kiosk, com a URL do totem em tela cheia e sem a barra do navegador.
+  </Expandable>
+
+  <Expandable title="Posso usar a mesma URL do totem em mais de um aparelho?" default-open="false">
+    Sim. Use a mesma URL na quantidade de dispositivos prevista no contrato.
+  </Expandable>
+
+  <Expandable title="O totem funciona sem maquininha?" default-open="false">
+    Sim. Ative **Dinheiro** na aba **Pagamentos**. O cliente conclui o pedido no totem e paga no caixa.
+  </Expandable>
+
+  <Expandable title="Como pagar em dinheiro no totem?" default-open="false">
+    Habilite **Dinheiro** e associe uma forma de recebimento. O cliente escolhe Dinheiro, conclui o pedido e paga no caixa. Esse meio não exige pinpad.
+  </Expandable>
+
+  <Expandable title="Como emito NFC-e no totem?" default-open="false">
+    Na aba **Configuração**, ative **Emitir NFCe e Imprimir**. Se necessário, habilite também **CPF/CNPJ na Nota**.
+  </Expandable>
+
+  <Expandable title="Como mudo o tema, a cor, o logotipo e a capa?" default-open="false">
+    Abra a aba **Aparência**. Nela você escolhe o tema, a cor principal, o logotipo, a capa e os slides da tela de espera.
+  </Expandable>
+
+  <Expandable title="Qual formato de vídeo posso usar na tela de espera?" default-open="false">
+    Use vídeos MP4 com codec H.264, resolução de até 1080 por 1920 e taxa de 4 a 6 Mbps. HEVC, H.265 e 4K não são compatíveis.
+  </Expandable>
+
+  <Expandable title="Onde configuro a senha do administrador?" default-open="false">
+    Informe um código numérico em **Configuração → Senha Administrador**. Essa senha abre o menu de manutenção do totem.
+  </Expandable>
+
+  <Expandable title="A foto do produto muda o layout do cardápio?" default-open="false">
+    Não. Somente a foto do setor muda a coluna da esquerda. A grade de produtos continua com três colunas.
+  </Expandable>
+
+  <Expandable title="Como o cliente informa o número da mesa?" default-open="false">
+    Em **Configuração**, defina **Identificação de Entrega do Pedido** como **Informar Número da Mesa**. O totem solicita o número antes de concluir o pedido.
+  </Expandable>
+
+  <Expandable title="Preciso solicitar o telefone do cliente?" default-open="false">
+    Depende da opção escolhida em **Nome / Telefone**. O telefone é necessário para vincular o pedido ao cliente e usar cashback ou cupons que exigem identificação.
+  </Expandable>
+
+  <Expandable title="Como funcionam os cupons no totem?" default-open="false">
+    O cupom precisa estar habilitado para o canal **Totem**. Para configurar essa regra, consulte [Cupom e cashback no totem](/manuais/totem-cupom-cashback).
+  </Expandable>
+
+  <Expandable title="Como tratar a URL do totem?" default-open="false">
+    Trate a URL como uma senha. Ela permite abrir o cardápio da loja e iniciar pedidos, portanto não a publique nem a compartilhe com pessoas não autorizadas.
+  </Expandable>
+
+  <Expandable title="Como funciona a foto do setor no totem?" default-open="false">
+    Cadastre a foto em **Cardápio → Produtos → menu do setor → Editar → ADICIONAR FOTO**. A regra visual é **ou todos os setores têm foto ou nenhum tem**. Um único setor com foto muda a coluna inteira para o modo de miniaturas.
+  </Expandable>
+</ExpandableGroup>
+
+## Manuais relacionados
+
+<Columns cols="2">
+  <Card title="Multicardápio" href="/manuais/totem-multicardapio" icon="layers" horizontal="false">
+    Configure dois ou mais cardápios e permita que o cliente escolha ou misture produtos no mesmo pedido.
+  </Card>
+
+  <Card title="Cupom e cashback no totem" href="/manuais/totem-cupom-cashback" icon="ticket" horizontal="false">
+    Configure cupons, cashback e o canal Totem.
+  </Card>
+
+  <Card title="O pedido do totem no painel" href="/manuais/totem-venda-no-painel" icon="bar-chart" horizontal="false">
+    Acompanhe pedidos do totem no Delivery, no Histórico e nos relatórios.
+  </Card>
+
+  <Card title="Tradução do Cardápio" href="/modulos-adicionais/totem-autoatendimento-traducao-presencial" icon="globe" horizontal="false">
+    Configure a tradução do cardápio presencial para os idiomas disponíveis.
+  </Card>
+
+  <Card title="Manual do Cardápio: fundamentos" href="/cardapio-fundamentos" icon="book-open" horizontal="false">
+    Cadastre setores, produtos e as regras de exibição no cardápio.
+  </Card>
+
+  <Card title="Formas de Recebimento" href="/formas-recebimento" icon="settings" horizontal="false">
+    Cadastre formas de recebimento e descontos usados pelo totem.
+  </Card>
+</Columns>
