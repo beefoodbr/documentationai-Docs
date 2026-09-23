@@ -1,0 +1,286 @@
+---
+title: Rastreio pelo cliente
+description: >-
+  Veja o que seu cliente vê quando o pedido sai para entrega: o link de
+  acompanhamento no WhatsApp, o mapa ao vivo com o entregador e a distância em
+  tempo real.
+---
+## Rastreio pelo cliente
+
+Quando o pedido sai com um motoboy de GPS ligado, o cliente recebe no WhatsApp um link que abre um **mapa ao vivo**: o nome de quem está levando, a moto andando na rua e a distância até a casa dele. É o _"onde está meu pedido?"_ respondido sem ninguém atender telefone.
+
+Este manual é para você, lojista. Ele mostra, tela por tela, **o que o seu cliente vê** enquanto espera. Não é sobre montar rota, despachar ou dar baixa. Esses assuntos têm manuais próprios. Aqui, você entende o rastreio do pedido, o link de acompanhamento e o que aparece no mapa do entregador.
+
+<Callout kind="info" collapsed="false">
+  As imagens têm **setas numeradas** (1, 2, 3…). Cada número indica o elemento correspondente na tela.
+</Callout>
+
+## Para que serve
+
+A ligação _"quanto tempo falta?"_ é a mais cara do delivery. Ela chega na hora do pico, ocupa quem deveria estar montando pedido e quase sempre termina com um _"já está saindo"_ que ninguém consegue confirmar. O acompanhamento troca essa conversa por uma tela: **o cliente se serve da informação sozinho**, e ela é verdadeira.
+
+- **Menos ligação e menos mensagem.** O cliente que vê a moto se mexendo não pergunta.
+- **Reclamação no lugar certo.** Quando a entrega atrasa de verdade, o cliente vê o motivo, como outra parada antes da dele ou a moto ainda parada na loja.
+- **Percepção de loja grande.** O rastreamento em tempo real no mapa é familiar para quem usa aplicativos de delivery. Aqui, o cliente vê a sua marca e a sua logo no mapa.
+
+**Você não precisa configurar nada.** Nenhum campo novo, nenhuma tela nova, nenhuma cobrança por mensagem. O link vai junto do aviso de _saiu para entrega_ que a sua loja já mandava.
+
+## Antes de começar
+
+O recurso é automático, mas depende de quatro condições que já fazem parte da sua operação:
+
+1. **Aplicativo do entregador aberto e com GPS liberado.** Sem uma posição recente do celular, não há link. As outras condições melhoram o que o cliente vê.
+2. **Nome do entregador cadastrado como nome de pessoa.** Esse é o nome que aparece para o cliente.
+3. **Endereço do cliente com localização no mapa.** Sem a localização, o mapa ainda abre e mostra a loja e a moto, mas o pino de destino e a distância não aparecem.
+4. **Notificação "Pedido saiu para entrega" ligada no WhatsApp.** O link é anexado a essa mensagem. Se o aviso estiver desligado, não haverá mensagem para carregar o link.
+
+---
+
+## 1. O link que o cliente recebe no WhatsApp
+
+O cliente já recebia a mensagem de _saiu para entrega_. O que muda é o bloco no fim dela: o título **Acompanhe a entrega** e o endereço do acompanhamento, terminado em um código exclusivo daquele pedido.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/gestao-entregas-rastreio-cliente/imagens-tratadas/01-whatsapp-link.png" width="614" height="384" alt="A mensagem de saiu para entrega no WhatsApp do cliente, com o bloco Acompanhe a entrega e o link de acompanhamento" />
+
+| Nº | Onde                                             | O que é                                                                                                                            |
+| -- | ------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------- |
+| 1. | **Seu pedido saiu para entrega.**                | Este texto vem da sua configuração em WhatsApp → Notificações. Se você reescreveu a mensagem, a sua versão aparece para o cliente. |
+| 2. | **🏍️ Acompanhe a entrega**                      | Bloco acrescentado automaticamente pelo sistema. Você não precisa digitar nem configurar esse texto.                               |
+| 3. | O endereço terminado em `/rastreio/` e um código | O código tem **22 caracteres** e vale somente para esse pedido.                                                                    |
+
+Três informações ajudam a explicar o funcionamento do link:
+
+- **O link é secreto por ser sorteado, não por ter senha.** O cliente abre a página sem fazer login. A proteção está no código imprevisível, e a página não é indexada por buscadores.
+- **O link expira.** Ele continua válido até **duas horas depois da entrega**. Depois desse período, o endereço do cliente não fica exposto indefinidamente.
+- **O link não substitui o cardápio.** Se o cliente apagou a mensagem, trocou de celular ou está no computador, ele chega à mesma tela pelo próprio cardápio digital.
+
+### Quando o link aparece, e quando não aparece
+
+O link só entra na mensagem se o celular do entregador tiver enviado uma posição nos últimos 15 minutos. Um aparelho sem sinal, sem bateria ou com o aplicativo fechado não gera o link, e o cliente recebe a mensagem de sempre.
+
+Isso é proposital. Um link que abre um mapa parado é pior do que não enviar link nenhum. Se o entregador perder o sinal depois que o cliente já abriu a tela, o mapa remove a moto e mostra _"Localização indisponível no momento."_
+
+<Callout kind="alert" collapsed="false">
+  O link depende de uma posição recente do entregador no momento em que a mensagem é enviada. A existência de uma rota, sozinha, não garante que o link será anexado.
+</Callout>
+
+---
+
+## 2. O cliente não depende do WhatsApp
+
+O link é o caminho mais curto, mas não é o único. Todo pedido de entrega em andamento mostra o acompanhamento dentro do próprio cardápio digital, em _Pedidos_ → o pedido do cliente.
+
+O cliente vê o mesmo mapa e as mesmas informações sem precisar localizar a mensagem. Esse caminho atende quem apagou a conversa, trocou de aparelho ou está usando um computador.
+
+Duas condições limitam o recurso:
+
+- **Somente pedidos de entrega.** Pedidos de retirada no balcão e pedidos de mesa não têm acompanhamento.
+- **Somente enquanto o pedido está em andamento.** Depois da baixa, a linha de acompanhamento sai da tela do pedido. O link do WhatsApp ainda funciona por duas horas depois da entrega.
+
+As próximas seções mostram essa tela por dentro.
+
+---
+
+## 3. Pedido aceito, comida ainda na cozinha
+
+Assim que você aceita o pedido, o cliente já vê o mapa. A tela não finge que existe um entregador: mostra o número do pedido, as quatro etapas, o estado atual, o aviso de acompanhamento e o mapa com a loja e o endereço do cliente.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/gestao-entregas-rastreio-cliente/imagens-tratadas/02-pedido-em-preparo.png" width="614" height="384" alt="O pedido em preparo no celular do cliente: número, barra de etapas, estado, o aviso Avisaremos assim que sair para entrega e o mapa com a loja e o endereço" />
+
+| Nº | Onde                       | O que é                                                                                                                                                                                |
+| -- | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1. | **Pedido nº 78 (1173)**    | O primeiro número é o número do dia. O número entre parênteses é o identificador interno.                                                                                              |
+| 2. | A barra de progresso       | São quatro etapas: enviado ao restaurante, em preparo, pronto aguardando o entregador e saiu para entrega. As etapas concluídas ficam cheias, a atual pisca e as futuras ficam cinzas. |
+| 3. | **Pedido sendo preparado** | Estado atual do pedido. A seta para baixo abre a linha do tempo com as etapas concluídas e os horários.                                                                                |
+| 4. | **Acompanhar entrega**     | Ainda não é um botão. O aviso informa: _"Avisaremos assim que sair para entrega."_                                                                                                     |
+| 5. | O pino com a logo da loja  | Representa a loja. Se a logo não carregar, aparece um ícone genérico de loja.                                                                                                          |
+| 6. | O pino escuro              | Representa o endereço do cliente.                                                                                                                                                      |
+
+O mapa aparece antes de existir um motoboy porque o cliente que abre o pedido quer saber onde a comida está. Mostrar a loja desde o começo mantém o formato da tela. Quando o entregador aparece, ele surge no mapa sem mudar a estrutura da página.
+
+<Callout kind="tip" collapsed="false">
+  A frase _Atualizando em tempo real_ indica que o estado, a barra e o mapa mudam juntos, sem o cliente puxar a tela ou recarregar a página. Não existe botão de atualizar.
+</Callout>
+
+---
+
+## 4. Saiu para entrega: o motoboy aparece
+
+Quando você despacha a rota e o entregador está com o GPS ativo, três informações mudam sem o cliente fazer nada: o estado vira **Pedido saiu para entrega**, a linha mostra o primeiro nome do entregador e a moto aparece no mapa.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/gestao-entregas-rastreio-cliente/imagens-tratadas/03-saiu-para-entrega.png" width="614" height="384" alt="O pedido a caminho: o estado com a hora, o nome do entregador, a distância em linha reta e a moto no mapa" />
+
+| Nº | Onde                                | O que é                                                                                                                         |
+| -- | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| 1. | **Pedido saiu para entrega**        | A quarta e última etapa pisca. As três anteriores já estão cheias, e a linha de acompanhamento se torna clicável.               |
+| 2. | **16:34**                           | Hora do despacho, mostrada ao lado do estado.                                                                                   |
+| 3. | **Carlos está indo até você**       | Mostra somente o primeiro nome do entregador, conforme o cadastro do funcionário.                                               |
+| 4. | **A 640 m de você, em linha reta.** | A distância é arredondada de dez em dez metros. Acima de um quilômetro, aparece no formato _"A 1,2 km de você, em linha reta."_ |
+| 5. | O ícone da moto                     | Mostra a posição do entregador entre a loja e o destino. O ícone se move algumas vezes por minuto.                              |
+
+Cadastre o nome do entregador como ele deve aparecer para o cliente. Se o cadastro estiver como _"Funcionário 1"_, a tela mostrará **Funcionário 1 está indo até você**. Quando o pedido sai por uma integradora e não há entregador vinculado, a frase muda para _"Seu pedido está a caminho."_
+
+### Por que a tela não diz "chega em 8 minutos"
+
+A distância mostrada é em **linha reta**, e é um número verdadeiro. Um tempo estimado exigiria calcular o trajeto pelas ruas, o trânsito e as paradas. Um prazo que muda de oito para 25 minutos transforma o acompanhamento em uma promessa quebrada.
+
+Quando o entregador tem outra parada antes, a tela informa a situação em vez de estimar: _"Você é a 2ª de 3 paradas desta viagem."_ O cliente entende por que a moto pode estar se afastando temporariamente.
+
+<Callout kind="info" collapsed="false">
+  O rastreio mostra a distância em linha reta, não o caminho que o entregador seguirá. A tela não estima o horário de chegada porque não transforma essa distância em tempo de trajeto.
+</Callout>
+
+---
+
+## 5. A tela cheia do acompanhamento
+
+Ao tocar na linha _"Carlos está indo até você"_, o cliente abre o mapa em tela cheia. É a mesma tela que o link do WhatsApp abre diretamente. No celular, ela tem o cabeçalho no alto, o mapa no centro e uma folha deslizante na parte inferior.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/gestao-entregas-rastreio-cliente/imagens-tratadas/04-mapa-tela-cheia.png" width="614" height="384" alt="O acompanhamento em tela cheia no celular: Ir para o pedido, cabeçalho, os três pontos do mapa e a folha deslizante" />
+
+| Nº | Onde                      | O que é                                                                                                        |
+| -- | ------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| 1. | **Ir para o pedido**      | Leva o cliente de volta ao pedido completo. O botão de voltar do navegador e o botão do Android fazem o mesmo. |
+| 2. | O cabeçalho               | Mostra a logo, o nome da loja, o número do pedido, o estado, a distância e a barra de etapas.                  |
+| 3. | O pino com a logo da loja | Representa a loja.                                                                                             |
+| 4. | O ícone da moto           | Representa a posição mais recente do entregador.                                                               |
+| 5. | O pino escuro             | Representa o endereço do cliente.                                                                              |
+| 6. | A folha deslizante        | Mostra o nome do entregador, o horário da última posição, o endereço de entrega e os itens.                    |
+
+No lugar de estimar a chegada, a tela informa quando a posição foi capturada. Com menos de um minuto, aparece _Posição atualizada agora_. Quando o sinal está atrasado, aparece algo como _Posição de 3 min atrás_. Assim, o cliente consegue avaliar a idade real da informação.
+
+### Com que frequência isso atualiza
+
+O servidor informa à tela quando consultar novamente. A tela nunca consulta em intervalo menor que cinco segundos. Na prática, enquanto o entregador está na rua, a posição costuma ser lida a cada dez ou 20 segundos, e o cliente vê a moto se mover algumas vezes por minuto.
+
+Quando o cliente troca de aba ou bloqueia o celular, a tela para de consultar. A atualização volta no instante em que ele retorna, reduzindo o consumo de bateria.
+
+### O pedido dentro do acompanhamento
+
+A linha **1 item do pedido** abre a lista completa, com complementos e valores. O cartão do entregador mostra o nome e o horário da última posição.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/gestao-entregas-rastreio-cliente/imagens-tratadas/05-itens-do-pedido.png" width="614" height="384" alt="A folha de baixo com a lista de itens aberta, o nome do entregador e o horário da última posição" />
+
+| Nº | Onde                       | O que é                                                                                                         |
+| -- | -------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| 1. | **Carlos**                 | Primeiro nome do entregador, igual ao nome mostrado no título.                                                  |
+| 2. | **Posição de 1 min atrás** | Indica quando a posição foi capturada. Com menos de um minuto, aparece _Posição atualizada agora_.              |
+| 3. | **1 item do pedido**       | Abre e fecha a lista. A contagem considera a quantidade: dois lanches iguais aparecem como _2 itens do pedido_. |
+| 4. | O item                     | Mostra a quantidade, o nome, os complementos escolhidos e o valor.                                              |
+
+O cliente pode conferir o pedido antes de o motoboy chegar, em vez de descobrir um problema na porta.
+
+### No computador
+
+No computador, a mesma página vira duas colunas. As informações ficam à esquerda, e o mapa ocupa a área da direita. A loja, a moto e o destino aparecem ligados por um traço pontilhado.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/gestao-entregas-rastreio-cliente/imagens-tratadas/06-mapa-no-computador.png" width="800" alt="A mesma tela no computador: informações à esquerda, mapa à direita, e o traço pontilhado entre a moto e o destino" />
+
+| Nº | Onde                   | O que é                                                                                        |
+| -- | ---------------------- | ---------------------------------------------------------------------------------------------- |
+| 1. | **Ir para o pedido**   | O mesmo botão disponível no celular.                                                           |
+| 2. | O cartão do entregador | Mostra o nome e o horário da última posição, como _Posição de 1 min atrás_.                    |
+| 3. | O pino da loja         | Mostra a loja com a sua logo.                                                                  |
+| 4. | O ícone da moto        | Mostra a posição mais recente do entregador.                                                   |
+| 5. | O traço pontilhado     | Indica somente a distância entre a moto e o destino. Não representa o caminho que a moto fará. |
+| 6. | O pino escuro          | Mostra o endereço do cliente.                                                                  |
+
+É a mesma página e o mesmo link no celular e no computador. Não existe uma versão para PC que você precise manter ou divulgar.
+
+---
+
+## 6. Pedido entregue
+
+Quando você registra a baixa da entrega, a tela fecha o ciclo. O cabeçalho troca a barra de etapas pela data e hora do pedido, o estado vira **Pedido concluído** e a avaliação aparece logo abaixo.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/gestao-entregas-rastreio-cliente/imagens-tratadas/07-pedido-concluido.png" width="614" height="384" alt="O pedido concluído: data e hora no cabeçalho, a faixa Pedido concluído e o convite para avaliar" />
+
+| Nº | Onde                                      | O que é                                                                                                     |
+| -- | ----------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| 1. | **Pedido nº 1173 \| 23/09/2026 às 13:31** | A barra de progresso dá lugar à data e à hora. Nesse momento, aparece o número interno do pedido.           |
+| 2. | **Pedido concluído**                      | A faixa cinza com o sinal verde. Em um pedido cancelado, a faixa fica vermelha e mostra _Pedido cancelado_. |
+| 3. | **Avalie seu pedido**                     | Mostra cinco estrelas. Depois da avaliação, o texto muda para _Pedido avaliado_.                            |
+
+O marcador do entregador desaparece para não deixar um pino parado na porta do cliente. O resumo do pedido permanece, e o link do WhatsApp continua funcionando por duas horas depois da entrega.
+
+---
+
+## 7. O que a tela escreve em cada situação
+
+Use esta tabela quando um cliente ligar lendo uma frase da tela. O acompanhamento sempre mostra um estado ou uma explicação correspondente.
+
+| Situação                                 | A frase de cima                          | A linha de baixo                                                        |
+| ---------------------------------------- | ---------------------------------------- | ----------------------------------------------------------------------- |
+| Em preparo                               | _Seu pedido está sendo preparado_        | _Avisaremos assim que sair para entrega._                               |
+| Pronto, esperando o entregador           | _Pedido pronto, aguardando o entregador_ | Não aparece uma linha adicional.                                        |
+| Saiu, mas tem outra parada antes         | _Carlos saiu para entrega_               | _Você é a 2ª de 3 paradas desta viagem._                                |
+| Vindo para o cliente                     | _Carlos está indo até você_              | _A 640 m de você, em linha reta._                                       |
+| Celular do entregador sem enviar posição | _Seu pedido está a caminho_              | _Localização indisponível no momento._                                  |
+| Entregue                                 | _Pedido entregue às 16:47_               | Não aparece uma linha adicional.                                        |
+| Link expirado                            | _Este link expirou_                      | Não aparece uma linha adicional.                                        |
+| Link que o sistema não reconhece mais    | _Esse pedido não tem rastreio_           | _O link pode ter expirado, ou esta entrega não está sendo acompanhada._ |
+
+Quando a tela mostra o nome do entregador, usa o primeiro nome cadastrado para o funcionário. Sem entregador vinculado, as frases mudam para _Seu pedido saiu para entrega_ e _Seu pedido está a caminho_.
+
+Quando o mapa não pode ser desenhado, o espaço informa o motivo com uma destas mensagens: _O mapa aparece quando o pedido sair para entrega._, _Entrega concluída._ ou _Este link expirou._
+
+---
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+  <Expandable title="O cliente diz que não recebeu o link" default-open="false">
+    O entregador não estava enviando GPS quando a mensagem foi enviada. Isso pode acontecer se o aplicativo estiver fechado, sem sinal ou sem bateria. O link só é anexado quando existe uma posição dos últimos 15 minutos.
+
+    O cliente ainda pode rastrear a entrega entrando em _Pedidos_ no cardápio digital.
+  </Expandable>
+
+  <Expandable title="A tela do cliente diz que a localização está indisponível" default-open="false">
+    O celular do entregador parou de enviar posições. A tela informa o problema em vez de mostrar um ponto desatualizado, para que o cliente não confie em uma localização antiga.
+  </Expandable>
+
+  <Expandable title="O cliente reclama que a moto está indo para o lado contrário" default-open="false">
+    O entregador tem outra parada antes. Quando isso acontece, a tela informa: _"Você é a 2ª de 3 paradas desta viagem."_
+  </Expandable>
+
+  <Expandable title="Quanto tempo falta para o pedido chegar" default-open="false">
+    A tela não estima o horário de chegada. Ela mostra a distância em linha reta, que é um número verdadeiro. O tempo exigiria considerar ruas, trânsito e outras paradas.
+  </Expandable>
+
+  <Expandable title="O link parou de abrir" default-open="false">
+    O link expira duas horas depois da entrega. Depois disso, a tela mostra _Este link expirou_ ou _Esse pedido não tem rastreio_ e não exibe mais o acompanhamento.
+  </Expandable>
+
+  <Expandable title="Apareceu Funcionário no lugar do nome do entregador" default-open="false">
+    O cadastro do funcionário está sem um nome de pessoa. Corrija o cadastro em Cadastros → Funcionários. Os próximos pedidos mostrarão o nome cadastrado.
+  </Expandable>
+
+  <Expandable title="Pedido de retirada tem acompanhamento" default-open="false">
+    Não. O acompanhamento está disponível somente para pedidos de entrega e somente enquanto eles estão em andamento.
+  </Expandable>
+
+  <Expandable title="O cliente pode enviar o link para outra pessoa" default-open="false">
+    Pode. O link mostra o endereço de entrega, portanto o cliente deve compartilhá-lo somente com quem precisa acompanhar o pedido. O link é secreto por ser sorteado, não por exigir uma senha.
+  </Expandable>
+
+  <Expandable title="O rastreio consome o pacote de dados do cliente" default-open="false">
+    O consumo é baixo. A tela consulta o servidor a cada dez ou 20 segundos e para de consultar quando o cliente troca de aba ou bloqueia o celular.
+  </Expandable>
+
+  <Expandable title="Preciso ligar o rastreio em algum lugar" default-open="false">
+    Não. Não existe campo novo para ativar. Garanta os quatro itens da seção _Antes de começar_: GPS do entregador, nome cadastrado, localização do endereço e aviso de _Pedido saiu para entrega_ ligado.
+  </Expandable>
+</ExpandableGroup>
+
+---
+
+## Onde continuar
+
+| Manual                                                                               | O que cobre                                                                             |
+| ------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------- |
+| [Avisos de WhatsApp da entrega](/painel-de-entregas/gestao-entregas-avisos-whatsapp) | A mensagem de _saiu para entrega_ que carrega o link e o aviso de _entregador próximo_. |
+| [Despachar e acompanhar](/painel-de-entregas/gestao-entregas-despachar)              | O despacho da rota que faz o link ser enviado.                                          |
+| [Liberar o entregador](/painel-de-entregas/gestao-entregas-liberar-entregador)       | O cadastro de onde sai o nome que o cliente lê.                                         |
+| [App: instalar, entrar e ficar disponível](/app-entregador-entrar)                   | O aplicativo e a permissão de GPS necessários para gerar o link.                        |
+| [Fechar a entrega no painel](/painel-de-entregas/gestao-entregas-fechar-entrega)     | A baixa que fecha o ciclo e remove o entregador do mapa.                                |
+

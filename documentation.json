@@ -757,6 +757,10 @@
                     ]
                   },
                   {
+                    "title": "�� Rastreio pelo cliente",
+                    "path": "manuais/gestao-entregas-rastreio-cliente"
+                  },
+                  {
                     "title": "💬 Avisos de WhatsApp da entrega",
                     "path": "painel-de-entregas/gestao-entregas-avisos-whatsapp"
                   },
