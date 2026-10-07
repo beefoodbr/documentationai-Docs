@@ -1,0 +1,459 @@
+---
+title: Programa de pontos
+description: >-
+  Ative a fidelidade por pontos, configure regras e recompensas e acompanhe os
+  resgates dos clientes no BeeFood3.
+---
+## Programa de pontos: o cliente junta pontos e troca por recompensa
+
+O **Programa de pontos** permite que o cliente ganhe pontos a cada compra e troque o saldo por **desconto em reais** ou por **produto grátis**. Você define quanto cada real gasto gera, por quanto tempo os pontos permanecem válidos e quais recompensas aparecem na vitrine.
+
+O programa funciona no **sistema BeeFood**, no **cardápio digital**, no **totem de autoatendimento** e no **cardápio digital tablet**. As telas deste manual são do cardápio digital, onde o cliente consulta o saldo e usa os pontos sozinho. Os outros canais seguem as mesmas regras de acúmulo, com diferenças explicadas na seção [12. Os outros canais](#12-os-outros-canais-sistema-beefood-totem-e-tablet).
+
+<Callout kind="tip" collapsed="false">
+  As imagens deste manual têm setas com números. Cada número no texto corresponde ao campo ou botão indicado na tela.
+</Callout>
+
+## Para que serve
+
+Cashback devolve dinheiro. Pontos criam uma **meta** para o cliente alcançar. Com o programa de pontos, você controla a régua de acúmulo e oferece recompensas próprias da sua loja.
+
+- **O cliente tem um motivo para voltar.** Quem tem 80 pontos e vê uma recompensa de 100 pontos sabe quanto falta para alcançá-la.
+- **A recompensa representa um produto da loja.** Um produto grátis pode custar menos para você do que um desconto genérico de mesmo valor.
+- **Você define a régua.** Um ponto por real é o padrão, mas você pode configurar outra quantidade, inclusive com casas decimais.
+
+**Cashback e pontos não funcionam ao mesmo tempo no mesmo cardápio.** Ao ativar um programa, o outro é desativado. Os saldos existentes não são apagados, mas você precisa usar a migração para convertê-los.
+
+## Antes de começar
+
+<Callout kind="info" collapsed="false">
+  Antes de ativar o programa, confirme que você tem:
+
+  - Acesso a **Fidelidade (CRM) → Programa de pontos**. A permissão é a mesma usada para o Cashback.
+  - **Cardápio digital** contratado e com o link publicado, caso queira que o cliente consulte e resgate pontos sozinho.
+  - Uma decisão sobre usar **pontos** ou **cashback** no cardápio. Os dois programas são exclusivos.
+  - Conhecimento sobre o processamento: os pontos de pedidos são creditados **toda madrugada**, somente para pedidos pagos e finalizados.
+</Callout>
+
+## 1. Ligar o programa
+
+Abra **Fidelidade (CRM)** no menu e clique em **Programa de pontos** (1). A tela abre na aba **Configuração** (2), que mostra a faixa amarela sobre o processamento da madrugada (3). Ative o switch **Ativar programa de Pontos** (4).
+
+Os botões **MIGRAR PARA CASHBACK** e **TRAZER PARA PONTOS** (5) ficam no alto da tela. Eles servem para converter saldos entre os programas e são explicados na seção 11.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/programa-pontos/imagens-tratadas/01-ativar-programa-pontos.png" width="800" alt="A aba Configuração do Programa de pontos, com o switch de ativação" caption="A aba Configuração do Programa de pontos, com o switch de ativação" />
+
+| Nº | Campo                                             | O que faz                                                                                                                      |
+| -- | ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| 1. | **Programa de pontos**, no menu                   | Abre o programa em **Fidelidade (CRM)**, logo abaixo de **Cashback**.                                                          |
+| 2. | Aba **Configuração**                              | Reúne as regras do programa. As abas **Histórico**, **Saldo por Cliente** e **Fila Processamento** servem para acompanhamento. |
+| 3. | Faixa amarela                                     | Informa que o saldo é processado toda madrugada para pedidos pagos e finalizados.                                              |
+| 4. | **Ativar programa de Pontos**                     | Liga ou desliga o programa. O selo mostra **Ativado** ou **Desativado**.                                                       |
+| 5. | **MIGRAR PARA CASHBACK** e **TRAZER PARA PONTOS** | Convertem o saldo de todos os clientes entre os programas. A ação é irreversível.                                              |
+
+Não existe botão de salvar. Cada campo é salvo automaticamente cerca de meio segundo depois que você para de editar. Trocar o cardápio no seletor do alto da tela não apaga a configuração.
+
+<Callout kind="alert" collapsed="false">
+  Se o Cashback estiver ativo no cardápio, o BeeFood mostra um aviso antes de ativar os pontos. A confirmação informa que o Cashback será desativado, mas os saldos acumulados não serão apagados. Use a migração se quiser convertê-los.
+
+  Confirme somente se você realmente quiser trocar de programa. O botão de confirmação é **ATIVAR E DESATIVAR O CASHBACK**.
+</Callout>
+
+## 2. Quanto o cliente ganha, por quanto tempo e em quais canais
+
+O cartão **Regras de acúmulo** define quanto o cliente ganha, por quanto tempo os pontos valem e quais canais geram saldo.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/programa-pontos/imagens-tratadas/02-regras-de-acumulo.png" width="800" alt="O cartão Regras de acúmulo, com a régua de pontos, a validade e as modalidades" caption="O cartão Regras de acúmulo, com a régua de pontos, a validade e as modalidades" />
+
+| Nº | Campo                                       | O que faz                                                                                                                                  |
+| -- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| 1. | **Pontos ganhos a cada R$ 1,00 em pedidos** | Define a régua. Com 1 ponto por real, um pedido de R$ 100,00 gera 100 pontos. O campo aceita casas decimais, como 0,5 ponto por real.      |
+| 2. | **Validade dos pontos após o crédito**      | Define a validade em dias, contados a partir de cada crédito. **0** significa que os pontos não expiram.                                   |
+| 3. | **Pedidos via cardápio digital delivery**   | Canal padrão, sempre ligado e sem opção de desativação.                                                                                    |
+| 4. | Outros canais                               | **Presenciais via cardápio digital**, **manuais delivery**, **mesas e comandas**, **PDV** e **Totem**. Um canal desligado não gera pontos. |
+| 5. | **Exemplo de como funciona**                | Mostra a configuração atual aplicada a um pedido de R$ 100,00.                                                                             |
+
+<Callout kind="alert" collapsed="false">
+  A validade é contada por crédito, não a partir do último pedido. Se um cliente receber 100 pontos hoje e 40 pontos na semana seguinte, cada lote terá sua própria data de expiração. O extrato mostra a validade de cada lote.
+</Callout>
+
+Um canal desativado não bloqueia a venda nem mostra erro. O pedido é concluído normalmente, mas não gera pontos. Se uma venda presencial não acumulou, confira primeiro se o canal correspondente está ligado.
+
+## 3. Bônus de boas-vindas e pontos sobre a taxa de entrega
+
+Os cartões **Bônus de boas-vindas** e **Entrega grátis com pontos** são independentes. Cada um tem seu próprio switch e configuração.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/programa-pontos/imagens-tratadas/03-bonus-e-taxa-de-entrega.png" width="800" alt="Os cartões Bônus de boas-vindas e Entrega grátis com pontos" caption="Os cartões Bônus de boas-vindas e Entrega grátis com pontos" />
+
+| Nº | Campo                                               | O que faz                                                                                             |
+| -- | --------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| 1. | Switch do **Bônus de boas-vindas**                  | Ativa o crédito automático na primeira compra do cliente.                                             |
+| 2. | **Pontos de bônus**                                 | Define quantos pontos entram na primeira compra além dos pontos normais do pedido.                    |
+| 3. | Switch do **Entrega grátis com pontos**             | Ativa o acúmulo de pontos sobre a taxa de entrega.                                                    |
+| 4. | Texto explicativo do cartão                         | Esclarece que o cliente acumula pontos sobre a taxa de entrega. O recurso não concede entrega grátis. |
+| 5. | **Pontos ganhos a cada R$ 1,00 de taxa de entrega** | Define uma régua específica para o valor do frete.                                                    |
+
+O bônus de boas-vindas também é creditado durante o processamento da madrugada. Ele não aparece imediatamente após o cliente concluir a primeira compra.
+
+## 4. Recompensas de desconto
+
+Uma recompensa de desconto troca pontos por um valor em reais. Para cadastrar uma, informe o valor do desconto, informe o preço em pontos e clique em **ADICIONAR**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/programa-pontos/imagens-tratadas/04-recompensas-de-desconto.png" width="800" alt="O cartão Recompensas de desconto, com três recompensas cadastradas" caption="O cartão Recompensas de desconto, com três recompensas cadastradas" />
+
+| Nº | Campo                      | O que faz                                                                                                             |
+| -- | -------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| 1. | Linha cadastrada           | Mostra a recompensa, como **R$ 5,00 por 50 pontos**, e uma estimativa do valor em compras necessário para alcançá-la. |
+| 2. | Lixeira                    | Remove a recompensa da vitrine. Resgates já aplicados em pedidos fechados não são alterados.                          |
+| 3. | **Valor do desconto (R$)** | Define quanto será descontado do pedido.                                                                              |
+| 4. | **Pontos necessários**     | Define o preço da recompensa em pontos.                                                                               |
+| 5. | **ADICIONAR**              | Salva a recompensa e publica a opção na vitrine do cliente.                                                           |
+
+Cadastre uma escada de recompensas, como R$ 5,00, R$ 10,00 e R$ 20,00. Assim, o cliente consegue resgatar uma recompensa menor enquanto continua acumulando para alcançar as maiores.
+
+Para oferecer entrega grátis, cadastre uma recompensa de desconto com o valor da sua taxa de entrega. O cartão **Entrega grátis com pontos** da seção anterior tem outra função: ele faz o cliente acumular pontos sobre o frete.
+
+## 5. Recompensas de produto
+
+Uma recompensa de produto permite que o cliente troque pontos por um item grátis do cardápio. Selecione o produto, informe a quantidade de pontos e clique em **ADICIONAR**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/programa-pontos/imagens-tratadas/05-recompensas-de-produto.png" width="800" alt="O cartão Recompensas de produto, com uma recompensa por código e outra por nome" caption="O cartão Recompensas de produto, com uma recompensa por código e outra por nome" />
+
+| Nº | Campo                                        | O que faz                                                                                                   |
+| -- | -------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| 1. | **Produto #2515303 · grátis por 100 pontos** | Aparece quando o painel não encontra o produto na lista do cardápio atual e mostra o código em vez do nome. |
+| 2. | **CHICKEN DELUXE · grátis por 80 pontos**    | Exibe o nome do produto cadastrado no cardápio.                                                             |
+| 3. | **Selecionar produto**                       | Abre a busca de produtos do cardápio.                                                                       |
+| 4. | **Pontos necessários**                       | Define o preço do produto em pontos.                                                                        |
+| 5. | **ADICIONAR**                                | Salva e publica a recompensa.                                                                               |
+
+Prefira produtos simples, sem grupo de opções obrigatório. Um item que exige escolha de tamanho, sabor ou ponto da carne pode impedir o resgate automático, porque o cliente precisa preencher opções adicionais.
+
+<Callout kind="alert" collapsed="false">
+  Depois de cadastrar uma recompensa de produto, confira a vitrine pelo próprio cardápio. O código gravado pelo painel e o código usado pelo cardápio público podem ser diferentes. Quando isso acontece, a recompensa aparece no painel, mas não aparece para o cliente.
+
+  No cardápio, abra **Perfil → Programa de pontos → Ver o que você pode ganhar**. Se a recompensa não estiver na lista, fale com o suporte BeeFood informando o nome do produto e a quantidade de pontos. Recompensas de desconto não têm esse risco.
+</Callout>
+
+## 6. O que o cliente vê no cardápio digital
+
+Quando o programa está ativo, uma faixa amarela aparece na home do cardápio (1). Produtos cadastrados como recompensa recebem um selo de presente (2). O cliente acessa o saldo pelo menu **Perfil** (3).
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/programa-pontos/imagens-tratadas/06-cardapio-faixa-pontos.png" width="800" alt="A home do cardápio digital, com a faixa de pontos e o selo de presente no produto" caption="A home do cardápio digital, com a faixa de pontos e o selo de presente no produto" />
+
+| Nº | Onde                             | O que é                                                                                                                       |
+| -- | -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| 1. | **Acumule pontos a cada compra** | Faixa amarela exibida quando o programa está ativo. Ela não depende de recompensa cadastrada nem de identificação do cliente. |
+| 2. | Selo de presente                 | Identifica produtos que podem ser resgatados com pontos.                                                                      |
+| 3. | **Perfil**                       | Entrada para identificação, saldo, extrato e vitrine de recompensas.                                                          |
+
+A alteração pode levar até um minuto para aparecer no cardápio público por causa do cache. Aguarde esse período e recarregue a página antes de investigar um problema.
+
+### O cliente se identifica e acessa o programa
+
+Ao tocar em **Perfil**, o cliente não identificado informa o telefone de WhatsApp. Depois da identificação, o menu **Perfil** fica ativo (1) e exibe **Programa de pontos** (2).
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/programa-pontos/imagens-tratadas/07-cardapio-perfil-programa-pontos.png" width="800" alt="O menu do Perfil, com o item Programa de pontos" caption="O menu do Perfil, com o item Programa de pontos" />
+
+| Nº | Onde                   | O que é                                                                                                                                 |
+| -- | ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| 1. | **Perfil** aceso       | Indica que o cliente está identificado. O saldo pertence a uma pessoa e depende dessa identificação.                                    |
+| 2. | **Programa de pontos** | Abre o saldo e o extrato. O item aparece somente quando o programa está ativo e não aparece no cardápio presencial por QR Code de mesa. |
+
+O item **Programa de fidelidade**, quando exibido, é um recurso antigo e não corresponde ao Programa de pontos.
+
+### Meus pontos: saldo e extrato
+
+O menu abre a tela **Meus pontos**, com o saldo em destaque (1), o extrato (2) e o atalho para a vitrine (6).
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/programa-pontos/imagens-tratadas/08-cardapio-meus-pontos.png" width="800" alt="A tela Meus pontos, com o saldo e o extrato do cliente" caption="A tela Meus pontos, com o saldo e o extrato do cliente" />
+
+| Nº | Onde                                  | O que é                                                                     |
+| -- | ------------------------------------- | --------------------------------------------------------------------------- |
+| 1. | **121 pontos / Seu saldo disponível** | Saldo atual do cliente, igual ao saldo mostrado no painel.                  |
+| 2. | **Extrato**                           | Histórico dos lançamentos, do mais recente para o mais antigo.              |
+| 3. | **Ganhou 120 pts**                    | Crédito de pontos.                                                          |
+| 4. | Motivo do lançamento                  | Texto digitado no campo **Motivo** do painel. O cliente lê o texto inteiro. |
+| 5. | **Usou 1 pts**                        | Débito por resgate, remoção manual ou expiração.                            |
+| 6. | **Ver o que você pode ganhar**        | Abre a vitrine de recompensas.                                              |
+
+### A vitrine de recompensas
+
+A vitrine mostra as regras do programa (1), as recompensas de desconto (2) e os produtos grátis (5). Cada item indica se está **Disponível** (3) ou quantos pontos faltam (4).
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/programa-pontos/imagens-tratadas/09-cardapio-recompensas.png" width="800" alt="A vitrine O que você pode ganhar, com as recompensas e os selos" caption="A vitrine O que você pode ganhar, com as recompensas e os selos" />
+
+| Nº | Onde                                   | O que é                                                          |
+| -- | -------------------------------------- | ---------------------------------------------------------------- |
+| 1. | Regras do programa                     | Mostra a quantidade de pontos por real e a validade configurada. |
+| 2. | **R$ 5,00 de desconto / 50 pontos**    | Recompensa de desconto e seu preço em pontos.                    |
+| 3. | **Disponível**                         | O saldo do cliente é suficiente para o resgate.                  |
+| 4. | **Faltam 59 pts**                      | Quantidade que falta para alcançar a recompensa.                 |
+| 5. | **Chicken Deluxe grátis / 100 pontos** | Recompensa de produto.                                           |
+| 6. | **Ver meu extrato**                    | Retorna à tela de saldo e lançamentos.                           |
+
+Se nenhuma recompensa estiver cadastrada, a vitrine fica vazia e mostra **Nenhuma recompensa disponível no momento**. A faixa amarela continua aparecendo, por isso cadastre pelo menos uma recompensa antes de divulgar o programa.
+
+## 7. O resgate acontece na sacola
+
+O cliente não troca pontos diretamente na vitrine. Ele adiciona produtos à sacola, escolhe **Entrega** ou **Retirada** e usa a recompensa na etapa seguinte.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/programa-pontos/imagens-tratadas/10-cardapio-trocar-pontos.png" width="800" alt="A sacola do cardápio digital, com o cartão de pontos e as recompensas" caption="A sacola do cardápio digital, com o cartão de pontos e as recompensas" />
+
+| Nº | Onde                   | O que é                                                                 |
+| -- | ---------------------- | ----------------------------------------------------------------------- |
+| 1. | **Programa de Pontos** | Mostra quantos pontos o pedido atual vai gerar e a validade do crédito. |
+| 2. | Saldo disponível       | Mostra os pontos que o cliente possui.                                  |
+| 3. | **RESGATAR**           | Aplica a recompensa de desconto ao pedido.                              |
+| 4. | **INSUFICIENTE**       | Indica que o saldo não alcança o preço da recompensa.                   |
+| 5. | **ADICIONAR**          | Adiciona o produto grátis à sacola.                                     |
+| 6. | **Ganhe 29 pontos**    | Repete o total de pontos que o pedido vai gerar.                        |
+
+O cliente pode continuar sem resgatar uma recompensa. O cartão aparece somente depois que ele escolhe a modalidade do pedido.
+
+### Depois do resgate
+
+Ao tocar em **RESGATAR**, a recompensa selecionada fica em destaque e o botão vira **REMOVER**. As outras recompensas ficam desativadas. O total do pedido diminui, mas a quantidade de pontos gerada permanece igual.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/programa-pontos/imagens-tratadas/11-cardapio-resgate-aplicado.png" width="800" alt="A sacola depois do resgate, com o desconto aplicado e o total reduzido" caption="A sacola depois do resgate, com o desconto aplicado e o total reduzido" />
+
+| Nº | Onde                        | O que é                                                                          |
+| -- | --------------------------- | -------------------------------------------------------------------------------- |
+| 1. | Recompensa selecionada      | Única recompensa aplicada ao pedido.                                             |
+| 2. | **REMOVER**                 | Desfaz o resgate antes de fechar o pedido.                                       |
+| 3. | Outras recompensas apagadas | O cliente pode fazer somente um resgate por pedido.                              |
+| 4. | Total do pedido             | Mostra o valor já com o desconto aplicado.                                       |
+| 5. | Ganho de pontos             | Continua calculado sobre os itens do pedido, sem considerar o desconto aplicado. |
+
+Os pontos só saem do saldo quando o pedido é fechado. Abandonar a sacola não consome pontos.
+
+## 8. A mesma coisa no computador
+
+No computador, a faixa amarela é substituída por um cartão fixo na coluna direita do cardápio (1). O cartão mostra as regras e o atalho para a vitrine (2).
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/programa-pontos/imagens-tratadas/12-banner-pontos-computador.png" width="800" alt="O cardápio digital no computador, com o cartão Programa de Pontos" caption="O cardápio digital no computador, com o cartão Programa de Pontos" />
+
+| Nº | Onde                           | O que é                                                          |
+| -- | ------------------------------ | ---------------------------------------------------------------- |
+| 1. | **Programa de Pontos**         | Cartão exibido abaixo do nome da loja, com a régua e a validade. |
+| 2. | **Ver o que você pode ganhar** | Abre a mesma vitrine disponível no celular.                      |
+
+É a mesma página e o mesmo link. Você não precisa publicar ou manter uma versão separada para computador.
+
+## 9. Acompanhar no painel
+
+Use as abas do programa para consultar lançamentos, verificar o saldo de cada cliente e fazer ajustes manuais.
+
+### Histórico
+
+A aba **Histórico** mostra os lançamentos de todos os clientes do cardápio.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/programa-pontos/imagens-tratadas/13-historico-de-pontos.png" width="800" alt="A aba Histórico, com todos os lançamentos de pontos do cardápio" caption="A aba Histórico, com todos os lançamentos de pontos do cardápio" />
+
+| Nº | Campo              | O que faz                                                         |
+| -- | ------------------ | ----------------------------------------------------------------- |
+| 1. | Busca              | Procura por descrição, cliente ou venda.                          |
+| 2. | **Todos os tipos** | Filtra o tipo de lançamento.                                      |
+| 3. | Coluna **Tipo**    | Exibe **Ganhou**, **Usou**, **CANCELOU** e **Migrou**.            |
+| 4. | Coluna **Pontos**  | Mostra o lançamento com sinal, como **+120 pts** ou **−100 pts**. |
+
+As outras colunas mostram **Data**, **Cliente**, **Descrição** e **Validade**. A validade fica vazia quando o lote não expira.
+
+### Saldo por Cliente
+
+A aba **Saldo por Cliente** mostra os totais do programa e uma linha para cada cliente.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/programa-pontos/imagens-tratadas/14-saldo-por-cliente.png" width="800" alt="A aba Saldo por Cliente, com os totais e a lista de clientes" caption="A aba Saldo por Cliente, com os totais e a lista de clientes" />
+
+| Nº | Campo           | O que faz                                                                                           |
+| -- | --------------- | --------------------------------------------------------------------------------------------------- |
+| 1. | Quatro totais   | Mostra **Total de Pontos**, **Clientes com Pontos**, **Total de Clientes** e **Média por Cliente**. |
+| 2. | **Novo Saldo**  | Procura um cliente e abre o ajuste de crédito. O cliente precisa existir no cadastro.               |
+| 3. | **SALDO TOTAL** | Saldo atual do cliente.                                                                             |
+| 4. | Ícone de olho   | Abre o extrato individual.                                                                          |
+
+Use a busca por nome ou telefone, selecione o cardápio e clique em **Atualizar** ou **Exportar** quando necessário.
+
+### Extrato do cliente
+
+O ícone de olho abre um painel lateral com o saldo, os controles de ajuste e todos os lançamentos.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/programa-pontos/imagens-tratadas/15-extrato-do-cliente.png" width="800" alt="O extrato de pontos de um cliente, no painel lateral" caption="O extrato de pontos de um cliente, no painel lateral" />
+
+| Nº | Campo                                       | O que faz                                                     |
+| -- | ------------------------------------------- | ------------------------------------------------------------- |
+| 1. | **SALDO ATUAL**                             | Mostra o saldo do cliente.                                    |
+| 2. | **ADICIONAR**, **REMOVER** e **TRANSFERIR** | Permite creditar, debitar ou converter o saldo deste cliente. |
+| 3. | **Gerado**, **Usado** e **Expirado**        | Resume os pontos gerados, usados e expirados.                 |
+| 4. | Linha do extrato                            | Mostra data, tipo, validade e quantidade de pontos.           |
+| 5. | Motivo                                      | Exibe o texto que também aparece para o cliente.              |
+
+### Creditar ou remover pontos manualmente
+
+Clique em **ADICIONAR** para abrir a janela de crédito.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/programa-pontos/imagens-tratadas/16-adicionar-pontos.png" width="800" alt="A janela Adicionar pontos, com os três campos" caption="A janela Adicionar pontos, com os três campos" />
+
+| Nº | Campo              | O que faz                                                                                     |
+| -- | ------------------ | --------------------------------------------------------------------------------------------- |
+| 1. | **Pontos**         | Define quantos pontos serão creditados. O crédito manual é imediato.                          |
+| 2. | **Expira em dias** | Define uma validade específica para este crédito. Se ficar vazio, usa a validade do programa. |
+| 3. | **Motivo**         | Campo obrigatório. O cliente lê o texto inteiro no extrato.                                   |
+| 4. | **CONFIRMAR (F2)** | Salva o crédito e atualiza o saldo no painel e no cardápio.                                   |
+
+O botão **REMOVER** usa os mesmos campos, sem a validade, e mostra o saldo disponível. O botão **TRANSFERIR** converte o saldo deste cliente entre pontos e cashback, usando a direção, a taxa e o teto definidos na janela.
+
+## 10. A fila de processamento
+
+A aba **Fila Processamento** mostra por que um pedido ainda não gerou pontos. Ela reúne os contadores da fila e uma linha para cada venda.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/programa-pontos/imagens-tratadas/17-fila-de-processamento.png" width="800" alt="A aba Fila Processamento, com os contadores e as vendas da fila" caption="A aba Fila Processamento, com os contadores e as vendas da fila" />
+
+| Nº | Campo               | O que faz                                                                            |
+| -- | ------------------- | ------------------------------------------------------------------------------------ |
+| 1. | Faixa amarela       | Reforça que os pontos são processados de madrugada para pedidos pagos e finalizados. |
+| 2. | Contadores          | Mostra **Total na fila**, **Pendentes**, **Sucesso** e **Erro**.                     |
+| 3. | Coluna **Status**   | Informa se a venda está **Pendente**, **Sucesso** ou **Erro**.                       |
+| 4. | Coluna **Mensagem** | Explica o motivo de um erro, como **Venda sem consumidor**.                          |
+
+As outras colunas mostram **Venda**, **Data Venda** e **Última tentativa**. Use o filtro de status e o botão **Atualizar** para consultar a fila.
+
+Uma venda sem consumidor não gera pontos porque o sistema não tem para quem creditar o saldo. Para acumular pontos em vendas no PDV, mesas, comandas ou delivery manual, o atendente precisa identificar o cliente.
+
+## 11. Trocar de cashback para pontos e voltar
+
+Os botões de migração ficam no alto da aba **Configuração**. Eles permitem trocar de programa convertendo o saldo dos clientes.
+
+| Botão                    | Janela                           | O que faz                                                                                                                                          |
+| ------------------------ | -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **TRAZER PARA PONTOS**   | **Converter cashback em pontos** | Desativa o Cashback, ativa os pontos e converte o saldo de cashback de cada cliente pela taxa de pontos por R$ 1,00. O saldo de cashback é zerado. |
+| **MIGRAR PARA CASHBACK** | **Converter pontos em cashback** | Desativa os pontos, ativa o Cashback e converte o saldo pela taxa em centavos por ponto. O saldo de pontos é zerado.                               |
+
+As duas janelas mostram um aviso de que a operação não é revertida automaticamente. O resultado informa quantos clientes foram processados e quantos pontos foram gerados. A operação aparece no **Histórico** com o tipo **Migrou**.
+
+Antes de converter, confira se a taxa deixa o cliente perto de uma recompensa. Por exemplo, com um ponto por R$ 1,00, um cliente com R$ 12,00 de cashback pode receber somente 12 pontos. Se a menor recompensa custar 50 pontos, ele não terá uma opção imediata.
+
+<Callout kind="alert" collapsed="false">
+  A migração é irreversível automaticamente. Leia o resumo da conversão antes de confirmar. Se tiver dúvida sobre a taxa, cancele a operação e teste primeiro em um único cliente pelo botão **TRANSFERIR** no extrato individual.
+</Callout>
+
+## 12. Os outros canais: sistema BeeFood, totem e tablet
+
+As regras são as mesmas nos canais. O que muda é a forma de identificar o cliente e onde o saldo pode ser consultado.
+
+| Canal                                                       | Acumula?                                           | O cliente vê o saldo?                                         | O que você precisa saber                                               |
+| ----------------------------------------------------------- | -------------------------------------------------- | ------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| **Cardápio digital delivery**                               | Sempre. É o canal padrão e não pode ser desligado. | Sim. O cliente vê faixa, Perfil, vitrine e resgate na sacola. | É o canal principal deste manual.                                      |
+| **Cardápio digital presencial**                             | Sim, se o canal estiver ligado.                    | Não. O programa não aparece no presencial.                    | O cliente consulta o saldo pelo cardápio de delivery.                  |
+| **Sistema BeeFood: PDV, mesas, comandas e delivery manual** | Sim, se o canal estiver ligado.                    | Não diretamente. O operador consulta no painel.               | O atendente precisa identificar o cliente na venda.                    |
+| **Totem de autoatendimento**                                | Sim, se **Pedidos via Totem** estiver ligado.      | Não nesta versão.                                             | O cliente acumula no totem e consulta ou resgata depois pelo cardápio. |
+| **Cardápio digital tablet**                                 | Conforme o canal registrado pelo pedido.           | Conforme a tela disponível no aparelho.                       | O tablet usa as regras do canal da venda.                              |
+
+Em todos os canais, os pontos pertencem a uma pessoa. Uma venda sem telefone ou outro identificador de cliente não gera saldo.
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+  <Expandable title="Como ativar o programa de pontos no BeeFood?" default-open="false">
+    Abra **Fidelidade (CRM) → Programa de pontos**, entre na aba **Configuração** e ative o switch **Ativar programa de Pontos**. Não existe botão de salvar.
+  </Expandable>
+
+  <Expandable title="Posso ter cashback e pontos ao mesmo tempo?" default-open="false">
+    Não. Cashback e Programa de pontos são exclusivos por cardápio. Ao ativar um, o outro é desativado. Os saldos existentes não são apagados, mas precisam ser convertidos pela migração.
+  </Expandable>
+
+  <Expandable title="O cliente comprou e não ganhou ponto. Por quê?" default-open="false">
+    Confira, nesta ordem: o processamento acontece somente de madrugada, o pedido precisa estar pago e finalizado e a venda precisa ter um cliente identificado. A aba **Fila Processamento** mostra o status e a mensagem do pedido.
+  </Expandable>
+
+  <Expandable title="Quantos pontos o cliente ganha por real?" default-open="false">
+    A quantidade é definida no campo **Pontos ganhos a cada R$ 1,00 em pedidos**. O padrão é um ponto por real, mas você pode configurar outra quantidade.
+  </Expandable>
+
+  <Expandable title="Os pontos expiram?" default-open="false">
+    Eles expiram conforme o número de dias definido em **Validade dos pontos após o crédito**. A contagem começa em cada crédito. Com o valor **0**, os pontos não expiram.
+  </Expandable>
+
+  <Expandable title="Como o cliente troca os pontos por desconto?" default-open="false">
+    O cliente adiciona itens à sacola, escolhe **Entrega** ou **Retirada** e toca em **RESGATAR** na recompensa disponível. O desconto entra no total do pedido.
+  </Expandable>
+
+  <Expandable title="Dá para resgatar duas recompensas no mesmo pedido?" default-open="false">
+    Não. Cada pedido aceita uma recompensa. Depois que o cliente escolhe uma, as outras ficam desativadas.
+  </Expandable>
+
+  <Expandable title="O cliente diz que não vê nada no cardápio. O que devo conferir?" default-open="false">
+    Confirme se o programa está **Ativado**, aguarde até um minuto para a alteração sair do cache e verifique se o cliente está identificado pelo telefone. O programa não aparece no cardápio presencial por QR Code de mesa.
+  </Expandable>
+
+  <Expandable title="Cadastrei uma recompensa de produto e ela não apareceu para o cliente. O que faço?" default-open="false">
+    Abra a vitrine pelo próprio cardápio e confira a recompensa. O código do produto no painel pode ser diferente do código usado no cardápio público. Se o item não aparecer, fale com o suporte BeeFood informando o nome do produto e os pontos necessários.
+  </Expandable>
+
+  <Expandable title="O que o cliente lê no extrato dele?" default-open="false">
+    O cliente vê a data, o tipo, a quantidade de pontos e o motivo informado no painel. Tudo que você escrever no campo **Motivo** aparece inteiro no extrato.
+  </Expandable>
+
+  <Expandable title="Como dou pontos de cortesia para um cliente?" default-open="false">
+    Abra **Saldo por Cliente**, clique no ícone de olho do cliente e selecione **ADICIONAR**. O crédito manual é imediato e não espera o processamento da madrugada.
+  </Expandable>
+
+  <Expandable title="Como dar entrega grátis por pontos?" default-open="false">
+    Cadastre uma recompensa de desconto com o valor da taxa de entrega. O cartão **Entrega grátis com pontos** serve para acumular pontos sobre a taxa, não para conceder frete grátis.
+  </Expandable>
+
+  <Expandable title="O que significa Migrou no histórico?" default-open="false">
+    **Migrou** identifica saldo convertido entre cashback e pontos, seja pela migração geral do programa ou pelo botão **TRANSFERIR** no extrato de um cliente.
+  </Expandable>
+
+  <Expandable title="O bônus de boas-vindas cai na hora?" default-open="false">
+    Não. O bônus é creditado durante o processamento da madrugada da primeira compra.
+  </Expandable>
+
+  <Expandable title="Por que as cores dos sinais no extrato parecem invertidas?" default-open="false">
+    As cores dos ícones no cardápio são apenas visuais. Os valores continuam corretos. No painel, os lançamentos aparecem com sinais de mais e menos.
+  </Expandable>
+
+  <Expandable title="Por que a hora do painel não é igual à hora do cardápio?" default-open="false">
+    O painel mostra a hora do servidor, que pode estar três horas à frente do horário de Brasília. O cardápio mostra a hora local. Os dois registros representam o mesmo lançamento.
+  </Expandable>
+
+  <Expandable title="Preciso cadastrar uma recompensa para ligar o programa?" default-open="false">
+    Não. Você pode ativar o programa sem cadastrar recompensas. Porém, a vitrine ficará vazia enquanto nenhuma recompensa estiver configurada. Cadastre pelo menos uma antes de divulgar o programa.
+  </Expandable>
+</ExpandableGroup>
+
+## Precisa de ajuda?
+
+<Callout kind="info" collapsed="false">
+  Fale com o **suporte BeeFood** informando o cardápio, o telefone do cliente e o status e a mensagem exibidos na aba **Fila Processamento**. Esses dados aceleram a análise de casos em que os pontos não foram creditados.
+</Callout>
+
+## Manuais relacionados
+
+<Columns cols="2">
+  <Card title="Cashback: configurar o programa" href="/cashback-configurar" icon="settings" cta="Abrir manual" horizontal="false">
+    Configure o outro programa de fidelidade disponível no cardápio.
+  </Card>
+
+  <Card title="Cashback: operar" href="/cashback-operar" icon="smartphone" cta="Abrir manual" horizontal="false">
+    Consulte saldos, faça ajustes e use cashback nas vendas.
+  </Card>
+
+  <Card title="Cupom de desconto" href="/cupom-desconto" icon="ticket" cta="Abrir manual" horizontal="false">
+    Crie e use descontos por código junto com o Programa de pontos.
+  </Card>
+
+  <Card title="Classificação RFV" href="/classificacao-rfv" icon="users" cta="Abrir manual" horizontal="false">
+    Analise os clientes que mais compram e voltam à loja.
+  </Card>
+
+  <Card title="Cupom e cashback no totem" href="/manuais/totem-cupom-cashback" icon="monitor" cta="Abrir manual" horizontal="false">
+    Veja como os recursos de fidelidade aparecem no totem.
+  </Card>
+
+  <Card title="Cardápio digital presencial por QR Code" href="/cardapio-digital-presencial-qrcode" icon="qrcode" cta="Abrir manual" horizontal="false">
+    Entenda o funcionamento do canal presencial e suas limitações.
+  </Card>
+</Columns>
+

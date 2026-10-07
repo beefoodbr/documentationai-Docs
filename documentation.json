@@ -110,6 +110,10 @@
                     ]
                   },
                   {
+                    "title": "🎁 Programa de pontos",
+                    "path": "programa-pontos"
+                  },
+                  {
                     "title": "📊 BeeFood Pixel Analytics",
                     "path": "food-marketing-beefood-pixel-analytics"
                   }
