@@ -552,6 +552,10 @@
                       {
                         "title": "🛵 Pick N Go!",
                         "path": "integracao-pick-n-go"
+                      },
+                      {
+                        "title": "🛵 Entregas Expressas",
+                        "path": "integracao-entregas-expressas"
                       }
                     ]
                   },
