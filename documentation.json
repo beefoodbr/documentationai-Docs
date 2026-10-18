@@ -203,6 +203,10 @@
                   {
                     "title": "🟢 Venda Sugestiva (UpSell)",
                     "path": "cardapio-digital-venda-sugestiva-upsell"
+                  },
+                  {
+                    "title": "💬 Botão WhatsApp",
+                    "path": "cardapio-digital-botao-whatsapp"
                   }
                 ]
               },
