@@ -1,18 +1,18 @@
 ---
-title: "Entregas Expressas"
-description: "Integre o Entregas Expressas ao BeeFood via API Aberta: cada pedido de entrega aceito entra sozinho no aplicativo com endereço, cliente, itens e pagamento. O status volta automático: coleta vira despachado, entrega vira entregue."
+title: Entregas Expressas
+description: >-
+  Integre o Entregas Expressas ao BeeFood via API Aberta: cada pedido de entrega
+  aceito entra sozinho no aplicativo com endereço, cliente, itens e pagamento. O
+  status volta automático: coleta vira despachado, entrega vira entregue.
 ---
-
 ## Integrar o BeeFood ao Entregas Expressas
 
 Ligue o **BeeFood** ao **Entregas Expressas** para enviar automaticamente cada pedido de entrega aceito, com endereço, cliente, itens e pagamento. A coleta atualiza o pedido para **despachado** no BeeFood, e a entrega concluída atualiza o status para **entregue**.
 
 A configuração tem três partes, nesta ordem: pegar a credencial no **BeeFood**, cadastrar a integração no **Entregas Expressas** e voltar ao **BeeFood** para cadastrar o webhook. O webhook é obrigatório para que os pedidos sejam enviados.
 
-<Callout kind="info">
-
-Tudo é cadastrado em **Aplicativos → API Aberta**, dentro do BeeFood. A tela do Entregas Expressas pode indicar o portal de desenvolvedor em `developer.beefood.com.br`, mas você não precisa acessá-lo para criar a credencial ou o webhook.
-
+<Callout kind="info" collapsed="false">
+  Tudo é cadastrado em **Aplicativos → API Aberta**, dentro do BeeFood. A tela do Entregas Expressas pode indicar o portal de desenvolvedor em `developer.beefood.com.br`, mas você não precisa acessá-lo para criar a credencial ou o webhook.
 </Callout>
 
 ## O que a integração faz
@@ -34,81 +34,69 @@ Tudo é cadastrado em **Aplicativos → API Aberta**, dentro do BeeFood. A tela 
 
 <Steps>
   <Step title="Abrir Aplicativos → API Aberta" title-type="p">
-
     No menu lateral do **BeeFood**, clique em **Aplicativos**. Na seção **API e MCP**, clique no card **API Aberta**.
 
     <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-entregas-expressas/imagens-tratadas/01-aplicativos-api-aberta.png" width="1372" height="714" alt="Menu Aplicativos do BeeFood com o card API Aberta" />
 
-    | Nº | O que fazer |
-    | --- | --- |
-    | 1 | Clique em **Aplicativos**, no menu lateral. |
-    | 2 | Abra o card **API Aberta**, identificado como a opção para integrar seu sistema ao BeeFood via API REST. |
-
+    | Nº | O que fazer                                                                                              |
+    | -- | -------------------------------------------------------------------------------------------------------- |
+    | 1  | Clique em **Aplicativos**, no menu lateral.                                                              |
+    | 2  | Abra o card **API Aberta**, identificado como a opção para integrar seu sistema ao BeeFood via API REST. |
   </Step>
 
   <Step title="Copiar o Client ID e o Client Secret" title-type="p">
-
     O painel do **BeeFood** abre na aba **Credencial**. A credencial principal da sua loja já existe, então você não precisa criar uma credencial para começar.
 
     Copie o **Client ID** usando o botão ao lado do campo. O **Client Secret** fica oculto até você clicar no ícone de olho. Depois de revelá-lo, copie o valor e confirme que o selo da credencial mostra **Ativa**.
 
     <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-entregas-expressas/imagens-tratadas/02-painel-api-aberta.png" width="1372" height="714" alt="Painel da API Aberta do BeeFood com Client ID, Client Secret e credencial ativa" />
 
-    | Nº | Campo | O que fazer |
-    | --- | --- | --- |
-    | 1 | Aba **Credencial** | Consulte o Client ID e o Client Secret nessa aba. |
-    | 2 | **Client ID** | Copie o valor pelo botão ao lado do campo. Ele identifica a credencial. |
-    | 3 | **Ícone de olho** | Revele o Client Secret. Depois de revelado, o botão de copiar aparece. |
-    | 4 | Selo **Ativa** | Confirme que a credencial está ativa. Uma credencial desativada não permite que o Entregas Expressas acesse a loja. |
+    | Nº | Campo              | O que fazer                                                                                                         |
+    | -- | ------------------ | ------------------------------------------------------------------------------------------------------------------- |
+    | 1  | Aba **Credencial** | Consulte o Client ID e o Client Secret nessa aba.                                                                   |
+    | 2  | **Client ID**      | Copie o valor pelo botão ao lado do campo. Ele identifica a credencial.                                             |
+    | 3  | **Ícone de olho**  | Revele o Client Secret. Depois de revelado, o botão de copiar aparece.                                              |
+    | 4  | Selo **Ativa**     | Confirme que a credencial está ativa. Uma credencial desativada não permite que o Entregas Expressas acesse a loja. |
 
-    <Callout kind="info">
-
-    O Client Secret não se perde no painel do BeeFood. O ícone de olho permite revelá-lo novamente sempre que necessário. No portal de desenvolvedor, o segredo é exibido somente uma vez.
-
+    <Callout kind="info" collapsed="false">
+      O Client Secret não se perde no painel do BeeFood. O ícone de olho permite revelá-lo novamente sempre que necessário. No portal de desenvolvedor, o segredo é exibido somente uma vez.
     </Callout>
-
   </Step>
 
   <Step title="Conferir as permissões" title-type="p">
-
     No painel da **API Aberta do BeeFood**, role até **Permissões**. O Entregas Expressas precisa de **Pedidos**, com **Consultar** e **Alterar**, e de **Loja**, com **Consultar**.
 
     A credencial principal já vem com essas permissões ligadas. Normalmente, você não precisa alterar nada. O botão **SALVAR PERMISSÕES** só fica disponível depois de alguma mudança.
 
     <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-entregas-expressas/imagens-tratadas/03-permissoes-da-credencial.png" width="1372" height="714" alt="Permissões da credencial da API Aberta no BeeFood" />
 
-    | Nº | Campo | O que fazer |
-    | --- | --- | --- |
-    | 1 | **Pedidos** | Mantenha **Consultar** e **Alterar** ligados. Essas permissões permitem ler o pedido e atualizar os status para despachado e entregue. |
-    | 2 | **Loja** | Mantenha **Consultar** ligado. Essa permissão permite consultar horários, entrega e formas de pagamento. |
-    | 3 | **SALVAR PERMISSÕES** | Use somente depois de alterar uma permissão. Se não mudou nada, ignore o botão. |
-    | 4 | **RECICLAR** | Não clique depois que a integração estiver funcionando. O botão troca o Client ID e o Client Secret e interrompe todas as conexões que usam a credencial. |
-    | 5 | **CRIAR CREDENCIAL** | Cria uma credencial separada para o parceiro. Essa opção é apresentada no próximo passo. |
+    | Nº | Campo                 | O que fazer                                                                                                                                               |
+    | -- | --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+    | 1  | **Pedidos**           | Mantenha **Consultar** e **Alterar** ligados. Essas permissões permitem ler o pedido e atualizar os status para despachado e entregue.                    |
+    | 2  | **Loja**              | Mantenha **Consultar** ligado. Essa permissão permite consultar horários, entrega e formas de pagamento.                                                  |
+    | 3  | **SALVAR PERMISSÕES** | Use somente depois de alterar uma permissão. Se não mudou nada, ignore o botão.                                                                           |
+    | 4  | **RECICLAR**          | Não clique depois que a integração estiver funcionando. O botão troca o Client ID e o Client Secret e interrompe todas as conexões que usam a credencial. |
+    | 5  | **CRIAR CREDENCIAL**  | Cria uma credencial separada para o parceiro. Essa opção é apresentada no próximo passo.                                                                  |
 
-    <Callout kind="info">
-
-    Ao ligar **Alterar**, a permissão **Consultar** do mesmo recurso é ligada automaticamente e fica bloqueada. Esse comportamento é uma regra da API.
-
+    <Callout kind="info" collapsed="false">
+      Ao ligar **Alterar**, a permissão **Consultar** do mesmo recurso é ligada automaticamente e fica bloqueada. Esse comportamento é uma regra da API.
     </Callout>
-
   </Step>
 
   <Step title="Opcional: criar uma credencial só para o parceiro" title-type="p">
-
     Você pode usar a credencial principal no Entregas Expressas. Se pretende conectar mais de um sistema, crie uma credencial por parceiro. Assim, você pode desativar ou apagar uma credencial sem interromper as outras integrações.
 
     No painel da **API Aberta do BeeFood**, clique em **CRIAR CREDENCIAL**, confira as permissões **Pedidos** e **Loja** e clique em **CRIAR (F2)**. A nova credencial já nasce com os recursos necessários liberados.
 
     <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-entregas-expressas/imagens-tratadas/04-nova-credencial.png" width="1372" height="714" alt="Diálogo para criar uma nova credencial adicional no BeeFood" />
 
-    | Nº | Campo | O que fazer |
-    | --- | --- | --- |
-    | 1 | **Pedidos** | Confirme que **Consultar** e **Alterar** estão ligados. |
-    | 2 | **Loja** | Confirme que **Consultar** está ligado. |
-    | 3 | **CRIAR (F2)** | Grave a nova credencial. **CANCELAR (ESC)** fecha o diálogo sem criar. |
+    | Nº | Campo          | O que fazer                                                            |
+    | -- | -------------- | ---------------------------------------------------------------------- |
+    | 1  | **Pedidos**    | Confirme que **Consultar** e **Alterar** estão ligados.                |
+    | 2  | **Loja**       | Confirme que **Consultar** está ligado.                                |
+    | 3  | **CRIAR (F2)** | Grave a nova credencial. **CANCELAR (ESC)** fecha o diálogo sem criar. |
 
     Depois da criação, o BeeFood mostra o `clientId` e o `clientSecret` para você copiar. A credencial também aparece em **Todas as credenciais**, no fim da aba. Use o botão de copiar e o ícone de olho para obter os dois valores.
-
   </Step>
 </Steps>
 
@@ -116,71 +104,63 @@ Tudo é cadastrado em **Aplicativos → API Aberta**, dentro do BeeFood. A tela 
 
 <Steps>
   <Step title="Abrir Configurações › Integrações › BeeFood" title-type="p">
-
     No painel do **Entregas Expressas**, abra **Configurações** e acesse **Integrações › BeeFood**. Clique em **CADASTRAR INTEGRAÇÃO** e escolha o **Cliente**, que é o estabelecimento correspondente à loja no BeeFood.
 
     <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-entregas-expressas/imagens-tratadas/05-ee-cadastrar-integracao.png" width="1372" height="714" alt="Tela de integrações do Entregas Expressas com a opção BeeFood" />
 
-    | Nº | O que fazer |
-    | --- | --- |
-    | 1 | Abra **Configurações** no menu superior do Entregas Expressas. |
-    | 2 | Clique em **CADASTRAR INTEGRAÇÃO** para abrir o formulário. Se a integração já existir, use **Editar** na linha correspondente. |
-
+    | Nº | O que fazer                                                                                                                     |
+    | -- | ------------------------------------------------------------------------------------------------------------------------------- |
+    | 1  | Abra **Configurações** no menu superior do Entregas Expressas.                                                                  |
+    | 2  | Clique em **CADASTRAR INTEGRAÇÃO** para abrir o formulário. Se a integração já existir, use **Editar** na linha correspondente. |
   </Step>
 
   <Step title="Colar a credencial e testar" title-type="p">
-
     Ainda no painel do **Entregas Expressas**, na seção **Lojas**, cole o **Client ID** e o **Client Secret** copiados no passo 2 ou no passo 4. Depois, clique em **Testar credencial**.
 
     A mensagem de sucesso mostra o nome da loja no BeeFood. Esse resultado confirma que você usou os valores corretos e colou cada um no campo certo.
 
     <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-entregas-expressas/imagens-tratadas/06-ee-colar-credencial.png" width="1372" height="714" alt="Formulário do Entregas Expressas para colar e testar a credencial do BeeFood" />
 
-    | Nº | Campo | O que fazer |
-    | --- | --- | --- |
-    | 1 | **Client ID** | Cole o valor copiado no campo Client ID do BeeFood. |
-    | 2 | **Client Secret** | Cole o valor revelado pelo ícone de olho no BeeFood. |
-    | 3 | **Testar credencial** | Confirme se o BeeFood aceitou os dados. A resposta mostra o nome da loja. |
+    | Nº | Campo                 | O que fazer                                                               |
+    | -- | --------------------- | ------------------------------------------------------------------------- |
+    | 1  | **Client ID**         | Cole o valor copiado no campo Client ID do BeeFood.                       |
+    | 2  | **Client Secret**     | Cole o valor revelado pelo ícone de olho no BeeFood.                      |
+    | 3  | **Testar credencial** | Confirme se o BeeFood aceitou os dados. A resposta mostra o nome da loja. |
 
-    <Callout kind="info">
-
-    Ignore a caixa **Onde pegar a credencial** se ela orientar você a acessar `developer.beefood.com.br` e trocar **Sandbox** por **Produção**. A credencial copiada do painel **Aplicativos → API Aberta** já é de produção, porque esse painel não cria credencial de teste.
-
+    <Callout kind="info" collapsed="false">
+      Ignore a caixa **Onde pegar a credencial** se ela orientar você a acessar `developer.beefood.com.br` e trocar **Sandbox** por **Produção**. A credencial copiada do painel **Aplicativos → API Aberta** já é de produção, porque esse painel não cria credencial de teste.
     </Callout>
 
     Na mesma tela do **Entregas Expressas**, preencha os campos operacionais da loja:
 
-    | Campo | O que faz |
-    | --- | --- |
-    | **Nome da loja** | Nome opcional para identificar a loja na lista. |
-    | **Coleta** | Endereço onde o entregador retira o pedido. |
-    | **Forma de Pagamento Padrão** | Forma de pagamento usada nas entregas criadas pela integração. |
-    | **Tipo de Serviço** | Com **Automático**, o Entregas Expressas escolhe o tipo de veículo. |
+    | Campo                         | O que faz                                                           |
+    | ----------------------------- | ------------------------------------------------------------------- |
+    | **Nome da loja**              | Nome opcional para identificar a loja na lista.                     |
+    | **Coleta**                    | Endereço onde o entregador retira o pedido.                         |
+    | **Forma de Pagamento Padrão** | Forma de pagamento usada nas entregas criadas pela integração.      |
+    | **Tipo de Serviço**           | Com **Automático**, o Entregas Expressas escolhe o tipo de veículo. |
 
     Se você tiver mais de uma loja no BeeFood, clique em **+ Adicionar Loja** e repita o passo 2 para cada estabelecimento. Cada loja usa a própria credencial.
-
   </Step>
 
   <Step title="Escolher quando o pedido vira entrega" title-type="p">
-
     No painel do **Entregas Expressas**, role até **Quando o pedido vira entrega**. A opção recomendada é **Quando a loja aceita o pedido**, que chama o entregador no momento em que você aceita o pedido no BeeFood.
 
     Pedido de marketplace só entra quando você habilita a opção correspondente. As opções de retorno do entregador, atualização de status e tempo de espera também definem o comportamento da integração no BeeFood.
 
     <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-entregas-expressas/imagens-tratadas/07-ee-quando-vira-entrega.png" width="1372" height="714" alt="Configuração de quando o pedido vira entrega no Entregas Expressas" />
 
-    | Nº | Campo | O que fazer |
-    | --- | --- | --- |
-    | 1 | **Quando a loja aceita o pedido** | Opção recomendada. As alternativas chamam o entregador quando o pedido fica pronto ou antes da aceitação. Na última opção, uma recusa posterior cancela a entrega automaticamente. |
-    | 2 | **Receber pedidos do iFood ou da 99Food que chegam pela BeeFood** | Vem desmarcado. Marque somente se a sua loja for responsável pela entrega desses pedidos. |
-    | 3 | **Exigir retorno só quando houver dinheiro a devolver** | Permite que pedidos já pagos no BeeFood não exijam o retorno do entregador à loja. |
-    | 4 | **Atualizar o status do pedido na BeeFood** | Mantenha marcado. A coleta vira **despachado** e a entrega vira **entregue** no BeeFood. |
-    | 5 | **Chamar entregador após aproximadamente ... segundos** | Define o tempo de espera. 60 segundos equivalem a 1 minuto, 300 a 5 minutos e 600 a 10 minutos. Para pedidos agendados, a contagem começa no horário do agendamento. |
+    | Nº | Campo                                                             | O que fazer                                                                                                                                                                        |
+    | -- | ----------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+    | 1  | **Quando a loja aceita o pedido**                                 | Opção recomendada. As alternativas chamam o entregador quando o pedido fica pronto ou antes da aceitação. Na última opção, uma recusa posterior cancela a entrega automaticamente. |
+    | 2  | **Receber pedidos do iFood ou da 99Food que chegam pela BeeFood** | Vem desmarcado. Marque somente se a sua loja for responsável pela entrega desses pedidos.                                                                                          |
+    | 3  | **Exigir retorno só quando houver dinheiro a devolver**           | Permite que pedidos já pagos no BeeFood não exijam o retorno do entregador à loja.                                                                                                 |
+    | 4  | **Atualizar o status do pedido na BeeFood**                       | Mantenha marcado. A coleta vira **despachado** e a entrega vira **entregue** no BeeFood.                                                                                           |
+    | 5  | **Chamar entregador após aproximadamente ... segundos**           | Define o tempo de espera. 60 segundos equivalem a 1 minuto, 300 a 5 minutos e 600 a 10 minutos. Para pedidos agendados, a contagem começa no horário do agendamento.               |
 
     A opção **Criar pedido em preparo** mantém o pedido retido no painel do Entregas Expressas até você liberá-lo com **Chamar Agora**. Quando ela está ativa, o pedido ignora o tempo definido na opção 5.
 
     Clique em **Salvar** no final da página. O Entregas Expressas abrirá a configuração do webhook e mostrará a **URL**, o **Usuário** e a **Senha**. Use os botões de copiar, porque esses dados serão usados no próximo passo, de volta ao BeeFood.
-
   </Step>
 </Steps>
 
@@ -190,54 +170,46 @@ O webhook é o aviso que o **BeeFood** envia ao **Entregas Expressas** a cada pe
 
 <Steps>
   <Step title="Abrir a aba Webhooks" title-type="p">
-
     No painel **API Aberta do BeeFood**, clique na aba **Webhooks** e depois em **NOVO WEBHOOK**. Na primeira configuração, a lista vazia com a mensagem **Nenhum webhook cadastrado** é esperada.
 
     <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-entregas-expressas/imagens-tratadas/08-aba-webhooks.png" width="1372" height="714" alt="Aba Webhooks da API Aberta no BeeFood" />
 
-    | Nº | O que fazer |
-    | --- | --- |
-    | 1 | Clique em **NOVO WEBHOOK** para abrir o formulário. |
-
+    | Nº | O que fazer                                         |
+    | -- | --------------------------------------------------- |
+    | 1  | Clique em **NOVO WEBHOOK** para abrir o formulário. |
   </Step>
 
   <Step title="Preencher com os dados do Entregas Expressas" title-type="p">
-
     No formulário do **BeeFood**, cole a **URL** exibida pelo Entregas Expressas. Ligue os cinco eventos, preencha o **E-mail de contato** e configure a **Autenticação Basic** com os dados fornecidos pelo Entregas Expressas. Depois, clique em **SALVAR (F2)**.
 
     <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-entregas-expressas/imagens-tratadas/09-novo-webhook.png" width="1372" height="714" alt="Formulário de novo webhook da API Aberta no BeeFood" />
 
-    | Nº | Campo | O que fazer |
-    | --- | --- | --- |
-    | 1 | **URL (https)** | Cole a URL do bloco **Webhook** no Entregas Expressas. A URL deve começar com `https://`. |
-    | 2 | **Eventos** | Ligue **Pedido criado**, **Pedido atualizado**, **Entrega atualizada**, **Pagamento criado** e **Pagamento atualizado**. |
-    | 3 | **E-mail de contato** | Informe o e-mail que receberá avisos quando a entrega do webhook falhar. |
-    | 4 | **Autenticação Basic** | O BeeFood chama os campos de `clientId` e `clientSecret`, mas informe neles o **Usuário** e a **Senha** mostrados pelo Entregas Expressas. Não use o Client ID e o Client Secret da credencial. Informe os dois valores ou deixe os dois vazios. |
-    | 5 | **SALVAR (F2)** | Grave o webhook. **CANCELAR (ESC)** fecha o formulário sem salvar. |
+    | Nº | Campo                  | O que fazer                                                                                                                                                                                                                                      |
+    | -- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+    | 1  | **URL (https)**        | Cole a URL do bloco **Webhook** no Entregas Expressas. A URL deve começar com `https://`.                                                                                                                                                        |
+    | 2  | **Eventos**            | Ligue **Pedido criado**, **Pedido atualizado**, **Entrega atualizada**, **Pagamento criado** e **Pagamento atualizado**.                                                                                                                         |
+    | 3  | **E-mail de contato**  | Informe o e-mail que receberá avisos quando a entrega do webhook falhar.                                                                                                                                                                         |
+    | 4  | **Autenticação Basic** | O BeeFood chama os campos de `clientId` e `clientSecret`, mas informe neles o **Usuário** e a **Senha** mostrados pelo Entregas Expressas. Não use o Client ID e o Client Secret da credencial. Informe os dois valores ou deixe os dois vazios. |
+    | 5  | **SALVAR (F2)**        | Grave o webhook. **CANCELAR (ESC)** fecha o formulário sem salvar.                                                                                                                                                                               |
 
-    <Callout kind="info">
-
-    Não há ambiente para escolher quando você cadastra o webhook pela **API Aberta** do BeeFood. O portal de desenvolvedor oferece as opções Sandbox e Produção e pode vir com Sandbox selecionado, mas o webhook criado pelo painel já nasce em produção.
-
+    <Callout kind="info" collapsed="false">
+      Não há ambiente para escolher quando você cadastra o webhook pela **API Aberta** do BeeFood. O portal de desenvolvedor oferece as opções Sandbox e Produção e pode vir com Sandbox selecionado, mas o webhook criado pelo painel já nasce em produção.
     </Callout>
-
   </Step>
 
   <Step title="Guardar o secret e conferir a linha" title-type="p">
-
     Depois de salvar no **BeeFood**, o sistema mostra o **Secret do webhook** uma única vez. Copie o valor, guarde-o em local seguro e clique em **JÁ GUARDEI**. Em seguida, confirme que a linha do webhook aparece em **Webhooks cadastrados** com o selo **Ativo**.
 
     <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-entregas-expressas/imagens-tratadas/10-webhook-ativo.png" width="1372" height="714" alt="Webhook ativo na API Aberta do BeeFood com o Secret exibido" />
 
-    | Nº | Campo | O que fazer |
-    | --- | --- | --- |
-    | 1 | **Secret do webhook** | Copie e guarde. O BeeFood não exibe o valor novamente. Esse secret serve para validar a legitimidade dos avisos e não é a senha do Entregas Expressas. |
-    | 2 | **JÁ GUARDEI** | Feche o aviso depois de guardar o secret. |
-    | 3 | Selo **Ativo** | Confirme que o webhook está ativo. Um webhook desativado não envia avisos. |
-    | 4 | **Chave, EDITAR e EXCLUIR** | A chave pausa o webhook sem apagá-lo. **EDITAR** altera URL, eventos e senha. Campos de senha vazios mantêm a senha atual. **EXCLUIR** remove o webhook definitivamente. |
+    | Nº | Campo                       | O que fazer                                                                                                                                                              |
+    | -- | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+    | 1  | **Secret do webhook**       | Copie e guarde. O BeeFood não exibe o valor novamente. Esse secret serve para validar a legitimidade dos avisos e não é a senha do Entregas Expressas.                   |
+    | 2  | **JÁ GUARDEI**              | Feche o aviso depois de guardar o secret.                                                                                                                                |
+    | 3  | Selo **Ativo**              | Confirme que o webhook está ativo. Um webhook desativado não envia avisos.                                                                                               |
+    | 4  | **Chave, EDITAR e EXCLUIR** | A chave pausa o webhook sem apagá-lo. **EDITAR** altera URL, eventos e senha. Campos de senha vazios mantêm a senha atual. **EXCLUIR** remove o webhook definitivamente. |
 
     No painel do **Entregas Expressas**, o bloco do webhook permanece vermelho com a mensagem **aguardando o primeiro envio** até a loja aceitar um novo pedido. Depois que o primeiro aviso chegar, o bloco fica verde com o status **recebendo**.
-
   </Step>
 </Steps>
 
@@ -247,38 +219,30 @@ Depois do cadastro do webhook, não há outra configuração obrigatória. Um pe
 
 <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-entregas-expressas/imagens-tratadas/11-ee-pedido-no-painel.png" width="1372" height="714" alt="Pedido enviado pelo BeeFood aparecendo no painel do Entregas Expressas" />
 
-| Nº | O que observar |
-| --- | --- |
-| 1 | Número do pedido no Entregas Expressas, com o ID interno e o número correspondente no BeeFood. |
-| 2 | Valor do entregador, valor do aplicativo, total e distância da corrida. |
-| 3 | **Buscando Entregador...** enquanto a corrida ainda não foi aceita. |
-| 4 | **PEDIDO VIA BEEFOOD**, o canal de venda e o valor a receber com a forma de pagamento. Essas informações orientam a cobrança na porta. |
+| Nº | O que observar                                                                                                                         |
+| -- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| 1  | Número do pedido no Entregas Expressas, com o ID interno e o número correspondente no BeeFood.                                         |
+| 2  | Valor do entregador, valor do aplicativo, total e distância da corrida.                                                                |
+| 3  | **Buscando Entregador...** enquanto a corrida ainda não foi aceita.                                                                    |
+| 4  | **PEDIDO VIA BEEFOOD**, o canal de venda e o valor a receber com a forma de pagamento. Essas informações orientam a cobrança na porta. |
 
 ## Como funciona no dia a dia
 
 <Steps>
   <Step title="Receber e aceitar o pedido" title-type="p">
-
     O pedido de entrega entra no BeeFood pelo cardápio, PDV, WhatsApp ou marketplace. Você aceita o pedido no BeeFood.
-
   </Step>
 
   <Step title="Chamar o entregador" title-type="p">
-
     Depois do tempo configurado no Entregas Expressas, o aplicativo chama o entregador.
-
   </Step>
 
   <Step title="Atualizar a coleta" title-type="p">
-
     Quando o entregador coleta o pedido, o Entregas Expressas envia a atualização e o BeeFood marca o pedido como **despachado**.
-
   </Step>
 
   <Step title="Atualizar a entrega" title-type="p">
-
     Quando o entregador conclui a entrega, o BeeFood marca o pedido como **entregue**.
-
   </Step>
 </Steps>
 
@@ -286,133 +250,95 @@ Se você cancelar o pedido no BeeFood **antes da coleta**, a entrega também ser
 
 ## Quando algo não funciona
 
-| Sintoma | O que verificar |
-| --- | --- |
-| Não encontro o card **API Aberta** | O recurso está em liberação por etapas. Confirme com o suporte BeeFood se a conta já tem acesso e se seu usuário pode abrir o menu **Aplicativos**. |
-| O painel mostra **Ambiente de testes** em vez da credencial | A empresa está em ambiente de testes. Nesse caso, as credenciais ficam em `docs.beefood.app`. |
-| A **credencial foi recusada** | Confirme se o selo está **Ativa**, revele e copie o Client Secret inteiro pelo botão e verifique se **Pedidos** e **Loja** estão ligados. |
-| O Entregas Expressas mostra **ambiente de testes** ou **sandbox** | A credencial foi criada no portal de desenvolvedor. Substitua-a pelos valores copiados em **Aplicativos → API Aberta** no BeeFood. |
-| O bloco do webhook está vermelho, aguardando o primeiro envio | Esse estado é normal até o primeiro pedido de entrega aceito depois do cadastro. Aceite um pedido e verifique o bloco novamente. |
-| O bloco do webhook mostra falha | No BeeFood, abra **Webhooks** e confirme se a linha está **Ativo**. O Entregas Expressas informa que o BeeFood desativa o webhook depois de cinco falhas seguidas. Use a chave para reativá-lo. |
-| Os pedidos pararam de chegar | Verifique se alguém clicou em **RECICLAR** ou desativou a credencial. Se a credencial foi reciclada, copie os novos valores e cole-os no Entregas Expressas. |
-| Um pedido de retirada ou mesa não virou entrega | Esse é o comportamento esperado. Somente pedidos de entrega viram entregas. |
-| Pedidos antigos não entraram | A integração envia somente pedidos feitos depois de ser ativada. |
+| Sintoma                                                           | O que verificar                                                                                                                                                                                 |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Não encontro o card **API Aberta**                                | O recurso está em liberação por etapas. Confirme com o suporte BeeFood se a conta já tem acesso e se seu usuário pode abrir o menu **Aplicativos**.                                             |
+| O painel mostra **Ambiente de testes** em vez da credencial       | A empresa está em ambiente de testes. Nesse caso, as credenciais ficam em `docs.beefood.app`.                                                                                                   |
+| A **credencial foi recusada**                                     | Confirme se o selo está **Ativa**, revele e copie o Client Secret inteiro pelo botão e verifique se **Pedidos** e **Loja** estão ligados.                                                       |
+| O Entregas Expressas mostra **ambiente de testes** ou **sandbox** | A credencial foi criada no portal de desenvolvedor. Substitua-a pelos valores copiados em **Aplicativos → API Aberta** no BeeFood.                                                              |
+| O bloco do webhook está vermelho, aguardando o primeiro envio     | Esse estado é normal até o primeiro pedido de entrega aceito depois do cadastro. Aceite um pedido e verifique o bloco novamente.                                                                |
+| O bloco do webhook mostra falha                                   | No BeeFood, abra **Webhooks** e confirme se a linha está **Ativo**. O Entregas Expressas informa que o BeeFood desativa o webhook depois de cinco falhas seguidas. Use a chave para reativá-lo. |
+| Os pedidos pararam de chegar                                      | Verifique se alguém clicou em **RECICLAR** ou desativou a credencial. Se a credencial foi reciclada, copie os novos valores e cole-os no Entregas Expressas.                                    |
+| Um pedido de retirada ou mesa não virou entrega                   | Esse é o comportamento esperado. Somente pedidos de entrega viram entregas.                                                                                                                     |
+| Pedidos antigos não entraram                                      | A integração envia somente pedidos feitos depois de ser ativada.                                                                                                                                |
 
 ## Perguntas frequentes
 
 <ExpandableGroup>
-  <Expandable title="Preciso do portal de desenvolvedor da BeeFood para integrar o Entregas Expressas?">
-
-  Não. Cadastre a credencial e o webhook em **Aplicativos → API Aberta**, dentro do painel do BeeFood. O portal continua existindo e mostra a mesma credencial principal, mas não é necessário para esta integração.
-
+  <Expandable title="Preciso do portal de desenvolvedor da BeeFood para integrar o Entregas Expressas?" default-open="false">
+    Não. Cadastre a credencial e o webhook em **Aplicativos → API Aberta**, dentro do painel do BeeFood. O portal continua existindo e mostra a mesma credencial principal, mas não é necessário para esta integração.
   </Expandable>
 
-  <Expandable title="Onde fica a API Aberta no BeeFood?">
-
-  Abra **Aplicativos**, acesse a seção **API e MCP** e clique no card **API Aberta**. O painel apresenta as abas **Credencial**, **Webhooks** e **Avançado**.
-
+  <Expandable title="Onde fica a API Aberta no BeeFood?" default-open="false">
+    Abra **Aplicativos**, acesse a seção **API e MCP** e clique no card **API Aberta**. O painel apresenta as abas **Credencial**, **Webhooks** e **Avançado**.
   </Expandable>
 
-  <Expandable title="Como pego o Client ID e o Client Secret da minha loja?">
-
-  No BeeFood, abra **Aplicativos → API Aberta → Credencial**. Copie o Client ID pelo botão ao lado do campo. Para exibir o Client Secret, clique no ícone de olho e copie o valor revelado.
-
+  <Expandable title="Como pego o Client ID e o Client Secret da minha loja?" default-open="false">
+    No BeeFood, abra **Aplicativos → API Aberta → Credencial**. Copie o Client ID pelo botão ao lado do campo. Para exibir o Client Secret, clique no ícone de olho e copie o valor revelado.
   </Expandable>
 
-  <Expandable title="Perdi o Client Secret. Preciso criar outra credencial?">
-
-  Não. No painel do BeeFood, clique no ícone de olho no campo Client Secret para exibi-lo novamente. No portal de desenvolvedor, o segredo aparece somente durante a criação.
-
+  <Expandable title="Perdi o Client Secret. Preciso criar outra credencial?" default-open="false">
+    Não. No painel do BeeFood, clique no ícone de olho no campo Client Secret para exibi-lo novamente. No portal de desenvolvedor, o segredo aparece somente durante a criação.
   </Expandable>
 
-  <Expandable title="Preciso escolher o ambiente Produção?">
-
-  Não pelo painel. A credencial e o webhook criados em **Aplicativos → API Aberta** já são de produção. A escolha de ambiente aparece no portal de desenvolvedor, onde é possível criar acidentalmente uma credencial em Sandbox.
-
+  <Expandable title="Preciso escolher o ambiente Produção?" default-open="false">
+    Não pelo painel. A credencial e o webhook criados em **Aplicativos → API Aberta** já são de produção. A escolha de ambiente aparece no portal de desenvolvedor, onde é possível criar acidentalmente uma credencial em Sandbox.
   </Expandable>
 
-  <Expandable title="Quais permissões o Entregas Expressas precisa?">
-
-  A credencial precisa de **Pedidos** com **Consultar** e **Alterar**, além de **Loja** com **Consultar**. A credencial principal e as credenciais adicionais já vêm com essas permissões ligadas.
-
+  <Expandable title="Quais permissões o Entregas Expressas precisa?" default-open="false">
+    A credencial precisa de **Pedidos** com **Consultar** e **Alterar**, além de **Loja** com **Consultar**. A credencial principal e as credenciais adicionais já vêm com essas permissões ligadas.
   </Expandable>
 
-  <Expandable title="O que o botão RECICLAR faz?">
-
-  O botão troca o Client ID e o Client Secret da credencial. Todas as integrações que usam os valores antigos param imediatamente e precisam receber os novos valores.
-
+  <Expandable title="O que o botão RECICLAR faz?" default-open="false">
+    O botão troca o Client ID e o Client Secret da credencial. Todas as integrações que usam os valores antigos param imediatamente e precisam receber os novos valores.
   </Expandable>
 
-  <Expandable title="O webhook é obrigatório?">
-
-  Sim. Sem o webhook, o Entregas Expressas não recebe os avisos dos pedidos, mesmo que a credencial tenha sido aceita.
-
+  <Expandable title="O webhook é obrigatório?" default-open="false">
+    Sim. Sem o webhook, o Entregas Expressas não recebe os avisos dos pedidos, mesmo que a credencial tenha sido aceita.
   </Expandable>
 
-  <Expandable title="Quais eventos devo ligar no webhook?">
-
-  Ligue os cinco eventos: **Pedido criado**, **Pedido atualizado**, **Entrega atualizada**, **Pagamento criado** e **Pagamento atualizado**.
-
+  <Expandable title="Quais eventos devo ligar no webhook?" default-open="false">
+    Ligue os cinco eventos: **Pedido criado**, **Pedido atualizado**, **Entrega atualizada**, **Pagamento criado** e **Pagamento atualizado**.
   </Expandable>
 
-  <Expandable title="No webhook, o que vai em clientId e clientSecret?">
-
-  Informe o **Usuário** e a **Senha** mostrados pelo Entregas Expressas no bloco do webhook. Não use o Client ID e o Client Secret da credencial do BeeFood. Os nomes dos campos são parecidos, mas os valores são diferentes. Informe os dois valores juntos ou deixe os dois vazios.
-
+  <Expandable title="No webhook, o que vai em clientId e clientSecret?" default-open="false">
+    Informe o **Usuário** e a **Senha** mostrados pelo Entregas Expressas no bloco do webhook. Não use o Client ID e o Client Secret da credencial do BeeFood. Os nomes dos campos são parecidos, mas os valores são diferentes. Informe os dois valores juntos ou deixe os dois vazios.
   </Expandable>
 
-  <Expandable title="Para que serve o Secret do webhook?">
-
-  O Secret do webhook é um valor do BeeFood usado para conferir se o aviso recebido é legítimo. O Entregas Expressas não pede esse valor. Guarde-o porque o BeeFood não o exibe novamente.
-
+  <Expandable title="Para que serve o Secret do webhook?" default-open="false">
+    O Secret do webhook é um valor do BeeFood usado para conferir se o aviso recebido é legítimo. O Entregas Expressas não pede esse valor. Guarde-o porque o BeeFood não o exibe novamente.
   </Expandable>
 
-  <Expandable title="Posso pausar o envio sem apagar o webhook?">
-
-  Sim. Use a chave na linha do webhook para desativá-lo. O webhook fica desativado e para de enviar avisos, mas mantém a URL, os eventos e a senha configurada.
-
+  <Expandable title="Posso pausar o envio sem apagar o webhook?" default-open="false">
+    Sim. Use a chave na linha do webhook para desativá-lo. O webhook fica desativado e para de enviar avisos, mas mantém a URL, os eventos e a senha configurada.
   </Expandable>
 
-  <Expandable title="Como mudo a URL ou a senha de um webhook já cadastrado?">
-
-  Clique em **EDITAR** na linha do webhook. Se deixar os campos de senha vazios, o BeeFood mantém a senha já gravada.
-
+  <Expandable title="Como mudo a URL ou a senha de um webhook já cadastrado?" default-open="false">
+    Clique em **EDITAR** na linha do webhook. Se deixar os campos de senha vazios, o BeeFood mantém a senha já gravada.
   </Expandable>
 
-  <Expandable title="Tenho mais de uma loja. Uso a mesma credencial?">
-
-  Não. No Entregas Expressas, use **+ Adicionar Loja** e informe a credencial correspondente a cada loja do BeeFood.
-
+  <Expandable title="Tenho mais de uma loja. Uso a mesma credencial?" default-open="false">
+    Não. No Entregas Expressas, use **+ Adicionar Loja** e informe a credencial correspondente a cada loja do BeeFood.
   </Expandable>
 
-  <Expandable title="Pedido de retirada, balcão ou mesa vira entrega?">
-
-  Não. Somente pedidos de entrega entram na integração.
-
+  <Expandable title="Pedido de retirada, balcão ou mesa vira entrega?" default-open="false">
+    Não. Somente pedidos de entrega entram na integração.
   </Expandable>
 
-  <Expandable title="Pedido do iFood que chega pela BeeFood entra?">
-
-  Entra somente se você marcar **Receber pedidos do iFood que chegam pela BeeFood** no Entregas Expressas. Pedidos entregues pela logística do próprio marketplace não entram.
-
+  <Expandable title="Pedido do iFood que chega pela BeeFood entra?" default-open="false">
+    Entra somente se você marcar **Receber pedidos do iFood que chegam pela BeeFood** no Entregas Expressas. Pedidos entregues pela logística do próprio marketplace não entram.
   </Expandable>
 
-  <Expandable title="O pedido vira despachado e entregue sozinho no BeeFood?">
-
-  Sim, quando a opção **Atualizar o status do pedido na BeeFood** está marcada. A coleta marca o pedido como **despachado**, e a entrega concluída marca o pedido como **entregue**.
-
+  <Expandable title="O pedido vira despachado e entregue sozinho no BeeFood?" default-open="false">
+    Sim, quando a opção **Atualizar o status do pedido na BeeFood** está marcada. A coleta marca o pedido como **despachado**, e a entrega concluída marca o pedido como **entregue**.
   </Expandable>
 
-  <Expandable title="Cancelei o pedido no BeeFood. A entrega cancela?">
-
-  Antes da coleta, sim. Depois da coleta, a entrega segue porque o entregador já está com o pacote. O cancelamento fica registrado no histórico do pedido.
-
+  <Expandable title="Cancelei o pedido no BeeFood. A entrega cancela?" default-open="false">
+    Antes da coleta, sim. Depois da coleta, a entrega segue porque o entregador já está com o pacote. O cancelamento fica registrado no histórico do pedido.
   </Expandable>
 
-  <Expandable title="Os pedidos antigos entram quando eu ativo a integração?">
-
-  Não. A integração envia somente pedidos feitos depois da ativação.
-
+  <Expandable title="Os pedidos antigos entram quando eu ativo a integração?" default-open="false">
+    Não. A integração envia somente pedidos feitos depois da ativação.
   </Expandable>
 </ExpandableGroup>
 
@@ -424,22 +350,20 @@ Para problemas relacionados ao aplicativo, como praça, valor da corrida ou entr
 
 ## Manuais relacionados
 
-<Columns cols={3}>
+<Columns cols="3">
   <Card title="Integrações" href="/integracoes" icon="settings" horizontal="false">
-
-  Consulte outras integrações disponíveis no BeeFood.
-
+    Consulte outras integrações disponíveis no BeeFood.
   </Card>
 
   <Card title="Let's Express" href="/integracao-lets-express" icon="truck" horizontal="false">
-
-  Solicite entregadores da Let's Express pelo BeeFood.
-
+    Solicite entregadores da Let's Express pelo BeeFood.
   </Card>
 
   <Card title="Foody Delivery" href="/integracao-foody-delivery" icon="truck" horizontal="false">
+    Integre a Foody Delivery para sincronizar pedidos e rastrear motoboys.
+  </Card>
 
-  Integre a Foody Delivery para sincronizar pedidos e rastrear motoboys.
-
+  <Card title="Route Delivery" href="/integracao-route-delivery" icon="truck" horizontal="false">
+    Integre o BeeFood ao Route Delivery via API Aberta.
   </Card>
 </Columns>

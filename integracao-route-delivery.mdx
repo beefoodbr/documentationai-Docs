@@ -1,0 +1,505 @@
+---
+title: Route Delivery
+description: >-
+  Integre o BeeFood ao Route Delivery via API Aberta: cada pedido de entrega
+  aceito vira corrida sozinho, com cliente, endereço e pagamento. O status volta
+  automático: entregador sai vira despachado, finaliza vira entregue.
+---
+## Integrar o BeeFood ao Route Delivery
+
+Ligue o **BeeFood** ao **Route Delivery** para enviar automaticamente cada pedido de entrega aceito, com cliente, endereço, itens e pagamento. Quando o entregador sai, o pedido vira **despachado** no BeeFood; quando ele finaliza, vira **entregue**.
+
+A configuração acontece em três partes: você cria a credencial no BeeFood, a equipe Route Delivery vincula sua loja no painel dela e você volta ao BeeFood para cadastrar o webhook. Depois, envie o **Secret do webhook** para a equipe Route Delivery.
+
+## O que a integração faz
+
+- Todo pedido de entrega aceito no BeeFood vira uma corrida no Route Delivery.
+- O status volta automaticamente: a saída do entregador marca o pedido como **despachado**; a finalização marca como **entregue**.
+- O cancelamento no BeeFood cancela a corrida no Route Delivery, desde que a entrega ainda não tenha sido concluída.
+- Pedidos de retirada, balcão ou mesa não entram na integração.
+- Por padrão, os entregadores são chamados quando você marca o pedido como **Pronto** no BeeFood.
+- Pedidos de iFood, 99Food, Keeta e aiqfome só entram se a equipe Route Delivery habilitar esses canais.
+
+## Antes de começar
+
+1. Tenha uma conta BeeFood ativa e permissão para abrir o menu **Aplicativos**.
+2. Confirme que sua loja está cadastrada como comércio no Route Delivery, com o endereço completo.
+3. Confirme que o card **API Aberta** aparece em **Aplicativos**. O recurso está em liberação por etapas. Se o card não aparecer, fale com o suporte BeeFood.
+4. Combine um canal seguro para enviar a credencial à equipe Route Delivery. O **Client Secret** funciona como a senha da sua loja e não deve ser enviado em grupos de mensagem.
+
+## Parte 1: no BeeFood, criar a credencial do Route Delivery
+
+### Passo 1: abrir Aplicativos e API Aberta
+
+<Steps>
+  <Step title="Abrir Aplicativos → API Aberta" title-type="p">
+    No menu lateral do BeeFood, clique em **Aplicativos**. Na seção **API e MCP**, clique no card **API Aberta**.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-route-delivery/imagens-tratadas/01-aplicativos-api-aberta.png" width="1372" height="714" alt="Menu Aplicativos e card API Aberta no BeeFood" />
+
+    | Nº | O que fazer                                |
+    | -- | ------------------------------------------ |
+    | 1  | Clique em **Aplicativos** no menu lateral. |
+    | 2  | Abra o card **API Aberta**.                |
+
+    O painel da API Aberta será aberto na lateral da tela.
+  </Step>
+</Steps>
+
+### Passo 2: reconhecer a credencial principal
+
+<Steps>
+  <Step title="Identificar a credencial principal" title-type="p">
+    O painel abre na aba **Credencial** e mostra a **Credencial principal** da loja. Essa é a mesma credencial exibida no portal `docs.beefood.app`.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-route-delivery/imagens-tratadas/02-painel-credencial.png" width="1372" height="714" alt="Painel da API Aberta com a credencial principal" />
+
+    | Nº | Campo                | O que observar                                                 |
+    | -- | -------------------- | -------------------------------------------------------------- |
+    | 1  | Aba **Credencial**   | É onde ficam as credenciais, permissões e ações da API Aberta. |
+    | 2  | Credencial principal | É a credencial que o portal `docs.beefood.app` exibe.          |
+
+    Você pode usar a credencial principal, mas o recomendado é criar uma credencial exclusiva para o Route Delivery. Assim, você poderá desligar ou excluir o acesso do parceiro sem afetar outras integrações.
+
+    <Callout kind="info" collapsed="false">
+      Crie uma credencial separada para cada parceiro. Essa credencial pode ser desativada ou excluída sem interromper outras integrações que usam a credencial principal.
+    </Callout>
+  </Step>
+</Steps>
+
+### Passo 3: conferir as permissões e criar a credencial
+
+<Steps>
+  <Step title="Conferir permissões e clicar em CRIAR CREDENCIAL" title-type="p">
+    Role o painel até **Permissões**. Confirme que **Pedidos** tem **Consultar** e **Alterar**, e que **Loja** tem **Consultar**. Depois, clique em **CRIAR CREDENCIAL**.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-route-delivery/imagens-tratadas/03-criar-credencial.png" width="1372" height="714" alt="Permissões da API Aberta e botão para criar credencial" />
+
+    | Nº | Campo                | O que fazer                                                                                                                           |
+    | -- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+    | 1  | **Pedidos**          | Mantenha **Consultar** e **Alterar** ligados. Essas permissões permitem ler pedidos e atualizar os status para despachado e entregue. |
+    | 2  | **Loja**             | Mantenha **Consultar** ligado. Essa permissão permite ler os dados necessários da loja.                                               |
+    | 3  | **RECICLAR**         | Não clique. Essa ação troca o Client ID e o Client Secret da credencial principal e interrompe as integrações que usam esses valores. |
+    | 4  | **CRIAR CREDENCIAL** | Clique para criar a credencial exclusiva do Route Delivery.                                                                           |
+
+    <Callout kind="alert" collapsed="false">
+      Ao ativar **Alterar**, a permissão **Consultar** do mesmo recurso é ativada automaticamente e fica bloqueada. Esse comportamento é esperado.
+    </Callout>
+  </Step>
+</Steps>
+
+### Passo 4: confirmar as permissões da nova credencial
+
+<Steps>
+  <Step title="Confirmar as permissões da nova credencial" title-type="p">
+    O diálogo **Nova credencial adicional** será aberto. As permissões já aparecem ligadas. Confirme **Pedidos** e **Loja** e clique em **CRIAR (F2)**.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-route-delivery/imagens-tratadas/04-nova-credencial.png" width="1372" height="714" alt="Diálogo Nova credencial adicional com permissões da API" />
+
+    | Nº | Campo          | O que fazer                                |
+    | -- | -------------- | ------------------------------------------ |
+    | 1  | **Pedidos**    | Deixe **Consultar** e **Alterar** ligados. |
+    | 2  | **Loja**       | Deixe as permissões necessárias ligadas.   |
+    | 3  | **CRIAR (F2)** | Clique para gravar a credencial.           |
+
+    <Callout kind="info" collapsed="false">
+      A tela pode abrir com outros recursos liberados, como **Catálogo**, **Clientes**, **Cupons** e **Avaliações**. Você pode desligar os recursos que o Route Delivery não usa. Manter as opções ligadas também funciona.
+    </Callout>
+  </Step>
+</Steps>
+
+### Passo 5: copiar o Client ID e o Client Secret
+
+<Steps>
+  <Step title="Copiar clientId e clientSecret" title-type="p">
+    A tela **Credencial criada** aparece depois que você confirma a criação. Copie o **clientId** e o **clientSecret** pelos botões ao lado dos campos. Depois, clique em **FECHAR (ESC)**.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-route-delivery/imagens-tratadas/05-credencial-criada.png" width="1372" height="714" alt="Tela com Client ID e Client Secret da credencial criada" />
+
+    | Nº | Campo            | O que fazer                                         |
+    | -- | ---------------- | --------------------------------------------------- |
+    | 1  | **clientId**     | Copie o valor e envie para a equipe Route Delivery. |
+    | 2  | **clientSecret** | Copie o valor e trate-o como uma senha.             |
+    | 3  | **FECHAR (ESC)** | Feche a tela depois de copiar os dois valores.      |
+
+    <Callout kind="info" collapsed="false">
+      Se você esqueceu de copiar o Client Secret, abra **Todas as credenciais** e use o ícone de olho no campo **Client Secret** para exibi-lo novamente.
+    </Callout>
+
+    Envie o **Client ID**, o **Client Secret** e o nome da loja para a equipe Route Delivery pelo canal seguro que vocês combinaram.
+  </Step>
+</Steps>
+
+## Parte 2: no Route Delivery, a equipe vincula a sua loja
+
+Esta parte é feita pela **equipe Route Delivery** no painel administrativo dela. As telas abaixo ajudam você a reconhecer o que foi configurado e a confirmar as escolhas feitas para sua loja.
+
+### Passo 6: abrir o cartão BeeFood nas integrações
+
+<Steps>
+  <Step title="Abrir o cartão BeeFood" title-type="p">
+    No painel administrativo do Route Delivery, a equipe abre **Integrações** e localiza o cartão **BeeFood**, na seção de gestão de pedidos.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-route-delivery/imagens-tratadas/06-rd-cartao-beefood.png" width="1372" height="714" alt="Cartão BeeFood na tela de integrações do Route Delivery" />
+
+    | Nº | O que observar                                                                    |
+    | -- | --------------------------------------------------------------------------------- |
+    | 1  | O selo **Ativa** indica que a integração está ligada.                             |
+    | 2  | O resumo mostra lojas vinculadas, eventos recebidos nas últimas 24 horas e erros. |
+
+    Se a integração estiver pausada, nenhum pedido será enviado para o Route Delivery.
+  </Step>
+</Steps>
+
+### Passo 7: vincular a loja
+
+<Steps>
+  <Step title="Vincular a loja com a credencial" title-type="p">
+    No quadro **Lojas BeeFood**, a equipe escolhe o comércio cadastrado no Route Delivery, cola o Client ID e o Client Secret que você enviou, mantém **Credencial do sandbox** desmarcado e clica em **Testar credencial e vincular**.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-route-delivery/imagens-tratadas/07-rd-vincular-loja.png" width="1372" height="714" alt="Formulário para vincular uma loja BeeFood no Route Delivery" />
+
+    | Nº | Campo                            | O que observar                                  |
+    | -- | -------------------------------- | ----------------------------------------------- |
+    | 1  | **Comércio no sistema**          | É a loja cadastrada no Route Delivery.          |
+    | 2  | **Client ID**                    | É o valor copiado no Passo 5.                   |
+    | 3  | **Client Secret**                | É o valor copiado no Passo 5.                   |
+    | 4  | **Credencial do sandbox**        | Deve permanecer desmarcado.                     |
+    | 5  | **Testar credencial e vincular** | Testa a credencial e cria o vínculo com a loja. |
+
+    O teste deve retornar o nome da loja no BeeFood.
+
+    <Callout kind="alert" collapsed="false">
+      Não marque **Credencial do sandbox**. A credencial criada em **Aplicativos → API Aberta** é de produção. Se a opção ficar marcada, o Route Delivery procurará pedidos no ambiente de testes.
+    </Callout>
+
+    O campo **Secret do webhook** deve permanecer vazio por enquanto. Ele será preenchido depois que você cadastrar o webhook no BeeFood.
+
+    Se você tiver mais de uma loja, repita a Parte 1 para cada uma. Cada loja precisa da própria credencial e do próprio endereço de webhook.
+  </Step>
+</Steps>
+
+### Passo 8: ativar a integração
+
+<Steps>
+  <Step title="Ativar a integração" title-type="p">
+    Depois de vincular a primeira loja, a equipe clica em **Ativar integração** no topo da tela.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-route-delivery/imagens-tratadas/08-rd-integracao-ativa.png" width="1372" height="714" alt="Integração BeeFood ativa no Route Delivery" />
+
+    | Nº | O que observar                                          |
+    | -- | ------------------------------------------------------- |
+    | 1  | O selo **Ativa** confirma que a integração está ligada. |
+    | 2  | O botão muda para **Pausar integração**.                |
+
+    Para pausar apenas uma loja, a equipe deve usar o botão **Pausar** na linha dessa loja. **Pausar integração** interrompe o recebimento para todas as lojas vinculadas.
+  </Step>
+</Steps>
+
+### Passo 9: combinar quando o entregador é chamado
+
+<Steps>
+  <Step title="Definir quando chamar o entregador" title-type="p">
+    Por padrão, o pedido entra no Route Delivery como criado e os entregadores são chamados quando você marca o pedido como **Pronto** no BeeFood. A equipe Route Delivery pode marcar **Liberar o pedido para os entregadores assim que chegar** para chamar o entregador imediatamente.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-route-delivery/imagens-tratadas/09-rd-liberar-na-chegada.png" width="1372" height="714" alt="Opção para liberar o pedido aos entregadores assim que chegar" />
+
+    | Nº | Campo                                                      | O que observar                                                                                        |
+    | -- | ---------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+    | 1  | **Liberar o pedido para os entregadores assim que chegar** | Desmarcado: chama o entregador quando você marca **Pronto**. Marcado: chama assim que o pedido entra. |
+
+    ### Habilitar canais de marketplace
+
+    iFood, 99Food, Keeta e aiqfome só entram na integração quando a equipe marcar os canais correspondentes em **Trazer também os pedidos destes canais**.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-route-delivery/imagens-tratadas/10-rd-canais-marketplace.png" width="1372" height="714" alt="Configuração de canais de marketplace no Route Delivery" />
+
+    | Nº | Campo                                      | O que observar                                                                    |
+    | -- | ------------------------------------------ | --------------------------------------------------------------------------------- |
+    | 1  | **Trazer também os pedidos destes canais** | Inclui iFood, 99Food, Keeta e aiqfome quando marcados. Vem desmarcado por padrão. |
+    | 2  | **Buscar pedidos agora**                   | Faz uma busca imediata para testar o vínculo.                                     |
+
+    <Callout kind="info" collapsed="false">
+      Se sua loja já usa uma integração direta entre um marketplace e o Route Delivery, não habilite o mesmo canal aqui. O pedido pode entrar duas vezes.
+    </Callout>
+
+    A tela do Route Delivery pode orientar a criação do webhook no portal BeeFood Developers. Para esta integração, cadastre o webhook em **Aplicativos → API Aberta**, como explicado na Parte 3.
+  </Step>
+</Steps>
+
+## Parte 3: de volta ao BeeFood, cadastrar o webhook
+
+O webhook envia os pedidos para o Route Delivery em aproximadamente 1 a 2 segundos. Sem webhook, o Route Delivery busca pedidos a cada 5 segundos, mas somente enquanto um painel ou o aplicativo de um entregador estiver aberto.
+
+### Passo 10: copiar o endereço do webhook no Route Delivery
+
+<Steps>
+  <Step title="Copiar o endereço do webhook" title-type="p">
+    A equipe Route Delivery copia o endereço na linha da sua loja, em **Integrações › BeeFood**, na coluna **Webhook**. Ela deve enviar a URL para você cadastrar no BeeFood.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-route-delivery/imagens-tratadas/11-rd-endereco-webhook.png" width="1372" height="714" alt="Endereço do webhook e campo para salvar o secret no Route Delivery" />
+
+    | Nº | Campo                           | Quando se usa                                                    |
+    | -- | ------------------------------- | ---------------------------------------------------------------- |
+    | 1  | **Endereço do webhook da loja** | Você usará esse endereço no cadastro do webhook no BeeFood.      |
+    | 2  | **Copiar**                      | Copia a URL completa.                                            |
+    | 3  | **Campo do secret do webhook**  | A equipe preencherá esse campo depois que você receber o secret. |
+    | 4  | **Salvar**                      | Grava o secret recebido do BeeFood.                              |
+
+    <Callout kind="info" collapsed="false">
+      Enquanto o secret não for salvo, a linha pode mostrar **Falta o secret do webhook**. Depois que a equipe colar o secret e clicar em **Salvar**, a mensagem será removida.
+    </Callout>
+
+    <Callout kind="alert" collapsed="false">
+      A etiqueta `sandbox` não deve aparecer quando você seguir este manual. Se ela aparecer, a credencial veio do ambiente de testes ou a opção **Credencial do sandbox** foi marcada no vínculo.
+    </Callout>
+  </Step>
+</Steps>
+
+### Passo 11: cadastrar o webhook em Aplicativos e API Aberta
+
+<Steps>
+  <Step title="Abrir a aba Webhooks" title-type="p">
+    Volte ao painel **Aplicativos → API Aberta** no BeeFood e clique na aba **Webhooks**. Depois, clique em **NOVO WEBHOOK**.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-route-delivery/imagens-tratadas/12-aba-webhooks.png" width="1372" height="714" alt="Aba Webhooks da API Aberta no BeeFood" />
+
+    | Nº | O que fazer                                         |
+    | -- | --------------------------------------------------- |
+    | 1  | Clique em **NOVO WEBHOOK** para abrir o formulário. |
+  </Step>
+
+  <Step title="Preencher e salvar o webhook" title-type="p">
+    Cole a URL enviada pela equipe Route Delivery no campo **URL (https)**. Em **Eventos**, ligue exatamente **Pedido criado**, **Pedido atualizado** e **Entrega atualizada**. Preencha o e-mail de contato, deixe a autenticação Basic vazia e clique em **SALVAR (F2)**.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-route-delivery/imagens-tratadas/13-novo-webhook.png" width="1372" height="714" alt="Formulário de novo webhook com URL, eventos e autenticação" />
+
+    | Nº | Campo                  | O que fazer                                                                                                                        |
+    | -- | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+    | 1  | **URL (https)**        | Cole o endereço copiado no Passo 10.                                                                                               |
+    | 2  | **Eventos**            | Ligue **Pedido criado**, **Pedido atualizado** e **Entrega atualizada**. Desligue **Pagamento criado** e **Pagamento atualizado**. |
+    | 3  | **E-mail de contato**  | Informe um e-mail para receber avisos sobre falhas no envio.                                                                       |
+    | 4  | **Autenticação Basic** | Deixe os dois campos em branco.                                                                                                    |
+    | 5  | **SALVAR (F2)**        | Clique para cadastrar o webhook.                                                                                                   |
+
+    <Callout kind="info" collapsed="false">
+      Pelo painel do BeeFood, não existe uma opção de ambiente. O webhook criado em **Aplicativos → API Aberta** já é de produção.
+    </Callout>
+
+    <Callout kind="alert" collapsed="false">
+      Deixe os dois campos da autenticação Basic em branco. Se você preencher um campo, o BeeFood exigirá o outro, mas o Route Delivery não espera usuário nem senha nessa autenticação.
+    </Callout>
+  </Step>
+</Steps>
+
+### Passo 12: guardar o secret e devolvê-lo ao parceiro
+
+<Steps>
+  <Step title="Copiar o Secret do webhook" title-type="p">
+    Depois de salvar, o BeeFood mostra o **Secret do webhook** uma única vez. Copie o valor antes de clicar em **JÁ GUARDEI** e confirme que o webhook aparece com o selo **Ativo**.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/integracao-route-delivery/imagens-tratadas/14-webhook-ativo.png" width="1372" height="714" alt="Secret do webhook e webhook ativo na API Aberta" />
+
+    | Nº | Campo                       | O que fazer                                                                                                |
+    | -- | --------------------------- | ---------------------------------------------------------------------------------------------------------- |
+    | 1  | **Secret do webhook**       | Copie agora. O valor não será exibido novamente.                                                           |
+    | 2  | **JÁ GUARDEI**              | Clique depois de copiar o secret.                                                                          |
+    | 3  | Selo **Ativo**              | Confirma que o webhook está enviando notificações.                                                         |
+    | 4  | **Chave, EDITAR e EXCLUIR** | A chave pausa o webhook, **EDITAR** altera a configuração e **EXCLUIR** remove o cadastro definitivamente. |
+
+    <Callout kind="info" collapsed="false">
+      Mande o **Secret do webhook** para a equipe Route Delivery. Ela cola o valor no campo da linha da sua loja e clica em **Salvar**.
+    </Callout>
+
+    <Callout kind="alert" collapsed="false">
+      Se você perdeu o secret, ele não pode ser recuperado. Exclua a linha do webhook e repita o Passo 11 usando a mesma URL. O novo cadastro gerará outro secret para você enviar à equipe.
+    </Callout>
+  </Step>
+</Steps>
+
+## Parte 4: acompanhando os pedidos
+
+Depois da configuração, os pedidos aparecem no Route Delivery em **Operação** como **BeeFood #número**. O número é o mesmo exibido no BeeFood. A corrida mostra cliente, telefone, endereço, posição no mapa e canal de venda.
+
+O valor que o entregador deve cobrar também aparece no pedido. Em **Integrações › BeeFood**, a lista **Últimos eventos** registra os pedidos recebidos e os status enviados de volta ao BeeFood.
+
+## Como funciona no dia a dia
+
+<Steps>
+  <Step title="Receber o pedido de entrega" title-type="p">
+    O pedido de entrega entra no BeeFood pelo cardápio digital, PDV, WhatsApp, pedido manual ou marketplace habilitado.
+
+    O pedido de retirada, balcão ou mesa não entra no Route Delivery.
+  </Step>
+
+  <Step title="Enviar o pedido pelo webhook" title-type="p">
+    O webhook avisa o Route Delivery em aproximadamente 1 a 2 segundos.
+
+    O pedido deve aparecer em **Operação** com o número correspondente ao pedido no BeeFood.
+  </Step>
+
+  <Step title="Liberar o pedido para os entregadores" title-type="p">
+    Por padrão, marque o pedido como **Pronto** no BeeFood para chamar os entregadores. Se a equipe tiver habilitado a opção de liberação imediata, os entregadores serão chamados assim que o pedido chegar.
+  </Step>
+
+  <Step title="Atualizar para despachado" title-type="p">
+    Quando o entregador sai para a entrega, o Route Delivery atualiza o pedido para **despachado** no BeeFood.
+  </Step>
+
+  <Step title="Atualizar para entregue" title-type="p">
+    Quando o entregador finaliza a entrega, o pedido vira **entregue** no BeeFood.
+
+    Se você cancelar o pedido antes da entrega ser concluída, a corrida também será cancelada. Na primeira busca depois da ativação, entram os pedidos de entrega das últimas **2 horas** que ainda não foram despachados, entregues ou cancelados.
+  </Step>
+</Steps>
+
+## Quando algo não funciona
+
+| Sintoma                                                      | O que verificar                                                                                                                                                                                                 |
+| ------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Não encontro o card **API Aberta**                           | O recurso está em liberação por etapas. Confirme se sua conta tem acesso ao card e se seu usuário pode abrir **Aplicativos**. Se necessário, fale com o suporte BeeFood.                                        |
+| O painel mostra **Ambiente de testes**                       | A empresa está usando o ambiente de testes. As credenciais desse ambiente ficam no portal `docs.beefood.app`.                                                                                                   |
+| A credencial foi recusada                                    | Confirme se a credencial está ativa, se o Client Secret foi copiado inteiro e se **Pedidos** e **Loja** estão ligados.                                                                                          |
+| O Route Delivery mostra `sandbox` ao lado da loja            | A credencial veio do ambiente de testes ou a opção **Credencial do sandbox** ficou marcada. Use a credencial criada em **Aplicativos → API Aberta**, desmarque a opção e peça à equipe para vincular novamente. |
+| O vínculo não mostra o nome da loja                          | A permissão **Loja** pode estar desligada. Ligue **Consultar** em **Loja** e peça à equipe Route Delivery para testar a credencial novamente.                                                                   |
+| A linha da loja mostra **Falta o secret do webhook**         | O secret ainda não foi enviado ou não foi salvo no painel Route Delivery. Envie o secret e confirme que a equipe clicou em **Salvar**.                                                                          |
+| O pedido mostra **Pedido sem cliente e endereço de entrega** | Cadastre o cliente e um endereço completo no pedido de entrega, incluindo rua, número, bairro e cidade.                                                                                                         |
+| Os pedidos chegam com atraso                                 | Verifique se o webhook está cadastrado e ativo. Sem webhook, o Route Delivery só busca pedidos enquanto um painel ou aplicativo de entregador estiver aberto.                                                   |
+| O webhook foi desativado sozinho                             | O parceiro informa que o BeeFood desativa o webhook depois de **5 tentativas de envio sem sucesso**. Verifique o e-mail de contato, volte à aba **Webhooks** e religue o webhook pela chave.                    |
+| Os pedidos pararam de uma hora para outra                    | Confira se a credencial está ativa, se o webhook está ativo e se a integração não foi pausada no Route Delivery.                                                                                                |
+| Pedido de retirada, balcão ou mesa não virou corrida         | Esse é o comportamento esperado. Apenas pedidos de entrega entram na integração.                                                                                                                                |
+| O pedido de iFood não entrou                                 | A equipe Route Delivery precisa habilitar o canal em **Trazer também os pedidos destes canais**.                                                                                                                |
+| Pedidos antigos não entraram                                 | A primeira busca inclui apenas pedidos de entrega das últimas **2 horas** que ainda não foram despachados, entregues ou cancelados.                                                                             |
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+  <Expandable title="Preciso do portal de desenvolvedor do BeeFood para integrar o Route Delivery?" default-open="false">
+    Não. Crie a credencial e o webhook em **Aplicativos → API Aberta**, dentro do painel do BeeFood.
+  </Expandable>
+
+  <Expandable title="Onde fica a API Aberta?" default-open="false">
+    Abra **Aplicativos** no menu lateral e procure o card **API Aberta** na seção **API e MCP**.
+  </Expandable>
+
+  <Expandable title="Como crio a credencial do Route Delivery?" default-open="false">
+    Em **Aplicativos → API Aberta**, abra a aba **Credencial**, clique em **CRIAR CREDENCIAL**, confirme as permissões e clique em **CRIAR (F2)**.
+  </Expandable>
+
+  <Expandable title="Posso usar a credencial principal?" default-open="false">
+    Sim, mas criar uma credencial exclusiva para o Route Delivery permite desligar ou excluir o acesso do parceiro sem afetar outras integrações.
+  </Expandable>
+
+  <Expandable title="Quantas credenciais posso criar?" default-open="false">
+    Crie quantas forem necessárias. Uma credencial por parceiro e por loja é o critério recomendado.
+  </Expandable>
+
+  <Expandable title="Quais permissões o Route Delivery precisa?" default-open="false">
+    A credencial precisa de **Pedidos** com **Consultar** e **Alterar**, e **Loja** com **Consultar**.
+  </Expandable>
+
+  <Expandable title="Perdi o Client Secret. Preciso criar outra credencial?" default-open="false">
+    Não. Em **Todas as credenciais**, use o ícone de olho no campo **Client Secret** para exibir o valor novamente.
+  </Expandable>
+
+  <Expandable title="Preciso escolher o ambiente Produção?" default-open="false">
+    Não. Credenciais e webhooks criados em **Aplicativos → API Aberta** já são de produção.
+  </Expandable>
+
+  <Expandable title="O que o botão RECICLAR faz?" default-open="false">
+    O botão troca o Client ID e o Client Secret da credencial. Todas as integrações que usam esses valores param até receberem os novos dados.
+  </Expandable>
+
+  <Expandable title="Quem vincula a loja?" default-open="false">
+    A equipe Route Delivery vincula a loja no painel administrativo dela. Você cria a credencial no BeeFood e envia o Client ID e o Client Secret.
+  </Expandable>
+
+  <Expandable title="Como mando a credencial com segurança?" default-open="false">
+    Use o canal combinado com a equipe Route Delivery e envie os dados apenas no momento do cadastro. Nunca envie o Client Secret em grupos de mensagem.
+  </Expandable>
+
+  <Expandable title="O webhook é obrigatório?" default-open="false">
+    Não, mas a integração funciona pior sem ele. Sem webhook, o Route Delivery busca pedidos a cada 5 segundos apenas enquanto um painel ou aplicativo de entregador estiver aberto.
+  </Expandable>
+
+  <Expandable title="Quais eventos devo ligar?" default-open="false">
+    Ligue exatamente **Pedido criado**, **Pedido atualizado** e **Entrega atualizada**. Deixe **Pagamento criado** e **Pagamento atualizado** desligados.
+  </Expandable>
+
+  <Expandable title="O que devo preencher em clientId e clientSecret na autenticação Basic?" default-open="false">
+    Nada. Deixe os dois campos em branco. O Route Delivery não usa usuário e senha nessa autenticação.
+  </Expandable>
+
+  <Expandable title="Para que serve o Secret do webhook?" default-open="false">
+    O Route Delivery usa o secret para conferir que o aviso recebido veio do BeeFood. Envie o secret para a equipe, que deve colá-lo no campo da sua loja no painel Route Delivery.
+  </Expandable>
+
+  <Expandable title="Onde pego o endereço do webhook?" default-open="false">
+    Peça o endereço à equipe Route Delivery. Ele aparece na coluna **Webhook** da linha da sua loja em **Integrações › BeeFood**.
+  </Expandable>
+
+  <Expandable title="Posso pausar o webhook sem apagá-lo?" default-open="false">
+    Sim. Use a chave na linha do webhook. O cadastro permanece salvo, mas as notificações ficam pausadas.
+  </Expandable>
+
+  <Expandable title="Como corto o acesso do Route Delivery?" default-open="false">
+    Desative ou exclua a credencial criada para o Route Delivery e desative o webhook. A credencial principal e outras integrações continuam funcionando.
+  </Expandable>
+
+  <Expandable title="Tenho mais de uma loja. Posso usar a mesma credencial?" default-open="false">
+    Não é o recomendado. Crie uma credencial por loja e peça o vínculo de cada uma. Cada loja também tem seu próprio endereço de webhook.
+  </Expandable>
+
+  <Expandable title="Pedido de retirada, balcão ou mesa vira corrida?" default-open="false">
+    Não. Apenas pedidos de entrega viram corridas no Route Delivery.
+  </Expandable>
+
+  <Expandable title="Quando o entregador é chamado?" default-open="false">
+    Por padrão, quando você marca o pedido como **Pronto** no BeeFood. A equipe Route Delivery pode configurar a chamada assim que o pedido chegar.
+  </Expandable>
+
+  <Expandable title="O pedido vira despachado e entregue sozinho no BeeFood?" default-open="false">
+    Sim. A saída do entregador marca o pedido como **despachado**. A finalização marca como **entregue**.
+  </Expandable>
+
+  <Expandable title="Cancelei o pedido no BeeFood. A corrida também cancela?" default-open="false">
+    Sim, desde que a entrega ainda não tenha sido concluída.
+  </Expandable>
+
+  <Expandable title="Pedidos antigos entram quando a integração é ativada?" default-open="false">
+    A primeira busca inclui apenas pedidos de entrega das últimas **2 horas** que ainda não foram despachados, entregues ou cancelados.
+  </Expandable>
+
+  <Expandable title="" default-open="false">
+    ##
+  </Expandable>
+</ExpandableGroup>
+
+## Manuais relacionados
+
+<Columns cols="3">
+  <Card title="Integrações" href="/integracoes" icon="settings" horizontal="false">
+    Consulte as integrações disponíveis no BeeFood.
+  </Card>
+
+  <Card title="99 Entrega" href="/99-entrega" icon="truck" horizontal="false">
+    Configure a integração com o 99 Entrega.
+  </Card>
+
+  <Card title="Entregas Expressas" href="/integracao-entregas-expressas" icon="truck" horizontal="false">
+    Envie pedidos aceitos para entregadores parceiros.
+  </Card>
+
+  <Card title="Uber Direct" href="/integracao-uber-direct" icon="truck" horizontal="false">
+    Configure entregas usando o Uber Direct.
+  </Card>
+
+  <Card title="Let's Express" href="/integracao-lets-express" icon="truck" horizontal="false">
+    Integre o BeeFood ao Let's Express.
+  </Card>
+
+  <Card title="Foody Delivery" href="/integracao-foody-delivery" icon="truck" horizontal="false">
+    Configure o envio de pedidos para o Foody Delivery.
+  </Card>
+</Columns>
+

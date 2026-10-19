@@ -560,6 +560,10 @@
                       {
                         "title": "🛵 Entregas Expressas",
                         "path": "integracao-entregas-expressas"
+                      },
+                      {
+                        "title": "🛵 Route Delivery",
+                        "path": "integracao-route-delivery"
                       }
                     ]
                   },
