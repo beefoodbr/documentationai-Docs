@@ -255,6 +255,10 @@
                   {
                     "title": "📄 Cardápio em PDF",
                     "path": "cardapio-pdf"
+                  },
+                  {
+                    "title": "📥 Importar cardápio",
+                    "path": "cardapio-importar"
                   }
                 ]
               },

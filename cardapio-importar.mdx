@@ -1,0 +1,537 @@
+---
+title: Importar cardápio
+description: Importe produtos para o BeeFood pelo iFood, foto, PDF, Excel ou outra empresa, revise os dados e evite duplicações no cadastro.
+---
+
+## Escolha como importar seu cardápio
+
+Todos os caminhos terminam em **Cardápio → Produtos** e somam dados ao cadastro atual. Nenhum caminho substitui o que já existe, verifica duplicatas ou oferece uma forma de desfazer a importação. Se precisar corrigir o resultado, remova os produtos manualmente ou use **Editar em Lote**.
+
+| Situação | Onde acessar | O que o caminho traz |
+|---|---|---|
+| Sua loja está no iFood | **Cardápio → Copiar do iFood** | Setores, produtos, fotos, complementos e opções. É o caminho para trazer o cardápio completo do iFood. |
+| Você tem papel, foto, print ou PDF | **Cardápio → Copiar de Imagem** | A inteligência artificial lê o arquivo e sugere setores, produtos, preços, complementos e opções para você revisar antes do cadastro. |
+| Você tem uma planilha | **Cardápio → Produtos → Importar** | Texto, preços, códigos, descrições e outros campos da planilha. Não importa fotos nem complementos pelo template de produtos. |
+| Você tem outra empresa BeeFood | **Configuração → Clonar e importar** | Setores, produtos, grupos de opção e insumos de outra empresa. A cópia soma ao cadastro atual e pode criar duplicados. |
+
+Uma combinação comum é **copiar o cardápio do iFood primeiro** e depois complementar o cadastro pelo Excel ou pela digitalização. A escolha depende de onde estão os dados que você já tem.
+
+<Callout kind="alert">
+
+Não existe a opção **desfazer importação de cardápio**. Antes de confirmar qualquer caminho, confira o cardápio destino e revise a prévia quando ela estiver disponível.
+
+</Callout>
+
+## Antes de começar
+
+Você precisa da permissão correspondente ao caminho que pretende usar. As permissões são independentes: uma pessoa pode ter acesso ao Excel, mas não ao iFood ou à clonagem.
+
+Se uma opção não aparecer, peça ao usuário **Principal** para liberar o item em **Configuração → Usuários**. Se a conta tiver filiais, selecione o cardápio destino antes de iniciar. Quando você tem apenas um cardápio, o destino já vem preenchido.
+
+<Callout kind="info">
+
+A importação sempre acrescenta registros. Para evitar confusão, confirme se você está no cardápio da filial correta e tenha em mãos os dados da origem.
+
+</Callout>
+
+## Copiar cardápio do iFood
+
+Use este caminho para importar setores, produtos, fotos, complementos e opções de uma página pública do iFood.
+
+### Passo 1. Abra a cópia do iFood
+
+No menu, acesse **Cardápio → Copiar do iFood** e clique em **Copiar Cardápio do iFood**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-importar/imagens-tratadas/01-copiar-ifood-vazio.png" width="800" alt="Tela vazia para copiar cardápio do iFood" />
+
+A loja com menos de 10 produtos recebe um convite automático para usar o recurso. O convite deixa de aparecer depois que a loja passa de dez produtos.
+
+Você pode copiar qualquer loja pública, mas o uso esperado é copiar o cardápio da sua própria loja.
+
+### Passo 2. Informe o link do iFood
+
+No campo **URL do Restaurante no iFood**, cole o link da página da loja. Você também pode usar o botão de colar. Selecione o **Cardápio Destino** e confirme em **CONFIRMAR (F2)**. Para sair sem iniciar, clique em **CANCELAR (ESC)**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-importar/imagens-tratadas/02-modal-url-ifood.png" width="800" alt="Janela para informar o link do iFood e o cardápio destino" />
+
+O sistema remove automaticamente a parte do link depois de `?`. O endereço pode ser informado sem `https://` ou sem `www.`.
+
+Use uma URL de página de loja neste formato:
+
+`https://www.ifood.com.br/delivery/cidade-uf/nome-do-restaurante/UUID`
+
+Links de produto, resultados de busca e páginas abertas no aplicativo não funcionam.
+
+<Callout kind="tip">
+
+Confira o cardápio destino antes de clicar em **CONFIRMAR**. A importação não substitui os produtos existentes e não pode ser desfeita automaticamente.
+
+</Callout>
+
+### Passo 3. Acompanhe a fila
+
+Depois da confirmação, o pedido aparece como **Na fila**. A tela mostra a posição, por exemplo, **posição 2**, e o item **Próximo na fila**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-importar/imagens-tratadas/03-importacao-na-fila.png" width="800" alt="Importação do iFood aguardando na fila" />
+
+Para interromper enquanto ainda está na fila, clique em **Cancelar** e confirme. A importação roda no servidor, então você pode fechar a tela sem interromper o processamento.
+
+### Passo 4. Aguarde o processamento
+
+Durante a importação, a tela exibe mensagens rotativas a cada 10 segundos. Essas mensagens não representam etapas diferentes da importação.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-importar/imagens-tratadas/04-importacao-em-andamento.png" width="800" alt="Importação do iFood em andamento com contador e barra de progresso" />
+
+O contador e a barra mostram o andamento. A tela se atualiza automaticamente.
+
+### Passo 5. Espere o selo Concluído
+
+Somente o selo verde **Concluído** confirma que a importação terminou.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-importar/imagens-tratadas/05-importacao-concluida.png" width="800" alt="Importação do iFood concluída com selo verde" />
+
+Enquanto aparecer **Finalizando importação**, o sistema ainda está gravando dados. Não feche essa etapa esperando que ela já tenha terminado.
+
+Como referência, uma loja com 41 itens levou cerca de 1 minuto e 40 segundos e exibiu **41/41**. O tempo varia conforme o tamanho do cardápio e a fila.
+
+### Passo 6. Confira os registros importados
+
+Quando o selo **Concluído** aparecer, abra **Cardápio → Produtos** e **Grupo de Opções**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-importar/imagens-tratadas/06-produtos-importados.png" width="1200" alt="Produtos importados do iFood no cardápio" />
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-importar/imagens-tratadas/07-grupos-opcoes-importados.png" width="1200" alt="Grupos de opções importados do iFood" />
+
+Um exemplo de importação apresentou:
+
+| Registro | Quantidade |
+|---|---:|
+| Setores | 8 |
+| Produtos | 84 |
+| Grupos de opções | 15 |
+| Opções | 61 |
+| Itens na lista | 53 |
+
+Alguns produtos podem ser cadastros de opção usados por um combo. Não apague produtos duplicados sem verificar primeiro os grupos de opções.
+
+## Copiar de imagem ou digitalizar
+
+Use este caminho para **digitalizar cardápio**, importar um **cardápio por foto** ou **importar cardápio em PDF**. A inteligência artificial lê os arquivos, mas você revisa e corrige os dados antes de cadastrá-los.
+
+### Passo 7. Envie os arquivos
+
+Acesse **Cardápio → Copiar de Imagem** e envie arquivos PNG, JPG, WEBP ou PDF. Cada arquivo pode ter até 10 MB e você pode enviar vários arquivos.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-importar/imagens-tratadas/08-digitalizar-arquivo.png" width="800" alt="Tela para enviar imagem ou PDF do cardápio" />
+
+Se quiser orientar a leitura, adicione instruções opcionais, como:
+
+- Converter os preços para outra moeda.
+- Ignorar bebidas.
+- Separar os combos em uma categoria própria.
+
+Clique em **Continue** para iniciar a leitura. Para obter um resultado melhor, use uma foto reta, iluminada e legível.
+
+### Passo 8. Revise a extração
+
+Confira o nome do cardápio, a quantidade de páginas ou arquivos, as categorias e os itens identificados.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-importar/imagens-tratadas/09-digitalizar-revisao.png" width="800" alt="Tela de revisão dos produtos encontrados na digitalização" />
+
+Nesta etapa, você pode usar os botões para:
+
+- Copiar o conteúdo.
+- Baixar os dados.
+- Baixar um arquivo Excel.
+
+O Excel baixado pode ajudar a corrigir vários registros de uma vez antes de usar o caminho **importar produtos por Excel**.
+
+### Passo 9. Corrija os dados com o Assistente do Cardápio
+
+O **Assistente do Cardápio** permite corrigir a leitura usando linguagem natural.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-importar/imagens-tratadas/10-digitalizar-assistente.png" width="800" alt="Assistente do Cardápio corrigindo os dados digitalizados" />
+
+Use o assistente para:
+
+- Corrigir a descrição de um item.
+- Adicionar um produto.
+- Remover uma categoria.
+- Corrigir um preço ou outro dado identificado incorretamente.
+
+As mudanças feitas no assistente entram no cadastro quando você confirmar o envio.
+
+### Passo 10. Confirme o envio
+
+Revise novamente os itens e clique em **Confirmar envio** quando os dados estiverem corretos.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-importar/imagens-tratadas/11-digitalizar-confirmar.png" width="800" alt="Tela para confirmar o envio dos dados digitalizados" />
+
+**Confirmar envio** é o ponto sem volta deste caminho. Clique em **Cancelar** para voltar à revisão sem cadastrar os dados.
+
+<Callout kind="alert">
+
+Depois de confirmar o envio, a leitura é cadastrada no cardápio escolhido. Se você trocar o cardápio destino durante o processo, a leitura será descartada depois do aviso de confirmação.
+
+</Callout>
+
+### Passo 11. Confira o resultado
+
+O resultado mostra a quantidade de setores, produtos, complementos, grupos e opções cadastrados.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-importar/imagens-tratadas/12-digitalizar-resultado.png" width="800" alt="Resultado da digitalização com setores, produtos, complementos, grupos e opções" />
+
+Compare os números com o cardápio original. Se precisar digitalizar outra página, inicie uma nova digitalização. A nova leitura limpa a página atual para receber o próximo arquivo.
+
+## Importar produtos por Excel
+
+Use o Excel quando você já tem os dados em uma planilha ou precisa cadastrar muitos produtos com texto e preços. Você pode importar arquivos `.xlsx`, `.xls` ou `.csv`.
+
+### Passo 12. Abra a importação e prepare a planilha
+
+Para importar produtos, acesse **Cardápio → Produtos → Importar**. A importação de complementos também está disponível em **Cardápio → Complementos**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-importar/imagens-tratadas/13-excel-passo1.png" width="800" alt="Primeira etapa para importar uma planilha de produtos" />
+
+A única coluna obrigatória para produtos é **Descrição**, que corresponde ao nome do produto. O template de produtos também aceita:
+
+| Campo | Uso |
+|---|---|
+| Setor | Categoria ou setor do produto. Se não existir, o sistema cria. |
+| Descrição | Nome do produto. É obrigatório. |
+| Código | Código interno do produto. |
+| Preço Venda | Preço vendido ao cliente. |
+| Preço Custo | Custo do produto. |
+| Código de Barras | Código de barras do produto. |
+| Descritivo | Descrição detalhada. |
+| Unidade Medida | Unidade usada no cadastro. |
+| Observação | Observações do produto. |
+| NCM | Código fiscal. |
+| CEST | Código fiscal. |
+
+Os preços aceitam vírgula ou ponto como separador decimal. O template para complementos usa os mesmos campos, mas não inclui **Setor**.
+
+Clique em **BAIXAR TEMPLATE** para gerar o arquivo `template_importacao_produtos.xlsx`.
+
+Leia os alertas amarelos antes de continuar:
+
+- Linhas sem nome são ignoradas.
+- **NCM** e **CEST** são tratados como texto para preservar zeros à esquerda.
+
+### Passo 13. Mapeie e valide as colunas
+
+O sistema tenta mapear automaticamente as colunas da planilha para os campos do BeeFood.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-importar/imagens-tratadas/14-excel-mapeamento.png" width="800" alt="Mapeamento das colunas da planilha para os campos do BeeFood" />
+
+As linhas verdes foram mapeadas. As linhas vermelhas serão ignoradas. Cada campo recebe uma coluna correspondente da planilha.
+
+Clique em **Exemplo** para validar o preenchimento. A prévia mostra cinco linhas e destaca em vermelho os registros sem nome. Corrija qualquer coluna mapeada incorretamente antes de importar.
+
+### Passo 14. Importe e acompanhe o resultado
+
+Clique em **IMPORTAR (F2)** para iniciar.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-importar/imagens-tratadas/15-excel-resultado.png" width="800" alt="Resultado da importação da planilha com status por linha" />
+
+Cada linha passa por estados como:
+
+| Estado ou indicador | Significado |
+|---|---|
+| Aguardando | A linha ainda não foi enviada. |
+| Enviando | O sistema está processando a linha. |
+| Importado | O registro foi cadastrado. |
+| Erro | O registro não foi cadastrado. |
+| Enviados | Quantidade de linhas enviadas. |
+| Sucesso | Quantidade de linhas importadas. |
+| Falhas | Quantidade de linhas com erro. |
+
+Os indicadores **Sucesso** e **Falhas** podem ser clicados para filtrar os registros. A coluna **Status** mostra o resultado de cada linha.
+
+Quando terminar, clique em **FECHAR (ESC)**, volte para **Produtos** e atualize a página.
+
+<Callout kind="alert">
+
+Se a planilha tiver 100 linhas e 80 forem importadas, não reimporte o arquivo inteiro para tentar as 20 restantes. A importação duplicará as 80 linhas que já deram certo. Reimporte somente as linhas com falha.
+
+</Callout>
+
+Cancelar interrompe o envio dos próximos blocos. Os registros que já foram cadastrados continuam no cardápio.
+
+## Clonar cardápio de outra empresa
+
+Use a clonagem para copiar setores, produtos, grupos de opção e insumos de outra empresa BeeFood. Esse caminho funciona somente entre empresas diferentes.
+
+### Passo 15. Informe as credenciais da empresa de origem
+
+Acesse **Configuração → Clonar e importar** e abra a aba **Cardápio de outra empresa**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-importar/imagens-tratadas/16-clonagem-credenciais.png" width="800" alt="Tela de clonagem com as credenciais da empresa de origem" />
+
+Informe as credenciais do usuário **Principal** da empresa de origem. Um usuário comum não tem permissão para esta operação.
+
+As credenciais não ficam salvas. Clique em **Continuar** para validar o acesso. Essa validação não copia dados.
+
+A clonagem não pode usar a própria empresa como origem. Nesse caso, o sistema mostra:
+
+`A empresa de origem é a mesma da empresa atual.`
+
+A expressão **entre cardápios desta empresa** que aparece na aba de **Área de entrega** não se refere à clonagem do cardápio. Para copiar o cardápio, use a aba **Cardápio de outra empresa**.
+
+### Passo 16. Revise a prévia e os impostos
+
+A prévia mostra a empresa de origem e a quantidade de setores, produtos, grupos e insumos.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-importar/imagens-tratadas/17-clonagem-previa.png" width="800" alt="Prévia da clonagem com os registros da empresa de origem" />
+
+A tela pode mostrar o alerta **Esta empresa já tem cadastro**. A cópia será somada ao cadastro atual e pode criar produtos duplicados.
+
+A opção **Copiar também a configuração de impostos** vem desmarcada. Marque-a somente se a empresa de origem e a empresa atual tiverem o mesmo regime fiscal.
+
+Clique em **Copiar cadastro** para abrir a confirmação.
+
+### Passo 17. Confirme e aguarde a cópia
+
+Na confirmação, clique em **COPIAR** para iniciar ou em **CANCELAR** para voltar à prévia.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/cardapio-importar/imagens-tratadas/18-clonagem-confirmacao.png" width="800" alt="Confirmação para copiar o cadastro de outra empresa" />
+
+Não feche a tela durante a cópia. Depois, o sistema mostra a mensagem **Cadastro copiado de** seguida do nome da empresa, além de cartões com o resultado e o estado da configuração de impostos.
+
+Clique em **Ir para o cardápio** para conferir os dados. Se a empresa atual já tiver cadastro, uma segunda confirmação **Copiar mesmo assim?** pode aparecer.
+
+## Confira o cardápio depois da importação
+
+A importação cadastra os dados, mas você ainda precisa revisar o resultado antes de vender.
+
+- Confira preços e disponibilidade. O caminho do iFood traz o preço praticado no iFood.
+- Verifique produtos duplicados depois de importar. Em um exemplo, 11 nomes apareceram duplicados. Em todos os casos, uma cópia era um item de opção de combo e a outra era um produto avulso.
+- Abra **Cardápio → Grupo de Opções** antes de apagar qualquer produto duplicado.
+- Os setores importados do iFood seguem a ordem do iFood. Para mudar a ordem, acesse **Cardápio → Reordenar**.
+- Somente o iFood traz fotos.
+- Nenhum caminho importa horário de funcionamento, área de entrega, formas de pagamento, cupom ou taxa de entrega.
+- Nos complementos obrigatórios, confira o mínimo e o máximo de escolhas do grupo. Use mínimo 1 quando o combo exigir que o cliente escolha uma opção.
+
+<Callout kind="tip">
+
+Um produto duplicado pode ser necessário para um combo. Consulte os grupos de opções e os produtos vinculados antes de remover qualquer cadastro.
+
+</Callout>
+
+## Solução de problemas
+
+| Sintoma | O que verificar |
+|---|---|
+| A opção de importação não aparece | Confirme a permissão do item em **Configuração → Usuários**. O usuário Principal precisa liberar cada caminho separadamente. |
+| O iFood está fora do ar | Aguarde o serviço voltar e tente novamente. Se continuar, informe ao suporte o caminho usado, a loja e o horário. |
+| A URL do iFood é inválida | Use o link de uma página de loja no formato de delivery. Links de produto, busca e aplicativo não funcionam. |
+| A importação está demorando na fila | A fila roda no servidor. Confira a posição e o item **Próximo na fila**. Você pode fechar a tela. |
+| Apareceu um erro no iFood | Abra **Ver detalhes do erro**. As causas podem incluir loja fora do ar, cardápio vazio ou loja fechada. |
+| A tela mostra **Finalizando importação** | O sistema ainda está gravando. Espere aparecer o selo verde **Concluído**. |
+| Há produtos duplicados | Abra **Cardápio → Grupo de Opções** e confira se uma cópia é usada como opção de combo antes de apagar. |
+| A digitalização não encontrou itens | Use foto reta, iluminada e legível. Confira se o arquivo está em PNG, JPG, WEBP ou PDF e tem até 10 MB. |
+| A digitalização trouxe preço errado | Corrija o item na revisão ou use o **Assistente do Cardápio** antes de confirmar o envio. |
+| Troquei o cardápio destino durante a digitalização | A leitura será descartada depois do aviso. Recomece a leitura no cardápio correto. |
+| A contagem do Excel está errada | Confira as linhas sem nome, que são ignoradas, e a prévia de cinco linhas antes de importar. |
+| A coluna foi mapeada errada | Ajuste o campo correspondente no mapeamento e valide usando **Exemplo**. |
+| O NCM ou CEST perdeu o zero à esquerda | Formate a coluna como texto antes de salvar a planilha. O BeeFood lê NCM e CEST como texto. |
+| Algumas linhas do Excel falharam | Clique em **Falhas**, leia o status de cada linha e reimporte somente as linhas corrigidas. |
+| Cancelei o Excel | Os blocos já cadastrados permanecem. O cancelamento interrompe apenas os próximos blocos. |
+| A clonagem informa que a empresa é a mesma | Informe outra empresa BeeFood como origem. Não é possível clonar a empresa atual para ela mesma. |
+| O login da clonagem não funciona | Use as credenciais do usuário Principal da empresa de origem, não as de um usuário comum. |
+| A tela pede confirmação de duplicação | Leia o alerta e confirme somente se quiser somar o cadastro da origem ao cadastro atual. |
+| Preciso desfazer a importação | Não há desfazer. Remova os produtos em **Produtos** ou use **Editar em Lote**, verificando antes os grupos de opções. |
+
+## Perguntas frequentes
+
+<ExpandableGroup>
+<Expandable title="Quais são os quatro caminhos para importar um cardápio?">
+
+Use **Cardápio → Copiar do iFood** para copiar uma loja do iFood, **Cardápio → Copiar de Imagem** para digitalizar papel, foto, print ou PDF, **Cardápio → Produtos → Importar** para uma planilha e **Configuração → Clonar e importar** para copiar de outra empresa BeeFood.
+
+Todos os caminhos somam dados ao cadastro atual e nenhum identifica duplicatas.
+
+</Expandable>
+
+<Expandable title="Como copiar o cardápio do iFood?">
+
+Abra **Cardápio → Copiar do iFood**, clique em **Copiar Cardápio do iFood**, informe o link da página da loja, escolha o cardápio destino e clique em **CONFIRMAR (F2)**.
+
+O link correto é o da página pública da loja. Links de produto, busca e aplicativo não funcionam.
+
+</Expandable>
+
+<Expandable title="Posso copiar o cardápio de outra loja pública do iFood?">
+
+Sim. O sistema aceita qualquer loja pública, mas o uso esperado é copiar o cardápio da sua própria loja.
+
+</Expandable>
+
+<Expandable title="Quanto tempo a cópia do iFood demora? Posso fechar a tela?">
+
+O tempo varia conforme o tamanho do cardápio e a fila. Como referência, uma loja com 41 itens levou cerca de 1 minuto e 40 segundos. A cópia roda no servidor, então você pode fechar a tela e acompanhar depois.
+
+Considere o processo concluído somente quando aparecer o selo verde **Concluído**. **Finalizando importação** ainda indica gravação.
+
+</Expandable>
+
+<Expandable title="Posso cancelar uma importação do iFood?">
+
+Você pode cancelar enquanto a importação estiver **Na fila**, usando **Cancelar** e confirmando. Depois que o processamento começar, aguarde o resultado e revise os dados cadastrados.
+
+</Expandable>
+
+<Expandable title="A importação apaga o cardápio que já existe?">
+
+Não. Os quatro caminhos somam dados ao cadastro atual. Nenhum substitui os produtos existentes ou verifica duplicatas.
+
+</Expandable>
+
+<Expandable title="Por que aparecem produtos duplicados depois de importar?">
+
+Um produto pode existir como item avulso e também como item de opção de combo. Abra **Cardápio → Grupo de Opções** antes de apagar qualquer cópia.
+
+</Expandable>
+
+<Expandable title="Quais caminhos importam fotos?">
+
+Somente o caminho do iFood importa fotos. A digitalização lê as informações do arquivo, mas não transforma automaticamente a imagem original em foto do produto. Excel e clonagem não importam fotos como parte do cadastro de produtos.
+
+</Expandable>
+
+<Expandable title="Como digitalizar um cardápio impresso?">
+
+Abra **Cardápio → Copiar de Imagem** e envie uma foto reta, iluminada e legível. Você pode enviar PNG, JPG, WEBP ou PDF, com até 10 MB por arquivo, e vários arquivos na mesma leitura.
+
+Revise os dados, corrija o que for necessário e clique em **Confirmar envio** somente quando o resultado estiver pronto.
+
+</Expandable>
+
+<Expandable title="Quais formatos e limites a digitalização aceita?">
+
+A digitalização aceita PNG, JPG, WEBP e PDF. Cada arquivo pode ter até 10 MB. Você pode enviar vários arquivos.
+
+</Expandable>
+
+<Expandable title="Posso dar instruções adicionais para a digitalização?">
+
+Sim. Use o campo de instruções para pedir ações como converter moeda, ignorar bebidas ou separar combos. As instruções são opcionais.
+
+</Expandable>
+
+<Expandable title="O que o Assistente do Cardápio pode corrigir?">
+
+O assistente pode corrigir descrições, adicionar itens, remover categorias e ajustar os dados encontrados na leitura. As alterações entram no cadastro quando você confirma o envio.
+
+</Expandable>
+
+<Expandable title="Os produtos são cadastrados assim que a digitalização termina?">
+
+Não. A leitura apresenta uma revisão antes do cadastro. Os dados só entram no cardápio depois que você confirma o envio.
+
+</Expandable>
+
+<Expandable title="Como importar produtos por Excel?">
+
+Abra **Cardápio → Produtos → Importar**, envie um arquivo `.xlsx`, `.xls` ou `.csv`, revise o mapeamento das colunas e clique em **IMPORTAR (F2)**.
+
+A coluna **Descrição** é obrigatória. Você também pode importar setor, códigos, preços, custo, código de barras, descritivo, unidade, observação, NCM e CEST.
+
+</Expandable>
+
+<Expandable title="O Excel importa complementos, fotos e grupos de opções?">
+
+O template de produtos não importa fotos nem complementos. Para importar dados de complementos, acesse **Cardápio → Complementos**. Fotos e grupos de opções exigem outros caminhos ou cadastro posterior.
+
+</Expandable>
+
+<Expandable title="O Excel cria um setor que ainda não existe?">
+
+Sim. Se a planilha tiver um setor que ainda não existe no cardápio, o sistema cria o setor durante a importação.
+
+</Expandable>
+
+<Expandable title="Posso usar vírgula nos preços da planilha?">
+
+Sim. Os preços aceitam vírgula ou ponto como separador decimal.
+
+</Expandable>
+
+<Expandable title="Como preservar o zero à esquerda do NCM com zero à esquerda?">
+
+Trate as colunas **NCM** e **CEST** como texto na planilha antes de salvar. O BeeFood também lê esses campos como texto para preservar os zeros à esquerda.
+
+</Expandable>
+
+<Expandable title="Posso importar uma planilha inteira novamente depois de uma falha?">
+
+Não é recomendado. Se parte das linhas já foi importada, uma nova importação da planilha inteira duplicará os registros que deram certo. Filtre **Falhas**, corrija as linhas e importe somente elas.
+
+</Expandable>
+
+<Expandable title="O que acontece quando cancelo a importação do Excel?">
+
+O cancelamento interrompe o envio dos próximos blocos. As linhas que já foram cadastradas permanecem no cardápio.
+
+</Expandable>
+
+<Expandable title="Como clonar um cardápio de outra empresa?">
+
+Abra **Configuração → Clonar e importar**, selecione a aba **Cardápio de outra empresa**, informe as credenciais do usuário Principal da empresa de origem, revise a prévia e confirme a cópia.
+
+A clonagem traz setores, produtos, grupos de opção e insumos. Ela soma os registros ao cadastro atual.
+
+</Expandable>
+
+<Expandable title="A clonagem copia os impostos?">
+
+A opção **Copiar também a configuração de impostos** vem desmarcada. Marque-a somente quando a empresa de origem e a empresa atual tiverem o mesmo regime fiscal.
+
+</Expandable>
+
+<Expandable title="As credenciais usadas na clonagem ficam salvas?">
+
+Não. As credenciais da empresa de origem não ficam salvas.
+
+</Expandable>
+
+<Expandable title="Posso clonar o cardápio da própria empresa?">
+
+Não. A origem precisa ser outra empresa BeeFood. Ao tentar usar a própria empresa, o sistema mostra **A empresa de origem é a mesma da empresa atual.**
+
+</Expandable>
+
+<Expandable title="Existe desfazer importação de cardápio?">
+
+Não existe desfazer automático. Para remover dados, use **Produtos** ou **Editar em Lote** e confira os grupos de opções antes de excluir produtos.
+
+</Expandable>
+
+<Expandable title="A importação traz horário, área de entrega ou formas de pagamento?">
+
+Não. Nenhum dos quatro caminhos importa horário de funcionamento, área de entrega, formas de pagamento, cupom ou taxa de entrega.
+
+</Expandable>
+</ExpandableGroup>
+
+## Precisa de ajuda?
+
+Ao falar com o suporte BeeFood, informe:
+
+- O caminho usado: iFood, imagem, Excel ou clonagem.
+- O nome da loja e o CNPJ.
+- O cardápio destino.
+- O horário em que a operação foi realizada.
+- No iFood, a URL usada e o conteúdo de **Ver detalhes do erro**.
+- No Excel, anexe a planilha e envie o texto exibido em **Status**.
+- Na digitalização, informe o formato do arquivo e se o problema ocorreu na leitura, na revisão ou na confirmação.
+- Na clonagem, informe a empresa de origem e se o login usado pertence ao usuário Principal.
+
+## Onde continuar
+
+Depois de importar, use estas áreas para revisar e completar o cardápio:
+
+- **Cardápio → Produtos**: confira produtos, preços, disponibilidade e duplicidades.
+- **Cardápio → Grupo de Opções**: revise complementos, grupos, mínimos, máximos e itens de combo.
+- **Cardápio → Reordenar**: altere a ordem dos setores.
+- **Configuração → Clonar e importar**: acesse a área usada para copiar cadastros de outra empresa e continuar configurações relacionadas a área de entrega e clientes.
