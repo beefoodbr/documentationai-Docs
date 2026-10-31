@@ -1,0 +1,194 @@
+---
+title: Ativar e administrar aparelhos
+description: >-
+  Gere códigos de ativação, conecte aparelhos ao BeeFood, acompanhe vagas e
+  resolva problemas de pareamento pelo painel.
+---
+## Pré-requisitos
+
+Antes de iniciar, confirme estes itens:
+
+- Você tem acesso ao menu **Configuração → Dispositivos**.
+- O aplicativo já está instalado no aparelho.
+- Existe uma vaga livre para o tipo de aparelho escolhido.
+- Você tem o aparelho em mãos ou consegue informar o código à pessoa que fará a ativação.
+- O código será usado dentro do prazo de validade de 15 minutos.
+
+<Callout kind="info" collapsed="false">
+  A disponibilidade de aparelhos e a quantidade de vagas dependem do tipo de aparelho e da cota exibida no painel. A tela informa a disponibilidade no formato **X de Y livres**.
+</Callout>
+
+## Tipos de aparelho e formas de ativação
+
+O painel lista os seguintes tipos de aparelho:
+
+- **App Garçom**
+- **App Garçom POS**
+- **App Entregador**
+- **Totem de autoatendimento**
+- **Cardápio Digital no Tablet**
+- **PDV Mobile Offline**
+- **TEF**
+
+O código de ativação é específico para cada tipo. Um código gerado para o **App Garçom**, por exemplo, não ativa o **App Entregador**.
+
+O QR Code aparece somente para **App Entregador** e **Cardápio Digital no Tablet**. Nesses dois tipos, você pode digitar o código ou escanear o QR Code. O **Totem de autoatendimento**, o **App Garçom** e o **App Garçom POS** usam o código digitado.
+
+<Callout kind="alert" collapsed="false">
+  O **PDV Mobile Offline** aparece com o status **Gestão em breve** e não possui ativação por código. O **TEF** usa um cadastro próprio e não participa deste fluxo.
+</Callout>
+
+## Gerar e consultar um código no painel
+
+O código é gerado automaticamente quando você abre o modal de ativação. Não existe um botão separado chamado **Gerar**.
+
+<Steps>
+  <Step title="Abra a tela de dispositivos" title-type="p">
+    No painel, acesse **Configuração → Dispositivos**.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/dispositivos-codigo-ativacao/imagens-tratadas/01-tela-dispositivos.png" width="600" alt="Tela Dispositivos com vagas e botão Ativar aparelho" />
+  </Step>
+
+  <Step title="Escolha o tipo de aparelho" title-type="p">
+    Localize a faixa correspondente ao tipo de aparelho que será ativado e confira a quantidade de vagas disponíveis.
+  </Step>
+
+  <Step title="Abra a ativação" title-type="p">
+    Clique em **Ativar aparelho**.
+
+    O modal é aberto com um código de seis caracteres no formato `XXX-XXX`, uma contagem regressiva e o botão **Copiar**.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/dispositivos-codigo-ativacao/imagens-tratadas/02-modal-codigo-app-garcom.png" width="600" alt="Modal de ativação do App Garçom com código e contagem" />
+  </Step>
+
+  <Step title="Informe o código" title-type="p">
+    Clique em **Copiar** ou informe o código manualmente no aparelho. O hífen existe apenas para facilitar a leitura. O código continua sendo o mesmo quando digitado sem o hífen.
+  </Step>
+</Steps>
+
+Depois de fechar o modal, o código continua disponível na lista de dispositivos enquanto estiver pendente. A lista mostra a indicação de códigos **aguardando ativação**, o código, o tempo restante e o botão **Cancelar**.
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/dispositivos-codigo-ativacao/imagens-tratadas/05-codigo-aguardando-ativacao.png" width="600" alt="Cartão de código aguardando ativação com opção Cancelar" />
+
+<Callout kind="info" collapsed="false">
+  Você pode manter vários códigos abertos ao mesmo tempo, mas cada código aberto reserva uma vaga até ser ativado, cancelado ou expirar.
+</Callout>
+
+## Ativar o aparelho no aplicativo
+
+<Steps>
+  <Step title="Abra o aplicativo" title-type="p">
+    Abra o aplicativo instalado no aparelho que será conectado.
+  </Step>
+
+  <Step title="Faça login" title-type="p">
+    Entre com o usuário e a senha normais do aplicativo.
+  </Step>
+
+  <Step title="Abra a ativação" title-type="p">
+    Acesse a tela **Ativar aparelho**.
+  </Step>
+
+  <Step title="Informe ou escaneie o código" title-type="p">
+    Digite o código exibido no painel.
+
+    No **App Entregador** e no **Cardápio Digital no Tablet**, você também pode escanear o QR Code exibido no modal.
+
+    <Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/dispositivos-codigo-ativacao/imagens-tratadas/03-modal-codigo-qr-app-entregador.png" width="600" alt="Modal do App Entregador com QR Code" />
+  </Step>
+</Steps>
+
+Enquanto o pareamento estiver em andamento, o painel acompanha o status do código. Quando a ativação for concluída, a tela mostra **Aparelho ativado**, exibe o nome do aparelho e fecha automaticamente.
+
+## Entender a validade e as cotas
+
+Cada código permanece válido por 15 minutos. A contagem regressiva começa em `15:00` e continua mesmo se você fechar o modal.
+
+Códigos pendentes contam como vagas reservadas. Por isso, a quantidade de vagas livres pode diminuir quando você gera um código, mesmo antes de ativar o aparelho.
+
+<Callout kind="alert" collapsed="false">
+  Se não houver vaga disponível, o painel mostra o estado de limite e a ação **CONTRATAR MAIS**. Códigos que aparecem como **aguardando ativação** também ocupam vagas.
+</Callout>
+
+<Image src="https://raw.githubusercontent.com/BeeFood-Sistema-para-Restaurantes/beefood-web-react-manual/main/manuais/dispositivos-codigo-ativacao/imagens-tratadas/04-modal-sem-vaga-totem.png" width="600" alt="Modal informando limite de vagas do Totem" />
+
+Quando o código expira, o modal mostra **Este código expirou** e oferece a opção **Gerar outro código**. Gere um novo código e repita a ativação no aparelho.
+
+## Cancelar um código pendente
+
+Cancele um código quando ele não será mais usado. O cancelamento libera a vaga imediatamente e não remove nenhum aparelho já ativado.
+
+<Steps>
+  <Step title="Localize o código" title-type="p">
+    Acesse **Configuração → Dispositivos** e encontre a faixa do tipo de aparelho. Localize o código na área de códigos **aguardando ativação**.
+  </Step>
+
+  <Step title="Cancele o pareamento" title-type="p">
+    Clique em **Cancelar** no cartão do código pendente e confirme a ação, se solicitado.
+
+    A vaga fica disponível imediatamente para uma nova ativação.
+  </Step>
+</Steps>
+
+Se o código já tiver sido usado ou expirado quando você tentar cancelá-lo, a tela informa **Este código já foi usado ou expirou**.
+
+## Remover ou renomear um aparelho
+
+Remover um aparelho ativado libera a vaga imediatamente. O aparelho removido pode continuar funcionando até o próximo contato com o servidor, o que pode levar até uma hora.
+
+<Steps>
+  <Step title="Encontre o aparelho" title-type="p">
+    Acesse **Configuração → Dispositivos** e localize o aparelho ativado na lista.
+  </Step>
+
+  <Step title="Abra o menu do aparelho" title-type="p">
+    Clique no menu de três pontos do aparelho.
+  </Step>
+
+  <Step title="Escolha a ação" title-type="p">
+    Selecione a opção para remover ou renomear o aparelho e conclua a ação exibida na tela.
+  </Step>
+</Steps>
+
+Ao renomear, use no máximo 60 caracteres.
+
+<Callout kind="alert" collapsed="false">
+  Remover o aparelho libera a vaga na hora, mas não garante a desconexão imediata do aplicativo. A remoção efetiva pode ocorrer em até uma hora.
+</Callout>
+
+## Resolver problemas comuns
+
+### O código foi recusado no aparelho
+
+Confirme estes pontos:
+
+- O código pertence ao mesmo tipo de aparelho que está sendo ativado.
+- O prazo de 15 minutos ainda não terminou.
+- Todos os caracteres foram digitados corretamente.
+- O hífen foi usado apenas como separador de leitura e não alterou o código.
+
+### Não consigo gerar um código
+
+Se ocorrer uma falha, o modal mostra a mensagem retornada pelo sistema ou **Não foi possível gerar o código**, junto da opção **Tentar novamente**.
+
+<Steps>
+  <Step title="Tente gerar novamente" title-type="p">
+    Clique em **Tentar novamente** e aguarde a geração de um novo código.
+  </Step>
+
+  <Step title="Confira as vagas" title-type="p">
+    Verifique o indicador **X de Y livres**. Considere também os códigos que estão **aguardando ativação**, pois eles reservam vagas.
+  </Step>
+</Steps>
+
+### Não há vagas disponíveis
+
+Confira se existem códigos pendentes que não serão usados. Cancele esses códigos para liberar as vagas imediatamente. Se a cota continuar insuficiente, use a ação **CONTRATAR MAIS** exibida no estado de limite.
+
+### O aparelho foi ativado, mas não aparece na lista
+
+Atualize a tela **Configuração → Dispositivos** usando o botão de atualizar. O painel recarrega a lista de aparelhos e pareamentos.
+
+### O aparelho removido continua funcionando
+
+A vaga é liberada imediatamente, mas o aplicativo pode continuar funcionando até o próximo contato com o servidor. Aguarde até uma hora para que a remoção seja aplicada no aparelho.
