@@ -893,6 +893,11 @@
               {
                 "title": "🧾 Taxa de serviço opcional no cupom",
                 "path": "cupom-taxa-servico-opcional"
+              },
+              {
+                "title": "Código de Barras no delivery para mover pedido para Pronto",
+                "path": "manuais/delivery-codigo-barras-pronto",
+                "icon": "barcode"
               }
             ]
           }

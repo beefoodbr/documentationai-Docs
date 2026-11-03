@@ -1,0 +1,142 @@
+---
+title: Código de Barras no delivery para mover pedido para Pronto
+description: Configure o código de barras no cupom e mova pedidos do Delivery para Pronto ao bipá-lo na tela Delivery, sem configurar o leitor.
+---
+
+## Mova pedidos para Pronto com um bip
+
+Configure o código de barras no cupom do pedido e use o leitor na tela **Delivery** para bipá-lo e mover pedidos de **Aguardando** ou **Em preparo** para a coluna **PRONTO**.
+
+<Callout kind="info">
+
+Antes de começar, confirme que você tem:
+
+- Um leitor de código de barras comum que se comporte como teclado.
+- Um cupom de pedido impresso com o código de barras.
+- Acesso ao menu **Configuração**.
+- A tela **Delivery** aberta no mesmo computador em que o leitor está conectado.
+
+</Callout>
+
+<Callout kind="alert">
+
+Bipe somente o cupom do pedido correto. A leitura muda o estado do pedido e o envia para **PRONTO**.
+
+</Callout>
+
+## Ative o código no cupom
+
+<Steps>
+<Step title="Abra o layout do cupom">
+
+Acesse **Configuração** e siga o caminho **Impressão** → **Layout** → **Cupom Pedido** → **Texto Padrão**.
+
+</Step>
+
+<Step title="Ative a opção do Delivery">
+
+No quadro **Texto padrão Delivery**, marque exatamente a opção **Código de barras envia pedido para PRONTO**.
+
+</Step>
+
+<Step title="Salve a configuração">
+
+Clique em **SALVAR E FECHAR**.
+
+Os próximos cupons impressos passarão a mostrar o código de barras no rodapé. A configuração vale para pedidos de entrega, retirada, consumo no local e pedidos do módulo Delivery recebidos de marketplaces.
+
+</Step>
+</Steps>
+
+## Mova o pedido para Pronto
+
+<Steps>
+<Step title="Abra a fila de pedidos">
+
+Deixe a tela **Delivery** visível e localize um pedido na coluna **Aguardando** ou **Em preparo**.
+
+</Step>
+
+<Step title="Remova o foco de campos">
+
+Clique em uma área vazia da tela para tirar o foco do campo de busca ou de qualquer outro campo. Feche janelas ou caixas de diálogo que estejam sobre a tela Delivery.
+
+</Step>
+
+<Step title="Bipe o cupom">
+
+Passe o código de barras do cupom correto no leitor.
+
+A tela mostra a confirmação **Pedido #N marcado como Pronto**, e o cartão do pedido aparece na coluna **PRONTO**.
+
+</Step>
+</Steps>
+
+Uma nova leitura de um pedido que já está em **PRONTO** não move o pedido novamente.
+
+## Entenda as duas opções de código
+
+As opções **Código de barras envia pedido para PRONTO** e **Código de Barras App Entrega** atendem a etapas diferentes do fluxo:
+
+<Tabs>
+<Tab title="Código para Pronto" icon="check-circle">
+
+Bipe o código no computador com a tela **Delivery** aberta. O pedido passa para **PRONTO**, indicando que o preparo foi concluído.
+
+</Tab>
+
+<Tab title="Código de Barras App Entrega" icon="users">
+
+Leia o código no aplicativo do entregador. O pedido passa para **Em entrega**, quando a entrega é assumida pelo entregador.
+
+</Tab>
+</Tabs>
+
+Você pode deixar as duas opções ativadas. Quando ambas estão ligadas, o cupom imprime um único código de barras, que pode ser usado em cada etapa correspondente.
+
+Para consultar o fluxo do código no aplicativo do entregador, acesse [Código de barras no app do entregador](/app-entregador-codigo-barras).
+
+## Se algo não funcionar
+
+### O código não aparece no cupom
+
+Confirme se a opção **Código de barras envia pedido para PRONTO** está marcada no layout **Cupom Pedido**, dentro do quadro **Texto padrão Delivery**. Depois de ativar a opção, reimprima os cupons antigos, porque eles não recebem o código automaticamente.
+
+Se a impressora física não imprimir o código, verifique se o **BeeImpressão** está atualizado. A documentação de origem registra a versão **1.0.5.7** para esse fluxo. Consulte também [Destaque de impressão](/destaque-impressao).
+
+### O leitor digita no campo de busca
+
+A tela Delivery precisa estar visível, sem um campo focado. Clique em uma área vazia antes de bipar. Se uma janela ou caixa de diálogo estiver aberta sobre a tela, feche-a e tente novamente.
+
+### O pedido não foi encontrado
+
+O pedido precisa estar na lista atual da tela Delivery e pertencer à filial em uso. Confirme se o cartão aparece em **Aguardando** ou **Em preparo** antes de bipar.
+
+### O pedido já está em Pronto
+
+O sistema não move novamente um pedido que já está na coluna **PRONTO**. Verifique o cartão do pedido e a mensagem de confirmação exibida pela tela.
+
+### A digitação manual não é reconhecida
+
+Digitar os números à mão normalmente não funciona, porque o painel reconhece a sequência rápida enviada pelo leitor. Sem um leitor, arraste o cartão do pedido até **PRONTO** ou abra o pedido e use a ação **PEDIDO PRONTO**.
+
+## Trabalhe sem leitor
+
+Se você não tiver um leitor disponível, mova o pedido manualmente:
+
+- Arraste o cartão do pedido até a coluna **PRONTO**.
+- Abra o pedido e use a ação **PEDIDO PRONTO**.
+
+<Columns cols={2}>
+<Card title="Código de barras no app do entregador" href="/app-entregador-codigo-barras" icon="users">
+
+Veja como o código é usado no aplicativo para enviar o pedido para **Em entrega**.
+
+</Card>
+
+<Card title="Destaque de impressão" href="/destaque-impressao" icon="settings">
+
+Consulte orientações relacionadas à configuração e à impressão de cupons.
+
+</Card>
+</Columns>
